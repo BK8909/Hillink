@@ -1,0 +1,52 @@
+{
+  "소연": {
+    "customers": 15,
+    "team_original_status": {
+      "수정필요": 13,
+      "HOLD": 2
+    },
+    "current_display_source_status": {
+      "SOURCE_RECONCILED_DISPLAY_ONLY": 14,
+      "EVIDENCE_LIMITED_DISPLAY_ONLY": 1
+    },
+    "dispositions": {
+      "검수 취지 수용: 원문 사례·조건으로 문구 수정, 전체 의미 승인 아님": 12,
+      "HOLD 유지: 기존 요약에 한정해 확인 중 문구 표시": 1,
+      "팀 상태 유지: 이번에 대조한 원문 사례만 표시, 팀 승인으로 승격 안 함": 2
+    },
+    "team_whole_customer_approvals_added": 0
+  },
+  "한호": {
+    "customers": 15,
+    "team_original_status": {
+      "HOLD": 4,
+      "수정필요": 11
+    },
+    "current_display_source_status": {
+      "SOURCE_RECONCILED_DISPLAY_ONLY": 15
+    },
+    "dispositions": {
+      "팀 상태 유지: 이번에 대조한 원문 사례만 표시, 팀 승인으로 승격 안 함": 4,
+      "검수 취지 수용: 원문 사례·조건으로 문구 수정, 전체 의미 승인 아님": 11
+    },
+    "team_whole_customer_approvals_added": 0
+  },
+  "슬기": {
+    "customers": 15,
+    "team_original_status": {
+      "미착수": 7,
+      "원문부족 HOLD": 3,
+      "제한 예비검수": 5
+    },
+    "current_display_source_status": {
+      "SOURCE_RECONCILED_DISPLAY_ONLY": 14,
+      "EVIDENCE_LIMITED_DISPLAY_ONLY": 1
+    },
+    "dispositions": {
+      "팀 상태 유지: 이번에 대조한 원문 사례만 표시, 팀 승인으로 승격 안 함": 9,
+      "HOLD 유지: 기존 요약에 한정해 확인 중 문구 표시": 1,
+      "검수 취지 수용: 원문 사례·조건으로 문구 수정, 전체 의미 승인 아님": 5
+    },
+    "team_whole_customer_approvals_added": 0
+  }
+}

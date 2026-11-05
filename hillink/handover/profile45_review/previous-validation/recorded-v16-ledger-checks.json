@@ -1,0 +1,565 @@
+{
+  "scope": "Stored run checks re-read only. No new engine execution or revenue calculation. Not the 789-row A/S1/S2 comparison.",
+  "rows": [
+    {
+      "customer": "A01",
+      "tag": "A01-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "df80c5fe9cb68e2c077c328246ebcc1241594adb188043771a167f39180decdd",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "A02",
+      "tag": "A02-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "8f42f3d21e705f68cbb9b73550ed9ff0e472da0b594554d3fa26b11f58cf3fd0",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "A03",
+      "tag": "A03-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "7e2c2de9358ead92804c39495bd71542fd469c44584cb83ac01bba4ebe24198b",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "A04",
+      "tag": "A04-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "238051b3fc30c9bef108113e158d5839f2f3d0a3578310e438992feda5e22ef0",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "A05",
+      "tag": "A05-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "52df8bf7c8e09d08277c28448d8d09ee1f39a32671c718e06ee8060573cf1dfb",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "A06",
+      "tag": "A06-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "eadd4c20a967740121f7abbdffe4fabee46e9c80eac85839d479feda49df96f3",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "A07",
+      "tag": "A07-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "12b69239496bfddb7dc1e5b18030fc43ea2a987edadff6d57ce85cbeb212aa66",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "A08",
+      "tag": "A08-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "02baf266b23acf1a63088416161dd6cf3ad154eaf64386a06865a5b8b33a49d2",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "A10",
+      "tag": "A10-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "d8838e8683743ace93bc1447de2daafd5caed7fd9acdffb6c9bdf47e82b9ee67",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "A12",
+      "tag": "A12-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "cbe479cb0037cf8c21dcb20c54da4f2cc98848cb873cc6a867d53d46b69267f5",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "A19",
+      "tag": "A19-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "6c415d885ae2017c2fd6d86f5228bc02b501b2828d64ddc6428c8c0fb6de423c",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "A26",
+      "tag": "A26-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "6a5984be15c13aad7137d7da5a36581f43b8d35b55beba85d90fb1e9ad94e7da",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "N03",
+      "tag": "N03-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "6713dae42319139917d93373df6b8c0feb2fa8c80623534bdb69656edb571bca",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "N10",
+      "tag": "N10-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "b327d2426680b0b0b06cd4702d55735ca5fb9032cdfa181f36aca79670c1acaa",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "N13",
+      "tag": "N13-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "825b632367f5a4557544a22ea21f2a89dd06bf52bfbaeb4eac6603a5472eb7a1",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "N15",
+      "tag": "N15-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "d87ef576566b5f98316bccba856d76d9a50fd73b821b0cf78a5ede319f19d583",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "N23",
+      "tag": "N23-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "4e63cb8b2fb318cec7d86ed6e128cc7f3881f323af07b9fb57fc7f0c6da296fa",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "WH-00131",
+      "tag": "WH-00131-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "29c98f1e027f65a2b1a51dd8694debd4e74390a4f2df80bb134add5d82fc93b1",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "WH-00265",
+      "tag": "WH-00265-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "9e1d45188903671cd264749417f8de3a6cad0845023cd50d1f4fcbb8ce0fee32",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "WH-00276",
+      "tag": "WH-00276-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "4bf20fa6b003c84fc3935360a0328867b3b03cdd80cb4601e52e8f22f617cba5",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "WH-00386",
+      "tag": "WH-00386-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "ed7cd023ef98f5278deb8f540e910e9c6e8d4c41d3486dadf6dd4ec028439c7a",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "WH-00392",
+      "tag": "WH-00392-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "999368fd5f2d44aaf6f71d49c6868ce93bcf0600a0d27ddd493eaa57361cf209",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "WH-00410",
+      "tag": "WH-00410-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "bcb46b59284a470214605c38d7a164976ab9dbcb30a55f11ea747101619e309f",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "WH-00491",
+      "tag": "WH-00491-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "c4cf23da17afcd0d7915008738ca3f70ff3f7a9896212c0af30a4fa568c614d4",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "WH-00532",
+      "tag": "WH-00532-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "da7dc30e994cb3afe06761c01fd21cb53aa41823fa042f528c71304b4688922f",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "blog41",
+      "tag": "blog41-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "ee8eab1fe985ca9fa7ac386167999daae1164b48791ae34c442dd2381c48c5b2",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "blog42",
+      "tag": "blog42-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "6e29c9c8a1354e69c6f52b750f3df795867e83b86709a54dc74c009c41992d23",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    },
+    {
+      "customer": "blog43",
+      "tag": "blog43-v16-baseline",
+      "source_head": "f98f7cdff164497cd42a219aa952279e929d41f8",
+      "recorded_run_id": "7b0b52aa6d7a68138ab0ca4be033172cc6e786dd0eabf9040f8b0862df23cda1",
+      "recorded_checks": {
+        "receipts_equal_L4_L3_L2_L1": true,
+        "duplicate_transactions": null,
+        "duplicate_simulation_rows": 0,
+        "net_revenue_calculated": false,
+        "tax_status": "UNKNOWN",
+        "actual_pos_transactions": null,
+        "actual_pos_data_supplied": false,
+        "day_totals_equal_visit_total": true,
+        "room_nights_equal_duration": true,
+        "date_rows_unique": true,
+        "visit_id_attached": true
+      },
+      "human_approval": false
+    }
+  ]
+}

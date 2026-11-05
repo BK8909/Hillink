@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Received team V4.1 eight-section output: versioned JSON implementation",
+  "type": "object",
+  "required": ["SOURCE_AUDIT", "PERSONA_SUMMARY", "TRAIT_TABLE", "EVENT_ACTIONS", "EVIDENCE_MAP", "CONTEXT_RULES", "QUALITY_FLAGS", "STRUCTURED_PROFILE"],
+  "additionalProperties": false,
+  "$defs": {
+    "fact": {
+      "type": "object",
+      "required": ["post_id", "fact_id", "experience_key", "feature_key", "detail", "anchors", "kind", "dimension", "actor", "time_scope", "action_stage", "polarity", "confidence", "common_dimensions"],
+      "properties": {
+        "post_id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"},
+        "fact_id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"},
+        "experience_key": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"},
+        "feature_key": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"},
+        "detail": {"type": "string", "minLength": 1},
+        "anchors": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["span", "quote"], "properties": {"span": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0}}, "quote": {"type": "string", "minLength": 1}}}},
+        "kind": {"enum": ["participation", "purchase", "motive", "preference", "appraisal", "expectation", "revisit", "decline", "comparison"]},
+        "dimension": {"enum": ["participation_history", "new_experience_trial", "prepurchase_criteria", "post_appraisal", "specific_preference", "revisit_expression"]},
+        "actor": {"enum": ["author", "author_inferred", "other", "unknown"]},
+        "time_scope": {"enum": ["source_experience", "historical", "future", "recommended", "mixed"]},
+        "action_stage": {"enum": ["reservation_reported", "order_reported", "purchase_reported", "participation_reported", "consumption_reported", "not_applicable"]},
+        "polarity": {"enum": ["positive", "negative", "mixed", "neutral"]},
+        "confidence": {"enum": ["high", "medium", "low"]},
+        "common_dimensions": {"type": "array", "items": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"}}
+      }
+    }
+  },
+  "properties": {
+    "SOURCE_AUDIT": {
+      "type": "object",
+      "required": ["unique_post_count", "scope_counts", "duplicate_source_rows", "independent_event_count", "excluded_post_ids", "excluded_post_count", "photo_note_count", "missing_sources", "review_requests"],
+      "properties": {
+        "unique_post_count": {"type": "integer", "minimum": 0},
+        "duplicate_source_rows": {"type": ["integer", "null"], "minimum": 0},
+        "independent_event_count": {"type": "integer", "minimum": 0},
+        "excluded_post_count": {"type": "integer", "minimum": 0},
+        "scope_counts": {"type": "object", "required": ["walkerhill", "related", "recent"], "additionalProperties": false, "properties": {"walkerhill": {"type": "integer", "minimum": 0}, "related": {"type": "integer", "minimum": 0}, "recent": {"type": "integer", "minimum": 0}}},
+        "excluded_post_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "photo_note_count": {"type": "integer", "minimum": 0},
+        "other_hotel_post_count": {"type": ["integer", "null"], "minimum": 0},
+        "missing_sources": {"type": "array"},
+        "review_requests": {"type": "array"}
+      }
+    },
+    "PERSONA_SUMMARY": {"type": "string", "minLength": 1},
+    "TRAIT_TABLE": {"type": "array", "items": {"type": "object", "required": ["trait", "strength", "independent_evidence_count", "representative_post_ids", "conditions", "counterexamples", "evidence_ids"], "properties": {"trait": {"type": "string"}, "strength": {"type": ["string", "number"]}, "independent_evidence_count": {"type": "integer", "minimum": 0}, "representative_post_ids": {"type": "array", "items": {"type": "string"}}, "conditions": {"type": "array"}, "counterexamples": {"type": "array"}, "evidence_ids": {"type": "array", "items": {"type": "string"}}}}},
+    "EVENT_ACTIONS": {"type": "array", "items": {"type": "object", "required": ["event_id", "visit_id", "link_status", "stages", "fact_ids", "post_ids", "motives", "price_information"], "properties": {"event_id": {"type": "string"}, "visit_id": {"type": ["string", "null"]}, "link_status": {"enum": ["confirmed", "inferred", "unlinked"]}, "stages": {"type": "array", "items": {"type": "string"}}, "fact_ids": {"type": "array", "items": {"type": "string"}}, "post_ids": {"type": "array", "items": {"type": "string"}}, "motives": {"type": "array"}, "price_information": {"type": "array"}}}},
+    "EVIDENCE_MAP": {"type": "array", "items": {"type": "object", "required": ["claim_id", "post_id", "text_anchors", "photo_note_ids", "evidence_kind", "source_layer"], "properties": {"claim_id": {"type": "string"}, "post_id": {"type": "string"}, "text_anchors": {"type": "array"}, "photo_note_ids": {"type": "array", "items": {"type": "string"}}, "evidence_kind": {"enum": ["fact", "evaluation", "inference"]}, "source_layer": {"enum": ["body", "visual_observer_note", "body_and_note"]}}}},
+    "CONTEXT_RULES": {"type": "array", "minItems": 2, "maxItems": 4, "items": {"type": "object", "required": ["rule_id", "condition", "behavior_hypothesis", "evidence_ids", "limits"], "properties": {"rule_id": {"type": "string"}, "condition": {"type": "string"}, "behavior_hypothesis": {"type": "string"}, "evidence_ids": {"type": "array", "items": {"type": "string"}}, "limits": {"type": "array"}}}},
+    "QUALITY_FLAGS": {"type": "array"},
+    "STRUCTURED_PROFILE": {"type": "object", "required": ["persona_id", "facts", "experience_links"], "properties": {"persona_id": {"type": "string"}, "facts": {"type": "array", "items": {"$ref": "#/$defs/fact"}}, "experience_links": {"type": "array"}, "visual_note_claims": {"type": "array"}}}
+  }
+}

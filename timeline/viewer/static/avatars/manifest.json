@@ -1,0 +1,295 @@
+{
+ "solo_hiker": {
+  "source": "ef991df9-image.png",
+  "source_size": [
+   1774,
+   887
+  ],
+  "desc": "1인 · 성인 남성 · 캡 · 백팩(활동형)",
+  "members": [
+   "adult"
+  ],
+  "n_members": 1,
+  "front": {
+   "n": 7,
+   "cw": 84,
+   "ch": 160
+  },
+  "side": {
+   "n": 7,
+   "cw": 109,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   142,
+   256
+  ],
+  "transparent": true
+ },
+ "solo_office": {
+  "source": "9f4264ce-image.png",
+  "source_size": [
+   1448,
+   1086
+  ],
+  "desc": "1인 · 성인 남성 · 재킷 · 서류가방(업무형)",
+  "members": [
+   "adult"
+  ],
+  "n_members": 1,
+  "front": {
+   "n": 4,
+   "cw": 95,
+   "ch": 160
+  },
+  "side": {
+   "n": 4,
+   "cw": 97,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   146,
+   256
+  ],
+  "transparent": true
+ },
+ "solo_casual": {
+  "source": "fa4dec31-image.png",
+  "source_size": [
+   1774,
+   887
+  ],
+  "desc": "1인 · 성인 남성 · 선글라스 · 토트백(캐주얼)",
+  "members": [
+   "adult"
+  ],
+  "n_members": 1,
+  "front": {
+   "n": 7,
+   "cw": 86,
+   "ch": 160
+  },
+  "side": {
+   "n": 7,
+   "cw": 95,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   128,
+   256
+  ],
+  "transparent": true
+ },
+ "family_3gen": {
+  "source": "98e41020-image.png",
+  "source_size": [
+   1774,
+   887
+  ],
+  "desc": "5인 · 성인 2(남 · 여) + 아이 1 + 조부모 2",
+  "members": [
+   "adult",
+   "adult",
+   "child",
+   "elder",
+   "elder"
+  ],
+  "n_members": 5,
+  "front": {
+   "n": 3,
+   "cw": 217,
+   "ch": 160
+  },
+  "side": {
+   "n": 3,
+   "cw": 245,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   256,
+   195
+  ],
+  "transparent": true
+ },
+ "couple_smart": {
+  "source": "140bb730-image.png",
+  "source_size": [
+   1448,
+   1086
+  ],
+  "desc": "2인 · 성인 남 · 여(스마트 캐주얼 · 손 잡음)",
+  "members": [
+   "adult",
+   "adult"
+  ],
+  "n_members": 2,
+  "front": {
+   "n": 4,
+   "cw": 163,
+   "ch": 160
+  },
+  "side": {
+   "n": 4,
+   "cw": 162,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   220,
+   256
+  ],
+  "transparent": true
+ },
+ "friends_2f": {
+  "source": "a0fba1d3-image.png",
+  "source_size": [
+   1774,
+   887
+  ],
+  "desc": "2인 · 성인 여성 2(친구 · 손 잡음)",
+  "members": [
+   "adult",
+   "adult"
+  ],
+  "n_members": 2,
+  "front": {
+   "n": 4,
+   "cw": 156,
+   "ch": 160
+  },
+  "side": {
+   "n": 4,
+   "cw": 161,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   236,
+   256
+  ],
+  "transparent": true
+ },
+ "couple_vacation": {
+  "source": "10b1299f-image.png",
+  "source_size": [
+   1774,
+   887
+  ],
+  "desc": "2인 · 성인 남 · 여(휴가 · 밀짚모자)",
+  "members": [
+   "adult",
+   "adult"
+  ],
+  "n_members": 2,
+  "front": {
+   "n": 4,
+   "cw": 148,
+   "ch": 160
+  },
+  "side": {
+   "n": 4,
+   "cw": 187,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   214,
+   256
+  ],
+  "transparent": true
+ },
+ "family_kid1": {
+  "source": "a68d0b81-image.png",
+  "source_size": [
+   1774,
+   887
+  ],
+  "desc": "3인 · 성인 2(남 · 여) + 아이 1",
+  "members": [
+   "adult",
+   "adult",
+   "child"
+  ],
+  "n_members": 3,
+  "front": {
+   "n": 3,
+   "cw": 202,
+   "ch": 160
+  },
+  "side": {
+   "n": 3,
+   "cw": 211,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   205,
+   256
+  ],
+  "transparent": true
+ },
+ "family_kid2": {
+  "source": "16b79727-image.png",
+  "source_size": [
+   1774,
+   887
+  ],
+  "desc": "4인 · 성인 2(남 · 여) + 아이 2",
+  "members": [
+   "adult",
+   "adult",
+   "child",
+   "child"
+  ],
+  "n_members": 4,
+  "front": {
+   "n": 4,
+   "cw": 188,
+   "ch": 160
+  },
+  "side": {
+   "n": 4,
+   "cw": 233,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   256,
+   238
+  ],
+  "transparent": true
+ },
+ "couple_wine": {
+  "source": "0d5ef3e2-image.png",
+  "source_size": [
+   1448,
+   1086
+  ],
+  "desc": "2인 · 성인 남 · 여(정장 · 와인잔)",
+  "members": [
+   "adult",
+   "adult"
+  ],
+  "n_members": 2,
+  "front": {
+   "n": 3,
+   "cw": 152,
+   "ch": 160
+  },
+  "side": {
+   "n": 3,
+   "cw": 164,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   168,
+   256
+  ],
+  "transparent": true
+ }
+}

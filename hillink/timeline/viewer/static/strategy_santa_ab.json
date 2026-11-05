@@ -1,0 +1,157 @@
+{
+ "id": "SANTA_2025_GEUMRYONG_PROMO_AB_V1",
+ "title": "산타 키즈빌리지 × 금룡 저녁 프로모션",
+ "question": "산타 행사 기간에 금룡의 기존 메뉴 하나를 할인하면, 피자힐에 몰리던 저녁 선택이 바뀌는가? 바뀐다면 누가, 얼마나, 호텔 전체 가상 소비는 어떻게 되는가?",
+ "fixed": {
+  "start_date": "2025-12-19",
+  "duration": "stay_1",
+  "seed": 0,
+  "personas": "ALL_RUNNABLE",
+  "behavior_engine": "m4_c01",
+  "arrival_time": "12:00",
+  "scenario_assumptions": {
+   "sessions": [
+    [
+     "11:00",
+     "12:00"
+    ],
+    [
+     "14:10",
+     "15:10"
+    ],
+    [
+     "15:20",
+     "16:20"
+    ],
+    [
+     "16:30",
+     "17:30"
+    ]
+   ],
+   "duration_min": 60,
+   "historical_model_prices_acknowledged": true
+  },
+  "booked_start": "14:10",
+  "session_basis": "2025 공식 운영 회차(PR #126 · 한호). 이전 모델 가정 회차(10/12/14/16, 예약 14:00) 기록은 산타 사례 기록 탭에 보존"
+ },
+ "booked_families": [
+  {
+   "id": "A01",
+   "basis": "라이브러리 유형 '가족 · 영유아'(분석 추론)",
+   "note": "기본 방문 인원 4명 → 산타 가족권(성인 2·아동 1)에 맞춰 3명으로 가정",
+   "basis_role": "SCENARIO_SETTING_ONLY",
+   "basis_fact_ids": []
+  },
+  {
+   "id": "A06",
+   "basis": "A06-F005 아이와 키즈클럽 이용(후기 확인)",
+   "note": "기본 2명 → 성인 2·아동 1로 가정",
+   "basis_role": "SCENARIO_SETTING_ONLY",
+   "basis_fact_ids": [
+    "A06-F005"
+   ]
+  },
+  {
+   "id": "A12",
+   "basis": "A12-F001 아이와 그랜드 워커힐 1박(후기 확인)",
+   "note": "기본 2명 → 성인 2·아동 1로 가정",
+   "basis_role": "SCENARIO_SETTING_ONLY",
+   "basis_fact_ids": [
+    "A12-F001"
+   ]
+  },
+  {
+   "id": "N15",
+   "basis": "N15-F008 어린 자녀와 유람선 탑승(후기 확인)",
+   "note": "기본 2명 → 성인 2·아동 1로 가정",
+   "basis_role": "SCENARIO_SETTING_ONLY",
+   "basis_fact_ids": [
+    "N15-F008"
+   ]
+  },
+  {
+   "id": "WH-00392",
+   "basis": "PWH00392-F005 배우자·8개월 아이와 비스타 1박(후기 확인)",
+   "note": "기본 2명 → 성인 2·아동 1로 가정",
+   "basis_role": "SCENARIO_SETTING_ONLY",
+   "basis_fact_ids": [
+    "PWH00392-F005"
+   ]
+  },
+  {
+   "id": "WH-00532",
+   "basis": "WH-00532-F046 아이 동반 나들이 기록(후기 확인)",
+   "note": "기본 숙박 더글라스는 아동 동반 불가 → 그랜드로 가정",
+   "building": "GRAND",
+   "basis_role": "SCENARIO_SETTING_ONLY",
+   "basis_fact_ids": [
+    "WH-00532-F046"
+   ]
+  }
+ ],
+ "notes": [
+  "예약 가족 6팀의 산타 14:10 회차(2025 공식 회차) 참가는 운영자 가정입니다. 고객이 산타를 스스로 골랐다는 예측이 아닙니다.",
+  "A와 B는 고객·시드·날짜·도착 시각·동행·예약·행사 조건이 같고, B만 선택한 상품 한 개의 할인율이 다릅니다.",
+  "할인은 선택 전 후보 점수의 1인 지불액 항에 들어갑니다. 구매를 강제하지 않습니다.",
+  "금액은 시뮬레이션 표본 28팀의 가상 소비입니다. 워커힐 실제 매출이나 매출 예측이 아닙니다.",
+  "예약 없이 자연 방문으로 실행하면 산타 참가는 0팀입니다. 이 결과는 예약 가정 실험과 합치지 않습니다.",
+  "외부 배달은 투숙객의 일반 저녁 대안으로 기본 포함됩니다(호텔 매출 0 · 외부 지출 금액 미상). 이 산타 조건에서는 배달을 고른 팀이 없습니다.",
+  "객실박은 가상 객실 모델 단가(그랜드 247,000 · 비스타 307,000 · 더글라스 259,000원/박)로 계산하며 실제 판매가가 아닙니다. 산타 객실 패키지는 명시 선택한 고객에게만 적용하며 이 A/B의 28팀에는 적용하지 않습니다."
+ ],
+ "promotions": [
+  {
+   "sku_id": "HC-MENU-142",
+   "label": "금룡 삼선 자장면 · 저녁",
+   "venue": "금룡",
+   "base_price_krw": 29000,
+   "options_percent": [
+    10,
+    20,
+    30
+   ],
+   "default_percent": 20,
+   "status": "OPERATOR_VIRTUAL_PROMOTION_NOT_OFFICIAL_PRICE",
+   "target_rule": "기준 실행(A)에서 예약 가족의 실제 저녁 결정에 평균 점수 차가 가장 작은 다른 업장 상품. B를 실행하기 전에 A만 보고 정함.",
+   "id": "S1",
+   "question": "산타 행사 기간에 금룡의 기존 메뉴 하나를 할인하면, 피자힐에 몰리던 저녁 선택이 바뀌는가? 바뀐다면 누가, 얼마나, 호텔 전체 가상 소비는 어떻게 되는가?",
+   "interpretation": "금룡 저녁 메뉴 20% 할인은 일부 고객을 피자힐에서 금룡으로 이동시켰지만, 기존 소비 대체와 후속 일정 변화로 인해 호텔 전체 가상 결제액은 감소했다. 특히 산타 예약 가족 6팀의 식사 선택은 변하지 않아, 가족 대상 운영 전략으로서 일반 메뉴 할인의 효과는 확인되지 않았다.",
+   "recorded": {
+    "percent": 20,
+    "baseline_run_id": "9a9be33d",
+    "scenario_run_id": "9264093a",
+    "delta_krw": -217800,
+    "baseline_paid_krw": 17758000,
+    "room_valuation": "native-room-l5-v4",
+    "note": "공식 회차 · 외부 배달 기본 · 객실가 정책 v4(가상 객실 모델 단가 · 패키지 자동 적용 없음)로 재실행. 해석 문구는 같은 할인율에서 기준 결제액과 차액이 기록과 같을 때만 표시"
+   }
+  },
+  {
+   "id": "S2",
+   "sku_id": "HC-MENU-092",
+   "label": "피자힐 콤비네이션 피자 L",
+   "venue": "피자힐",
+   "base_price_krw": 83000,
+   "price_unit": "판",
+   "options_percent": [
+    10,
+    20,
+    30
+   ],
+   "default_percent": 20,
+   "status": "OPERATOR_VIRTUAL_PROMOTION_NOT_OFFICIAL_PRICE",
+   "target_rule": "기준 실행(A)의 예약 가족 저녁 결정에서, 엔진의 가격 항만으로 20% 할인 시 가족을 가장 많이 움직일 것으로 예측된 기존 상품(사전 선별 61개 중). B를 실행하기 전에 A만 보고 정함.",
+   "question": "가족을 실제로 움직이는 가격 할인이 있다면, 그 할인은 산타 예약 가족과 호텔 전체의 가상 소비를 늘리는가?",
+   "interpretation": "피자힐 콤비네이션 피자 L 20% 할인은 산타 예약 가족 6팀의 선택을 바꿨지만, 모두 같은 피자힐 안에서 할인으로 더 싸진 메뉴로 옮겨 가족 F&B 가상 결제가 줄었다. 일반 고객도 같은 방식으로 메뉴를 바꿔 호텔 전체 가상 결제액은 감소했다.",
+   "recorded": {
+    "percent": 20,
+    "baseline_run_id": "9a9be33d",
+    "scenario_run_id": "615c80e6",
+    "delta_krw": -280400,
+    "baseline_paid_krw": 17758000,
+    "room_valuation": "native-room-l5-v4",
+    "note": "공식 회차 · 외부 배달 기본 · 객실가 정책 v4(가상 객실 모델 단가 · 패키지 자동 적용 없음)로 재실행. 해석 문구는 같은 할인율에서 기준 결제액과 차액이 기록과 같을 때만 표시"
+   }
+  }
+ ],
+ "basis_role_note": "예약 가족의 근거 Fact는 동행 구성·산타 예약이라는 시나리오 설정을 정당화하는 데만 쓰입니다. 식당·활동 선택 점수에는 들어가지 않습니다(결정 기록에서 확인)."
+}

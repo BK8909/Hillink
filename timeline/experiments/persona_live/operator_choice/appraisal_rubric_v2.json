@@ -1,0 +1,8 @@
+{
+  "version":"contextual_appraisal_rubric_v2.0",
+  "status":"rule_assisted_prototype_requires_human_validation",
+  "valence_scale":{"-2":"explicit strong negative","-1":"negative or implied shortfall","0":"neutral/insufficient direction","1":"positive","2":"explicit strong positive"},
+  "evidence_strength":{"0":"no evaluation evidence","1":"single weak contextual cue","2":"multiple linked or clear contrast cues","3":"direct explicit evaluation"},
+  "confidence_labels":["low","moderate","high"],
+  "principles":["valence, evidence strength, interpretation confidence are separate","local experience is default scope","same evidence roots are deduplicated across segments","one facility appraisal does not propagate to category-level preference","behavioral act is not assumed satisfaction","price mention alone is not negative","ambiguous contrast retains alternative reading","scores are not satisfaction ratings or choice probabilities"]
+}

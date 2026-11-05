@@ -1,0 +1,1390 @@
+{
+ "built": "2026-10-15 05:08",
+ "model_ver": "d2a34bfd",
+ "input_ver": "2e1f2ef2",
+ "inventory": [
+  {
+   "id": "조정값 next_window",
+   "name": "다음 회차 보기",
+   "value": 1,
+   "keys": [
+    "next_window"
+   ],
+   "group": "v4.1 조정값",
+   "provenance": [
+    "더뷔페 예약 · 회차 · 대기 상한"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△",
+   "kind": "가정",
+   "kinds": [
+    "가정"
+   ],
+   "source": "가정표 THE_BUFFET 8줄 — 예약 접수 · 조식 4 (혼잡 시 2부제 · 전날 회차 예약 blog45 · 50분 넘는 줄 포기 blog43 · 체류 blog42) · 석식 3 (상품권 사전 예약 · 석식 패키",
+   "link": "있음 · 켬/끔 조정값",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "조정값 reserve_wait",
+   "name": "예약 대기 (벌점 없음)",
+   "value": 1,
+   "keys": [
+    "reserve_wait"
+   ],
+   "group": "v4.1 조정값",
+   "provenance": [
+    "더뷔페 예약 · 회차 · 대기 상한"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△",
+   "kind": "가정",
+   "kinds": [
+    "가정"
+   ],
+   "source": "가정표 THE_BUFFET 8줄 — 예약 접수 · 조식 4 (혼잡 시 2부제 · 전날 회차 예약 blog45 · 50분 넘는 줄 포기 blog43 · 체류 blog42) · 석식 3 (상품권 사전 예약 · 석식 패키",
+   "link": "있음 · 켬/끔 조정값",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "조정값 queue_max",
+   "name": "회차 안 줄 서기 상한 (분)",
+   "value": 30,
+   "keys": [
+    "queue_max"
+   ],
+   "group": "v4.1 조정값",
+   "provenance": [
+    "더뷔페 예약 · 회차 · 대기 상한"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△",
+   "kind": "가정",
+   "kinds": [
+    "가정"
+   ],
+   "source": "가정표 THE_BUFFET 8줄 — 예약 접수 · 조식 4 (혼잡 시 2부제 · 전날 회차 예약 blog45 · 50분 넘는 줄 포기 blog43 · 체류 blog42) · 석식 3 (상품권 사전 예약 · 석식 패키",
+   "link": "있음",
+   "value_ok": true,
+   "filled": false
+  },
+  {
+   "id": "조정값 takeout_cap",
+   "name": "포장 하루 한도 (판)",
+   "value": 40,
+   "keys": [
+    "takeout_cap"
+   ],
+   "group": "v4.1 조정값",
+   "provenance": [
+    "피자힐 포장 한도"
+   ],
+   "hypotheses": [],
+   "chain": [
+    "EC08"
+   ],
+   "grade": "○",
+   "kind": "참조 모델 값",
+   "kinds": [
+    "참조 모델 값"
+   ],
+   "source": "온톨로지 기준 수요 30판 × 10/10 배율 (처리 한도 60)",
+   "link": "있음",
+   "value_ok": true,
+   "filled": false
+  },
+  {
+   "id": "조정값 bar_nightcap",
+   "name": "럭스바 저녁 뒤 한잔 비율",
+   "value": 0.16,
+   "keys": [
+    "bar_nightcap"
+   ],
+   "group": "v4.1 조정값",
+   "provenance": [
+    "럭스바 저녁 뒤 한잔"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "○/△",
+   "kind": "맞춤값",
+   "kinds": [
+    "맞춤값"
+   ],
+   "source": "온톨로지 럭스바 풀 고객 믹스 / 비율은 온톨로지 100잔에 맞춘 값",
+   "link": "있음",
+   "value_ok": true,
+   "filled": false
+  },
+  {
+   "id": "조정값 purpose_onto",
+   "name": "목적 섞기 · 온톨로지 배분",
+   "value": 1,
+   "keys": [
+    "purpose_onto"
+   ],
+   "group": "v4.1 조정값",
+   "provenance": [
+    "목적 섞기"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△",
+   "kind": "참조 모델 값",
+   "kinds": [
+    "참조 모델 값"
+   ],
+   "source": "슬기님 블로그 39편 목적 + 온톨로지 그랜드 객실박 목적 배분 (10건 사전)",
+   "link": "이름 표기 없이 이름표로 · 켬/끔 조정값",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "조정값 passage_rate",
+   "name": "르파사쥬 독립 구매 비율",
+   "value": 0.62,
+   "keys": [
+    "passage_rate"
+   ],
+   "group": "v4.1 조정값",
+   "provenance": [
+    "르파사쥬 독립 구매"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "○/△",
+   "kind": "맞춤값",
+   "kinds": [
+    "맞춤값"
+   ],
+   "source": "온톨로지 르파사쥬 풀 믹스 / 비율은 온톨로지 248건에 맞춘 값",
+   "link": "있음",
+   "value_ok": true,
+   "filled": false
+  },
+  {
+   "id": "조정값 fine_dwell",
+   "name": "파인다이닝 식사시간 (분)",
+   "value": 120,
+   "keys": [
+    "fine_dwell"
+   ],
+   "group": "v4.1 조정값",
+   "provenance": [
+    "파인다이닝 식사시간"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△",
+   "kind": "참조 모델 값",
+   "kinds": [
+    "참조 모델 값"
+   ],
+   "source": "온톨로지 120분 (대표님 모델 가정) · 모델 기본값도 가정 · 공식 예약 화면 마지막 예약 시작 (간접 · 10/14) · 명월관 별채 '약 2시간 코스' (네이버 판매 페이지 · 10/14 사용자 화면) · 공",
+   "link": "있음",
+   "value_ok": true,
+   "filled": false
+  },
+  {
+   "id": "조정값 moegi_seats",
+   "name": "모에기 좌석",
+   "value": 40,
+   "keys": [
+    "moegi_seats"
+   ],
+   "group": "v4.1 조정값",
+   "provenance": [
+    "모에기 좌석"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△",
+   "kind": "참조 모델 값",
+   "kinds": [
+    "참조 모델 값"
+   ],
+   "source": "온톨로지 모에기 다이닝 홀 40석 (스시바 · 철판 · 별실 제외) · 103석 구성은 저장소 문서 walkerhill-guest-state-machine.md 4.5절",
+   "link": "있음",
+   "value_ok": true,
+   "filled": true
+  },
+  {
+   "id": "조정값 turn_hold",
+   "name": "회차제 좌석 회차 끝까지",
+   "value": 1,
+   "keys": [
+    "turn_hold"
+   ],
+   "group": "v4.1 조정값",
+   "provenance": [
+    "회차제 좌석 회차 끝까지"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "○/△",
+   "kind": "참조 모델 값",
+   "kinds": [
+    "참조 모델 값"
+   ],
+   "source": "온톨로지 '더뷔페 끼니당 회전 상한 2 · 모에기 식사별 1회' · 소연님 운영 조건표 '더뷔페 1부 · 2부 회전 상한 2 (○)'",
+   "link": "있음 · 켬/끔 조정값",
+   "value_ok": null,
+   "filled": true
+  },
+  {
+   "id": "조정값 no_busy_dwell",
+   "name": "붐빌 때 체류 단축 끄기",
+   "value": 2,
+   "keys": [
+    "no_busy_dwell"
+   ],
+   "group": "v4.1 조정값",
+   "provenance": [
+    "붐빌 때 체류 단축 끄기"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△",
+   "kind": "가정",
+   "kinds": [
+    "가정"
+   ],
+   "source": "근거 없는 단축 규칙을 끈 모델 가정 (근거사슬 7-13 · 7-17) · 기본 반영 전 운영 점검 세 가지 통과 (7-19)",
+   "link": "있음 · 켬/끔 조정값",
+   "value_ok": null,
+   "filled": true
+  },
+  {
+   "id": "조정값 rooms_onto",
+   "name": "객실 수 · 온톨로지 (507 · 244 · 50)",
+   "value": 1,
+   "keys": [
+    "rooms_onto"
+   ],
+   "group": "v4.1 조정값",
+   "provenance": [
+    "객실 수"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "◎/△",
+   "kind": "참조 모델 값",
+   "kinds": [
+    "참조 모델 값"
+   ],
+   "source": "정부 호텔업 등급결정 등록 (그랜드 539 · 비스타 244) · 온톨로지 · 공개 OTA",
+   "link": "이름 표기 없이 이름표로 · 켬/끔 조정값",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "조정값 order_mix",
+   "name": "투숙 · 비투숙 처리 순서 섞기",
+   "value": 1,
+   "keys": [
+    "order_mix"
+   ],
+   "group": "v4.1 조정값",
+   "provenance": [
+    "손님 처리 순서 (좌석 잡는 순서)"
+   ],
+   "hypotheses": [
+    "가설 3"
+   ],
+   "chain": [],
+   "grade": "○",
+   "kind": "가정",
+   "kinds": [
+    "가정"
+   ],
+   "source": "피자힐 · 더뷔페는 2개월 전 예약 식당 (가정표 ◎) — 투숙 · 비투숙 예약 시점이 섞임. 코드 순서(투숙 먼저)는 근거 없음",
+   "link": "있음 · 켬/끔 조정값",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "조정값 wd_day",
+   "name": "평일 비투숙 손님 배율",
+   "value": 0.5,
+   "keys": [
+    "wd_day"
+   ],
+   "group": "v4.1 조정값",
+   "provenance": [
+    "평일 비투숙 규모"
+   ],
+   "hypotheses": [
+    "H4b"
+   ],
+   "chain": [],
+   "grade": "△",
+   "kind": "맞춤값",
+   "kinds": [
+    "맞춤값"
+   ],
+   "source": "H4b · 외부 근거 참고로 유지하는 모델 가정; S11은 지지하지 않음",
+   "link": "있음",
+   "value_ok": true,
+   "filled": false
+  },
+  {
+   "id": "조정값 rooms_formula",
+   "name": "객실 산식 · 건물별 목표 − 이월 (한호님 참고계수)",
+   "value": 1,
+   "keys": [
+    "rooms_formula"
+   ],
+   "group": "v4.1 조정값",
+   "provenance": [
+    "객실 산식 (건물별 목표 − 이월)"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△",
+   "kind": "맞춤값",
+   "kinds": [
+    "맞춤값"
+   ],
+   "source": "한호님 온톨로지 역산 — 건물별 판매 객실박(참고계수 표)에서 이월 객실을 빼 신규 체크인을 정함",
+   "link": "있음 · 켬/끔 조정값",
+   "value_ok": null,
+   "filled": true
+  },
+  {
+   "id": "조정값 rng_team",
+   "name": "손님마다 다른 난수 (팀 이름 기준)",
+   "value": 1,
+   "keys": [
+    "rng_team"
+   ],
+   "group": "v4.1 조정값",
+   "provenance": [],
+   "hypotheses": [],
+   "chain": [],
+   "grade": null,
+   "kind": "계산 방식 (근거 대상 아님)",
+   "link": "없음",
+   "value_ok": null,
+   "source": "",
+   "filled": false
+  },
+  {
+   "id": "계수 w_wait",
+   "name": "행동 점수 계수 w_wait",
+   "value": 0.898,
+   "keys": [
+    "w_wait",
+    "THETA_FIT"
+   ],
+   "group": "행동 점수 계수",
+   "provenance": [
+    "행동 점수 계수",
+    "막힌 끼니의 대체 선택지 구성"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△ (후기 46편 맞춤값)",
+   "kind": "맞춤값",
+   "kinds": [
+    "맞춤값"
+   ],
+   "source": "후기 46편 대조로 맞춘 맞춤값 — 관측 사실이 아님 (교차검증 재현 76% · 정밀 46%)",
+   "link": "묶음 줄",
+   "value_ok": true,
+   "filled": false
+  },
+  {
+   "id": "계수 w_travel",
+   "name": "행동 점수 계수 w_travel",
+   "value": 1.14,
+   "keys": [
+    "w_travel",
+    "THETA_FIT"
+   ],
+   "group": "행동 점수 계수",
+   "provenance": [
+    "행동 점수 계수",
+    "막힌 끼니의 대체 선택지 구성"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△ (후기 46편 맞춤값)",
+   "kind": "맞춤값",
+   "kinds": [
+    "맞춤값"
+   ],
+   "source": "후기 46편 대조로 맞춘 맞춤값 — 관측 사실이 아님 (교차검증 재현 76% · 정밀 46%)",
+   "link": "묶음 줄 (값 미표기)",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "계수 lam_trait",
+   "name": "행동 점수 계수 lam_trait",
+   "value": 0,
+   "keys": [
+    "lam_trait",
+    "THETA_FIT"
+   ],
+   "group": "행동 점수 계수",
+   "provenance": [
+    "행동 점수 계수",
+    "막힌 끼니의 대체 선택지 구성"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△ (후기 46편 맞춤값)",
+   "kind": "꺼짐 (값 0)",
+   "kinds": [
+    "맞춤값"
+   ],
+   "source": "후기 46편 대조로 맞춘 맞춤값 — 관측 사실이 아님 (교차검증 재현 76% · 정밀 46%)",
+   "link": "묶음 줄 (값 미표기)",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "계수 meal",
+   "name": "행동 점수 계수 meal",
+   "value": 6.0,
+   "keys": [
+    "meal",
+    "THETA_FIT"
+   ],
+   "group": "행동 점수 계수",
+   "provenance": [
+    "행동 점수 계수",
+    "막힌 끼니의 대체 선택지 구성"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△ (후기 46편 맞춤값)",
+   "kind": "맞춤값",
+   "kinds": [
+    "맞춤값"
+   ],
+   "source": "후기 46편 대조로 맞춘 맞춤값 — 관측 사실이 아님 (교차검증 재현 76% · 정밀 46%)",
+   "link": "묶음 줄",
+   "value_ok": true,
+   "filled": false
+  },
+  {
+   "id": "계수 included",
+   "name": "행동 점수 계수 included",
+   "value": 7.885,
+   "keys": [
+    "included",
+    "THETA_FIT"
+   ],
+   "group": "행동 점수 계수",
+   "provenance": [
+    "행동 점수 계수",
+    "막힌 끼니의 대체 선택지 구성"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△ (후기 46편 맞춤값)",
+   "kind": "맞춤값",
+   "kinds": [
+    "맞춤값"
+   ],
+   "source": "후기 46편 대조로 맞춘 맞춤값 — 관측 사실이 아님 (교차검증 재현 76% · 정밀 46%)",
+   "link": "묶음 줄 (값 미표기)",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "계수 meal_other",
+   "name": "행동 점수 계수 meal_other",
+   "value": 0.33,
+   "keys": [
+    "meal_other",
+    "THETA_FIT"
+   ],
+   "group": "행동 점수 계수",
+   "provenance": [
+    "행동 점수 계수",
+    "막힌 끼니의 대체 선택지 구성"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△ (후기 46편 맞춤값)",
+   "kind": "맞춤값",
+   "kinds": [
+    "맞춤값"
+   ],
+   "source": "후기 46편 대조로 맞춘 맞춤값 — 관측 사실이 아님 (교차검증 재현 76% · 정밀 46%)",
+   "link": "묶음 줄 (값 미표기)",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "계수 bfast_room",
+   "name": "행동 점수 계수 bfast_room",
+   "value": 1.052,
+   "keys": [
+    "bfast_room",
+    "THETA_FIT"
+   ],
+   "group": "행동 점수 계수",
+   "provenance": [
+    "행동 점수 계수",
+    "막힌 끼니의 대체 선택지 구성"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△ (후기 46편 맞춤값)",
+   "kind": "맞춤값",
+   "kinds": [
+    "맞춤값"
+   ],
+   "source": "후기 46편 대조로 맞춘 맞춤값 — 관측 사실이 아님 (교차검증 재현 76% · 정밀 46%)",
+   "link": "묶음 줄 (값 미표기)",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "계수 kids",
+   "name": "행동 점수 계수 kids",
+   "value": 0.689,
+   "keys": [
+    "kids",
+    "THETA_FIT"
+   ],
+   "group": "행동 점수 계수",
+   "provenance": [
+    "행동 점수 계수",
+    "막힌 끼니의 대체 선택지 구성"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△ (후기 46편 맞춤값)",
+   "kind": "맞춤값",
+   "kinds": [
+    "맞춤값"
+   ],
+   "source": "후기 46편 대조로 맞춘 맞춤값 — 관측 사실이 아님 (교차검증 재현 76% · 정밀 46%)",
+   "link": "묶음 줄 (값 미표기)",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "계수 takeout",
+   "name": "행동 점수 계수 takeout",
+   "value": 1.561,
+   "keys": [
+    "takeout",
+    "THETA_FIT"
+   ],
+   "group": "행동 점수 계수",
+   "provenance": [
+    "행동 점수 계수",
+    "막힌 끼니의 대체 선택지 구성"
+   ],
+   "hypotheses": [],
+   "chain": [
+    "EC08"
+   ],
+   "grade": "△ (후기 46편 맞춤값)",
+   "kind": "맞춤값",
+   "kinds": [
+    "맞춤값"
+   ],
+   "source": "후기 46편 대조로 맞춘 맞춤값 — 관측 사실이 아님 (교차검증 재현 76% · 정밀 46%)",
+   "link": "묶음 줄 (값 미표기)",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "계수 room_rest",
+   "name": "행동 점수 계수 room_rest",
+   "value": 1.333,
+   "keys": [
+    "room_rest",
+    "THETA_FIT"
+   ],
+   "group": "행동 점수 계수",
+   "provenance": [
+    "행동 점수 계수",
+    "막힌 끼니의 대체 선택지 구성"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△ (후기 46편 맞춤값)",
+   "kind": "맞춤값",
+   "kinds": [
+    "맞춤값"
+   ],
+   "source": "후기 46편 대조로 맞춘 맞춤값 — 관측 사실이 아님 (교차검증 재현 76% · 정밀 46%)",
+   "link": "묶음 줄 (값 미표기)",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "계수 booked",
+   "name": "행동 점수 계수 booked",
+   "value": 5.003,
+   "keys": [
+    "booked",
+    "THETA_FIT"
+   ],
+   "group": "행동 점수 계수",
+   "provenance": [
+    "행동 점수 계수",
+    "막힌 끼니의 대체 선택지 구성"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△ (후기 46편 맞춤값)",
+   "kind": "맞춤값",
+   "kinds": [
+    "맞춤값"
+   ],
+   "source": "후기 46편 대조로 맞춘 맞춤값 — 관측 사실이 아님 (교차검증 재현 76% · 정밀 46%)",
+   "link": "묶음 줄",
+   "value_ok": true,
+   "filled": false
+  },
+  {
+   "id": "계수 incl_block",
+   "name": "행동 점수 계수 incl_block",
+   "value": 99.0,
+   "keys": [
+    "incl_block",
+    "THETA_FIT"
+   ],
+   "group": "행동 점수 계수",
+   "provenance": [
+    "행동 점수 계수",
+    "막힌 끼니의 대체 선택지 구성"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△ (후기 46편 맞춤값)",
+   "kind": "맞춤값",
+   "kinds": [
+    "맞춤값"
+   ],
+   "source": "후기 46편 대조로 맞춘 맞춤값 — 관측 사실이 아님 (교차검증 재현 76% · 정밀 46%)",
+   "link": "묶음 줄 (값 미표기)",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "계수 gap_fill",
+   "name": "행동 점수 계수 gap_fill",
+   "value": 0.0,
+   "keys": [
+    "gap_fill",
+    "THETA_FIT"
+   ],
+   "group": "행동 점수 계수",
+   "provenance": [
+    "행동 점수 계수",
+    "막힌 끼니의 대체 선택지 구성"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△ (후기 46편 맞춤값)",
+   "kind": "꺼짐 (값 0)",
+   "kinds": [
+    "맞춤값"
+   ],
+   "source": "후기 46편 대조로 맞춘 맞춤값 — 관측 사실이 아님 (교차검증 재현 76% · 정밀 46%)",
+   "link": "묶음 줄 (값 미표기)",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "계수 tau",
+   "name": "행동 점수 계수 tau",
+   "value": 0.5,
+   "keys": [
+    "tau",
+    "THETA_FIT"
+   ],
+   "group": "행동 점수 계수",
+   "provenance": [
+    "행동 점수 계수",
+    "막힌 끼니의 대체 선택지 구성"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△ (후기 46편 맞춤값)",
+   "kind": "맞춤값",
+   "kinds": [
+    "맞춤값"
+   ],
+   "source": "후기 46편 대조로 맞춘 맞춤값 — 관측 사실이 아님 (교차검증 재현 76% · 정밀 46%)",
+   "link": "묶음 줄 (값 미표기)",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "generate.OCC_BASE",
+   "name": "OCC_BASE",
+   "value": 0.79,
+   "keys": [
+    "OCC_BASE"
+   ],
+   "group": "손님 생성 상수",
+   "provenance": [
+    "객실 가동률 기본"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "○",
+   "kind": "참조 모델 값",
+   "kinds": [
+    "참조 모델 값"
+   ],
+   "source": "온톨로지 조정값 기본값",
+   "link": "있음",
+   "value_ok": true,
+   "filled": false
+  },
+  {
+   "id": "generate.P_PREFER_GUEST",
+   "name": "P_PREFER_GUEST",
+   "value": 0.7,
+   "keys": [
+    "P_PREFER_GUEST"
+   ],
+   "group": "손님 생성 상수",
+   "provenance": [
+    "식당 가고 싶음 비율"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△",
+   "kind": "맞춤값",
+   "kinds": [
+    "맞춤값"
+   ],
+   "source": "온톨로지 10/10 식당 이용 인원 ≈ 투숙 인원에서 역산한 자리표",
+   "link": "있음",
+   "value_ok": true,
+   "filled": false
+  },
+  {
+   "id": "generate.P_PREFER_DAY",
+   "name": "P_PREFER_DAY",
+   "value": 0.9,
+   "keys": [
+    "P_PREFER_DAY"
+   ],
+   "group": "손님 생성 상수",
+   "provenance": [
+    "식당 가고 싶음 비율"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△",
+   "kind": "맞춤값",
+   "kinds": [
+    "맞춤값"
+   ],
+   "source": "온톨로지 10/10 식당 이용 인원 ≈ 투숙 인원에서 역산한 자리표",
+   "link": "있음",
+   "value_ok": true,
+   "filled": false
+  },
+  {
+   "id": "generate.DAY_ARRIVE",
+   "name": "DAY_ARRIVE",
+   "value": "[(11, 0.4), (17, 0.6)]",
+   "keys": [
+    "DAY_ARRIVE"
+   ],
+   "group": "손님 생성 상수",
+   "provenance": [
+    "비투숙 도착 시각"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△",
+   "kind": "가정",
+   "kinds": [
+    "가정"
+   ],
+   "source": "임시값",
+   "link": "있음",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "generate.WAKE_SPREAD",
+   "name": "WAKE_SPREAD",
+   "value": "[(datetime.time(6, 30), 1), (datetime.time(7, 0), 2), (datet",
+   "keys": [
+    "WAKE_SPREAD"
+   ],
+   "group": "손님 생성 상수",
+   "provenance": [
+    "조식 기상 시각 분포"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△",
+   "kind": "가정",
+   "kinds": [
+    "가정"
+   ],
+   "source": "임시값",
+   "link": "있음",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "generate.DAY_SCALE",
+   "name": "DAY_SCALE",
+   "value": 0.5,
+   "keys": [
+    "DAY_SCALE"
+   ],
+   "group": "손님 생성 상수",
+   "provenance": [
+    "비투숙 팀 수"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△ (온톨로지 역산 맞춤값)",
+   "kind": "맞춤값",
+   "kinds": [
+    "맞춤값"
+   ],
+   "source": "온톨로지 역산 맞춤값 (외부 관측 아님) — 기존 격자 × DAY_SCALE 0.5 임시값 고정 → 한호님 v4 재역산으로 확인",
+   "link": "있음",
+   "value_ok": true,
+   "filled": false
+  },
+  {
+   "id": "generate.BREAKFAST_PKG",
+   "name": "BREAKFAST_PKG",
+   "value": 0.18,
+   "keys": [
+    "BREAKFAST_PKG"
+   ],
+   "group": "손님 생성 상수",
+   "provenance": [
+    "조식 포함 패키지 비중"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△",
+   "kind": "참조 모델 값",
+   "kinds": [
+    "참조 모델 값"
+   ],
+   "source": "온톨로지 객실 유형 TYPE 2 비중 18%",
+   "link": "있음",
+   "value_ok": true,
+   "filled": true
+  },
+  {
+   "id": "agent_v4.MIN_DWELL",
+   "name": "붐빌 때 최소 체류",
+   "value": "{'lounge_b': 30, 'lounge_t': 30, 'lounge_h': 40, 'buffet_b':",
+   "keys": [
+    "MIN_DWELL",
+    "체류 단축"
+   ],
+   "group": "행동 규칙 상수",
+   "provenance": [
+    "붐빌 때 최소 체류",
+    "붐빌 때 체류 단축 끄기"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△",
+   "kind": "맞춤값",
+   "kinds": [
+    "맞춤값"
+   ],
+   "source": "후기 3편에 맞춘 값 (v3-E · blog02 라이트 스낵 16시대 · blog04 티타임 16:10–17:00 · blog05 조식 회차)",
+   "link": "있음",
+   "value_ok": null,
+   "filled": true
+  },
+  {
+   "id": "prices.SEATS",
+   "name": "업장 좌석 · 회차 (prices.SEATS)",
+   "value": null,
+   "keys": [
+    "prices.SEATS"
+   ],
+   "group": "운영 조건 표",
+   "provenance": [
+    "좌석 · 회차 · 운영 창"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "◎~△",
+   "kind": "외부 근거",
+   "kinds": [
+    "외부 근거"
+   ],
+   "source": "공식 홈페이지 · 현장 · 추정 (가정표 등급)",
+   "link": "있음",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "prices.ROOMS",
+   "name": "객실 수 (prices.ROOMS)",
+   "value": null,
+   "keys": [
+    "prices.ROOMS"
+   ],
+   "group": "운영 조건 표",
+   "provenance": [
+    "객실 수"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "◎/△",
+   "kind": "참조 모델 값",
+   "kinds": [
+    "참조 모델 값"
+   ],
+   "source": "정부 호텔업 등급결정 등록 (그랜드 539 · 비스타 244) · 온톨로지 · 공개 OTA",
+   "link": "있음",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "place_assumptions.csv",
+   "name": "place_assumptions.csv",
+   "value": null,
+   "keys": [
+    "place_assumptions.csv"
+   ],
+   "group": "운영 조건 표",
+   "provenance": [
+    "좌석 · 회차 · 운영 창"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "◎~△",
+   "kind": "외부 근거",
+   "kinds": [
+    "외부 근거"
+   ],
+   "source": "공식 홈페이지 · 현장 · 추정 (가정표 등급)",
+   "link": "있음",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "program_capacity.csv",
+   "name": "program_capacity.csv",
+   "value": null,
+   "keys": [
+    "program_capacity.csv"
+   ],
+   "group": "운영 조건 표",
+   "provenance": [
+    "프로그램 정원"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "◎~△",
+   "kind": "외부 근거",
+   "kinds": [
+    "외부 근거"
+   ],
+   "source": "공식 · 대관 플랫폼 · 추정",
+   "link": "있음",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "persona_grid.csv",
+   "name": "persona_grid.csv",
+   "value": null,
+   "keys": [
+    "persona_grid.csv",
+    "persona_grid"
+   ],
+   "group": "입력 표",
+   "provenance": [
+    "고객 구성 격자 · 일행 · 박수 · 목적 기본",
+    "고객 구성 격자 · 성별 × 연령 인구 비중"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△",
+   "kind": "혼합 (가정 · 외부 근거)",
+   "kinds": [
+    "가정",
+    "외부 근거"
+   ],
+   "source": "격자 근거 열에 '[가정]' 으로 표기된 항목 — 대표자 대리 적용 · 목적 균등 1/9 · 일행 성인 수 · 0박 비중 · 아동 만 0~12세 · 구매력 가중",
+   "link": "있음",
+   "value_ok": null,
+   "filled": true
+  },
+  {
+   "id": "purpose_mix.csv",
+   "name": "purpose_mix.csv",
+   "value": null,
+   "keys": [
+    "purpose_mix.csv",
+    "purpose_mix"
+   ],
+   "group": "입력 표",
+   "provenance": [
+    "목적 섞기"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△",
+   "kind": "참조 모델 값",
+   "kinds": [
+    "참조 모델 값"
+   ],
+   "source": "슬기님 블로그 39편 목적 + 온톨로지 그랜드 객실박 목적 배분 (10건 사전)",
+   "link": "있음",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "type_mix.csv",
+   "name": "type_mix.csv",
+   "value": null,
+   "keys": [
+    "type_mix.csv",
+    "type_mix"
+   ],
+   "group": "입력 표",
+   "provenance": [
+    "AI 유형 섞기"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△",
+   "kind": "가정",
+   "kinds": [
+    "가정"
+   ],
+   "source": "블로그 39편의 목적 × AI 유형 건수 + 전체 분포 1건 사전",
+   "link": "있음",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "age_mix.csv",
+   "name": "age_mix.csv",
+   "value": null,
+   "keys": [
+    "age_mix.csv",
+    "age_mix"
+   ],
+   "group": "입력 표",
+   "provenance": [
+    "연령 섞기"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "○",
+   "kind": "참조 모델 값",
+   "kinds": [
+    "참조 모델 값"
+   ],
+   "source": "온톨로지 기본값 (모든 목적에 같은 분포)",
+   "link": "있음",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "date_factors.csv",
+   "name": "date_factors.csv",
+   "value": null,
+   "keys": [
+    "date_factors.csv",
+    "date_factors"
+   ],
+   "group": "입력 표",
+   "provenance": [
+    "날짜 배율",
+    "와인페어 효과"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "○",
+   "kind": "참조 모델 값",
+   "kinds": [
+    "참조 모델 값"
+   ],
+   "source": "온톨로지 일별 배율표와 동일 (주말 · 공휴일 · 명절 · 계절 · 행사)",
+   "link": "있음",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "dining_pref.csv",
+   "name": "dining_pref.csv",
+   "value": null,
+   "keys": [
+    "dining_pref.csv",
+    "dining_pref"
+   ],
+   "group": "입력 표",
+   "provenance": [
+    "가고 싶은 식당"
+   ],
+   "hypotheses": [
+    "가설 1"
+   ],
+   "chain": [],
+   "grade": "△",
+   "kind": "참조 모델 값",
+   "kinds": [
+    "참조 모델 값"
+   ],
+   "source": "블로그 39편 '식당=' 건수 + 온톨로지 고객 구성비 원장 (3건 사전)",
+   "link": "있음",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "menu.csv",
+   "name": "menu.csv",
+   "value": null,
+   "keys": [
+    "menu.csv",
+    "menu"
+   ],
+   "group": "입력 표",
+   "provenance": [
+    "피자힐 세트 가중",
+    "어린이 가격"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "○",
+   "kind": "혼합 (참조 모델 값 · 외부 근거)",
+   "kinds": [
+    "참조 모델 값",
+    "외부 근거"
+   ],
+   "source": "온톨로지 피자힐 세트 가중치",
+   "link": "있음",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "day_visit_scenarios.json",
+   "name": "day_visit_scenarios.json",
+   "value": null,
+   "keys": [
+    "day_visit_scenarios.json",
+    "day_visit_scenarios"
+   ],
+   "group": "입력 표",
+   "provenance": [
+    "비투숙 팀 수",
+    "평일 비투숙 규모"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△ (온톨로지 역산 맞춤값)",
+   "kind": "맞춤값",
+   "kinds": [
+    "맞춤값"
+   ],
+   "source": "온톨로지 역산 맞춤값 (외부 관측 아님) — 기존 격자 × DAY_SCALE 0.5 임시값 고정 → 한호님 v4 재역산으로 확인",
+   "link": "있음",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "anomaly_scenarios.csv",
+   "name": "anomaly_scenarios.csv",
+   "value": null,
+   "keys": [
+    "anomaly_scenarios.csv",
+    "anomaly_scenarios"
+   ],
+   "group": "입력 표",
+   "provenance": [],
+   "hypotheses": [],
+   "chain": [],
+   "grade": null,
+   "kind": "장부 · 시나리오 표",
+   "link": "없음",
+   "value_ok": null,
+   "source": "",
+   "filled": false
+  },
+  {
+   "id": "hypotheses.csv",
+   "name": "hypotheses.csv",
+   "value": null,
+   "keys": [
+    "hypotheses.csv",
+    "hypotheses"
+   ],
+   "group": "입력 표",
+   "provenance": [],
+   "hypotheses": [],
+   "chain": [],
+   "grade": null,
+   "kind": "장부 · 시나리오 표",
+   "link": "없음",
+   "value_ok": null,
+   "source": "",
+   "filled": false
+  },
+  {
+   "id": "trend_signals.csv",
+   "name": "trend_signals.csv",
+   "value": null,
+   "keys": [
+    "trend_signals.csv",
+    "trend_signals"
+   ],
+   "group": "입력 표",
+   "provenance": [
+    "SNS 신호 가중"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△",
+   "kind": "가정",
+   "kinds": [
+    "가정"
+   ],
+   "source": "슬기님 인스타 수동 검수",
+   "link": "있음",
+   "value_ok": null,
+   "filled": false
+  },
+  {
+   "id": "../docs/data/ontology_inverse_followup_shh_20261013/객실_온톨로지참고계수_31일.csv",
+   "name": "객실_온톨로지참고계수_31일.csv",
+   "value": null,
+   "keys": [
+    "객실_온톨로지참고계수_31일.csv",
+    "객실_온톨로지참고계수_31일"
+   ],
+   "group": "입력 표",
+   "provenance": [
+    "객실 온톨로지 참고계수 (31일)"
+   ],
+   "hypotheses": [],
+   "chain": [],
+   "grade": "△",
+   "kind": "맞춤값",
+   "kinds": [
+    "맞춤값"
+   ],
+   "source": "한호님 온톨로지 역산 (판매 객실박 · 참고 수요 계수)",
+   "link": "있음",
+   "value_ok": null,
+   "filled": true
+  }
+ ],
+ "issues": [
+  {
+   "cat": "보류 · 다음 입력 버전",
+   "target": "가설 평일에는 비투숙(외부) 손님이 주말보다 훨씬 적다 (H",
+   "detail": "운영 표시 '모델 기본값 반영' · 등급 △ (온톨로지 평일 풀 + 현장 관찰 1회) — 가정(△)이 기본 모델에 들어가 있음",
+   "fix": "화면 · 문서에서 '외부 근거로 유지하는 모델 가정' 처럼 가정임을 함께 표기"
+  },
+  {
+   "cat": "보류 · 다음 입력 버전",
+   "target": "가설 H4b (평일 비투숙 0.5) · 표기",
+   "detail": "원천 가설표: 상태 '10/14 채택 (v4 기본) — 조정값 wd_day 0.5 (범위 0.…' · 운영 표시 '모델 기본값 반영'. 화면(운영 요약 · 10/16 v1.53): '가설 H4b · 외부 근거로 유지하는 모델 가정 · 범위 0.4~0.7'. 화면 문구는 원천의 '10/14 채택 (v4 기본)' 과 등급 '△' 를 함께 읽어 '기본값에 넣은 가정' 으로 해석한 것",
+   "fix": "가설표 csv 는 입력 버전(input_ver)에 들어가 있어 고치면 하루 계산 캐시를 다시 찍어야 함(restamp · 결과는 같음). 다음 입력 표 변경 때 운영 표시 열을 '모델 가정 (외부 근거로 유지)' 로 함께 바꾸기"
+  },
+  {
+   "cat": "버전 불일치 (정보)",
+   "target": "하루 계산 캐시",
+   "detail": "하루 계산 256개 중 181개가 예전 버전 — 화면은 '예전 기준' 으로 표시하고 비교 · 요약 · 어시스턴트는 지금 버전만 읽음",
+   "fix": "필요한 날만 다시 계산 (지우지 않음)"
+  }
+ ],
+ "kinds": {
+  "가정": 10,
+  "참조 모델 값": 14,
+  "맞춤값": 24,
+  "계산 방식 (근거 대상 아님)": 1,
+  "외부 근거": 5,
+  "장부 · 시나리오 표": 2
+ },
+ "kinds_links": {
+  "가정": 10,
+  "참조 모델 값": 14,
+  "맞춤값": 24,
+  "계산 방식 (근거 대상 아님)": 1,
+  "외부 근거": 5,
+  "장부 · 시나리오 표": 2
+ },
+ "kinds_unique": {
+  "가정": 9,
+  "참조 모델 값": 13,
+  "맞춤값": 22,
+  "계산 방식 (근거 대상 아님)": 1,
+  "꺼짐 (값 0)": 2,
+  "외부 근거": 3,
+  "혼합 (가정 · 외부 근거)": 1,
+  "혼합 (참조 모델 값 · 외부 근거)": 1,
+  "장부 · 시나리오 표": 2
+ },
+ "n_inputs": 54,
+ "n_links": 56,
+ "filled": [
+  "조정값 moegi_seats",
+  "조정값 turn_hold",
+  "조정값 no_busy_dwell",
+  "조정값 rooms_formula",
+  "generate.BREAKFAST_PKG",
+  "agent_v4.MIN_DWELL",
+  "persona_grid.csv",
+  "../docs/data/ontology_inverse_followup_shh_20261013/객실_온톨로지참고계수_31일.csv"
+ ],
+ "count_rule": "고유 입력 기준: 입력 하나에 근거 종류 하나 (출처표 줄이 여럿이면 '혼합', 값이 0 인 계수는 '꺼짐') · 합 = 입력 수. 근거 연결 기준: 입력과 이어진 출처표 줄의 근거 종류를 모두 셈 (혼합 입력은 두 번, 꺼진 계수는 출처표 묶음 줄의 종류로) · 합이 입력 수보다 클 수 있음. '출처표 보완' 은 누락이 해소됐다는 뜻이고 근거 수준이 올라갔다는 뜻이 아님",
+ "cats": {
+  "보류 · 다음 입력 버전": 2,
+  "버전 불일치 (정보)": 1
+ },
+ "days": {
+  "total": 256,
+  "current": 75,
+  "old": 181
+ },
+ "files": [
+  {
+   "file": "data_value.json",
+   "model_ver": "d2a34bfd",
+   "ok": true
+  },
+  {
+   "file": "factor_eval.json",
+   "model_ver": "d2a34bfd",
+   "ok": true
+  },
+  {
+   "file": "llm_pilot.json",
+   "model_ver": "d2a34bfd",
+   "ok": true
+  },
+  {
+   "file": "pref_eval.json",
+   "model_ver": "d2a34bfd",
+   "ok": true
+  },
+  {
+   "file": "wait_inv.json",
+   "model_ver": "d2a34bfd",
+   "ok": true
+  }
+ ],
+ "where": "이 검사를 돌린 컴퓨터의 캐시 · 결과 파일 기준",
+ "rule": "근거 종류: 외부 근거(공식 · 공개 자료 · 현장) · 맞춤값(평가하거나 비교하는 대상과 같은 자료 — 온톨로지 · 후기 46편 — 로 맞춘 값, 독립 근거 아님) · 가정(임시 · 추정) · 근거 없음. 출처표 한 줄을 기준으로 나누며, '○/△' 처럼 나뉜 줄은 앞쪽 근거를 따름."
+}

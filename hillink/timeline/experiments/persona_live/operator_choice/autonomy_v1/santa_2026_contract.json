@@ -1,0 +1,96 @@
+{
+  "version": "SANTA_2026_OFFICIAL_1104_V1",
+  "event_id": "SANTA_KIDS_VILLAGE_2026",
+  "title": "Santa Kids Village — The Winter Carnival",
+  "venue": "FOREST_PARK",
+  "dates": [
+    "2026-12-18",
+    "2026-12-25"
+  ],
+  "sessions": [
+    [
+      "15:20",
+      "16:30"
+    ],
+    [
+      "16:40",
+      "17:50"
+    ]
+  ],
+  "session_numbers": [
+    3,
+    4
+  ],
+  "sources": [
+    {
+      "key": "vista",
+      "file": "screencapture-walkerhill-vistawalkerhillseoul-Package-8866-2026-11-04-14_02_14.pdf",
+      "sha256": "0e5d093265952f4b1bb2acf47c1e2a920c1f66fda1c3ea94074b7119a4aa6d7e",
+      "pages": 3,
+      "url": "https://www.walkerhill.com/vistawalkerhillseoul/kr/Package/8866",
+      "captured_at": "2026-11-04T14:02:14+09:00",
+      "checked_at": "2026-11-04",
+      "verification": "USER_CAPTURE_VISUAL_AND_OFFICIAL_HTML"
+    },
+    {
+      "key": "grand",
+      "file": "screencapture-walkerhill-grandwalkerhillseoul-Package-8859-2026-11-04-14_01_21.pdf",
+      "sha256": "c8712ae593ff9dcdd01aba4b6ea788982d17da1b73b53d9986a361cda7ce328d",
+      "pages": 3,
+      "url": "https://www.walkerhill.com/grandwalkerhillseoul/Package/8859",
+      "captured_at": "2026-11-04T14:01:21+09:00",
+      "checked_at": "2026-11-04",
+      "verification": "USER_CAPTURE_VISUAL_AND_OFFICIAL_HTML"
+    }
+  ],
+  "base_party": {
+    "adults": 2,
+    "children": 1
+  },
+  "earlybird": {
+    "percent": 8,
+    "booking_dates": [
+      "2026-11-02",
+      "2026-11-08"
+    ],
+    "automatic": false
+  },
+  "price_scope": "OFFICIAL_STARTING_RATE_TAX_SERVICE_INCLUDED_NOT_DATE_QUOTE",
+  "extra_tickets": {
+    "prebook_child": 135000,
+    "prebook_max": 1,
+    "onsite_child": 150000,
+    "onsite_infant": 30000,
+    "onsite_adult": 30000,
+    "onsite_max_children_infants": 2,
+    "onsite_max_adults": 1,
+    "infant_months": [
+      12,
+      36
+    ],
+    "adult": "SECONDARY_SCHOOL_OR_OLDER",
+    "availability": "NOT_CONFIRMED",
+    "runtime": "HOLD_EXPLICIT_EXTRA_TICKET_AND_ROOM_OCCUPANCY_CONTRACT_REQUIRED"
+  },
+  "restaurant_discount": {
+    "percent": 10,
+    "scope": "HOTEL_RESTAURANTS",
+    "stacking": "UNCONFIRMED_DO_NOT_STACK",
+    "runtime": "HOLD_SKU_SCOPE_AND_STACKING_VERIFICATION"
+  },
+  "weather": "CAROUSEL_MAY_BE_RESTRICTED_NOT_FULL_EVENT_CLOSURE",
+  "live_carol_dates": [
+    "2026-12-18",
+    "2026-12-19",
+    "2026-12-20",
+    "2026-12-24",
+    "2026-12-25"
+  ],
+  "unconfirmed": [
+    "date-specific room quote",
+    "extra room occupant tariff",
+    "actual booking and inventory",
+    "extra ticket availability",
+    "restaurant benefit SKU scope and stacking"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "method_version": "author_method_v4.1-deidentified-pilot",
+  "result_sha256": "f01a5e01119c20422e43fed671b2031f2ec96ae1a3d2df9363b502b9b04524e8",
+  "method_file_sha256": {
+    "EXTRACTION_PROMPT.md": "9bb9eb147b45a0c3a810314022b01afb942c2b89a6e345d2a82bb31f3518cd3e",
+    "__init__.py": "4c516996b86ef4b0545beb2a9bac22152469d92f407ae632ea68ab42c90ec26a",
+    "__main__.py": "731c0365fb30e820e3b181dca39398f7f19dae50ddb4eb1c39ecb9e4a05e5be6",
+    "contract.py": "27487eda58ca50310bc16e00303eb7898fe9e4f00d6ff809fb510472a921b52c",
+    "corpus.py": "edab0c7ec9fea4ee1b724758b19a8b77933ffb4d07beb1cccdc2830780934b5e",
+    "extraction.py": "963dc0dcc225efcc222a6fff20efc98c60c0b7e13323fc4103be4a562de2c63d",
+    "intake.py": "e18326f2ee408f6b314f3e131b9582051d700482ebcc7b9119c54294964a1b21",
+    "link_proposals.py": "68ee3391ed0bd3f3085611b71b8da7145a4df49dd4288b72ce3e1c9181c7e109",
+    "linking.py": "e49eff83569a21250115809900cbb6c694f382043feeaa5d035f9d2573754396",
+    "method.py": "4d84c457443101a194de9d19727b0dd3638c5fee52f6409322998c637576ed20",
+    "pilot.py": "a281b226934cb6fadd8d97e4637a66ff77613fead199fe03b92db802ddea8b6b",
+    "policy.json": "142fdc84bba9e4751cf843cb8496c61eba838d13fec844aac748830098829a1a",
+    "quality.py": "09ce8048a7be40fa2171bd845d01aa7cbff49d392529b9c98f1fa68223097d9b"
+  },
+  "source_content_included": false,
+  "raw_source_hashes_included": false,
+  "extraction_mode": "analyst_source_checks_plus_separate_lexical_retrieval",
+  "separate_model_calls": 0,
+  "product_api_calls": 0,
+  "human_review": "pending",
+  "demo_approved": false,
+  "local_processing_seconds_excluding_reading_annotation_and_review": 0.318029,
+  "reproduction_requires_restricted_corpus_and_annotation_registry": true
+}

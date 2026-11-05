@@ -1,0 +1,184 @@
+{
+ "_about": "CL-1024-18 운영 실험 지도 매핑표 — Codex 상품 ID ↔ 업장 ID ↔ 지도 객체 ID ↔ 표시 좌표. use_on_map=true 인 행만 지도에 그린다. 화면은 map.js LOC 와 이 표의 좌표가 같을 때만 쓴다(다르면 그리지 않음).",
+ "map_js_sha256": "b702ada9bbade0d60b0796d7aeaa0585f136a3dfc0e99ce798d1989dbe0274e5",
+ "catalog_version": "cd1024-15-isolated-v1",
+ "coord_space": "map.js 화면 좌표 1000 × 643 (원본 1564 × 1006 ÷ 1.564)",
+ "rows": [
+  {
+   "offer_id": "PH_COUPLE_SET",
+   "offer_name": "피자힐 커플 세트",
+   "venue_id": "PIZZA_HILL",
+   "engine_venue_id": null,
+   "map_loc_id": "PIZZA_HILL",
+   "map_building": null,
+   "coord_source_image": [
+    352,
+    402
+   ],
+   "coord_display": [
+    225,
+    257
+   ],
+   "status": "ID_MATCH_NOT_SHOWN",
+   "use_on_map": false,
+   "evidence": [
+    "카탈로그 venue_id PIZZA_HILL = map.js LOC.PIZZA_HILL"
+   ],
+   "coord_note": "이번 실험(10/27 18:30 조건)에서 점수 비교 밖이라 지도에 그리지 않음 · 조건이 바뀌어 적격이 되면 엔진 venue 대조 뒤 사용"
+  },
+  {
+   "offer_id": "RS_CLUB_SANDWICH",
+   "offer_name": "룸서비스 클럽 샌드위치",
+   "venue_id": "ROOM_MEAL",
+   "engine_venue_id": null,
+   "map_loc_id": null,
+   "map_building": null,
+   "coord_source_image": null,
+   "coord_display": null,
+   "status": "UNMAPPED",
+   "use_on_map": false,
+   "evidence": [
+    "map.js 에 ROOM_MEAL 위치 없음(객실 식사 = 고객 객실 · 단일 지점 아님)"
+   ],
+   "coord_note": "추정 좌표로 연결하지 않음"
+  },
+  {
+   "offer_id": "MYONGWOLGWAN",
+   "offer_name": "명월관 저녁 대표 오퍼",
+   "venue_id": "MYONGWOLGWAN",
+   "engine_venue_id": null,
+   "map_loc_id": "MYONGWOLGWAN",
+   "map_building": null,
+   "coord_source_image": [
+    222,
+    626
+   ],
+   "coord_display": [
+    142,
+    400
+   ],
+   "status": "ID_MATCH_NOT_SHOWN",
+   "use_on_map": false,
+   "evidence": [
+    "카탈로그 venue_id MYONGWOLGWAN = map.js LOC.MYONGWOLGWAN"
+   ],
+   "coord_note": "이번 실험(10/27 18:30 조건)에서 점수 비교 밖이라 지도에 그리지 않음 · 조건이 바뀌어 적격이 되면 엔진 venue 대조 뒤 사용"
+  },
+  {
+   "offer_id": "ONDAL",
+   "offer_name": "온달 계절 저녁 코스",
+   "venue_id": "ONDAL",
+   "engine_venue_id": null,
+   "map_loc_id": "ONDAL",
+   "map_building": "GRAND",
+   "coord_source_image": [
+    786,
+    640
+   ],
+   "coord_display": [
+    503,
+    409
+   ],
+   "status": "ID_MATCH_NOT_SHOWN",
+   "use_on_map": false,
+   "evidence": [
+    "카탈로그 venue_id ONDAL = map.js LOC.ONDAL"
+   ],
+   "coord_note": "이번 실험(10/27 18:30 조건)에서 점수 비교 밖이라 지도에 그리지 않음 · 조건이 바뀌어 적격이 되면 엔진 venue 대조 뒤 사용"
+  },
+  {
+   "offer_id": "GEUMRYONG",
+   "offer_name": "금룡 추미진향 코스 (주중 Hall 프로모션)",
+   "venue_id": "GEUMRYONG",
+   "engine_venue_id": "GEUMRYONG",
+   "map_loc_id": "GEUMRYONG",
+   "map_building": "GRAND",
+   "coord_source_image": [
+    802,
+    650
+   ],
+   "coord_display": [
+    513,
+    416
+   ],
+   "status": "VERIFIED",
+   "use_on_map": true,
+   "evidence": [
+    "CD-15 offer_catalog.json: offer GEUMRYONG → venue_id GEUMRYONG",
+    "동결 엔진 world.py: offer(\"GEUMRYONG\", …, venue \"GEUMRYONG\") — CD-15 결과 chosen.venue_id 와 같음",
+    "지도 map.js LOC.GEUMRYONG = [802, 650](원본 그림 좌표) · BLDG.GRAND.locs 포함",
+    "engine.py SEAT_LOC / ONTO_LOC: 금룡 → GEUMRYONG"
+   ],
+   "coord_note": "건물 안 업장 대표점(지도 그림 좌표 · 실측 위치 아님). map.js 주석: 본관 안 업장은 그랜드 본관 자리"
+  },
+  {
+   "offer_id": "THE_BUFFET",
+   "offer_name": "더뷔페 저녁 성인",
+   "venue_id": "THE_BUFFET",
+   "engine_venue_id": "THE_BUFFET",
+   "map_loc_id": "THE_BUFFET",
+   "map_building": "VISTA",
+   "coord_source_image": [
+    692,
+    790
+   ],
+   "coord_display": [
+    442,
+    505
+   ],
+   "status": "VERIFIED",
+   "use_on_map": true,
+   "evidence": [
+    "CD-15 offer_catalog.json: offer THE_BUFFET → venue_id THE_BUFFET",
+    "동결 엔진 world.py: offer(\"THE_BUFFET\", …, venue \"THE_BUFFET\") — CD-15 결과 chosen.venue_id 와 같음",
+    "지도 map.js LOC.THE_BUFFET = [692, 790](원본 그림 좌표) · BLDG.VISTA.locs 포함",
+    "engine.py SEAT_LOC / ONTO_LOC: 더뷔페 → THE_BUFFET"
+   ],
+   "coord_note": "비스타 건물 안 업장 대표점(지도 그림 좌표 · 실측 위치 아님)"
+  },
+  {
+   "offer_id": "MOEGI_DINNER",
+   "offer_name": "모에기 저녁 상품",
+   "venue_id": "MOEGI",
+   "engine_venue_id": null,
+   "map_loc_id": "MOEGI",
+   "map_building": "VISTA",
+   "coord_source_image": [
+    712,
+    770
+   ],
+   "coord_display": [
+    455,
+    492
+   ],
+   "status": "ID_MATCH_NOT_SHOWN",
+   "use_on_map": false,
+   "evidence": [
+    "카탈로그 venue_id MOEGI = map.js LOC.MOEGI"
+   ],
+   "coord_note": "이번 실험(10/27 18:30 조건)에서 점수 비교 밖이라 지도에 그리지 않음 · 조건이 바뀌어 적격이 되면 엔진 venue 대조 뒤 사용"
+  },
+  {
+   "offer_id": "LE_PASSAGE_SIMPLE",
+   "offer_name": "르파사쥬 간단식",
+   "venue_id": "LE_PASSAGE",
+   "engine_venue_id": null,
+   "map_loc_id": "LE_PASSAGE",
+   "map_building": "GRAND",
+   "coord_source_image": [
+    742,
+    692
+   ],
+   "coord_display": [
+    474,
+    442
+   ],
+   "status": "ID_MATCH_NOT_SHOWN",
+   "use_on_map": false,
+   "evidence": [
+    "카탈로그 venue_id LE_PASSAGE = map.js LOC.LE_PASSAGE"
+   ],
+   "coord_note": "이번 실험(10/27 18:30 조건)에서 점수 비교 밖이라 지도에 그리지 않음 · 조건이 바뀌어 적격이 되면 엔진 venue 대조 뒤 사용"
+  }
+ ]
+}

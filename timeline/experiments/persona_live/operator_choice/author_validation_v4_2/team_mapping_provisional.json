@@ -1,0 +1,25 @@
+{
+  "version": "v4.2-team-mapping-provisional-0.1",
+  "status": "provisional",
+  "source_prompt_sha256": null,
+  "source_form_ref": null,
+  "team_form_received": false,
+  "note": "Canonical field preview only. The requested attachment and formal team prompt/form were not accessible. Do not claim a verified team contract.",
+  "fields": {
+    "fact_id": "fact_id",
+    "experience_key": "experience_key",
+    "feature_key": "feature_key",
+    "detail": "detail",
+    "anchors": "anchors",
+    "kind": "kind",
+    "dimension": "dimension",
+    "actor": "actor",
+    "time_scope": "time_scope",
+    "action_stage": "action_stage",
+    "polarity": "polarity",
+    "confidence": "confidence",
+    "common_dimensions": "common_dimensions",
+    "context_scope": "context_scope",
+    "purchase_context": "purchase_context"
+  }
+}

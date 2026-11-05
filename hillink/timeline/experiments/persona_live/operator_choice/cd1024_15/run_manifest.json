@@ -1,0 +1,65 @@
+{
+  "work_id": "CD-1024-15",
+  "status": "isolated_local_research_interface",
+  "engine_head": "0939cb89f9217fd521d2079186c2359b876937d4",
+  "product_reference_head": "325ba419841774e47d07572fd8ca18127beba458",
+  "product_worktree_status": "pre-existing agent.js and library.js modifications observed and preserved",
+  "catalog_version": "cd1024-15-isolated-v1",
+  "cd14_catalog_sha256": "25c35c049e529fb4e41b0f020c4b229c176ccea6aeb24cbe8d76a02e9e5bbb07",
+  "cd15_catalog_sha256": "fcb8e99688fc6e772f5aa698dd647974a34d4c9d7a54fb900c259ec67310eb45",
+  "source_code_sha256": {
+    "engine.py": "5ca7d56c43c7f1fbb44ba073754ad05a51e38839865a2e9ab9c69a8ebce40671",
+    "turn_candidate.py": "ae352b6cf87d792baa701fbb1672bc7a9256dbbb3e62b34751be37582255ceab",
+    "turn_view.py": "ed61695c809d013be8cfcfefec39df35653f2a2c6e3d2388a617beef161c6afc",
+    "rbase_profiles.json": "41342fe9f70a724a1da61fb5afc194f5dc66a99641bfb9c39910417fc52b0390",
+    "extension_profiles.json": "1e94a925e7e4e8520f4b194495bd822ec19de4fa1e277a82ac297730451e3739",
+    "local_extension_profiles.json": "30cf9330ae08b4a2c72fa29f9283fa743ad0f9efbb53512793167848211e2be5"
+  },
+  "four_discount_runs": [
+    {
+      "discount_krw_per_person": 0,
+      "scenario_input_sha256": "cc16dbcea9bd614e197f99a3ab591b6a7742445c578689764b98d24aeb316804",
+      "profile_input_sha256": "8e2dc32b85c61141bf9983888b314c7947def2d06494f5da42575f163751cfb5",
+      "run_status": "COMPLETED"
+    },
+    {
+      "discount_krw_per_person": 10000,
+      "scenario_input_sha256": "a358808ea7b432a29836f14f8888b59fa49b776e834e6bdcc5d9c4583aa1ac38",
+      "profile_input_sha256": "8e2dc32b85c61141bf9983888b314c7947def2d06494f5da42575f163751cfb5",
+      "run_status": "COMPLETED"
+    },
+    {
+      "discount_krw_per_person": 20000,
+      "scenario_input_sha256": "4180b20a3b3405a129895de954563686d3a0e1ef7a55a07d2c5c4e53f6c03570",
+      "profile_input_sha256": "8e2dc32b85c61141bf9983888b314c7947def2d06494f5da42575f163751cfb5",
+      "run_status": "COMPLETED"
+    },
+    {
+      "discount_krw_per_person": 40000,
+      "scenario_input_sha256": "6599baca07760a6cd77049ed81676273c8cc2244243b79e91840a449a8031f40",
+      "profile_input_sha256": "8e2dc32b85c61141bf9983888b314c7947def2d06494f5da42575f163751cfb5",
+      "run_status": "COMPLETED"
+    }
+  ],
+  "expected_selected_counts": {
+    "0": {
+      "GEUMRYONG": 11,
+      "THE_BUFFET": 0
+    },
+    "10000": {
+      "GEUMRYONG": 11,
+      "THE_BUFFET": 0
+    },
+    "20000": {
+      "GEUMRYONG": 9,
+      "THE_BUFFET": 2
+    },
+    "40000": {
+      "GEUMRYONG": 8,
+      "THE_BUFFET": 3
+    }
+  },
+  "tests_passed": 16,
+  "private_profile_text_in_result_json": false,
+  "gui_api_deployment_or_live_reservation_check": "NOT_RUN"
+}

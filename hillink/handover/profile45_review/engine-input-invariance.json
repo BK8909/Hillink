@@ -1,0 +1,317 @@
+{
+  "public_profile_inputs_identical": true,
+  "public_profile_count": 11,
+  "public_profile_sha": "cf1077c00a423d8c33373cd105e564de2f40dba6a352adfc1810ccf1d131d113",
+  "registered_private_inputs": [
+    {
+      "customer": "A06",
+      "before_sha": "6b01d459e9703bce5c16f4102d5d870be48e143dfe5f479edb92f33fa5d9ef5e",
+      "after_sha": "06c42fe473cc9894dc410dc26fc872ebabc6b47dac049a83c3b943daa82c9e5d",
+      "identical": false,
+      "facts": 11,
+      "different_fields": [
+        "lineage"
+      ],
+      "engine_equal": true,
+      "customer_equal": true,
+      "facets_equal": true,
+      "input_sha_before": "81eb3f4ebb1b4a909fbb9b5b0283dcf1cc32848e485384cd7e8ec6a957f7fe08",
+      "input_sha_after": "81eb3f4ebb1b4a909fbb9b5b0283dcf1cc32848e485384cd7e8ec6a957f7fe08",
+      "lineage_diff_keys": [
+        "registry_sha256"
+      ]
+    },
+    {
+      "customer": "A12",
+      "before_sha": "9f6a7badcd32d898b00127b730f58563228f619c1522e87ddc8afc768bca0ec7",
+      "after_sha": "99240c5510f38582ba5d2e00479532600e89e98adffefddbe95f4c3754f99198",
+      "identical": false,
+      "facts": 24,
+      "different_fields": [
+        "lineage"
+      ],
+      "engine_equal": true,
+      "customer_equal": true,
+      "facets_equal": true,
+      "input_sha_before": "ab1ee528f3852f76ef53b413cfe63feedd64de2cacd19051e0c61f53222bb145",
+      "input_sha_after": "ab1ee528f3852f76ef53b413cfe63feedd64de2cacd19051e0c61f53222bb145",
+      "lineage_diff_keys": [
+        "registry_sha256"
+      ]
+    },
+    {
+      "customer": "A19",
+      "before_sha": "58f07cbb9529e7ddc4e6d56140f094ce7f32abd6a1ea1679b92d0e07efca94a7",
+      "after_sha": "12fafcdb00a527c3224af7c9dcfc6f1cd217cfb61c2bcaaab768d04191e5e8b4",
+      "identical": false,
+      "facts": 15,
+      "different_fields": [
+        "lineage"
+      ],
+      "engine_equal": true,
+      "customer_equal": true,
+      "facets_equal": true,
+      "input_sha_before": "532967059a20ce70bac7d7843e36f296329a601cd951b5aeb2cc15e9a7de673b",
+      "input_sha_after": "532967059a20ce70bac7d7843e36f296329a601cd951b5aeb2cc15e9a7de673b",
+      "lineage_diff_keys": [
+        "registry_sha256"
+      ]
+    },
+    {
+      "customer": "A26",
+      "before_sha": "df722636a69873ce06296da4ec2d439b66c6ba7cf34de9ea69e18469e188b413",
+      "after_sha": "d7c4fe78b56d79e07f9b000c93c5b79b61f0514b2e5fca4d7390b91df6759080",
+      "identical": false,
+      "facts": 13,
+      "different_fields": [
+        "lineage"
+      ],
+      "engine_equal": true,
+      "customer_equal": true,
+      "facets_equal": true,
+      "input_sha_before": "e8cf45d37631837f7de1fa0c30f97661826f151fc3f73bc1d05f4f372d2d4d97",
+      "input_sha_after": "e8cf45d37631837f7de1fa0c30f97661826f151fc3f73bc1d05f4f372d2d4d97",
+      "lineage_diff_keys": [
+        "registry_sha256"
+      ]
+    },
+    {
+      "customer": "N03",
+      "before_sha": "a647d9786bf12408f772e8441336cd9653ec5b10d5feab8e3b2355be7178d834",
+      "after_sha": "7e5a110c832900644b7d5413cb8ec395ffb35dea8f282ba2c8e5691f4131ef41",
+      "identical": false,
+      "facts": 15,
+      "different_fields": [
+        "lineage"
+      ],
+      "engine_equal": true,
+      "customer_equal": true,
+      "facets_equal": true,
+      "input_sha_before": "a72178775a9624dc2ec11d46a8fbb1f3316e78afe84f073c61e6fd825906de19",
+      "input_sha_after": "a72178775a9624dc2ec11d46a8fbb1f3316e78afe84f073c61e6fd825906de19",
+      "lineage_diff_keys": [
+        "registry_sha256"
+      ]
+    },
+    {
+      "customer": "N10",
+      "before_sha": "8f38537c6509484b7d521c007b4fa7a0f629c4ac665df88d152f084939e2172a",
+      "after_sha": "28bb4af344b8813e399978cc4c455023d67bb46ecc72305e24361d95fd0fa5c5",
+      "identical": false,
+      "facts": 29,
+      "different_fields": [
+        "lineage"
+      ],
+      "engine_equal": true,
+      "customer_equal": true,
+      "facets_equal": true,
+      "input_sha_before": "0f78698cf92392fa552df68b1ac188275c8a7019f6c10dad520cfe4687f9e211",
+      "input_sha_after": "0f78698cf92392fa552df68b1ac188275c8a7019f6c10dad520cfe4687f9e211",
+      "lineage_diff_keys": [
+        "registry_sha256"
+      ]
+    },
+    {
+      "customer": "N13",
+      "before_sha": "126d79bef4bbd9e4b7862a5ca30a914b0bd9bf99022d02e680a8f1ef8d37b895",
+      "after_sha": "2ec991046c91d37605499201e4bc449ff38c00403bd8f3477d211cb8d9e93b7d",
+      "identical": false,
+      "facts": 16,
+      "different_fields": [
+        "lineage"
+      ],
+      "engine_equal": true,
+      "customer_equal": true,
+      "facets_equal": true,
+      "input_sha_before": "52df5526a08d6e99afb990907c40809c2cff08800a115bf4fe28a93c0b1b9d8b",
+      "input_sha_after": "52df5526a08d6e99afb990907c40809c2cff08800a115bf4fe28a93c0b1b9d8b",
+      "lineage_diff_keys": [
+        "registry_sha256"
+      ]
+    },
+    {
+      "customer": "N15",
+      "before_sha": "2b8ae13dbf4b15adf49e24704d84b29c7932c7a1d4c432ba5c84719f4a43bd3a",
+      "after_sha": "4b512c51473ba929e431ca5d190d226cd63540de196e7b61e61463409ef07f9d",
+      "identical": false,
+      "facts": 14,
+      "different_fields": [
+        "lineage"
+      ],
+      "engine_equal": true,
+      "customer_equal": true,
+      "facets_equal": true,
+      "input_sha_before": "5b8bbcbe43845f0dfeb9651a1abc3d07a48a876af0a191dc0648faca394c15da",
+      "input_sha_after": "5b8bbcbe43845f0dfeb9651a1abc3d07a48a876af0a191dc0648faca394c15da",
+      "lineage_diff_keys": [
+        "registry_sha256"
+      ]
+    },
+    {
+      "customer": "N23",
+      "before_sha": "70044f261bba4f50e3dbee9013a85d06f1f218cbc998d345430b8e4527392cb0",
+      "after_sha": "51d70475191337a436394a4a2c0aa87c768788f0de25f53b5db3c6356324e6e8",
+      "identical": false,
+      "facts": 16,
+      "different_fields": [
+        "lineage"
+      ],
+      "engine_equal": true,
+      "customer_equal": true,
+      "facets_equal": true,
+      "input_sha_before": "a6d66fbdb1452e5ea623a89d1844a032f215a6c394017d858e2277c6e24d5060",
+      "input_sha_after": "a6d66fbdb1452e5ea623a89d1844a032f215a6c394017d858e2277c6e24d5060",
+      "lineage_diff_keys": [
+        "registry_sha256"
+      ]
+    },
+    {
+      "customer": "WH-00131",
+      "before_sha": "42bd6d04150209eecefaed5b1e64ce136cf508c902d44786e74535255a2f47dc",
+      "after_sha": "8d6c1f5e7296ee297dcc32f695d0d4a1032e89327138ae6f229921e919a9f53d",
+      "identical": false,
+      "facts": 62,
+      "different_fields": [
+        "lineage"
+      ],
+      "engine_equal": true,
+      "customer_equal": true,
+      "facets_equal": true,
+      "input_sha_before": "f77eb4cb7d340fd233bfb4dce7b9f3bccfdfc021392f3ecb049a1f46720c4ebc",
+      "input_sha_after": "f77eb4cb7d340fd233bfb4dce7b9f3bccfdfc021392f3ecb049a1f46720c4ebc",
+      "lineage_diff_keys": [
+        "registry_sha256"
+      ]
+    },
+    {
+      "customer": "WH-00265",
+      "before_sha": "e4540d8063702f084781022bd54ce6aa99f05d6bf2924dfc5251759d8e906c74",
+      "after_sha": "7bb4b5156a3110ce3c1f01dce6bb52f5bb8fdb16430ebc3bf1ee7ffac8d51c8d",
+      "identical": false,
+      "facts": 47,
+      "different_fields": [
+        "lineage"
+      ],
+      "engine_equal": true,
+      "customer_equal": true,
+      "facets_equal": true,
+      "input_sha_before": "efff350eb3895b4c88e9cf5cc610fc80120c8383c97d41bafb599b3274716f7b",
+      "input_sha_after": "efff350eb3895b4c88e9cf5cc610fc80120c8383c97d41bafb599b3274716f7b",
+      "lineage_diff_keys": [
+        "registry_sha256"
+      ]
+    },
+    {
+      "customer": "WH-00276",
+      "before_sha": "120829d25008a54491089b5e79c52881b77d3ecab373b32e0772ff25b769f99c",
+      "after_sha": "23cd4deed99c0a5800b7a05bf05425b4cf2942b6428377ee90aef637057e5995",
+      "identical": false,
+      "facts": 36,
+      "different_fields": [
+        "lineage"
+      ],
+      "engine_equal": true,
+      "customer_equal": true,
+      "facets_equal": true,
+      "input_sha_before": "4381fb2a7d872a31182ff2459931b1e807b98c5bcb233d53dc039abe296242f1",
+      "input_sha_after": "4381fb2a7d872a31182ff2459931b1e807b98c5bcb233d53dc039abe296242f1",
+      "lineage_diff_keys": [
+        "registry_sha256"
+      ]
+    },
+    {
+      "customer": "WH-00386",
+      "before_sha": "765e97b816972744ac10fe6ecde2d22148fdccf7581c097a330931a277856009",
+      "after_sha": "b2ac27a4b25a25113b5c9410b5b30eb50d223597b4a6a744575744d18562bbdb",
+      "identical": false,
+      "facts": 37,
+      "different_fields": [
+        "lineage"
+      ],
+      "engine_equal": true,
+      "customer_equal": true,
+      "facets_equal": true,
+      "input_sha_before": "155ebcf9bc5c134ef3b75d5f232929c00da5f326ac2c460ed9aa6826cf710770",
+      "input_sha_after": "155ebcf9bc5c134ef3b75d5f232929c00da5f326ac2c460ed9aa6826cf710770",
+      "lineage_diff_keys": [
+        "registry_sha256"
+      ]
+    },
+    {
+      "customer": "WH-00392",
+      "before_sha": "30b98b85fb670d086d47b685a7bb001c5a18ba7d30e233e06daf8118988f2dd2",
+      "after_sha": "e993132a3ff6e95416e2a259dfa5a8a314280f2e5c2f8c1eb0f570582573c15b",
+      "identical": false,
+      "facts": 57,
+      "different_fields": [
+        "lineage"
+      ],
+      "engine_equal": true,
+      "customer_equal": true,
+      "facets_equal": true,
+      "input_sha_before": "ea1e5f8aa3c353763d3f4f3bdd371c7d34c9d4082994212a4e731374a3b07f1b",
+      "input_sha_after": "ea1e5f8aa3c353763d3f4f3bdd371c7d34c9d4082994212a4e731374a3b07f1b",
+      "lineage_diff_keys": [
+        "registry_sha256"
+      ]
+    },
+    {
+      "customer": "WH-00410",
+      "before_sha": "c8f4e3476ed8a427d2effeeecb9710035912299fb98a22b0d7c1057a0a4b74f6",
+      "after_sha": "134e6eb70d7a5229fa3bcdd33204b7a81fea727a6ae3c4ccf377c3e4e1c0cb24",
+      "identical": false,
+      "facts": 48,
+      "different_fields": [
+        "lineage"
+      ],
+      "engine_equal": true,
+      "customer_equal": true,
+      "facets_equal": true,
+      "input_sha_before": "b2ba9cd9d4488228a1d6fddb8109e3406afe6aa0b5f4db9ad871c2348a15a0c3",
+      "input_sha_after": "b2ba9cd9d4488228a1d6fddb8109e3406afe6aa0b5f4db9ad871c2348a15a0c3",
+      "lineage_diff_keys": [
+        "registry_sha256"
+      ]
+    },
+    {
+      "customer": "WH-00491",
+      "before_sha": "e1a06a1c84da90385e4ceb245b093c179497c83a6bb999908452d32fe103d6cb",
+      "after_sha": "f80a0e326b3ad2b8a3e306dee61b71a74e61daee284fffd58ab8bf6c3f2b4743",
+      "identical": false,
+      "facts": 31,
+      "different_fields": [
+        "lineage"
+      ],
+      "engine_equal": true,
+      "customer_equal": true,
+      "facets_equal": true,
+      "input_sha_before": "b2fc37d57b35837a9fe974a0b521f5f904c9637d9e676f328e32cb81bb94c48f",
+      "input_sha_after": "b2fc37d57b35837a9fe974a0b521f5f904c9637d9e676f328e32cb81bb94c48f",
+      "lineage_diff_keys": [
+        "registry_sha256"
+      ]
+    },
+    {
+      "customer": "WH-00532",
+      "before_sha": "d274432f7f97d5713129859d788e3b73daa2cb7a376d9d9864e28e59a34637b0",
+      "after_sha": "bc7e5fe6a7f8d352829fa841822390b36b234f43d7f23ae4a4c51cff0e4d1ef4",
+      "identical": false,
+      "facts": 70,
+      "different_fields": [
+        "lineage"
+      ],
+      "engine_equal": true,
+      "customer_equal": true,
+      "facets_equal": true,
+      "input_sha_before": "e407c0a1a2fc73c0d4d703310ee8a2dbc39dbc84ac17e29816a7aacdf0eefafb",
+      "input_sha_after": "e407c0a1a2fc73c0d4d703310ee8a2dbc39dbc84ac17e29816a7aacdf0eefafb",
+      "lineage_diff_keys": [
+        "registry_sha256"
+      ]
+    }
+  ],
+  "unchanged_archive_sha": "c840711fc37f4a8345ae752115db113b43ed41615f8d5281373cbc14b9a69c66",
+  "all_identical": false,
+  "all_engine_inputs_identical": true,
+  "registry_note": "Registry SHA includes restored absolute cache paths; per-customer profile/library/source SHAs and complete engine/facet inputs must still match."
+}

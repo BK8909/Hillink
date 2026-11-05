@@ -1,0 +1,629 @@
+[
+  {
+    "customer": "A12",
+    "request": {
+      "personas": [
+        "A12"
+      ],
+      "duration": "stay_1",
+      "event_mode": "none",
+      "seed": 73,
+      "start_date": "2026-11-04",
+      "include_ledger": true,
+      "behavior_engine": "m4_c01",
+      "catalog_policy": "C01_HOTEL_CATALOG_V1",
+      "visit_conditions": {
+        "A12": {
+          "building": "GRAND",
+          "party_size": 3,
+          "party_composition": {
+            "adult_count": 2,
+            "children": [
+              {
+                "age_months": 12,
+                "school_stage": "preschool"
+              }
+            ]
+          },
+          "breakfast_plan": "breakfast_included"
+        }
+      },
+      "hybrid_policy": "LLM_AUTONOMOUS_CUSTOMER_V16",
+      "judgment_mode": "replay"
+    },
+    "judgment": {
+      "requested": "replay",
+      "actual": "replay",
+      "policy": "LLM_AUTONOMOUS_CUSTOMER_V16",
+      "customers": {
+        "A12": {
+          "decisions": 8,
+          "origins": [
+            "CACHE_REPLAY",
+            "CACHE_REPLAY",
+            "CACHE_REPLAY",
+            "CACHE_REPLAY",
+            "CACHE_REPLAY",
+            "CACHE_REPLAY",
+            "CACHE_REPLAY",
+            "CACHE_REPLAY"
+          ],
+          "holds": []
+        }
+      },
+      "current_paid_calls": 0,
+      "human_approval": false
+    },
+    "run": "8452dd90c9957895e3d50fdd1fcacee2bdc4dd2c634c822f601f4b7b75c08b9c",
+    "checks": {
+      "receipts_equal_L4_L3_L2_L1": true,
+      "duplicate_transactions": null,
+      "duplicate_simulation_rows": 0,
+      "net_revenue_calculated": false,
+      "tax_status": "UNKNOWN",
+      "actual_pos_transactions": null,
+      "actual_pos_data_supplied": false,
+      "day_totals_equal_visit_total": true,
+      "room_nights_equal_duration": true,
+      "date_rows_unique": true,
+      "visit_id_attached": true
+    },
+    "ledger_sha": "f07da8ba886fc5c4162981a40d22c3bebe5786d84b46148d367dca0a83ab78b3",
+    "decisions": [
+      [
+        "041678d209b4f26a9eb52999c74ddcb4d17e6675f6d4294926ce8e147070c24f",
+        {
+          "action_id": "meal:THE_PAVILION",
+          "items": [
+            {
+              "sku_id": "HC-PDF-THE_PAVILION-CLUB-SANDWICH",
+              "quantity": 1
+            },
+            {
+              "sku_id": "HC-PDF-THE_PAVILION-BURGER",
+              "quantity": 1
+            }
+          ],
+          "order_total_krw": 85000,
+          "decision_summary": "도착 전 식사와 현재 허기는 확인되지 않아 배고픔을 단정하지 않는다. 다만 지금 이용 가능한 식당에서 두 성인용 메인을 주문해, 늦은 식사까지 기다리지 않고 체크인 준비를 이어갈 수 있는 선택으로 본다.",
+          "supporting_fact_ids": [],
+          "counterevidence_fact_ids": [],
+          "assumptions": [
+            "두 성인은 각 메인을 나누어 먹는 것이 아니라 하나씩 먹는다고 가정한다.",
+            "12개월 아이는 동행 성인의 음식 일부를 조금 나누어 먹는다고 가정하며, 별도 아이 식사나 실제 섭취량은 확인되지 않았다.",
+            "메뉴 가격은 제공된 참고 가격이며 실제 판매 조건은 확인되지 않았다."
+          ],
+          "sharing_plan": "클럽샌드위치 1개와 버거 1개를 성인 2명이 각각 중심으로 먹고, 아이가 먹을 수 있는지는 식재료·상태가 확인되지 않아 소량 공유 가정만 둔다.",
+          "schedule_impact": "14:45 출발, 이동 10분 후 14:55 도착해 14:55–15:40 식사한다. 대기 시간은 없다. 정원 산책이나 17:30 식사 대기보다 일찍 마쳐 체크인 준비를 이어가기 쉽다.",
+          "why_not_other_plans": "피자힐은 과거 이용 기록이 있지만 식사 시간이 14:57–16:27로 더 길다. 명월관은 14:55–17:18 로비 대기 후 17:30–19:00 식사라 지금 선택하기에는 지연이 크다. 산책은 식사를 해결하지 않는다.",
+          "pending_intentions": [],
+          "current_need_assessment": {
+            "state": "UNCERTAIN",
+            "reason": "도착 전 섭취와 현재 허기 보고가 없고, 식사 기록이 없다는 사실만으로 굶었다고 볼 수 없다. 현재 시각에 이용 가능한 식사 선택이 있다는 점을 고려하되 필요 상태는 불확실하다고 판단한다."
+          },
+          "meal_assessment": {
+            "kind": "FULL_MEAL",
+            "modeled_diners": 3,
+            "intake_assumption": "주문량을 실제 섭취량으로 보지 않는다. 성인 2명이 메인 하나씩 먹고 아이는 일부를 소량 나눌 수 있다고 가정한다.",
+            "quantity_reason": "성인용 메인 2개를 주문한다. 아이의 필요량이나 실제 섭취가 확인되지 않아 아이 몫을 별도 성인 분량으로 추가하지 않는다.",
+            "expected_satiety": "UNCERTAIN",
+            "uncertainties": [
+              "도착 전 식사와 현재 허기",
+              "아이의 식사 가능 여부 및 실제 섭취량",
+              "메뉴의 실제 제공량과 현재 판매 조건"
+            ]
+          }
+        }
+      ],
+      [
+        "7a7d500e0132b208ad61522d70dcfd4283c4aee85fb297bb0a7e8a8b86dff34d",
+        {
+          "action_id": "room_rest",
+          "items": [],
+          "order_total_krw": 0,
+          "decision_summary": "15:40에 식사 일정이 끝난 지 61분이고 실제 섭취량과 현재 허기는 미확인이다. 체크인과 짐 정리 직후이므로 지금 외출하거나 저녁을 추가하기보다 객실에서 60분 쉬는 선택을 한다. 모델 피로값은 고객이 보고한 피로가 아니다.",
+          "supporting_fact_ids": [
+            "A12-F011"
+          ],
+          "counterevidence_fact_ids": [
+            "A12-F008"
+          ],
+          "assumptions": [
+            "이번 식사의 주문량을 실제 섭취량으로 간주하지 않는다.",
+            "과거 별도 여행의 피로 경험은 이번 방문의 현재 피로를 확인해 주지 않는다."
+          ],
+          "sharing_plan": "식사 주문 없음. 저녁 메뉴나 식사 여부는 아직 결정하지 않는다.",
+          "schedule_impact": "현재 객실에서 추가 이동 없이 16:41부터 17:41까지 휴식한다. 17:30 시작인 명월관 일정은 지나가지만, 18:00 시작 일정은 시간상 남는다. 휴식 효과나 실제 회복은 관측되지 않는다.",
+          "why_not_other_plans": "도서관이나 정원은 지금 이동·활동을 추가한다. 오늘 일정을 끝내면 이후 식사와 활동도 하지 않게 되므로, 우선 한 시간 쉬는 쪽이 더 유연하다.",
+          "pending_intentions": [
+            "저녁은 현재 주문하지 않으며 이후 일정으로 남겨 둔다."
+          ],
+          "current_need_assessment": {
+            "state": "UNCERTAIN",
+            "reason": "15:40에 두 성인용 메인이 포함된 식사 일정이 있었지만 실제 섭취량은 미관측이고, 현재 허기 보고도 없다. 직전 식사 종료 후 경과 시간이 짧아 추가 식사가 필요하다고 단정하지 않는다."
+          },
+          "meal_assessment": null
+        }
+      ],
+      [
+        "f78582577ad91c97b5bc0c06eb0f35bffb3ef41b2787dc94e813dbcea69a24ea",
+        {
+          "action_id": "meal:PIZZA_HILL",
+          "items": [
+            {
+              "sku_id": "HC-PDF-PIZZA_HILL-GARLIC-SHRIMP-S",
+              "quantity": 1
+            }
+          ],
+          "order_total_krw": 79000,
+          "decision_summary": "15:40에 식사 일정은 있었지만 실제 섭취량은 미확인이고, 현재 허기도 보고되지 않았다. 그래도 저녁을 계속 미루기보다는 과하게 주문하지 않고 작은 피자 한 판을 나눌 가벼운 식사로 선택한다.",
+          "supporting_fact_ids": [
+            "A12-F021",
+            "A12-F022"
+          ],
+          "counterevidence_fact_ids": [
+            "A12-F023"
+          ],
+          "assumptions": [
+            "후기의 피자힐 주문·매장 식사 변경은 이번 방문의 선호나 만족을 뜻하지 않는다.",
+            "메뉴 단가와 판매 조건은 제공된 참고값이며 실제 현장 판매·가격은 미확인이다.",
+            "성인 2명이 주로 나누고 12개월 아이는 먹을 수 있다면 조금 나눌 수 있다고 가정한다."
+          ],
+          "sharing_plan": "갈릭새우 피자 S 한 판을 성인 2명이 나누고, 아이는 먹을 수 있는 경우에만 조금 나누는 계획이다. 아이에게 별도 성인 분량을 더하지 않는다.",
+          "schedule_impact": "17:41 객실에서 출발해 이동 추정 12분 후 17:53 도착·식사 시작, 90분 일정으로 19:23 종료다. 대기 시간은 없으며 예약이 확정된 것은 아니다.",
+          "why_not_other_plans": "객실 룸서비스는 이동이 없지만 15:40 식사와 비슷한 샌드위치·버거 구성이며, 추가 주문은 현재 시점에 과할 수도 있다. 명월관은 과거 이용 기록은 있으나 90분 일정과 더 높은 참고 가격을 감수할 근거가 약하다. 객실에서 하루를 마치는 선택도 가능하지만 저녁 식사를 하지 않을 만큼 허기가 없다고 확인된 것은 아니다.",
+          "pending_intentions": [],
+          "current_need_assessment": {
+            "state": "UNCERTAIN",
+            "reason": "직전 식사 일정 종료 후 121분이 지났고 성인용 메인 두 개가 주문된 기록은 있으나 실제 섭취량과 현재 허기는 미확인이다. 추가 식사가 확실히 필요하다고 단정하지 않고, 필요할 경우를 대비한 절제된 선택으로 판단한다."
+          },
+          "meal_assessment": {
+            "kind": "LIGHT_MEAL",
+            "modeled_diners": 3,
+            "intake_assumption": "주문량은 섭취량으로 간주하지 않는다. 성인 2명이 피자를 나누고 아이가 먹을 수 있다면 일부를 나눌 수 있다고 가정한다.",
+            "quantity_reason": "S 피자 한 판의 제공량은 성인 둘이 나눌 가벼운 추가 식사로 잡고, 앞선 식사가 끝난 지 오래되지 않아 파스타나 두 번째 피자는 추가하지 않는다. 아이의 별도 분량도 주문하지 않는다.",
+            "expected_satiety": "UNCERTAIN",
+            "uncertainties": [
+              "현재 허기와 15:40 식사의 실제 섭취량",
+              "아이의 현재 식사 가능 여부 및 실제 섭취량",
+              "메뉴의 실제 제공량과 현장 판매 조건"
+            ]
+          }
+        }
+      ],
+      [
+        "c6c3f50174856233b8422a066ee18f0a7cbfac1b052e03a4532ffb81cb101e5a",
+        {
+          "action_id": "end_day_in_room",
+          "items": [],
+          "order_total_krw": 0,
+          "decision_summary": "19:23에 가벼운 저녁 식사 일정이 끝났고 실제 섭취량과 현재 허기는 확인되지 않았다. 이미 식사와 휴식이 있었으며 피로 모델값도 0.65이므로, 추가 활동을 채우기보다 객실로 돌아가 오늘 외부 일정을 마치는 편을 선택한다. 이는 회복이나 수면이 관측됐다는 뜻은 아니다.",
+          "supporting_fact_ids": [
+            "A12-F011"
+          ],
+          "counterevidence_fact_ids": [],
+          "assumptions": [
+            "피로 0.65는 모델 상태값이며 고객의 직접 보고가 아니다.",
+            "저녁 주문량은 실제 섭취량을 뜻하지 않는다."
+          ],
+          "sharing_plan": "추가 식사 없이 일행이 함께 객실로 이동한다.",
+          "schedule_impact": "19:23 출발, 이동 추정 12분 후 19:35 객실 도착. 오늘 추가 활동·식사 없이 23:00까지 객실에서 쉬는 일정이며 실제 수면은 미관측이다.",
+          "why_not_other_plans": "객실 휴식은 저녁 이후 외출을 다시 이어갈 여지를 남기지만, 현재 피로 모델값과 이미 진행한 일정에 비춰 오늘을 마치는 선택이 더 적절하다. 정원 산책·라이브러리·수영장은 이동과 추가 활동이 필요하다.",
+          "pending_intentions": [],
+          "current_need_assessment": {
+            "state": "UNCERTAIN",
+            "reason": "19:23에 저녁 식사 일정이 막 끝났으나 실제 섭취량과 현재 허기는 미확인이다. 추가 식사가 필요하다고 단정할 근거는 없다."
+          },
+          "meal_assessment": null
+        }
+      ],
+      [
+        "5137ea8bcd007adab4aab6b6185c94885993ba951f46cad6a1c2264e0fbb00ca",
+        {
+          "action_id": "BREAKFAST_BUFFET",
+          "items": [
+            {
+              "sku_id": "HC-MENU-097",
+              "quantity": 2
+            },
+            {
+              "sku_id": "HC-MENU-097-INFANT",
+              "quantity": 1
+            }
+          ],
+          "order_total_krw": 0,
+          "decision_summary": "포함된 조식 이용을 선택합니다. 어제 마지막 식사가 19:23에 끝난 뒤 약 12시간 47분이 지났고, 현재 허기는 보고된 값이 아니지만 아침 식사가 필요한 상태일 가능성이 높다고 판단합니다. 조식 이용 권리는 계약상 확인되지만 실제 섭취량이나 유아용 음식 제공은 보장되지 않습니다.",
+          "supporting_fact_ids": [
+            "A12-F004"
+          ],
+          "counterevidence_fact_ids": [
+            "A12-F004",
+            "A12-F014"
+          ],
+          "assumptions": [
+            "전날 피자 식사의 실제 섭취량과 현재 허기는 미확인입니다.",
+            "성인 2명은 조식을 먹고, 12개월 아동은 먹을 수 있는 음식이 있다면 일부를 나눌 수 있다고 가정합니다.",
+            "포함 항목은 인원별 이용 권리이며 음식 구성과 실제 섭취를 뜻하지 않습니다."
+          ],
+          "sharing_plan": "성인 2명이 각자 조식을 이용하고, 아동은 먹을 수 있는 음식이 있을 경우에만 조금 나누는 가정입니다. 아동 전용 메뉴나 별도 유아식을 전제하지 않습니다.",
+          "schedule_impact": "08:10 객실에서 출발해 이동 예상 6분 후 08:16 더뷔페에 도착하고, 09:16에 마칩니다. 예약 확정이 아니라 기존 일정 모델의 시각입니다.",
+          "why_not_other_plans": "객실에서 쉬는 선택도 가능하지만, 현재 피로가 높다는 입력은 없고 전날 식사 후 밤을 지난 점을 고려해 포함된 조식을 우선합니다. 과거 영아 동반 방문에서 조식을 생략한 기록은 참고하되, 이번 방문에서도 생략해야 한다고 단정하지 않습니다.",
+          "pending_intentions": [],
+          "current_need_assessment": {
+            "state": "HUNGRY",
+            "reason": "마지막 식사 종료 후 밤사이 약 12시간 47분이 경과해 아침 식사가 필요할 가능성이 높다고 모델상 판단합니다. 실제 섭취량과 현재 허기는 확인되지 않았습니다."
+          },
+          "meal_assessment": {
+            "kind": "FULL_MEAL",
+            "modeled_diners": 3,
+            "intake_assumption": "조식 뷔페를 성인 2명이 이용하고 아동이 먹을 수 있는 음식이 있다면 일부를 나눌 수 있다고 가정합니다. 주문·이용 권리만으로 실제 섭취를 추정하지 않습니다.",
+            "quantity_reason": "계약에 명시된 성인 2명과 36개월 미만 유아 1명의 이용 항목을 그대로 적용합니다. 별도의 음식이나 추가 인원분은 주문하지 않습니다.",
+            "expected_satiety": "UNCERTAIN",
+            "uncertainties": [
+              "현재 허기와 어제 식사의 실제 섭취량",
+              "아동이 먹을 수 있는 음식과 실제 섭취량",
+              "뷔페의 구체적인 음식 구성"
+            ]
+          }
+        }
+      ],
+      [
+        "ab2aa1d1f4e523c50db1bc7b8aef6689b6d5c54079009c36112ebc955dc87c3d",
+        {
+          "action_id": "public_rest",
+          "items": [],
+          "order_total_krw": 0,
+          "decision_summary": "조식을 마친 직후이고 체크아웃 전 시간이 제한되어 있어, 일정을 더 채우기보다 공용 로비에서 잠시 쉬는 편을 선택합니다. 이는 모델상 휴식 기대일 뿐 실제 회복이 확인된 것은 아닙니다.",
+          "supporting_fact_ids": [
+            "A12-F011",
+            "A12-F002"
+          ],
+          "counterevidence_fact_ids": [
+            "A12-F008"
+          ],
+          "assumptions": [
+            "조식은 09:16에 끝났지만 실제 섭취량과 현재 허기는 관측되지 않았습니다.",
+            "공용 로비 이용은 가능하나 좌석이나 서비스 제공은 보장되지 않습니다.",
+            "이전 여행에서 피로로 계획을 줄인 기록은 다른 방문의 경험이며 이번 상태를 직접 입증하지 않습니다."
+          ],
+          "sharing_plan": "음식 주문이 아닌 휴식 선택입니다. 동행 3인이 함께 머물 수 있다고 가정하되 좌석은 미확인입니다.",
+          "schedule_impact": "현재 위치에서 09:16 출발, 6분 이동 후 09:22 도착해 09:52까지 30분 쉽니다. 체크아웃 시각 11:00까지 68분이 남지만, 객실 복귀 이동 시간은 제공되지 않았습니다.",
+          "why_not_other_plans": "라이브러리와 정원 산책은 10:07~10:08에 끝나 체크아웃 준비 시간이 더 짧습니다. 10분 대기는 허기나 섭취량을 새로 확인해 주지 않고 달라지는 일정 조건도 없어 선택하지 않습니다.",
+          "pending_intentions": [],
+          "current_need_assessment": {
+            "state": "COMFORTABLE",
+            "reason": "조식 실행이 09:16에 끝났으므로 모델상 당장 추가 식사보다는 편안한 상태로 판단합니다. 실제 섭취량과 허기는 관측되지 않았습니다."
+          },
+          "meal_assessment": null
+        }
+      ],
+      [
+        "038074cb5ca7820f8f48c07868c6386f4d8b90ddb3dfe76df51e79d2714aac50",
+        {
+          "action_id": "wait_reconsider",
+          "items": [],
+          "order_total_krw": 0,
+          "decision_summary": "조식 이용이 09:16에 끝났고 현재 09:52이므로 추가 식사보다는 허기 상태를 편안한 편으로 모델 판단한다. 실제 섭취량이나 현재 허기는 확인되지 않았으며, 이 대기가 새 정보를 가져오지는 않는다. 제공된 실행 가능 행동이 이 짧은 대기뿐이므로 체크아웃 준비 전 잠시 시간을 두는 선택으로 한정한다.",
+          "supporting_fact_ids": [],
+          "counterevidence_fact_ids": [],
+          "assumptions": [
+            "조식 주문·이용 기록은 있으나 실제 섭취량은 미관측이다.",
+            "동행 아동의 현재 상태와 식사 가능 여부는 미확인이다.",
+            "제공된 actions에 대기 외의 실행 가능한 선택지가 없다."
+          ],
+          "sharing_plan": "음식 주문이 없으므로 나눔 계획은 없다.",
+          "schedule_impact": "현재 공용 로비에서 09:52에 시작해 10:02에 종료한다. 제공된 일정상 이동 시간은 0분이며, 체크아웃 시각 11:00 전에 준비를 마칠 시간이 남는다.",
+          "why_not_other_plans": "현재 제공된 action은 wait_reconsider 하나뿐이다. 조식 종료 후 36분밖에 지나지 않았고 실제 허기가 관측되지 않아 추가 식사는 선택하지 않는다. 다른 활동·휴식 선택지는 이번 actions에 없다.",
+          "pending_intentions": [],
+          "current_need_assessment": {
+            "state": "COMFORTABLE",
+            "reason": "조식이 09:16에 끝나 아직 경과 시간이 짧아 모델상 추가 식사 필요성은 낮게 본다. 이는 실제 섭취량이나 허기를 확인한 결과가 아니다."
+          },
+          "meal_assessment": null
+        }
+      ],
+      [
+        "639e6f27a4645ca015d15d7c04fde9ad6e92f2715990f5028e9ac06f43b43bf0",
+        {
+          "action_id": "leave_visit",
+          "items": [],
+          "order_total_krw": 0,
+          "decision_summary": "조식 후 시간이 아직 길지 않고 체크아웃도 마쳤으며, 확인된 예약이나 방문 목적이 없습니다. 추가 식사나 활동을 억지로 만들지 않고 귀가를 선택합니다.",
+          "supporting_fact_ids": [],
+          "counterevidence_fact_ids": [],
+          "assumptions": [
+            "조식 실행은 실제 섭취량을 뜻하지 않습니다.",
+            "이번 방문의 목적과 체크아웃 이후 계획은 미확인입니다.",
+            "동행 관계는 입력상 미확인입니다."
+          ],
+          "sharing_plan": "추가 식사 주문 없음; 음식 공유 계획 없음.",
+          "schedule_impact": "첫 이동은 10:48 출발, 호텔 게이트 도착은 10:58입니다. 귀가 행동은 10:58 시작해 11:13 종료하며, 이동 추정은 10분입니다.",
+          "why_not_other_plans": "정원 산책은 짧고 무료지만 현재 확인된 의도가 없어 방문을 늘릴 필요는 없습니다. 로비 휴식과 대기는 이미 실행했으며, 10분 더 기다려도 허기나 섭취량에 관한 새 관측은 생기지 않습니다.",
+          "pending_intentions": [],
+          "current_need_assessment": {
+            "state": "COMFORTABLE",
+            "reason": "조식 종료 09:16에서 10:48까지 92분이 지났습니다. 이후 휴식·짐 정리·체크아웃이 이어져 모델상 편안한 상태로 판단합니다. 이는 실제 섭취량이나 고객이 보고한 허기가 아니라 모델 판단입니다."
+          },
+          "meal_assessment": null
+        }
+      ]
+    ]
+  },
+  {
+    "customer": "N15",
+    "request": {
+      "personas": [
+        "N15"
+      ],
+      "duration": "stay_1",
+      "event_mode": "none",
+      "seed": 72,
+      "start_date": "2026-11-08",
+      "include_ledger": true,
+      "behavior_engine": "m4_c01",
+      "catalog_policy": "C01_HOTEL_CATALOG_V1",
+      "environment": {
+        "arrival_time": "15:30"
+      },
+      "hybrid_policy": "LLM_AUTONOMOUS_CUSTOMER_V16",
+      "judgment_mode": "replay"
+    },
+    "judgment": {
+      "requested": "replay",
+      "actual": "replay",
+      "policy": "LLM_AUTONOMOUS_CUSTOMER_V16",
+      "customers": {
+        "N15": {
+          "decisions": 7,
+          "origins": [
+            "CACHE_REPLAY",
+            "CACHE_REPLAY",
+            "CACHE_REPLAY",
+            "CACHE_REPLAY",
+            "CACHE_REPLAY",
+            "CACHE_REPLAY",
+            "CACHE_REPLAY"
+          ],
+          "holds": []
+        }
+      },
+      "current_paid_calls": 0,
+      "human_approval": false
+    },
+    "run": "f9370a2d2ca389decc9d36900e927490ac9f226db113ad655426aed85fdc4446",
+    "checks": {
+      "receipts_equal_L4_L3_L2_L1": true,
+      "duplicate_transactions": null,
+      "duplicate_simulation_rows": 0,
+      "net_revenue_calculated": false,
+      "tax_status": "UNKNOWN",
+      "actual_pos_transactions": null,
+      "actual_pos_data_supplied": false,
+      "day_totals_equal_visit_total": true,
+      "room_nights_equal_duration": true,
+      "date_rows_unique": true,
+      "visit_id_attached": true
+    },
+    "ledger_sha": "ca5cd9bce99f88f66e6708b0d921f1fac45c39035a40375a6eae3dc528d46ad1",
+    "decisions": [
+      [
+        "04fcf86f800723ba3b653e9f92b401ece79518c0f70ec1dcb290ffd71c5b3ed1",
+        {
+          "action_id": "meal:THE_PAVILION",
+          "items": [
+            {
+              "sku_id": "HC-PDF-THE_PAVILION-BURGER",
+              "quantity": 2
+            }
+          ],
+          "order_total_krw": 88000,
+          "decision_summary": "현재 허기는 확인할 수 없지만 저녁 식사 시간대이고, 대기 없이 비교적 이른 시간에 단품 식사를 할 수 있어 선택합니다. 두 버거는 참고 단가 44,000원씩 계산한 금액이며 현재 판매가로 확정된 것은 아닙니다.",
+          "supporting_fact_ids": [
+            "N15-F014"
+          ],
+          "counterevidence_fact_ids": [
+            "N15-F013"
+          ],
+          "assumptions": [
+            "party_size 2를 모델상 나눠 먹는 인원으로 가정했으며, 관계·연령 구성과 실제 섭취량은 미확인입니다.",
+            "장시간 코스 식사가 지루했다는 과거 평가는 참고하되, 이번 방문의 목적이나 현재 선호로 단정하지 않습니다.",
+            "메뉴 가격과 schedule은 제공된 참고 자료이며 실제 판매가·예약을 확정하지 않습니다."
+          ],
+          "sharing_plan": "두 명으로 잡힌 파티 규모를 기준으로 버거 2개를 구성했습니다. 한 사람당 메인을 반드시 하나씩 주문해야 한다는 뜻은 아니며, 실제 나눠 먹는 방식과 섭취량은 미관측입니다.",
+          "schedule_impact": "16:51 객실에서 출발해 이동 6분 후 16:57 도착·식사 시작, 17:42 종료 예정입니다. 대기 시간은 0분이며, 일정은 예약 확정이 아닌 계산된 시간입니다.",
+          "why_not_other_plans": "과거 호텔 뷔페를 더 자주 선택한다는 자기보고는 고려했지만, 더뷔페는 18:00 서비스 시작까지 객실에서 66분을 기다리는 일정이고 성인 요금 참고값의 실제 이용 자격도 확인되지 않아 선택하지 않았습니다. 피자힐은 14분 이동과 90분 식사 일정, 룸서비스는 이동은 없지만 과거 유아 동반 객실 식사 공간이 협소했다는 기록이 있어 이번 선택보다 후순위입니다. 현재 동행 구성은 미확인이므로 그 과거 상황이 이번에도 같다고 가정하지 않습니다.",
+          "pending_intentions": [],
+          "current_need_assessment": {
+            "state": "UNCERTAIN",
+            "reason": "기록된 이번 방문 식사도 도착 전 실제 섭취도 확인되지 않아 굶었다거나 현재 배고프다고 판단할 수 없습니다. 다만 저녁 시간대에 식사를 계획하는 것이 합리적이며, 이는 허기 측정이 아니라 일정에 따른 판단입니다."
+          },
+          "meal_assessment": {
+            "kind": "FULL_MEAL",
+            "modeled_diners": 2,
+            "intake_assumption": "파티 규모 2를 기준으로 버거 2개를 함께 먹는 식사로 모델링합니다. 실제로 주문량을 모두 먹었다고 보지 않으며 같은 양을 먹는다는 뜻도 아닙니다.",
+            "quantity_reason": "단품 두 개를 가정한 한 끼 구성입니다. 인원수만큼 메인을 강제한 주문이 아니라, 다른 메뉴를 추가하지 않는 단순한 식사안입니다.",
+            "expected_satiety": "COMFORTABLE",
+            "uncertainties": [
+              "현재 허기와 실제 섭취량은 미관측입니다.",
+              "동행자의 실제 구성·연령과 각자의 식사량은 미확인입니다.",
+              "메뉴의 현재 판매 여부와 가격은 확정되지 않았습니다."
+            ]
+          }
+        }
+      ],
+      [
+        "c73461716aed38f73f4357b3eb9bd54084fcff483da8d93f7c2317dce3123d1b",
+        {
+          "action_id": "activity:footbath:HC-ORDER-0f2029d74b4d1d1c5314",
+          "items": [
+            {
+              "sku_id": "HC-MENU-242",
+              "quantity": 1
+            }
+          ],
+          "order_total_krw": 0,
+          "decision_summary": "17:42에 식사 일정이 끝났고 누적 피로 상태값은 0.45입니다. 추가 식사보다 짧고 부담이 적은 활동을 택합니다. 다만 휴식 효과나 실제 섭취량은 확인된 사실이 아닙니다.",
+          "supporting_fact_ids": [],
+          "counterevidence_fact_ids": [],
+          "assumptions": [
+            "현재 허기와 식사 실제 섭취량은 미관측입니다. 직전 식사의 모델상 포만 예상은 편안한 수준이었습니다.",
+            "동행 구성과 각자의 활동 선호는 확인되지 않았습니다."
+          ],
+          "sharing_plan": "식사 주문이 아닌 활동입니다. 동행 인원·연령별 이용 여부는 미확인입니다.",
+          "schedule_impact": "17:42 출발, 17:48 도착(이동 6분, 대기 0분). 활동은 17:48부터 18:33까지입니다.",
+          "why_not_other_plans": "도착·체크인·객실 정리와 식사 이후라, 75분 수영보다 45분 활동이 부담이 적어 보입니다. 도서관이나 객실 휴식도 가능하지만, 지금은 짧은 활동을 선택합니다. 객실 휴식의 회복 효과는 관측되지 않았고, 오늘 일정을 끝내면 이후 활동과 식사를 모두 하지 않게 됩니다.",
+          "pending_intentions": [],
+          "current_need_assessment": {
+            "state": "COMFORTABLE",
+            "reason": "17:42에 식사 일정이 종료됐고, 모델은 편안한 포만을 예상했습니다. 실제 섭취량이나 현재 허기는 확인되지 않아 이 판단은 임시적인 모델 판단입니다."
+          },
+          "meal_assessment": null
+        }
+      ],
+      [
+        "d7399fe87786b0521fbe3a94f487c9bf72c0cba2acfeefbfab2b0e098ff5d30c",
+        {
+          "action_id": "end_day_in_room",
+          "items": [],
+          "order_total_krw": 0,
+          "decision_summary": "피로 상태값이 높고(0.85), 17:48–18:33에 스카이야드를 이용한 직후입니다. 추가 활동이나 식사보다 객실로 돌아가 오늘 일정을 마치는 편이 낫다고 판단합니다. 실제 수면이나 회복이 확인되는 것은 아닙니다.",
+          "supporting_fact_ids": [],
+          "counterevidence_fact_ids": [],
+          "assumptions": [
+            "피로 0.85는 모델 상태값이며 고객이 직접 보고한 피로가 아닙니다.",
+            "객실에서 쉬거나 잠드는 것과 회복은 실제 관측되지 않습니다."
+          ],
+          "sharing_plan": "식사 주문 없음. 동행 인원과 실제 구성은 미확인입니다.",
+          "schedule_impact": "18:33 출발, 18:36 객실 도착 후 오늘 외부 일정을 종료하고 23:00까지 객실에 머무는 일정입니다. 이후 오늘 추가 식사나 활동은 실행하지 않습니다.",
+          "why_not_other_plans": "객실에서 60분 쉬는 선택보다 오늘의 높은 피로와 이미 마친 활동을 고려해 외부 일정을 끝내는 쪽을 택했습니다. 도서관이나 야간 산책은 추가 이동·활동이 필요합니다.",
+          "pending_intentions": [],
+          "current_need_assessment": {
+            "state": "COMFORTABLE",
+            "reason": "17:42에 한 끼 식사 일정이 끝났고 직전 모델은 편안한 포만을 예상했습니다. 51분이 지난 현재도 실제 섭취량과 허기는 확인되지 않았으므로 이는 임시 모델 판단입니다."
+          },
+          "meal_assessment": null
+        }
+      ],
+      [
+        "c0a0ce0635f91c549373b91638297774aa45e76dd5ded325c444372f8c15954b",
+        {
+          "action_id": "SKIP_BREAKFAST",
+          "items": [],
+          "order_total_krw": 0,
+          "decision_summary": "이번에는 조식을 건너뛰고 객실에서 쉰다. 이는 조식이나 뷔페를 싫어한다는 판단이 아니라, 성인 이용 자격이 확인되지 않은 계약 가정을 확정 권리로 처리하지 않기 위한 선택이다.",
+          "supporting_fact_ids": [],
+          "counterevidence_fact_ids": [
+            "N15-F013"
+          ],
+          "assumptions": [
+            "현재 허기와 전날 실제 섭취량은 미관측이다.",
+            "객실에서 쉬는 시간이 실제 회복을 보장하지는 않는다."
+          ],
+          "sharing_plan": "음식 주문이나 섭취는 없다.",
+          "schedule_impact": "08:10부터 객실에서 60분 쉬고 09:10에 끝난다. 조식 뷔페 계획보다 시작 시각은 20분 빠르고 이동·대기는 없다.",
+          "why_not_other_plans": "뷔페는 포함 계약과 과거 후기 요약에 부합하지만, 성인 이용 자격 미확인 상태에서 두 명분을 확정 이용으로 승인하지 않는다. 건너뛰기는 뷔페 비선호를 뜻하지 않는다.",
+          "pending_intentions": [],
+          "current_need_assessment": {
+            "state": "UNCERTAIN",
+            "reason": "전날 17:42 식사 종료 후 약 14시간 28분이 지났으므로 아침 식사가 필요할 가능성은 있다. 그러나 실제 섭취량과 도착 전 식사는 알 수 없어 허기를 확정하지 않는다."
+          },
+          "meal_assessment": null
+        }
+      ],
+      [
+        "394b63047f6328f2f235e5f2dd06de2ab654d7bbe5c69d1059cb60e8d965ac54",
+        {
+          "action_id": "library",
+          "items": [],
+          "order_total_krw": 0,
+          "decision_summary": "도착 전 섭취와 실제 허기는 확인되지 않았고, 조식은 건너뛴 상태다. 전날 식사 종료 후 시간이 꽤 지났으므로 식사가 필요할 가능성은 고려하되, 현재 제시된 선택지 중에서는 이동과 활동 부담이 크지 않은 라이브러리를 고른다. 이번 선택을 개인의 독서 취향이나 만족 경험으로 해석하지 않는다.",
+          "supporting_fact_ids": [],
+          "counterevidence_fact_ids": [],
+          "assumptions": [
+            "라이브러리에서 보낼 시간은 가벼운 실내 활동으로 가정한다. 이용 가능 여부나 실제 만족은 확인되지 않았다."
+          ],
+          "sharing_plan": "동행 인원은 2명으로 잡혀 있으나 구성과 관계는 미확인이다. 식사 주문은 없다.",
+          "schedule_impact": "09:10 객실에서 출발해 이동 6분 후 09:16 도착, 09:16~10:01 이용하는 일정이다. 대기 시간은 없다. 11:00 체크아웃 전 준비 시간을 남긴다.",
+          "why_not_other_plans": "정원 산책은 이동이 더 길고, 전날 이용한 스카이야드 족욕은 만족이 관측되지 않아 반복 이유가 분명하지 않다. 객실 휴식도 가능하지만 이미 조식을 건너뛰며 객실에 머문 뒤여서, 남은 오전에 가벼운 실내 활동을 택한다. 짧은 대기는 미확인 허기나 섭취량을 밝혀주지 않는다.",
+          "pending_intentions": [],
+          "current_need_assessment": {
+            "state": "UNCERTAIN",
+            "reason": "전날 17:42 식사 종료 후 약 15시간 28분이 지났고 조식을 건너뛰었으므로 식사가 필요할 가능성은 있다. 다만 실제 섭취량과 도착 전 식사는 확인되지 않아 현재 허기를 단정하지 않는다."
+          },
+          "meal_assessment": null
+        }
+      ],
+      [
+        "537f188aabfdc5280bd226e55ca5d25b11524b29bb81de2681ba1e2ad2360c52",
+        {
+          "action_id": "meal:THE_PAVILION",
+          "items": [
+            {
+              "sku_id": "HC-MENU-203",
+              "quantity": 2
+            },
+            {
+              "sku_id": "HC-MENU-204",
+              "quantity": 2
+            }
+          ],
+          "order_total_krw": 94000,
+          "decision_summary": "현재 허기는 확인되지 않았지만, 어제 17:42 식사 세션 이후 약 17시간이 지났고 오늘 조식은 건너뛴 일정이라 지금 식사가 필요할 가능성이 높다고 판단합니다. 체크아웃 후 바로 갈 수 있는 파빌리온에서 브런치를 선택합니다. 어제도 이곳에서 식사했지만 만족도와 실제 섭취량은 미관측이며, 이번에는 다른 메뉴를 먹는 선택입니다.",
+          "supporting_fact_ids": [],
+          "counterevidence_fact_ids": [],
+          "assumptions": [
+            "파티 규모 2를 기준으로 브런치 2접시와 음료 2잔을 가정합니다. 동행자의 실제 구성·연령은 미확인입니다.",
+            "메뉴 문구상 음료를 별도로 선택해야 해 HOT 아메리카노를 포함했습니다. HOT 선택은 취향 근거가 아닙니다.",
+            "단가는 제공된 메뉴 참고값으로 계산했으며 실제 판매 가능 여부와 가격은 확정되지 않았습니다.",
+            "도착 전 섭취량과 실제 허기, 주문량 중 실제 섭취한 양은 미확인입니다."
+          ],
+          "sharing_plan": "두 명으로 모델링해 브런치 한 접시와 음료 한 잔씩 주문합니다. 같은 양을 먹거나 모두 먹었다고 가정하지 않습니다.",
+          "schedule_impact": "10:50 로비에서 출발해 이동 6분 후 10:56 도착, 대기 없이 식사하고 11:41 종료입니다.",
+          "why_not_other_plans": "피자힐은 로비 대기 26분 후 이동 14분이 필요하고, 모에기는 11:57까지 로비에서 67분 대기한 뒤 이동해야 합니다. 지금 가능한 식사로 대기 부담을 줄이고, 남은 일정도 여유 있게 둡니다.",
+          "pending_intentions": [],
+          "current_need_assessment": {
+            "state": "HUNGRY",
+            "reason": "마지막 기록 식사 세션 종료 후 약 17시간이 지났고 조식은 건너뛰었습니다. 다만 도착 전 섭취와 실제 섭취량·허기는 미확인이므로, 이는 기록과 시간 경과에 따른 모델 판단이지 고객의 보고가 아닙니다."
+          },
+          "meal_assessment": {
+            "kind": "FULL_MEAL",
+            "modeled_diners": 2,
+            "intake_assumption": "두 명 파티 가정으로 브런치 두 접시를 주문하는 한 끼로 모델링합니다. 실제 섭취 인원과 양은 관측되지 않았습니다.",
+            "quantity_reason": "브런치 한 접시가 1인분으로 표시되어 두 접시를 주문하고, 별도 선택이 필요한 음료도 두 잔 포함했습니다.",
+            "expected_satiety": "COMFORTABLE",
+            "uncertainties": [
+              "실제 동행 구성과 각자의 식사량은 미확인입니다.",
+              "도착 전 섭취와 실제 허기는 미확인입니다.",
+              "주문량을 모두 먹었는지와 실제 포만감은 미관측입니다.",
+              "메뉴의 현재 판매 여부와 실제 가격은 확정되지 않았습니다."
+            ]
+          }
+        }
+      ],
+      [
+        "b33fc05347b8762f0fd055c21cdf409c50892d7e2d88aeabde6b348f5af281c2",
+        {
+          "action_id": "leave_visit",
+          "items": [],
+          "order_total_krw": 0,
+          "decision_summary": "체크아웃을 마쳤고 11:41에 브런치 일정도 끝났습니다. 추가 일정이나 예약이 확인되지 않아 오늘 호텔 방문을 마치고 귀가하는 편이 가장 적절합니다.",
+          "supporting_fact_ids": [],
+          "counterevidence_fact_ids": [],
+          "assumptions": [
+            "브런치 주문은 실행됐지만 실제 섭취량과 현재 허기는 관측되지 않았습니다.",
+            "피로도는 모델 상태값이며 실제 회복 정도를 뜻하지 않습니다."
+          ],
+          "sharing_plan": "추가 음식 주문이나 나눠 먹기는 없습니다.",
+          "schedule_impact": "11:41 출발, 이동 10분 후 11:51 도착, 일정 종료 12:06입니다. 이동 시간과 귀가 일정 시간을 구분해 반영했습니다.",
+          "why_not_other_plans": "정원 산책이나 로비 휴식은 체크아웃 후 일정을 더 이어가는 선택입니다. 공연 관람은 입장 자격이 확인되지 않았고, 잠깐 대기해도 허기나 섭취량이 새로 관측되지는 않습니다.",
+          "pending_intentions": [],
+          "current_need_assessment": {
+            "state": "UNCERTAIN",
+            "reason": "11:41에 브런치 식사 세션이 끝났지만 실제 섭취량과 허기는 미관측입니다. 지금 추가 식사가 필요하다는 근거는 부족합니다."
+          },
+          "meal_assessment": null
+        }
+      ]
+    ]
+  }
+]

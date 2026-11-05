@@ -1,0 +1,1151 @@
+{
+ "_about": "10/23 프로파일 → 운영 실험 역설계(얇은 계층). 각 카드는 라이브러리의 사실 ID · 성향 · 행동규칙에서 도출한 운영 질문과, 지도 시뮬레이터의 운영 조건에 그대로 넣을 수 있는 조건 묶음. 엔진 · 계수 변경 없음. 결과 메모는 10/23 엔진 실행 기록이며 예측 적중이 아님. 10/23 15:4x: 팀 최신 프로파일(b6c4e77 · docs/data/team_personas_current · #98@2e1575e)의 신규 사실에서 도출한 카드는 version='team_current' 로 표시(엔진 입력 R-BASE 에는 그 사실이 없음 · 혼합하지 않음). 'situations' = 운영 상황 → 관련 에이전트 역검색(성향 입력의 근거 사실로 분류 · 신뢰도 · 적중률 아님 · 실행 가능한 상황만 실행 버튼).",
+ "classes": {
+  "direct": "직접 관련 경험 — 같은 상황 · 매우 비슷한 선택이 후기에서 관측됨(예측 정확도 보장 아님)",
+  "transfer": "유사 경험 기반 — 다른 호텔 · 여행의 행동규칙을 새 상황에 옮긴 전이 가설",
+  "common": "공통 계산 중심 — 개인 후기 기여가 작고 가격 · 기본 효용이 선택을 정함",
+  "na": "현재 평가 불가 — 관련 입력 · 선택 후보 · 규칙이 엔진에 없어 아직 계산할 수 없음",
+  "nopersonal": "개인화 근거 부족 — 계산은 되지만 개인 성향이 선택 항으로 쓰이지 않거나 근거가 없어 고객별 차이가 공통 계산에서만 나옴"
+ },
+ "experiments": {
+  "A10": [
+   {
+    "id": "A10-X1",
+    "question": "피자힐 단품 가격이 오르면 그래도 피자힐인가, 객실 식사로 돌아서나?",
+    "class": "direct",
+    "basis": [
+     {
+      "fact": "A10-F08",
+      "why": "2026 피자힐에서 콰트로 피자를 먹고 가격은 비싸다고 지적하며 맛 · 뷰는 호평"
+     },
+     {
+      "fact": "A10-F18",
+      "why": "2021 예약 없이 1시간 기다려 피자힐 야경 · 칵테일"
+     },
+     {
+      "fact": "A10-F34",
+      "why": "15% 쿠폰보다 소셜가가 싸면 쿠폰을 안 씀 — 지불 전 가치 비교"
+     }
+    ],
+    "traits": [
+     "A10-T3",
+     "A10-T4"
+    ],
+    "rules": [
+     "A10-R4"
+    ],
+    "facets": [
+     "space",
+     "value_check",
+     "routine"
+    ],
+    "levers": "피자힐 단품 파스타 가격 48,000 → 60,000(+25%)",
+    "cond": {
+     "turn": "dinner",
+     "event": false,
+     "stay": true,
+     "building": "VISTA",
+     "party_size": 2,
+     "product_levers": {
+      "PH_PASTA": {
+       "price": 60000
+      }
+     }
+    },
+    "expect": "조망 · 익숙한 곳 근거가 있어 소폭 인상은 견디지만, 지불 전 가치 비교 성향이 강해 어느 가격부터는 객실 식사로 옮길 것(가설)",
+    "result_note": "10/23 엔진 실행: 52,000까지 피자힐 유지 · 56,000부터 객실 클럽 샌드위치(기본 조건 점수 차 0.10 · 근소). 60,000 조건에서 선택 바뀜.",
+    "unverified": [
+     "가격 인상에 대한 실제 반응은 관측된 적 없음(가격 지적만 있음)",
+     "콰트로 피자 가격은 카탈로그에 없어 단품 파스타로 대신함",
+     "점수 차 0.10은 근소 — 작은 조건 변화에도 뒤집힘"
+    ],
+    "compare_hint": "A07(세트 중심 · 미식)은 같은 인상에서 피자힐 유지 · A04는 52,000에서 이미 이탈",
+    "version": "engine_input",
+    "title": "단품 가격 인상",
+    "topic": "피자힐 · 가격",
+    "change": "파스타 48,000 → 60,000",
+    "engine_note": "가격을 올린 뒤 같은 후보로 다시 계산 — 지불액 항이 커져 객실 식사로 넘어가는지 본다",
+    "hypothesis_note": "후기에서 착안한 가설 — 질문의 출발점이며 엔진이 그 반응을 직접 계산하지는 않음",
+    "calc_facts": [
+     "A10-F17",
+     "A10-F76"
+    ],
+    "calc_turn": "dinner",
+    "demo": true
+   },
+   {
+    "id": "A10-X2",
+    "question": "와인페어가 투숙 혜택에 포함되면 들르고, 55,000원 유료면 족욕 · 산책으로 가나? 그 뒤 저녁은?",
+    "class": "direct",
+    "basis": [
+     {
+      "fact": "A10-F07a",
+      "why": "2026 투숙 혜택으로 와인페어를 잠깐 둘러봄(음주 안 함) 뒤 피자힐로 이동"
+     },
+     {
+      "fact": "A10-F16",
+      "why": "2023 유료 와인페어에서 시음 뒤 입맛에 맞는 병을 구매"
+     },
+     {
+      "fact": "A10-F13",
+      "why": "2026에는 비음주 상황이라 술 혜택은 선택 이유가 아니었음"
+     }
+    ],
+    "traits": [
+     "A10-T5",
+     "A10-T3"
+    ],
+    "rules": [
+     "A10-R1"
+    ],
+    "facets": [
+     "seasonal",
+     "alcohol_familiar",
+     "space",
+     "benefit"
+    ],
+    "levers": "행사 턴 16:30 · 와인페어 객실 패키지 포함(추가 지불 0) vs 기본 입장권 55,000",
+    "cond": {
+     "turn": "day",
+     "event": true,
+     "stay": true,
+     "building": "VISTA",
+     "party_size": 2,
+     "product_levers": {
+      "WINE_FAIR": {
+       "in_package": true
+      }
+     }
+    },
+    "expect": "관람 자체는 혜택이 있으면 하되(2026과 같음) 유료 55,000이면 족욕 · 야경 쪽으로. 저녁 피자힐은 유지(가설)",
+    "result_note": "10/23 엔진 실행: 기본 55,000 → 스카이야드 족욕 · 객실 포함 → 와인페어, 저녁은 피자힐 파스타 유지. 2026 관측 순서(혜택 관람 → 피자힐)와 같은 모양이지만 그 방문 사실이 입력에 있으므로 독립 예측이 아님. 2026 사실을 뺀 입력으로도 포함 → 와인페어 · 기본 → 족욕(공간 · 산책 근거).",
+    "unverified": [
+     "음주 여부(시음 구매)는 엔진이 가리지 않음 — '참여'만 계산",
+     "행사 턴은 10/23 최소 확장(기존 V1 선택지 재사용)"
+    ],
+    "compare_hint": "A07 · blog41 · blog43 은 55,000 유료에서도 참여 · A02 는 30,000 할인부터 · A05 도 30,000 할인부터지만 그 근거(F08a 미구매 · 미음주 문장)는 #105 검수 대상 — 제외하면 족욕",
+    "version": "engine_input",
+    "title": "와인페어 객실 포함",
+    "topic": "와인페어 · 혜택",
+    "change": "유료 55,000 → 객실 패키지 포함",
+    "engine_note": "행사 턴에서 지불액 0 으로 참여 여부를 계산 — 관람 뒤 음주 여부 · 구매는 계산하지 않음",
+    "hypothesis_note": "후기에서 착안한 가설 — 질문의 출발점이며 엔진이 그 반응을 직접 계산하지는 않음",
+    "calc_facts": [
+     "A10-F01",
+     "A10-F06",
+     "A10-F07a",
+     "A10-F08",
+     "A10-F14",
+     "A10-F15"
+    ],
+    "calc_turn": "event",
+    "demo": true
+   },
+   {
+    "id": "A10-X3",
+    "question": "비음주 동행을 위한 무알코올 · 안주 구성(55,000)이면 참여하나? 참여하면 저녁 선택이 바뀌나?",
+    "class": "transfer",
+    "basis": [
+     {
+      "fact": "A10-F13",
+      "why": "비음주 상황에서 술 무제한 혜택은 선택 이유가 아니었음"
+     },
+     {
+      "fact": "A10-F20",
+      "why": "동행 맥주와 본인 오렌지주스를 구분해 적음"
+     },
+     {
+      "fact": "A10-F17",
+      "why": "2023 와인페어에서 푸드 티켓을 쓰고 치킨을 현금으로 추가 구매"
+     }
+    ],
+    "traits": [
+     "A10-T5"
+    ],
+    "rules": [
+     "A10-R1"
+    ],
+    "facets": [
+     "practical_alt",
+     "space"
+    ],
+    "levers": "와인페어 구성 변경: 안주 1종 + 무알코올 대안 · 55,000(기존 프리셋 ⑥)",
+    "cond": {
+     "turn": "day",
+     "event": true,
+     "stay": true,
+     "building": "VISTA",
+     "party_size": 2,
+     "product_levers": {
+      "WINE_FAIR": {
+       "variant": "nonalc"
+      }
+     }
+    },
+    "expect": "무알코올 대안이 있으면 참여 가능성이 오르고, 행사에서 먹은 만큼 저녁은 가볍게 바뀔 것(가설)",
+    "result_note": "10/23 엔진 실행: 와인페어 참여 → 저녁은 피자힐 파스타 대신 르 파사쥬 간단 식사(행사에서 안주를 먹어 남은 끼니 0.6). 11명 중 7명이 같은 방향으로 저녁 선택이 바뀜 — 행사 음식 구성이 저녁 식사 선택과 충돌. 매출 효과는 행사 가격 · 비용을 포함해 따로 봐야 함.",
+    "unverified": [
+     "무알코올 구성 · 가격은 가상 운영안",
+     "행사 체류 길이 · 시음량은 계산하지 않음",
+     "안주 구성의 끼니 비중 0.4은 기존 연구 프리셋 설계값(후기 근거 아님)"
+    ],
+    "compare_hint": "A02 · A05 는 참여하지만 저녁 객실 식사 유지 · blog43 은 피자힐 유지",
+    "version": "engine_input",
+    "title": "무알코올 구성",
+    "topic": "와인페어 · 구성",
+    "change": "시음 → 안주 1종 + 무알코올 대안",
+    "engine_note": "구성 변경(끼니 비중 0.4 · 무알코올 가능)으로 참여와 저녁 선택을 계산 — 비음주 조건 자체는 입력에 없음",
+    "hypothesis_note": "후기에서 착안한 가설 — 질문의 출발점이며 엔진이 그 반응을 직접 계산하지는 않음",
+    "calc_facts": [
+     "A10-F01",
+     "A10-F06",
+     "A10-F07a",
+     "A10-F08",
+     "A10-F14",
+     "A10-F15"
+    ],
+    "calc_turn": "event",
+    "demo": true
+   },
+   {
+    "id": "A10-X4",
+    "version": "team_current",
+    "question": "피자힐이 단품을 빼고 세트만 팔면(또는 메인 필수 주문) 그래도 피자힐인가?",
+    "class": "transfer",
+    "basis": [
+     {
+      "fact": "A10-F78",
+      "why": "(팀 최신본) 메인 요리 필수 안내에 원하던 전채를 포기하고 스파게티로 바꿈 — 주문 조건이 붙으면 메뉴를 바꾼다"
+     },
+     {
+      "fact": "A10-F08",
+      "why": "2026 피자힐 콰트로 · 가격은 비싸다고 지적"
+     },
+     {
+      "fact": "A10-F34",
+      "why": "쿠폰보다 소셜가가 싸면 쿠폰을 안 씀"
+     }
+    ],
+    "traits": [
+     "A10-T4"
+    ],
+    "rules": [
+     "A10-R4"
+    ],
+    "facets": [
+     "value_check",
+     "practical_alt"
+    ],
+    "levers": "피자힐 단품(파스타 · 피자 S) 판매 안 함 → 세트만",
+    "cond": {
+     "turn": "dinner",
+     "event": false,
+     "stay": true,
+     "building": "VISTA",
+     "party_size": 2,
+     "product_levers": {
+      "PH_PASTA": {
+       "available": false
+      },
+      "PH_PIZZA_S": {
+       "available": false
+      }
+     }
+    },
+    "expect": "주문 조건이 바뀌면 원하는 상품을 고집하기보다 다른 선택으로 옮길 것 — 세트 강제면 피자힐을 떠날 가능성(가설)",
+    "result_note": "10/23 엔진 실행: 단품을 빼면 객실 클럽 샌드위치. 세트를 136,000으로 내려도 객실(1인 68,000 > 48,000). A07 · A01 · A03 · blog43 은 세트로 남거나 옮김. 엔진은 가격 경로로 계산하며 '주문 규칙 회피' 성향 자체를 항으로 쓰지 않음.",
+    "unverified": [
+     "A10-F78 은 엔진 입력(R-BASE)에 없는 팀 최신본 사실 — 프로파일 강조로 열리지 않음",
+     "주문 조건 회피는 가격 경로로만 근사"
+    ],
+    "compare_hint": "A07 은 세트 유지 · A03 · blog43 은 세트 136,000이면 피자힐로",
+    "title": "단품 판매 중단",
+    "topic": "피자힐 · 상품 구성",
+    "change": "단품 제외 → 세트만 판매",
+    "engine_note": "단품을 후보에서 빼고 다시 계산 — 후기 F78 의 '주문 강제에 대한 반응' 자체를 계산한 것이 아님",
+    "hypothesis_note": "후기에서 착안한 가설 — 질문의 출발점이며 엔진이 그 반응을 직접 계산하지는 않음",
+    "calc_facts": [
+     "A10-F17",
+     "A10-F76"
+    ],
+    "calc_turn": "dinner",
+    "demo": true
+   }
+  ],
+  "A07": [
+   {
+    "id": "A07-X1",
+    "question": "커플 세트 가격을 올려도(184,000 → 216,000) 세트를 유지하나, 단품이나 객실 식사로 바꾸나?",
+    "class": "transfer",
+    "basis": [
+     {
+      "fact": "A07-F24",
+      "why": "오마카세 194,000원 결제 — 코스 · 프리미엄 식음에 지불"
+     },
+     {
+      "fact": "A07-F71",
+      "why": "중식 코스 양이 부담돼 단품을 고름 — 코스에서 단품으로 바꾼 전례"
+     },
+     {
+      "fact": "A07-F03",
+      "why": "2021 피자힐 콰트로를 포장해 객실에서"
+     },
+     {
+      "fact": "A07-F08b",
+      "why": "같은 해 여름 피자힐 매장에서 식사(재방문)"
+     }
+    ],
+    "traits": [
+     "A07-T1",
+     "A07-T3",
+     "A07-T4"
+    ],
+    "rules": [
+     "A07-R4"
+    ],
+    "facets": [
+     "food",
+     "premium",
+     "space",
+     "routine"
+    ],
+    "levers": "피자힐 커플 세트 184,000 → 216,000(+17%)",
+    "cond": {
+     "turn": "dinner",
+     "event": false,
+     "stay": true,
+     "building": "VISTA",
+     "party_size": 2,
+     "product_levers": {
+      "PH_COUPLE_SET": {
+       "price": 216000
+      }
+     }
+    },
+    "expect": "미식 · 조망 근거가 커서 피자힐 자체는 유지하되, 세트가 비싸지면 단품으로 내려올 것(가설)",
+    "result_note": "10/23 엔진 실행: 200,000까지 세트 유지 · 216,000부터 단품 파스타 — 업장(피자힐)은 유지. 후기 근거 몫 2.34로 11명 중 가장 큼.",
+    "unverified": [
+     "세트 인원 기준(2인)은 카탈로그 값",
+     "2021 가격 조건은 미확인"
+    ],
+    "compare_hint": "blog41 도 216,000에서 단품으로 · A01 · A03 은 세트가 136,000 · 168,000으로 내려오면 세트로 옮김 · A10 · A02 · A04 는 어떤 세트 가격에도 그대로(유지 이유: 1인 지불액 · 객실 휴식 가정)",
+    "version": "engine_input",
+    "title": "커플 세트 인상",
+    "topic": "피자힐 · 세트 가격",
+    "change": "세트 184,000 → 216,000",
+    "engine_note": "세트 가격만 올려 세트 · 단품 · 객실 중 무엇을 고르는지 계산",
+    "hypothesis_note": "후기에서 착안한 가설 — 질문의 출발점이며 엔진이 그 반응을 직접 계산하지는 않음",
+    "calc_facts": [
+     "A07-F03",
+     "A07-F08b",
+     "A07-F14",
+     "A07-F25",
+     "A07-F28",
+     "A07-F36"
+    ],
+    "calc_turn": "dinner",
+    "demo": true
+   },
+   {
+    "id": "A07-X2",
+    "question": "와인페어를 음식 페어링(90,000) · 셰프 콜라보(120,000)로 바꾸면 참여하나? 참여하면 저녁 식사는?",
+    "class": "transfer",
+    "basis": [
+     {
+      "fact": "A07-F89",
+      "why": "갈라 페어링 행사에서 새 품종을 배우며 체험"
+     },
+     {
+      "fact": "A07-F42",
+      "why": "셀러 · 집 재고를 보고 할인 와인을 골라 구매 — 와인 소비 습관"
+     },
+     {
+      "fact": "A07-F37",
+      "why": "수영 뒤 룸서비스 스테이크 · 화이트와인"
+     },
+     {
+      "fact": "A07-F09",
+      "why": "고메위크 혜택으로 재방문했지만 품질이 기대에 못 미쳐 부정 평가 — 할인이 만족을 보장하지 않음"
+     }
+    ],
+    "traits": [
+     "A07-T3"
+    ],
+    "rules": [
+     "A07-R2"
+    ],
+    "facets": [
+     "alcohol_familiar",
+     "premium",
+     "novelty"
+    ],
+    "levers": "행사 턴 16:30 · 와인페어 구성 = 페어링 코스 3종 90,000(기존 프리셋 ④)",
+    "cond": {
+     "turn": "day",
+     "event": true,
+     "stay": true,
+     "building": "VISTA",
+     "party_size": 2,
+     "product_levers": {
+      "WINE_FAIR": {
+       "variant": "pairing"
+      }
+     }
+    },
+    "expect": "셰프 · 설명 · 시음이 결합되면 참여 가능성이 높고, 코스로 배가 차면 저녁 식사는 생략될 것(가설)",
+    "result_note": "10/23 엔진 실행: 기본 55,000에서도 참여(11명 중 3명 · 후기 근거 몫 2.65). 페어링 90,000이면 11명 전원 참여하고 저녁은 '건너뜀' — 원인은 개인 성향이 아니라 공통 계산: 페어링 코스를 끼니의 80%로 보는 설계값(끼니 항 +2.4)과 '남은 끼니 0.3 미만이면 식사 후보 제외' 규칙. 같은 구성을 55,000에 둬도 전원 참여(가격이 아니라 구성 효과). 저녁 식사 선택이 줄어드는 것이지 매출 감소를 뜻하지 않음.",
+    "unverified": [
+     "워커힐 와인페어 직접 경험은 없음(다른 행사 전이)",
+     "페어링 메뉴 · 가격 · 끼니 비중 0.8은 가상 프리셋 설계값",
+     "'전원 참여 · 전원 저녁 건너뜀'은 공통 계산 결과이며 고객별 차이는 점수 크기에만 남음"
+    ],
+    "compare_hint": "A02 는 설명 · 시음 결합 행사 경험(제주 티코스)이 있어 페어링에서만 참여로 바뀜",
+    "version": "engine_input",
+    "title": "페어링 코스 행사",
+    "topic": "와인페어 · 구성",
+    "change": "시음 → 페어링 코스 3종 90,000",
+    "engine_note": "구성 변경(끼니 비중 0.8)으로 참여와 그 뒤 저녁을 계산 — 전원 참여는 공통 끼니 항 때문",
+    "hypothesis_note": "후기에서 착안한 가설 — 질문의 출발점이며 엔진이 그 반응을 직접 계산하지는 않음",
+    "calc_facts": [
+     "A07-F03",
+     "A07-F04",
+     "A07-F14",
+     "A07-F24",
+     "A07-F25",
+     "A07-F28"
+    ],
+    "calc_turn": "event",
+    "demo": false,
+    "demo_note": "공통 끼니 가정 중심(페어링 끼니 비중 0.8) — 시연 대표 조건 아님"
+   },
+   {
+    "id": "A07-X3",
+    "question": "수영 · 등산으로 피곤한 날엔 피자힐 대신 객실 식사를 고르나?",
+    "class": "na",
+    "basis": [
+     {
+      "fact": "A07-F37",
+      "why": "수영장 반나절 뒤 외출할 기운이 없어 룸서비스"
+     },
+     {
+      "fact": "A07-F29",
+      "why": "외식을 조심하던 때 코스 대신 사 와서 객실에서"
+     },
+     {
+      "fact": "A07-F13",
+      "why": "객실에서 배달 피자 · 닭강정"
+     }
+    ],
+    "traits": [
+     "A07-T2"
+    ],
+    "rules": [
+     "A07-R1"
+    ],
+    "facets": [
+     "practical_alt",
+     "rest_need"
+    ],
+    "levers": "(없음) — 피로 · 낮 활동 상태는 현재 턴 엔진 입력이 아님",
+    "cond": null,
+    "expect": "피로가 크면 조망 · 미식 선호에도 객실 식사로 바뀔 것(가설)",
+    "result_note": "계산 안 함 — 피로 · 낮 활동 상태를 넣는 입력이 턴 엔진에 없음(분 단위 피로 모델은 제품 범위 밖). 턴 사이 상태 전이가 연결되면 '시설 이용 뒤 저녁'으로 다룰 수 있음.",
+    "unverified": [
+     "전부 — 엔진 후보 · 입력 없음"
+    ],
+    "compare_hint": "",
+    "version": "engine_input",
+    "title": "피곤한 날 객실 식사",
+    "topic": "피자힐 · 객실 식사",
+    "change": "(계산 불가) 피로 입력 없음",
+    "engine_note": "엔진 입력에 피로 · 낮 활동 상태가 없어 실행하지 않음",
+    "hypothesis_note": "후기에서 착안한 가설 — 질문의 출발점이며 엔진이 그 반응을 직접 계산하지는 않음",
+    "calc_facts": [],
+    "demo": false
+   },
+   {
+    "id": "A07-X4",
+    "version": "team_current",
+    "question": "셰프 프리미엄(추가금)은 첫 참여를 끌어도 '가격 대비 감동'이 없으면 재방문을 못 만든다 — 셰프 콜라보 120,000에 참여하나?",
+    "class": "transfer",
+    "basis": [
+     {
+      "fact": "A07-F99",
+      "why": "(팀 최신본) 인당 5만 원 더 내고 셰프를 골랐지만 가격 대비 감동이 적어 재방문 의향 없음"
+     },
+     {
+      "fact": "A07-F09",
+      "why": "고메위크 혜택 재방문도 품질이 기대에 못 미쳐 부정 평가"
+     },
+     {
+      "fact": "A07-F89",
+      "why": "발리 페어링에서 전문가가 고른 와인의 가치를 높게 평가"
+     }
+    ],
+    "traits": [
+     "A07-T3",
+     "A07-T4"
+    ],
+    "rules": [
+     "A07-R2",
+     "A07-R4"
+    ],
+    "facets": [
+     "premium",
+     "value_check",
+     "routine"
+    ],
+    "levers": "행사 턴 · 와인페어 구성 = 셰프 콜라보 페어링 120,000(기존 프리셋 ⑤)",
+    "cond": {
+     "turn": "day",
+     "event": true,
+     "stay": true,
+     "building": "VISTA",
+     "party_size": 2,
+     "product_levers": {
+      "WINE_FAIR": {
+       "variant": "chef"
+      }
+     }
+    },
+    "expect": "참여는 하되(프리미엄 식음 성향) 만족이 가격을 못 따라가면 다음엔 안 온다 — 한 턴 엔진은 '참여'까지만 계산(가설)",
+    "result_note": "10/23 엔진 실행: 셰프 120,000 → 참여(점수 5.58 · 11명 전원 참여) · 저녁 건너뜀. 전원 참여의 원인은 페어링과 같은 공통 끼니 항(설계값)이며 A07 의 프리미엄 성향 몫은 그 위에 더해진 것. '재방문 의향 저하'는 턴 사이 · 방문 사이 상태가 없어 계산하지 않음.",
+    "unverified": [
+     "재방문 효과는 현재 엔진 범위 밖",
+     "A07-F99 는 팀 최신본 사실(엔진 입력 외)",
+     "셰프 구성 · 가격은 가상 프리셋"
+    ],
+    "compare_hint": "A02 · A04 도 셰프 120,000에 참여로 계산되지만 후기 근거 몫이 작아 공통 계산(끼니 해결) 중심",
+    "title": "셰프 콜라보 행사",
+    "topic": "와인페어 · 구성",
+    "change": "시음 → 셰프 페어링 120,000",
+    "engine_note": "구성 · 가격 변경으로 참여만 계산 — 재방문 의향 저하는 계산하지 않음",
+    "hypothesis_note": "후기에서 착안한 가설 — 질문의 출발점이며 엔진이 그 반응을 직접 계산하지는 않음",
+    "calc_facts": [
+     "A07-F03",
+     "A07-F04",
+     "A07-F14",
+     "A07-F24",
+     "A07-F25",
+     "A07-F28"
+    ],
+    "calc_turn": "event",
+    "demo": false,
+    "demo_note": "공통 끼니 가정 중심(페어링 끼니 비중 0.8) — 시연 대표 조건 아님"
+   },
+   {
+    "id": "A07-X5",
+    "version": "team_current",
+    "question": "운전 등으로 술을 못 마시는 날 — 무알코올 대안이 있으면 와인페어에 가나? 그 뒤 저녁은?",
+    "class": "transfer",
+    "basis": [
+     {
+      "fact": "A07-F100",
+      "why": "(팀 최신본) 운전 사정으로 디너에서 술을 한 잔도 못 마셔 아쉬워함"
+     },
+     {
+      "fact": "A07-F84",
+      "why": "두 병을 다 못 마셔 제공 와인을 가져감"
+     },
+     {
+      "fact": "A07-F37",
+      "why": "룸서비스 스테이크 · 화이트와인"
+     }
+    ],
+    "traits": [
+     "A07-T3"
+    ],
+    "rules": [
+     "A07-R2"
+    ],
+    "facets": [
+     "alcohol_familiar",
+     "practical_alt"
+    ],
+    "levers": "행사 턴 · 와인페어 구성 = 안주 1종 + 무알코올 대안 55,000(기존 프리셋 ⑥)",
+    "cond": {
+     "turn": "day",
+     "event": true,
+     "stay": true,
+     "building": "VISTA",
+     "party_size": 2,
+     "product_levers": {
+      "WINE_FAIR": {
+       "variant": "nonalc"
+      }
+     }
+    },
+    "expect": "음주가 막혀도 행사 공간 · 음식 쪽으로 참여하고, 먹은 만큼 저녁은 가벼워질 것(가설)",
+    "result_note": "10/23 엔진 실행: 참여 → 저녁 커플 세트 대신 르 파사쥬 간단 식사(남은 끼니 0.6). 엔진은 '음주 가능 여부'를 방문 조건으로 받지 않으므로 구성 변경 효과만 본 것.",
+    "unverified": [
+     "비음주 조건 자체는 엔진 방문 입력에 없음(alcohol_eligible 고정)",
+     "A07-F100 은 팀 최신본 사실"
+    ],
+    "compare_hint": "A10 (X3) 과 같은 구성 — 둘 다 참여하지만 A10 은 비음주 근거가 직접 관측(F13)",
+    "title": "무알코올 구성(운전)",
+    "topic": "와인페어 · 구성",
+    "change": "시음 → 안주 + 무알코올 55,000",
+    "engine_note": "구성 변경 효과만 계산 — 운전 · 비음주 조건은 입력에 없음",
+    "hypothesis_note": "후기에서 착안한 가설 — 질문의 출발점이며 엔진이 그 반응을 직접 계산하지는 않음",
+    "calc_facts": [
+     "A07-F03",
+     "A07-F04",
+     "A07-F14",
+     "A07-F24",
+     "A07-F25",
+     "A07-F28"
+    ],
+    "calc_turn": "event",
+    "demo": true
+   }
+  ],
+  "A02": [
+   {
+    "id": "A02-X1",
+    "question": "다시 안 간다던 피자힐 — 투숙객 할인이 얼마면 돌아오나?",
+    "class": "direct",
+    "basis": [
+     {
+      "fact": "A02-F18e",
+      "why": "다음에 피자힐에 또 오겠냐는 물음에 아니라고 답함"
+     },
+     {
+      "fact": "A02-F18c",
+      "why": "다른 워커힐 식당과 비교하면 피자힐이 가격 면에서 나은 선택지라고 함"
+     },
+     {
+      "fact": "A02-F14",
+      "why": "성인 3명이 트리플 세트를 먹고 남은 피자를 포장(1인 약 67,600원 경험)"
+     }
+    ],
+    "traits": [],
+    "rules": [
+     "A02-R4"
+    ],
+    "facets": [
+     "value_check",
+     "space"
+    ],
+    "levers": "피자힐 전 상품 투숙객 할인 35,000(단품 파스타 48,000 → 13,000)",
+    "cond": {
+     "turn": "dinner",
+     "event": false,
+     "stay": true,
+     "building": "VISTA",
+     "party_size": 2,
+     "product_levers": {
+      "PH_PASTA": {
+       "guest_discount": 35000
+      },
+      "PH_COUPLE_SET": {
+       "guest_discount": 35000
+      },
+      "PH_PIZZA_S": {
+       "guest_discount": 35000
+      }
+     }
+    },
+    "expect": "재방문 거부 기록이 있어 웬만한 할인으로는 안 오고, 가격 대비 만족이 뒤집힐 만큼 커야 움직일 것(가설)",
+    "result_note": "10/23 엔진 실행: 할인 30,000까지 객실 클럽 샌드위치 유지 · 35,000에서 피자힐 파스타. 기본 조건에서 후기 근거 몫 0 · 설계 가정(객실 휴식 0.67)이 선택을 정함 — 개인 근거보다 공통 계산 중심 고객.",
+    "unverified": [
+     "재방문 거부는 '영구 금지'가 아니라 감점 한 항(엔진 규칙)",
+     "35,000 할인은 현실성 검토 전 — 반응 지점을 보기 위한 실험값"
+    ],
+    "compare_hint": "blog42 는 5,000 · A08 은 15,000 할인에서 피자힐로 — 같은 조건에 고객마다 다른 지점",
+    "version": "engine_input",
+    "title": "투숙객 할인 35,000",
+    "topic": "피자힐 · 혜택",
+    "change": "피자힐 할인 0 → 35,000",
+    "engine_note": "할인으로 지불액을 줄여 객실 → 피자힐 전환 지점을 계산 — 재방문 거부 기록은 감점 한 항",
+    "hypothesis_note": "후기에서 착안한 가설 — 질문의 출발점이며 엔진이 그 반응을 직접 계산하지는 않음",
+    "calc_facts": [
+     "A02-F14",
+     "A02-F16",
+     "A02-F18a",
+     "A02-F20"
+    ],
+    "calc_turn": "dinner",
+    "demo": true
+   },
+   {
+    "id": "A02-X2",
+    "question": "설명 · 시음이 결합된 행사(페어링 코스)라면 와인페어에 참여하나? 기본 입장권이면?",
+    "class": "transfer",
+    "basis": [
+     {
+      "fact": "A02-F25",
+      "why": "부모와 5명이 1인 54,000원 티코스를 체험하고 설명 · 다도 구성이 비싼 값을 한다고 평가"
+     },
+     {
+      "fact": "A02-F24",
+      "why": "코스 뒤 서비스 위스키를 맛보자 배부른 상태에서도 40,000원 치즈 플래터 추가"
+     },
+     {
+      "fact": "A02-F05",
+      "why": "잠깐 쓰기에 아까운 유료 입장은 생략 — 가치 비교"
+     }
+    ],
+    "traits": [],
+    "rules": [
+     "A02-R3",
+     "A02-R1"
+    ],
+    "facets": [
+     "food",
+     "premium",
+     "value_check"
+    ],
+    "levers": "행사 턴 16:30 · 와인페어 구성 = 페어링 코스 3종 90,000 vs 기본 55,000",
+    "cond": {
+     "turn": "day",
+     "event": true,
+     "stay": true,
+     "building": "VISTA",
+     "party_size": 2,
+     "product_levers": {
+      "WINE_FAIR": {
+       "variant": "pairing"
+      }
+     }
+    },
+    "expect": "시음만 있는 55,000은 가치 비교에서 밀리고, 설명 · 음식이 결합되면 참여로 바뀔 것(가설)",
+    "result_note": "10/23 엔진 실행: 기본 55,000 → 스카이야드 족욕 · 페어링 90,000 → 와인페어 참여 · 저녁 건너뜀. 단, 페어링에서는 11명 전원이 참여하므로(공통 끼니 항) A02 의 음식 경험 근거(F24 · F25 · F28, 후기 몫 1.18)는 참여 여부가 아니라 점수 크기에만 기여. 30,000 할인에서는 후기 몫(0.89)이 참여를 가름.",
+    "unverified": [
+     "부모 동반(3인 이상) 조건은 이 실험에 반영 안 함(2인 기본)",
+     "페어링 구성 · 가격은 가상 프리셋"
+    ],
+    "compare_hint": "A10 은 기본 55,000에서 족욕 · 포함 혜택이면 참여 — 같은 '불참'이라도 이유가 다름",
+    "version": "engine_input",
+    "title": "페어링 코스 행사",
+    "topic": "와인페어 · 구성",
+    "change": "시음 → 페어링 코스 3종 90,000",
+    "engine_note": "구성 변경으로 참여를 계산 — 전원 참여 조건이라 개인 근거는 점수 크기에만",
+    "hypothesis_note": "후기에서 착안한 가설 — 질문의 출발점이며 엔진이 그 반응을 직접 계산하지는 않음",
+    "calc_facts": [
+     "A02-F08",
+     "A02-F18a",
+     "A02-F20",
+     "A02-F24",
+     "A02-F25",
+     "A02-F28"
+    ],
+    "calc_turn": "event",
+    "demo": false,
+    "demo_note": "공통 끼니 가정 중심(페어링 끼니 비중 0.8) — 시연 대표 조건 아님"
+   }
+  ]
+ },
+ "versions": {
+  "engine_input": "R-BASE-1022 = PR98 이전 스냅숏(A10 76 · A07 98 사실) + 13차 단계 분리 + 측정 계약 M-1/M-2",
+  "team_current": "b6c4e77 docs/data/team_personas_current (#98@2e1575e 익명 내보내기 · A10 82 · A07 106) — 같은 변환기로 바꿔 비교만 함 · 공유 사실 내용 동일 · 결정 수준 차이 없음"
+ },
+ "situations": [
+  {
+   "id": "wine_fair",
+   "title": "와인페어 참여 · 연계 식사",
+   "note": "직접 = 워커힐 와인페어 경험 사실 · 전이 = 다른 곳의 주류 · 시즌 행사 경험 · 공통 = 그런 근거 없이 끼니 · 가격 계산만",
+   "cond": {
+    "turn": "day",
+    "event": true,
+    "stay": true,
+    "building": "VISTA",
+    "party_size": 2,
+    "product_levers": {
+     "WINE_FAIR": {
+      "variant": "nonalc"
+     }
+    }
+   },
+   "levers": "행사 턴 · 안주 + 무알코올 55,000 (대표 조건)",
+   "agents": [
+    {
+     "agent": "A02",
+     "class": "transfer",
+     "facts": [
+      "A02-F08",
+      "A02-F18a",
+      "A02-F20",
+      "A02-F24"
+     ],
+     "pipeline": "R-BASE-1022",
+     "review_share": 1.18
+    },
+    {
+     "agent": "A04",
+     "class": "common",
+     "facts": [
+      "A04-F04",
+      "A04-F08",
+      "A04-F14"
+     ],
+     "pipeline": "R-BASE-1022",
+     "review_share": 0.18
+    },
+    {
+     "agent": "A05",
+     "class": "transfer",
+     "facts": [
+      "A05-F08a",
+      "A05-F16",
+      "A05-F30",
+      "A05-F56"
+     ],
+     "pipeline": "R-BASE-1022",
+     "review_share": 1.3,
+     "flag": "근거 F08a(미구매 · 미음주 문장) 검수 중 — 정정하면 할인 30,000 에서 불참"
+    },
+    {
+     "agent": "A07",
+     "class": "transfer",
+     "facts": [
+      "A07-F03",
+      "A07-F04",
+      "A07-F14",
+      "A07-F24"
+     ],
+     "pipeline": "R-BASE-1022",
+     "review_share": 3.59
+    },
+    {
+     "agent": "A10",
+     "class": "direct",
+     "facts": [
+      "A10-F06",
+      "A10-F16"
+     ],
+     "pipeline": "R-BASE-1022",
+     "review_share": 1.73
+    },
+    {
+     "agent": "blog41",
+     "class": "transfer",
+     "facts": [
+      "P002_F01",
+      "P003_F01",
+      "P006_F01",
+      "P007_F01"
+     ],
+     "pipeline": "V1 형식 · 측정 계약 미적용",
+     "review_share": 4.06
+    },
+    {
+     "agent": "blog42",
+     "class": "transfer",
+     "facts": [
+      "P060_F01",
+      "P061_F01",
+      "P062_F01",
+      "P063_F01"
+     ],
+     "pipeline": "V1 형식 · 측정 계약 미적용",
+     "review_share": 3.29
+    },
+    {
+     "agent": "blog43",
+     "class": "transfer",
+     "facts": [
+      "B43-P01",
+      "B43-P02",
+      "B43-P04",
+      "B43-P06"
+     ],
+     "pipeline": "V1 형식 · 측정 계약 미적용",
+     "review_share": 3.31
+    },
+    {
+     "agent": "A01",
+     "class": "transfer",
+     "facts": [
+      "A01S_E05",
+      "A01S_E08",
+      "A01S_E11",
+      "A01S_E22"
+     ],
+     "pipeline": "V1.1 importer + 측정 계약 · 13차 단계 분리 미적용",
+     "review_share": 2.36
+    },
+    {
+     "agent": "A03",
+     "class": "transfer",
+     "facts": [
+      "A03_F01",
+      "A03_F03",
+      "A03_F04",
+      "A03_F07"
+     ],
+     "pipeline": "V1.1 importer + 측정 계약 · 13차 단계 분리 미적용",
+     "review_share": 1.86
+    },
+    {
+     "agent": "A08",
+     "class": "transfer",
+     "facts": [
+      "A08S_E03",
+      "A08S_E23",
+      "A08S_E27",
+      "A08S_E30"
+     ],
+     "pipeline": "V1.1 importer + 측정 계약 · 13차 단계 분리 미적용",
+     "review_share": 2.3
+    }
+   ],
+   "share_note": "review_share = 페어링 구성(55,000) 조건에서 와인페어 선택의 후기 근거 몫(전원 선택 조건이라 비교 가능)"
+  },
+  {
+   "id": "pizza_hill",
+   "title": "피자힐 가격 · 상품 · 혜택",
+   "note": "직접 = 피자힐 이용 · 평가 사실 · 전이 = 다른 곳의 미식 · 조망 · 프리미엄 경험 · 공통 = 근거 없음",
+   "cond": {
+    "turn": "dinner",
+    "event": false,
+    "stay": true,
+    "building": "VISTA",
+    "party_size": 2,
+    "product_levers": {
+     "PH_PASTA": {
+      "price": 60000
+     }
+    }
+   },
+   "levers": "저녁 턴 · 파스타 48,000 → 60,000 (대표 조건)",
+   "agents": [
+    {
+     "agent": "A02",
+     "class": "direct",
+     "facts": [
+      "A02-F14",
+      "A02-F16",
+      "A02-F18d",
+      "A02-F18e"
+     ],
+     "pipeline": "R-BASE-1022",
+     "review_share": -0.15
+    },
+    {
+     "agent": "A04",
+     "class": "common",
+     "facts": [
+      "A04-F04",
+      "A04-F08"
+     ],
+     "pipeline": "R-BASE-1022",
+     "review_share": 0.12
+    },
+    {
+     "agent": "A05",
+     "class": "common",
+     "facts": [
+      "A05-F68"
+     ],
+     "pipeline": "R-BASE-1022",
+     "review_share": 0.12
+    },
+    {
+     "agent": "A07",
+     "class": "direct",
+     "facts": [
+      "A07-F08b"
+     ],
+     "pipeline": "R-BASE-1022",
+     "review_share": 2.4
+    },
+    {
+     "agent": "A10",
+     "class": "direct",
+     "facts": [
+      "A10-F07c",
+      "A10-F09",
+      "A10-F18"
+     ],
+     "pipeline": "R-BASE-1022",
+     "review_share": 0.9
+    },
+    {
+     "agent": "blog41",
+     "class": "direct",
+     "facts": [
+      "P015_F02",
+      "P015_F03",
+      "P015_F04"
+     ],
+     "pipeline": "V1 형식 · 측정 계약 미적용",
+     "review_share": 3.07
+    },
+    {
+     "agent": "blog42",
+     "class": "transfer",
+     "facts": [
+      "P058_F01",
+      "P060_F01",
+      "P063_F01",
+      "P067_F01"
+     ],
+     "pipeline": "V1 형식 · 측정 계약 미적용",
+     "review_share": 1.28
+    },
+    {
+     "agent": "blog43",
+     "class": "transfer",
+     "facts": [
+      "B43-P01",
+      "B43-P02",
+      "B43-P04",
+      "B43-P07"
+     ],
+     "pipeline": "V1 형식 · 측정 계약 미적용",
+     "review_share": 2.75
+    },
+    {
+     "agent": "A01",
+     "class": "transfer",
+     "facts": [
+      "A01S_E08",
+      "A01S_E11",
+      "A01S_E26",
+      "A01S_E28"
+     ],
+     "pipeline": "V1.1 importer + 측정 계약 · 13차 단계 분리 미적용",
+     "review_share": 0.87
+    },
+    {
+     "agent": "A03",
+     "class": "transfer",
+     "facts": [
+      "A03_F01",
+      "A03_F07",
+      "A03_F09",
+      "A03_F34"
+     ],
+     "pipeline": "V1.1 importer + 측정 계약 · 13차 단계 분리 미적용",
+     "review_share": 1.12
+    },
+    {
+     "agent": "A08",
+     "class": "direct",
+     "facts": [
+      "A08S_E29"
+     ],
+     "pipeline": "V1.1 importer + 측정 계약 · 13차 단계 분리 미적용",
+     "review_share": 1.5
+    }
+   ],
+   "share_note": "review_share = 피자힐 할인 35,000 조건에서 피자힐 선택의 후기 근거 몫"
+  },
+  {
+   "id": "breakfast",
+   "title": "조식 선택",
+   "note": "조식 선택은 계산되지만, 현재 엔진은 조식 관련 개인 성향을 선택 항으로 쓰지 않아 고객별 차이를 만들 후기 근거가 부족합니다(후보 · 가격이 선택을 정함).",
+   "cond": {
+    "turn": "breakfast",
+    "event": false,
+    "stay": true,
+    "building": "VISTA",
+    "party_size": 2,
+    "product_levers": {}
+   },
+   "levers": "아침 턴 · 기본 조건",
+   "agents": [
+    {
+     "agent": "A02",
+     "class": "nopersonal",
+     "facts": [
+      "A02-F33"
+     ],
+     "pipeline": "R-BASE-1022"
+    },
+    {
+     "agent": "A04",
+     "class": "nopersonal",
+     "facts": [],
+     "pipeline": "R-BASE-1022"
+    },
+    {
+     "agent": "A05",
+     "class": "nopersonal",
+     "facts": [
+      "A05-F13",
+      "A05-F41",
+      "A05-F45"
+     ],
+     "pipeline": "R-BASE-1022"
+    },
+    {
+     "agent": "A07",
+     "class": "nopersonal",
+     "facts": [
+      "A07-F19",
+      "A07-F23",
+      "A07-F25",
+      "A07-F37"
+     ],
+     "pipeline": "R-BASE-1022"
+    },
+    {
+     "agent": "A10",
+     "class": "nopersonal",
+     "facts": [
+      "A10-F02",
+      "A10-F14",
+      "A10-F25"
+     ],
+     "pipeline": "R-BASE-1022"
+    },
+    {
+     "agent": "blog41",
+     "class": "nopersonal",
+     "facts": [],
+     "pipeline": "V1 형식 · 측정 계약 미적용"
+    },
+    {
+     "agent": "blog42",
+     "class": "nopersonal",
+     "facts": [
+      "P059_F01",
+      "P082_F01"
+     ],
+     "pipeline": "V1 형식 · 측정 계약 미적용"
+    },
+    {
+     "agent": "blog43",
+     "class": "nopersonal",
+     "facts": [],
+     "pipeline": "V1 형식 · 측정 계약 미적용"
+    },
+    {
+     "agent": "A01",
+     "class": "nopersonal",
+     "facts": [
+      "A01S_E11",
+      "A01S_E14",
+      "A01S_E17",
+      "A01S_E37"
+     ],
+     "pipeline": "V1.1 importer + 측정 계약 · 13차 단계 분리 미적용"
+    },
+    {
+     "agent": "A03",
+     "class": "nopersonal",
+     "facts": [
+      "A03_F01",
+      "A03_F06",
+      "A03_F15",
+      "A03_F19"
+     ],
+     "pipeline": "V1.1 importer + 측정 계약 · 13차 단계 분리 미적용"
+    },
+    {
+     "agent": "A08",
+     "class": "nopersonal",
+     "facts": [
+      "A08S_E02",
+      "A08S_E09",
+      "A08S_E28",
+      "A08S_E32"
+     ],
+     "pipeline": "V1.1 importer + 측정 계약 · 13차 단계 분리 미적용"
+    }
+   ],
+   "share_note": "성향 항 미사용"
+  }
+ ]
+}

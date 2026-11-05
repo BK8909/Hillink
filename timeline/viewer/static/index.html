@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>힐링크 손님 지도</title>
+<script>
+// Fresh documents start at the library; intentional demo links retain their route.
+if (!/^#demo\//.test(location.hash)) history.replaceState(history.state, "", location.pathname + location.search + "#lib");
+</script>
+<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="/static/agent.css">
+<link rel="stylesheet" href="/static/library.css">
+<link rel="stylesheet" href="/static/flow.css">
+<link rel="stylesheet" href="/static/opx.css">
+<link rel="stylesheet" href="/static/receipts.css">
+<link rel="stylesheet" href="/static/revenue.css">
+<link rel="stylesheet" href="/static/situation.css">
+<link rel="stylesheet" href="/static/autonomy.css">
+<link rel="stylesheet" href="/static/demo_story.css">
+</head>
+<body>
+<header>
+  <div class="brand"><img class="logo" id="brandHome" src="static/hillink_logo.png" alt="힐링크 · 고객 흐름으로" title="고객 흐름으로" width="109" height="24"> 워커힐 손님 지도 <small>후기 기반 고객 페르소나 시뮬레이션</small></div>
+  <nav>
+    <button class="tab" data-mode="library" title="실제 후기에서 시작한 고객 유형별 페르소나 · 프로파일">페르소나 라이브러리</button>
+    <button class="tab on" data-mode="day" title="에이전트가 핵심 턴에서 고르는 업장 · 상품과 그 이유">고객 흐름</button>
+    <button class="tab hidden" data-mode="report" title="오늘 판단할 것 · 핵심 숫자 · 근거 문단">운영 요약</button>
+    <button class="tab hidden" data-mode="ask" title="변동 상황 · 행사 · 가설을 평상시와 나란히">상황 비교</button>
+    <button class="tab dev-tab" data-mode="auto" title="개발 · 검수용 비교 화면 — 고객 흐름과 같은 autonomy_v1 엔진의 원본 출력(CL-1024-22R 부터 운영자 메뉴에서는 고객 흐름 하나만)">자율 하루(검수)</button>
+    <button class="tab" data-mode="opx" title="상품 조건을 바꾸면 동결 정량 엔진이 다시 계산한 고객별 선택 · 업장별 선택 수">매출 집계</button>
+    <button class="tab" data-mode="evidence" title="이 고객은 어떤 경험을 했고, 무엇을 중요하게 여기며, 이번 조건에서 왜 이렇게 행동했나">행동근거</button>
+    <button class="tab hidden" data-mode="settings" title="조정값 · 규모 · 모델 버전">모델 설정</button>
+    <button id="btnDev" class="devtoggle" title="파일 이름 · 계산 키 · 조정값 전체 같은 개발용 정보를 보이거나 숨깁니다">개발 정보</button>
+  </nav>
+</header>
+
+<main class="report">
+  <!-- 운영 요약 (메인) — static/report.js -->
+  <section id="reportView"></section>
+  <!-- 페르소나 라이브러리 (10/23) — static/library.js -->
+  <section id="libraryView"></section>
+  <!-- 운영 실험 (CL-1024-17) — static/opx.js · 서버 /api/opx/run → opx_run.py(Codex CD-1024-15 실행 인터페이스) -->
+  <section id="opxView"></section>
+  <!-- 자율 하루 (CL-1024-18) — static/autonomy.js · 서버 /api/autonomy → autonomy_run.py -->
+  <section id="autoView"></section>
+  <!-- 판단 근거 · 모델 설정 (10/14 메뉴 재구성) — static/evidence.js -->
+  <section id="evidenceView"></section>
+  <section id="settingsView"><div class="rwrap" id="settingsWrap">
+    <div id="settingsHead"></div>
+    <div id="settingsInfo"></div>
+    <div class="setbox">
+      <label>규모 <select id="dScale"><option value="1">전체 (객실 × 가동률 79% · 1~3분)</option><option value="0.3">30% (빠르게 · 좌석이 덜 붐빔)</option><option value="0.1">10% (확인용)</option></select></label>
+      <details id="knobs" open><summary>시나리오 조정값 <span class="hint">(기본은 모델 그대로)</span></summary>
+        <div class="row presets knobpre"><button data-knob="base">기본</button><button data-knob="onto" title="실험 3 후보 — 다음 회차 · 대기 상한 300 · 포장 −2.5">후보 (실험 3)</button><button data-knob="reserve" title="회차 배정 — 다음 회차 · 예약 대기 · 줄 30분 · 포장 한도 60">회차 배정</button><button data-knob="full" title="온톨로지 정합 — 회차 배정 + 럭스바 한잔 16% + 르 파사쥬 독립 구매 62% + 식사시간 120 + 모에기 40석 + 회차제 좌석 + 포장 40판 + 객실 수 507·244·50 + 목적 섞기 온톨로지 배분 + 처리 순서 섞기 (가설 H3 채택) + 평일 비투숙 ×0.5 (가설 H4b 채택 · 주말 · 공휴일에는 빠짐) + 객실 산식 (건물별 목표 객실박 − 이월 · 참고계수) + 손님마다 다른 난수 + 중식 · 석식 혼잡 시 체류 단축 끔 (v4.1)">온톨로지 정합 v4.1</button></div>
+        <label class="check"><input type="checkbox" id="kNext"> 다음 회차 보기 <span class="hint">(회차 창에 자리 없으면 같은 식사 시간대 다음 회차)</span></label>
+        <label>대기 상한 <select id="kWait"><option value="150">150분 (기본)</option><option value="30">30분</option><option value="60">60분</option><option value="90">90분</option><option value="240">240분</option><option value="300">300분</option></select></label>
+        <label>피자힐 포장 감점 <select id="kTake"><option value="0">0 (기본)</option><option value="-1">−1</option><option value="-2">−2</option><option value="-2.5">−2.5</option><option value="-4">−4</option></select></label>
+        <label class="check"><input type="checkbox" id="kReserve"> 예약 대기 <span class="hint">(다음 회차까지는 벌점 없음 — 회차 배정)</span></label>
+        <label>회차 안 줄 서기 상한 <select id="kQueue"><option value="">없음 (기본)</option><option value="30">30분</option><option value="45">45분</option><option value="60">60분</option></select></label>
+        <label>럭스바 저녁 뒤 한잔 (커플 기준 비율) <select id="kBar"><option value="">없음 (기본 — 식사로 봄)</option><option value="0.1">10%</option><option value="0.16">16%</option><option value="0.2">20%</option><option value="0.3">30%</option></select></label>
+        <label>르 파사쥬 독립 구매 비율 <select id="kPass"><option value="">없음 (기본 — 저녁 대용 포장)</option><option value="0.4">40%</option><option value="0.62">62%</option><option value="0.8">80%</option></select></label>
+        <label>파인다이닝 식사시간 <select id="kDwell"><option value="">모델 (금룡 110 · 온달 120 · 명월관 90)</option><option value="90">90분</option><option value="120">120분 (온톨로지)</option></select></label>
+        <label class="check"><input type="checkbox" id="kHold"> 회차제 좌석 회차 끝까지 <span class="hint">(더뷔페 1부 · 2부 · 모에기 — 온톨로지 식사당 회전 상한)</span></label>
+        <label>붐빌 때 체류 단축 <select id="kNoBusy"><option value="2">중식 · 석식만 끔 (v4.1 기본 · 조식은 그대로)</option><option value="">켬 (v4 방식 · 좌석이 절반 넘게 차면 최소 체류만)</option><option value="1">조식까지 모두 끔 (실험)</option></select> <span class="hint">'붐비면 빨리 먹는다' 는 근거가 부족해 v4.1 에서 중식 · 석식은 끔 · 근거사슬 7-17 · 7-19</span></label>
+        <label class="check"><input type="checkbox" id="kRooms"> 객실 수 · 온톨로지 <span class="hint">(507 · 244 · 50 — 기본 557 · 253 · 65)</span></label>
+        <label class="check"><input type="checkbox" id="kRoomFormula"> 객실 산식 · 건물별 목표 객실박 − 이월 <span class="hint">(v4 기본 · 참고계수 · 목적 구성을 바꿔도 객실 판매는 그대로)</span></label>
+        <label>더뷔페 좌석 <select id="kBufSeats"><option value="">288석 (홀 · 기본)</option><option value="338">338석 (테라스 50석을 식사에 쓰는 경우 · 운영 조건 비교)</option></select></label>
+        <label>모에기 좌석 <select id="kMoegi"><option value="">103석 (공식 전체)</option><option value="40">40석 (온톨로지 · 다이닝 홀만)</option></select></label>
+        <label class="check"><input type="checkbox" id="kPurpose"> 목적 섞기 · 온톨로지 배분 <span class="hint">(기본은 후기 기반 비중)</span></label>
+        <label>피자힐 포장 하루 한도 <select id="kTcap"><option value="">없음 (기본)</option><option value="40">40판 (온톨로지 기준 수요 30 × 10/10 배율)</option><option value="60">60판 (온톨로지 처리 한도)</option></select></label>
+        <label class="check"><input type="checkbox" id="kOrder"> 투숙 · 비투숙 처리 순서 섞기 <span class="hint">(기본은 투숙 손님이 모두 먼저 좌석을 잡음)</span></label>
+        <label>평일 저녁 호텔 식당 계획 (투숙) <select id="kWdDine"><option value="">없음 (기본 · 저녁마다 호텔 식당을 찾음)</option><option value="0.5">50%</option><option value="0.6">60%</option><option value="0.7">70%</option></select></label>
+        <label class="check"><input type="checkbox" id="kWdNamed"> 유명 업장(피자힐)은 평일에도 그대로 <span class="hint">(가설 H4 · 평일에만 적용)</span></label>
+        <label>평일 비투숙 손님 배율 <select id="kWdDay"><option value="">없음 (주말과 같은 비율)</option><option value="0.7">0.7</option><option value="0.5">0.5 (가설 H4b 채택 · v4 기본)</option><option value="0.4">0.4</option></select></label>
+        <label class="check"><input type="checkbox" id="kWdBiz"> 비즈니스 · 접대 비투숙은 평일에도 줄이지 않음 <span class="hint">(가설 H5 · 평일 비투숙 배율과 함께)</span></label>
+        <label class="check"><input type="checkbox" id="kBizParty"> 평일 비즈니스 · 접대 일행을 별실 규모로 (2~10인) <span class="hint">(가설 H5)</span></label>
+        <label class="check"><input type="checkbox" id="kRngTeam"> 손님마다 다른 난수 (팀 이름 기준) <span class="hint">(v4 기본 · 10/14 반영. 꺼져 있으면 모든 손님이 같은 난수 줄로 확률 선택 · 근거사슬 7-8절)</span></label>
+        <label>가설 실험 <select id="kHypo"><option value="">없음</option></select></label>
+        <div class="hint">가설 실험 — 근거 사슬에서 나온 가설을 모델 입력 하나로 바꿔 돌린다 (근거 · 예측 · 판정 기준이 같이 있음<span class="dev"> · timeline/hypotheses.csv</span>).</div>
+        <div class="hint">변칙 시나리오 — 휴업 · 악천후 · 바이럴 · 외국인 · 가격 <span class="dev">(timeline/anomaly_scenarios.csv)</span>. 크기는 지금 가정(△)이고 공개 통계로 바꿔 넣는 자리입니다. 크기 배수는 배율이 1 에서 벗어난 몫을 곱합니다.</div>
+        <label>월별 검색 관심 반영 <select id="kSearch"><option value="">없음 (기본)</option><option value="0.5">절반 강도 (가정)</option><option value="1">전체 강도 (가정)</option></select><span class="hint">검색은 방문 수가 아니며 식당 선호에만 반영합니다.</span></label>
+        <label>비투숙 피자힐 미식 게시 배수 <select id="kPosting"><option value="">보정 없음 (기본)</option><option value="2">2배 가정</option><option value="3">3배 가정</option><option value="4">4배 가정</option></select></label>
+        <label>SNS 신호 가중 <select id="kTrend"><option value="">없음 (기본)</option><option value="0.5">0.5 (모델과 SNS 사이)</option><option value="1">1 (SNS 목적 구성)</option></select></label>
+        <div class="hint">SNS 신호 가중 — 업장마다 수동 검수한 SNS 게시물의 목적 구성(지금은 피자힐 28건<span class="dev"> · trend_signals.csv</span>) 쪽으로 '가고 싶은 식당' 을 기웁니다. 업장을 가고 싶어 하는 손님 수는 그대로, 누가 가고 싶어 하는지만 바뀝니다.<span class="dev"> docs/SNS_신호_선택가중_1013.md</span></div>
+        <div class="hint">46편 후기 대조는 이 조정값을 못 보므로(좌석 상한 없이 돎) 온톨로지 대조로만 정하는 값입니다.<span class="dev"> docs/실험_피자힐_포장_1013.md</span></div>
+      </details>
+      <div class="setact"><button id="btnSetRun" class="primary">이 설정으로 하루 돌리기</button><button id="btnSetV4" class="ghost">v4.1 기본(온톨로지 정합)으로 되돌리기</button></div>
+      <div class="hint setnote">조정값은 '고객 흐름' 의 하루 돌리기에 그대로 쓰입니다. 날짜 · 행사 · 변동 상황은 그 화면 왼쪽에서 고릅니다.</div>
+    </div>
+  </div></section>
+  <!-- 왼쪽: 설정 -->
+  <aside id="left">
+    <div class="seg flowseg" id="flowSeg"><button data-m="agent" class="on">에이전트 한 명</button><button data-m="agents">에이전트 여러 명</button></div>
+    <section class="mode-agent hidden" aria-label="핵심 선택 턴"></section>
+    <section class="mode-guest hidden">
+      <div class="g-scroll" id="gScroll">
+      <div class="gstep">
+        <h3 class="gh"><i>1</i>실험할 손님</h3>
+        <div class="seg srcseg" id="srcSeg"><button data-s="blog" class="on">블로그 후기</button><button data-s="grid">고객 유형표</button><button data-s="custom">직접 만들기</button></div>
+        <div class="src" data-s="blog">
+          <select id="fReview" aria-label="블로그 후기" class="rv-sel"></select>
+          <div id="reviewInfo" class="reviewinfo"></div>
+        </div>
+        <div class="src hidden" data-s="grid">
+          <div class="hint">빠른 시연용 손님</div>
+          <div class="row presets">
+            <button data-preset="A" title="외부 20대 커플 · 와인페어">A 외부 커플</button>
+            <button data-preset="B" title="캠크닉 패키지 아이 동반 가족 2박">B 패키지 가족</button>
+            <button data-preset="C" title="50대 이상 비스타 2박">C 50+ 투숙</button>
+            <button data-preset="D" title="원래 오던 비투숙 가족">D 비투숙 가족</button>
+          </div>
+          <details id="gridPick" class="gridpick"><summary>고객 유형표에서 고르기 <span class="hint" id="gridCount"></span></summary>
+            <div class="grid2 gfilt">
+              <label>방문 목적 <select id="gfPurpose"><option value="">전체</option></select></label>
+              <label>연령 <select id="gfAge"><option value="">전체</option></select></label>
+              <label>대표자 <select id="gfSex"><option value="">전체</option></select></label>
+              <label>숙박 <select id="gfStay"><option value="">전체</option><option value="0">비투숙 (0박)</option><option value="1">1박</option><option value="2">2박</option></select></label>
+            </div>
+            <label class="check small"><input type="checkbox" id="gfKids"> 아이 동반만</label>
+            <div id="gridList" class="gridlist"></div>
+            <div class="hint">유형표 한 줄은 개인이 아니라 고객군 정의입니다. 고르면 그 줄의 값으로 손님 한 팀을 만들고, 줄 번호와 시드를 함께 남겨 같은 손님으로 다시 비교할 수 있게 합니다.</div>
+          </details>
+          <button id="btnRandom" class="ghost wide">무작위 한 팀 (생성기와 같은 비중)</button>
+        </div>
+        <div class="src hidden" data-s="custom"><div class="hint">아래 '세부 값' 에서 손님을 직접 정합니다. 다른 경로로 고른 손님의 값을 가져와 고쳐도 됩니다.</div></div>
+        <div id="personaCard" class="pcard"></div>
+        <details id="pDetail" class="pdetail"><summary>세부 값 <span class="hint" id="pDetailHint">(선택한 손님의 기본값 · 고칠 때만 펼치기)</span></summary>
+          <div class="seg" id="fGuest"><button data-v="1" class="on">투숙</button><button data-v="0">비투숙</button></div>
+          <div class="grid2 only-guest">
+            <label>건물 <select id="fProp"><option value="GRAND">그랜드</option><option value="VISTA">비스타</option><option value="DOUGLAS">더글라스</option></select></label>
+            <label>박수 <select id="fNights"><option>1</option><option>2</option><option>3</option></select></label>
+          </div>
+          <div class="grid2">
+            <label>인원 <select id="fParty"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></label>
+            <label class="check"><input type="checkbox" id="fKids"> 만 13세 미만 동반</label>
+          </div>
+          <div class="grid2">
+            <label>대표자 성별 <select id="fSex"></select></label>
+            <label>연령대 <select id="fAge"></select></label>
+          </div>
+          <label>방문 목적 <select id="fPurpose"></select></label>
+          <label class="only-guest">객실 상품 <select id="fPackage"></select></label>
+          <div class="hint only-guest" id="pkgHint"></div>
+          <label>가고 싶은 식당 <select id="fPrefer"></select></label>
+          <label class="check" id="wfWrap"><input type="checkbox" id="fWf"> 와인페어에 가기로 함</label>
+          <div class="grid2">
+            <label>도착 <input type="time" id="fArrive" value="15:00"></label>
+            <label class="only-day">떠남 <input type="time" id="fDepart" value="22:00"></label>
+            <label class="only-guest">기상 <input type="time" id="fWake" value="07:30"></label>
+          </div>
+          <div class="grid2">
+            <label>도착 수단 <select id="fArrival"><option value="">미상 (셔틀 · 택시)</option><option value="car_valet">자차 · 발렛</option><option value="car_self">자차 · 직접 주차</option></select></label>
+            <label>무작위 시드 <input type="number" id="fSeed" value="7" min="1"></label>
+          </div>
+        </details>
+      </div>
+      <!-- 10/20 UX 23b — ② 하나에 '기준 환경' 과 '바꿔 볼 조건' 을 함께 둔다. 조건을 고르면 저장된 R 실험의 기준 · 변경이 이 자리에 나온다 -->
+      <div class="gstep env-step" id="envStep">
+        <h3 class="gh"><i>2</i>환경 설정</h3>
+        <div class="env-sub env-base">기준 환경</div>
+        <div class="frows" id="sitChanged">
+          <label>날짜 <select id="fDate"></select></label>
+          <label>행사 <select id="fScenario"><option value="none">행사 없음</option><option value="winefair">와인페어 있음</option></select></label>
+          <label>변동 상황 <select id="fAnom"><option value="">추가 변동 없음</option></select></label>
+          <!-- 10/20 UX 23차 — 그 날 손님 전체와의 좌석 경쟁은 개별 고객 실험의 중심이 아니므로 '내부 진단' 으로 접는다 (값 · 동작은 그대로) -->
+          <details class="diag-fold" id="crowdFold"><summary>내부 진단 · 좌석 경쟁 <span class="hint" id="crowdSum"></span></summary>
+            <label>좌석 경쟁 <select id="fCrowd"><option value="">혼자 · 좌석 경쟁 없음</option></select></label>
+            <div class="hint" id="crowdHint"></div>
+          </details>
+        </div>
+        <dl class="pl-cond pl-only" id="labBase"></dl>
+        <div class="env-sub">바꿔 볼 조건 <span>하나만</span></div>
+        <div class="pl-vars" id="labVars" role="group" aria-label="바꿔 볼 조건">
+          <button type="button" data-v="" class="on" aria-pressed="true">없음</button>
+          <button type="button" data-v="winefair" aria-pressed="false">와인페어</button>
+          <button type="button" data-v="riverpark" aria-pressed="false">야외 수영장</button>
+          <button type="button" data-v="rain" aria-pressed="false">비</button>
+          <button type="button" data-v="autumn" aria-pressed="false">가을 산책</button>
+          <button type="button" data-v="beer" aria-pressed="false">맥주 테라스</button>
+        </div>
+        <dl class="pl-cond pl-only" id="labCond"></dl>
+      </div>
+      <details class="foot fold g-assume"><summary>이 화면의 기본 가정</summary><p>같은 설정 · 같은 시드면 같은 결과가 나옵니다. 좌석 · 회차 조건은 그 날 손님들과 함께 돌릴 때만 의미가 있습니다. 이 손님은 그 날 손님들이 잡은 좌석 위에 마지막으로 들어가므로 실제보다 막히기 쉽습니다. 성향 점수는 지금 모델의 선택에 쓰이지 않습니다(강도 0).</p></details>
+      </div>
+      <!-- 10/17 UX 4차 · ③ 실행은 왼쪽 아래에 고정 (위 ① ② 만 스크롤) -->
+      <div class="gstep g-runbar">
+        <h3 class="gh"><i>3</i>실행</h3>
+        <div class="runact">
+          <button id="btnRun" class="run-main" title="위에서 고른 손님을 ②의 날짜 · 상황에 놓고 하루 한 번 돌립니다">▶ 이 조건으로 실행</button>
+          <button id="btnCmp" class="run-sub" title="같은 손님 · 같은 시드를 같은 날짜의 기준 운영(추가 변동 없음 · 그 날 손님들과 함께)과 나란히 돌려 차이를 봅니다">⇄ 기준 운영과 비교</button>
+          <!-- 10/20 UX 23b — 조건을 고르면 실행 대신 '저장된 결과 불러오기'. 지금 새로 계산하지 않는다는 것을 버튼과 설명에 같이 쓴다 -->
+          <button id="btnLab" class="run-main pl-run pl-only" type="button">저장된 실험 결과 불러오기</button>
+          <div class="ra-sub pl-runsub pl-only" id="labHint">R 이 미리 계산해 둔 결과(조건마다 12번)를 불러옵니다 · 지금 새로 계산하지 않습니다</div>
+          <div class="ra-sub" id="runCmpTxt"></div>
+          <div class="ra-sub" id="runHint"></div>
+        </div>
+        <div class="sep-v" id="revCheck">
+          <div class="sv-h">별도 검증 <span id="reviewHint"></span></div>
+          <button class="sv-btn" id="btnRev" title="후기에 적힌 날짜 · 좌석 경쟁 없이 돌린 모델 동선을 후기 방문 기록과 대조합니다. ②의 날짜 · 상황은 쓰지 않습니다 (가상 상황이 아닌 모델 검증)"><span>후기 방문 기록과 모델 대조</span><span aria-hidden="true">↗</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="mode-day">
+      <h3 class="dayh"><span class="for-day">하루 전체 돌리기</span><span class="for-ask">기준 하루 설정 <small>비교의 A · 날짜 · 행사 · 변동 상황</small></span></h3>
+      <label>날짜 <select id="dDate"></select></label>
+      <label>행사 <select id="dScenario"><option value="none">행사 없음</option><option value="winefair">와인페어 있음</option></select></label>
+      <label>변동 상황 <select id="kAnom"><option value="">추가 변동 없음</option></select></label>
+      <label>변동 크기 <select id="kAnomK"><option value="">표의 값 그대로 (×1)</option><option value="0.5">절반 (×0.5)</option><option value="2">두 배 (×2)</option></select></label>
+      <button id="btnDay" class="primary wide">하루 돌리기</button>
+      <div id="dayProg" class="prog hidden"><div class="bar"><i></i></div><span></span></div>
+      <h4>계산해 둔 날</h4>
+      <div id="dayList" class="daylist"></div>
+      <details class="foot fold"><summary>이 화면의 기본 가정</summary><p>지도에서 업장을 누르면 회차별 점유율 · 수용 범위 초과 수요 · L4 상품 · L5 집계행이 나옵니다. 기본값(고객 유형표 · 목적 · 연령 섞기 · 비투숙 기본 규모 · 좌석 상한)으로 그 날 손님 전부를 돌립니다. 와인페어 있음은 행사 가정(보도자료 조건 반영) 그대로입니다.</p></details>
+    </section>
+  </aside>
+
+  <!-- 가운데: 지도 -->
+  <section id="center">
+    <div id="mapWrap">
+      <svg id="map" viewBox="0 0 1000 643" preserveAspectRatio="xMidYMid meet">
+        <!-- CL-1024-14 지도 위 고객 가시성 — 얇은 밝은 외곽선 · 낮은 그림자(agfLift) / 고른 · 현재 고객은 은은한 빛을 더함(agfGlow) -->
+        <defs>
+          <radialGradient id="agHlGrad"><stop offset="0" stop-color="#fff3d6" stop-opacity=".95"/><stop offset=".55" stop-color="#ffd98a" stop-opacity=".45"/><stop offset="1" stop-color="#ffcf70" stop-opacity="0"/></radialGradient>
+          <filter id="agfLift" x="-40%" y="-40%" width="180%" height="190%" color-interpolation-filters="sRGB">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="1.1" result="d"/><feFlood flood-color="#fff" flood-opacity=".95"/><feComposite in2="d" operator="in" result="ol"/>
+            <feGaussianBlur in="SourceAlpha" stdDeviation="1.3" result="b"/><feOffset in="b" dy="1.3" result="bo"/><feFlood flood-color="#3c2814" flood-opacity=".3"/><feComposite in2="bo" operator="in" result="sh"/>
+            <feMerge><feMergeNode in="sh"/><feMergeNode in="ol"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="agfGlow" x="-80%" y="-80%" width="260%" height="270%" color-interpolation-filters="sRGB">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="1.3" result="d"/><feFlood flood-color="#fff"/><feComposite in2="d" operator="in" result="ol"/>
+            <feGaussianBlur in="SourceAlpha" stdDeviation="2.6" result="g1"/><feFlood flood-color="#ffc977"/><feComposite in2="g1" operator="in" result="glow1"/>
+            <feGaussianBlur in="SourceAlpha" stdDeviation="7" result="g2"/><feFlood flood-color="#ffd596" flood-opacity=".8"/><feComposite in2="g2" operator="in" result="glow2"/>
+            <feGaussianBlur in="SourceAlpha" stdDeviation="1.6" result="b"/><feOffset in="b" dy="2" result="bo"/><feFlood flood-color="#3c2814" flood-opacity=".32"/><feComposite in2="bo" operator="in" result="sh"/>
+            <feMerge><feMergeNode in="glow2"/><feMergeNode in="glow1"/><feMergeNode in="sh"/><feMergeNode in="ol"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g id="base"></g>
+        <g id="dim"></g>
+        <g id="labels"></g>
+        <g id="heat"></g>
+        <g id="route"></g>
+        <g id="trail"></g>
+        <g id="pins"></g>
+        <g id="vcline"></g>
+        <g id="agent"></g>
+      </svg>
+      <div id="visitCard" class="vcard hidden" role="button" tabindex="0"></div>
+      <div id="clock"><b>--:--</b><span></span></div>
+      <div id="mapView" class="seg mapview"><button data-v="now" class="on">이 시각</button><button data-v="day">하루 누적</button></div>
+      <div id="routeAll" class="seg mapview routeseg hidden" role="group" aria-label="지도 보기 모드"><button type="button" data-r="now" class="on" title="현재 위치 · 지금 행동 · 그 장소 그림">지금 행동</button><button type="button" data-r="all" title="하루 전체 방문 순서와 경로 · 오른쪽은 방문 요약">전체 동선</button></div>
+      <div id="mapLegend" class="legend maplegend"></div>
+      <div id="mapEmpty">왼쪽에서 날짜를 정하고 <b>하루 돌리기</b>를 누르거나, 계산해 둔 날을 고르세요</div>
+      <div id="askView" class="hidden"></div>
+    </div>
+    <div id="controls">
+      <button id="btnPlay" class="round" title="재생 / 멈춤">▶</button>
+      <select id="speed" title="속도"><option value="5">느리게</option><option value="15" selected>보통</option><option value="40">빠르게</option><option value="100">아주 빠르게</option></select>
+      <label class="check small"><input type="checkbox" id="skipNight" checked> 밤 건너뛰기</label>
+      <label class="check small" title="이동 구간은 화면에서 1초 이상 걸리게 재생을 잠시 늦춥니다. 모델 시각 · 일정은 바뀌지 않습니다. 끄면 고른 배속 그대로 재생합니다"><input type="checkbox" id="slowMove" checked> 이동 천천히</label>
+      <input type="range" id="slider" min="0" max="1000" value="0">
+    </div>
+    <div id="strip"></div>
+  </section>
+
+  <!-- 오른쪽: 근거 -->
+  <aside id="right">
+    <div id="panel"><div class="empty">손님을 돌리면 여기에 하루 요약이 나오고,<br>지도 아래 일정에서 행동을 누르면 <b>왜 그걸 골랐는지</b>가 나옵니다.</div></div>
+  </aside>
+</main>
+<script src="/static/display_registry.js"></script>
+<script src="/static/map.js"></script>
+<script src="/static/app.js"></script>
+<script src="/static/report.js"></script>
+<script src="/static/observed-payments.js"></script>
+<script src="/static/evidence.js"></script>
+<script src="/static/assist.js"></script>
+<script src="/static/compare.js"></script>
+<script src="/static/lab.js"></script>
+<script src="/static/agent.js"></script>
+<script src="/static/library.js"></script>
+<script src="/static/opx.js"></script>
+<script src="/static/autonomy.js"></script>
+<script src="/static/behavior.js"></script>
+<script src="/static/receipts.js"></script>
+<script src="/static/revenue.js"></script>
+<script src="/static/situation.js"></script>
+<script src="/static/demo_story.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "version": "dynamic_operating_policy_v1.1",
+  "status": "exploratory_common_rules_not_fitted_to_D_or_human_answers",
+  "weights": {
+    "food_experience": 4,
+    "current_meal_goal": 3,
+    "new_experience": 2,
+    "scenic_space": 1,
+    "incremental_cost": 2,
+    "time_burden": 1,
+    "room_convenience": 2
+  },
+  "transfer_levels": {"food_experience": 0.65, "new_experience_upper": 0.55, "scenic_space": 0.60, "room_pattern": 0.50},
+  "general_cost_attention": 0.50,
+  "time_reference_minutes": 120,
+  "minimum_experience_domains": 3,
+  "numerical_tie_tolerance": 1e-9,
+  "selection_method": "minimize_worst_case_regret_over_declared_uncertainty_endpoints",
+  "notes": [
+    "C08/C16 post-experience price-value appraisals never set a pre-purchase cost coefficient.",
+    "General cost comparison remains a scenario heuristic, not an observed personal purchasing rule.",
+    "New-experience transfer is uncertain from zero to the bounded upper level. Activities within the same visit/document bundle do not create repeated independent trials.",
+    "Direct menu match replaces the broad food transfer level with 1, rather than adding the same source twice. Food quality and meal adequacy are operator assumptions.",
+    "Information acquisition competes as a plan. It can reduce regret only for explicitly observable menu facts, after time and reservation checks; it does not reveal taste satisfaction or personal novelty preferences.",
+    "Reservation intent, attempts, reservation results, and actual use are separate states.",
+    "No score, uncertainty endpoint, or regret is a probability, willingness-to-pay estimate, or learned customer utility."
+  ]
+}

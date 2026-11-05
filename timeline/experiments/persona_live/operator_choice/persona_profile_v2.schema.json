@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PersonaProfileV2",
+  "type": "object",
+  "required": ["persona_id", "profile_version", "source_review_ids", "stay_contexts", "explicit_preferences", "behavioral_commitments", "profile_uncertainties", "review_status", "independent_evaluation_eligible"],
+  "properties": {
+    "persona_id": {"type": "string"},
+    "profile_version": {"const": "persona_profile_v2.0"},
+    "source_review_ids": {"type": "array", "items": {"type": "string"}},
+    "source_access": {"const": "approved_card_only"},
+    "raw_source_verified": {"const": false},
+    "stay_contexts": {"type": "array", "items": {"type": "object"}},
+    "party_relationship_hypotheses": {"type": "array", "items": {"type": "object"}},
+    "demographic_hypotheses": {"type": "array", "items": {"type": "object"}},
+    "trip_purposes": {"type": "array", "items": {"type": "object"}},
+    "explicit_preferences": {"type": "array", "items": {"type": "object"}},
+    "evaluated_experiences": {"type": "array"},
+    "behavioral_commitments": {"type": "array", "items": {"type": "object"}},
+    "activity_engagement": {"type": "array"},
+    "purchase_and_benefit_patterns": {"type": "array"},
+    "price_and_value_orientation": {"type": "array"},
+    "decision_style": {"type": "array"},
+    "derived_traits": {"type": "array"},
+    "alternative_hypotheses": {"type": "array"},
+    "evidence_roots": {"type": "array", "items": {"type": "string"}},
+    "profile_uncertainties": {"type": "array", "items": {"type": "string"}},
+    "review_status": {"type": "string"},
+    "independent_evaluation_eligible": {"const": false}
+  },
+  "$comment": "Claim objects preserve fact/inference/unknown layers; no raw URLs, author keys, or source text."
+}

@@ -1,0 +1,97 @@
+/* A separate, stepped RPG frame. The surrounding hotel UI stays unchanged. */
+#panel .frp-brief > .hls-rpg {
+  --dialogue-edge:#393532;
+  position:relative;
+  isolation:isolate;
+  min-width:0;
+  /* 15px visible clearance: 11px raised plate above, 4px shadow below. */
+  margin:26px 0 19px;
+  padding:20px 17px 7px;
+  border:0!important;
+  border-radius:0!important;
+  background:none!important;
+  box-shadow:none!important;
+  filter:drop-shadow(3px 4px 0 #6b5b422e);
+  color:#332f28;
+}
+#panel .frp-cohort-selected > .frp-brief > .hls-rpg {
+  /* This existing grid already contributes a 14px gap. */
+  margin:12px 0 5px;
+}
+.hls-rpg::before,.hls-rpg::after {
+  content:'';
+  position:absolute;
+  pointer-events:none;
+  clip-path:polygon(8px 0,calc(100% - 8px) 0,calc(100% - 8px) 4px,calc(100% - 4px) 4px,calc(100% - 4px) 8px,100% 8px,100% calc(100% - 8px),calc(100% - 4px) calc(100% - 8px),calc(100% - 4px) calc(100% - 4px),calc(100% - 8px) calc(100% - 4px),calc(100% - 8px) 100%,8px 100%,8px calc(100% - 4px),4px calc(100% - 4px),4px calc(100% - 8px),0 calc(100% - 8px),0 8px,4px 8px,4px 4px,8px 4px);
+}
+.hls-rpg::before { inset:0;background:var(--dialogue-edge);z-index:-2; }
+.hls-rpg::after {
+  inset:3px;
+  background:#fff8e9;
+  box-shadow:inset 0 0 0 2px #766a60,inset 0 0 0 3px #fffdf5;
+  z-index:-1;
+}
+.hls-rpg-speaker {
+  position:absolute;
+  top:-11px;
+  left:14px;
+  max-width:calc(100% - 28px);
+  padding:4px 10px 5px;
+  background:var(--dialogue-edge);
+  color:#fff8ed;
+  border-radius:0;
+  clip-path:polygon(3px 0,calc(100% - 3px) 0,calc(100% - 3px) 3px,100% 3px,100% calc(100% - 3px),calc(100% - 3px) calc(100% - 3px),calc(100% - 3px) 100%,3px 100%,3px calc(100% - 3px),0 calc(100% - 3px),0 3px,3px 3px);
+}
+.hls-rpg-speaker b { display:block;font-family:ui-monospace,"Apple SD Gothic Neo","Malgun Gothic",monospace;font-size:12px;font-weight:750;letter-spacing:.035em;line-height:1.5;overflow-wrap:anywhere; }
+.hls-rpg-heading { display:flex;align-items:center;justify-content:space-between;gap:8px; }
+#panel .hls-rpg-heading h3 {
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip-path:inset(50%);white-space:nowrap;
+}
+.hls-rpg-heading small { color:#88795f;font-size:9px;line-height:1.5; }
+#panel .hls-rpg-heading .rp-link {
+  padding:0 1px;min-height:28px;flex:none;border:0;border-radius:0;
+  background:transparent;box-shadow:none;color:#82745e;font-size:10px;font-weight:400;
+}
+#panel .hls-rpg-heading .rp-link:hover { color:#514a40;text-decoration:underline; }
+.hls-rpg-message { padding-top:5px; }
+.hls-rpg-chapter { display:block;font-size:10px;line-height:1.6;letter-spacing:.02em;color:#89734f;margin-bottom:4px; }
+.hls-rpg-lines { min-height:0;font-family:"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",system-ui,sans-serif;font-size:14px;font-weight:600;letter-spacing:.015em;line-height:1.85;word-break:keep-all;overflow-wrap:anywhere;color:#302c25; }
+.hls-rpg-lines p { margin:0;max-height:15em;overflow:auto;scrollbar-width:thin;white-space:pre-line; }
+.hls-rpg-lines p:not([hidden]) { animation:hls-rpg-page-in 100ms ease-out; }
+.hls-rpg [hidden] { display:none!important; }
+.hls-rpg-footer { display:flex;align-items:start;justify-content:space-between;gap:8px;margin-top:7px; }
+.hls-rpg-footer details { min-width:0;flex:1; }
+.hls-rpg-footer summary { cursor:pointer;font-size:10px;color:#82745e;min-height:44px;display:flex;align-items:center;list-style:none; }
+.hls-rpg-footer summary::before { content:'＋';margin-right:5px; }
+.hls-rpg-footer details[open] summary::before { content:'−'; }
+.hls-rpg-footer ol { margin:0;padding:0 0 0 18px;max-height:220px;overflow:auto;scrollbar-width:thin; }
+.hls-rpg-footer li { font-size:12px;font-weight:600;line-height:1.75;margin-bottom:9px;overflow-wrap:anywhere; }
+.hls-rpg-footer details>p { font-size:10px;line-height:1.6;color:#88795f; }
+.hls-rpg-pager { display:flex;align-items:center;gap:5px;flex:none; }
+.hls-rpg-pager small { font-size:11px;font-variant-numeric:tabular-nums;color:#79674c; }
+.hls-rpg-pager button { display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:0;background:transparent;color:var(--dialogue-edge);cursor:pointer;touch-action:manipulation; }
+/* Wide stepped cursor; the existing 44px button and click handler are unchanged. */
+.hls-rpg-pager button span { display:block;width:26px;height:14px;font-size:0;background:currentColor;filter:drop-shadow(1px 2px 0 #cbb898);clip-path:polygon(0 0,100% 0,100% 22%,85% 22%,85% 44%,70% 44%,70% 66%,58% 66%,58% 86%,42% 86%,42% 66%,30% 66%,30% 44%,15% 44%,15% 22%,0 22%); }
+.hls-rpg-pager button:hover { background:#ebddc3; }
+.hls-rpg button:focus-visible,.hls-rpg summary:focus-visible { outline:2px solid #746049;outline-offset:1px; }
+@keyframes hls-rpg-page-in { from{opacity:.72;transform:translateY(1px)}to{opacity:1;transform:translateY(0)} }
+@media(prefers-reduced-motion:reduce) { .hls-rpg-lines p:not([hidden]) { animation:none; } }
+@media(max-width:600px) {
+  #panel .frp-brief > .hls-rpg { padding:20px 16px 7px; }
+  .hls-rpg-heading small { font-size:9px; }
+  .hls-rpg-lines { font-size:14px;line-height:1.85; }
+  .hls-rpg-footer summary { font-size:11px; }
+}
+
+/* Travel-only progress view. No narrative/error text or judgment paging here. */
+.hls-rpg-moving .hls-rpg-journey { display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;min-height:106px;padding:12px 0 4px; }
+.hls-rpg-journey p { margin:0;max-width:100%;text-align:center;font-family:ui-monospace,"Apple SD Gothic Neo","Malgun Gothic",monospace;font-size:20px;font-weight:800;line-height:1.65;letter-spacing:.025em;color:#282522;word-break:keep-all;overflow-wrap:anywhere; }
+.hls-rpg-dots { display:inline-block;width:1.8em;text-align:left;vertical-align:bottom; }
+.hls-rpg-dots>span { display:block;animation:hls-rpg-travel-dots 1500ms steps(1,end) infinite; }
+.hls-rpg-moving.is-paused .hls-rpg-dots>span { animation-play-state:paused; }
+.hls-rpg-move-tools { display:flex;justify-content:flex-end; }
+#panel .hls-rpg-move-tools .rp-link { min-height:28px;padding:0 1px;border:0;border-radius:0;background:transparent;box-shadow:none;color:#82745e;font-size:10px;font-weight:400; }
+@keyframes hls-rpg-travel-dots { 0%{clip-path:inset(0 66.666% 0 0)}33.333%{clip-path:inset(0 33.333% 0 0)}66.666%,100%{clip-path:inset(0)} }
+@media(max-width:600px) { .hls-rpg-journey p { font-size:20px; } }
+@media(prefers-reduced-motion:reduce) { .hls-rpg-dots>span { animation:none;clip-path:none; } }

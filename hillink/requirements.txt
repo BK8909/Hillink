@@ -1,0 +1,3 @@
+# Current candidate runtime (Python 3.11, macOS/Linux).
+-r timeline/experiments/persona_live/operator_choice/requirements.txt
+certifi==2026.6.17

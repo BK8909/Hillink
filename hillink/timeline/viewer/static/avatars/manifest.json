@@ -1,0 +1,966 @@
+{
+ "solo_hiker": {
+  "source": "ef991df9-image.png",
+  "source_size": [
+   1774,
+   887
+  ],
+  "desc": "1인 · 성인 남성 · 캡 · 백팩(활동형)",
+  "members": [
+   "adult"
+  ],
+  "n_members": 1,
+  "front": {
+   "n": 7,
+   "cw": 84,
+   "ch": 160
+  },
+  "side": {
+   "n": 7,
+   "cw": 109,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   142,
+   256
+  ],
+  "transparent": true
+ },
+ "solo_office": {
+  "source": "9f4264ce-image.png",
+  "source_size": [
+   1448,
+   1086
+  ],
+  "desc": "1인 · 성인 남성 · 재킷 · 서류가방(업무형)",
+  "members": [
+   "adult"
+  ],
+  "n_members": 1,
+  "front": {
+   "n": 4,
+   "cw": 95,
+   "ch": 160
+  },
+  "side": {
+   "n": 4,
+   "cw": 97,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   146,
+   256
+  ],
+  "transparent": true
+ },
+ "solo_casual": {
+  "source": "fa4dec31-image.png",
+  "source_size": [
+   1774,
+   887
+  ],
+  "desc": "1인 · 성인 남성 · 선글라스 · 토트백(캐주얼)",
+  "members": [
+   "adult"
+  ],
+  "n_members": 1,
+  "front": {
+   "n": 7,
+   "cw": 86,
+   "ch": 160
+  },
+  "side": {
+   "n": 7,
+   "cw": 95,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   128,
+   256
+  ],
+  "transparent": true
+ },
+ "family_3gen": {
+  "source": "98e41020-image.png",
+  "source_size": [
+   1774,
+   887
+  ],
+  "desc": "5인 · 성인 2(남 · 여) + 아이 1 + 조부모 2",
+  "members": [
+   "adult",
+   "adult",
+   "child",
+   "elder",
+   "elder"
+  ],
+  "n_members": 5,
+  "front": {
+   "n": 3,
+   "cw": 217,
+   "ch": 160
+  },
+  "side": {
+   "n": 3,
+   "cw": 245,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   256,
+   195
+  ],
+  "transparent": true
+ },
+ "couple_smart": {
+  "source": "140bb730-image.png",
+  "source_size": [
+   1448,
+   1086
+  ],
+  "desc": "2인 · 성인 남 · 여(스마트 캐주얼 · 손 잡음)",
+  "members": [
+   "adult",
+   "adult"
+  ],
+  "n_members": 2,
+  "front": {
+   "n": 4,
+   "cw": 163,
+   "ch": 160
+  },
+  "side": {
+   "n": 4,
+   "cw": 162,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   220,
+   256
+  ],
+  "transparent": true
+ },
+ "friends_2f": {
+  "source": "a0fba1d3-image.png",
+  "source_size": [
+   1774,
+   887
+  ],
+  "desc": "2인 · 성인 여성 2(친구 · 손 잡음)",
+  "members": [
+   "adult",
+   "adult"
+  ],
+  "n_members": 2,
+  "front": {
+   "n": 4,
+   "cw": 156,
+   "ch": 160
+  },
+  "side": {
+   "n": 4,
+   "cw": 161,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   236,
+   256
+  ],
+  "transparent": true
+ },
+ "couple_vacation": {
+  "source": "10b1299f-image.png",
+  "source_size": [
+   1774,
+   887
+  ],
+  "desc": "2인 · 성인 남 · 여(휴가 · 밀짚모자)",
+  "members": [
+   "adult",
+   "adult"
+  ],
+  "n_members": 2,
+  "front": {
+   "n": 4,
+   "cw": 148,
+   "ch": 160
+  },
+  "side": {
+   "n": 4,
+   "cw": 187,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   214,
+   256
+  ],
+  "transparent": true
+ },
+ "family_kid1": {
+  "source": "a68d0b81-image.png",
+  "source_size": [
+   1774,
+   887
+  ],
+  "desc": "3인 · 성인 2(남 · 여) + 아이 1",
+  "members": [
+   "adult",
+   "adult",
+   "child"
+  ],
+  "n_members": 3,
+  "front": {
+   "n": 3,
+   "cw": 202,
+   "ch": 160
+  },
+  "side": {
+   "n": 3,
+   "cw": 211,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   205,
+   256
+  ],
+  "transparent": true
+ },
+ "family_kid2": {
+  "source": "16b79727-image.png",
+  "source_size": [
+   1774,
+   887
+  ],
+  "desc": "4인 · 성인 2(남 · 여) + 아이 2",
+  "members": [
+   "adult",
+   "adult",
+   "child",
+   "child"
+  ],
+  "n_members": 4,
+  "front": {
+   "n": 4,
+   "cw": 188,
+   "ch": 160
+  },
+  "side": {
+   "n": 4,
+   "cw": 233,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   256,
+   238
+  ],
+  "transparent": true
+ },
+ "couple_wine": {
+  "source": "0d5ef3e2-image.png",
+  "source_size": [
+   1448,
+   1086
+  ],
+  "desc": "2인 · 성인 남 · 여(정장 · 와인잔)",
+  "members": [
+   "adult",
+   "adult"
+  ],
+  "n_members": 2,
+  "front": {
+   "n": 3,
+   "cw": 152,
+   "ch": 160
+  },
+  "side": {
+   "n": 3,
+   "cw": 164,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   168,
+   256
+  ],
+  "transparent": true
+ },
+ "user_no0021": {
+  "source": "21아바타.png",
+  "source_sha256": "34ef060f147690a9b575a83f75cc23c0900e6ddd7a54975a82f22d68b073b5e8",
+  "n_members": 1,
+  "members": [
+   "adult"
+  ],
+  "front": {
+   "n": 3,
+   "cw": 180,
+   "ch": 160
+  },
+  "side": {
+   "n": 3,
+   "cw": 180,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   256,
+   256
+  ],
+  "transparent": true,
+  "a02_verified": true,
+  "visit_relations": [
+   "solo"
+  ],
+  "concept_only": true
+ },
+ "user_no0022": {
+  "source": "22아바타.png",
+  "source_sha256": "9cedcdce9570f081d08b29d3985581c4a7c3929d4da78504c10badcdf8053979",
+  "n_members": 2,
+  "members": [
+   "adult",
+   "adult"
+  ],
+  "front": {
+   "n": 3,
+   "cw": 210,
+   "ch": 160
+  },
+  "side": {
+   "n": 1,
+   "cw": 210,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   256,
+   256
+  ],
+  "transparent": true,
+  "a02_verified": true,
+  "visit_relations": [
+   "group",
+   "friends",
+   "couple",
+   "spouse"
+  ],
+  "concept_only": true
+ },
+ "user_no0023": {
+  "source": "23아바타.png",
+  "source_sha256": "44e657d939ee4d13131b4f30a7eebf8a21959edeb528bd7fc6bd30a3fbc910ba",
+  "n_members": 2,
+  "members": [
+   "adult",
+   "adult"
+  ],
+  "front": {
+   "n": 3,
+   "cw": 210,
+   "ch": 160
+  },
+  "side": {
+   "n": 1,
+   "cw": 210,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   256,
+   256
+  ],
+  "transparent": true,
+  "a02_verified": true,
+  "visit_relations": [
+   "group",
+   "friends",
+   "couple",
+   "spouse"
+  ],
+  "concept_only": true
+ },
+ "user_no0024": {
+  "source": "24아바타.png",
+  "source_sha256": "aeec854c931fc73d0389a9390085d6a386a5ab723150c974bda46d653f8198eb",
+  "n_members": 1,
+  "members": [
+   "adult"
+  ],
+  "front": {
+   "n": 3,
+   "cw": 180,
+   "ch": 160
+  },
+  "side": {
+   "n": 3,
+   "cw": 180,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   256,
+   256
+  ],
+  "transparent": true,
+  "a02_verified": true,
+  "visit_relations": [
+   "solo"
+  ],
+  "concept_only": true
+ },
+ "user_no0025": {
+  "source": "25아바타.png",
+  "source_sha256": "2e1651f4ef85ca37f2c6887da662592f646da8d8a3ce8fff752fb7eb4ca2ba8e",
+  "n_members": 2,
+  "members": [
+   "adult",
+   "adult"
+  ],
+  "front": {
+   "n": 2,
+   "cw": 210,
+   "ch": 160
+  },
+  "side": {
+   "n": 1,
+   "cw": 210,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   256,
+   256
+  ],
+  "transparent": true,
+  "a02_verified": true,
+  "visit_relations": [
+   "group",
+   "friends",
+   "couple",
+   "spouse"
+  ],
+  "concept_only": true
+ },
+ "user_no0026": {
+  "source": "26아바타.png",
+  "source_sha256": "2f25740b8dfe194563e1dea84924492b837c6b50b88197c3f1d08243c0fe68eb",
+  "n_members": 1,
+  "members": [
+   "adult"
+  ],
+  "front": {
+   "n": 3,
+   "cw": 180,
+   "ch": 160
+  },
+  "side": {
+   "n": 3,
+   "cw": 180,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   256,
+   256
+  ],
+  "transparent": true,
+  "a02_verified": true,
+  "visit_relations": [
+   "solo"
+  ],
+  "concept_only": true
+ },
+ "user_no0027": {
+  "source": "27아바타.png",
+  "source_sha256": "387494bd5293a16aadbbd74e16a9f17e3d7f55e11041730e2a2cd1f2de74c07d",
+  "n_members": 2,
+  "members": [
+   "adult",
+   "adult"
+  ],
+  "front": {
+   "n": 3,
+   "cw": 210,
+   "ch": 160
+  },
+  "side": {
+   "n": 1,
+   "cw": 210,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   256,
+   256
+  ],
+  "transparent": true,
+  "a02_verified": true,
+  "visit_relations": [
+   "group",
+   "friends",
+   "couple",
+   "spouse"
+  ],
+  "concept_only": true
+ },
+ "user_no0028": {
+  "source": "28아바타.png",
+  "source_sha256": "76a834b07e39a944c2128cc8e38d23c7ac0924e9392315cbc99c120184ce90f2",
+  "n_members": 1,
+  "members": [
+   "adult"
+  ],
+  "front": {
+   "n": 3,
+   "cw": 180,
+   "ch": 160
+  },
+  "side": {
+   "n": 3,
+   "cw": 180,
+   "ch": 160
+  },
+  "side_faces": "left",
+  "portrait": [
+   256,
+   256
+  ],
+  "transparent": true,
+  "a02_verified": true,
+  "visit_relations": [
+   "solo"
+  ],
+  "concept_only": true
+ },
+ "neutral_group_2": {
+  "source": "ChatGPT 이미지 2026년 10월 28일 오후 07_15_47-1.png",
+  "source_sha256": "a4db5a584b8d2450b3c769506193b752ba973abe18a551ac30a6579d52c30b84",
+  "source_size": [
+   1254,
+   1254
+  ],
+  "desc": "사용자 제공 2인 공용 캐릭터 · 실제 고객 외모/성별/연령 아님",
+  "members": [
+   "adult",
+   "adult"
+  ],
+  "n_members": 2,
+  "side_faces": "left",
+  "portrait": [
+   256,
+   256
+  ],
+  "transparent": true,
+  "a02_verified": true,
+  "user_provided": true,
+  "human_product_visual_approval": "PENDING",
+  "visit_relations": [
+   "group"
+  ],
+  "front": {
+   "n": 4,
+   "cw": 176,
+   "ch": 160
+  },
+  "side": {
+   "n": 3,
+   "cw": 176,
+   "ch": 160
+  }
+ },
+ "neutral_group_3": {
+  "source": "ChatGPT 이미지 2026년 10월 28일 오후 07_15_49-2.png",
+  "source_sha256": "d5b0c83e27f5cc2b2a27a271472cd4b0535b24371c2f317b8a0b67b9c7670b18",
+  "source_size": [
+   1254,
+   1254
+  ],
+  "desc": "사용자 제공 3인 공용 캐릭터 · 실제 고객 외모/성별/연령 아님",
+  "members": [
+   "adult",
+   "adult",
+   "adult"
+  ],
+  "n_members": 3,
+  "side_faces": "left",
+  "portrait": [
+   256,
+   256
+  ],
+  "transparent": true,
+  "a02_verified": true,
+  "user_provided": true,
+  "human_product_visual_approval": "PENDING",
+  "visit_relations": [
+   "group",
+   "family_parents"
+  ],
+  "front": {
+   "n": 1,
+   "cw": 224,
+   "ch": 160
+  },
+  "side": {
+   "n": 1,
+   "cw": 224,
+   "ch": 160
+  }
+ },
+ "friends_neutral_3": {
+  "source": "귀여운 세 친구 걷기 스프라이트 시트.png",
+  "source_sha256": "93fd54268b3f36d9d11f0541980301858823aee856220838d4ca99c7e13451b1",
+  "source_size": [
+   1774,
+   887
+  ],
+  "desc": "사용자 제공 3인 공용 캐릭터 · 실제 고객 외모/성별/연령 아님",
+  "members": [
+   "adult",
+   "adult",
+   "adult"
+  ],
+  "n_members": 3,
+  "side_faces": "left",
+  "portrait": [
+   256,
+   256
+  ],
+  "transparent": true,
+  "a02_verified": true,
+  "user_provided": true,
+  "human_product_visual_approval": "PENDING",
+  "visit_relations": [
+   "friends"
+  ],
+  "front": {
+   "n": 4,
+   "cw": 224,
+   "ch": 160
+  },
+  "side": {
+   "n": 4,
+   "cw": 224,
+   "ch": 160
+  }
+ },
+ "user_no0021_group2": {
+  "derived_from": [
+   "user_no0021",
+   "user_no0026"
+  ],
+  "n_members": 2,
+  "members": [
+   "adult",
+   "adult"
+  ],
+  "front": {
+   "n": 3,
+   "cw": 210,
+   "ch": 160
+  },
+  "side": {
+   "n": 3,
+   "cw": 210,
+   "ch": 160
+  },
+  "portrait": [
+   256,
+   256
+  ],
+  "side_faces": "left",
+  "transparent": true,
+  "a02_verified": true,
+  "visit_relations": [
+   "group",
+   "friends",
+   "couple",
+   "spouse"
+  ],
+  "concept_only": true,
+  "note": "Separate supplied figures placed side-by-side. No relationship inferred."
+ },
+ "user_no0024_group2": {
+  "derived_from": [
+   "user_no0024",
+   "user_no0028"
+  ],
+  "n_members": 2,
+  "members": [
+   "adult",
+   "adult"
+  ],
+  "front": {
+   "n": 3,
+   "cw": 210,
+   "ch": 160
+  },
+  "side": {
+   "n": 3,
+   "cw": 210,
+   "ch": 160
+  },
+  "portrait": [
+   256,
+   256
+  ],
+  "side_faces": "left",
+  "transparent": true,
+  "a02_verified": true,
+  "visit_relations": [
+   "group",
+   "friends",
+   "couple",
+   "spouse"
+  ],
+  "concept_only": true,
+  "note": "Separate supplied figures placed side-by-side. No relationship inferred."
+ },
+ "user_no0026_group2": {
+  "derived_from": [
+   "user_no0026",
+   "user_no0028"
+  ],
+  "n_members": 2,
+  "members": [
+   "adult",
+   "adult"
+  ],
+  "front": {
+   "n": 3,
+   "cw": 210,
+   "ch": 160
+  },
+  "side": {
+   "n": 3,
+   "cw": 210,
+   "ch": 160
+  },
+  "portrait": [
+   256,
+   256
+  ],
+  "side_faces": "left",
+  "transparent": true,
+  "a02_verified": true,
+  "visit_relations": [
+   "group",
+   "friends",
+   "couple",
+   "spouse"
+  ],
+  "concept_only": true,
+  "note": "Separate supplied figures placed side-by-side. No relationship inferred."
+ },
+ "user_no0028_group2": {
+  "derived_from": [
+   "user_no0028",
+   "user_no0021"
+  ],
+  "n_members": 2,
+  "members": [
+   "adult",
+   "adult"
+  ],
+  "front": {
+   "n": 3,
+   "cw": 210,
+   "ch": 160
+  },
+  "side": {
+   "n": 3,
+   "cw": 210,
+   "ch": 160
+  },
+  "portrait": [
+   256,
+   256
+  ],
+  "side_faces": "left",
+  "transparent": true,
+  "a02_verified": true,
+  "visit_relations": [
+   "group",
+   "friends",
+   "couple",
+   "spouse"
+  ],
+  "concept_only": true,
+  "note": "Separate supplied figures placed side-by-side. No relationship inferred."
+ },
+ "user_no0022_single": {
+  "source": "22아바타.png",
+  "source_rectangles": {
+   "front": [
+    894,
+    16,
+    145,
+    310
+   ],
+   "side": [
+    7,
+    334,
+    136,
+    258
+   ]
+  },
+  "n_members": 1,
+  "members": [
+   "adult"
+  ],
+  "front": {
+   "n": 1,
+   "cw": 180,
+   "ch": 160
+  },
+  "side": {
+   "n": 1,
+   "cw": 180,
+   "ch": 160
+  },
+  "portrait": [
+   256,
+   256
+  ],
+  "side_faces": "left",
+  "transparent": true,
+  "a02_verified": true,
+  "visit_relations": [
+   "solo"
+  ],
+  "note": "Single supplied figure for an unknown-party representative portrait, not a one-person visit claim."
+ },
+ "user_no0023_single": {
+  "source": "23아바타.png",
+  "source_rectangles": {
+   "front": [
+    1110,
+    17,
+    123,
+    364
+   ],
+   "side": [
+    2,
+    381,
+    106,
+    238
+   ]
+  },
+  "n_members": 1,
+  "members": [
+   "adult"
+  ],
+  "front": {
+   "n": 1,
+   "cw": 180,
+   "ch": 160
+  },
+  "side": {
+   "n": 1,
+   "cw": 180,
+   "ch": 160
+  },
+  "portrait": [
+   256,
+   256
+  ],
+  "side_faces": "left",
+  "transparent": true,
+  "a02_verified": true,
+  "visit_relations": [
+   "solo"
+  ],
+  "note": "Single supplied figure for an unknown-party representative portrait, not a one-person visit claim."
+ },
+ "user_no0025_single": {
+  "source": "25아바타.png",
+  "source_rectangles": {
+   "front": [
+    494,
+    23,
+    119,
+    253
+   ],
+   "side": [
+    33,
+    289,
+    120,
+    234
+   ]
+  },
+  "n_members": 1,
+  "members": [
+   "adult"
+  ],
+  "front": {
+   "n": 1,
+   "cw": 180,
+   "ch": 160
+  },
+  "side": {
+   "n": 1,
+   "cw": 180,
+   "ch": 160
+  },
+  "portrait": [
+   256,
+   256
+  ],
+  "side_faces": "left",
+  "transparent": true,
+  "a02_verified": true,
+  "visit_relations": [
+   "solo"
+  ],
+  "note": "Single supplied figure for an unknown-party representative portrait, not a one-person visit claim."
+ },
+ "user_no0027_single": {
+  "source": "27아바타.png",
+  "source_rectangles": {
+   "front": [
+    291,
+    21,
+    125,
+    332
+   ],
+   "side": [
+    593,
+    363,
+    83,
+    246
+   ]
+  },
+  "n_members": 1,
+  "members": [
+   "adult"
+  ],
+  "front": {
+   "n": 1,
+   "cw": 180,
+   "ch": 160
+  },
+  "side": {
+   "n": 1,
+   "cw": 180,
+   "ch": 160
+  },
+  "portrait": [
+   256,
+   256
+  ],
+  "side_faces": "left",
+  "transparent": true,
+  "a02_verified": true,
+  "visit_relations": [
+   "solo"
+  ],
+  "note": "Single supplied figure for an unknown-party representative portrait, not a one-person visit claim."
+ }
+}

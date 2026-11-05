@@ -1,0 +1,168 @@
+[
+  {
+    "runtime_place_code": "THE_BUFFET",
+    "catalog_outlet_id": "BUFFET",
+    "legacy_action_keys": [
+      "buffet_b",
+      "buffet_l",
+      "buffet_d"
+    ],
+    "status": "READ_ONLY_REVIEW_PROPOSAL_NOT_ENGINE_APPROVED",
+    "matching_basis": "수령 개발시연 place 코드와 가격자료 업장명; legacy keys는 합본revenue.py/기존prices.py 대조",
+    "sku_ids": [
+      "BUFFET-BREAKFAST-ADULT",
+      "BUFFET-BREAKFAST-CHILD",
+      "BUFFET-LUNCH-WEEKDAY_NONHOLIDAY-ADULT",
+      "BUFFET-LUNCH-WEEKDAY_NONHOLIDAY-CHILD",
+      "BUFFET-LUNCH-WEEKEND_OR_HOLIDAY-ADULT",
+      "BUFFET-LUNCH-WEEKEND_OR_HOLIDAY-CHILD",
+      "BUFFET-OCTNOV-DINNER-ADULT",
+      "BUFFET-OCTNOV-DINNER-CHILD",
+      "BUFFET-DEC-BREAKFAST-ADULT",
+      "BUFFET-DEC-BREAKFAST-CHILD",
+      "BUFFET-DEC-LUNCH-ADULT",
+      "BUFFET-DEC-LUNCH-CHILD",
+      "BUFFET-DEC-DINNER-ADULT",
+      "BUFFET-DEC-DINNER-CHILD"
+    ],
+    "limits": "업장 연결은 실제 상품·수량·혜택·결제 확정이 아님"
+  },
+  {
+    "runtime_place_code": "PIZZA_HILL",
+    "catalog_outlet_id": "PIZZAHILL",
+    "legacy_action_keys": [
+      "pizza",
+      "pizza_to"
+    ],
+    "status": "READ_ONLY_REVIEW_PROPOSAL_NOT_ENGINE_APPROVED",
+    "matching_basis": "수령 개발시연 place 코드와 가격자료 업장명; legacy keys는 합본revenue.py/기존prices.py 대조",
+    "sku_ids": [
+      "PIZZA-SET-COUPLE",
+      "PIZZA-SET-TRIPLE",
+      "PIZZA-COMBINATION-S-HALL",
+      "PIZZA-COMBINATION-S-TAKEOUT",
+      "PIZZA-COMBINATION-L-HALL",
+      "PIZZA-COMBINATION-L-TAKEOUT",
+      "PIZZA-QUATTRO-HALL",
+      "PIZZA-QUATTRO-TAKEOUT",
+      "PIZZA-QUATTRO-CHEESE",
+      "PIZZA-SEIS-HALL",
+      "PIZZA-SEIS-TAKEOUT",
+      "PIZZA-SEIS-CHEESE",
+      "PIZZA-AMERICANO-REGULAR",
+      "PIZZA-AMERICANO-WITH-MEAL",
+      "PIZZA-ICED-AMERICANO-REGULAR",
+      "PIZZA-ICED-AMERICANO-WITH-MEAL",
+      "PIZZA-SET-QUATTRO",
+      "PIZZA-SET-SEIS"
+    ],
+    "limits": "업장 연결은 실제 상품·수량·혜택·결제 확정이 아님"
+  },
+  {
+    "runtime_place_code": "GEUMRYONG",
+    "catalog_outlet_id": "GEUMRYONG",
+    "legacy_action_keys": [
+      "geum"
+    ],
+    "status": "READ_ONLY_REVIEW_PROPOSAL_NOT_ENGINE_APPROVED",
+    "matching_basis": "수령 개발시연 place 코드와 가격자료 업장명; legacy keys는 합본revenue.py/기존prices.py 대조",
+    "sku_ids": [
+      "GEUM-SEASON-AUTUMN-2026",
+      "GEUM-WEEKDAY-SET-3",
+      "GEUM-WEEKDAY-SET-4"
+    ],
+    "limits": "업장 연결은 실제 상품·수량·혜택·결제 확정이 아님"
+  },
+  {
+    "runtime_place_code": "ONDAL",
+    "catalog_outlet_id": "ONDAL",
+    "legacy_action_keys": [
+      "ondal"
+    ],
+    "status": "READ_ONLY_REVIEW_PROPOSAL_NOT_ENGINE_APPROVED",
+    "matching_basis": "수령 개발시연 place 코드와 가격자료 업장명; legacy keys는 합본revenue.py/기존prices.py 대조",
+    "sku_ids": [
+      "ONDAL-SURA",
+      "ONDAL-GUNGJUNG",
+      "ONDAL-KIDS-SET",
+      "ONDAL-MEAL-SET-ADDON"
+    ],
+    "limits": "업장 연결은 실제 상품·수량·혜택·결제 확정이 아님"
+  },
+  {
+    "runtime_place_code": "MYONGWOLGWAN",
+    "catalog_outlet_id": "MYONGWOLGWAN",
+    "legacy_action_keys": [
+      "myong"
+    ],
+    "status": "READ_ONLY_REVIEW_PROPOSAL_NOT_ENGINE_APPROVED",
+    "matching_basis": "수령 개발시연 place 코드와 가격자료 업장명; legacy keys는 합본revenue.py/기존prices.py 대조",
+    "sku_ids": [
+      "MYONG-BULGOGI",
+      "MYONG-MARINATED",
+      "MYONG-BRISKET",
+      "MYONG-TONGUE"
+    ],
+    "limits": "업장 연결은 실제 상품·수량·혜택·결제 확정이 아님"
+  },
+  {
+    "runtime_place_code": "MOEGI",
+    "catalog_outlet_id": "MOEGI",
+    "legacy_action_keys": [
+      "moegi"
+    ],
+    "status": "READ_ONLY_REVIEW_PROPOSAL_NOT_ENGINE_APPROVED",
+    "matching_basis": "수령 개발시연 place 코드와 가격자료 업장명; legacy keys는 합본revenue.py/기존prices.py 대조",
+    "sku_ids": [
+      "MOEGI-LUNCH-COURSE",
+      "MOEGI-SASHIMI-SET",
+      "MOEGI-SUKIYAKI-BEEF-ADDON"
+    ],
+    "limits": "업장 연결은 실제 상품·수량·혜택·결제 확정이 아님"
+  },
+  {
+    "runtime_place_code": "GRAND_POOL",
+    "catalog_outlet_id": "GRAND_POOL",
+    "legacy_action_keys": [],
+    "status": "READ_ONLY_REVIEW_PROPOSAL_NOT_ENGINE_APPROVED",
+    "matching_basis": "수령 개발시연 place 코드와 가격자료 업장명; legacy keys는 합본revenue.py/기존prices.py 대조",
+    "sku_ids": [
+      "GRAND-POOL-INCLUDED",
+      "GRAND-POOL-EXTRA"
+    ],
+    "limits": "업장 연결은 실제 상품·수량·혜택·결제 확정이 아님"
+  },
+  {
+    "runtime_place_code": "DOUGLAS_LOUNGE",
+    "catalog_outlet_id": "DOUGLAS_LOUNGE",
+    "status": "OFFICIAL_CANDIDATE_NOT_APPROVED_ORDER",
+    "sku_ids": [
+      "DOUGLAS-BREAKFAST-INCLUDED",
+      "DOUGLAS-SNACK-INCLUDED",
+      "DOUGLAS-HOUR-INCLUDED",
+      "DOUGLAS-LOUNGE-EXTRA"
+    ],
+    "limits": "실제상품/인원/수량/혜택미확인"
+  },
+  {
+    "runtime_place_code": "LUX_BAR",
+    "catalog_outlet_id": "LUX_BAR",
+    "status": "OFFICIAL_CANDIDATE_NOT_APPROVED_ORDER",
+    "sku_ids": [
+      "LUX-CLASSIC-MOJITO",
+      "LUX-KLOUD",
+      "LUX-HEINEKEN",
+      "LUX-STELLA-DRAFT"
+    ],
+    "limits": "실제상품/인원/수량/혜택미확인"
+  },
+  {
+    "runtime_place_code": "THE_PAVILION",
+    "catalog_outlet_id": "THE_PAVILION",
+    "status": "OFFICIAL_CANDIDATE_NOT_APPROVED_ORDER",
+    "sku_ids": [
+      "PAVILION-SIGNATURE-BRUNCH"
+    ],
+    "limits": "실제상품/인원/수량/혜택미확인"
+  }
+]

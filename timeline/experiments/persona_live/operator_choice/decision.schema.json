@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Operator choice: one concurrent activity, four evidence layers",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["option_code", "choice", "est_cost_krw", "basis", "alternatives", "confidence", "uncertainties", "personal_conflicts"],
+  "properties": {
+    "option_code": {"type": "string", "minLength": 1},
+    "choice": {"type": "string", "minLength": 1},
+    "est_cost_krw": {"type": ["integer", "null"], "minimum": 0},
+    "basis": {
+      "type": "object", "additionalProperties": false,
+      "required": ["personal_observation", "personal_inference", "population_prior", "situational_judgment"],
+      "properties": {
+        "personal_observation": {"$ref": "#/$defs/reason"},
+        "personal_inference": {"$ref": "#/$defs/reason"},
+        "population_prior": {"$ref": "#/$defs/reason"},
+        "situational_judgment": {"$ref": "#/$defs/reason"}
+      }
+    },
+    "alternatives": {"type": "array", "minItems": 1, "maxItems": 3, "items": {
+      "type": "object", "additionalProperties": false, "required": ["option_code", "why_not"],
+      "properties": {"option_code": {"type": "string"}, "why_not": {"type": "string", "minLength": 1}}
+    }},
+    "confidence": {"enum": ["높음", "보통", "낮음"]},
+    "uncertainties": {"type": "array", "items": {"type": "string"}},
+    "personal_conflicts": {"type": "array", "items": {"type": "string"}}
+  },
+  "$defs": {
+    "reason": {
+      "type": "object", "additionalProperties": false, "required": ["text", "ids", "contribution"],
+      "properties": {
+        "text": {"type": "string"},
+        "ids": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "contribution": {"enum": ["primary", "secondary", "not_used"]}
+      }
+    }
+  }
+}

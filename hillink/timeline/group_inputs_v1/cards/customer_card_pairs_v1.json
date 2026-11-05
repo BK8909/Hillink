@@ -1,0 +1,237 @@
+{
+  "schema_version": "customer-card-pair-v1",
+  "as_of": "2026-10-20T18:11:00+09:00",
+  "privacy": {
+    "contains_source_urls": false,
+    "contains_author_identifiers": false,
+    "source_ids_are_anonymous": true
+  },
+  "selection": {
+    "selected_count": 10,
+    "reserve_count": 1,
+    "decision": "retain_blog58_with_url_registry_unresolved",
+    "reason": "r046 has a single anonymous author group in local collection metadata and does not collide with the other selected groups; only public URL recovery remains unresolved"
+  },
+  "cards": [
+    {
+      "team_id": "team-blog25", "blog_id": "blog25", "stay_id": "stay-r003-01", "source_id": "src-v1-003", "selection_status": "selected",
+      "a_card": {
+        "source_verification": {"r_id": "r003", "post_count": 2, "same_stay_status": "confirmed", "author_group_status": "confirmed", "url_registry_status": "confirmed", "independent_from_selected": true, "access_scope": "development_demo"},
+        "party": {"size": {"value": 4, "status": "known", "provenance": "observed", "evidence_ids": ["r003:party"], "review_status": "human_checked"}, "composition": {"value": "writer, spouse, two children", "status": "known", "provenance": "observed", "evidence_ids": ["r003:party"], "review_status": "human_checked"}},
+        "purpose": {"value": ["family_hotel_stay", "indoor_pool", "breakfast"], "status": "known", "provenance": "human_inference", "evidence_ids": ["r003:stay", "H25"], "review_status": "human_checked"},
+        "observed_visit": {"published_on": "2026-09-03", "check_in": {"value": "2026-08-late", "status": "known", "provenance": "observed", "evidence_ids": ["r003:late_august"], "review_status": "human_checked", "precision": "late_month"}, "check_in_time": {"value": null, "status": "unknown", "provenance": "unknown", "evidence_ids": [], "review_status": "human_checked"}, "check_out": {"value": "next_day", "status": "known", "provenance": "observed", "evidence_ids": ["r003:next_day"], "review_status": "human_checked", "precision": "relative_day"}, "nights": 1, "property": "GRAND"},
+        "reservations": [{"venue": "THE_BUFFET", "date_relation": "checkout_day", "meal": "breakfast", "session": "2", "time_window": "08:30/10:00", "status": "confirmed", "provenance": "observed", "evidence_ids": ["r003:breakfast_booking"]}],
+        "entitlements": [{"item": "THE_BUFFET_BREAKFAST", "quantity": 2, "status": "confirmed", "use_status": "observed_used_by_party", "provenance": "observed", "evidence_ids": ["r003:package"]}, {"item": "THEATRE_OF_LIGHT_TICKET", "quantity": 2, "status": "confirmed", "use_status": "not_observed", "provenance": "observed", "evidence_ids": ["r003:package"]}],
+        "observed_events": [{"order": 1, "kind": "checkin", "place": "GRAND_FRONT_DESK", "evidence_ids": ["r003:checkin"]}, {"order": 2, "kind": "facility", "place": "GRAND_POOL", "evidence_ids": ["r003:pool"]}, {"order": 3, "kind": "meal", "meal": "breakfast", "place": "THE_BUFFET", "session": "2", "evidence_ids": ["r003:breakfast"]}],
+        "explicit_preferences": [{"feature": "view_enjoyment", "polarity": "prefer", "scope": "breakfast_seating", "evidence_ids": ["r003:view"]}],
+        "constraints": [{"feature": "childcare_load", "provenance": "human_inference", "evidence_ids": ["PR73:blog25-V6"]}],
+        "human_inferences": [{"field": "exact_checkin_date", "value": null, "note": "8/31 is not confirmed"}, {"field": "family_breakfast_entitlement", "value": "only two inclusions confirmed", "note": "do not infer all four were included"}],
+        "ai_traits": {"values": {"wait_avoidance": null, "movement_minimization": null, "formality": null, "view_importance": 0.5, "novelty": null, "shared_dining": null, "quietness": null}, "review_status": "unreviewed", "source": "timeline/persona_blog25_auto.py"},
+        "unknowns": ["exact_checkin_date", "checkin_time", "children_breakfast_payment", "theatre_ticket_use"], "execution_assumptions": [],
+        "review": {"reviewers": ["local_human_review", "PR73_cross_review"], "version": "A-v1-20261020", "traits_human_validated": false}
+      },
+      "b_snapshot": {"source_file": "timeline/persona_blog25_auto.py", "track": "B_AUTO_EXTRACTED", "core_values": {"start_at": "2026-09-03T14:30:00", "party_size": 4, "nights": 1, "property": "GRAND"}, "ai_traits": {"view_importance": 0.5}, "review_status": "unreviewed"},
+      "comparison": {"same_source_bundle": true, "field_comparison_allowed": true, "independent_performance_claim_allowed": false}
+    },
+    {
+      "team_id": "team-blog41", "blog_id": "blog41", "stay_id": "stay-r011-01", "source_id": "src-v1-011", "selection_status": "selected",
+      "a_card": {
+        "source_verification": {"r_id": "r011", "post_count": 4, "same_stay_status": "confirmed_with_cross_review_caveat", "author_group_status": "confirmed", "url_registry_status": "confirmed", "independent_from_selected": true, "access_scope": "development_demo"},
+        "party": {"size": {"value": 2, "status": "known", "provenance": "human_inference", "evidence_ids": ["r011:orders", "PR73:blog41-V1"], "review_status": "human_checked", "note": "no direct headcount sentence"}, "composition": {"value": null, "status": "unknown", "provenance": "unknown", "evidence_ids": [], "review_status": "human_checked"}},
+        "purpose": {"value": ["hotel_facility_exploration", "dining"], "status": "known", "provenance": "human_inference", "evidence_ids": ["r011:facility_series"], "review_status": "human_checked"},
+        "observed_visit": {"published_on": "2026-09-05", "check_in": {"value": "2026-09-01", "status": "known", "provenance": "human_inference", "evidence_ids": ["r011:thursday_checkout", "r011:two_nights"], "review_status": "human_checked", "precision": "inferred_day"}, "check_in_time": {"value": null, "status": "unknown", "provenance": "unknown", "evidence_ids": [], "review_status": "human_checked"}, "check_out": {"value": "2026-09-03", "status": "known", "provenance": "human_inference", "evidence_ids": ["r011:thursday_checkout"], "review_status": "human_checked", "precision": "inferred_day"}, "nights": 2, "property": "VISTA"},
+        "reservations": [{"venue": "THE_BUFFET", "date_relation": "during_stay", "meal": "dinner", "session": null, "time_window": null, "status": "uncertain", "provenance": "human_inference", "evidence_ids": ["r011:meal_voucher", "PR73:blog41-V6"]}],
+        "entitlements": [{"item": "DINING_VOUCHER_OR_DISCOUNT", "quantity": null, "status": "confirmed", "use_status": "observed_used", "provenance": "observed", "evidence_ids": ["r011:voucher"]}],
+        "observed_events": [{"order": 1, "kind": "stay", "place": "VISTA_ROOM", "evidence_ids": ["r011:room"]}, {"order": 2, "kind": "facility", "place": "VISTA_POOL", "evidence_ids": ["r011:pool"]}, {"order": 3, "kind": "facility", "place": "SKYARD", "evidence_ids": ["r011:skyard"]}, {"order": 4, "kind": "meal", "meal": "dinner", "place": "THE_BUFFET", "evidence_ids": ["r011:buffet"]}, {"order": 5, "kind": "meal", "meal": "lunch", "place": "PIZZA_HILL", "evidence_ids": ["r011:pizzahill"]}],
+        "explicit_preferences": [{"feature": "low_view_priority", "polarity": "prefer", "scope": "room_view", "evidence_ids": ["r011:view"]}, {"feature": "broad_facility_use", "polarity": "prefer", "scope": "stay", "evidence_ids": ["r011:facility_series"]}],
+        "constraints": [{"feature": "sun_exposure", "provenance": "observed", "evidence_ids": ["PR73:blog41-X1"]}],
+        "human_inferences": [{"field": "same_stay_pizzahill", "value": true, "note": "same author, four-part series, checkout context; cross reviewer retains caveat"}, {"field": "party_size", "value": 2, "note": "orders and language, not direct count"}],
+        "ai_traits": {"values": {"wait_avoidance": null, "movement_minimization": null, "formality": null, "view_importance": 0.25, "novelty": 0.75, "shared_dining": null, "quietness": null}, "review_status": "unreviewed", "source": "timeline/persona_blog41_auto.py"},
+        "unknowns": ["direct_party_count", "party_relationship", "exact_checkin_time", "individual_booking_completion"], "execution_assumptions": [],
+        "review": {"reviewers": ["local_human_review", "PR73_cross_review"], "version": "A-v1-20261020", "traits_human_validated": false}
+      },
+      "b_snapshot": {"source_file": "timeline/persona_blog41_auto.py", "track": "B_AUTO_EXTRACTED", "core_values": {"start_at": "2026-09-05T14:30:00", "party_size": 2, "nights": 2, "property": "VISTA"}, "ai_traits": {"view_importance": 0.25, "novelty": 0.75}, "review_status": "unreviewed"},
+      "comparison": {"same_source_bundle": true, "field_comparison_allowed": true, "independent_performance_claim_allowed": false}
+    },
+    {
+      "team_id": "team-blog36", "blog_id": "blog36", "stay_id": "stay-r037-01", "source_id": "src-v1-037", "selection_status": "selected",
+      "a_card": {
+        "source_verification": {"r_id": "r037", "post_count": 1, "same_stay_status": "confirmed", "author_group_status": "confirmed", "url_registry_status": "confirmed", "independent_from_selected": true, "access_scope": "development_demo"},
+        "party": {"size": {"value": 4, "status": "known", "provenance": "human_inference", "evidence_ids": ["r037:family_mentions"], "review_status": "human_checked"}, "composition": {"value": "writer, parents, sibling", "status": "known", "provenance": "observed", "evidence_ids": ["r037:family_mentions"], "review_status": "human_checked"}},
+        "purpose": {"value": ["family_stay", "dining", "conversation"], "status": "known", "provenance": "human_inference", "evidence_ids": ["r037:stay"], "review_status": "human_checked"},
+        "observed_visit": {"published_on": "2026-09-01", "check_in": {"value": null, "status": "unknown", "provenance": "unknown", "evidence_ids": [], "review_status": "human_checked"}, "check_in_time": {"value": null, "status": "unknown", "provenance": "unknown", "evidence_ids": [], "review_status": "human_checked"}, "check_out": {"value": "next_day", "status": "known", "provenance": "observed", "evidence_ids": ["r037:next_day"], "review_status": "human_checked", "precision": "relative_day"}, "nights": 1, "property": "GRAND"},
+        "reservations": [{"venue": "MYONGWOLGWAN", "date_relation": "checkin_day", "meal": "dinner", "session": null, "time_window": null, "status": "confirmed", "provenance": "observed", "evidence_ids": ["r037:booking"]}],
+        "entitlements": [],
+        "observed_events": [{"order": 1, "kind": "stay", "place": "GRAND_ROOM", "evidence_ids": ["r037:room"]}, {"order": 2, "kind": "meal", "meal": "dinner", "place": "MYONGWOLGWAN", "evidence_ids": ["r037:dinner"]}, {"order": 3, "kind": "meal", "meal": "drinks", "place": "LUX_BAR", "evidence_ids": ["r037:bar"]}, {"order": 4, "kind": "facility", "place": "FITNESS", "evidence_ids": ["r037:fitness"]}],
+        "explicit_preferences": [{"feature": "on_property_convenience", "polarity": "prefer", "scope": "itinerary", "evidence_ids": ["r037:no_drive"]}, {"feature": "quiet_conversation", "polarity": "prefer", "scope": "dining", "evidence_ids": ["r037:quiet"]}],
+        "constraints": [],
+        "human_inferences": [{"field": "party_size", "value": 4, "note": "family roles are explicit; exact total is inferred"}, {"field": "property", "value": "GRAND", "note": "building inferred from venue and stay context"}],
+        "ai_traits": {"values": {"wait_avoidance": null, "movement_minimization": 0.75, "formality": null, "view_importance": 0.5, "novelty": 0.25, "shared_dining": null, "quietness": 0.75}, "review_status": "unreviewed", "source": "timeline/persona_blog36_auto.py"},
+        "unknowns": ["exact_visit_date", "checkin_time", "arrival_mode"], "execution_assumptions": [],
+        "review": {"reviewers": ["local_human_review"], "version": "A-v1-20261020", "traits_human_validated": false}
+      },
+      "b_snapshot": {"source_file": "timeline/persona_blog36_auto.py", "track": "B_AUTO_EXTRACTED", "core_values": {"start_at": "2026-09-01T14:30:00", "party_size": 4, "nights": 1, "property": "GRAND"}, "ai_traits": {"movement_minimization": 0.75, "view_importance": 0.5, "novelty": 0.25, "quietness": 0.75}, "review_status": "unreviewed"},
+      "comparison": {"same_source_bundle": true, "field_comparison_allowed": true, "independent_performance_claim_allowed": false}
+    },
+    {
+      "team_id": "team-blog43", "blog_id": "blog43", "stay_id": "stay-r023-01", "source_id": "src-v1-023", "selection_status": "selected",
+      "a_card": {
+        "source_verification": {"r_id": "r023", "post_count": 1, "same_stay_status": "confirmed", "author_group_status": "confirmed", "url_registry_status": "confirmed", "independent_from_selected": true, "access_scope": "development_demo_former_holdout"},
+        "party": {"size": {"value": 1, "status": "known", "provenance": "human_inference", "evidence_ids": ["r023:self_time", "H43"], "review_status": "human_checked"}, "composition": {"value": "solo", "status": "known", "provenance": "human_inference", "evidence_ids": ["r023:self_time"], "review_status": "human_checked"}},
+        "purpose": {"value": ["quiet_rest"], "status": "known", "provenance": "observed", "evidence_ids": ["r023:rest"], "review_status": "human_checked"},
+        "observed_visit": {"published_on": "2026-09-12", "check_in": {"value": "2026-09-01", "status": "known", "provenance": "observed", "evidence_ids": ["r023:date"], "review_status": "human_checked", "precision": "day"}, "check_in_time": {"value": "15:30", "status": "known", "provenance": "observed", "evidence_ids": ["r023:arrival"], "review_status": "human_checked", "precision": "minute"}, "check_out": {"value": "2026-09-02", "status": "known", "provenance": "human_inference", "evidence_ids": ["r023:one_night"], "review_status": "human_checked", "precision": "day"}, "nights": 1, "property": "DOUGLAS"},
+        "reservations": [],
+        "entitlements": [{"item": "DOUGLAS_LOUNGE_BREAKFAST_AND_HAPPY_HOUR", "quantity": 1, "status": "confirmed", "use_status": "observed_used", "provenance": "observed", "evidence_ids": ["r023:lounge"]}],
+        "observed_events": [{"order": 1, "kind": "checkin", "place": "DOUGLAS_LOBBY", "evidence_ids": ["r023:checkin"]}, {"order": 2, "kind": "meal", "meal": "snack", "place": "DOUGLAS_LOUNGE", "evidence_ids": ["r023:snack"]}, {"order": 3, "kind": "meal", "meal": "dinner", "place": "DOUGLAS_LOUNGE", "evidence_ids": ["r023:happy_hour"]}, {"order": 4, "kind": "wait", "place": "THE_BUFFET", "evidence_ids": ["r023:queue"]}, {"order": 5, "kind": "abandonment", "place": "THE_BUFFET", "evidence_ids": ["r023:queue"]}, {"order": 6, "kind": "meal", "meal": "breakfast", "place": "DOUGLAS_LOUNGE", "evidence_ids": ["r023:breakfast"]}],
+        "explicit_preferences": [{"feature": "quiet_rest", "polarity": "prefer", "scope": "stay", "evidence_ids": ["r023:rest"]}],
+        "constraints": [{"feature": "buffet_closing_deadline", "provenance": "observed", "evidence_ids": ["r023:queue"]}],
+        "human_inferences": [{"field": "party_size", "value": 1, "note": "self-focused wording and no companion mention; not a direct solo statement"}],
+        "ai_traits": {"values": {"wait_avoidance": 0.75, "movement_minimization": null, "formality": null, "view_importance": 0.5, "novelty": null, "shared_dining": null, "quietness": 0.75}, "review_status": "unreviewed", "source": "timeline/persona_blog43_auto.py"},
+        "unknowns": ["direct_solo_statement"], "execution_assumptions": [],
+        "review": {"reviewers": ["local_human_review"], "version": "A-v1-20261020", "traits_human_validated": false}
+      },
+      "b_snapshot": {"source_file": "timeline/persona_blog43_auto.py", "track": "B_AUTO_EXTRACTED", "core_values": {"start_at": "2026-09-01T15:30:00", "party_size": 1, "nights": 1, "property": "DOUGLAS"}, "ai_traits": {"wait_avoidance": 0.75, "view_importance": 0.5, "quietness": 0.75}, "review_status": "unreviewed"},
+      "comparison": {"same_source_bundle": true, "field_comparison_allowed": true, "independent_performance_claim_allowed": false}
+    },
+    {
+      "team_id": "team-blog26", "blog_id": "blog26", "stay_id": "stay-r001-01", "source_id": "src-v1-001", "selection_status": "selected",
+      "a_card": {
+        "source_verification": {"r_id": "r001", "post_count": 6, "same_stay_status": "confirmed", "author_group_status": "confirmed", "url_registry_status": "confirmed", "independent_from_selected": true, "access_scope": "development_demo"},
+        "party": {"size": {"value": 2, "status": "known", "provenance": "observed", "evidence_ids": ["r001:party"], "review_status": "human_checked"}, "composition": {"value": "mother and adult daughter", "status": "known", "provenance": "observed", "evidence_ids": ["r001:relationship"], "review_status": "human_checked"}},
+        "purpose": {"value": ["lunar_new_year_family_trip", "hotel_exploration", "dining"], "status": "known", "provenance": "human_inference", "evidence_ids": ["r001:series"], "review_status": "human_checked"},
+        "observed_visit": {"published_on": "2026-09-02", "check_in": {"value": "2026-02-16", "status": "known", "provenance": "human_inference", "evidence_ids": ["r001:lunar_holiday_first_day", "calendar:2026"], "review_status": "human_checked", "precision": "calendar_mapped_day"}, "check_in_time": {"value": null, "status": "unknown", "provenance": "unknown", "evidence_ids": [], "review_status": "human_checked"}, "check_out": {"value": "2026-02-18", "status": "known", "provenance": "human_inference", "evidence_ids": ["r001:two_nights"], "review_status": "human_checked", "precision": "day"}, "nights": 2, "property": "GRAND"},
+        "reservations": [{"venue": "THE_PAVILION", "date_relation": "stay_day_2", "meal": "brunch", "session": null, "time_window": null, "status": "confirmed", "provenance": "observed", "evidence_ids": ["r001:pavilion_booking"]}, {"venue": "ONDAL", "date_relation": "stay_day_2", "meal": "dinner", "session": null, "time_window": null, "status": "confirmed", "provenance": "observed", "evidence_ids": ["r001:ondal_booking"]}],
+        "entitlements": [],
+        "observed_events": [{"order": 1, "kind": "checkin", "place": "GRAND_FRONT_DESK", "evidence_ids": ["r001:checkin"]}, {"order": 2, "kind": "purchase", "place": "LE_PASSAGE", "evidence_ids": ["r001:takeout"]}, {"order": 3, "kind": "facility", "place": "GRAND_LIBRARY", "evidence_ids": ["r001:library"]}, {"order": 4, "kind": "meal", "meal": "brunch", "place": "THE_PAVILION", "evidence_ids": ["r001:pavilion"]}, {"order": 5, "kind": "facility", "place": "FOREST_PARK", "evidence_ids": ["r001:forest"]}, {"order": 6, "kind": "meal", "meal": "dinner", "place": "ONDAL", "evidence_ids": ["r001:ondal"]}, {"order": 7, "kind": "meal", "meal": "breakfast", "place": "THE_BUFFET", "evidence_ids": ["r001:buffet"]}],
+        "explicit_preferences": [{"feature": "private_room", "polarity": "prefer", "scope": "dining", "evidence_ids": ["r001:ondal"]}, {"feature": "view_walk", "polarity": "prefer", "scope": "evening", "evidence_ids": ["r001:view_walk"]}],
+        "constraints": [],
+        "human_inferences": [{"field": "LUX_BAR_visit", "value": null, "note": "only a before-going phrase; actual use remains unconfirmed"}],
+        "ai_traits": {"values": {"wait_avoidance": 0.25, "movement_minimization": 0.25, "formality": 0.75, "view_importance": 0.75, "novelty": 0.75, "shared_dining": null, "quietness": 0.75}, "review_status": "unreviewed", "source": "timeline/persona_blog26_auto.py"},
+        "unknowns": ["checkin_time", "LUX_BAR_actual_use"], "execution_assumptions": [],
+        "review": {"reviewers": ["local_human_review"], "version": "A-v1-20261020", "traits_human_validated": false}
+      },
+      "b_snapshot": {"source_file": "timeline/persona_blog26_auto.py", "track": "B_AUTO_EXTRACTED", "core_values": {"start_at": "2026-09-02T14:30:00", "party_size": 2, "nights": 2, "property": "GRAND"}, "ai_traits": {"wait_avoidance": 0.25, "movement_minimization": 0.25, "formality": 0.75, "view_importance": 0.75, "novelty": 0.75, "quietness": 0.75}, "review_status": "unreviewed"},
+      "comparison": {"same_source_bundle": true, "field_comparison_allowed": true, "independent_performance_claim_allowed": false}
+    },
+    {
+      "team_id": "team-blog58", "blog_id": "blog58", "stay_id": "stay-r046-01", "source_id": "src-v1-046", "selection_status": "selected",
+      "a_card": {
+        "source_verification": {"r_id": "r046", "post_count": 1, "same_stay_status": "confirmed", "author_group_status": "confirmed_from_collection_metadata", "url_registry_status": "unresolved", "independent_from_selected": true, "access_scope": "development_demo"},
+        "party": {"size": {"value": 2, "status": "known", "provenance": "observed", "evidence_ids": ["r046:mother_writer"], "review_status": "human_checked"}, "composition": {"value": "mother and adult child", "status": "known", "provenance": "observed", "evidence_ids": ["r046:mother_writer"], "review_status": "human_checked"}},
+        "purpose": {"value": ["birthday_hotel_stay", "club_lounge", "buffet"], "status": "known", "provenance": "observed", "evidence_ids": ["r046:birthday"], "review_status": "human_checked"},
+        "observed_visit": {"published_on": "2026-09-08", "check_in": {"value": {"earliest": "2026-09-04", "latest": "2026-09-05"}, "status": "known", "provenance": "human_inference", "evidence_ids": ["r046:weekend_lunch_after_checkout"], "review_status": "human_checked", "precision": "two_day_range"}, "check_in_time": {"value": null, "status": "unknown", "provenance": "unknown", "evidence_ids": [], "review_status": "human_checked"}, "check_out": {"value": {"earliest": "2026-09-05", "latest": "2026-09-06"}, "status": "known", "provenance": "human_inference", "evidence_ids": ["r046:weekend_lunch_after_checkout"], "review_status": "human_checked", "precision": "two_day_range"}, "nights": 1, "property": "GRAND"},
+        "reservations": [{"venue": "THE_BUFFET", "date_relation": "after_checkout", "meal": "lunch", "session": "2", "time_window": null, "status": "confirmed", "provenance": "observed", "evidence_ids": ["r046:weekend_lunch_session2"]}],
+        "entitlements": [{"item": "GRAND_CLUB_LOUNGE_ACCESS", "quantity": 2, "status": "inferred", "use_status": "observed_used", "provenance": "human_inference", "evidence_ids": ["r046:club_room_and_use"]}],
+        "observed_events": [{"order": 1, "kind": "transport", "place": "GANGBYEON_STN", "evidence_ids": ["r046:shuttle"]}, {"order": 2, "kind": "checkin", "place": "GRAND_ROOM", "evidence_ids": ["r046:mobile_checkin"]}, {"order": 3, "kind": "meal", "meal": "snack", "place": "GRAND_CLUB_LOUNGE", "evidence_ids": ["r046:tea"]}, {"order": 4, "kind": "meal", "meal": "dinner", "place": "GRAND_CLUB_LOUNGE", "evidence_ids": ["r046:evening"]}, {"order": 5, "kind": "facility", "place": "FOREST_PARK", "evidence_ids": ["r046:forest"]}, {"order": 6, "kind": "meal", "meal": "breakfast", "place": "GRAND_CLUB_LOUNGE", "evidence_ids": ["r046:breakfast"]}, {"order": 7, "kind": "wait", "place": "THE_BUFFET", "evidence_ids": ["r046:view_queue"]}, {"order": 8, "kind": "meal", "meal": "lunch", "place": "THE_BUFFET", "session": "2", "evidence_ids": ["r046:buffet"]}],
+        "explicit_preferences": [{"feature": "view_seating", "polarity": "prefer", "scope": "buffet", "evidence_ids": ["r046:view_queue"]}, {"feature": "club_benefits_over_room_view", "polarity": "prefer", "scope": "room_choice", "evidence_ids": ["r046:room_choice"]}],
+        "constraints": [{"feature": "weekend_lunch_operation", "provenance": "observed", "evidence_ids": ["r046:weekend_lunch_session2"]}],
+        "human_inferences": [{"field": "visit_window", "value": "weekend before 2026-09-08 publication", "note": "publication date cannot be check-in date"}, {"field": "club_meals_included", "value": null, "note": "access and use observed; word included not direct"}],
+        "ai_traits": {"values": {"wait_avoidance": 0.5, "movement_minimization": 0.25, "formality": null, "view_importance": 0.75, "novelty": 0.75, "shared_dining": null, "quietness": null}, "review_status": "unreviewed", "source": "timeline/persona_blog58_auto.py"},
+        "unknowns": ["public_source_url", "exact_checkin_date", "checkin_time", "formal_package_inclusion_terms"], "execution_assumptions": [],
+        "review": {"reviewers": ["local_human_review"], "version": "A-v1-20261020", "traits_human_validated": false}
+      },
+      "b_snapshot": {"source_file": "timeline/persona_blog58_auto.py", "track": "B_AUTO_EXTRACTED", "core_values": {"start_at": "2026-09-08T14:30:00", "party_size": 2, "nights": 1, "property": "GRAND"}, "ai_traits": {"wait_avoidance": 0.5, "movement_minimization": 0.25, "view_importance": 0.75, "novelty": 0.75}, "review_status": "unreviewed"},
+      "comparison": {"same_source_bundle": true, "field_comparison_allowed": true, "independent_performance_claim_allowed": false}
+    },
+    {
+      "team_id": "team-blog59", "blog_id": "blog59", "stay_id": "stay-r006-01", "source_id": "src-v1-006", "selection_status": "selected",
+      "a_card": {
+        "source_verification": {"r_id": "r006", "post_count": 4, "same_stay_status": "confirmed", "author_group_status": "confirmed", "url_registry_status": "confirmed", "independent_from_selected": true, "access_scope": "development_demo_former_holdout"},
+        "party": {"size": {"value": 5, "status": "known", "provenance": "observed", "evidence_ids": ["r006:two_adults_three_children"], "review_status": "human_checked"}, "composition": {"value": "two adults and three children", "status": "known", "provenance": "observed", "evidence_ids": ["r006:party"], "review_status": "human_checked"}},
+        "purpose": {"value": ["family_summer_vacation", "riverpark", "breakfast"], "status": "known", "provenance": "observed", "evidence_ids": ["r006:package"], "review_status": "human_checked"},
+        "observed_visit": {"published_on": "2026-08-31", "check_in": {"value": "2026-08-30", "status": "known", "provenance": "human_inference", "evidence_ids": ["r006:next_day_monday_breakfast", "ops:riverpark_2026"], "review_status": "human_checked", "precision": "strong_inference"}, "check_in_time": {"value": "14:00", "status": "known", "provenance": "observed", "evidence_ids": ["r006:room_entry"], "review_status": "human_checked", "precision": "approximate"}, "check_out": {"value": "2026-08-31", "status": "known", "provenance": "human_inference", "evidence_ids": ["r006:monday_breakfast"], "review_status": "human_checked", "precision": "strong_inference"}, "nights": 1, "property": "VISTA"},
+        "reservations": [{"venue": "RIVERPARK", "date_relation": "checkin_day", "meal": "dinner", "session": "2", "time_window": "15:00/20:00", "status": "confirmed", "provenance": "observed", "evidence_ids": ["r006:riverpark_session2"]}],
+        "entitlements": [{"item": "ROOM_BREAKFAST_RIVERPARK_PACKAGE", "quantity": 1, "status": "confirmed", "use_status": "observed_used", "provenance": "observed", "evidence_ids": ["r006:package"], "validity": {"latest": "2026-08-30", "evidence_id": "ops:riverpark_2026"}}],
+        "observed_events": [{"order": 1, "kind": "meal", "meal": "snack", "place": "THE_PAVILION", "evidence_ids": ["r006:pavilion"]}, {"order": 2, "kind": "checkin", "place": "VISTA_ROOM", "evidence_ids": ["r006:room"]}, {"order": 3, "kind": "facility", "place": "RIVERPARK", "evidence_ids": ["r006:riverpark"]}, {"order": 4, "kind": "meal", "meal": "dinner", "place": "RIVERPARK", "evidence_ids": ["r006:semi_buffet"]}, {"order": 5, "kind": "meal", "meal": "breakfast", "place": "THE_BUFFET", "session": "2", "evidence_ids": ["r006:monday_breakfast"]}],
+        "explicit_preferences": [{"feature": "window_seat", "polarity": "prefer", "scope": "breakfast", "evidence_ids": ["r006:window_request"]}, {"feature": "river_view_room", "polarity": "prefer", "scope": "room", "evidence_ids": ["r006:room"]}],
+        "constraints": [{"feature": "children_water_safety", "provenance": "observed", "evidence_ids": ["r006:spa_choice"]}],
+        "human_inferences": [{"field": "checkin_date", "value": "2026-08-30", "note": "next-day Monday breakfast and package operating window align"}, {"field": "package_condition_conflict", "value": "current 8/31 start conflicts; 8/30 resolves it", "note": "official package name/version still to bind"}],
+        "ai_traits": {"values": {"wait_avoidance": 0.5, "movement_minimization": 0.5, "formality": 0.25, "view_importance": 0.75, "novelty": 0.75, "shared_dining": null, "quietness": null}, "review_status": "unreviewed", "source": "timeline/persona_blog59_auto.py"},
+        "unknowns": ["official_package_product_id", "arrival_mode"], "execution_assumptions": [],
+        "review": {"reviewers": ["local_human_review"], "version": "A-v1-20261020", "traits_human_validated": false}
+      },
+      "b_snapshot": {"source_file": "timeline/persona_blog59_auto.py", "track": "B_AUTO_EXTRACTED", "core_values": {"start_at": "2026-08-31T14:00:00", "party_size": 3, "nights": 1, "property": "VISTA"}, "ai_traits": {"wait_avoidance": 0.5, "movement_minimization": 0.5, "formality": 0.25, "view_importance": 0.75, "novelty": 0.75}, "review_status": "unreviewed"},
+      "comparison": {"same_source_bundle": true, "field_comparison_allowed": true, "independent_performance_claim_allowed": false}
+    },
+    {
+      "team_id": "team-blog57", "blog_id": "blog57", "stay_id": "visit-r052-01", "source_id": "src-v1-052", "selection_status": "selected",
+      "a_card": {
+        "source_verification": {"r_id": "r052", "post_count": 1, "same_stay_status": "confirmed", "author_group_status": "confirmed", "url_registry_status": "confirmed", "independent_from_selected": true, "access_scope": "development_demo"},
+        "party": {"size": {"value": 4, "status": "known", "provenance": "human_inference", "evidence_ids": ["r052:four_person_set", "r052:children"], "review_status": "human_checked"}, "composition": {"value": "anniversary couple and children", "status": "known", "provenance": "human_inference", "evidence_ids": ["r052:family_context"], "review_status": "human_checked"}},
+        "purpose": {"value": ["anniversary_family_dinner"], "status": "known", "provenance": "observed", "evidence_ids": ["r052:anniversary"], "review_status": "human_checked"},
+        "observed_visit": {"published_on": "2026-09-05", "check_in": {"value": null, "status": "unknown", "provenance": "unknown", "evidence_ids": [], "review_status": "human_checked"}, "check_in_time": {"value": "17:30", "status": "known", "provenance": "observed", "evidence_ids": ["r052:booking"], "review_status": "human_checked", "precision": "minute"}, "check_out": {"value": null, "status": "not_applicable", "provenance": "unknown", "evidence_ids": [], "review_status": "not_applicable"}, "nights": 0, "property": "GRAND"},
+        "reservations": [{"venue": "PIZZA_HILL", "date_relation": "visit_day", "meal": "dinner", "session": "17:30", "time_window": "17:30", "status": "confirmed_prepaid", "provenance": "observed", "evidence_ids": ["r052:booking_prepayment"]}],
+        "entitlements": [],
+        "observed_events": [{"order": 1, "kind": "transport", "place": "PARKING_TOWER", "evidence_ids": ["r052:parking"]}, {"order": 2, "kind": "transport", "place": "GRAND_LOBBY", "evidence_ids": ["r052:shuttle"]}, {"order": 3, "kind": "meal", "meal": "dinner", "place": "PIZZA_HILL", "evidence_ids": ["r052:dinner"]}],
+        "explicit_preferences": [{"feature": "river_view_seat", "polarity": "prefer", "scope": "restaurant_seating", "evidence_ids": ["r052:view"]}, {"feature": "repeat_visit", "polarity": "prefer", "scope": "PIZZA_HILL", "evidence_ids": ["r052:fourth_visit"]}],
+        "constraints": [],
+        "human_inferences": [{"field": "party_size", "value": 4, "note": "family wording plus four-person set; exact total is not directly stated"}],
+        "ai_traits": {"values": {"wait_avoidance": 0.75, "movement_minimization": null, "formality": 0.25, "view_importance": 0.75, "novelty": 0.25, "shared_dining": null, "quietness": null}, "review_status": "unreviewed", "source": "timeline/persona_blog57_auto.py"},
+        "unknowns": ["exact_visit_date", "exact_party_count"], "execution_assumptions": [],
+        "review": {"reviewers": ["local_human_review"], "version": "A-v1-20261020", "traits_human_validated": false}
+      },
+      "b_snapshot": {"source_file": "timeline/persona_blog57_auto.py", "track": "B_AUTO_EXTRACTED", "core_values": {"start_at": "2026-09-05T17:30:00", "party_size": 4, "nights": 0, "property": "GRAND"}, "ai_traits": {"wait_avoidance": 0.75, "formality": 0.25, "view_importance": 0.75, "novelty": 0.25}, "review_status": "unreviewed"},
+      "comparison": {"same_source_bundle": true, "field_comparison_allowed": true, "independent_performance_claim_allowed": false}
+    },
+    {
+      "team_id": "team-blog40", "blog_id": "blog40", "stay_id": "visit-r058-01", "source_id": "src-v1-058", "selection_status": "selected",
+      "a_card": {
+        "source_verification": {"r_id": "r058", "post_count": 1, "same_stay_status": "confirmed_after_splitting_second_visit", "author_group_status": "confirmed", "url_registry_status": "confirmed", "independent_from_selected": true, "access_scope": "development_demo"},
+        "party": {"size": {"value": 2, "status": "known", "provenance": "observed", "evidence_ids": ["r058:two_person_booking"], "review_status": "human_checked"}, "composition": {"value": "writer and companion", "status": "known", "provenance": "observed", "evidence_ids": ["r058:companion"], "review_status": "human_checked"}},
+        "purpose": {"value": ["special_buffet_meal"], "status": "known", "provenance": "human_inference", "evidence_ids": ["r058:meal_purpose"], "review_status": "human_checked"},
+        "observed_visit": {"published_on": "2026-09-08", "check_in": {"value": "2024-02", "status": "known", "provenance": "observed", "evidence_ids": ["r058:february_2024"], "review_status": "human_checked", "precision": "month"}, "check_in_time": {"value": null, "status": "unknown", "provenance": "unknown", "evidence_ids": [], "review_status": "human_checked"}, "check_out": {"value": null, "status": "not_applicable", "provenance": "unknown", "evidence_ids": [], "review_status": "not_applicable"}, "nights": 0, "property": "VISTA"},
+        "reservations": [{"venue": "THE_BUFFET", "date_relation": "visit_day", "meal": "unknown", "session": null, "time_window": null, "status": "confirmed_prepaid", "provenance": "observed", "evidence_ids": ["r058:booking"]}],
+        "entitlements": [],
+        "observed_events": [{"order": 1, "kind": "meal", "meal": "unknown", "place": "THE_BUFFET", "evidence_ids": ["r058:buffet_meal"]}],
+        "explicit_preferences": [{"feature": "window_seat_enjoyment", "polarity": "prefer", "scope": "buffet", "evidence_ids": ["r058:window"]}],
+        "constraints": [],
+        "human_inferences": [{"field": "separate_second_visit", "value": true, "note": "October off-property visit is a different event"}],
+        "ai_traits": {"values": {"wait_avoidance": 0.75, "movement_minimization": null, "formality": 0.75, "view_importance": 0.5, "novelty": null, "shared_dining": null, "quietness": null}, "review_status": "unreviewed", "source": "timeline/persona_blog40_auto.py"},
+        "unknowns": ["exact_visit_day", "meal_period", "visit_time", "arrival_mode"], "execution_assumptions": [],
+        "review": {"reviewers": ["local_human_review"], "version": "A-v1-20261020", "traits_human_validated": false}
+      },
+      "b_snapshot": {"source_file": "timeline/persona_blog40_auto.py", "track": "B_AUTO_EXTRACTED", "core_values": {"start_at": "2026-09-08T17:00:00", "party_size": 2, "nights": 0, "property": "VISTA"}, "ai_traits": {"wait_avoidance": 0.75, "formality": 0.75, "view_importance": 0.5}, "review_status": "unreviewed"},
+      "comparison": {"same_source_bundle": true, "field_comparison_allowed": true, "independent_performance_claim_allowed": false}
+    },
+    {
+      "team_id": "team-blog46", "blog_id": "blog46", "stay_id": "stay-r016-01", "source_id": "src-v1-016", "selection_status": "selected",
+      "a_card": {
+        "source_verification": {"r_id": "r016", "post_count": 1, "same_stay_status": "confirmed", "author_group_status": "confirmed", "url_registry_status": "confirmed", "independent_from_selected": true, "access_scope": "development_demo"},
+        "party": {"size": {"value": 2, "status": "known", "provenance": "human_inference", "evidence_ids": ["r016:companion"], "review_status": "human_checked"}, "composition": {"value": "writer and companion", "status": "known", "provenance": "human_inference", "evidence_ids": ["r016:companion"], "review_status": "human_checked"}},
+        "purpose": {"value": ["post_event_late_checkin", "spa_room", "morning_facilities"], "status": "known", "provenance": "human_inference", "evidence_ids": ["r016:stay"], "review_status": "human_checked"},
+        "observed_visit": {"published_on": "2026-09-04", "check_in": {"value": null, "status": "unknown", "provenance": "unknown", "evidence_ids": [], "review_status": "human_checked"}, "check_in_time": {"value": {"lower_bound": "20:00", "inclusive": false}, "status": "known", "provenance": "observed", "evidence_ids": ["r016:after_20"], "review_status": "human_checked", "precision": "lower_bound"}, "check_out": {"value": "next_day", "status": "known", "provenance": "observed", "evidence_ids": ["r016:next_morning"], "review_status": "human_checked", "precision": "relative_day"}, "nights": 1, "property": "VISTA"},
+        "reservations": [],
+        "entitlements": [{"item": "ROOM_MINIBAR", "quantity": null, "status": "confirmed", "use_status": "observed_used", "provenance": "observed", "evidence_ids": ["r016:minibar"]}],
+        "observed_events": [{"order": 1, "kind": "transport", "place": "PARKING_TOWER", "evidence_ids": ["r016:parking"]}, {"order": 2, "kind": "stay", "place": "VISTA_ROOM", "evidence_ids": ["r016:room"]}, {"order": 3, "kind": "facility", "place": "VISTA_POOL", "evidence_ids": ["r016:pool"]}, {"order": 4, "kind": "facility", "place": "SKYARD", "evidence_ids": ["r016:skyard"]}],
+        "explicit_preferences": [{"feature": "river_view_hotel", "polarity": "prefer", "scope": "hotel_choice", "evidence_ids": ["r016:hotel_choice"]}],
+        "constraints": [{"feature": "arrival_after_event", "provenance": "observed", "evidence_ids": ["r016:event"]}],
+        "human_inferences": [{"field": "party_size", "value": 2, "note": "companion context, no direct total"}, {"field": "arrival_time", "value": "after 20:00", "note": "20:00 is a lower bound, not an exact time"}],
+        "ai_traits": {"values": {"wait_avoidance": 0.75, "movement_minimization": null, "formality": null, "view_importance": 0.75, "novelty": 0.75, "shared_dining": null, "quietness": null}, "review_status": "unreviewed", "source": "timeline/persona_blog46_auto.py"},
+        "unknowns": ["exact_visit_date", "exact_arrival_time", "direct_party_count"], "execution_assumptions": [],
+        "review": {"reviewers": ["local_human_review"], "version": "A-v1-20261020", "traits_human_validated": false}
+      },
+      "b_snapshot": {"source_file": "timeline/persona_blog46_auto.py", "track": "B_AUTO_EXTRACTED", "core_values": {"start_at": "2026-09-04T20:00:00", "party_size": 2, "nights": 1, "property": "VISTA"}, "ai_traits": {"wait_avoidance": 0.75, "view_importance": 0.75, "novelty": 0.75}, "review_status": "unreviewed"},
+      "comparison": {"same_source_bundle": true, "field_comparison_allowed": true, "independent_performance_claim_allowed": false}
+    },
+    {
+      "team_id": "team-blog44", "blog_id": "blog44", "stay_id": "visit-r048-01", "source_id": "src-v1-048", "selection_status": "reserve",
+      "a_card": {
+        "source_verification": {"r_id": "r048", "post_count": 1, "same_stay_status": "confirmed", "author_group_status": "confirmed", "url_registry_status": "confirmed", "independent_from_selected": true, "access_scope": "development_demo"},
+        "party": {"size": {"value": 2, "status": "known", "provenance": "human_inference", "evidence_ids": ["r048:writer_child"], "review_status": "human_checked", "note": "minimum confirmed party"}, "composition": {"value": "writer and at least one child", "status": "known", "provenance": "observed", "evidence_ids": ["r048:child"], "review_status": "human_checked"}},
+        "purpose": {"value": ["theatre_exhibition_with_child"], "status": "known", "provenance": "observed", "evidence_ids": ["r048:theatre"], "review_status": "human_checked"},
+        "observed_visit": {"published_on": "2026-09-14", "check_in": {"value": "weekend_before_or_on_publication", "status": "known", "provenance": "human_inference", "evidence_ids": ["r048:weekend"], "review_status": "human_checked", "precision": "weekend"}, "check_in_time": {"value": null, "status": "unknown", "provenance": "unknown", "evidence_ids": [], "review_status": "human_checked"}, "check_out": {"value": null, "status": "not_applicable", "provenance": "unknown", "evidence_ids": [], "review_status": "not_applicable"}, "nights": 0, "property": "GRAND"},
+        "reservations": [],
+        "entitlements": [],
+        "observed_events": [{"order": 1, "kind": "transport", "place": "PARKING_TOWER", "evidence_ids": ["r048:parking"]}, {"order": 2, "kind": "cultural", "place": "THEATRE_OF_LIGHT", "evidence_ids": ["r048:exhibition"]}, {"order": 3, "kind": "purchase", "place": "THEATRE_ART_SHOP", "evidence_ids": ["r048:art_shop"]}, {"order": 4, "kind": "cultural", "place": "GRAND_LOBBY", "evidence_ids": ["r048:performance"]}],
+        "explicit_preferences": [{"feature": "river_view_cafe_enjoyment", "polarity": "prefer", "scope": "post_exhibition", "evidence_ids": ["r048:view"]}],
+        "constraints": [{"feature": "child_companion", "provenance": "observed", "evidence_ids": ["r048:child"]}],
+        "human_inferences": [{"field": "party_size", "value": 2, "note": "minimum known; other companions not excluded"}],
+        "ai_traits": {"values": {"wait_avoidance": null, "movement_minimization": null, "formality": null, "view_importance": 0.5, "novelty": null, "shared_dining": null, "quietness": null}, "review_status": "unreviewed", "source": "timeline/persona_blog44_auto.py"},
+        "unknowns": ["exact_visit_date", "visit_time", "exact_party_count", "ticket_booking_status"], "execution_assumptions": [],
+        "review": {"reviewers": ["local_human_review"], "version": "A-v1-20261020", "traits_human_validated": false}
+      },
+      "b_snapshot": {"source_file": "timeline/persona_blog44_auto.py", "track": "B_AUTO_EXTRACTED", "core_values": {"start_at": "2026-09-14T13:30:00", "party_size": 2, "nights": 0, "property": "GRAND"}, "ai_traits": {"view_importance": 0.5}, "review_status": "unreviewed"},
+      "comparison": {"same_source_bundle": true, "field_comparison_allowed": true, "independent_performance_claim_allowed": false}
+    }
+  ]
+}

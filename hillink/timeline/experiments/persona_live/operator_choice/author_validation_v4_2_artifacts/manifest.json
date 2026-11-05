@@ -1,0 +1,28 @@
+{
+  "baseline_commit": "b5a5136143071adf8dcabd076c489c527eba98ed",
+  "previous_tracked_files_verified_unchanged": 1266,
+  "new_shared_files_checked_before_manifest": 21,
+  "actual_source_identifier_url_raw_hash_hits": 0,
+  "method_file_sha256": {
+    "FIELD_MAPPING.md": "38d409af6f2e1e73af044d1791581c1c7aa57bfbdaa5356fab7d4500c4626dce",
+    "TEAM_COMMON_EXTRACTION_PROMPT_V4_1.md": "4e77237e7579bebd9f23cbb52244665f8b98ef4e902547fbc316486290f605fd",
+    "TEAM_DELIVERY_CHECKLIST.md": "d9e3f2361ebaac31ed4801eeb6580ac9e8238a5729bacba394b806ad5a013c9e",
+    "VALIDATION_PROTOCOL.md": "5e128319a6470fa11602523e9f93bc82d96d1faf4d7b2d952ea69e449c9c11cb",
+    "__init__.py": "0de88396e4ef2829dd432dced45b97d5722c4813b0da11620fccf9e35dc54aad",
+    "__main__.py": "f0ef9a0bb954fd34bbd2759ea1866958abf0135324ffd89f829ed6c13aa58781",
+    "common.py": "0e78ab652bb577f1d68de94a5317433e699d5910dff6e57ed07603f15985483d",
+    "coverage.py": "faf14eb5ed75433f901fd9fce75ca2b43fc6489c4f8a9cc2e5adbb5112e1448d",
+    "evaluation.py": "7b48196fc979e30cbaebf98ad157d39f4b25ed7c984d7ea357904da8a16a7a9b",
+    "photo_notes.py": "e2b696c9efc34a6622369639463e5e82937eed41a6d6f52cd71a1122a1c8aa58",
+    "study.py": "acdfb84ecd5dc706d020a555c21d3f71c577f8a58a6809e90063878d0fd4dd1c",
+    "team_bridge.py": "5f3b8fe4118be0e8eaa245fc246d8b5a158616644b8ce7b1f00e773a5cbfe710",
+    "team_contract.py": "bb86ee9890b22d5771e1746aa63808446378187f694a61a61a33d01736ae614f",
+    "team_mapping_provisional.json": "4b8d13102a62bbad57a426b1126254be94de7e0a73793f9fd5d13773ff9c2f0f",
+    "team_profile.schema.json": "926b5d78f9732f718df3bae27bf767bf0bd6a5a75d6d5ac98bea0f7440a55cb1"
+  },
+  "new_source_extraction_executions": 0,
+  "new_behavior_executions": 0,
+  "human_review": "pending",
+  "demo_approved": false,
+  "privacy_scope": "Known actual source accounts, exact source URLs and raw text hashes checked; not a universal deidentification proof"
+}

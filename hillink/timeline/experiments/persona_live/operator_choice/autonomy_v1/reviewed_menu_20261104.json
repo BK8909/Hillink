@@ -1,0 +1,560 @@
+{
+  "version": "geumryong-page27-review-20261104-v1",
+  "source_sha256": "932d54c7c39117faa6c3dd2be6a52ad6e311657a09195e7baca4e639230c4f50",
+  "distinct_named_dishes": 6,
+  "sale_variants": 8,
+  "scope": "ONLY_PAGE27; NOT_FULL_MENU_RECONCILIATION",
+  "products": [
+    {
+      "sku_id": "HC-PDF-20261102-GEUMRYONG-45-S",
+      "venue_id": "GEUMRYONG",
+      "label": "피망 고추 잡채 S",
+      "role": "SHARED_DISH",
+      "category": "F&B",
+      "unit_price_krw": 85000,
+      "price_tier": "EXISTING_REFERENCE",
+      "price_status": "OFFICIAL_MENU_REFERENCE_VALIDITY_NOT_GUARANTEED",
+      "price_basis_date": "SOURCE_DOCUMENT_20261102_NOT_DATE_SPECIFIC_QUOTE",
+      "billing_unit": "dish",
+      "source_unit": "S",
+      "minimum_quantity": 1,
+      "automatic_choice": true,
+      "source_day_rule": "",
+      "source_service_windows": "12:00-15:00,18:00-21:00",
+      "service_periods": [
+        "lunch",
+        "dinner"
+      ],
+      "source_room_types": "",
+      "source_line": null,
+      "valid_from": null,
+      "valid_until": null,
+      "reviewed_available_from": "2026-11-04",
+      "review_gate_basis": "TECHNICAL_REVIEW_ADMISSION_DATE_NOT_OFFICIAL_SALE_START",
+      "source_path": "20261102_geumryong.pdf",
+      "source_document": "20261102_geumryong.pdf",
+      "source_sha256": "932d54c7c39117faa6c3dd2be6a52ad6e311657a09195e7baca4e639230c4f50",
+      "source_grade": "○",
+      "source_checked_at": "2026-11-04",
+      "official_source": {
+        "file": "20261102_geumryong.pdf",
+        "page": 27,
+        "sha256": "932d54c7c39117faa6c3dd2be6a52ad6e311657a09195e7baca4e639230c4f50",
+        "checked_at": "2026-11-04",
+        "fields": [
+          "menu_name",
+          "variant",
+          "unit_price",
+          "independent_sale"
+        ],
+        "visual_review": "RENDERED_PDF_CHECKED"
+      },
+      "tags": [
+        "chinese",
+        "shared_dish",
+        "beef",
+        "pepper"
+      ],
+      "requires_reservation": false,
+      "reservation_basis": "EXISTING_VENUE_DINE_IN_CONTRACT_NO_NEW_RESERVATION_GUARANTEE",
+      "requires_operating_override": false,
+      "native_product_id": null,
+      "included_description": "",
+      "included_components": [],
+      "sales_channel": "HOTEL_ON_PREMISE",
+      "tax_status": "UNKNOWN",
+      "quantity_rule": "EXPLICIT_LLM_OR_OPERATOR_QUANTITY_NOT_PARTY_SIZE",
+      "source_servings": null,
+      "portion_limitation": "판매 항목별 한 주문 단위. S/L·재료 변형은 원문과 동일; 중량·식사 가능 인원·실제 섭취량 미확인.",
+      "condition_source_status": "PAGE27_NAME_VARIANT_PRICE_VISUALLY_CHECKED; EXISTING_VENUE_SERVICE_CONTRACT_RETAINED",
+      "change_history": [
+        {
+          "version": "geumryong-page27-review-20261104-v1",
+          "reason": "SOURCE_PRESENT_PREVIOUSLY_UNMAPPED; NO_EXISTING_SKU_REPLACED"
+        }
+      ]
+    },
+    {
+      "sku_id": "HC-PDF-20261102-GEUMRYONG-45-L",
+      "venue_id": "GEUMRYONG",
+      "label": "피망 고추 잡채 L",
+      "role": "SHARED_DISH",
+      "category": "F&B",
+      "unit_price_krw": 115000,
+      "price_tier": "EXISTING_REFERENCE",
+      "price_status": "OFFICIAL_MENU_REFERENCE_VALIDITY_NOT_GUARANTEED",
+      "price_basis_date": "SOURCE_DOCUMENT_20261102_NOT_DATE_SPECIFIC_QUOTE",
+      "billing_unit": "dish",
+      "source_unit": "L",
+      "minimum_quantity": 1,
+      "automatic_choice": true,
+      "source_day_rule": "",
+      "source_service_windows": "12:00-15:00,18:00-21:00",
+      "service_periods": [
+        "lunch",
+        "dinner"
+      ],
+      "source_room_types": "",
+      "source_line": null,
+      "valid_from": null,
+      "valid_until": null,
+      "reviewed_available_from": "2026-11-04",
+      "review_gate_basis": "TECHNICAL_REVIEW_ADMISSION_DATE_NOT_OFFICIAL_SALE_START",
+      "source_path": "20261102_geumryong.pdf",
+      "source_document": "20261102_geumryong.pdf",
+      "source_sha256": "932d54c7c39117faa6c3dd2be6a52ad6e311657a09195e7baca4e639230c4f50",
+      "source_grade": "○",
+      "source_checked_at": "2026-11-04",
+      "official_source": {
+        "file": "20261102_geumryong.pdf",
+        "page": 27,
+        "sha256": "932d54c7c39117faa6c3dd2be6a52ad6e311657a09195e7baca4e639230c4f50",
+        "checked_at": "2026-11-04",
+        "fields": [
+          "menu_name",
+          "variant",
+          "unit_price",
+          "independent_sale"
+        ],
+        "visual_review": "RENDERED_PDF_CHECKED"
+      },
+      "tags": [
+        "chinese",
+        "shared_dish",
+        "beef",
+        "pepper"
+      ],
+      "requires_reservation": false,
+      "reservation_basis": "EXISTING_VENUE_DINE_IN_CONTRACT_NO_NEW_RESERVATION_GUARANTEE",
+      "requires_operating_override": false,
+      "native_product_id": null,
+      "included_description": "",
+      "included_components": [],
+      "sales_channel": "HOTEL_ON_PREMISE",
+      "tax_status": "UNKNOWN",
+      "quantity_rule": "EXPLICIT_LLM_OR_OPERATOR_QUANTITY_NOT_PARTY_SIZE",
+      "source_servings": null,
+      "portion_limitation": "판매 항목별 한 주문 단위. S/L·재료 변형은 원문과 동일; 중량·식사 가능 인원·실제 섭취량 미확인.",
+      "condition_source_status": "PAGE27_NAME_VARIANT_PRICE_VISUALLY_CHECKED; EXISTING_VENUE_SERVICE_CONTRACT_RETAINED",
+      "change_history": [
+        {
+          "version": "geumryong-page27-review-20261104-v1",
+          "reason": "SOURCE_PRESENT_PREVIOUSLY_UNMAPPED; NO_EXISTING_SKU_REPLACED"
+        }
+      ]
+    },
+    {
+      "sku_id": "HC-PDF-20261102-GEUMRYONG-46-PORK",
+      "venue_id": "GEUMRYONG",
+      "label": "북경식 탕수육 · 돼지고기",
+      "role": "SHARED_DISH",
+      "category": "F&B",
+      "unit_price_krw": 105000,
+      "price_tier": "EXISTING_REFERENCE",
+      "price_status": "OFFICIAL_MENU_REFERENCE_VALIDITY_NOT_GUARANTEED",
+      "price_basis_date": "SOURCE_DOCUMENT_20261102_NOT_DATE_SPECIFIC_QUOTE",
+      "billing_unit": "dish",
+      "source_unit": "돼지고기",
+      "minimum_quantity": 1,
+      "automatic_choice": true,
+      "source_day_rule": "",
+      "source_service_windows": "12:00-15:00,18:00-21:00",
+      "service_periods": [
+        "lunch",
+        "dinner"
+      ],
+      "source_room_types": "",
+      "source_line": null,
+      "valid_from": null,
+      "valid_until": null,
+      "reviewed_available_from": "2026-11-04",
+      "review_gate_basis": "TECHNICAL_REVIEW_ADMISSION_DATE_NOT_OFFICIAL_SALE_START",
+      "source_path": "20261102_geumryong.pdf",
+      "source_document": "20261102_geumryong.pdf",
+      "source_sha256": "932d54c7c39117faa6c3dd2be6a52ad6e311657a09195e7baca4e639230c4f50",
+      "source_grade": "○",
+      "source_checked_at": "2026-11-04",
+      "official_source": {
+        "file": "20261102_geumryong.pdf",
+        "page": 27,
+        "sha256": "932d54c7c39117faa6c3dd2be6a52ad6e311657a09195e7baca4e639230c4f50",
+        "checked_at": "2026-11-04",
+        "fields": [
+          "menu_name",
+          "variant",
+          "unit_price",
+          "independent_sale"
+        ],
+        "visual_review": "RENDERED_PDF_CHECKED"
+      },
+      "tags": [
+        "chinese",
+        "shared_dish",
+        "pork",
+        "sweet_sour"
+      ],
+      "requires_reservation": false,
+      "reservation_basis": "EXISTING_VENUE_DINE_IN_CONTRACT_NO_NEW_RESERVATION_GUARANTEE",
+      "requires_operating_override": false,
+      "native_product_id": null,
+      "included_description": "",
+      "included_components": [],
+      "sales_channel": "HOTEL_ON_PREMISE",
+      "tax_status": "UNKNOWN",
+      "quantity_rule": "EXPLICIT_LLM_OR_OPERATOR_QUANTITY_NOT_PARTY_SIZE",
+      "source_servings": null,
+      "portion_limitation": "판매 항목별 한 주문 단위. S/L·재료 변형은 원문과 동일; 중량·식사 가능 인원·실제 섭취량 미확인.",
+      "condition_source_status": "PAGE27_NAME_VARIANT_PRICE_VISUALLY_CHECKED; EXISTING_VENUE_SERVICE_CONTRACT_RETAINED",
+      "change_history": [
+        {
+          "version": "geumryong-page27-review-20261104-v1",
+          "reason": "SOURCE_PRESENT_PREVIOUSLY_UNMAPPED; NO_EXISTING_SKU_REPLACED"
+        }
+      ]
+    },
+    {
+      "sku_id": "HC-PDF-20261102-GEUMRYONG-46-BEEF",
+      "venue_id": "GEUMRYONG",
+      "label": "북경식 탕수육 · 소고기",
+      "role": "SHARED_DISH",
+      "category": "F&B",
+      "unit_price_krw": 145000,
+      "price_tier": "EXISTING_REFERENCE",
+      "price_status": "OFFICIAL_MENU_REFERENCE_VALIDITY_NOT_GUARANTEED",
+      "price_basis_date": "SOURCE_DOCUMENT_20261102_NOT_DATE_SPECIFIC_QUOTE",
+      "billing_unit": "dish",
+      "source_unit": "소고기",
+      "minimum_quantity": 1,
+      "automatic_choice": true,
+      "source_day_rule": "",
+      "source_service_windows": "12:00-15:00,18:00-21:00",
+      "service_periods": [
+        "lunch",
+        "dinner"
+      ],
+      "source_room_types": "",
+      "source_line": null,
+      "valid_from": null,
+      "valid_until": null,
+      "reviewed_available_from": "2026-11-04",
+      "review_gate_basis": "TECHNICAL_REVIEW_ADMISSION_DATE_NOT_OFFICIAL_SALE_START",
+      "source_path": "20261102_geumryong.pdf",
+      "source_document": "20261102_geumryong.pdf",
+      "source_sha256": "932d54c7c39117faa6c3dd2be6a52ad6e311657a09195e7baca4e639230c4f50",
+      "source_grade": "○",
+      "source_checked_at": "2026-11-04",
+      "official_source": {
+        "file": "20261102_geumryong.pdf",
+        "page": 27,
+        "sha256": "932d54c7c39117faa6c3dd2be6a52ad6e311657a09195e7baca4e639230c4f50",
+        "checked_at": "2026-11-04",
+        "fields": [
+          "menu_name",
+          "variant",
+          "unit_price",
+          "independent_sale"
+        ],
+        "visual_review": "RENDERED_PDF_CHECKED"
+      },
+      "tags": [
+        "chinese",
+        "shared_dish",
+        "beef",
+        "sweet_sour"
+      ],
+      "requires_reservation": false,
+      "reservation_basis": "EXISTING_VENUE_DINE_IN_CONTRACT_NO_NEW_RESERVATION_GUARANTEE",
+      "requires_operating_override": false,
+      "native_product_id": null,
+      "included_description": "",
+      "included_components": [],
+      "sales_channel": "HOTEL_ON_PREMISE",
+      "tax_status": "UNKNOWN",
+      "quantity_rule": "EXPLICIT_LLM_OR_OPERATOR_QUANTITY_NOT_PARTY_SIZE",
+      "source_servings": null,
+      "portion_limitation": "판매 항목별 한 주문 단위. S/L·재료 변형은 원문과 동일; 중량·식사 가능 인원·실제 섭취량 미확인.",
+      "condition_source_status": "PAGE27_NAME_VARIANT_PRICE_VISUALLY_CHECKED; EXISTING_VENUE_SERVICE_CONTRACT_RETAINED",
+      "change_history": [
+        {
+          "version": "geumryong-page27-review-20261104-v1",
+          "reason": "SOURCE_PRESENT_PREVIOUSLY_UNMAPPED; NO_EXISTING_SKU_REPLACED"
+        }
+      ]
+    },
+    {
+      "sku_id": "HC-PDF-20261102-GEUMRYONG-47",
+      "venue_id": "GEUMRYONG",
+      "label": "광동식 탕수육",
+      "role": "SHARED_DISH",
+      "category": "F&B",
+      "unit_price_krw": 110000,
+      "price_tier": "EXISTING_REFERENCE",
+      "price_status": "OFFICIAL_MENU_REFERENCE_VALIDITY_NOT_GUARANTEED",
+      "price_basis_date": "SOURCE_DOCUMENT_20261102_NOT_DATE_SPECIFIC_QUOTE",
+      "billing_unit": "dish",
+      "source_unit": "단일 가격 표기",
+      "minimum_quantity": 1,
+      "automatic_choice": true,
+      "source_day_rule": "",
+      "source_service_windows": "12:00-15:00,18:00-21:00",
+      "service_periods": [
+        "lunch",
+        "dinner"
+      ],
+      "source_room_types": "",
+      "source_line": null,
+      "valid_from": null,
+      "valid_until": null,
+      "reviewed_available_from": "2026-11-04",
+      "review_gate_basis": "TECHNICAL_REVIEW_ADMISSION_DATE_NOT_OFFICIAL_SALE_START",
+      "source_path": "20261102_geumryong.pdf",
+      "source_document": "20261102_geumryong.pdf",
+      "source_sha256": "932d54c7c39117faa6c3dd2be6a52ad6e311657a09195e7baca4e639230c4f50",
+      "source_grade": "○",
+      "source_checked_at": "2026-11-04",
+      "official_source": {
+        "file": "20261102_geumryong.pdf",
+        "page": 27,
+        "sha256": "932d54c7c39117faa6c3dd2be6a52ad6e311657a09195e7baca4e639230c4f50",
+        "checked_at": "2026-11-04",
+        "fields": [
+          "menu_name",
+          "variant",
+          "unit_price",
+          "independent_sale"
+        ],
+        "visual_review": "RENDERED_PDF_CHECKED"
+      },
+      "tags": [
+        "chinese",
+        "shared_dish",
+        "pork",
+        "sweet_sour"
+      ],
+      "requires_reservation": false,
+      "reservation_basis": "EXISTING_VENUE_DINE_IN_CONTRACT_NO_NEW_RESERVATION_GUARANTEE",
+      "requires_operating_override": false,
+      "native_product_id": null,
+      "included_description": "",
+      "included_components": [],
+      "sales_channel": "HOTEL_ON_PREMISE",
+      "tax_status": "UNKNOWN",
+      "quantity_rule": "EXPLICIT_LLM_OR_OPERATOR_QUANTITY_NOT_PARTY_SIZE",
+      "source_servings": null,
+      "portion_limitation": "판매 항목별 한 주문 단위. S/L·재료 변형은 원문과 동일; 중량·식사 가능 인원·실제 섭취량 미확인.",
+      "condition_source_status": "PAGE27_NAME_VARIANT_PRICE_VISUALLY_CHECKED; EXISTING_VENUE_SERVICE_CONTRACT_RETAINED",
+      "change_history": [
+        {
+          "version": "geumryong-page27-review-20261104-v1",
+          "reason": "SOURCE_PRESENT_PREVIOUSLY_UNMAPPED; NO_EXISTING_SKU_REPLACED"
+        }
+      ]
+    },
+    {
+      "sku_id": "HC-PDF-20261102-GEUMRYONG-48",
+      "venue_id": "GEUMRYONG",
+      "label": "조염 돼지갈비",
+      "role": "SHARED_DISH",
+      "category": "F&B",
+      "unit_price_krw": 110000,
+      "price_tier": "EXISTING_REFERENCE",
+      "price_status": "OFFICIAL_MENU_REFERENCE_VALIDITY_NOT_GUARANTEED",
+      "price_basis_date": "SOURCE_DOCUMENT_20261102_NOT_DATE_SPECIFIC_QUOTE",
+      "billing_unit": "dish",
+      "source_unit": "단일 가격 표기",
+      "minimum_quantity": 1,
+      "automatic_choice": true,
+      "source_day_rule": "",
+      "source_service_windows": "12:00-15:00,18:00-21:00",
+      "service_periods": [
+        "lunch",
+        "dinner"
+      ],
+      "source_room_types": "",
+      "source_line": null,
+      "valid_from": null,
+      "valid_until": null,
+      "reviewed_available_from": "2026-11-04",
+      "review_gate_basis": "TECHNICAL_REVIEW_ADMISSION_DATE_NOT_OFFICIAL_SALE_START",
+      "source_path": "20261102_geumryong.pdf",
+      "source_document": "20261102_geumryong.pdf",
+      "source_sha256": "932d54c7c39117faa6c3dd2be6a52ad6e311657a09195e7baca4e639230c4f50",
+      "source_grade": "○",
+      "source_checked_at": "2026-11-04",
+      "official_source": {
+        "file": "20261102_geumryong.pdf",
+        "page": 27,
+        "sha256": "932d54c7c39117faa6c3dd2be6a52ad6e311657a09195e7baca4e639230c4f50",
+        "checked_at": "2026-11-04",
+        "fields": [
+          "menu_name",
+          "variant",
+          "unit_price",
+          "independent_sale"
+        ],
+        "visual_review": "RENDERED_PDF_CHECKED"
+      },
+      "tags": [
+        "chinese",
+        "shared_dish",
+        "pork",
+        "spicy"
+      ],
+      "requires_reservation": false,
+      "reservation_basis": "EXISTING_VENUE_DINE_IN_CONTRACT_NO_NEW_RESERVATION_GUARANTEE",
+      "requires_operating_override": false,
+      "native_product_id": null,
+      "included_description": "",
+      "included_components": [],
+      "sales_channel": "HOTEL_ON_PREMISE",
+      "tax_status": "UNKNOWN",
+      "quantity_rule": "EXPLICIT_LLM_OR_OPERATOR_QUANTITY_NOT_PARTY_SIZE",
+      "source_servings": null,
+      "portion_limitation": "판매 항목별 한 주문 단위. S/L·재료 변형은 원문과 동일; 중량·식사 가능 인원·실제 섭취량 미확인.",
+      "condition_source_status": "PAGE27_NAME_VARIANT_PRICE_VISUALLY_CHECKED; EXISTING_VENUE_SERVICE_CONTRACT_RETAINED",
+      "change_history": [
+        {
+          "version": "geumryong-page27-review-20261104-v1",
+          "reason": "SOURCE_PRESENT_PREVIOUSLY_UNMAPPED; NO_EXISTING_SKU_REPLACED"
+        }
+      ]
+    },
+    {
+      "sku_id": "HC-PDF-20261102-GEUMRYONG-49",
+      "venue_id": "GEUMRYONG",
+      "label": "흑후추 안심 철판",
+      "role": "SHARED_DISH",
+      "category": "F&B",
+      "unit_price_krw": 160000,
+      "price_tier": "EXISTING_REFERENCE",
+      "price_status": "OFFICIAL_MENU_REFERENCE_VALIDITY_NOT_GUARANTEED",
+      "price_basis_date": "SOURCE_DOCUMENT_20261102_NOT_DATE_SPECIFIC_QUOTE",
+      "billing_unit": "dish",
+      "source_unit": "단일 가격 표기",
+      "minimum_quantity": 1,
+      "automatic_choice": true,
+      "source_day_rule": "",
+      "source_service_windows": "12:00-15:00,18:00-21:00",
+      "service_periods": [
+        "lunch",
+        "dinner"
+      ],
+      "source_room_types": "",
+      "source_line": null,
+      "valid_from": null,
+      "valid_until": null,
+      "reviewed_available_from": "2026-11-04",
+      "review_gate_basis": "TECHNICAL_REVIEW_ADMISSION_DATE_NOT_OFFICIAL_SALE_START",
+      "source_path": "20261102_geumryong.pdf",
+      "source_document": "20261102_geumryong.pdf",
+      "source_sha256": "932d54c7c39117faa6c3dd2be6a52ad6e311657a09195e7baca4e639230c4f50",
+      "source_grade": "○",
+      "source_checked_at": "2026-11-04",
+      "official_source": {
+        "file": "20261102_geumryong.pdf",
+        "page": 27,
+        "sha256": "932d54c7c39117faa6c3dd2be6a52ad6e311657a09195e7baca4e639230c4f50",
+        "checked_at": "2026-11-04",
+        "fields": [
+          "menu_name",
+          "variant",
+          "unit_price",
+          "independent_sale"
+        ],
+        "visual_review": "RENDERED_PDF_CHECKED"
+      },
+      "tags": [
+        "chinese",
+        "shared_dish",
+        "beef",
+        "black_pepper"
+      ],
+      "requires_reservation": false,
+      "reservation_basis": "EXISTING_VENUE_DINE_IN_CONTRACT_NO_NEW_RESERVATION_GUARANTEE",
+      "requires_operating_override": false,
+      "native_product_id": null,
+      "included_description": "",
+      "included_components": [],
+      "sales_channel": "HOTEL_ON_PREMISE",
+      "tax_status": "UNKNOWN",
+      "quantity_rule": "EXPLICIT_LLM_OR_OPERATOR_QUANTITY_NOT_PARTY_SIZE",
+      "source_servings": null,
+      "portion_limitation": "판매 항목별 한 주문 단위. S/L·재료 변형은 원문과 동일; 중량·식사 가능 인원·실제 섭취량 미확인.",
+      "condition_source_status": "PAGE27_NAME_VARIANT_PRICE_VISUALLY_CHECKED; EXISTING_VENUE_SERVICE_CONTRACT_RETAINED",
+      "change_history": [
+        {
+          "version": "geumryong-page27-review-20261104-v1",
+          "reason": "SOURCE_PRESENT_PREVIOUSLY_UNMAPPED; NO_EXISTING_SKU_REPLACED"
+        }
+      ]
+    },
+    {
+      "sku_id": "HC-PDF-20261102-GEUMRYONG-50",
+      "venue_id": "GEUMRYONG",
+      "label": "사천식 안심 요리",
+      "role": "SHARED_DISH",
+      "category": "F&B",
+      "unit_price_krw": 160000,
+      "price_tier": "EXISTING_REFERENCE",
+      "price_status": "OFFICIAL_MENU_REFERENCE_VALIDITY_NOT_GUARANTEED",
+      "price_basis_date": "SOURCE_DOCUMENT_20261102_NOT_DATE_SPECIFIC_QUOTE",
+      "billing_unit": "dish",
+      "source_unit": "단일 가격 표기",
+      "minimum_quantity": 1,
+      "automatic_choice": true,
+      "source_day_rule": "",
+      "source_service_windows": "12:00-15:00,18:00-21:00",
+      "service_periods": [
+        "lunch",
+        "dinner"
+      ],
+      "source_room_types": "",
+      "source_line": null,
+      "valid_from": null,
+      "valid_until": null,
+      "reviewed_available_from": "2026-11-04",
+      "review_gate_basis": "TECHNICAL_REVIEW_ADMISSION_DATE_NOT_OFFICIAL_SALE_START",
+      "source_path": "20261102_geumryong.pdf",
+      "source_document": "20261102_geumryong.pdf",
+      "source_sha256": "932d54c7c39117faa6c3dd2be6a52ad6e311657a09195e7baca4e639230c4f50",
+      "source_grade": "○",
+      "source_checked_at": "2026-11-04",
+      "official_source": {
+        "file": "20261102_geumryong.pdf",
+        "page": 27,
+        "sha256": "932d54c7c39117faa6c3dd2be6a52ad6e311657a09195e7baca4e639230c4f50",
+        "checked_at": "2026-11-04",
+        "fields": [
+          "menu_name",
+          "variant",
+          "unit_price",
+          "independent_sale"
+        ],
+        "visual_review": "RENDERED_PDF_CHECKED"
+      },
+      "tags": [
+        "chinese",
+        "shared_dish",
+        "beef"
+      ],
+      "requires_reservation": false,
+      "reservation_basis": "EXISTING_VENUE_DINE_IN_CONTRACT_NO_NEW_RESERVATION_GUARANTEE",
+      "requires_operating_override": false,
+      "native_product_id": null,
+      "included_description": "",
+      "included_components": [],
+      "sales_channel": "HOTEL_ON_PREMISE",
+      "tax_status": "UNKNOWN",
+      "quantity_rule": "EXPLICIT_LLM_OR_OPERATOR_QUANTITY_NOT_PARTY_SIZE",
+      "source_servings": null,
+      "portion_limitation": "판매 항목별 한 주문 단위. S/L·재료 변형은 원문과 동일; 중량·식사 가능 인원·실제 섭취량 미확인.",
+      "condition_source_status": "PAGE27_NAME_VARIANT_PRICE_VISUALLY_CHECKED; EXISTING_VENUE_SERVICE_CONTRACT_RETAINED",
+      "change_history": [
+        {
+          "version": "geumryong-page27-review-20261104-v1",
+          "reason": "SOURCE_PRESENT_PREVIOUSLY_UNMAPPED; NO_EXISTING_SKU_REPLACED"
+        }
+      ]
+    }
+  ]
+}

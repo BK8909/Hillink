@@ -1,0 +1,58 @@
+[
+ {
+  "fact_id": "WH-90001-F001",
+  "post_id": "WH-90001_P001",
+  "anchor_start": 0,
+  "anchor_end": 33,
+  "quote_PRIVATE": "[합성 인용 F001] 배우자와 비스타 1박 휴식 실제 숙박",
+  "anchor_sha256": "1b4946eedca73882a894a2b59c9fe335378cbcbcd5d41990b352c7acfa78f4fc"
+ },
+ {
+  "fact_id": "WH-90001-F002",
+  "post_id": "WH-90001_P001",
+  "anchor_start": 0,
+  "anchor_end": 32,
+  "quote_PRIVATE": "[합성 인용 F002] 스카이야드 족욕을 저녁에 실제 이용",
+  "anchor_sha256": "47c4a9373a5ae67a5365243d0746ea5e214476787b0eb007e31b6bdbb163d3a6"
+ },
+ {
+  "fact_id": "WH-90001-F003",
+  "post_id": "WH-90001_P001",
+  "anchor_start": 0,
+  "anchor_end": 30,
+  "quote_PRIVATE": "[합성 인용 F003] 외부 호텔 뷔페를 할인가로 이용",
+  "anchor_sha256": "4287f43f2df2e77f57fa3b1f3295c9a5b666663e7e1a915a5e4ff09ee1fbd481"
+ },
+ {
+  "fact_id": "WH-90001-F004",
+  "post_id": "WH-90001_P001",
+  "anchor_start": 0,
+  "anchor_end": 36,
+  "quote_PRIVATE": "[합성 인용 F004] 외부 간식 가게 대기열이 길어 구매를 포기",
+  "anchor_sha256": "56016c60c6044c609882a43d47989614215e2a3624d70d3d7f9c83dae8817e82"
+ },
+ {
+  "fact_id": "WH-90001-F005",
+  "post_id": "WH-90001_P001",
+  "anchor_start": 0,
+  "anchor_end": 33,
+  "quote_PRIVATE": "[합성 인용 F005] 수영장 이용을 계획했으나 일정상 취소",
+  "anchor_sha256": "d155e4934dc07267ec015722e69b8d476ad58bbdccea74aa6d3df7cca0258eec"
+ },
+ {
+  "fact_id": "WH-90001-F006",
+  "post_id": "WH-90001_P001",
+  "anchor_start": 0,
+  "anchor_end": 40,
+  "quote_PRIVATE": "[합성 인용 F006] 빛의 시어터 이용권이 있었지만 휴관으로 관람 실패",
+  "anchor_sha256": "78b5a33849b1e6fe7b453fa60a30502246dba1d4f401a8da2aa987e773b6f81a"
+ },
+ {
+  "fact_id": "WH-90001-F007",
+  "post_id": "WH-90001_P001",
+  "anchor_start": 0,
+  "anchor_end": 33,
+  "quote_PRIVATE": "[합성 인용 F007] 전시 휴관 후 근처 카페로 대체 방문",
+  "anchor_sha256": "b25b8056451dee22f427ecd149112902db6a045bae09aa820949c6222edecaed"
+ }
+]

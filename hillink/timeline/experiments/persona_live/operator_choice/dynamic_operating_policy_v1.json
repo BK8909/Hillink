@@ -1,0 +1,33 @@
+{
+  "version": "dynamic_operating_policy_v1.0",
+  "status": "fixed_exploratory_heuristics_before_four_condition_run_not_fitted",
+  "weights": {
+    "food_experience": 4,
+    "current_meal_goal": 3,
+    "new_experience": 2,
+    "scenic_space": 1,
+    "incremental_cost": 2,
+    "time_burden": 1
+  },
+  "interpretation_levels": {
+    "food_experience": 0.65,
+    "new_experience": 0.55,
+    "scenic_space": 0.60,
+    "value_attention": 0.70
+  },
+  "minimum_experience_domains_for_novelty_inference": 3,
+  "general_cost_attention_without_personal_evidence": 0.50,
+  "decision_margin_for_inspection": 0.25,
+  "default_time_reference_minutes": 120,
+  "formula": "food=weight*bounded_profile_support*meal_fraction; purpose=weight*current_meal_goal*meal_fraction; novelty=weight*bounded_exploration_inference*novelty; space=weight*bounded_space_support*scenic_space; cost=-weight*cost_attention*(net_price-reference_dinner_price)/reference_dinner_price; time=-weight*duration/reference_time",
+  "notes": [
+    "The V2 personal/trip/engagement/value/context weights are reused by role, without customer-specific fitting.",
+    "Interpretation levels express provisional transfer strength, not measured reliability or behavioral probabilities.",
+    "Food details support food-experience interest, not preference for wine or every menu.",
+    "Novelty is a bounded inference from actual experience diversity. Documentation detail alone contributes nothing.",
+    "Missing preference is neutral. All monetary and operating inputs must be supplied explicitly.",
+    "A claim's source roots are allocated to at most one personal factor per option, with direct feature match preceding broad novelty inference.",
+    "Opportunity cost of spending time is a generic scenario judgment, not a learned personal time value.",
+    "No willingness-to-pay threshold or participant probability is inferred from these heuristics."
+  ]
+}

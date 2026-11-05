@@ -1,0 +1,202 @@
+{
+  "version": "existing-event-cards-snapshot-v1",
+  "events": [
+    {
+      "id": "none",
+      "label": "행사 없음",
+      "description": "행사 없이 같은 고객의 방문을 계산합니다.",
+      "enabled": true,
+      "event": false
+    },
+    {
+      "id": "wine",
+      "event_card_id": "WINE_FAIR_2026_AUTUMN",
+      "label": "2026 가을 와인페어",
+      "description": "기존 검증 계약 · 가상 방문일 2026-10-24 · 실제 현재 행사 아님",
+      "enabled": true,
+      "event": true,
+      "start_date": "2026-10-24",
+      "scenario_defaults": {},
+      "source_date_range": [
+        "2026-10-10",
+        "2026-10-25"
+      ],
+      "weekdays": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": "SANTA_KIDS_VILLAGE_2026",
+      "event_card_id": "SANTA_KIDS_VILLAGE_2026",
+      "label": "2026 산타 키즈 빌리지",
+      "enabled": true,
+      "event": false,
+      "start_date": "2026-12-18",
+      "source_date_range": [
+        "2026-12-18",
+        "2026-12-25"
+      ],
+      "weekdays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "scenario_defaults": {},
+      "description": "공식 패키지 전용 3부 15:20–16:30 / 4부 16:40–17:50 · 패키지 명시 선택 필요 · 시작가는 확정 판매가 아님"
+    },
+    {
+      "id": "SANTA_KIDS_VILLAGE_2025",
+      "event_card_id": "SANTA_KIDS_VILLAGE_2025",
+      "label": "2025 산타 키즈 빌리지",
+      "start_date": "2025-12-19",
+      "enabled": true,
+      "event": false,
+      "description": "과거 행사 재현 · 기본 4부 시각(10:00·12:00·14:00·16:00)/60분은 모델 가정 · 2025 공식 회차(11:00·14:10·15:20·16:30)는 운영 전략 A/B와 객실 패키지(3·4부)에서 사용 · 성인2+아동1 입장권 20만원 외 요금 미상 · 다른 소비는 2026 모형 가격 · 객실료는 가상 객실 모델 단가(그랜드 247,000·비스타 307,000·더글라스 259,000/박) · 산타 객실 패키지는 명시 선택 시에만 적용",
+      "scenario_defaults": {
+        "assumptions": {
+          "sessions": [
+            [
+              "10:00",
+              "11:30"
+            ],
+            [
+              "12:00",
+              "13:30"
+            ],
+            [
+              "14:00",
+              "15:30"
+            ],
+            [
+              "16:00",
+              "17:30"
+            ]
+          ],
+          "duration_min": 60,
+          "historical_model_prices_acknowledged": true
+        }
+      },
+      "source_date_range": [
+        "2025-12-19",
+        "2025-12-25"
+      ],
+      "weekdays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "PIZZA_HILL_GOLDEN_NIGHT_2026",
+      "event_card_id": "PIZZA_HILL_GOLDEN_NIGHT_2026",
+      "label": "2026 피자힐 골든 나이트",
+      "start_date": "2026-09-10",
+      "enabled": true,
+      "event": false,
+      "description": "확인된 목요일 · 18:30~21:00/90분·식사량0.4는 가상 가정 · 가격/예약/나이조건 미확인 · 입장 허용은 시나리오 가정",
+      "scenario_defaults": {
+        "assumptions": {
+          "sessions": [
+            [
+              "18:30",
+              "21:00"
+            ]
+          ],
+          "duration_min": 90,
+          "meal_fraction": 0.4,
+          "admission_allowed_as_virtual_condition": true
+        }
+      },
+      "source_date_range": [
+        "2026-09-10",
+        "2026-09-18"
+      ],
+      "weekdays": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "SAVORING_SUMMER_NIGHT_2026",
+      "event_card_id": "SAVORING_SUMMER_NIGHT_2026",
+      "label": "2026 리버파크 Savoring Summer Night",
+      "start_date": "2026-07-17",
+      "enabled": true,
+      "event": false,
+      "description": "금요일 15:00~21:30 · 120분/식사량1은 가정 · 비스타와 해당 패키지 2인 자격을 선택한 가상 조건 · 패키지 게시액 별도 재과금 안 함",
+      "scenario_defaults": {
+        "assumptions": {
+          "duration_min": 120,
+          "meal_fraction": 1
+        }
+      },
+      "default_building": "VISTA",
+      "virtual_package_included_people": 2,
+      "source_date_range": [
+        "2026-07-17",
+        "2026-08-30"
+      ],
+      "weekdays": [
+        4,
+        5,
+        6
+      ]
+    }
+  ],
+  "weather": [
+    {
+      "id": "clear",
+      "label": "맑은 날",
+      "enabled": false
+    },
+    {
+      "id": "rain",
+      "label": "비 오는 날",
+      "enabled": false
+    }
+  ],
+  "timing": [
+    {
+      "id": "weekday",
+      "label": "평일",
+      "enabled": false
+    },
+    {
+      "id": "weekend",
+      "label": "주말·공휴일",
+      "enabled": false
+    },
+    {
+      "id": "morning",
+      "label": "오전 방문",
+      "enabled": false
+    },
+    {
+      "id": "afternoon",
+      "label": "오후 방문",
+      "enabled": false
+    },
+    {
+      "id": "night",
+      "label": "야간 방문",
+      "enabled": false
+    }
+  ],
+  "purposes": [
+    {
+      "id": "weekday_golf",
+      "label": "골프 고객의 평일 방문",
+      "description": "복합 상황 확장 예정 · 현재 고객의 방문 목적은 기존 프로필을 유지합니다.",
+      "enabled": false
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "reviewer_false_context_exactly_matches_stored": true,
+  "reviewer_true_context_exactly_matches_stored": true,
+  "reviewer_flag_is_cause": false,
+  "stored_provider_execution": "CACHE_REPLAY",
+  "current_call_cost_usd": 0,
+  "stored_strategy_count": 0,
+  "stored_context_sha": "54704a7f2bf585400c340d93cb6dc404fca99ebba2b6536cb4c69ea01a3bc34b",
+  "reconstructed_context_shas": [
+    "54704a7f2bf585400c340d93cb6dc404fca99ebba2b6536cb4c69ea01a3bc34b",
+    "54704a7f2bf585400c340d93cb6dc404fca99ebba2b6536cb4c69ea01a3bc34b"
+  ],
+  "cause": "Fresh API visit uses float state values (0.0/1.0); saved JSON uses ints (0/1). Agent provider hashes exact JSON and strategy decision IDs hash entire decisions. This changes context identity despite identical numeric values, choices and receipts. Both baseline and candidate reproduce REPLAY_MISS.",
+  "product_modified": false
+}

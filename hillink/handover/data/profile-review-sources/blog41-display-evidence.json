@@ -1,0 +1,20 @@
+{
+  "customer_id": "blog41",
+  "scope": "PRIVATE_REVIEW_DISPLAY_ONLY",
+  "posts": [
+    {
+      "post_id": "P015",
+      "text": "피자힐이 왜 유명한지 이해가 안될 정도로 가격 대비 여러모로 아쉬운 피자와 파스타\n주중 투숙객 할인 20%해도 뭔가 아까운 맛이다.\n내 입맛엔 이제모 피자가 더...",
+      "body_sha256": "4df7aa94db05cf7c2de6c66e318d52330703492d7d1a6f6f2eba766ba9abe331",
+      "source_kind": "VISUALLY_VERIFIED_PDF_EXCERPT",
+      "original_sha256": "c80355709a00e05ac3aba7cacb5225652e41867281f6b1062b01ce92a3f2b0ed"
+    }
+  ],
+  "engine_changed": false,
+  "pdf_pages": [
+    8,
+    10,
+    12
+  ],
+  "manual_visual_scope": "피자·파스타·소스 주문, 주중 투숙객 할인, 가격 대비 평가; 전체 5편 의미 승인 아님"
+}

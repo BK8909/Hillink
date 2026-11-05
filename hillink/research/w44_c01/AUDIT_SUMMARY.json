@@ -1,0 +1,21 @@
+{
+  "rows": 588,
+  "runtime_action_venue_pairs": 97,
+  "catalog_skus": 72,
+  "source_register_entries": 28,
+  "gap_counts": {
+    "SKU_PROPOSAL_NOT_APPROVED": 99,
+    "SOURCE_ONLY_NOT_CONNECTED": 10,
+    "RUNTIME_ONLY_NO_NEW_CATALOG_SKU": 74,
+    "DATED_WINDOW_ADAPTER": 77,
+    "SOURCE_WINDOW_WITHOUT_ACTIVITY": 1,
+    "HISTORICAL_VENUE_JOIN_NOT_SKU_APPROVAL": 28,
+    "HISTORICAL_PRICE_WITHOUT_ACTIVITY": 2,
+    "MAP_ONLY_NOT_ACTIVITY": 13,
+    "MAP_RUNTIME_JOIN": 30,
+    "MENU_VENUE_JOIN": 205,
+    "MENU_ONLY_UNMAPPED": 49
+  },
+  "status": "AUDIT_WITH_EXPLICIT_UNRESOLVED_NOT_FULL_ACCEPTANCE",
+  "paid_provider_calls": 0
+}

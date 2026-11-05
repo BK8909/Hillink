@@ -1,0 +1,128 @@
+{
+  "version": "seasonal_operator_scenarios_v1",
+  "persona_id": "blog41",
+  "profile_version": "author_profile_v3.0",
+  "scenario_status": "fictional_research_conditions_not_actual_walkerhill_operations",
+  "shared_persona_context": {
+    "party": "two-person companion is the leading profile hypothesis; relationship is unknown",
+    "trip_purpose": "leisure stay; exact purpose and visit dates are unspecified in this simulation",
+    "profile_is_held_constant": true
+  },
+  "scenarios": [
+    {
+      "scenario_id": "S1_SUMMER_RIVERPARK",
+      "season": "summer",
+      "operator_question": "When the outdoor pool opens, does this guest choose it over the indoor pool or another activity?",
+      "virtual_conditions": [
+        "Research-only stay context; no actual date or current operating rule is asserted.",
+        "Outdoor Riverpark and indoor pool are both open from 15:00 to 18:00.",
+        "Assume indoor pool access is included; Riverpark costs KRW 35,000 per adult. Both prices are fictional scenario inputs.",
+        "Weather is warm and clear; no crowding or child-party assumption is added."
+      ],
+      "options": ["RIVERPARK", "INDOOR_POOL", "SKYARD_OR_WALK", "ROOM_REST"],
+      "action_hypothesis": {
+        "choice": "INDOOR_POOL",
+        "mode": "most_plausible_base_case_with_conditions",
+        "statement": "기본 조건에서는 과거 실제 수영장 참여 경험과 긍정적으로 전달된 실내 풀 경험을 바탕으로 실내 수영장을 우선 고려할 가능성이 더 자연스럽다. 리버파크는 야외 수영 선호가 확인된 결과가 아니며, 별도 요금까지 있어 자동 선택으로 보지 않는다.",
+        "alternatives": [
+          {"choice": "RIVERPARK", "when": "야외 활동 자체가 이번 여행의 목적이거나, 입장료가 포함·할인되고 야외 환경을 원하는 동행이 확인될 때."},
+          {"choice": "SKYARD_OR_WALK", "when": "수영 준비·시간 투입보다 조망과 가벼운 활동이 더 가치 있는 일정일 때."},
+          {"choice": "ROOM_REST", "when": "피로 또는 일정 제약이 수영 활동의 기회비용보다 클 때."}
+        ],
+        "why_not_a_prediction": "시설 이용과 특정 시설 평가를 토대로 한 탐색적 행동 가설이며, 실제 미래 선택 확률이 아니다."
+      },
+      "profile_aspects": ["C02", "C04", "C05"],
+      "unknowns": ["이번 방문의 수영 의사", "동행자의 수영 선호", "실제 입장 자격·아동 동반 여부", "실제 요금·혼잡"],
+      "flip_conditions": ["Riverpark 비용 포함 또는 상당 할인", "이번 일정에서 야외 수영을 원한다는 직접 조건", "야외 시설의 차별적 경험이 구체적으로 제시됨"],
+      "operator_implication": "야외 시설을 단순히 개장하는 것 외에 입장료 포함 패키지와 실내 대비 차별 경험을 명확히 제시하면 비교 선택에 영향을 줄 수 있다. 실제 반응은 별도 검증이 필요하다."
+    },
+    {
+      "scenario_id": "S2_AUTUMN_WINE_FAIR",
+      "season": "autumn",
+      "operator_question": "Will a food-and-wine pairing event earn consideration against dinner and scenic alternatives?",
+      "virtual_conditions": [
+        "Fictional event: 18:00–20:00, two-person reservation, four tasting pours and three substantial food pairings.",
+        "Fictional price: KRW 120,000 per person; event access and food are bundled. No actual event, price, or schedule is claimed.",
+        "A regular dinner alternative is available; assume comparable total time and no weather constraint.",
+        "No wine preference is attributed to the author; the two-drink image is not treated as evidence of consumption or preference."
+      ],
+      "options": ["WINE_FAIR", "THE_BUFFET_OR_RESTAURANT", "SKYARD_AND_REGULAR_DINNER", "ROOM_REST"],
+      "action_hypothesis": {
+        "choice": "WINE_FAIR",
+        "mode": "conditional_consideration_not_certain_attendance",
+        "statement": "음식 페어링이 행사의 실질적인 중심이고 2인 예약으로 참여할 수 있다는 조건에서는, 미식·공간 경험을 상세히 살펴본 이 작성자가 행사를 검토할 만하다. 참여 근거는 확인된 와인 취향이 아니라 음식 구성과 새로운 경험의 가치다. 제시된 가격이 높은 만큼 음식의 질·양이 충분히 차별적이지 않으면 일반 식사 쪽으로 기울 수 있다.",
+        "alternatives": [
+          {"choice": "THE_BUFFET_OR_RESTAURANT", "when": "페어링이 적거나 행사 프리미엄이 음식 경험으로 정당화되지 않을 때."},
+          {"choice": "SKYARD_AND_REGULAR_DINNER", "when": "특별한 음료보다 야경과 익숙한 식사 조합이 더 매력적일 때."},
+          {"choice": "ROOM_REST", "when": "동행·일정·피로가 외부 프로그램 참여를 낮출 때."}
+        ],
+        "why_not_a_prediction": "식음·공간 경험과 가치 평가를 새 행사에 제한적으로 적용한 시나리오 추론이다. 와인 선호나 실제 참가 이력을 뜻하지 않는다."
+      },
+      "profile_aspects": ["C07", "C08", "C10", "C12", "C15", "C16"],
+      "unknowns": ["와인 취향·음주 여부", "동행 관계와 행사 선호", "가격 수용 범위", "실제 행사 운영 조건"],
+      "flip_conditions": ["음식 페어링의 품질·양 저하", "가격 인상 또는 별도 식사 추가 비용", "행사 시간의 저녁 일정과 충돌", "와인 중심 구성에 대한 동행자의 비선호"],
+      "operator_implication": "주류 취향을 전제로 홍보하기보다 음식 페어링의 구체성, 총 지불액, 행사 시간, 비음주 동행 대안을 함께 안내하는 편이 이 프로필의 실제 판단 기준에 더 맞는다."
+    },
+    {
+      "scenario_id": "S3_OCTOBER_BEER_FEST",
+      "season": "october",
+      "operator_question": "Would food-forward guests consider an Oktoberfest-style event, and what would make it preferable to dinner?",
+      "virtual_conditions": [
+        "Fictional event: 17:00–19:00, food stalls with a substantial tasting plate and optional beer tasting.",
+        "Fictional package price: KRW 75,000 per person including the food plate and one non-alcoholic alternative; additional drinks are separately priced.",
+        "Regular restaurants remain available and the event occupies a comparable dinner-time slot.",
+        "No beer preference, drinking behavior, or festival affinity is inferred from pictured drinks."
+      ],
+      "options": ["BEER_FEST", "THE_BUFFET_OR_PIZZAHILL", "OTHER_DINNER", "ROOM_REST"],
+      "action_hypothesis": {
+        "choice": "OTHER_DINNER",
+        "mode": "most_plausible_base_case_with_conditions",
+        "statement": "현재 가상 조건만으로는 일반 식사를 우선하는 쪽이 더 설득력 있다. 이 작성자는 피자와 여러 식음 경험에 관심을 보였지만, 맥주나 축제 분위기를 선호한다고 확인된 것은 아니다. 음식 구성이 실제 한 끼로 충분하고 가격 대비 매력이 분명해지면 축제는 고려 가능한 새 경험으로 올라온다.",
+        "alternatives": [
+          {"choice": "BEER_FEST", "when": "음식이 행사 핵심으로 충분히 제공되고 총액이 대체 식사 대비 납득되며, 선택 가능한 무알코올 구성이 유지될 때."},
+          {"choice": "THE_BUFFET_OR_PIZZAHILL", "when": "익숙한 메뉴의 음식 품질이 행사의 불확실성보다 가치 있다고 판단될 때. 단 피자힐의 과거 가치 유보도 함께 고려된다."},
+          {"choice": "ROOM_REST", "when": "일정 피로 또는 객실 내 식사의 편의가 외부 행사보다 중요할 때."}
+        ],
+        "why_not_a_prediction": "축제 선호를 부여하지 않고 확인된 식음 관심 및 업장별 가치 평가를 운영 조건에 적용한 가설이다."
+      },
+      "profile_aspects": ["C07", "C08", "C09", "C10", "C13", "C16"],
+      "unknowns": ["맥주·주류 선호", "축제·군중 선호", "행사 음식의 실제 품질", "이번 저녁의 목적과 동행 반응"],
+      "flip_conditions": ["음식 구성의 품질·양 강화", "정규 식사 대안과 비교한 번들 가격 개선", "축제 프로그램의 차별성 제시", "동행자가 행사 참여를 원한다는 조건"],
+      "operator_implication": "맥주 취향 타깃으로만 접근하기보다 음식 중심 번들, 가격 대비 정규 식사 비교, 비음주 선택지를 함께 설계해야 미식 관심 고객에게도 가치 제안이 명확해진다."
+    },
+    {
+      "scenario_id": "S4_WINTER_CHRISTMAS_EVENT",
+      "season": "winter",
+      "operator_question": "Does a festive dining-and-view experience justify a premium over a regular dinner?",
+      "virtual_conditions": [
+        "Fictional two-person evening package: 18:00–20:00, seasonal dinner and access to a decorated scenic photo area.",
+        "Fictional price: KRW 160,000 per person; ordinary dinner remains available at a fictional KRW 95,000 per person.",
+        "Assume the event is indoors or weather-protected; no actual access, view, menu, or operating rule is asserted.",
+        "The same author profile and unknown companion relationship are retained."
+      ],
+      "options": ["CHRISTMAS_PACKAGE", "REGULAR_DINNER_PLUS_SKYARD", "ROOM_DINING_OR_REST"],
+      "action_hypothesis": {
+        "choice": "REGULAR_DINNER_PLUS_SKYARD",
+        "mode": "most_plausible_base_case_with_conditions",
+        "statement": "기본 가정에서는 일반 저녁 식사와 별도 야경 경험을 조합하는 선택이 가장 자연스럽다. 작성자는 야간 조망과 공간 경험을 긍정적으로 기록했지만, 높은 행사 프리미엄을 수용한다는 근거는 없다. 행사에 독특한 식음 품질이나 실제로 체감할 만한 시즌 경험이 더해지면 패키지 선택도 충분히 가능하다.",
+        "alternatives": [
+          {"choice": "CHRISTMAS_PACKAGE", "when": "계절 장식 외에 메뉴·공간 경험의 차별성이 가격 차이를 정당화하고 예약·시간 조건이 편리할 때."},
+          {"choice": "ROOM_DINING_OR_REST", "when": "외부 이동보다 객실 편의나 휴식이 우선되는 방문 목적일 때."}
+        ],
+        "why_not_a_prediction": "야경에 대한 특정 경험을 시즌 이벤트 전반의 선호로 일반화하지 않고, 가격 프리미엄과 경험 차별성을 비교한 탐색 가설이다."
+      },
+      "profile_aspects": ["C05", "C08", "C10", "C12", "C13", "C15", "C16"],
+      "unknowns": ["크리스마스 행사 선호", "계절 메뉴에 대한 관심", "동행자의 기념일·행사 목적", "실제 가격·예약·접근 조건"],
+      "flip_conditions": ["일반 식사와의 가격 차이 축소", "특별 메뉴 또는 사진·야경 경험의 실질적 강화", "행사가 방문 목적과 맞는 일정에 배치", "동행자의 시즌 행사 선호 확인"],
+      "operator_implication": "장식만 강조하기보다 식음 품질과 조망 경험이 일반 저녁 대비 무엇을 더 제공하는지 명확히 보여주고, 일반 식사·객실 휴식 대안을 함께 안내하는 것이 유효한 운영 가설이다."
+    }
+  ],
+  "review_protocol": {
+    "purpose": "plausibility_and_operator_usefulness_review_not_future_behavior_accuracy",
+    "ratings": ["납득", "보완 필요", "납득 어려움"],
+    "required_comment_fields": ["persona_fidelity", "situation_fit", "action_plausibility", "operator_usefulness", "what_is_unconvincing", "evidence_or_condition_to_change"],
+    "status": "human_review_pending",
+    "demo_approved": false,
+    "llm_calls": 0
+  }
+}

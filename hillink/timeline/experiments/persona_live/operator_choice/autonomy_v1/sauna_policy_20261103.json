@@ -1,0 +1,102 @@
+{
+  "version": "SAUNA_FACILITY_MODEL_20261103_V1",
+  "checked_at": "2026-11-03",
+  "grand_source": {
+    "kind": "OFFICIAL_FACILITY_PAGE",
+    "url": "https://app.walkerhill.com/grandwalkerhillseoul/activity/Experience"
+  },
+  "vista_source": {
+    "kind": "USER_SUPPLIED_OFFICIAL_SITE_CHATBOT_RESPONSE",
+    "checked_at": "2026-11-03",
+    "independently_retrieved_transcript": false
+  },
+  "historical_tariff_confirmed": false,
+  "gender_access": "UNCONFIRMED_NO_GENDER_EXCLUSION",
+  "excluded_default_rates": [
+    33000,
+    44000
+  ],
+  "facilities": {
+    "GRAND_SAUNA": {
+      "location": "그랜드 컨벤션 센터 B2",
+      "rates": {
+        "GRAND": 20000,
+        "DOUGLAS": 20000
+      },
+      "minimum_age_months": 204,
+      "hours": "06:00-22:00",
+      "closure_weekday": 1,
+      "closure_ordinal": 3
+    },
+    "VISTA_SAUNA": {
+      "location": "비스타 3층 웰니스 클럽",
+      "rates": {
+        "VISTA": 55000,
+        "GRAND": 66000,
+        "DOUGLAS": 66000
+      },
+      "minimum_age_months": 204,
+      "hours": "06:00-22:00",
+      "closure_weekday": 2,
+      "closure_ordinal": 2
+    }
+  },
+  "room_contracts": {
+    "HC-MENU-006": {
+      "facility_id": "VISTA_SAUNA",
+      "people": 2,
+      "uses_per_stay": 1,
+      "frequency_basis": "EXISTING_ONCE_PER_STAY_MODEL",
+      "solo_two_uses": false
+    },
+    "HC-MENU-007": {
+      "facility_id": "VISTA_SAUNA",
+      "people": 2,
+      "uses_per_stay": 1,
+      "frequency_basis": "EXISTING_ONCE_PER_STAY_MODEL",
+      "solo_two_uses": false
+    },
+    "HC-MENU-019": {
+      "facility_id": "VISTA_SAUNA",
+      "people": 1,
+      "uses_per_stay": 1,
+      "frequency_basis": "EXISTING_ONCE_PER_STAY_MODEL",
+      "solo_two_uses": false
+    },
+    "HC-MENU-028": {
+      "facility_id": "VISTA_SAUNA",
+      "people": 2,
+      "uses_per_stay": 1,
+      "frequency_basis": "EXISTING_ONCE_PER_STAY_MODEL",
+      "solo_two_uses": true
+    },
+    "HC-MENU-033": {
+      "facility_id": "VISTA_SAUNA",
+      "people": 2,
+      "uses_per_stay": 1,
+      "frequency_basis": "EXISTING_ONCE_PER_STAY_MODEL",
+      "solo_two_uses": false
+    },
+    "HC-MENU-034": {
+      "facility_id": "VISTA_SAUNA",
+      "people": 2,
+      "uses_per_stay": 1,
+      "frequency_basis": "EXISTING_ONCE_PER_STAY_MODEL",
+      "solo_two_uses": false
+    },
+    "HC-MENU-035": {
+      "facility_id": "VISTA_SAUNA",
+      "people": 3,
+      "uses_per_stay": 1,
+      "frequency_basis": "EXISTING_ONCE_PER_STAY_MODEL",
+      "solo_two_uses": false
+    },
+    "HC-MENU-036": {
+      "facility_id": "VISTA_SAUNA",
+      "people": 2,
+      "uses_per_stay": 1,
+      "frequency_basis": "EXISTING_ONCE_PER_STAY_MODEL",
+      "solo_two_uses": false
+    }
+  }
+}

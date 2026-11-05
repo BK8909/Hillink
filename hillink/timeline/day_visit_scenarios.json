@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "unit": "unique_parties_per_day",
+  "scope": "hotel_grounds_excluding_airport",
+  "status": "assumption_not_observed_or_calibrated",
+  "reference_date": "2026-10-10",
+  "scenarios": {"low": 156, "base": 311, "high": 622},
+  "basis": "기준 311팀은 merge/validator-0923 5dbb45f의 기존 격자·purpose_mix·DAY_SCALE=0.5로 계산한 10/10 임시값을 고정한 것. 낮음은 절반 반올림, 높음은 2배. 실제 외부 고객 통계나 업장별 보정 완료 수치가 아님.",
+  "date_adjustment": "기준일 대비 비투숙 목적별 날짜 배율의 가중평균 비율만 적용. 객실수·OCC·투숙팀수·격자의 0박 전체 비중과는 독립.",
+  "site_reference": {
+    "url": "https://walkerhill-ontology.vercel.app/",
+    "period": "2026-10-01/2026-10-31",
+    "scenario": "기준",
+    "le_passage_external_opportunities_month": 5000,
+    "le_passage_conversion": 0.2,
+    "meaning": "월 5000회는 르파사쥬 외부 방문기회 가정. 20% 전환시 월 약1000 구매기회이며 고유 외부 방문팀 수가 아님. 공항·클럽하우스·기타 대외사업은 호텔 현장 규모에 합산하지 않음."
+  },
+  "calibration_rule": "같은 날짜·업장·시간대의 총 이용 목표에서 투숙객 이용을 뺀 외부 이용 인원을 구한 뒤, 방문ID로 업장 간 중복을 제거하고 팀당 인원·방문 업장 수를 반영해 전체 외부팀 수를 보정. 실제 자료 확보 전에는 각 시나리오 결과를 가정으로 표시."
+}

@@ -1,0 +1,4577 @@
+{
+ "_about": "로컬 전용(저장소에 올리지 않음) — 슬기 님 담당 작성자 비공개 보관 프로파일. V1.1 importer + 측정 계약 M-1 · M-2(R-BASE 와 같은 계수 · 규칙). 13차 단계 분리 미적용 · 팀 검수 전.",
+ "personas": {
+  "A01": {
+   "id": "A01",
+   "label": "A01 · 후기 작성자",
+   "companion": null,
+   "source_post_count": 50,
+   "active_fact_count": 67,
+   "pipeline": "V1.1 importer + 측정 계약 · 13차 단계 분리 미적용",
+   "profile_source": "A01S_ALL_v42.json",
+   "hidden_gists": 63,
+   "traits": {
+    "persona_id": "A01S_ALL",
+    "profile_version": "team_v4.2_import_v1.1",
+    "evidence_granularity": "fact",
+    "linker": "auto+v1.1",
+    "profile_status": "V4.2 입력 · V1.1 연결(업장 · 어휘 보강 · 동행 맥락) · 검수 전",
+    "visit_companion": null,
+    "source_post_count": 50,
+    "active_fact_count": 67,
+    "facets": {
+     "novelty": {
+      "direction": 1,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A01S_E21",
+        "feature": "toy-museum_e21",
+        "grade": "exclude",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A01S_TOY-MUSEUM__E21"
+       },
+       {
+        "fact_id": "A01S_E22",
+        "feature": "number-popup_e22",
+        "grade": "rep",
+        "tags": [
+         "event"
+        ],
+        "mass": 1.6,
+        "gist": "평일에는 행사 체험 부스가 닫혀 이용하지 못했다. 판매 공간의 샘플 체험과 일주일 교육 무료체험 신청은 별개다. 구매를 줄이려 기존 피규어를 챙겼다",
+        "experience": "A01S_NUMBER-POPUP__E22"
+       },
+       {
+        "fact_id": "A01S_E35",
+        "feature": "jeju-kids-terrace_e35",
+        "grade": "rep",
+        "tags": [
+         "new_food"
+        ],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A01S_JEJU-KIDS-TERRACE__E35"
+       },
+       {
+        "fact_id": "A01S_E56",
+        "feature": "kids-mango-popup_e56",
+        "grade": "rep",
+        "tags": [
+         "event"
+        ],
+        "mass": 1.6,
+        "gist": "쇼핑 중 팝업의 무료 체험을 이용했다고 보고했다",
+        "experience": "A01S_KIDS-MANGO-POPUP__E56"
+       },
+       {
+        "fact_id": "A01S_E72",
+        "feature": "home-reading-game_e72",
+        "grade": "rep",
+        "tags": [
+         "new_food"
+        ],
+        "mass": 1.6,
+        "gist": "책의 세계지도와 부루마불을 함께 사용하고 처음에는 부모가 돈 계산을 도왔다는 자기보고다",
+        "experience": "A01S_HOME-READING-GAME__E72"
+       }
+      ],
+      "level_all": 0.8,
+      "fact_ids": [
+       "A01S_E22",
+       "A01S_E35",
+       "A01S_E56",
+       "A01S_E72"
+      ],
+      "features": [
+       "home-reading-game_e72",
+       "jeju-kids-terrace_e35",
+       "kids-mango-popup_e56",
+       "number-popup_e22"
+      ],
+      "label": "새 경험 시도",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.8
+     },
+     "seasonal": {
+      "direction": 1,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A01S_E21",
+        "feature": "toy-museum_e21",
+        "grade": "exclude",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A01S_TOY-MUSEUM__E21"
+       },
+       {
+        "fact_id": "A01S_E22",
+        "feature": "number-popup_e22",
+        "grade": "rep",
+        "tags": [
+         "event"
+        ],
+        "mass": 1.6,
+        "gist": "평일에는 행사 체험 부스가 닫혀 이용하지 못했다. 판매 공간의 샘플 체험과 일주일 교육 무료체험 신청은 별개다. 구매를 줄이려 기존 피규어를 챙겼다",
+        "experience": "A01S_NUMBER-POPUP__E22"
+       },
+       {
+        "fact_id": "A01S_E42",
+        "feature": "older-hotels_e42",
+        "grade": "rep",
+        "tags": [
+         "seasonal_food"
+        ],
+        "mass": 1.6,
+        "gist": "시카고에서는 리버뷰를 요청해 배정받고 수영·일출을 즐겼다. 하와이 신혼여행은 좋은 호텔을 경험하려 포시즌을 택했다",
+        "experience": "A01S_OLDER-HOTELS__E42"
+       },
+       {
+        "fact_id": "A01S_E46",
+        "feature": "hawaii-honeymoon_e46",
+        "grade": "rep",
+        "tags": [
+         "seasonal_food"
+        ],
+        "mass": 1.6,
+        "gist": "마우이 포시즌의 마지막 조식·오믈렛 선호, 오하우 쉐라톤의 인피니티풀 선택 이유를 보고했다",
+        "experience": "A01S_HAWAII-HONEYMOON__E46"
+       },
+       {
+        "fact_id": "A01S_E56",
+        "feature": "kids-mango-popup_e56",
+        "grade": "rep",
+        "tags": [
+         "event"
+        ],
+        "mass": 1.6,
+        "gist": "쇼핑 중 팝업의 무료 체험을 이용했다고 보고했다",
+        "experience": "A01S_KIDS-MANGO-POPUP__E56"
+       }
+      ],
+      "level_all": 0.8,
+      "fact_ids": [
+       "A01S_E22",
+       "A01S_E42",
+       "A01S_E46",
+       "A01S_E56"
+      ],
+      "features": [
+       "hawaii-honeymoon_e46",
+       "kids-mango-popup_e56",
+       "number-popup_e22",
+       "older-hotels_e42"
+      ],
+      "label": "시즌 행사 · 한정 반응",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.8
+     },
+     "promo": {
+      "direction": 1,
+      "present": false,
+      "evidence": [],
+      "level_all": 0.0,
+      "fact_ids": [],
+      "features": [],
+      "label": "홍보를 보고 움직임",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.0
+     },
+     "food": {
+      "direction": 1,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A01S_E05",
+        "feature": "wh-party-stay_e05",
+        "grade": "rep",
+        "tags": [
+         "course"
+        ],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A01S_WH-PARTY-STAY__E05"
+       },
+       {
+        "fact_id": "A01S_E11",
+        "feature": "wh-party-stay_e11",
+        "grade": "rep",
+        "tags": [
+         "buffet",
+         "menu_explore"
+        ],
+        "mass": 1.6,
+        "gist": "멤버십 할인을 받아 더뷔페를 추가 결제할 생각이었지만 늦잠으로 포기했다. 앱으로 미국식 조식 하나를 주문해 나눠 먹었다",
+        "experience": "A01S_WH-PARTY-STAY__E11"
+       }
+      ],
+      "level_all": 0.4,
+      "fact_ids": [
+       "A01S_E05",
+       "A01S_E11"
+      ],
+      "features": [
+       "wh-party-stay_e05",
+       "wh-party-stay_e11"
+      ],
+      "label": "음식 경험",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.4
+     },
+     "food_specific": {
+      "direction": 1,
+      "present": false,
+      "evidence": [],
+      "level_all": 0.0,
+      "fact_ids": [],
+      "features": [],
+      "label": "구체적 음식 기호",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.0
+     },
+     "premium": {
+      "direction": 1,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A01S_E05",
+        "feature": "wh-party-stay_e05",
+        "grade": "rep",
+        "tags": [
+         "course"
+        ],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A01S_WH-PARTY-STAY__E05"
+       }
+      ],
+      "level_all": 0.2,
+      "fact_ids": [
+       "A01S_E05"
+      ],
+      "features": [
+       "wh-party-stay_e05"
+      ],
+      "label": "프리미엄 식음",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.2
+     },
+     "benefit": {
+      "direction": 1,
+      "present": false,
+      "evidence": [
+       {
+        "fact_id": "A01S_E07",
+        "feature": "wh-party-stay_e07",
+        "grade": "exclude",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "촬영 초상권 동의 할인, 예약·제휴 혜택을 보고한다",
+        "experience": "A01S_WH-PARTY-STAY__E07"
+       }
+      ],
+      "level_all": 0.0,
+      "fact_ids": [],
+      "features": [],
+      "label": "혜택 활용",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.0
+     },
+     "value_check": {
+      "direction": 0,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A01S_E03",
+        "feature": "wh-party-stay_e03",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "가족 네 명이 지낼 공간과 식음·숙박 혜택을 비교해 비스타 숙박권 포함 멤버십을 미리 가입했다고 보고한다",
+        "experience": "A01S_WH-PARTY-STAY__E03"
+       },
+       {
+        "fact_id": "A01S_E08",
+        "feature": "wh-party-stay_e08",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "추가금을 내고 전망 객실로 바꿀 수 있는지 문의했으나 안 된다는 답을 받았다. 실제 비전망 객실은 채광·공간·스카이야드 동선 때문에 만족했다",
+        "experience": "A01S_WH-PARTY-STAY__E08"
+       },
+       {
+        "fact_id": "A01S_E27",
+        "feature": "education_e27",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A01S_EDUCATION__E27"
+       },
+       {
+        "fact_id": "A01S_E37",
+        "feature": "paradise-family_e37",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "다른 사이트의 추가인원·조식 제외 조건을 비교해 공식 조식 포함·리조트머니 상품을 예약했다. 체크인 대기 등록 후 식사·원더박스를 즐기고 알림을 받아 체크인했다",
+        "experience": "A01S_PARADISE-FAMILY__E37"
+       },
+       {
+        "fact_id": "A01S_E44",
+        "feature": "first-child-party-2023_e44",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A01S_FIRST-CHILD-PARTY-2023__E44"
+       },
+       {
+        "fact_id": "A01S_E62",
+        "feature": "book-worldfamily-purchase_e62",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "기존 전집 지출을 고려해 구성품을 비교한 뒤 월드패밀리 중고를 100만원에 구매했다고 보고한다",
+        "experience": "A01S_BOOK-WORLDFAMILY-PURCHASE__E62"
+       },
+       {
+        "fact_id": "A01S_E65",
+        "feature": "postpartum-service-202506_e65",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "세 서비스 시설을 비교하며 표시 기본료만이 아니라 포함 서비스와 추가비용·이전 경험·후기를 고려해 더 높은 표시가격의 시설을 예약했다고 설명했다",
+        "experience": "A01S_POSTPARTUM-SERVICE-202506__E65"
+       },
+       {
+        "fact_id": "A01S_E73",
+        "feature": "book-egg-world-decision_e73",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "두 전집 구매를 이전 글과 직접 연결하고 설명회 비교 후 영어유치원 대신 놀이·외부활동을 포함한 생활을 택하기로 했다고 보고한다",
+        "experience": "A01S_BOOK-EGG-WORLD-DECISION__E73"
+       }
+      ],
+      "level_all": 0.8,
+      "fact_ids": [
+       "A01S_E03",
+       "A01S_E08",
+       "A01S_E27",
+       "A01S_E37",
+       "A01S_E44",
+       "A01S_E62",
+       "A01S_E65",
+       "A01S_E73"
+      ],
+      "features": [
+       "book-egg-world-decision_e73",
+       "book-worldfamily-purchase_e62",
+       "education_e27",
+       "first-child-party-2023_e44",
+       "paradise-family_e37",
+       "postpartum-service-202506_e65",
+       "wh-party-stay_e03",
+       "wh-party-stay_e08"
+      ],
+      "label": "구매 전 가치 비교",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.8
+     },
+     "space": {
+      "direction": 1,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A01S_E08",
+        "feature": "wh-party-stay_e08",
+        "grade": "rep",
+        "tags": [
+         "ambience",
+         "view_seat"
+        ],
+        "mass": 1.6,
+        "gist": "추가금을 내고 전망 객실로 바꿀 수 있는지 문의했으나 안 된다는 답을 받았다. 실제 비전망 객실은 채광·공간·스카이야드 동선 때문에 만족했다",
+        "experience": "A01S_WH-PARTY-STAY__E08"
+       },
+       {
+        "fact_id": "A01S_E26",
+        "feature": "curtain_e26",
+        "grade": "rep",
+        "tags": [
+         "decor"
+        ],
+        "mass": 1.6,
+        "gist": "필수품이 아닌 장식의 가격을 고민하다 포인트로 구매했고 디자인·공간 분리에 만족했다. 최저가만 고집하는 성향과 다르다",
+        "experience": "A01S_CURTAIN__E26"
+       },
+       {
+        "fact_id": "A01S_E28",
+        "feature": "friends-brunch_e28",
+        "grade": "rep",
+        "tags": [
+         "ambience",
+         "view_seat"
+        ],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A01S_FRIENDS-BRUNCH__E28"
+       },
+       {
+        "fact_id": "A01S_E35",
+        "feature": "jeju-kids-terrace_e35",
+        "grade": "rep",
+        "tags": [
+         "garden"
+        ],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A01S_JEJU-KIDS-TERRACE__E35"
+       },
+       {
+        "fact_id": "A01S_E42",
+        "feature": "older-hotels_e42",
+        "grade": "rep",
+        "tags": [
+         "ambience",
+         "view_seat"
+        ],
+        "mass": 1.6,
+        "gist": "시카고에서는 리버뷰를 요청해 배정받고 수영·일출을 즐겼다. 하와이 신혼여행은 좋은 호텔을 경험하려 포시즌을 택했다",
+        "experience": "A01S_OLDER-HOTELS__E42"
+       },
+       {
+        "fact_id": "A01S_E44",
+        "feature": "first-child-party-2023_e44",
+        "grade": "rep",
+        "tags": [
+         "garden"
+        ],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A01S_FIRST-CHILD-PARTY-2023__E44"
+       },
+       {
+        "fact_id": "A01S_E49",
+        "feature": "danang-family-older_e49",
+        "grade": "rep",
+        "tags": [
+         "ambience",
+         "view_seat"
+        ],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A01S_DANANG-FAMILY-OLDER__E49"
+       }
+      ],
+      "level_all": 0.8,
+      "fact_ids": [
+       "A01S_E08",
+       "A01S_E26",
+       "A01S_E28",
+       "A01S_E35",
+       "A01S_E42",
+       "A01S_E44",
+       "A01S_E49"
+      ],
+      "features": [
+       "curtain_e26",
+       "danang-family-older_e49",
+       "first-child-party-2023_e44",
+       "friends-brunch_e28",
+       "jeju-kids-terrace_e35",
+       "older-hotels_e42",
+       "wh-party-stay_e08"
+      ],
+      "label": "공간 · 전망 · 분위기",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.8
+     },
+     "warm_rest": {
+      "direction": 1,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A01S_E16",
+        "feature": "gapyeong-stay_e16",
+        "grade": "rep",
+        "tags": [
+         "warm_pool"
+        ],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A01S_GAPYEONG-STAY__E16"
+       },
+       {
+        "fact_id": "A01S_E36",
+        "feature": "jeju-family-pool_e36",
+        "grade": "rep",
+        "tags": [
+         "warm_pool"
+        ],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A01S_JEJU-FAMILY-POOL__E36"
+       },
+       {
+        "fact_id": "A01S_E47",
+        "feature": "gapyeong-tree-kids-202503_e47",
+        "grade": "rep",
+        "tags": [
+         "warm_pool"
+        ],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A01S_GAPYEONG-TREE-KIDS-202503__E47"
+       },
+       {
+        "fact_id": "A01S_E48",
+        "feature": "gapyeong-tree-kids-202503_e48",
+        "grade": "rep",
+        "tags": [
+         "warm_pool"
+        ],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A01S_GAPYEONG-TREE-KIDS-202503__E48"
+       }
+      ],
+      "level_all": 0.8,
+      "fact_ids": [
+       "A01S_E16",
+       "A01S_E36",
+       "A01S_E47",
+       "A01S_E48"
+      ],
+      "features": [
+       "gapyeong-stay_e16",
+       "gapyeong-tree-kids-202503_e47",
+       "gapyeong-tree-kids-202503_e48",
+       "jeju-family-pool_e36"
+      ],
+      "label": "온수 · 족욕 휴식",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.8
+     },
+     "swim_aversion": {
+      "direction": -1,
+      "present": false,
+      "evidence": [],
+      "level_all": 0.0,
+      "fact_ids": [],
+      "features": [],
+      "label": "수영 비선호",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.0
+     },
+     "active": {
+      "direction": 1,
+      "present": false,
+      "evidence": [],
+      "level_all": 0.0,
+      "fact_ids": [],
+      "features": [],
+      "label": "운동 참여",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.0
+     },
+     "rest_need": {
+      "direction": 1,
+      "present": false,
+      "evidence": [],
+      "level_all": 0.0,
+      "fact_ids": [],
+      "features": [],
+      "label": "휴식 · 회복",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.0
+     },
+     "routine": {
+      "direction": 1,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A01S_E21",
+        "feature": "toy-museum_e21",
+        "grade": "rep",
+        "tags": [
+         "repeat"
+        ],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A01S_TOY-MUSEUM__E21"
+       },
+       {
+        "fact_id": "A01S_E36",
+        "feature": "jeju-family-pool_e36",
+        "grade": "rep",
+        "tags": [
+         "repeat"
+        ],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A01S_JEJU-FAMILY-POOL__E36"
+       },
+       {
+        "fact_id": "A01S_E63",
+        "feature": "book-english-egg-purchase_e63",
+        "grade": "rep",
+        "tags": [
+         "repeat"
+        ],
+        "mass": 1.6,
+        "gist": "중고와 신품을 고민했으나 수업 이용 자격, 책 기반 반복 활용, 리뉴얼 영상 때문에 잉글리시에그 새 제품을 구매했다고 보고했다. N021은 N022 구매 글을 직접 연결해 같은 구매 이후 수업 회고로 묶는다",
+        "experience": "A01S_BOOK-ENGLISH-EGG-PURCHASE__E63"
+       },
+       {
+        "fact_id": "A01S_E70",
+        "feature": "home-reading-routine_e70",
+        "grade": "rep",
+        "tags": [
+         "repeat"
+        ],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A01S_HOME-READING-ROUTINE__E70"
+       }
+      ],
+      "level_all": 0.8,
+      "fact_ids": [
+       "A01S_E21",
+       "A01S_E36",
+       "A01S_E63",
+       "A01S_E70"
+      ],
+      "features": [
+       "book-english-egg-purchase_e63",
+       "home-reading-routine_e70",
+       "jeju-family-pool_e36",
+       "toy-museum_e21"
+      ],
+      "label": "익숙한 곳 재방문",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.8
+     },
+     "practical_alt": {
+      "direction": 1,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A01S_E10",
+        "feature": "wh-party-stay_e10",
+        "grade": "rep",
+        "tags": [
+         "room_meal"
+        ],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A01S_WH-PARTY-STAY__E10"
+       }
+      ],
+      "level_all": 0.2,
+      "fact_ids": [
+       "A01S_E10"
+      ],
+      "features": [
+       "wh-party-stay_e10"
+      ],
+      "label": "실용적 식사 대안",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.2
+     },
+     "alcohol_familiar": {
+      "direction": 1,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A01S_E60",
+        "feature": "pasta-wine-friend_e60",
+        "grade": "rep",
+        "tags": [
+         "bar",
+         "wine"
+        ],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A01S_PASTA-WINE-FRIEND__E60"
+       }
+      ],
+      "level_all": 0.2,
+      "fact_ids": [
+       "A01S_E60"
+      ],
+      "features": [
+       "pasta-wine-friend_e60"
+      ],
+      "label": "와인 · 주류 경험",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.2
+     },
+     "alcohol_limit": {
+      "direction": -1,
+      "present": false,
+      "evidence": [],
+      "level_all": 0.0,
+      "fact_ids": [],
+      "features": [],
+      "label": "낮은 음주 내성",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.0
+     },
+     "breakfast_priority": {
+      "direction": 0,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A01S_E11",
+        "feature": "wh-party-stay_e11",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "멤버십 할인을 받아 더뷔페를 추가 결제할 생각이었지만 늦잠으로 포기했다. 앱으로 미국식 조식 하나를 주문해 나눠 먹었다",
+        "experience": "A01S_WH-PARTY-STAY__E11"
+       },
+       {
+        "fact_id": "A01S_E14",
+        "feature": "delpino_e14",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A01S_DELPINO__E14"
+       },
+       {
+        "fact_id": "A01S_E17",
+        "feature": "jeju_e17",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A01S_JEJU__E17"
+       },
+       {
+        "fact_id": "A01S_E37",
+        "feature": "paradise-family_e37",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "다른 사이트의 추가인원·조식 제외 조건을 비교해 공식 조식 포함·리조트머니 상품을 예약했다. 체크인 대기 등록 후 식사·원더박스를 즐기고 알림을 받아 체크인했다",
+        "experience": "A01S_PARADISE-FAMILY__E37"
+       },
+       {
+        "fact_id": "A01S_E39",
+        "feature": "paradise-family_e39",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A01S_PARADISE-FAMILY__E39"
+       },
+       {
+        "fact_id": "A01S_E46",
+        "feature": "hawaii-honeymoon_e46",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "마우이 포시즌의 마지막 조식·오믈렛 선호, 오하우 쉐라톤의 인피니티풀 선택 이유를 보고했다",
+        "experience": "A01S_HAWAII-HONEYMOON__E46"
+       }
+      ],
+      "level_all": 0.8,
+      "fact_ids": [
+       "A01S_E11",
+       "A01S_E14",
+       "A01S_E17",
+       "A01S_E37",
+       "A01S_E39",
+       "A01S_E46"
+      ],
+      "features": [
+       "delpino_e14",
+       "hawaii-honeymoon_e46",
+       "jeju_e17",
+       "paradise-family_e37",
+       "paradise-family_e39",
+       "wh-party-stay_e11"
+      ],
+      "label": "조식 우선",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.8
+     },
+     "post_appraisal": {
+      "direction": 0,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A01S_E13",
+        "feature": "delpino_e13",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A01S_DELPINO__E13"
+       },
+       {
+        "fact_id": "A01S_E15",
+        "feature": "incheon_e15",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A01S_INCHEON__E15"
+       },
+       {
+        "fact_id": "A01S_E66",
+        "feature": "postpartum-service-202506_e66",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "2025년6월 입실 시 예약한 VIP실이 없어 다른 작은 객실에서 3박4일 지낸 뒤 VIP실로 이동했다고 보고했다. 공간·조망 차이에 불만과 만족이 달랐다",
+        "experience": "A01S_POSTPARTUM-SERVICE-202506__E66"
+       }
+      ],
+      "level_all": 0.6,
+      "fact_ids": [
+       "A01S_E13",
+       "A01S_E15",
+       "A01S_E66"
+      ],
+      "features": [
+       "delpino_e13",
+       "incheon_e15",
+       "postpartum-service-202506_e66"
+      ],
+      "label": "이용 후 가치 평가",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.6
+     }
+    },
+    "menu": [],
+    "venues": {
+     "THE_BUFFET": [
+      {
+       "feature": "wh-party-stay_e11",
+       "venue": "THE_BUFFET",
+       "kind": "used",
+       "fact_ids": [
+        "A01S_E11"
+       ],
+       "gist": "멤버십 할인을 받아 더뷔페를 추가 결제할 생각이었지만 늦잠으로 포기했다. 앱으로 미국식 조식 하나를 주문해 나눠 먹었다",
+       "experience": "A01S_WH-PARTY-STAY__E11",
+       "basis": "실제 이용"
+      }
+     ]
+    },
+    "evidence_index": {
+     "A01S_E02": {
+      "fact_id": "A01S_E02",
+      "features": [
+       "wh-party-stay_e02"
+      ],
+      "gist": "전화 연결에 여러 번 실패하고 마감 안내를 받았으나 다음 날 취소분 접수에 다시 연락해 평일 점심 모에기를 예약했다",
+      "posts": [
+       "A01-R32"
+      ],
+      "context": []
+     },
+     "A01S_E03": {
+      "fact_id": "A01S_E03",
+      "features": [
+       "wh-party-stay_e03"
+      ],
+      "gist": "가족 네 명이 지낼 공간과 식음·숙박 혜택을 비교해 비스타 숙박권 포함 멤버십을 미리 가입했다고 보고한다",
+      "posts": [
+       "A01-R13"
+      ],
+      "context": []
+     },
+     "A01S_E04": {
+      "fact_id": "A01S_E04",
+      "features": [
+       "wh-party-stay_e04"
+      ],
+      "gist": "행사 인원과 최소보증 금액 때문에 나누기 애매한 요리 대신 음료를 추가 주문했다",
+      "posts": [
+       "A01-R13"
+      ],
+      "context": []
+     },
+     "A01S_E05": {
+      "fact_id": "A01S_E05",
+      "features": [
+       "wh-party-stay_e05"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-R13"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E06": {
+      "fact_id": "A01S_E06",
+      "features": [
+       "wh-party-stay_e06"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-R14"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E07": {
+      "fact_id": "A01S_E07",
+      "features": [
+       "wh-party-stay_e07"
+      ],
+      "gist": "촬영 초상권 동의 할인, 예약·제휴 혜택을 보고한다",
+      "posts": [
+       "A01-R11"
+      ],
+      "context": []
+     },
+     "A01S_E08": {
+      "fact_id": "A01S_E08",
+      "features": [
+       "wh-party-stay_e08"
+      ],
+      "gist": "추가금을 내고 전망 객실로 바꿀 수 있는지 문의했으나 안 된다는 답을 받았다. 실제 비전망 객실은 채광·공간·스카이야드 동선 때문에 만족했다",
+      "posts": [
+       "A01-R10"
+      ],
+      "context": []
+     },
+     "A01S_E09": {
+      "fact_id": "A01S_E09",
+      "features": [
+       "wh-party-stay_e09"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-R10"
+      ],
+      "context": [
+       "kids",
+       "partner"
+      ]
+     },
+     "A01S_E10": {
+      "fact_id": "A01S_E10",
+      "features": [
+       "wh-party-stay_e10"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-R10"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E11": {
+      "fact_id": "A01S_E11",
+      "features": [
+       "wh-party-stay_e11"
+      ],
+      "gist": "멤버십 할인을 받아 더뷔페를 추가 결제할 생각이었지만 늦잠으로 포기했다. 앱으로 미국식 조식 하나를 주문해 나눠 먹었다",
+      "posts": [
+       "A01-R10"
+      ],
+      "context": []
+     },
+     "A01S_E12": {
+      "fact_id": "A01S_E12",
+      "features": [
+       "wh-party-stay_e12"
+      ],
+      "gist": "스카이야드는 같은 숙박에서 여러 번 방문했다. 퇴실 뒤 라이브러리 입장이 안 돼 포레스트 파크로 갔으나 더위로 공용 실내 공간을 짧게 이용했다",
+      "posts": [
+       "A01-R10"
+      ],
+      "context": []
+     },
+     "A01S_E13": {
+      "fact_id": "A01S_E13",
+      "features": [
+       "delpino_e13"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-R06"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E14": {
+      "fact_id": "A01S_E14",
+      "features": [
+       "delpino_e14"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-R06"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E15": {
+      "fact_id": "A01S_E15",
+      "features": [
+       "incheon_e15"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-R28"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E16": {
+      "fact_id": "A01S_E16",
+      "features": [
+       "gapyeong-stay_e16"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-R39"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E17": {
+      "fact_id": "A01S_E17",
+      "features": [
+       "jeju_e17"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-R42"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E18": {
+      "fact_id": "A01S_E18",
+      "features": [
+       "jeju_e18"
+      ],
+      "gist": "스튜디오 예약이 거의 마감되어 기념 촬영을 포기하는 대신 숙소 가는 길의 셀프 사진 부스를 이용했다",
+      "posts": [
+       "A01-R40"
+      ],
+      "context": []
+     },
+     "A01S_E19": {
+      "fact_id": "A01S_E19",
+      "features": [
+       "jeju_e19"
+      ],
+      "gist": "베이글은 매장 안에서 먹고 남은 일부를 포장해 숙소에서 다시 먹었다",
+      "posts": [
+       "A01-R46"
+      ],
+      "context": []
+     },
+     "A01S_E20": {
+      "fact_id": "A01S_E20",
+      "features": [
+       "pizza-class_e20"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-R08"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E21": {
+      "fact_id": "A01S_E21",
+      "features": [
+       "toy-museum_e21"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-R09"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E22": {
+      "fact_id": "A01S_E22",
+      "features": [
+       "number-popup_e22"
+      ],
+      "gist": "평일에는 행사 체험 부스가 닫혀 이용하지 못했다. 판매 공간의 샘플 체험과 일주일 교육 무료체험 신청은 별개다. 구매를 줄이려 기존 피규어를 챙겼다",
+      "posts": [
+       "A01-R25"
+      ],
+      "context": []
+     },
+     "A01S_E23": {
+      "fact_id": "A01S_E23",
+      "features": [
+       "chair-purchase_e23"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-R07"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E24": {
+      "fact_id": "A01S_E24",
+      "features": [
+       "shoe-purchase_e24"
+      ],
+      "gist": "온라인 구매 실패 후 오프라인 약3시간 대기를 거쳐 품절된 색상 대신 다른 색상을 샀다. 새벽 줄서기는 하지 않겠다고 한다",
+      "posts": [
+       "A01-R29"
+      ],
+      "context": []
+     },
+     "A01S_E25": {
+      "fact_id": "A01S_E25",
+      "features": [
+       "home-photos_e25"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-R26"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E26": {
+      "fact_id": "A01S_E26",
+      "features": [
+       "curtain_e26"
+      ],
+      "gist": "필수품이 아닌 장식의 가격을 고민하다 포인트로 구매했고 디자인·공간 분리에 만족했다. 최저가만 고집하는 성향과 다르다",
+      "posts": [
+       "A01-R21"
+      ],
+      "context": []
+     },
+     "A01S_E27": {
+      "fact_id": "A01S_E27",
+      "features": [
+       "education_e27"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-R31"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E28": {
+      "fact_id": "A01S_E28",
+      "features": [
+       "friends-brunch_e28"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-R41"
+      ],
+      "context": [
+       "friends",
+       "kids"
+      ]
+     },
+     "A01S_E29": {
+      "fact_id": "A01S_E29",
+      "features": [
+       "river-picnic_e29"
+      ],
+      "gist": "폭염에 야외 활동을 줄이다 흐린 날을 보고 피크닉했다. 낮 분수 시각에 맞춰 나왔고 새 의자를 실제 사용했다",
+      "posts": [
+       "A01-R05"
+      ],
+      "context": []
+     },
+     "A01S_E33": {
+      "fact_id": "A01S_E33",
+      "features": [
+       "first-child-party-2023_e33"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-H01"
+      ],
+      "context": [
+       "kids",
+       "partner"
+      ]
+     },
+     "A01S_E34": {
+      "fact_id": "A01S_E34",
+      "features": [
+       "first-child-party-2023_e34"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-H01"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E35": {
+      "fact_id": "A01S_E35",
+      "features": [
+       "jeju-kids-terrace_e35"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-H02"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E36": {
+      "fact_id": "A01S_E36",
+      "features": [
+       "jeju-family-pool_e36"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-H03"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E37": {
+      "fact_id": "A01S_E37",
+      "features": [
+       "paradise-family_e37"
+      ],
+      "gist": "다른 사이트의 추가인원·조식 제외 조건을 비교해 공식 조식 포함·리조트머니 상품을 예약했다. 체크인 대기 등록 후 식사·원더박스를 즐기고 알림을 받아 체크인했다",
+      "posts": [
+       "A01-H04"
+      ],
+      "context": []
+     },
+     "A01S_E38": {
+      "fact_id": "A01S_E38",
+      "features": [
+       "paradise-family_e38"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-H04"
+      ],
+      "context": [
+       "kids",
+       "parents"
+      ]
+     },
+     "A01S_E39": {
+      "fact_id": "A01S_E39",
+      "features": [
+       "paradise-family_e39"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-H04"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E40": {
+      "fact_id": "A01S_E40",
+      "features": [
+       "paradise-family_e40"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-H04"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E41": {
+      "fact_id": "A01S_E41",
+      "features": [
+       "bridal-shower_e41"
+      ],
+      "gist": "친구들과 쓸 공간·가성비를 보고 L7을 예약했다. 꽃시장이 쉬어 다른 꽃집에서 재료를 샀고, 고장 난 커피머신 대신 드립커피를 마셨다",
+      "posts": [
+       "A01-H05"
+      ],
+      "context": [
+       "friends"
+      ]
+     },
+     "A01S_E42": {
+      "fact_id": "A01S_E42",
+      "features": [
+       "older-hotels_e42"
+      ],
+      "gist": "시카고에서는 리버뷰를 요청해 배정받고 수영·일출을 즐겼다. 하와이 신혼여행은 좋은 호텔을 경험하려 포시즌을 택했다",
+      "posts": [
+       "A01-H06"
+      ],
+      "context": []
+     },
+     "A01S_E43": {
+      "fact_id": "A01S_E43",
+      "features": [
+       "fukuoka_e43"
+      ],
+      "gist": "짧은 일정에 유후인 온천을 못 가 온천 대욕장이 있는 도미인으로 절충했다. 객실 샤워 대신 대욕장을 썼다고 명시하며, 시간 제약으로 기능을 숙소에서 대체한 사례다",
+      "posts": [
+       "A01-H08"
+      ],
+      "context": []
+     },
+     "A01S_E44": {
+      "fact_id": "A01S_E44",
+      "features": [
+       "first-child-party-2023_e44"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-H10"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E45": {
+      "fact_id": "A01S_E45",
+      "features": [
+       "hawaii-honeymoon_e45"
+      ],
+      "gist": "대한항공 예약을 취소수수료까지 감안해 저가 항공으로 변경했고 절약한 항공료로 더 좋은 호텔을 골랐다고 보고했다. 무조건 저렴한 숙소 선호가 아니라 항목별 우선순위 배분 사례다",
+      "posts": [
+       "A01-N003"
+      ],
+      "context": []
+     },
+     "A01S_E46": {
+      "fact_id": "A01S_E46",
+      "features": [
+       "hawaii-honeymoon_e46"
+      ],
+      "gist": "마우이 포시즌의 마지막 조식·오믈렛 선호, 오하우 쉐라톤의 인피니티풀 선택 이유를 보고했다",
+      "posts": [
+       "A01-N002"
+      ],
+      "context": []
+     },
+     "A01S_E47": {
+      "fact_id": "A01S_E47",
+      "features": [
+       "gapyeong-tree-kids-202503_e47"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-N005"
+      ],
+      "context": [
+       "kids",
+       "parents"
+      ]
+     },
+     "A01S_E48": {
+      "fact_id": "A01S_E48",
+      "features": [
+       "gapyeong-tree-kids-202503_e48"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-N005"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E49": {
+      "fact_id": "A01S_E49",
+      "features": [
+       "danang-family-older_e49"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-N006"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E50": {
+      "fact_id": "A01S_E50",
+      "features": [
+       "danang-family-older_e50"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-N006"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E51": {
+      "fact_id": "A01S_E51",
+      "features": [
+       "nijimori-daytrip_e51"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-N004"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E53": {
+      "fact_id": "A01S_E53",
+      "features": [
+       "indoor-cookie-outing_e53"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-N010"
+      ],
+      "context": [
+       "kids",
+       "parents"
+      ]
+     },
+     "A01S_E54": {
+      "fact_id": "A01S_E54",
+      "features": [
+       "cafe-ep316_e54"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-N013"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E55": {
+      "fact_id": "A01S_E55",
+      "features": [
+       "cafe-house-yongam_e55"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-N014"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E56": {
+      "fact_id": "A01S_E56",
+      "features": [
+       "kids-mango-popup_e56"
+      ],
+      "gist": "쇼핑 중 팝업의 무료 체험을 이용했다고 보고했다",
+      "posts": [
+       "A01-N015"
+      ],
+      "context": []
+     },
+     "A01S_E57": {
+      "fact_id": "A01S_E57",
+      "features": [
+       "public-play-space_e57"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-N017"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E58": {
+      "fact_id": "A01S_E58",
+      "features": [
+       "strawberry-cafe_e58"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-N020"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E59": {
+      "fact_id": "A01S_E59",
+      "features": [
+       "child-photo-history_e59"
+      ],
+      "gist": "첫째의 여러 기념 촬영을 회고하며 초기 스튜디오 비용 대신 책에 지출하고 셀프 촬영을 하다가, 준비 부담을 줄이고 전문 촬영을 원해 1000일 스튜디오를 선택했다고 보고했다",
+      "posts": [
+       "A01-N012"
+      ],
+      "context": []
+     },
+     "A01S_E60": {
+      "fact_id": "A01S_E60",
+      "features": [
+       "pasta-wine-friend_e60"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-N023"
+      ],
+      "context": [
+       "friends",
+       "kids",
+       "partner"
+      ]
+     },
+     "A01S_E62": {
+      "fact_id": "A01S_E62",
+      "features": [
+       "book-worldfamily-purchase_e62"
+      ],
+      "gist": "기존 전집 지출을 고려해 구성품을 비교한 뒤 월드패밀리 중고를 100만원에 구매했다고 보고한다",
+      "posts": [
+       "A01-N008"
+      ],
+      "context": []
+     },
+     "A01S_E63": {
+      "fact_id": "A01S_E63",
+      "features": [
+       "book-english-egg-purchase_e63"
+      ],
+      "gist": "중고와 신품을 고민했으나 수업 이용 자격, 책 기반 반복 활용, 리뉴얼 영상 때문에 잉글리시에그 새 제품을 구매했다고 보고했다. N021은 N022 구매 글을 직접 연결해 같은 구매 이후 수업 회고로 묶는다",
+      "posts": [
+       "A01-N022"
+      ],
+      "context": []
+     },
+     "A01S_E64": {
+      "fact_id": "A01S_E64",
+      "features": [
+       "book-english-egg-purchase_e64"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-N021"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E65": {
+      "fact_id": "A01S_E65",
+      "features": [
+       "postpartum-service-202506_e65"
+      ],
+      "gist": "세 서비스 시설을 비교하며 표시 기본료만이 아니라 포함 서비스와 추가비용·이전 경험·후기를 고려해 더 높은 표시가격의 시설을 예약했다고 설명했다",
+      "posts": [
+       "A01-N011"
+      ],
+      "context": []
+     },
+     "A01S_E66": {
+      "fact_id": "A01S_E66",
+      "features": [
+       "postpartum-service-202506_e66"
+      ],
+      "gist": "2025년6월 입실 시 예약한 VIP실이 없어 다른 작은 객실에서 3박4일 지낸 뒤 VIP실로 이동했다고 보고했다. 공간·조망 차이에 불만과 만족이 달랐다",
+      "posts": [
+       "A01-N011"
+      ],
+      "context": []
+     },
+     "A01S_E67": {
+      "fact_id": "A01S_E67",
+      "features": [
+       "postpartum-service-202506_e67"
+      ],
+      "gist": "입퇴실 일정이 격주 간식 제공과 맞지 않아 기대한 애프터눈티를 경험하지 못했다고 보고했다. 과거 추가 서비스를 많이 이용하느라 쉬지 못한 기억 때문에 이번에는 횟수를 더 늘리지 않았다고 설명한다",
+      "posts": [
+       "A01-N011"
+      ],
+      "context": []
+     },
+     "A01S_E68": {
+      "fact_id": "A01S_E68",
+      "features": [
+       "postpartum-service-202506_e68"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-N011"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E69": {
+      "fact_id": "A01S_E69",
+      "features": [
+       "home-routine-retrospective_e69"
+      ],
+      "gist": "첫째 가정보육 때 날씨를 보고 계획하고, 맑으면 낮잠 전에 가까운 공원에 간식·돗자리를 챙겨 나갔다고 회고한다. 평일 오전의 공공 놀이공간·도서관·장난감 대여도 보고했다",
+      "posts": [
+       "A01-N016"
+      ],
+      "context": []
+     },
+     "A01S_E70": {
+      "fact_id": "A01S_E70",
+      "features": [
+       "home-reading-routine_e70"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-N016"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A01S_E72": {
+      "fact_id": "A01S_E72",
+      "features": [
+       "home-reading-game_e72"
+      ],
+      "gist": "책의 세계지도와 부루마불을 함께 사용하고 처음에는 부모가 돈 계산을 도왔다는 자기보고다",
+      "posts": [
+       "A01-N024"
+      ],
+      "context": [
+       "parents"
+      ]
+     },
+     "A01S_E73": {
+      "fact_id": "A01S_E73",
+      "features": [
+       "book-egg-world-decision_e73"
+      ],
+      "gist": "두 전집 구매를 이전 글과 직접 연결하고 설명회 비교 후 영어유치원 대신 놀이·외부활동을 포함한 생활을 택하기로 했다고 보고한다",
+      "posts": [
+       "A01-N009"
+      ],
+      "context": []
+     },
+     "A01S_E74": {
+      "fact_id": "A01S_E74",
+      "features": [
+       "ikea-shopping-unlinked_e74"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A01-N018"
+      ],
+      "context": [
+       "kids"
+      ]
+     }
+    },
+    "assumptions": [
+     "V1.1: 업장 연결 · 어휘 보강 · 동행 맥락(다른 맥락 근거 ×0.6 가정)",
+     "V1 엔진 · 월드 · 계수 동일"
+    ],
+    "human_review": "pending",
+    "demo_approved": false,
+    "facility_type_history": [
+     {
+      "feature": "gapyeong-stay_e16",
+      "venue": "POOL",
+      "kind": "used",
+      "fact_ids": [
+       "A01S_E16"
+      ],
+      "gist": "아이 놀이·프라이버시·수영장과 샤워실의 짧은 동선을 높이 평가했다. 어린아이 때문에 수영장 온수 추가를 선택했다",
+      "experience": "A01S_GAPYEONG-STAY__E16",
+      "basis": "실제 이용",
+      "venue_type": "POOL"
+     },
+     {
+      "feature": "jeju-family-pool_e36",
+      "venue": "POOL",
+      "kind": "used",
+      "fact_ids": [
+       "A01S_E36"
+      ],
+      "gist": "가족풀 객실은 두 번 갔다고 명시하고 다른 날 배정된 방을 나눠 설명한다. 비가 잠시 그쳤을 때 온수풀에 들어갔고 아이 추락을 우려해 바닥 침구를 썼다",
+      "experience": "A01S_JEJU-FAMILY-POOL__E36",
+      "basis": "실제 이용",
+      "venue_type": "POOL"
+     },
+     {
+      "feature": "paradise-family_e38",
+      "venue": "POOL",
+      "kind": "used",
+      "fact_ids": [
+       "A01S_E38"
+      ],
+      "gist": "아이들이 어려 씨메르 대신 호텔 수영장을 골랐고 부모가 번갈아 첫째와 야외풀을 이용했다. 아기는 실내에 머물렀다",
+      "experience": "A01S_PARADISE-FAMILY__E38",
+      "basis": "실제 이용",
+      "venue_type": "POOL"
+     },
+     {
+      "feature": "danang-family-older_e50",
+      "venue": "POOL",
+      "kind": "used",
+      "fact_ids": [
+       "A01S_E50"
+      ],
+      "gist": "개인 풀뿐 아니라 리조트 수영장도 경험하려 이용했고 아이 낮잠과 겹쳤다. 아침에는 앞바다로 나가 일출·모래를 즐겼다",
+      "experience": "A01S_DANANG-FAMILY-OLDER__E50",
+      "basis": "실제 이용",
+      "venue_type": "POOL"
+     }
+    ]
+   }
+  },
+  "A03": {
+   "id": "A03",
+   "label": "A03 · 후기 작성자",
+   "companion": null,
+   "source_post_count": 13,
+   "active_fact_count": 33,
+   "pipeline": "V1.1 importer + 측정 계약 · 13차 단계 분리 미적용",
+   "profile_source": "A03_27_v42.json",
+   "hidden_gists": 0,
+   "traits": {
+    "persona_id": "A03_27",
+    "profile_version": "team_v4.2_import_v1.1",
+    "evidence_granularity": "fact",
+    "linker": "auto+v1.1",
+    "profile_status": "V4.2 입력 · V1.1 연결(업장 · 어휘 보강 · 동행 맥락) · 검수 전",
+    "visit_companion": null,
+    "source_post_count": 13,
+    "active_fact_count": 33,
+    "facets": {
+     "novelty": {
+      "direction": 1,
+      "present": false,
+      "evidence": [],
+      "level_all": 0.0,
+      "fact_ids": [],
+      "features": [],
+      "label": "새 경험 시도",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.0
+     },
+     "seasonal": {
+      "direction": 1,
+      "present": false,
+      "evidence": [],
+      "level_all": 0.0,
+      "fact_ids": [],
+      "features": [],
+      "label": "시즌 행사 · 한정 반응",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.0
+     },
+     "promo": {
+      "direction": 1,
+      "present": false,
+      "evidence": [],
+      "level_all": 0.0,
+      "fact_ids": [],
+      "features": [],
+      "label": "홍보를 보고 움직임",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.0
+     },
+     "food": {
+      "direction": 1,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A03_F01",
+        "feature": "club_lounge_three_sessions",
+        "grade": "rep",
+        "tags": [
+         "buffet",
+         "menu_explore"
+        ],
+        "mass": 1.6,
+        "gist": "그랜드 워커힐 클럽라운지 티타임·해피아워·더뷔페 조식을 한 번의 숙박에서 모두 이용",
+        "experience": "A03_wh_lounge"
+       }
+      ],
+      "level_all": 0.2,
+      "fact_ids": [
+       "A03_F01"
+      ],
+      "features": [
+       "club_lounge_three_sessions"
+      ],
+      "label": "음식 경험",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.2
+     },
+     "food_specific": {
+      "direction": 1,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A03_F03",
+        "feature": "lounge_truffle_chips_wine_chocolate",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "티타임 트러플 감자칩을 세 번 가져다 먹고, 와인에 초콜릿을 곁들이는 취향을 기술",
+        "experience": "A03_wh_lounge_tea"
+       },
+       {
+        "fact_id": "A03_F04",
+        "feature": "happyhour_shrimp_pizza",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "해피아워 새우 피자 4~5조각 섭취, 부라타 치즈·어향가지 등 긍정 평가",
+        "experience": "A03_wh_lounge_happyhour"
+       },
+       {
+        "fact_id": "A03_F34",
+        "feature": "pasta_menu_preference",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.28,
+        "gist": "파이프그라운드 화이트 라구 파스타를 선호하고 옥수수피자는 무난한 재료 조합으로 평가",
+        "experience": "A03_pasta_place"
+       }
+      ],
+      "level_all": 0.56,
+      "fact_ids": [
+       "A03_F03",
+       "A03_F04",
+       "A03_F34"
+      ],
+      "features": [
+       "happyhour_shrimp_pizza",
+       "lounge_truffle_chips_wine_chocolate",
+       "pasta_menu_preference"
+      ],
+      "label": "구체적 음식 기호",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.56
+     },
+     "premium": {
+      "direction": 1,
+      "present": false,
+      "evidence": [],
+      "level_all": 0.0,
+      "fact_ids": [],
+      "features": [],
+      "label": "프리미엄 식음",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.0
+     },
+     "benefit": {
+      "direction": 1,
+      "present": false,
+      "evidence": [],
+      "level_all": 0.0,
+      "fact_ids": [],
+      "features": [],
+      "label": "혜택 활용",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.0
+     },
+     "value_check": {
+      "direction": 0,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A03_F19",
+        "feature": "trip_cost_planning",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "자차를 배로 운송하고 조식·간식 사전 장보기로 비용을 줄여 현지 맛집에 투자",
+        "experience": "A03_jeju_month_cost"
+       },
+       {
+        "fact_id": "A03_F20",
+        "feature": "lodging_premium_with_promo",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.28,
+        "gist": "제주 숙소비 2,645,617원, 고급 잠자리 우선하면서 프로모션 결합",
+        "experience": "A03_jeju_month_lodging"
+       }
+      ],
+      "level_all": 0.36,
+      "fact_ids": [
+       "A03_F19",
+       "A03_F20"
+      ],
+      "features": [
+       "lodging_premium_with_promo",
+       "trip_cost_planning"
+      ],
+      "label": "구매 전 가치 비교",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.36
+     },
+     "space": {
+      "direction": 1,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A03_F07",
+        "feature": "club_suite_stay",
+        "grade": "rep",
+        "tags": [
+         "ambience",
+         "view_seat"
+        ],
+        "mass": 1.6,
+        "gist": "그랜드 워커힐 클럽스위트(아차산뷰 트윈) 투숙, 침구·가운·욕실 2개 호평",
+        "experience": "A03_wh_room"
+       },
+       {
+        "fact_id": "A03_F09",
+        "feature": "skyard_night_footbath_best",
+        "grade": "rep",
+        "tags": [
+         "night_view"
+        ],
+        "mass": 1.6,
+        "gist": "스카이야드 야경 족욕을 워커힐 부대시설 중 가장 만족스러운 곳으로 평가",
+        "experience": "A03_wh_skyard"
+       }
+      ],
+      "level_all": 0.4,
+      "fact_ids": [
+       "A03_F07",
+       "A03_F09"
+      ],
+      "features": [
+       "club_suite_stay",
+       "skyard_night_footbath_best"
+      ],
+      "label": "공간 · 전망 · 분위기",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.4
+     },
+     "warm_rest": {
+      "direction": 1,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A03_F09",
+        "feature": "skyard_night_footbath_best",
+        "grade": "rep",
+        "tags": [
+         "footbath"
+        ],
+        "mass": 1.6,
+        "gist": "스카이야드 야경 족욕을 워커힐 부대시설 중 가장 만족스러운 곳으로 평가",
+        "experience": "A03_wh_skyard"
+       }
+      ],
+      "level_all": 0.2,
+      "fact_ids": [
+       "A03_F09"
+      ],
+      "features": [
+       "skyard_night_footbath_best"
+      ],
+      "label": "온수 · 족욕 휴식",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.2
+     },
+     "swim_aversion": {
+      "direction": -1,
+      "present": false,
+      "evidence": [],
+      "level_all": 0.0,
+      "fact_ids": [],
+      "features": [],
+      "label": "수영 비선호",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.0
+     },
+     "active": {
+      "direction": 1,
+      "present": false,
+      "evidence": [],
+      "level_all": 0.0,
+      "fact_ids": [],
+      "features": [],
+      "label": "운동 참여",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.0
+     },
+     "rest_need": {
+      "direction": 1,
+      "present": false,
+      "evidence": [],
+      "level_all": 0.0,
+      "fact_ids": [],
+      "features": [],
+      "label": "휴식 · 회복",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.0
+     },
+     "routine": {
+      "direction": 1,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A03_F22",
+        "feature": "telecom_day_discount_meal",
+        "grade": "rep",
+        "tags": [
+         "repeat"
+        ],
+        "mass": 1.6,
+        "gist": "매드포갈릭 T데이 50% 할인으로 48,750원 결제, 재방문 긍정",
+        "experience": "A03_seoul_tday_a"
+       },
+       {
+        "fact_id": "A03_F27",
+        "feature": "private_terrace_revisit",
+        "grade": "rep",
+        "tags": [
+         "repeat"
+        ],
+        "mass": 1.28,
+        "gist": "베통 성수 프라이빗 2층 테라스 이용; 테라스 조건에서 재방문 긍정",
+        "experience": "A03_seongsu_terrace"
+       },
+       {
+        "fact_id": "A03_F30",
+        "feature": "seafood_pasta_revisit_top",
+        "grade": "rep",
+        "tags": [
+         "repeat"
+        ],
+        "mass": 1.28,
+        "gist": "전복 톳파스타·카니미소 크림파스타를 함께 주문해 나눠 먹고 재방문 1순위로 평가",
+        "experience": "A03_jeju_pasta"
+       }
+      ],
+      "level_all": 0.52,
+      "fact_ids": [
+       "A03_F22",
+       "A03_F27",
+       "A03_F30"
+      ],
+      "features": [
+       "private_terrace_revisit",
+       "seafood_pasta_revisit_top",
+       "telecom_day_discount_meal"
+      ],
+      "label": "익숙한 곳 재방문",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.52
+     },
+     "practical_alt": {
+      "direction": 1,
+      "present": false,
+      "evidence": [],
+      "level_all": 0.0,
+      "fact_ids": [],
+      "features": [],
+      "label": "실용적 식사 대안",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.0
+     },
+     "alcohol_familiar": {
+      "direction": 1,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A03_F03",
+        "feature": "lounge_truffle_chips_wine_chocolate",
+        "grade": "rep",
+        "tags": [
+         "bar",
+         "wine"
+        ],
+        "mass": 1.6,
+        "gist": "티타임 트러플 감자칩을 세 번 가져다 먹고, 와인에 초콜릿을 곁들이는 취향을 기술",
+        "experience": "A03_wh_lounge_tea"
+       }
+      ],
+      "level_all": 0.2,
+      "fact_ids": [
+       "A03_F03"
+      ],
+      "features": [
+       "lounge_truffle_chips_wine_chocolate"
+      ],
+      "label": "와인 · 주류 경험",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.2
+     },
+     "alcohol_limit": {
+      "direction": -1,
+      "present": false,
+      "evidence": [],
+      "level_all": 0.0,
+      "fact_ids": [],
+      "features": [],
+      "label": "낮은 음주 내성",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.0
+     },
+     "breakfast_priority": {
+      "direction": 0,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A03_F01",
+        "feature": "club_lounge_three_sessions",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "그랜드 워커힐 클럽라운지 티타임·해피아워·더뷔페 조식을 한 번의 숙박에서 모두 이용",
+        "experience": "A03_wh_lounge"
+       },
+       {
+        "fact_id": "A03_F06",
+        "feature": "breakfast_menu_praise",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.28,
+        "gist": "조식 라이브 오믈렛, 전복장 비빔밥, 샐러드와 올리브오일 구성에 높은 평가",
+        "experience": "A03_wh_breakfast"
+       },
+       {
+        "fact_id": "A03_F15",
+        "feature": "chefs_kitchen_breakfast",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "인스파이어 셰프스키친 조식을 이용했고 샐러드·쌀국수·오믈렛 등을 호평",
+        "experience": "A03_inspire_breakfast"
+       },
+       {
+        "fact_id": "A03_F19",
+        "feature": "trip_cost_planning",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "자차를 배로 운송하고 조식·간식 사전 장보기로 비용을 줄여 현지 맛집에 투자",
+        "experience": "A03_jeju_month_cost"
+       }
+      ],
+      "level_all": 0.76,
+      "fact_ids": [
+       "A03_F01",
+       "A03_F06",
+       "A03_F15",
+       "A03_F19"
+      ],
+      "features": [
+       "breakfast_menu_praise",
+       "chefs_kitchen_breakfast",
+       "club_lounge_three_sessions",
+       "trip_cost_planning"
+      ],
+      "label": "조식 우선",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.76
+     },
+     "post_appraisal": {
+      "direction": 0,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A03_F05",
+        "feature": "buffet_window_missed_regret",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "더뷔페 2부 시작에 맞춰 갔지만 창가 만석, 먼저 줄 서지 않은 것을 후회",
+        "experience": "A03_wh_breakfast"
+       },
+       {
+        "fact_id": "A03_F11",
+        "feature": "sauna_fitness_quality",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.28,
+        "gist": "사우나·피트니스의 연식과 구성을 평가하되 소규모 사우나는 이용 경험상 나쁘지 않았다고 기술",
+        "experience": "A03_wh_sauna"
+       },
+       {
+        "fact_id": "A03_F14",
+        "feature": "lazy_river_bored",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "유수풀은 3~4바퀴만 돌고 지루해졌다고 평가",
+        "experience": "A03_inspire_lazyriver"
+       },
+       {
+        "fact_id": "A03_F16",
+        "feature": "coffee_machine_failure",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.28,
+        "gist": "인스파이어 스위트의 커피머신 고장·교체로 시간 낭비, 서비스의 편의성과 복구 품질을 평가",
+        "experience": "A03_inspire_room"
+       },
+       {
+        "fact_id": "A03_F23",
+        "feature": "discount_but_unsatisfied",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "크리스탈제이드는 40% 할인 적용에도 창펀 맛·가격 대비 만족이 낮아 재방문 우선순위 하락",
+        "experience": "A03_seoul_tday_b"
+       },
+       {
+        "fact_id": "A03_F25",
+        "feature": "famous_dish_no_revisit",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.28,
+        "gist": "유명 감자탕은 기대한 매콤한 맛이 부족해 재방문 의사 없음",
+        "experience": "A03_seongsu_limited"
+       },
+       {
+        "fact_id": "A03_F28",
+        "feature": "dessert_price_unsatisfied",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.28,
+        "gist": "한정선 과일 떡은 개당 6,000원 대비 만족이 낮아 재구매 없음",
+        "experience": "A03_seongsu_dessert"
+       },
+       {
+        "fact_id": "A03_F31",
+        "feature": "bingsu_price_cap",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "애플망고빙수 43,000원 구매 후 맛 대비 비싸다고 평가; 2~3만 원대라면 재방문 의향",
+        "experience": "A03_bingsu"
+       },
+       {
+        "fact_id": "A03_F33",
+        "feature": "overordered_regret",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "물놀이 뒤 두 사람 식사에 메뉴 3개를 주문했다가 양이 과해 후회",
+        "experience": "A03_inspire_meal"
+       }
+      ],
+      "level_all": 0.8,
+      "fact_ids": [
+       "A03_F05",
+       "A03_F11",
+       "A03_F14",
+       "A03_F16",
+       "A03_F23",
+       "A03_F25",
+       "A03_F28",
+       "A03_F31",
+       "A03_F33"
+      ],
+      "features": [
+       "bingsu_price_cap",
+       "buffet_window_missed_regret",
+       "coffee_machine_failure",
+       "dessert_price_unsatisfied",
+       "discount_but_unsatisfied",
+       "famous_dish_no_revisit",
+       "lazy_river_bored",
+       "overordered_regret",
+       "sauna_fitness_quality"
+      ],
+      "label": "이용 후 가치 평가",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.8
+     }
+    },
+    "menu": [
+     {
+      "feature": "lounge_truffle_chips_wine_chocolate",
+      "tags": [
+       "wine"
+      ],
+      "weight": 1.0,
+      "fact_ids": [
+       "A03_F03"
+      ],
+      "gist": "티타임 트러플 감자칩을 세 번 가져다 먹고, 와인에 초콜릿을 곁들이는 취향을 기술",
+      "basis": "와인에 초콜릿을 곁들이는 취향을 기술"
+     },
+     {
+      "feature": "happyhour_shrimp_pizza",
+      "tags": [
+       "pizza"
+      ],
+      "weight": 1.0,
+      "fact_ids": [
+       "A03_F04"
+      ],
+      "gist": "해피아워 새우 피자 4~5조각 섭취, 부라타 치즈·어향가지 등 긍정 평가",
+      "basis": "해피아워 새우 피자 4~5조각 섭취"
+     },
+     {
+      "feature": "happyhour_shrimp_pizza",
+      "tags": [
+       "cheese"
+      ],
+      "weight": 1.0,
+      "fact_ids": [
+       "A03_F04"
+      ],
+      "gist": "해피아워 새우 피자 4~5조각 섭취, 부라타 치즈·어향가지 등 긍정 평가",
+      "basis": "부라타 치즈·어향가지 등 긍정 평가"
+     },
+     {
+      "feature": "pasta_menu_preference",
+      "tags": [
+       "pasta"
+      ],
+      "weight": 1.0,
+      "fact_ids": [
+       "A03_F34"
+      ],
+      "gist": "파이프그라운드 화이트 라구 파스타를 선호하고 옥수수피자는 무난한 재료 조합으로 평가",
+      "basis": "파이프그라운드 화이트 라구 파스타를 선호하고"
+     }
+    ],
+    "venues": {
+     "THE_BUFFET": [
+      {
+       "feature": "club_lounge_three_sessions",
+       "venue": "THE_BUFFET",
+       "kind": "used",
+       "fact_ids": [
+        "A03_F01"
+       ],
+       "gist": "그랜드 워커힐 클럽라운지 티타임·해피아워·더뷔페 조식을 한 번의 숙박에서 모두 이용",
+       "experience": "A03_wh_lounge",
+       "basis": "실제 이용"
+      }
+     ]
+    },
+    "evidence_index": {
+     "A03_F01": {
+      "fact_id": "A03_F01",
+      "features": [
+       "club_lounge_three_sessions"
+      ],
+      "gist": "그랜드 워커힐 클럽라운지 티타임·해피아워·더뷔페 조식을 한 번의 숙박에서 모두 이용",
+      "posts": [
+       "A03-R023"
+      ],
+      "context": []
+     },
+     "A03_F02": {
+      "fact_id": "A03_F02",
+      "features": [
+       "lounge_before_checkin"
+      ],
+      "gist": "체크인 전 일찍 도착해 라운지 티타임부터 이용",
+      "posts": [
+       "A03-R023"
+      ],
+      "context": []
+     },
+     "A03_F03": {
+      "fact_id": "A03_F03",
+      "features": [
+       "lounge_truffle_chips_wine_chocolate"
+      ],
+      "gist": "티타임 트러플 감자칩을 세 번 가져다 먹고, 와인에 초콜릿을 곁들이는 취향을 기술",
+      "posts": [
+       "A03-R023"
+      ],
+      "context": []
+     },
+     "A03_F04": {
+      "fact_id": "A03_F04",
+      "features": [
+       "happyhour_shrimp_pizza"
+      ],
+      "gist": "해피아워 새우 피자 4~5조각 섭취, 부라타 치즈·어향가지 등 긍정 평가",
+      "posts": [
+       "A03-R023"
+      ],
+      "context": []
+     },
+     "A03_F05": {
+      "fact_id": "A03_F05",
+      "features": [
+       "buffet_window_missed_regret"
+      ],
+      "gist": "더뷔페 2부 시작에 맞춰 갔지만 창가 만석, 먼저 줄 서지 않은 것을 후회",
+      "posts": [
+       "A03-R023"
+      ],
+      "context": []
+     },
+     "A03_F06": {
+      "fact_id": "A03_F06",
+      "features": [
+       "breakfast_menu_praise"
+      ],
+      "gist": "조식 라이브 오믈렛, 전복장 비빔밥, 샐러드와 올리브오일 구성에 높은 평가",
+      "posts": [
+       "A03-R023"
+      ],
+      "context": []
+     },
+     "A03_F07": {
+      "fact_id": "A03_F07",
+      "features": [
+       "club_suite_stay"
+      ],
+      "gist": "그랜드 워커힐 클럽스위트(아차산뷰 트윈) 투숙, 침구·가운·욕실 2개 호평",
+      "posts": [
+       "A03-R024"
+      ],
+      "context": []
+     },
+     "A03_F08": {
+      "fact_id": "A03_F08",
+      "features": [
+       "included_amenities"
+      ],
+      "gist": "무료 미니바와 캡슐커피·정수기, 다림질 등 포함 혜택에 만족",
+      "posts": [
+       "A03-R024"
+      ],
+      "context": []
+     },
+     "A03_F09": {
+      "fact_id": "A03_F09",
+      "features": [
+       "skyard_night_footbath_best"
+      ],
+      "gist": "스카이야드 야경 족욕을 워커힐 부대시설 중 가장 만족스러운 곳으로 평가",
+      "posts": [
+       "A03-R024"
+      ],
+      "context": []
+     },
+     "A03_F11": {
+      "fact_id": "A03_F11",
+      "features": [
+       "sauna_fitness_quality"
+      ],
+      "gist": "사우나·피트니스의 연식과 구성을 평가하되 소규모 사우나는 이용 경험상 나쁘지 않았다고 기술",
+      "posts": [
+       "A03-R024"
+      ],
+      "context": []
+     },
+     "A03_F12": {
+      "fact_id": "A03_F12",
+      "features": [
+       "splashbay_before_checkin"
+      ],
+      "gist": "인스파이어 스플래시베이를 체크인 전에 이용해 체류 시간을 확보",
+      "posts": [
+       "A03-R028"
+      ],
+      "context": []
+     },
+     "A03_F13": {
+      "fact_id": "A03_F13",
+      "features": [
+       "slide_weekday_openrun"
+      ],
+      "gist": "인스파이어 슬라이드 인기 놀이기구를 평일 오픈 직후 10회 이상 탔다고 보고",
+      "posts": [
+       "A03-R028"
+      ],
+      "context": []
+     },
+     "A03_F14": {
+      "fact_id": "A03_F14",
+      "features": [
+       "lazy_river_bored"
+      ],
+      "gist": "유수풀은 3~4바퀴만 돌고 지루해졌다고 평가",
+      "posts": [
+       "A03-R028"
+      ],
+      "context": []
+     },
+     "A03_F15": {
+      "fact_id": "A03_F15",
+      "features": [
+       "chefs_kitchen_breakfast"
+      ],
+      "gist": "인스파이어 셰프스키친 조식을 이용했고 샐러드·쌀국수·오믈렛 등을 호평",
+      "posts": [
+       "A03-R028"
+      ],
+      "context": []
+     },
+     "A03_F16": {
+      "fact_id": "A03_F16",
+      "features": [
+       "coffee_machine_failure"
+      ],
+      "gist": "인스파이어 스위트의 커피머신 고장·교체로 시간 낭비, 서비스의 편의성과 복구 품질을 평가",
+      "posts": [
+       "A03-R029"
+      ],
+      "context": []
+     },
+     "A03_F17": {
+      "fact_id": "A03_F17",
+      "features": [
+       "late_checkout_praise"
+      ],
+      "gist": "요청 맥락상 리조트에서 체크아웃을 12시로 조정해 준 것을 크게 호평",
+      "posts": [
+       "A03-R029"
+      ],
+      "context": []
+     },
+     "A03_F18": {
+      "fact_id": "A03_F18",
+      "features": [
+       "month_stay_lodging_priority"
+      ],
+      "gist": "제주 한 달 살기 4개 숙소 이동, 체류비 4,979,144원 보고",
+      "posts": [
+       "A03-R013"
+      ],
+      "context": []
+     },
+     "A03_F19": {
+      "fact_id": "A03_F19",
+      "features": [
+       "trip_cost_planning"
+      ],
+      "gist": "자차를 배로 운송하고 조식·간식 사전 장보기로 비용을 줄여 현지 맛집에 투자",
+      "posts": [
+       "A03-R013"
+      ],
+      "context": []
+     },
+     "A03_F20": {
+      "fact_id": "A03_F20",
+      "features": [
+       "lodging_premium_with_promo"
+      ],
+      "gist": "제주 숙소비 2,645,617원, 고급 잠자리 우선하면서 프로모션 결합",
+      "posts": [
+       "A03-R013"
+      ],
+      "context": []
+     },
+     "A03_F21": {
+      "fact_id": "A03_F21",
+      "features": [
+       "atv_weather_cancel"
+      ],
+      "gist": "ATV는 시도하려 했으나 날씨 때문에 결국 이용하지 못함",
+      "posts": [
+       "A03-R013"
+      ],
+      "context": []
+     },
+     "A03_F22": {
+      "fact_id": "A03_F22",
+      "features": [
+       "telecom_day_discount_meal"
+      ],
+      "gist": "매드포갈릭 T데이 50% 할인으로 48,750원 결제, 재방문 긍정",
+      "posts": [
+       "A03-R017"
+      ],
+      "context": []
+     },
+     "A03_F23": {
+      "fact_id": "A03_F23",
+      "features": [
+       "discount_but_unsatisfied"
+      ],
+      "gist": "크리스탈제이드는 40% 할인 적용에도 창펀 맛·가격 대비 만족이 낮아 재방문 우선순위 하락",
+      "posts": [
+       "A03-R017"
+      ],
+      "context": []
+     },
+     "A03_F24": {
+      "fact_id": "A03_F24",
+      "features": [
+       "limited_menu_openrun"
+      ],
+      "gist": "하루 10그릇 메뉴를 위해 평일 오픈런해 1등으로 입장",
+      "posts": [
+       "A03-R007"
+      ],
+      "context": []
+     },
+     "A03_F25": {
+      "fact_id": "A03_F25",
+      "features": [
+       "famous_dish_no_revisit"
+      ],
+      "gist": "유명 감자탕은 기대한 매콤한 맛이 부족해 재방문 의사 없음",
+      "posts": [
+       "A03-R007"
+      ],
+      "context": []
+     },
+     "A03_F26": {
+      "fact_id": "A03_F26",
+      "features": [
+       "split_queue_couple"
+      ],
+      "gist": "성수에서 두 곳 웨이팅이 겹치자 부부가 나뉘어 줄을 지키고 다른 곳 방문",
+      "posts": [
+       "A03-R009"
+      ],
+      "context": []
+     },
+     "A03_F27": {
+      "fact_id": "A03_F27",
+      "features": [
+       "private_terrace_revisit"
+      ],
+      "gist": "베통 성수 프라이빗 2층 테라스 이용; 테라스 조건에서 재방문 긍정",
+      "posts": [
+       "A03-R009"
+      ],
+      "context": []
+     },
+     "A03_F28": {
+      "fact_id": "A03_F28",
+      "features": [
+       "dessert_price_unsatisfied"
+      ],
+      "gist": "한정선 과일 떡은 개당 6,000원 대비 만족이 낮아 재구매 없음",
+      "posts": [
+       "A03-R009"
+      ],
+      "context": []
+     },
+     "A03_F29": {
+      "fact_id": "A03_F29",
+      "features": [
+       "restaurant_prebook_offpeak"
+      ],
+      "gist": "제주 레이식당은 전날 네이버 예약 후 평일 비혼잡 시간 방문",
+      "posts": [
+       "A03-R012"
+      ],
+      "context": []
+     },
+     "A03_F30": {
+      "fact_id": "A03_F30",
+      "features": [
+       "seafood_pasta_revisit_top"
+      ],
+      "gist": "전복 톳파스타·카니미소 크림파스타를 함께 주문해 나눠 먹고 재방문 1순위로 평가",
+      "posts": [
+       "A03-R012"
+      ],
+      "context": []
+     },
+     "A03_F31": {
+      "fact_id": "A03_F31",
+      "features": [
+       "bingsu_price_cap"
+      ],
+      "gist": "애플망고빙수 43,000원 구매 후 맛 대비 비싸다고 평가; 2~3만 원대라면 재방문 의향",
+      "posts": [
+       "A03-R021"
+      ],
+      "context": []
+     },
+     "A03_F32": {
+      "fact_id": "A03_F32",
+      "features": [
+       "museum_docent_return"
+      ],
+      "gist": "연희동 미술관을 평일 오전 관람하고 도슨트를 위해 오후 재방문한 뒤 식당·카페 코스",
+      "posts": [
+       "A03-R005"
+      ],
+      "context": []
+     },
+     "A03_F33": {
+      "fact_id": "A03_F33",
+      "features": [
+       "overordered_regret"
+      ],
+      "gist": "물놀이 뒤 두 사람 식사에 메뉴 3개를 주문했다가 양이 과해 후회",
+      "posts": [
+       "A03-R030"
+      ],
+      "context": []
+     },
+     "A03_F34": {
+      "fact_id": "A03_F34",
+      "features": [
+       "pasta_menu_preference"
+      ],
+      "gist": "파이프그라운드 화이트 라구 파스타를 선호하고 옥수수피자는 무난한 재료 조합으로 평가",
+      "posts": [
+       "A03-R031"
+      ],
+      "context": []
+     }
+    },
+    "assumptions": [
+     "V1.1: 업장 연결 · 어휘 보강 · 동행 맥락(다른 맥락 근거 ×0.6 가정)",
+     "V1 엔진 · 월드 · 계수 동일"
+    ],
+    "human_review": "pending",
+    "demo_approved": false,
+    "facility_type_history": []
+   }
+  },
+  "A08": {
+   "id": "A08",
+   "label": "A08 · 후기 작성자",
+   "companion": null,
+   "source_post_count": 55,
+   "active_fact_count": 65,
+   "pipeline": "V1.1 importer + 측정 계약 · 13차 단계 분리 미적용",
+   "profile_source": "A08S_ALL_v42.json",
+   "hidden_gists": 4,
+   "traits": {
+    "persona_id": "A08S_ALL",
+    "profile_version": "team_v4.2_import_v1.1",
+    "evidence_granularity": "fact",
+    "linker": "auto+v1.1",
+    "profile_status": "V4.2 입력 · V1.1 연결(업장 · 어휘 보강 · 동행 맥락) · 검수 전",
+    "visit_companion": null,
+    "source_post_count": 55,
+    "active_fact_count": 65,
+    "facets": {
+     "novelty": {
+      "direction": 1,
+      "present": false,
+      "evidence": [],
+      "level_all": 0.0,
+      "fact_ids": [],
+      "features": [],
+      "label": "새 경험 시도",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.0
+     },
+     "seasonal": {
+      "direction": 1,
+      "present": false,
+      "evidence": [],
+      "level_all": 0.0,
+      "fact_ids": [],
+      "features": [],
+      "label": "시즌 행사 · 한정 반응",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.0
+     },
+     "promo": {
+      "direction": 1,
+      "present": false,
+      "evidence": [],
+      "level_all": 0.0,
+      "fact_ids": [],
+      "features": [],
+      "label": "홍보를 보고 움직임",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.0
+     },
+     "food": {
+      "direction": 1,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A08S_E36",
+        "feature": "wedding-formal_e36",
+        "grade": "rep",
+        "tags": [
+         "course"
+        ],
+        "mass": 1.6,
+        "gist": "친지24명 예식은 교통·조망·공간을 비교해 도원 파인룸을 예약했다. 귀빈코스와 조카용 탕수육을 주문했으나 사후에는 기본 코스로 충분했겠다고 한다",
+        "experience": "A08S_WEDDING-FORMAL__E36"
+       },
+       {
+        "fact_id": "A08S_E47",
+        "feature": "kobe-202606_e47",
+        "grade": "rep",
+        "tags": [
+         "dessert"
+        ],
+        "mass": 1.6,
+        "gist": "브런치 판매 전이라 디저트로 바꿨고, 이미 먹어 스타벅스는 구경만 했다. 시간 때문에 유료 내부 관람을 건너뛴 한편 야경을 즐기려고 유료 관람차를 탔다",
+        "experience": "A08S_KOBE-202606__E47"
+       },
+       {
+        "fact_id": "A08S_E63",
+        "feature": "sushi-lunch-unlinked_e63",
+        "grade": "rep",
+        "tags": [
+         "course",
+         "dessert"
+        ],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A08S_SUSHI-LUNCH-UNLINKED__E63"
+       },
+       {
+        "fact_id": "A08S_E83",
+        "feature": "cafe-laterrasse-unlinked_e83",
+        "grade": "rep",
+        "tags": [
+         "dessert"
+        ],
+        "mass": 1.6,
+        "gist": "외관을 망설이다 동행의 말을 듣고 들어갔고, 콘센트·자리·햇살을 좋게 평가했다. 본인은 차를 마시고 동행은 커피를 마시며 노트북 작업·독서로 한두 시간을 보냈다고 보고했다. 배불러 디저트는 주문하지 않았다",
+        "experience": "A08S_CAFE-LATERRASSE-UNLINKED__E83"
+       }
+      ],
+      "level_all": 0.8,
+      "fact_ids": [
+       "A08S_E36",
+       "A08S_E47",
+       "A08S_E63",
+       "A08S_E83"
+      ],
+      "features": [
+       "cafe-laterrasse-unlinked_e83",
+       "kobe-202606_e47",
+       "sushi-lunch-unlinked_e63",
+       "wedding-formal_e36"
+      ],
+      "label": "음식 경험",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.8
+     },
+     "food_specific": {
+      "direction": 1,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A08S_E45",
+        "feature": "kobe-202606_e45",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "스끼야끼를 예약 선택하고18시 석식·다음 날9시 조식을 요청했다. 추가 와인을 주문했으며 말차를 좋아해도 이 웰컴티보다 검은콩 티백을 선호했다",
+        "experience": "A08S_KOBE-202606__E45"
+       },
+       {
+        "fact_id": "A08S_E67",
+        "feature": "shabu-family-possible-n111_e67",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "오전11시 도착 뒤 약30분 기다리고 앱 접수를 알았다고 보고했다. 일행의 여러 메뉴 중 본인은 돼지고기를 더 선호했다",
+        "experience": "A08S_SHABU-FAMILY-POSSIBLE-N111__E67"
+       },
+       {
+        "fact_id": "A08S_E84",
+        "feature": "brunch-changga-unlinked_e84",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "평일 점심 파스타 두 종류와 음료를 주문했고 다른 테이블 모임 때문에 음식 제공이 늦었다고 보고했다. 오일파스타를 선호한다고 평가했다",
+        "experience": "A08S_BRUNCH-CHANGGA-UNLINKED__E84"
+       }
+      ],
+      "level_all": 0.6,
+      "fact_ids": [
+       "A08S_E45",
+       "A08S_E67",
+       "A08S_E84"
+      ],
+      "features": [
+       "brunch-changga-unlinked_e84",
+       "kobe-202606_e45",
+       "shabu-family-possible-n111_e67"
+      ],
+      "label": "구체적 음식 기호",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.6
+     },
+     "premium": {
+      "direction": 1,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A08S_E36",
+        "feature": "wedding-formal_e36",
+        "grade": "rep",
+        "tags": [
+         "course"
+        ],
+        "mass": 1.6,
+        "gist": "친지24명 예식은 교통·조망·공간을 비교해 도원 파인룸을 예약했다. 귀빈코스와 조카용 탕수육을 주문했으나 사후에는 기본 코스로 충분했겠다고 한다",
+        "experience": "A08S_WEDDING-FORMAL__E36"
+       },
+       {
+        "fact_id": "A08S_E63",
+        "feature": "sushi-lunch-unlinked_e63",
+        "grade": "rep",
+        "tags": [
+         "course"
+        ],
+        "mass": 1.6,
+        "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+        "experience": "A08S_SUSHI-LUNCH-UNLINKED__E63"
+       }
+      ],
+      "level_all": 0.4,
+      "fact_ids": [
+       "A08S_E36",
+       "A08S_E63"
+      ],
+      "features": [
+       "sushi-lunch-unlinked_e63",
+       "wedding-formal_e36"
+      ],
+      "label": "프리미엄 식음",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.4
+     },
+     "benefit": {
+      "direction": 1,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A08S_E32",
+        "feature": "okinawa-honeymoon_e32",
+        "grade": "rep",
+        "tags": [
+         "voucher"
+        ],
+        "mass": 1.6,
+        "gist": "자연 속 휴식 사진을 보고 걱정에도 마나니2박을 결정했다. 쿠폰 적용 현금 숙박료를 보고하며 조식 옵션과 바다 소리를 들을 수 있는 해변 요가를 선택했다",
+        "experience": "A08S_OKINAWA-HONEYMOON__E32"
+       },
+       {
+        "fact_id": "A08S_E55",
+        "feature": "yangyang_e55",
+        "grade": "exclude",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "기존 양양1박2일 여행의 다음 날 글로 연결한다. 사우나 후 체크아웃했고 식당 대기 약20분 동안 옆에서 해산물 간식을 사 먹었다. 할인 상품권은 품절로 못 샀으며 유채꽃밭은 추천만 하고 일정상 가지 않았다",
+        "experience": "A08S_YANGYANG__E55"
+       },
+       {
+        "fact_id": "A08S_E66",
+        "feature": "premium-cinema_e66",
+        "grade": "exclude",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "특별한 경험을 원해 프리미엄 영화관을 이용했고 넓고 쾌적한 좌석에 만족했다고 보고했다. 실제 핫도그·음료 주문과 와인 판매 안내를 구분하며 쿠폰가 안내가 본인의 실제 할인 결제라는 증거는 없다",
+        "experience": "A08S_PREMIUM-CINEMA__E66"
+       }
+      ],
+      "level_all": 0.2,
+      "fact_ids": [
+       "A08S_E32"
+      ],
+      "features": [
+       "okinawa-honeymoon_e32"
+      ],
+      "label": "혜택 활용",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.2
+     },
+     "value_check": {
+      "direction": 0,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A08S_E36",
+        "feature": "wedding-formal_e36",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "친지24명 예식은 교통·조망·공간을 비교해 도원 파인룸을 예약했다. 귀빈코스와 조카용 탕수육을 주문했으나 사후에는 기본 코스로 충분했겠다고 한다",
+        "experience": "A08S_WEDDING-FORMAL__E36"
+       },
+       {
+        "fact_id": "A08S_E62",
+        "feature": "pet-supplies_e62",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "반려견 기저귀 묶음 배송 할인, 매트 비교와 지지력이 있는 슬링 구매를 보고했다",
+        "experience": "A08S_PET-SUPPLIES__E62"
+       }
+      ],
+      "level_all": 0.4,
+      "fact_ids": [
+       "A08S_E36",
+       "A08S_E62"
+      ],
+      "features": [
+       "pet-supplies_e62",
+       "wedding-formal_e36"
+      ],
+      "label": "구매 전 가치 비교",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.4
+     },
+     "space": {
+      "direction": 1,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A08S_E27",
+        "feature": "wh-douglas-older_e27",
+        "grade": "rep",
+        "tags": [
+         "garden"
+        ],
+        "mass": 1.6,
+        "gist": "결혼 직후 국내3일·일본5일 여행 중 더글라스2박3일 경험이다. 최근 여름 워커힐2박3일과 다른 숙박이며 라운지·수영·산책을 실제 이용했다",
+        "experience": "A08S_WH-DOUGLAS-OLDER__E27"
+       },
+       {
+        "fact_id": "A08S_E30",
+        "feature": "wh-douglas-older_e30",
+        "grade": "rep",
+        "tags": [
+         "garden"
+        ],
+        "mass": 1.6,
+        "gist": "전시의 사진 촬영·미디어아트를 즐겼고 다른 프로그램은 일정이 맞지 않아 짧은 포레스트 포토존 산책을 택했다",
+        "experience": "A08S_WH-DOUGLAS-OLDER__E30"
+       },
+       {
+        "fact_id": "A08S_E33",
+        "feature": "okinawa-honeymoon_e33",
+        "grade": "rep",
+        "tags": [
+         "garden"
+        ],
+        "mass": 1.6,
+        "gist": "알라 마하이나에서는 대욕장·산책·푸드코트·조식을 이용했다. 도자기 공방은 시간이 없어 못 했다",
+        "experience": "A08S_OKINAWA-HONEYMOON__E33"
+       },
+       {
+        "fact_id": "A08S_E36",
+        "feature": "wedding-formal_e36",
+        "grade": "rep",
+        "tags": [
+         "ambience",
+         "view_seat"
+        ],
+        "mass": 1.6,
+        "gist": "친지24명 예식은 교통·조망·공간을 비교해 도원 파인룸을 예약했다. 귀빈코스와 조카용 탕수육을 주문했으나 사후에는 기본 코스로 충분했겠다고 한다",
+        "experience": "A08S_WEDDING-FORMAL__E36"
+       },
+       {
+        "fact_id": "A08S_E42",
+        "feature": "macau-solo-2024_e42",
+        "grade": "rep",
+        "tags": [
+         "garden",
+         "night_view"
+        ],
+        "mass": 1.6,
+        "gist": "호텔에서 쉬며 시내 산책을 번갈아 했고 물놀이와 야경을 즐겼다. 야경을 본 뒤 다음 날 오픈버스 투어를 예약해 실제 탑승했다",
+        "experience": "A08S_MACAU-SOLO-2024__E42"
+       },
+       {
+        "fact_id": "A08S_E47",
+        "feature": "kobe-202606_e47",
+        "grade": "rep",
+        "tags": [
+         "night_view"
+        ],
+        "mass": 1.6,
+        "gist": "브런치 판매 전이라 디저트로 바꿨고, 이미 먹어 스타벅스는 구경만 했다. 시간 때문에 유료 내부 관람을 건너뛴 한편 야경을 즐기려고 유료 관람차를 탔다",
+        "experience": "A08S_KOBE-202606__E47"
+       },
+       {
+        "fact_id": "A08S_E48",
+        "feature": "hiroshima-202603_e48",
+        "grade": "rep",
+        "tags": [
+         "ambience",
+         "view_seat"
+        ],
+        "mass": 1.6,
+        "gist": "밖에서 맛있는 음식을 먹으려고 호텔 조식을 추가하지 않았다. 반면 현장에서 객실 업그레이드 추가금을 결제했다고 보고했고 고층 조망을 만족해했다",
+        "experience": "A08S_HIROSHIMA-202603__E48"
+       },
+       {
+        "fact_id": "A08S_E56",
+        "feature": "gyeongnam-masan-202601_e56",
+        "grade": "rep",
+        "tags": [
+         "ambience",
+         "view_seat"
+        ],
+        "mass": 1.6,
+        "gist": "가족을 뵈러 떠난1박2일에 마산 스카이뷰호텔에서 머물고 동네 카페·식사를 연결했다. 원한 간식의 예약을 못 해 다른 가게로 갔고 약20분 기다려 구매했다",
+        "experience": "A08S_GYEONGNAM-MASAN-202601__E56"
+       },
+       {
+        "fact_id": "A08S_E72",
+        "feature": "winebar-dam-unlinked_e72",
+        "grade": "rep",
+        "tags": [
+         "ambience",
+         "view_seat"
+        ],
+        "mass": 1.6,
+        "gist": "지인의 내돈내산이라는 표기 아래 지인 소개로 바에 방문해 분위기·안주·서비스를 평가했다",
+        "experience": "A08S_WINEBAR-DAM-UNLINKED__E72"
+       },
+       {
+        "fact_id": "A08S_E76",
+        "feature": "dining-gopchang-christmas_e76",
+        "grade": "rep",
+        "tags": [
+         "ambience",
+         "view_seat"
+        ],
+        "mass": 1.6,
+        "gist": "배우자와 깔끔한 분위기의 곱창집을 예약하고 와인을 가져가 콜키지 한 병 무료 혜택을 이용했다고 보고했다. 4인분을 주문해 볶음밥을 못 먹었고 다음에는 양을 줄이겠다는 계획을 적었다",
+        "experience": "A08S_DINING-GOPCHANG-CHRISTMAS__E76"
+       }
+      ],
+      "level_all": 0.8,
+      "fact_ids": [
+       "A08S_E27",
+       "A08S_E30",
+       "A08S_E33",
+       "A08S_E36",
+       "A08S_E42",
+       "A08S_E47",
+       "A08S_E48",
+       "A08S_E56",
+       "A08S_E72",
+       "A08S_E76"
+      ],
+      "features": [
+       "dining-gopchang-christmas_e76",
+       "gyeongnam-masan-202601_e56",
+       "hiroshima-202603_e48",
+       "kobe-202606_e47",
+       "macau-solo-2024_e42",
+       "okinawa-honeymoon_e33",
+       "wedding-formal_e36",
+       "wh-douglas-older_e27",
+       "wh-douglas-older_e30",
+       "winebar-dam-unlinked_e72"
+      ],
+      "label": "공간 · 전망 · 분위기",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.8
+     },
+     "warm_rest": {
+      "direction": 1,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A08S_E78",
+        "feature": "cafe-rithouse-unlinked_e78",
+        "grade": "rep",
+        "tags": [
+         "warm_pool"
+        ],
+        "mass": 1.6,
+        "gist": "배우자와 남산으로 가던 중 예쁜 카페를 보고 즉흥적으로 들어가 본인은 따뜻한 차, 배우자는 에스프레소를 마셨다고 보고했다",
+        "experience": "A08S_CAFE-RITHOUSE-UNLINKED__E78"
+       }
+      ],
+      "level_all": 0.2,
+      "fact_ids": [
+       "A08S_E78"
+      ],
+      "features": [
+       "cafe-rithouse-unlinked_e78"
+      ],
+      "label": "온수 · 족욕 휴식",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.2
+     },
+     "swim_aversion": {
+      "direction": -1,
+      "present": false,
+      "evidence": [],
+      "level_all": 0.0,
+      "fact_ids": [],
+      "features": [],
+      "label": "수영 비선호",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.0
+     },
+     "active": {
+      "direction": 1,
+      "present": false,
+      "evidence": [],
+      "level_all": 0.0,
+      "fact_ids": [],
+      "features": [],
+      "label": "운동 참여",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.0
+     },
+     "rest_need": {
+      "direction": 1,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A08S_E32",
+        "feature": "okinawa-honeymoon_e32",
+        "grade": "rep",
+        "tags": [
+         "rest"
+        ],
+        "mass": 1.6,
+        "gist": "자연 속 휴식 사진을 보고 걱정에도 마나니2박을 결정했다. 쿠폰 적용 현금 숙박료를 보고하며 조식 옵션과 바다 소리를 들을 수 있는 해변 요가를 선택했다",
+        "experience": "A08S_OKINAWA-HONEYMOON__E32"
+       },
+       {
+        "fact_id": "A08S_E34",
+        "feature": "yangyang_e34",
+        "grade": "rep",
+        "tags": [
+         "rest"
+        ],
+        "mass": 1.6,
+        "gist": "브리드호텔은 얼리체크인이 어렵다는 안내를 받았고 주변 관광 뒤 도착해 바다가 안 보이는 객실을 배정받았다고 한다. 사우나·객실 휴식은 만족했다",
+        "experience": "A08S_YANGYANG__E34"
+       },
+       {
+        "fact_id": "A08S_E51",
+        "feature": "danang-friend-202411_e51",
+        "grade": "rep",
+        "tags": [
+         "rest"
+        ],
+        "mass": 1.6,
+        "gist": "11월 초 친구와3박5일 다낭 여행이며 짧은 인트로·1탄·2탄·마사지 비교를 같은 여행으로 연결한다. 푸라마에서는 아침 수영·조식을 실제 즐겼고 체크아웃 뒤 다음 일정 미정으로 의견을 조율해 호이안으로 갔다",
+        "experience": "A08S_DANANG-FRIEND-202411__E51"
+       },
+       {
+        "fact_id": "A08S_E61",
+        "feature": "gangneung-trip-unlinked_e61",
+        "grade": "rep",
+        "tags": [
+         "rest"
+        ],
+        "mass": 1.6,
+        "gist": "원했던 스릴 체험 대신 레일바이크를 탔으나 변경 이유는 명시되지 않았다. 예술 관람과 숙소 휴식을 즐겼고 숙소의 청결·공간에는 만족했으나 프로젝터 위치는 불편했다고 보고했다",
+        "experience": "A08S_GANGNEUNG-TRIP-UNLINKED__E61"
+       }
+      ],
+      "level_all": 0.8,
+      "fact_ids": [
+       "A08S_E32",
+       "A08S_E34",
+       "A08S_E51",
+       "A08S_E61"
+      ],
+      "features": [
+       "danang-friend-202411_e51",
+       "gangneung-trip-unlinked_e61",
+       "okinawa-honeymoon_e32",
+       "yangyang_e34"
+      ],
+      "label": "휴식 · 회복",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.8
+     },
+     "routine": {
+      "direction": 1,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A08S_E79",
+        "feature": "cafe-goodnews-visits-unresolved_e79",
+        "grade": "rep",
+        "tags": [
+         "repeat"
+        ],
+        "mass": 1.6,
+        "gist": "두 차례 방문 모두 야외 테라스에 앉았다고 적고 반려견과 녹차라테 경험을 설명한다",
+        "experience": "A08S_CAFE-GOODNEWS-VISITS-UNRESOLVED__E79"
+       }
+      ],
+      "level_all": 0.2,
+      "fact_ids": [
+       "A08S_E79"
+      ],
+      "features": [
+       "cafe-goodnews-visits-unresolved_e79"
+      ],
+      "label": "익숙한 곳 재방문",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.2
+     },
+     "practical_alt": {
+      "direction": 1,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A08S_E28",
+        "feature": "wh-douglas-older_e28",
+        "grade": "rep",
+        "tags": [
+         "room_meal"
+        ],
+        "mass": 1.6,
+        "gist": "룸서비스 짬뽕을 주문해 맛을 높이 평가했다. 라이트 조식에서는 죽·계란·채소를 골랐고 라운지에서 차와 책을 즐겼다",
+        "experience": "A08S_WH-DOUGLAS-OLDER__E28"
+       },
+       {
+        "fact_id": "A08S_E54",
+        "feature": "okinawa-honeymoon_e54",
+        "grade": "rep",
+        "tags": [
+         "room_meal"
+        ],
+        "mass": 1.6,
+        "gist": "기존 오키나와4박5일 숙소 글과 같은 여행의 식음편이다. 흡연석을 피해 다른 좌석을 골랐고 야키니쿠를 많이 주문해 남은 음식을 포장한 뒤 다음 날 숙소에서 먹었다. 마지막 숙소에서는 피곤해 근처 맛집 대신 숙소에서 간단히 먹었다",
+        "experience": "A08S_OKINAWA-HONEYMOON__E54"
+       }
+      ],
+      "level_all": 0.4,
+      "fact_ids": [
+       "A08S_E28",
+       "A08S_E54"
+      ],
+      "features": [
+       "okinawa-honeymoon_e54",
+       "wh-douglas-older_e28"
+      ],
+      "label": "실용적 식사 대안",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.4
+     },
+     "alcohol_familiar": {
+      "direction": 1,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A08S_E23",
+        "feature": "okayama_e23",
+        "grade": "rep",
+        "tags": [
+         "bar",
+         "wine"
+        ],
+        "mass": 1.6,
+        "gist": "온천 숙박 뒤 다른 숙소로 이동했고 피곤해 낮잠을 잔 뒤 피자와 와인을 즐겼다. 나오시마는 시간 때문에 방문하지 않았다",
+        "experience": "A08S_OKAYAMA__E23"
+       },
+       {
+        "fact_id": "A08S_E45",
+        "feature": "kobe-202606_e45",
+        "grade": "rep",
+        "tags": [
+         "bar",
+         "wine"
+        ],
+        "mass": 1.6,
+        "gist": "스끼야끼를 예약 선택하고18시 석식·다음 날9시 조식을 요청했다. 추가 와인을 주문했으며 말차를 좋아해도 이 웰컴티보다 검은콩 티백을 선호했다",
+        "experience": "A08S_KOBE-202606__E45"
+       },
+       {
+        "fact_id": "A08S_E66",
+        "feature": "premium-cinema_e66",
+        "grade": "exclude",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "특별한 경험을 원해 프리미엄 영화관을 이용했고 넓고 쾌적한 좌석에 만족했다고 보고했다. 실제 핫도그·음료 주문과 와인 판매 안내를 구분하며 쿠폰가 안내가 본인의 실제 할인 결제라는 증거는 없다",
+        "experience": "A08S_PREMIUM-CINEMA__E66"
+       },
+       {
+        "fact_id": "A08S_E73",
+        "feature": "cafe-dolsam-unlinked_e73",
+        "grade": "rep",
+        "tags": [
+         "bar",
+         "wine"
+        ],
+        "mass": 1.6,
+        "gist": "반려견 동반 가능 표시를 보고 갔으나 현장에서 테라스만 가능하다고 안내받고 예외 허용으로 함께 머물렀다고 보고했다. 저녁 대신 피자와 와인을 주문했고 평소 더 즐긴다는 화이트 와인을 골랐다. 밤 카페인은 잠에 영향을 준다는 자기보고 때문에 웰컴 커피는 맛만 봤다",
+        "experience": "A08S_CAFE-DOLSAM-UNLINKED__E73"
+       },
+       {
+        "fact_id": "A08S_E74",
+        "feature": "winebar-foto-unlinked_e74",
+        "grade": "rep",
+        "tags": [
+         "bar",
+         "wine"
+        ],
+        "mass": 1.6,
+        "gist": "퇴근 후 와인바에서 화이트 와인·파스타·치즈 메뉴에 피자까지 추가해 먹고 잔잔한 음악·대화·공간을 좋게 평가했다",
+        "experience": "A08S_WINEBAR-FOTO-UNLINKED__E74"
+       },
+       {
+        "fact_id": "A08S_E76",
+        "feature": "dining-gopchang-christmas_e76",
+        "grade": "rep",
+        "tags": [
+         "bar",
+         "wine"
+        ],
+        "mass": 1.6,
+        "gist": "배우자와 깔끔한 분위기의 곱창집을 예약하고 와인을 가져가 콜키지 한 병 무료 혜택을 이용했다고 보고했다. 4인분을 주문해 볶음밥을 못 먹었고 다음에는 양을 줄이겠다는 계획을 적었다",
+        "experience": "A08S_DINING-GOPCHANG-CHRISTMAS__E76"
+       }
+      ],
+      "level_all": 0.8,
+      "fact_ids": [
+       "A08S_E23",
+       "A08S_E45",
+       "A08S_E73",
+       "A08S_E74",
+       "A08S_E76"
+      ],
+      "features": [
+       "cafe-dolsam-unlinked_e73",
+       "dining-gopchang-christmas_e76",
+       "kobe-202606_e45",
+       "okayama_e23",
+       "winebar-foto-unlinked_e74"
+      ],
+      "label": "와인 · 주류 경험",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.8
+     },
+     "alcohol_limit": {
+      "direction": -1,
+      "present": false,
+      "evidence": [],
+      "level_all": 0.0,
+      "fact_ids": [],
+      "features": [],
+      "label": "낮은 음주 내성",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.0
+     },
+     "breakfast_priority": {
+      "direction": 0,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A08S_E02",
+        "feature": "wh-stay_e02",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "조식 포함 혜택을 이용했고 늦잠을 잘 수 있는2부를 골랐다",
+        "experience": "A08S_WH-STAY__E02"
+       },
+       {
+        "fact_id": "A08S_E09",
+        "feature": "gangwon-parkroche_e09",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "아침 프로그램 뒤 씻고 포함 조식을 먹었다. 별도 저녁에는 국·막걸리를 주문했다",
+        "experience": "A08S_GANGWON-PARKROCHE__E09"
+       },
+       {
+        "fact_id": "A08S_E28",
+        "feature": "wh-douglas-older_e28",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "룸서비스 짬뽕을 주문해 맛을 높이 평가했다. 라이트 조식에서는 죽·계란·채소를 골랐고 라운지에서 차와 책을 즐겼다",
+        "experience": "A08S_WH-DOUGLAS-OLDER__E28"
+       },
+       {
+        "fact_id": "A08S_E32",
+        "feature": "okinawa-honeymoon_e32",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "자연 속 휴식 사진을 보고 걱정에도 마나니2박을 결정했다. 쿠폰 적용 현금 숙박료를 보고하며 조식 옵션과 바다 소리를 들을 수 있는 해변 요가를 선택했다",
+        "experience": "A08S_OKINAWA-HONEYMOON__E32"
+       },
+       {
+        "fact_id": "A08S_E33",
+        "feature": "okinawa-honeymoon_e33",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "알라 마하이나에서는 대욕장·산책·푸드코트·조식을 이용했다. 도자기 공방은 시간이 없어 못 했다",
+        "experience": "A08S_OKINAWA-HONEYMOON__E33"
+       },
+       {
+        "fact_id": "A08S_E45",
+        "feature": "kobe-202606_e45",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "스끼야끼를 예약 선택하고18시 석식·다음 날9시 조식을 요청했다. 추가 와인을 주문했으며 말차를 좋아해도 이 웰컴티보다 검은콩 티백을 선호했다",
+        "experience": "A08S_KOBE-202606__E45"
+       },
+       {
+        "fact_id": "A08S_E48",
+        "feature": "hiroshima-202603_e48",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "밖에서 맛있는 음식을 먹으려고 호텔 조식을 추가하지 않았다. 반면 현장에서 객실 업그레이드 추가금을 결제했다고 보고했고 고층 조망을 만족해했다",
+        "experience": "A08S_HIROSHIMA-202603__E48"
+       },
+       {
+        "fact_id": "A08S_E51",
+        "feature": "danang-friend-202411_e51",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "11월 초 친구와3박5일 다낭 여행이며 짧은 인트로·1탄·2탄·마사지 비교를 같은 여행으로 연결한다. 푸라마에서는 아침 수영·조식을 실제 즐겼고 체크아웃 뒤 다음 일정 미정으로 의견을 조율해 호이안으로 갔다",
+        "experience": "A08S_DANANG-FRIEND-202411__E51"
+       }
+      ],
+      "level_all": 0.8,
+      "fact_ids": [
+       "A08S_E02",
+       "A08S_E09",
+       "A08S_E28",
+       "A08S_E32",
+       "A08S_E33",
+       "A08S_E45",
+       "A08S_E48",
+       "A08S_E51"
+      ],
+      "features": [
+       "danang-friend-202411_e51",
+       "gangwon-parkroche_e09",
+       "hiroshima-202603_e48",
+       "kobe-202606_e45",
+       "okinawa-honeymoon_e32",
+       "okinawa-honeymoon_e33",
+       "wh-douglas-older_e28",
+       "wh-stay_e02"
+      ],
+      "label": "조식 우선",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.8
+     },
+     "post_appraisal": {
+      "direction": 0,
+      "present": true,
+      "evidence": [
+       {
+        "fact_id": "A08S_E37",
+        "feature": "weekday-lunch_e37",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "평일 런치 뷔페를 이용하고 구성·크로플·조망을 평가했다",
+        "experience": "A08S_WEEKDAY-LUNCH__E37"
+       },
+       {
+        "fact_id": "A08S_E52",
+        "feature": "danang-friend-202411_e52",
+        "grade": "rep",
+        "tags": [],
+        "mass": 1.6,
+        "gist": "유튜브의 체험 소개를 보고 마사지샵을 예약해 이용했다가 위생·가치를 아쉽게 평가했고, 네 곳을 비교해 서비스 자체와 시스템·가격을 따로 평가했다",
+        "experience": "A08S_DANANG-FRIEND-202411__E52"
+       }
+      ],
+      "level_all": 0.4,
+      "fact_ids": [
+       "A08S_E37",
+       "A08S_E52"
+      ],
+      "features": [
+       "danang-friend-202411_e52",
+       "weekday-lunch_e37"
+      ],
+      "label": "이용 후 가치 평가",
+      "opposing_count": 0,
+      "conditional_on": null,
+      "unmapped": [],
+      "level": 0.4
+     }
+    },
+    "menu": [
+     {
+      "feature": "kobe-202606_e45",
+      "tags": [
+       "matcha"
+      ],
+      "weight": 1.0,
+      "fact_ids": [
+       "A08S_E45"
+      ],
+      "gist": "스끼야끼를 예약 선택하고18시 석식·다음 날9시 조식을 요청했다. 추가 와인을 주문했으며 말차를 좋아해도 이 웰컴티보다 검은콩 티백을 선호했다",
+      "basis": "말차를 좋아해도 이 웰컴티보다 검은콩 티백을 선호했다"
+     },
+     {
+      "feature": "brunch-changga-unlinked_e84",
+      "tags": [
+       "pasta"
+      ],
+      "weight": 1.0,
+      "fact_ids": [
+       "A08S_E84"
+      ],
+      "gist": "평일 점심 파스타 두 종류와 음료를 주문했고 다른 테이블 모임 때문에 음식 제공이 늦었다고 보고했다. 오일파스타를 선호한다고 평가했다",
+      "basis": "오일파스타를 선호한다고"
+     }
+    ],
+    "venues": {
+     "FOREST": [
+      {
+       "feature": "wh-stay_e03",
+       "venue": "FOREST",
+       "kind": "used",
+       "fact_ids": [
+        "A08S_E03"
+       ],
+       "gist": "포레스트 파크에서 배드민턴을 한 뒤 시원한 카라반에서 책을 읽었다",
+       "experience": "A08S_WH-STAY__E03",
+       "basis": "실제 이용"
+      }
+     ],
+     "POOL": [
+      {
+       "feature": "wh-stay_e05",
+       "venue": "POOL",
+       "kind": "used",
+       "fact_ids": [
+        "A08S_E05"
+       ],
+       "gist": "실내수영장과 유료 플로팅 명상에 참여했다. 명상을 휴가의 좋은 경험으로 평가했다",
+       "experience": "A08S_WH-STAY__E05",
+       "basis": "실제 이용"
+      }
+     ],
+     "ROOM_MEAL": [
+      {
+       "feature": "wh-douglas-older_e28",
+       "venue": "ROOM_MEAL",
+       "kind": "used",
+       "fact_ids": [
+        "A08S_E28"
+       ],
+       "gist": "룸서비스 짬뽕을 주문해 맛을 높이 평가했다. 라이트 조식에서는 죽·계란·채소를 골랐고 라운지에서 차와 책을 즐겼다",
+       "experience": "A08S_WH-DOUGLAS-OLDER__E28",
+       "basis": "실제 이용"
+      }
+     ],
+     "PIZZA_HILL": [
+      {
+       "feature": "wh-douglas-older_e29",
+       "venue": "PIZZA_HILL",
+       "kind": "used",
+       "fact_ids": [
+        "A08S_E29"
+       ],
+       "gist": "피자힐 예약을 일정상 취소한 뒤 다시 방문해 대기 없이 매장에 앉았다. 큰 쿼터 대신 하프앤하프 피자·파스타·음료를 주문했지만 남겼다",
+       "experience": "A08S_WH-DOUGLAS-OLDER__E29",
+       "basis": "실제 이용"
+      }
+     ]
+    },
+    "evidence_index": {
+     "A08S_E01": {
+      "fact_id": "A08S_E01",
+      "features": [
+       "wh-stay_e01"
+      ],
+      "gist": "배우자와 워커힐2박3일을 보냈다. 객실·활동 글은 같은 숙박이다",
+      "posts": [
+       "A08-R12"
+      ],
+      "context": [
+       "partner"
+      ]
+     },
+     "A08S_E02": {
+      "fact_id": "A08S_E02",
+      "features": [
+       "wh-stay_e02"
+      ],
+      "gist": "조식 포함 혜택을 이용했고 늦잠을 잘 수 있는2부를 골랐다",
+      "posts": [
+       "A08-R12"
+      ],
+      "context": []
+     },
+     "A08S_E03": {
+      "fact_id": "A08S_E03",
+      "features": [
+       "wh-stay_e03"
+      ],
+      "gist": "포레스트 파크에서 배드민턴을 한 뒤 시원한 카라반에서 책을 읽었다",
+      "posts": [
+       "A08-R12"
+      ],
+      "context": []
+     },
+     "A08S_E04": {
+      "fact_id": "A08S_E04",
+      "features": [
+       "wh-stay_e04"
+      ],
+      "gist": "추가 지불한 리버파크에서는 물놀이보다 선베드 독서를 주로 했다",
+      "posts": [
+       "A08-R11"
+      ],
+      "context": []
+     },
+     "A08S_E05": {
+      "fact_id": "A08S_E05",
+      "features": [
+       "wh-stay_e05"
+      ],
+      "gist": "실내수영장과 유료 플로팅 명상에 참여했다. 명상을 휴가의 좋은 경험으로 평가했다",
+      "posts": [
+       "A08-R11"
+      ],
+      "context": []
+     },
+     "A08S_E06": {
+      "fact_id": "A08S_E06",
+      "features": [
+       "wh-stay_e06"
+      ],
+      "gist": "야외 예정 요가는 비 때문에 실내GX로 옮겨 진행했다. 우천 취소가 아니라 장소 대체다",
+      "posts": [
+       "A08-R11"
+      ],
+      "context": []
+     },
+     "A08S_E08": {
+      "fact_id": "A08S_E08",
+      "features": [
+       "gangwon-parkroche_e08"
+      ],
+      "gist": "자연 속 웰니스 숙박을 선택했고 프로그램·독서·물놀이를 즐겼다",
+      "posts": [
+       "A08-R14"
+      ],
+      "context": []
+     },
+     "A08S_E09": {
+      "fact_id": "A08S_E09",
+      "features": [
+       "gangwon-parkroche_e09"
+      ],
+      "gist": "아침 프로그램 뒤 씻고 포함 조식을 먹었다. 별도 저녁에는 국·막걸리를 주문했다",
+      "posts": [
+       "A08-R14"
+      ],
+      "context": []
+     },
+     "A08S_E10": {
+      "fact_id": "A08S_E10",
+      "features": [
+       "gangwon-cablecar_e10"
+      ],
+      "gist": "운영 휴일을 피해 다음 날 케이블카를 탔다. 할인과 지역 상품권 혜택이 있으나 상품권을 차감한 체감 가격과 실제 현금 지불액은 다르다",
+      "posts": [
+       "A08-R13"
+      ],
+      "context": []
+     },
+     "A08S_E11": {
+      "fact_id": "A08S_E11",
+      "features": [
+       "gangwon-samcheok_e11"
+      ],
+      "gist": "펜션1박과 해변 체류를 했다. 차가운 바다에서 잠시 물러났지만 뒤에 다시 물놀이했다",
+      "posts": [
+       "A08-R17"
+      ],
+      "context": []
+     },
+     "A08S_E13": {
+      "fact_id": "A08S_E13",
+      "features": [
+       "cafe-mother-pet_e13"
+      ],
+      "gist": "어머니·반려견과 카페에 갔다. 출입 표지와 온라인 안내가 달라 직원에게 확인했고, 모기 때문에 실내석으로 이동했다",
+      "posts": [
+       "A08-R09"
+      ],
+      "context": [
+       "parents"
+      ]
+     },
+     "A08S_E14": {
+      "fact_id": "A08S_E14",
+      "features": [
+       "bookcafe_e14"
+      ],
+      "gist": "독서 재개를 위해 조용한 북카페를 찾아 책을 읽고 음식·음료를 즐겼다",
+      "posts": [
+       "A08-R07"
+      ],
+      "context": []
+     },
+     "A08S_E16": {
+      "fact_id": "A08S_E16",
+      "features": [
+       "goseong-family_e16"
+      ],
+      "gist": "가족 식사에서 원한 붕장어·활어회 주문이 어렵다는 안내를 받고 하모 메뉴를 골랐다",
+      "posts": [
+       "A08-R31"
+      ],
+      "context": []
+     },
+     "A08S_E17": {
+      "fact_id": "A08S_E17",
+      "features": [
+       "local-meals_e17"
+      ],
+      "gist": "대게 식당의 재료 품절 후 오징어 식당으로 바꿨다. 계획 변경 이유가 명시된 사례다",
+      "posts": [
+       "A08-R46"
+      ],
+      "context": []
+     },
+     "A08S_E18": {
+      "fact_id": "A08S_E18",
+      "features": [
+       "theater_e18"
+      ],
+      "gist": "공연 자유석2장을 구매하고 일찍 도착해 앞쪽 자리에 앉았다",
+      "posts": [
+       "A08-R38"
+      ],
+      "context": []
+     },
+     "A08S_E22": {
+      "fact_id": "A08S_E22",
+      "features": [
+       "okayama_e22"
+      ],
+      "gist": "배우자의 일본어 능력으로 자유여행을 골랐다고 한다. 호텔 요가는 실제 참여했다",
+      "posts": [
+       "A08-R49"
+      ],
+      "context": [
+       "partner"
+      ]
+     },
+     "A08S_E23": {
+      "fact_id": "A08S_E23",
+      "features": [
+       "okayama_e23"
+      ],
+      "gist": "온천 숙박 뒤 다른 숙소로 이동했고 피곤해 낮잠을 잔 뒤 피자와 와인을 즐겼다. 나오시마는 시간 때문에 방문하지 않았다",
+      "posts": [
+       "A08-R48"
+      ],
+      "context": []
+     },
+     "A08S_E27": {
+      "fact_id": "A08S_E27",
+      "features": [
+       "wh-douglas-older_e27"
+      ],
+      "gist": "결혼 직후 국내3일·일본5일 여행 중 더글라스2박3일 경험이다. 최근 여름 워커힐2박3일과 다른 숙박이며 라운지·수영·산책을 실제 이용했다",
+      "posts": [
+       "A08-H06"
+      ],
+      "context": []
+     },
+     "A08S_E28": {
+      "fact_id": "A08S_E28",
+      "features": [
+       "wh-douglas-older_e28"
+      ],
+      "gist": "룸서비스 짬뽕을 주문해 맛을 높이 평가했다. 라이트 조식에서는 죽·계란·채소를 골랐고 라운지에서 차와 책을 즐겼다",
+      "posts": [
+       "A08-H06"
+      ],
+      "context": []
+     },
+     "A08S_E29": {
+      "fact_id": "A08S_E29",
+      "features": [
+       "wh-douglas-older_e29"
+      ],
+      "gist": "피자힐 예약을 일정상 취소한 뒤 다시 방문해 대기 없이 매장에 앉았다. 큰 쿼터 대신 하프앤하프 피자·파스타·음료를 주문했지만 남겼다",
+      "posts": [
+       "A08-H06"
+      ],
+      "context": []
+     },
+     "A08S_E30": {
+      "fact_id": "A08S_E30",
+      "features": [
+       "wh-douglas-older_e30"
+      ],
+      "gist": "전시의 사진 촬영·미디어아트를 즐겼고 다른 프로그램은 일정이 맞지 않아 짧은 포레스트 포토존 산책을 택했다",
+      "posts": [
+       "A08-H06"
+      ],
+      "context": []
+     },
+     "A08S_E31": {
+      "fact_id": "A08S_E31",
+      "features": [
+       "okinawa-honeymoon_e31"
+      ],
+      "gist": "오키나와 개요와 두 숙소 글은 같은4박5일 신혼여행이다. 첫 숙소1박·마나니2박·알라 마하이나1박을 보고한다. 과거 요가강사라고 자기소개하지만 자격·경력은 별도 검증하지 않았다",
+      "posts": [
+       "A08-H05"
+      ],
+      "context": []
+     },
+     "A08S_E32": {
+      "fact_id": "A08S_E32",
+      "features": [
+       "okinawa-honeymoon_e32"
+      ],
+      "gist": "자연 속 휴식 사진을 보고 걱정에도 마나니2박을 결정했다. 쿠폰 적용 현금 숙박료를 보고하며 조식 옵션과 바다 소리를 들을 수 있는 해변 요가를 선택했다",
+      "posts": [
+       "A08-H04"
+      ],
+      "context": []
+     },
+     "A08S_E33": {
+      "fact_id": "A08S_E33",
+      "features": [
+       "okinawa-honeymoon_e33"
+      ],
+      "gist": "알라 마하이나에서는 대욕장·산책·푸드코트·조식을 이용했다. 도자기 공방은 시간이 없어 못 했다",
+      "posts": [
+       "A08-H02"
+      ],
+      "context": []
+     },
+     "A08S_E34": {
+      "fact_id": "A08S_E34",
+      "features": [
+       "yangyang_e34"
+      ],
+      "gist": "브리드호텔은 얼리체크인이 어렵다는 안내를 받았고 주변 관광 뒤 도착해 바다가 안 보이는 객실을 배정받았다고 한다. 사우나·객실 휴식은 만족했다",
+      "posts": [
+       "A08-H01"
+      ],
+      "context": []
+     },
+     "A08S_E35": {
+      "fact_id": "A08S_E35",
+      "features": [
+       "wedding-friend-party_e35"
+      ],
+      "gist": "친구 파티의 케이터링을 메뉴 구성·예산·샘플 사진으로 골랐다",
+      "posts": [
+       "A08-H03"
+      ],
+      "context": [
+       "friends"
+      ]
+     },
+     "A08S_E36": {
+      "fact_id": "A08S_E36",
+      "features": [
+       "wedding-formal_e36"
+      ],
+      "gist": "친지24명 예식은 교통·조망·공간을 비교해 도원 파인룸을 예약했다. 귀빈코스와 조카용 탕수육을 주문했으나 사후에는 기본 코스로 충분했겠다고 한다",
+      "posts": [
+       "A08-H07"
+      ],
+      "context": []
+     },
+     "A08S_E37": {
+      "fact_id": "A08S_E37",
+      "features": [
+       "weekday-lunch_e37"
+      ],
+      "gist": "평일 런치 뷔페를 이용하고 구성·크로플·조망을 평가했다",
+      "posts": [
+       "A08-H08"
+      ],
+      "context": []
+     },
+     "A08S_E38": {
+      "fact_id": "A08S_E38",
+      "features": [
+       "general-2025-hobbies_e38"
+      ],
+      "gist": "연간 회고에서 요가·필라테스를 주2~3회 지속했고 배우자와 달리기도 했다고 적는다. 독서도 자기보고한다",
+      "posts": [
+       "A08-H10"
+      ],
+      "context": [
+       "partner"
+      ]
+     },
+     "A08S_E39": {
+      "fact_id": "A08S_E39",
+      "features": [
+       "yangyang_e39"
+      ],
+      "gist": "양양 일정 글과 호텔 글은 같은1박2일이다. 식당 앞18~20팀·약20분을 기다려 식사했고, 호텔 얼리체크인 불가 안내 뒤 낙산사로 갔다. 배가 불러 계획한 야식은 사지 않았다",
+      "posts": [
+       "A08-H09"
+      ],
+      "context": []
+     },
+     "A08S_E41": {
+      "fact_id": "A08S_E41",
+      "features": [
+       "macau-solo-2024_e41"
+      ],
+      "gist": "마카오3박4일 혼자 여행에서 아티젠과 파리지앵에 머물렀다고 보고한다. 비 온 뒤 저녁 풀의 물이 차가웠다는 체감과 실제 물놀이를 함께 보존한다",
+      "posts": [
+       "A08-N002"
+      ],
+      "context": [
+       "solo"
+      ]
+     },
+     "A08S_E42": {
+      "fact_id": "A08S_E42",
+      "features": [
+       "macau-solo-2024_e42"
+      ],
+      "gist": "호텔에서 쉬며 시내 산책을 번갈아 했고 물놀이와 야경을 즐겼다. 야경을 본 뒤 다음 날 오픈버스 투어를 예약해 실제 탑승했다",
+      "posts": [
+       "A08-N008"
+      ],
+      "context": []
+     },
+     "A08S_E44": {
+      "fact_id": "A08S_E44",
+      "features": [
+       "kobe-202606_e44"
+      ],
+      "gist": "원래2박 료칸 계획에서 컨디션 변수를 고려해 첫날은 취소가 자유로운 시내 호텔로 예약했다. 둘째 날은 부부가 함께 즐길 전용 금탕·은탕과 별저를 원해 높은 가격에도 료칸을 골랐다. 싼 도심 숙박과 고가 체험이 같은 여행에 공존한다",
+      "posts": [
+       "A08-N003"
+      ],
+      "context": []
+     },
+     "A08S_E45": {
+      "fact_id": "A08S_E45",
+      "features": [
+       "kobe-202606_e45"
+      ],
+      "gist": "스끼야끼를 예약 선택하고18시 석식·다음 날9시 조식을 요청했다. 추가 와인을 주문했으며 말차를 좋아해도 이 웰컴티보다 검은콩 티백을 선호했다",
+      "posts": [
+       "A08-N014"
+      ],
+      "context": []
+     },
+     "A08S_E46": {
+      "fact_id": "A08S_E46",
+      "features": [
+       "kobe-202606_e46"
+      ],
+      "gist": "라멘집에서 이미 대기 중 주문해 취소하기 애매하다고 느꼈고 약30~40분 기다렸다. 원래 타려던 버스 대신 다음13시20분 버스를 탔으며 숙소 픽업 연락 실패·본관 착오를 겪었다",
+      "posts": [
+       "A08-N005"
+      ],
+      "context": []
+     },
+     "A08S_E47": {
+      "fact_id": "A08S_E47",
+      "features": [
+       "kobe-202606_e47"
+      ],
+      "gist": "브런치 판매 전이라 디저트로 바꿨고, 이미 먹어 스타벅스는 구경만 했다. 시간 때문에 유료 내부 관람을 건너뛴 한편 야경을 즐기려고 유료 관람차를 탔다",
+      "posts": [
+       "A08-N005"
+      ],
+      "context": []
+     },
+     "A08S_E48": {
+      "fact_id": "A08S_E48",
+      "features": [
+       "hiroshima-202603_e48"
+      ],
+      "gist": "밖에서 맛있는 음식을 먹으려고 호텔 조식을 추가하지 않았다. 반면 현장에서 객실 업그레이드 추가금을 결제했다고 보고했고 고층 조망을 만족해했다",
+      "posts": [
+       "A08-N007"
+      ],
+      "context": []
+     },
+     "A08S_E49": {
+      "fact_id": "A08S_E49",
+      "features": [
+       "hiroshima-202603_e49"
+      ],
+      "gist": "야간 식당에는 약1시간 기다려 입장했고 다음 날 장어집은40팀 대기 중 관광1시간·대화30분 뒤 이용했다고 보고한다",
+      "posts": [
+       "A08-N007"
+      ],
+      "context": []
+     },
+     "A08S_E50": {
+      "fact_id": "A08S_E50",
+      "features": [
+       "hiroshima-202603_e50"
+      ],
+      "gist": "미술관에서 예상보다 약2시간 감상하고 많이 걸어 숙소에서 쉬었다. 저녁에는 원래 가려던 식당이 문을 닫아 다른 곳을 찾았다",
+      "posts": [
+       "A08-N114"
+      ],
+      "context": []
+     },
+     "A08S_E51": {
+      "fact_id": "A08S_E51",
+      "features": [
+       "danang-friend-202411_e51"
+      ],
+      "gist": "11월 초 친구와3박5일 다낭 여행이며 짧은 인트로·1탄·2탄·마사지 비교를 같은 여행으로 연결한다. 푸라마에서는 아침 수영·조식을 실제 즐겼고 체크아웃 뒤 다음 일정 미정으로 의견을 조율해 호이안으로 갔다",
+      "posts": [
+       "A08-N032"
+      ],
+      "context": [
+       "friends"
+      ]
+     },
+     "A08S_E52": {
+      "fact_id": "A08S_E52",
+      "features": [
+       "danang-friend-202411_e52"
+      ],
+      "gist": "유튜브의 체험 소개를 보고 마사지샵을 예약해 이용했다가 위생·가치를 아쉽게 평가했고, 네 곳을 비교해 서비스 자체와 시스템·가격을 따로 평가했다",
+      "posts": [
+       "A08-N011"
+      ],
+      "context": []
+     },
+     "A08S_E53": {
+      "fact_id": "A08S_E53",
+      "features": [
+       "danang-friend-202411_e53"
+      ],
+      "gist": "마지막 날은 줄 서기 싫어 원한 식당 대신 근처 식당을 골랐고 카드 수수료 때문에 현금으로 결제했다. 다른 여행의 장시간 대기 수용과 공존하는 상황별 선택이다",
+      "posts": [
+       "A08-N113"
+      ],
+      "context": []
+     },
+     "A08S_E54": {
+      "fact_id": "A08S_E54",
+      "features": [
+       "okinawa-honeymoon_e54"
+      ],
+      "gist": "기존 오키나와4박5일 숙소 글과 같은 여행의 식음편이다. 흡연석을 피해 다른 좌석을 골랐고 야키니쿠를 많이 주문해 남은 음식을 포장한 뒤 다음 날 숙소에서 먹었다. 마지막 숙소에서는 피곤해 근처 맛집 대신 숙소에서 간단히 먹었다",
+      "posts": [
+       "A08-N034"
+      ],
+      "context": []
+     },
+     "A08S_E55": {
+      "fact_id": "A08S_E55",
+      "features": [
+       "yangyang_e55"
+      ],
+      "gist": "기존 양양1박2일 여행의 다음 날 글로 연결한다. 사우나 후 체크아웃했고 식당 대기 약20분 동안 옆에서 해산물 간식을 사 먹었다. 할인 상품권은 품절로 못 샀으며 유채꽃밭은 추천만 하고 일정상 가지 않았다",
+      "posts": [
+       "A08-N016"
+      ],
+      "context": []
+     },
+     "A08S_E56": {
+      "fact_id": "A08S_E56",
+      "features": [
+       "gyeongnam-masan-202601_e56"
+      ],
+      "gist": "가족을 뵈러 떠난1박2일에 마산 스카이뷰호텔에서 머물고 동네 카페·식사를 연결했다. 원한 간식의 예약을 못 해 다른 가게로 갔고 약20분 기다려 구매했다",
+      "posts": [
+       "A08-N050"
+      ],
+      "context": []
+     },
+     "A08S_E57": {
+      "fact_id": "A08S_E57",
+      "features": [
+       "wedding-formal_e57"
+      ],
+      "gist": "금요일 도원 가족 식사 예식과 토요일 한옥 지인 파티를 같은 결혼의 다른 행사로 명시했다. 기존 호텔 예식·케이터링 글과 연결한다",
+      "posts": [
+       "A08-N004"
+      ],
+      "context": []
+     },
+     "A08S_E58": {
+      "fact_id": "A08S_E58",
+      "features": [
+       "chungju-pet-resort_e58"
+      ],
+      "gist": "반려견과 켄싱턴 리조트를 다녀온 뒤 퇴실 길에 카페를 이용했다고 보고한다. 시그니처 과일 음료가 아침에는 당기지 않아 다른 메뉴를 골랐고 녹차라떼는 덜 달게 요청했다",
+      "posts": [
+       "A08-N108"
+      ],
+      "context": []
+     },
+     "A08S_E61": {
+      "fact_id": "A08S_E61",
+      "features": [
+       "gangneung-trip-unlinked_e61"
+      ],
+      "gist": "원했던 스릴 체험 대신 레일바이크를 탔으나 변경 이유는 명시되지 않았다. 예술 관람과 숙소 휴식을 즐겼고 숙소의 청결·공간에는 만족했으나 프로젝터 위치는 불편했다고 보고했다",
+      "posts": [
+       "A08-N015"
+      ],
+      "context": []
+     },
+     "A08S_E62": {
+      "fact_id": "A08S_E62",
+      "features": [
+       "pet-supplies_e62"
+      ],
+      "gist": "반려견 기저귀 묶음 배송 할인, 매트 비교와 지지력이 있는 슬링 구매를 보고했다",
+      "posts": [
+       "A08-N021"
+      ],
+      "context": []
+     },
+     "A08S_E63": {
+      "fact_id": "A08S_E63",
+      "features": [
+       "sushi-lunch-unlinked_e63"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A08-N049"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A08S_E64": {
+      "fact_id": "A08S_E64",
+      "features": [
+       "animation-niece-outing_e64"
+      ],
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "posts": [
+       "A08-N064"
+      ],
+      "context": [
+       "kids"
+      ]
+     },
+     "A08S_E65": {
+      "fact_id": "A08S_E65",
+      "features": [
+       "pizza-dinein-unlinked_e65"
+      ],
+      "gist": "오카야마 피자 경험을 떠올려 국내 식당의 바 좌석에서 식사하고 두 명이 피자 두 판·올리브·음료 등을 주문한 5만9천원 합계를 보고했다",
+      "posts": [
+       "A08-N079"
+      ],
+      "context": []
+     },
+     "A08S_E66": {
+      "fact_id": "A08S_E66",
+      "features": [
+       "premium-cinema_e66"
+      ],
+      "gist": "특별한 경험을 원해 프리미엄 영화관을 이용했고 넓고 쾌적한 좌석에 만족했다고 보고했다. 실제 핫도그·음료 주문과 와인 판매 안내를 구분하며 쿠폰가 안내가 본인의 실제 할인 결제라는 증거는 없다",
+      "posts": [
+       "A08-N089"
+      ],
+      "context": []
+     },
+     "A08S_E67": {
+      "fact_id": "A08S_E67",
+      "features": [
+       "shabu-family-possible-n111_e67"
+      ],
+      "gist": "오전11시 도착 뒤 약30분 기다리고 앱 접수를 알았다고 보고했다. 일행의 여러 메뉴 중 본인은 돼지고기를 더 선호했다",
+      "posts": [
+       "A08-N117"
+      ],
+      "context": []
+     },
+     "A08S_E72": {
+      "fact_id": "A08S_E72",
+      "features": [
+       "winebar-dam-unlinked_e72"
+      ],
+      "gist": "지인의 내돈내산이라는 표기 아래 지인 소개로 바에 방문해 분위기·안주·서비스를 평가했다",
+      "posts": [
+       "A08-N074"
+      ],
+      "context": []
+     },
+     "A08S_E73": {
+      "fact_id": "A08S_E73",
+      "features": [
+       "cafe-dolsam-unlinked_e73"
+      ],
+      "gist": "반려견 동반 가능 표시를 보고 갔으나 현장에서 테라스만 가능하다고 안내받고 예외 허용으로 함께 머물렀다고 보고했다. 저녁 대신 피자와 와인을 주문했고 평소 더 즐긴다는 화이트 와인을 골랐다. 밤 카페인은 잠에 영향을 준다는 자기보고 때문에 웰컴 커피는 맛만 봤다",
+      "posts": [
+       "A08-N075"
+      ],
+      "context": []
+     },
+     "A08S_E74": {
+      "fact_id": "A08S_E74",
+      "features": [
+       "winebar-foto-unlinked_e74"
+      ],
+      "gist": "퇴근 후 와인바에서 화이트 와인·파스타·치즈 메뉴에 피자까지 추가해 먹고 잔잔한 음악·대화·공간을 좋게 평가했다",
+      "posts": [
+       "A08-N076"
+      ],
+      "context": []
+     },
+     "A08S_E75": {
+      "fact_id": "A08S_E75",
+      "features": [
+       "dining-dica-unlinked_e75"
+      ],
+      "gist": "친구와 예약해 식사했으나 뒤 일정이 있어 술을 피하고 레몬에이드를 주문했다고 보고했다",
+      "posts": [
+       "A08-N080"
+      ],
+      "context": [
+       "friends"
+      ]
+     },
+     "A08S_E76": {
+      "fact_id": "A08S_E76",
+      "features": [
+       "dining-gopchang-christmas_e76"
+      ],
+      "gist": "배우자와 깔끔한 분위기의 곱창집을 예약하고 와인을 가져가 콜키지 한 병 무료 혜택을 이용했다고 보고했다. 4인분을 주문해 볶음밥을 못 먹었고 다음에는 양을 줄이겠다는 계획을 적었다",
+      "posts": [
+       "A08-N081"
+      ],
+      "context": [
+       "partner"
+      ]
+     },
+     "A08S_E77": {
+      "fact_id": "A08S_E77",
+      "features": [
+       "luggage-storage-unlinked_e77"
+      ],
+      "gist": "퇴근 뒤 이동을 위해 보관 서비스를 이용했고 크기 잘못 선택한 예약을 현장에서 취소·재결제했다고 보고했다",
+      "posts": [
+       "A08-N118"
+      ],
+      "context": []
+     },
+     "A08S_E78": {
+      "fact_id": "A08S_E78",
+      "features": [
+       "cafe-rithouse-unlinked_e78"
+      ],
+      "gist": "배우자와 남산으로 가던 중 예쁜 카페를 보고 즉흥적으로 들어가 본인은 따뜻한 차, 배우자는 에스프레소를 마셨다고 보고했다",
+      "posts": [
+       "A08-N087"
+      ],
+      "context": [
+       "partner"
+      ]
+     },
+     "A08S_E79": {
+      "fact_id": "A08S_E79",
+      "features": [
+       "cafe-goodnews-visits-unresolved_e79"
+      ],
+      "gist": "두 차례 방문 모두 야외 테라스에 앉았다고 적고 반려견과 녹차라테 경험을 설명한다",
+      "posts": [
+       "A08-N090"
+      ],
+      "context": []
+     },
+     "A08S_E83": {
+      "fact_id": "A08S_E83",
+      "features": [
+       "cafe-laterrasse-unlinked_e83"
+      ],
+      "gist": "외관을 망설이다 동행의 말을 듣고 들어갔고, 콘센트·자리·햇살을 좋게 평가했다. 본인은 차를 마시고 동행은 커피를 마시며 노트북 작업·독서로 한두 시간을 보냈다고 보고했다. 배불러 디저트는 주문하지 않았다",
+      "posts": [
+       "A08-N068"
+      ],
+      "context": []
+     },
+     "A08S_E84": {
+      "fact_id": "A08S_E84",
+      "features": [
+       "brunch-changga-unlinked_e84"
+      ],
+      "gist": "평일 점심 파스타 두 종류와 음료를 주문했고 다른 테이블 모임 때문에 음식 제공이 늦었다고 보고했다. 오일파스타를 선호한다고 평가했다",
+      "posts": [
+       "A08-N077"
+      ],
+      "context": []
+     },
+     "A08S_E85": {
+      "fact_id": "A08S_E85",
+      "features": [
+       "dining-hotel28-unlinked_e85"
+      ],
+      "gist": "호텔28 건물의 식당에 친구와 예약해 갔고 본인은 해산물 스튜·마늘빵, 친구는 리조또를 골랐다고 보고한다",
+      "posts": [
+       "A08-N078"
+      ],
+      "context": [
+       "friends"
+      ]
+     }
+    },
+    "assumptions": [
+     "V1.1: 업장 연결 · 어휘 보강 · 동행 맥락(다른 맥락 근거 ×0.6 가정)",
+     "V1 엔진 · 월드 · 계수 동일"
+    ],
+    "human_review": "pending",
+    "demo_approved": false,
+    "facility_type_history": [
+     {
+      "feature": "yangyang_e55",
+      "venue": "SAUNA",
+      "kind": "used",
+      "fact_ids": [
+       "A08S_E55"
+      ],
+      "gist": "기존 양양1박2일 여행의 다음 날 글로 연결한다. 사우나 후 체크아웃했고 식당 대기 약20분 동안 옆에서 해산물 간식을 사 먹었다. 할인 상품권은 품절로 못 샀으며 유채꽃밭은 추천만 하고 일정상 가지 않았다",
+      "experience": "A08S_YANGYANG__E55",
+      "basis": "실제 이용",
+      "venue_type": "SAUNA"
+     }
+    ]
+   }
+  }
+ }
+}

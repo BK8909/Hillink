@@ -1,0 +1,33 @@
+{
+  "scenario_id": "CD14_BASELINE",
+  "simulation_date": "2026-10-27",
+  "meal_period": "dinner",
+  "start_time": "18:30",
+  "duration_minutes": 90,
+  "party_size": 2,
+  "stay_status": "staying",
+  "reservation_assumption": true,
+  "party_composition": {
+    "adults": 2,
+    "children": 0
+  },
+  "is_public_holiday": false,
+  "seat_type": "hall",
+  "selected_persona_ids": [
+    "A02",
+    "A04",
+    "A05",
+    "A07",
+    "A10",
+    "blog41",
+    "blog42",
+    "blog43",
+    "A01",
+    "A03",
+    "A08"
+  ],
+  "offer_overrides": {},
+  "catalog_version": "cd1024-15-isolated-v1",
+  "engine_version": "0939cb89f9217fd521d2079186c2359b876937d4",
+  "allow_scenario_offers": false
+}

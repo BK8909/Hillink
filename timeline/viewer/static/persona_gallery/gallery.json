@@ -1,0 +1,1936 @@
+{
+ "about": "CL-1025-37 시각 초안 갤러리 — 고객별 고유 썸네일 초안(사람 승인 0 · 의미 승인 0). 게시 승인 · 프로파일 · 실행 가능과 별개. 로컬 시연 모드에서만 서버가 내줌.",
+ "version": "CL-1025-37 · 2026-10-25",
+ "source": {
+  "mapping_rows": 65,
+  "image_qa": {
+   "PASS": 20,
+   "HOLD": 27,
+   "FIX": 5,
+   "HOLD_LEGACY_FACT_OR_DESIGN": 11
+  }
+ },
+ "cards": [
+  {
+   "card_id": "PERSONA_SCENE_001",
+   "display_id": null,
+   "type": "친구 모임",
+   "type_basis": "LP_CANDIDATE",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_001.webp",
+    "sha256": "d117fa4c912a8df815e658140a930c4abd6f7121bc6e0de06974236ea7ec7b21",
+    "qa": "HOLD_LEGACY_FACT_OR_DESIGN",
+    "qa_label": "과거 후보 이미지 · 검수 중",
+    "style": "사진형 과거 후보",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "SAME",
+    "label": "기존 사진 유지",
+    "reason": "새 후보와 같은 그림"
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_002",
+   "display_id": null,
+   "type": "커플 · 기념일",
+   "type_basis": "LP_REVIEW",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_002.webp",
+    "sha256": "6e762f30412d18bf383d76ac5b3dca3ac40a6ae2b422d919d5879f9152d9cab7",
+    "qa": "HOLD_LEGACY_FACT_OR_DESIGN",
+    "qa_label": "과거 후보 이미지 · 검수 중",
+    "style": "사진형 과거 후보",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "SAME",
+    "label": "기존 사진 유지",
+    "reason": "새 후보와 같은 그림"
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_003",
+   "display_id": null,
+   "type": "가족 · 영유아",
+   "type_basis": "LP_CANDIDATE",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_003.webp",
+    "sha256": "375f32ba81bd5796a4228f6b7f03b3210d8c9bb5818b8fdb84e727973716a6a3",
+    "qa": "HOLD_LEGACY_FACT_OR_DESIGN",
+    "qa_label": "과거 후보 이미지 · 검수 중",
+    "style": "사진형 과거 후보",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "SAME",
+    "label": "기존 사진 유지",
+    "reason": "새 후보와 같은 그림"
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_004",
+   "display_id": null,
+   "type": "친구 모임",
+   "type_basis": "LP_CANDIDATE",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_004.webp",
+    "sha256": "86dbc507a33d21e503df067fb7dc1c7fb5eea8dc46d3dd4625cc62e9dd5e384c",
+    "qa": "HOLD_LEGACY_FACT_OR_DESIGN",
+    "qa_label": "과거 후보 이미지 · 검수 중",
+    "style": "사진형 과거 후보",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "SAME",
+    "label": "기존 사진 유지",
+    "reason": "새 후보와 같은 그림"
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_005",
+   "display_id": null,
+   "type": "가족 · 영유아",
+   "type_basis": "LP_REVIEW",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_005.webp",
+    "sha256": "78820d4322ded33af8c7b240610f85967bd085b938ab4eb7b80a030af2729a21",
+    "qa": "HOLD_LEGACY_FACT_OR_DESIGN",
+    "qa_label": "과거 후보 이미지 · 검수 중",
+    "style": "사진형 과거 후보",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "HOLD",
+    "label": "사진 보류",
+    "reason": "의미 검수 보류 — 일행 · 아이 성별 · 연령 묘사가 후기로 확인되지 않음"
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_006",
+   "display_id": "A06",
+   "type": "업무 · 출장",
+   "type_basis": "APP_LIBRARY",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_006_p36.webp",
+    "sha256": "3ba22413d7c35c6c083585fff606b15314082c19fec175f8ebcc98ecb46f846a",
+    "qa": "PHOTO_QA_PASS_CANDIDATE",
+    "qa_label": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "style": "사진형 후보(증분 36)",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "APPLIED",
+    "label": "새 사진 반영",
+    "reason": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "prev": {
+     "src": "/static/persona_gallery/PERSONA_SCENE_006.webp",
+     "sha256": "e8a3d0ca05461251c1fe66f78896d43fb99346ef498e65eb0a0223ff36677042"
+    }
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_007",
+   "display_id": "A12",
+   "type": "가족 · 영유아",
+   "type_basis": "APP_LIBRARY",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_007.webp",
+    "sha256": "ff380b3b50f343062e9d050974143d9849a9c966b00f2e659220dd4a255d33ec",
+    "qa": "HOLD_LEGACY_FACT_OR_DESIGN",
+    "qa_label": "과거 후보 이미지 · 검수 중",
+    "style": "사진형 과거 후보",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "HOLD",
+    "label": "사진 보류",
+    "reason": "의미 검수 보류 — 보호자를 어머니로 단정한 묘사"
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_008",
+   "display_id": "A13",
+   "type": "가족 · 부모 동반",
+   "type_basis": "APP_LIBRARY",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_008.webp",
+    "sha256": "15c5b97d0d4f1ea35d6f41a8fcc087a5a8420b205ad756adabc8690874f386cb",
+    "qa": "HOLD",
+    "qa_label": "초안 보류 · 검수 중",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "HOLD",
+    "label": "사진 보류",
+    "reason": "의미 검수 보류 — 3대 가족 구성 · 아이 묘사가 확인되지 않음"
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_009",
+   "display_id": "A14",
+   "type": "가족 · 부모 동반",
+   "type_basis": "APP_LIBRARY",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_009_p36.webp",
+    "sha256": "72e468c216b6e55835a7841e0d9282ffae4d13bba94a0cb5af41294490da3e82",
+    "qa": "PHOTO_QA_PASS_CANDIDATE",
+    "qa_label": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "style": "사진형 후보(증분 36)",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "APPLIED",
+    "label": "새 사진 반영",
+    "reason": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "prev": {
+     "src": "/static/persona_gallery/PERSONA_SCENE_009.webp",
+     "sha256": "c0c5d7212afdde71342643aaf027d787a3cf37ef9e0cc595145dad8cfa707ae5"
+    }
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_010",
+   "display_id": "A19",
+   "type": "친구 모임",
+   "type_basis": "APP_LIBRARY",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_010_p36.webp",
+    "sha256": "ad3d9e5ec29d6fd321906655aa0b61d9982e1cc841c76881bce8ae5ee42b7d36",
+    "qa": "PHOTO_QA_PASS_CANDIDATE",
+    "qa_label": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "style": "사진형 후보(증분 36)",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "APPLIED",
+    "label": "새 사진 반영",
+    "reason": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "prev": {
+     "src": "/static/persona_gallery/PERSONA_SCENE_010.webp",
+     "sha256": "d7d8af570a09607a68eace91cd7ed4599ab57e8c689f4efbb33b81075f5e90f6"
+    }
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_011",
+   "display_id": "A20",
+   "type": "친구 모임",
+   "type_basis": "APP_LIBRARY",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_011_p36.webp",
+    "sha256": "92473aaeb96e2bb64cc0101d57208c1d7ce17bbb2774c97a4ba36a0749fdd559",
+    "qa": "PHOTO_QA_PASS_CANDIDATE",
+    "qa_label": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "style": "사진형 후보(증분 36)",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "APPLIED",
+    "label": "새 사진 반영",
+    "reason": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "prev": {
+     "src": "/static/persona_gallery/PERSONA_SCENE_011.webp",
+     "sha256": "587d35391a62ce326ca1aba659284394370fef32a8dd8c65d8957fdd4d1f36ac"
+    }
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_012",
+   "display_id": "A22",
+   "type": "업무 · 출장",
+   "type_basis": "APP_LIBRARY",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_012_p36.webp",
+    "sha256": "1f6899223bdb4cab3a801a3224ac1367f25ed863c2565b2b5b719665a64874e3",
+    "qa": "PHOTO_QA_PASS_CANDIDATE",
+    "qa_label": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "style": "사진형 후보(증분 36)",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "APPLIED",
+    "label": "새 사진 반영",
+    "reason": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "prev": {
+     "src": "/static/persona_gallery/PERSONA_SCENE_012.webp",
+     "sha256": "e12e34749f57ab7d694dbf216704509da21161207d9b047400c05a9bb73a56ba"
+    }
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_013",
+   "display_id": "A23",
+   "type": "미식",
+   "type_basis": "APP_LIBRARY",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_013.webp",
+    "sha256": "42c3923a936d0736c6f603298218f189b996c9413da2500990a495d6247f692f",
+    "qa": "HOLD",
+    "qa_label": "초안 보류 · 검수 중",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "HOLD",
+    "label": "사진 보류",
+    "reason": "의미 검수 보류 — 구체 요리 · 주문 내역 근거 없음"
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_014",
+   "display_id": "A26",
+   "type": "웰니스",
+   "type_basis": "APP_LIBRARY",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_014.webp",
+    "sha256": "a45261309cfb119a333d36bb5c0ac26a82fb7f9aff66ae92494309f011d4f0bb",
+    "qa": "FIX",
+    "qa_label": "초안 수정 필요",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW"
+  },
+  {
+   "card_id": "PERSONA_SCENE_015",
+   "display_id": "A27",
+   "type": "행사 체험",
+   "type_basis": "APP_LIBRARY",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_015_p36.webp",
+    "sha256": "1bd83b193e15bd7da19de353c192ad8af4d8061f3cb09596109d28036b31f345",
+    "qa": "PHOTO_QA_PASS_CANDIDATE",
+    "qa_label": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "style": "사진형 후보(증분 36)",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "APPLIED",
+    "label": "새 사진 반영",
+    "reason": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "prev": {
+     "src": "/static/persona_gallery/PERSONA_SCENE_015.webp",
+     "sha256": "6258750ac91f5b628fb36842cc9f795e0e0de95a779c9159989abab7cb034015"
+    }
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_016",
+   "display_id": "A28",
+   "type": "행사 체험",
+   "type_basis": "APP_LIBRARY",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_016_p36.webp",
+    "sha256": "bd7ea7aeabc1b34f6c3384b969eec59d67674ccac0c53d149869e5a1fa552984",
+    "qa": "PHOTO_QA_PASS_CANDIDATE",
+    "qa_label": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "style": "사진형 후보(증분 36)",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "APPLIED",
+    "label": "새 사진 반영",
+    "reason": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "prev": {
+     "src": "/static/persona_gallery/PERSONA_SCENE_016.webp",
+     "sha256": "fdb8053eb3dce8fbdd596548cbe1ed396a7bf75af767718f645b81377d256b4a"
+    }
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_017",
+   "display_id": "N03",
+   "type": "가족 · 부모 동반",
+   "type_basis": "APP_LIBRARY",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_017.webp",
+    "sha256": "6af65b17852bca3b3e72a9322aaa6236f9565110e208ca86e86a9cf22fefd652",
+    "qa": "HOLD",
+    "qa_label": "초안 보류 · 검수 중",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "HOLD",
+    "label": "사진 보류",
+    "reason": "의미 검수 보류 — 일행 수 · 연령 · 성별 묘사 미확인"
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_018",
+   "display_id": "N04",
+   "type": "미식",
+   "type_basis": "APP_LIBRARY",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_018.webp",
+    "sha256": "b9924fbb7273d61f500f5d589617e8baf93fb20cf63600611b747107a4501a85",
+    "qa": "HOLD",
+    "qa_label": "초안 보류 · 검수 중",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "HOLD",
+    "label": "사진 보류",
+    "reason": "수정 필요 — 실제 없는 인피니티 풀이 워커힐 시설로 오인될 수 있음"
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_019",
+   "display_id": "N05",
+   "type": "미식",
+   "type_basis": "APP_LIBRARY",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_019.webp",
+    "sha256": "408b25ef1900a3fc5f19dd06ed82f87114cd33456916aa371a66ed584dcf4ae7",
+    "qa": "HOLD_LEGACY_FACT_OR_DESIGN",
+    "qa_label": "과거 후보 이미지 · 검수 중",
+    "style": "사진형 과거 후보",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW"
+  },
+  {
+   "card_id": "PERSONA_SCENE_020",
+   "display_id": "N06",
+   "type": "미식",
+   "type_basis": "APP_LIBRARY",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_020_p36.webp",
+    "sha256": "e49f75d695bb96ab1c759036435d3c6d6b7a8983a4e83ff116165fb6da589b2c",
+    "qa": "PHOTO_QA_PASS_CANDIDATE",
+    "qa_label": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "style": "사진형 후보(증분 36)",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "APPLIED",
+    "label": "새 사진 반영",
+    "reason": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "prev": {
+     "src": "/static/persona_gallery/PERSONA_SCENE_020.webp",
+     "sha256": "4985cda609eec5cc71d939d4148333af5da6336da66b3dd7f69bbe6d675b83ee"
+    }
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_021",
+   "display_id": "N08",
+   "type": "행사 체험",
+   "type_basis": "APP_LIBRARY",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_021.webp",
+    "sha256": "c06b3d20b3ca9545f79d89626c32954f011f6236f8227970b7864c6b61743463",
+    "qa": "FIX",
+    "qa_label": "초안 수정 필요",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW"
+  },
+  {
+   "card_id": "PERSONA_SCENE_022",
+   "display_id": "N09",
+   "type": "행사 체험",
+   "type_basis": "APP_LIBRARY",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_022.webp",
+    "sha256": "6f94ead44b33888ac1532887b83f9fc3ebb57509247ea1ad465ade3904c74630",
+    "qa": "HOLD",
+    "qa_label": "초안 보류 · 검수 중",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW"
+  },
+  {
+   "card_id": "PERSONA_SCENE_023",
+   "display_id": "N10",
+   "type": "행사 체험",
+   "type_basis": "APP_LIBRARY",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_023_p36.webp",
+    "sha256": "6cd024319eb07319abd32b65d82552db0d3a805f7d66f715e33cd0e49f08f747",
+    "qa": "PHOTO_QA_PASS_CANDIDATE",
+    "qa_label": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "style": "사진형 후보(증분 36)",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "APPLIED",
+    "label": "새 사진 반영",
+    "reason": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "prev": {
+     "src": "/static/persona_gallery/PERSONA_SCENE_023.webp",
+     "sha256": "196d7a1ff8fa4a15aaff86e69be6f7af62194ac97919c62bfa6cdae3dc0a55df"
+    }
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_024",
+   "display_id": "N13",
+   "type": "스포츠 목적",
+   "type_basis": "APP_LIBRARY",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_024.webp",
+    "sha256": "8caebbd818a65a5bf74d6ce197c6eb39b409e6d90c5e603951caf062ac1fda18",
+    "qa": "PASS",
+    "qa_label": "초안 QA 통과 · 사람 승인 전",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "HOLD",
+    "label": "사진 보류",
+    "reason": "검수 전 — 골프 연습장 범위 확인 필요(독립 검수 · 서명 전)"
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_025",
+   "display_id": "N15",
+   "type": null,
+   "type_basis": "APP_LIBRARY_NON11",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_025.webp",
+    "sha256": "0fc1e6ed1832ae058f21adbaa8de2f5129ae886c7415e9fb40a0721772244c9d",
+    "qa": "PASS",
+    "qa_label": "초안 QA 통과 · 사람 승인 전",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "HOLD",
+    "label": "사진 보류",
+    "reason": "검수 전 — 이미지 출처 매칭 잠정(독립 검수 · 서명 전)"
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_026",
+   "display_id": "N20",
+   "type": "혜택 · 멤버십",
+   "type_basis": "APP_LIBRARY",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_026.webp",
+    "sha256": "ccc3e47f2f4c908add8761aa2ecf3e8369acf256157b787aeae7b84dc15d6049",
+    "qa": "FIX",
+    "qa_label": "초안 수정 필요",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW"
+  },
+  {
+   "card_id": "PERSONA_SCENE_027",
+   "display_id": "N23",
+   "type": "가족 · 부모 동반",
+   "type_basis": "APP_LIBRARY",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_027.webp",
+    "sha256": "66a4eeaaa049ef870173e4e3286a0409ff80ed0e876b2e1817e8ae477cc8fcfe",
+    "qa": "HOLD",
+    "qa_label": "초안 보류 · 검수 중",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "HOLD",
+    "label": "사진 보류",
+    "reason": "의미 검수 보류 — 5인 일행 · 연령 묘사 미확인"
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_028",
+   "display_id": "N24",
+   "type": "가족 · 부모 동반",
+   "type_basis": "APP_LIBRARY",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_028_p36.webp",
+    "sha256": "290ec537570a3f09a5d3f9f4644c4e6705c5b88be29cfbf23a473d8735cca4f5",
+    "qa": "PHOTO_QA_PASS_CANDIDATE",
+    "qa_label": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "style": "사진형 후보(증분 36)",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "APPLIED",
+    "label": "새 사진 반영",
+    "reason": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "prev": {
+     "src": "/static/persona_gallery/PERSONA_SCENE_028.webp",
+     "sha256": "17906f7e86bd952667f84b200866f62c410492616b2e64dc686fa295afe63280"
+    }
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_029",
+   "display_id": "N25",
+   "type": null,
+   "type_basis": "APP_LIBRARY_NON11",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_029_p36.webp",
+    "sha256": "711c6ed2e062e4f9970bceb5cbc14e1b8fb05b953a11b02e188ab9edebc0f7e3",
+    "qa": "PHOTO_QA_PASS_CANDIDATE",
+    "qa_label": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "style": "사진형 후보(증분 36)",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "APPLIED",
+    "label": "새 사진 반영",
+    "reason": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "prev": {
+     "src": "/static/persona_gallery/PERSONA_SCENE_029.webp",
+     "sha256": "24e08ff4bc11160119bf12f93221eecdb430212c9b37380de534e492c27274e1"
+    }
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_030",
+   "display_id": "N27",
+   "type": "커플 · 기념일",
+   "type_basis": "APP_LIBRARY",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_030_p36.webp",
+    "sha256": "f4b831df9b52eee8408901b9e4efa101a86c8acfa904a84662bf5a011e4ca913",
+    "qa": "PHOTO_QA_PASS_CANDIDATE",
+    "qa_label": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "style": "사진형 후보(증분 36)",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "APPLIED",
+    "label": "새 사진 반영",
+    "reason": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "prev": {
+     "src": "/static/persona_gallery/PERSONA_SCENE_030.webp",
+     "sha256": "412a4ecc5b28f48f63c84b102a8fbabd5af7cf71678e48e5abe9c6eeadb66923"
+    }
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_031",
+   "display_id": "N32",
+   "type": "커플 · 기념일",
+   "type_basis": "APP_LIBRARY",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_031.webp",
+    "sha256": "14eece1fec414b6cbc3bf79aafcd107d98426941f8b531457c72593af0534131",
+    "qa": "PASS",
+    "qa_label": "초안 QA 통과 · 사람 승인 전",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "EXCLUDED",
+    "label": "기존 이미지 유지",
+    "reason": "새 이미지 사용 안 함(사용자 결정)"
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_032",
+   "display_id": null,
+   "type": "가족 · 영유아",
+   "type_basis": "LP_REVIEW",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_032.webp",
+    "sha256": "dd268aa9dccf8be67e88b227459aff92f7941fdafef9a3d1f1410b95b1b24f0c",
+    "qa": "PASS",
+    "qa_label": "초안 QA 통과 · 사람 승인 전",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "HOLD",
+    "label": "사진 보류",
+    "reason": "의미 검수 보류 — 모녀 성별 · 연령 과다 구체 · 이미지 출처 세션 미확인"
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_033",
+   "display_id": null,
+   "type": "미식",
+   "type_basis": "LP_CANDIDATE",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_033.webp",
+    "sha256": "01b4ebb318572fb7bb80639849ce195ccb736ad0bf5848fcc24a8c2e07d0d32a",
+    "qa": "HOLD",
+    "qa_label": "초안 보류 · 검수 중",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW"
+  },
+  {
+   "card_id": "PERSONA_SCENE_034",
+   "display_id": null,
+   "type": "커플 · 기념일",
+   "type_basis": "LP_CANDIDATE",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_034.webp",
+    "sha256": "4c924664e049c52358a5835f2fd53d61919de77c55fbb347dc4ceb4a64071881",
+    "qa": "PASS",
+    "qa_label": "초안 QA 통과 · 사람 승인 전",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW"
+  },
+  {
+   "card_id": "PERSONA_SCENE_035",
+   "display_id": null,
+   "type": "커플 · 기념일",
+   "type_basis": "LP_REVIEW",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_035.webp",
+    "sha256": "5f8cbfb4e6ae41c3939b86a1a6fb65df3233ab03a2a852c3f35314aa20a1004d",
+    "qa": "HOLD",
+    "qa_label": "초안 보류 · 검수 중",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW"
+  },
+  {
+   "card_id": "PERSONA_SCENE_036",
+   "display_id": null,
+   "type": "커플 · 기념일",
+   "type_basis": "LP_CANDIDATE",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_036.webp",
+    "sha256": "659edc07ad64b93ce7de0c2d9cac743a39eefeb008e44ba1d166e8a5797d4d54",
+    "qa": "HOLD",
+    "qa_label": "초안 보류 · 검수 중",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW"
+  },
+  {
+   "card_id": "PERSONA_SCENE_037",
+   "display_id": null,
+   "type": "웰니스",
+   "type_basis": "LP_REVIEW",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_037.webp",
+    "sha256": "44ceb28352213d7b9e9b35e39ce51e81268bcfd2439d352ec8920ffa4b001b4b",
+    "qa": "PASS",
+    "qa_label": "초안 QA 통과 · 사람 승인 전",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW"
+  },
+  {
+   "card_id": "PERSONA_SCENE_038",
+   "display_id": null,
+   "type": "행사 체험",
+   "type_basis": "LP_REVIEW",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_038.webp",
+    "sha256": "45baa96dcb8dc8d36245d0d7fb70e77fcaf5cb6581a57ee1f404a4ba61401d72",
+    "qa": "HOLD",
+    "qa_label": "초안 보류 · 검수 중",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "NEEDS_SEMANTIC_REVIEW",
+   "fact_note": "실제 방문 · 이용 여부 사실 재확인 중 — 참고용 장면",
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REFERENCE_ONLY"
+  },
+  {
+   "card_id": "PERSONA_SCENE_039",
+   "display_id": null,
+   "type": "혜택 · 멤버십",
+   "type_basis": "LP_CANDIDATE",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_039.webp",
+    "sha256": "861e32dc3db8fa9d2f47770dfb154fcd1262bfc661142afd93dd2729fefc4ac4",
+    "qa": "PASS",
+    "qa_label": "초안 QA 통과 · 사람 승인 전",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "HOLD",
+    "label": "사진 보류",
+    "reason": "검수 전 — 안내 책자 콘셉트, 유료 회원 가입으로 오인 금지(독립 검수 · 서명 전)"
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_040",
+   "display_id": null,
+   "type": "혼자 휴식",
+   "type_basis": "LP_REVIEW",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_040.webp",
+    "sha256": "7fdb07fc5440dcb1f621b83fd7f536d3f4821142c3a66fde79ca3904902f4794",
+    "qa": "PASS",
+    "qa_label": "초안 QA 통과 · 사람 승인 전",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "HOLD",
+    "label": "사진 보류",
+    "reason": "검수 전 — 방문자 성별 · 일행 확인 필요(독립 검수 · 서명 전)"
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_041",
+   "display_id": null,
+   "type": "업무 · 출장",
+   "type_basis": "LP_CANDIDATE",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_041.webp",
+    "sha256": "e6bc8965c93d69cda474d9a047f0ab6afe9c03ecd119666253e67298bb06ac90",
+    "qa": "PASS",
+    "qa_label": "초안 QA 통과 · 사람 승인 전",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW"
+  },
+  {
+   "card_id": "PERSONA_SCENE_042",
+   "display_id": null,
+   "type": "가족 · 영유아",
+   "type_basis": "LP_CANDIDATE",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_042.webp",
+    "sha256": "9156a922606f5918e2fbc308213d24fb368011b7ea4dc3c91d69ce3bfcfa4d84",
+    "qa": "HOLD",
+    "qa_label": "초안 보류 · 검수 중",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "HOLD",
+    "label": "사진 보류",
+    "reason": "검수 전 — 생일 장면 미표현 · 출처 매칭 잠정(독립 검수 · 서명 전)"
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_043",
+   "display_id": null,
+   "type": "행사 체험",
+   "type_basis": "LP_CANDIDATE",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_043.webp",
+    "sha256": "aa1d68f72be368768dcd356a0cab96a61cb0470829a9aeed725c07e46f5f457b",
+    "qa": "HOLD",
+    "qa_label": "초안 보류 · 검수 중",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW"
+  },
+  {
+   "card_id": "PERSONA_SCENE_044",
+   "display_id": null,
+   "type": "행사 체험",
+   "type_basis": "LP_CANDIDATE",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_044.webp",
+    "sha256": "ec5cf3e483b13c85d4833188bf89b057d4d2a18c086dafcd35898f77b2923be3",
+    "qa": "HOLD",
+    "qa_label": "초안 보류 · 검수 중",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW"
+  },
+  {
+   "card_id": "PERSONA_SCENE_045",
+   "display_id": null,
+   "type": "커플 · 기념일",
+   "type_basis": "LP_CANDIDATE",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_045.webp",
+    "sha256": "e3ee77098e14524f3fc31a5164f2ebb897fecae1ce5f50712d691aa01bc6e3c2",
+    "qa": "HOLD",
+    "qa_label": "초안 보류 · 검수 중",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW"
+  },
+  {
+   "card_id": "PERSONA_SCENE_046",
+   "display_id": null,
+   "type": "가족 · 부모 동반",
+   "type_basis": "LP_CANDIDATE",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_046.webp",
+    "sha256": "fe15b724d470bdeee472eaf07d61ac6bb5ccbaf3fca9e1cea57463877ccbf4ac",
+    "qa": "HOLD_LEGACY_FACT_OR_DESIGN",
+    "qa_label": "과거 후보 이미지 · 검수 중",
+    "style": "사진형 과거 후보",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "HOLD",
+    "label": "사진 보류",
+    "reason": "의미 검수 보류 — 가족 구성 · 메뉴 추정 묘사(어머니 칠순 장면)"
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_047",
+   "display_id": null,
+   "type": "미식",
+   "type_basis": "LP_CANDIDATE",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_047.webp",
+    "sha256": "c1a7134f0765b74f958190af1e2957ad2f54c1e59af31527bd7dc0895cb7dc3b",
+    "qa": "HOLD",
+    "qa_label": "초안 보류 · 검수 중",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW"
+  },
+  {
+   "card_id": "PERSONA_SCENE_048",
+   "display_id": null,
+   "type": "혜택 · 멤버십",
+   "type_basis": "LP_REVIEW",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_048.webp",
+    "sha256": "838385464bb25ff063d9d4240355d102e25f1724f629b554c911dd13239483f6",
+    "qa": "HOLD",
+    "qa_label": "초안 보류 · 검수 중",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "HOLD",
+    "label": "사진 보류",
+    "reason": "검수 전 — 침구 매장 방문을 회원권 구매로 오인 금지(독립 검수 · 서명 전)"
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_049",
+   "display_id": null,
+   "type": "스포츠 목적",
+   "type_basis": "LP_REVIEW",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_049.webp",
+    "sha256": "54cbfbbcfb8515dcde5e9cffad5868caa8ff084440175f31d93395451d43a2bc",
+    "qa": "PASS",
+    "qa_label": "초안 QA 통과 · 사람 승인 전",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW"
+  },
+  {
+   "card_id": "PERSONA_SCENE_050",
+   "display_id": null,
+   "type": "혼자 휴식",
+   "type_basis": "LP_REVIEW",
+   "image": null,
+   "image_withheld": "프로모션 소개 콘텐츠 — 실제 체험 장면으로 표시하지 않음(이미지 비표시)",
+   "fact_review": "NEEDS_SEMANTIC_REVIEW",
+   "fact_note": "프로모션 소개 콘텐츠 — 실제 체험 장면으로 표시하지 않음(이미지 비표시)",
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REFERENCE_ONLY"
+  },
+  {
+   "card_id": "PERSONA_SCENE_051",
+   "display_id": null,
+   "type": "미식",
+   "type_basis": "LP_REVIEW",
+   "image": null,
+   "image_withheld": "외부 식사 맥락만 확인 — 워커힐 이용 고객으로 표시하지 않음(이미지 비표시)",
+   "fact_review": "NEEDS_SEMANTIC_REVIEW",
+   "fact_note": "외부 식사 맥락만 확인 — 워커힐 이용 고객으로 표시하지 않음(이미지 비표시)",
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REFERENCE_ONLY"
+  },
+  {
+   "card_id": "PERSONA_SCENE_052",
+   "display_id": null,
+   "type": "가족 · 부모 동반",
+   "type_basis": "LP_REVIEW",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_052.webp",
+    "sha256": "e8cd512e138152cdd625aa8fb7f515d4533be874a7a2f428a4dfb4ccf47fff51",
+    "qa": "HOLD",
+    "qa_label": "초안 보류 · 검수 중",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "HOLD",
+    "label": "사진 보류",
+    "reason": "검수 전 — 부모 · 성인 가족 일행 수 미확인(독립 검수 · 서명 전)"
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_053",
+   "display_id": null,
+   "type": "커플 · 기념일",
+   "type_basis": "LP_REVIEW",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_053.webp",
+    "sha256": "296ad1fc43705673218e0fcecdaa0358a44ba5d2de36846042cd1bea0f9327fc",
+    "qa": "HOLD",
+    "qa_label": "초안 보류 · 검수 중",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW"
+  },
+  {
+   "card_id": "PERSONA_SCENE_054",
+   "display_id": null,
+   "type": "커플 · 기념일",
+   "type_basis": "LP_CANDIDATE",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_054.webp",
+    "sha256": "640cb7df23ca865641251e47159f0b03b0efc8001e2085915aef54dd1d5f1e54",
+    "qa": "HOLD",
+    "qa_label": "초안 보류 · 검수 중",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW"
+  },
+  {
+   "card_id": "PERSONA_SCENE_055",
+   "display_id": null,
+   "type": "커플 · 기념일",
+   "type_basis": "LP_REVIEW",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_055.webp",
+    "sha256": "30462215e011824136043f239702d7d76cf9d299619ccf12e3ce39ba53063dae",
+    "qa": "HOLD",
+    "qa_label": "초안 보류 · 검수 중",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW"
+  },
+  {
+   "card_id": "PERSONA_SCENE_056",
+   "display_id": null,
+   "type": "가족 · 영유아",
+   "type_basis": "LP_CANDIDATE",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_056.webp",
+    "sha256": "23c102a99cb9046d4cdfcef3fd1bbf7cc77a63d42d40521679f3f1ac3acbb8b0",
+    "qa": "HOLD",
+    "qa_label": "초안 보류 · 검수 중",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "HOLD",
+    "label": "사진 보류",
+    "reason": "장면 불일치 — 영아 동반 장면인데 영아가 보이지 않음(자동 적용 금지)"
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_057",
+   "display_id": null,
+   "type": "혼자 휴식",
+   "type_basis": "LP_REVIEW",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_057.webp",
+    "sha256": "bcadbfdf56bacb28100684f2beb162a40ee49521a1d63d27dc8979445937bd86",
+    "qa": "HOLD",
+    "qa_label": "초안 보류 · 검수 중",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "NEEDS_SEMANTIC_REVIEW",
+   "fact_note": "실제 방문 · 이용 여부 사실 재확인 중 — 참고용 장면",
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REFERENCE_ONLY"
+  },
+  {
+   "card_id": "PERSONA_SCENE_058",
+   "display_id": null,
+   "type": "커플 · 기념일",
+   "type_basis": "LP_REVIEW",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_058.webp",
+    "sha256": "d436a175a12a063a2707591d305bffe9cabb422f527e0d901191b069faa06058",
+    "qa": "PASS",
+    "qa_label": "초안 QA 통과 · 사람 승인 전",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW"
+  },
+  {
+   "card_id": "PERSONA_SCENE_059",
+   "display_id": null,
+   "type": "커플 · 기념일",
+   "type_basis": "LP_CANDIDATE",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_059.webp",
+    "sha256": "25daa1f69e5f6665cb2505905d8e6f956150ffc2a218caeb580938a5c78473b3",
+    "qa": "FIX",
+    "qa_label": "초안 수정 필요",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW"
+  },
+  {
+   "card_id": "PERSONA_SCENE_060",
+   "display_id": null,
+   "type": "친구 모임",
+   "type_basis": "LP_REVIEW",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_060.webp",
+    "sha256": "5d41f4eb09d46767178c1905c6053168df625ca3b56e6c25a8dcc85982e1fb0c",
+    "qa": "PASS",
+    "qa_label": "초안 QA 통과 · 사람 승인 전",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "NEEDS_SEMANTIC_REVIEW",
+   "fact_note": "실제 방문 · 이용 여부 사실 재확인 중 — 참고용 장면",
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REFERENCE_ONLY"
+  },
+  {
+   "card_id": "PERSONA_SCENE_061",
+   "display_id": null,
+   "type": "가족 · 부모 동반",
+   "type_basis": "LP_CANDIDATE",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_061.webp",
+    "sha256": "efb48c26cb2fda2ddafd8da87b9bb30d1ee9874543befa1c7b8e94efebf472ce",
+    "qa": "PASS",
+    "qa_label": "초안 QA 통과 · 사람 승인 전",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "HOLD",
+    "label": "사진 보류",
+    "reason": "검수 전 — 3대 요가 장면 시설 세부 확인 필요(독립 검수 · 서명 전)"
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_062",
+   "display_id": null,
+   "type": "가족 · 영유아",
+   "type_basis": "LP_REVIEW",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_062.webp",
+    "sha256": "07581fc119aae7d456d1264795dc7590aff2eff6f22699fa57fa24bd88c3959d",
+    "qa": "PASS",
+    "qa_label": "초안 QA 통과 · 사람 승인 전",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "HOLD",
+    "label": "사진 보류",
+    "reason": "검수 전 — 가족 구성 미상 · 추상 미디어아트(독립 검수 · 서명 전)"
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_063",
+   "display_id": null,
+   "type": "미식",
+   "type_basis": "LP_CANDIDATE",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_063_p36.webp",
+    "sha256": "6ece7eb41b633d48fdf14f9a0ded993c673ff48d74ac05c014652279fc331fa5",
+    "qa": "PHOTO_QA_PASS_CANDIDATE",
+    "qa_label": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "style": "사진형 후보(증분 36)",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW",
+   "photo_delta": {
+    "status": "APPLIED",
+    "label": "새 사진 반영",
+    "reason": "사진형 후보 · 내부 QA 통과 · 사람 승인 전",
+    "prev": {
+     "src": "/static/persona_gallery/PERSONA_SCENE_063.webp",
+     "sha256": "4d5028595a0b4475626210270ea5c8e8846c7033737dd09243b45309602d2394"
+    }
+   }
+  },
+  {
+   "card_id": "PERSONA_SCENE_064",
+   "display_id": null,
+   "type": "커플 · 기념일",
+   "type_basis": "LP_REVIEW",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_064.webp",
+    "sha256": "728ca0e6633cf33f712b6004ab9bf9bec60fefbd626dc4ae1e3fe81fd078eaca",
+    "qa": "PASS",
+    "qa_label": "초안 QA 통과 · 사람 승인 전",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW"
+  },
+  {
+   "card_id": "PERSONA_SCENE_065",
+   "display_id": null,
+   "type": "혼자 휴식",
+   "type_basis": "LP_REVIEW",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_065.webp",
+    "sha256": "4491a14653b8dfbf034ac8f7528fc2b2d1395404945f9377ba7a7eb61b2c5e41",
+    "qa": "HOLD",
+    "qa_label": "초안 보류 · 검수 중",
+    "style": "벡터 일러스트 초안",
+    "human_approved": false
+   },
+   "image_withheld": null,
+   "fact_review": "EVIDENCE_READY",
+   "fact_note": null,
+   "avatar": {
+    "status": "AVATAR_REVIEW_PENDING",
+    "runtime_key": null,
+    "note": "동행 · 인원 런타임 확인 전 — 기존 중립 표시 유지"
+   },
+   "engine_eligible": false,
+   "profile_linked": false,
+   "publish_approved": false,
+   "state": "VISUAL_DRAFT_REVIEW"
+  }
+ ],
+ "photo_delta": {
+  "version": "PHOTO_DELTA_36_20261026",
+  "applied": 13,
+  "held": 19,
+  "same": 4,
+  "excluded": 1,
+  "human_approved": 0
+ }
+}

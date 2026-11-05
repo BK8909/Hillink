@@ -1,0 +1,1305 @@
+{
+  "scope": "DISPLAY_ONLY_SOURCE_REVIEW_WITH_EXPLICIT_HOLDS",
+  "engine_changed": false,
+  "semantic_approval": false,
+  "thumbnail_approval": false,
+  "review_inputs": [
+    {
+      "name": "HILLINK 45명 팀 검수표 — 11월 4일.xlsx",
+      "sha256": "3b1cbbda84b1dde0432d3334ada686c3ad168265ee4b3d90f8354ce85940ed3a"
+    },
+    {
+      "name": "HILLINK_한호_담당15명_상세수정표_20261104.private.csv",
+      "sha256": "d4aa96bfd0826aea108ed22659145ed06dac64a75d59ef78e5c46d883c64a9f4"
+    }
+  ],
+  "customers": {
+    "A01": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "소연",
+      "post_ids": [
+        "A01-02",
+        "A01-03"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "가족 행사 뒤 비스타에서 1박하며 족욕과 객실 조식을 이용한 4인 가족",
+        "signature": "기념할 경험엔 쓰고, 숙박 혜택은 꼼꼼히 따졌다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "A01",
+          "supplemental_path": "profile-review-sources/A01-display-evidence.json",
+          "sha256": "473bc38de1b159577e959eaf394851ce8ce49a1ee318efed01c4ae0a39b21087"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/A01-display-evidence.json",
+      "evidence_sha256": "473bc38de1b159577e959eaf394851ce8ce49a1ee318efed01c4ae0a39b21087"
+    },
+    "A02": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "슬기",
+      "post_ids": [
+        "A02-03"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "부모님과 워커힐 요가 프로그램 두 가지에 참여한 가족",
+        "signature": "2만 원짜리 체험은 부담 없이 더했다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "A02",
+          "supplemental_path": "profile-review-sources/A02-display-evidence.json",
+          "sha256": "297b55c2c272163259462f44eea77f80cd531496f617e76a2027cc54cb02c050"
+        }
+      ],
+      "fact_ids": [
+        "A02-F07",
+        "A02-F08",
+        "A02-F09",
+        "A02-F10",
+        "A02-F11",
+        "A02-F12"
+      ],
+      "evidence_file": "profile-review-sources/A02-display-evidence.json",
+      "evidence_sha256": "297b55c2c272163259462f44eea77f80cd531496f617e76a2027cc54cb02c050"
+    },
+    "A03": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "한호",
+      "post_ids": [
+        "A03-02"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "클럽 스위트에 묵으며 라운지와 더뷔페 조식을 이용한 부부",
+        "signature": "클럽 혜택은 다 누렸고, 창가는 아쉬웠다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "A03",
+          "supplemental_path": "profile-review-sources/A03-display-evidence.json",
+          "sha256": "357b9f81b4ba3f20ee4308c26e31036db8b379c53b19036d93e0187a4ff861e5"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/A03-display-evidence.json",
+      "evidence_sha256": "357b9f81b4ba3f20ee4308c26e31036db8b379c53b19036d93e0187a4ff861e5",
+      "redundant_support_texts": [
+        "평일·사전예약·오픈런·대기 통제"
+      ]
+    },
+    "A04": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "소연",
+      "post_ids": [
+        "A04-01"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "리버뷰 객실에서 혼자 쉬며 독서와 사진을 즐긴 1박 방문",
+        "signature": "지칠 땐 익숙한 호텔에 혼자 묵으며 쉬었다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "A04",
+          "supplemental_path": "profile-review-sources/A04-display-evidence.json",
+          "sha256": "ba486b6760a7e9d7a797f79cd4a3ee69b8672b01d194e0cecbd87e08eb9a1689"
+        }
+      ],
+      "fact_ids": [
+        "A04-F01",
+        "A04-F02",
+        "A04-F03",
+        "A04-F04",
+        "A04-F05a",
+        "A04-F05b",
+        "A04-F05c",
+        "A04-F06",
+        "A04-F07",
+        "A04-F08",
+        "A04-F09",
+        "A04-F10a",
+        "A04-F10b",
+        "A04-F10c",
+        "A04-F11",
+        "A04-F12a",
+        "A04-F13",
+        "A04-F14",
+        "A04-F15",
+        "A04-F16"
+      ],
+      "evidence_file": "profile-review-sources/A04-display-evidence.json",
+      "evidence_sha256": "ba486b6760a7e9d7a797f79cd4a3ee69b8672b01d194e0cecbd87e08eb9a1689",
+      "redundant_support_texts": [
+        "활동 하나가 막히면 다른 휴식으로 이어감",
+        "독서·촬영을 휴식의 일부로 결합"
+      ]
+    },
+    "A05": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "슬기",
+      "post_ids": [
+        "A05-01"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "친구 셋이 비스타에 묵으며 가든 바비큐와 아침 수영을 즐긴 방문",
+        "signature": "많이 못 먹어도 경험값이면 납득했다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "A05",
+          "supplemental_path": "profile-review-sources/A05-display-evidence.json",
+          "sha256": "ac7fcb07e0b542ecda838b841a02fbed611ae6e11d028be60fec85a4d6626dab"
+        }
+      ],
+      "fact_ids": [
+        "A05-F01",
+        "A05-F02",
+        "A05-F03",
+        "A05-F04",
+        "A05-F05",
+        "A05-F06",
+        "A05-F07",
+        "A05-F08a",
+        "A05-F08b",
+        "A05-F08c",
+        "A05-F09"
+      ],
+      "evidence_file": "profile-review-sources/A05-display-evidence.json",
+      "evidence_sha256": "ac7fcb07e0b542ecda838b841a02fbed611ae6e11d028be60fec85a4d6626dab"
+    },
+    "A07": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "한호",
+      "post_ids": [
+        "A07-01"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "한강뷰 스파 객실에 머물며 모에기 오마카세를 즐긴 부부",
+        "signature": "오마카세 27만 원이 숙박보다 더 좋았다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "A07",
+          "supplemental_path": "profile-review-sources/A07-display-evidence.json",
+          "sha256": "71dd33e281a950f7690f25acaad3c8d96fa71b9bd689c05b396fe83165304624"
+        }
+      ],
+      "fact_ids": [
+        "A07-F01",
+        "A07-F02",
+        "A07-F03",
+        "A07-F04",
+        "A07-F05",
+        "A07-F06",
+        "A07-F07",
+        "A07-F08a",
+        "A07-F08b",
+        "A07-F09",
+        "A07-F10a",
+        "A07-F10b",
+        "A07-F10c",
+        "A07-F10d",
+        "A07-F11",
+        "A07-F27"
+      ],
+      "evidence_file": "profile-review-sources/A07-display-evidence.json",
+      "evidence_sha256": "71dd33e281a950f7690f25acaad3c8d96fa71b9bd689c05b396fe83165304624",
+      "redundant_support_texts": [
+        "체력·계절·목적이 호텔 안팎의 동선과 식사 방식을 바꿈"
+      ]
+    },
+    "A08": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "source_anchors": [
+        {
+          "customer_id": "A08",
+          "supplemental_path": "profile-review-sources/A08-display-evidence.json",
+          "sha256": "c47f1311382a077690f26567c6643adb941750b4a3f1ee6bab1132887895ec35"
+        }
+      ],
+      "post_ids": [
+        "A08-02",
+        "A08-03"
+      ],
+      "fact_ids": [],
+      "changes": {
+        "list_line": "부부가 비스타 2박 동안 플로팅 명상과 요가를 경험한 휴식 방문",
+        "signature": "웰니스 수업엔 추가 요금을 내고 따로 등록했다."
+      },
+      "team_reviewer": "소연",
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "evidence_file": "profile-review-sources/A08-display-evidence.json",
+      "evidence_sha256": "c47f1311382a077690f26567c6643adb941750b4a3f1ee6bab1132887895ec35",
+      "redundant_support_texts": [
+        "날씨·체력·불편에 따라 장소와 활동 강도를 조절",
+        "포함 혜택과 별도 유료 경험을 구분해 활용"
+      ]
+    },
+    "A10": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "슬기",
+      "post_ids": [
+        "A10-01"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "비스타에서 1박하고 더뷔페 창가에서 조식을 먹은 방문",
+        "signature": "안 먹던 조식도 맛 기대로 추가했다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "A10",
+          "supplemental_path": "profile-review-sources/A10-display-evidence.json",
+          "sha256": "3ed90cc198863a146a31f090e649848aea4f2659e2cc083ccd7b9a8206a8d146"
+        }
+      ],
+      "fact_ids": [
+        "A10-F01",
+        "A10-F02",
+        "A10-F03",
+        "A10-F04",
+        "A10-F05",
+        "A10-F11"
+      ],
+      "evidence_file": "profile-review-sources/A10-display-evidence.json",
+      "evidence_sha256": "3ed90cc198863a146a31f090e649848aea4f2659e2cc083ccd7b9a8206a8d146"
+    },
+    "blog41": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "한호",
+      "post_ids": [
+        "P015"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "피자힐에서 피자·파스타와 소스 세트를 주문한 방문",
+        "signature": "할인을 받아도 피자 값이 아까웠다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "blog41",
+          "supplemental_path": "profile-review-sources/blog41-display-evidence.json",
+          "sha256": "72ff10cfb1c8617a418e80a2f61c7069ccc0f8628401a6040c5a81dff8987754"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/blog41-display-evidence.json",
+      "evidence_sha256": "72ff10cfb1c8617a418e80a2f61c7069ccc0f8628401a6040c5a81dff8987754"
+    },
+    "blog42": {
+      "status": "EVIDENCE_LIMITED_DISPLAY_ONLY",
+      "team_reviewer": "소연",
+      "post_ids": [],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "기존 요약의 존재만 확인; 새로운 성향 승인 없음",
+      "hold_reason": "원문 연결 미확인: 기존 Fact 요약만 참조. 전체 의미·동행·유형·썸네일·외부 경험 연결 HOLD",
+      "changes": {
+        "list_line": "기존 후기 요약에 클럽룸 숙박과 조식 이용이 기록된 고객",
+        "signature": "선택 이유는 원문 대조를 기다리고 있다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "blog42",
+          "supplemental_path": "profile-review-sources/blog42-display-evidence.json",
+          "sha256": "751de5f47b862331293594798ceb8dc8b48eac3d52496077a419feac28850c1d"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/blog42-display-evidence.json",
+      "evidence_sha256": "751de5f47b862331293594798ceb8dc8b48eac3d52496077a419feac28850c1d"
+    },
+    "blog43": {
+      "status": "EVIDENCE_LIMITED_DISPLAY_ONLY",
+      "team_reviewer": "슬기",
+      "post_ids": [],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "기존 요약의 존재만 확인; 새로운 성향 승인 없음",
+      "hold_reason": "원문 연결 미확인: 기존 Fact 요약만 참조. 전체 의미·동행·유형·썸네일·외부 경험 연결 HOLD",
+      "changes": {
+        "list_line": "기존 후기 요약에 더글라스 라운지와 휴식 경험이 기록된 고객",
+        "signature": "선택의 맥락은 원문 확인이 더 필요하다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "blog43",
+          "supplemental_path": "profile-review-sources/blog43-display-evidence.json",
+          "sha256": "2b9d5df1cc55b32d0220f2e4a8aa547930fd56731d0e45db62eccdfde2f1e6d8"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/blog43-display-evidence.json",
+      "evidence_sha256": "2b9d5df1cc55b32d0220f2e4a8aa547930fd56731d0e45db62eccdfde2f1e6d8"
+    },
+    "A06": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "한호",
+      "team_customer_status": "수정필요",
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "post_ids": [
+        "A06_P001"
+      ],
+      "fact_ids": [
+        "A06-F001",
+        "A06-F002",
+        "A06-F003"
+      ],
+      "source_anchors": [
+        {
+          "customer_id": "A06",
+          "bundle_path": "customers/A06/corpus.json",
+          "sha256": "0fe5fe88c8b2214f4a96408c4535417e9091534d8e24651d9d9af2ac8d8ea3c1"
+        }
+      ],
+      "changes": {
+        "list_line": "혼자 4박 출장하며 호텔 안에서 산책한 고객",
+        "signature": "출장 숙소도 한강뷰 하나 보고 골랐다."
+      },
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "evidence_file": "profile-review-sources/A06-display-evidence.json",
+      "evidence_sha256": "1f11ae5cd4acca6b458b457c37e66b2e6e062cba0eb33709aac1df39d4f6d27a"
+    },
+    "A12": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "source_anchors": [
+        {
+          "customer_id": "A12",
+          "bundle_path": "customers/A12/corpus.json",
+          "sha256": "f7e3533242b22a51f13352bfc03ac3dd77de6f799c797c63c6971ff830f311dd"
+        }
+      ],
+      "post_ids": [
+        "A12_P014"
+      ],
+      "fact_ids": [
+        "A12-F001",
+        "A12-F004",
+        "A12-F005"
+      ],
+      "changes": {
+        "list_line": "1박 동안 조식·수영은 건너뛰고 포장 계획을 피자힐 매장 식사로 바꾼 부부",
+        "signature": "평일 투숙객 20% 할인을 챙겨 피자힐에 갔다."
+      },
+      "team_reviewer": "소연",
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "other_post_fact_refs_held": [
+        "A12-F008",
+        "A12-F009"
+      ],
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "evidence_file": "profile-review-sources/A12-display-evidence.json",
+      "evidence_sha256": "1924e2b5c9b64e3880684bf7f78031713f04becbb777333888e6c1544218428b"
+    },
+    "A19": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "슬기",
+      "post_ids": [
+        "A19_P007"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "친구들과 그랜드 커넥팅룸에서 1박하고 부대시설을 이용한 방문",
+        "signature": "뷰보다 서로 오가기 편한 객실을 골랐다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "A19",
+          "bundle_path": "customers/A19/corpus.json",
+          "sha256": "c139b596e827ee0821d180db31483e3bc8221dc218868a70022dd0216c21df6b"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/A19-display-evidence.json",
+      "evidence_sha256": "0ab2ff76433f2422937ad29449ed299087bc57a06caf654fcc3b25a9315acf0e"
+    },
+    "A26": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "한호",
+      "team_customer_status": "수정필요",
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "post_ids": [
+        "A26_P011"
+      ],
+      "fact_ids": [
+        "A26-F001",
+        "A26-F002"
+      ],
+      "source_anchors": [
+        {
+          "customer_id": "A26",
+          "bundle_path": "customers/A26/corpus.json",
+          "sha256": "01aefe54cbb67df225c8b2dabebf5a6d56959a905d8775cacabc2418bc4174ed"
+        }
+      ],
+      "changes": {
+        "list_line": "저녁 수영과 다음 날 아침 러닝을 나눠 즐긴 호캉스",
+        "signature": "호캉스를 수영·러닝·피트니스로 꽉 채웠다."
+      },
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "evidence_file": "profile-review-sources/A26-display-evidence.json",
+      "evidence_sha256": "38cd82b08e8d8eae54265a06fa376d99ee66dcc7dc06f158becb452b16eaafde"
+    },
+    "N03": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "source_anchors": [
+        {
+          "customer_id": "N03",
+          "bundle_path": "customers/N03/corpus.json",
+          "sha256": "77dd2a10ad46832a8157a60674948d5758e4f49b946cd82f72082f2c796b0b40"
+        }
+      ],
+      "post_ids": [
+        "N03_P009"
+      ],
+      "fact_ids": [
+        "N03-F001",
+        "N03-F003"
+      ],
+      "changes": {
+        "list_line": "회사 제공 2박을 가족이 나눠 쓰고 피자힐에서는 자리 안내 뒤 나온 방문",
+        "signature": "그 값에 구석 자리면 안 먹고 나왔다."
+      },
+      "team_reviewer": "소연",
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "other_post_fact_refs_held": [
+        "N03-F005",
+        "N03-F007"
+      ],
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도; 연도·방문 사건·예약/취소의 엔진 연결은 이번 변경에서 수정하지 않음",
+      "evidence_file": "profile-review-sources/N03-display-evidence.json",
+      "evidence_sha256": "009b1a879e80a37258cf4aa2420c09a9bdd8865e1dad09b5403dabfcccde1dc9"
+    },
+    "N10": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "슬기",
+      "post_ids": [
+        "N10_P046"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "그랜드 워커힐 예식에 참석해 식사와 발렛을 이용한 하객",
+        "signature": "이름난 호텔이라 하객 식사부터 기대했다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "N10",
+          "bundle_path": "customers/N10/corpus.json",
+          "sha256": "278572fe9704cae6f7904064a58f91fc9dfe4ec734f7113f1fe21b2ad1db8ce2"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/N10-display-evidence.json",
+      "evidence_sha256": "0841b2b7293bb8ad04824c792daed3ebf692297e2dfa9f85af8f9f11d9e0d1dd"
+    },
+    "N13": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "한호",
+      "team_customer_status": "수정필요",
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "post_ids": [
+        "N13_P010"
+      ],
+      "fact_ids": [
+        "N13-F001",
+        "N13-F002",
+        "N13-F003",
+        "N13-F004"
+      ],
+      "source_anchors": [
+        {
+          "customer_id": "N13",
+          "bundle_path": "customers/N13/corpus.json",
+          "sha256": "62b4f2f1c2c8e245542c8c75f7bbaab75eb79c107deb4958f08f3b2130229d60"
+        }
+      ],
+      "changes": {
+        "list_line": "연휴에 이용권을 선결제하고 골프 연습장을 찾은 고객",
+        "signature": "좋은 장비에 끌려도 정기권은 일단 참았다."
+      },
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "evidence_file": "profile-review-sources/N13-display-evidence.json",
+      "evidence_sha256": "ae227555ac2eac7ceb605559317c38f20b82aba19c8c588abf95bb0496de5d01"
+    },
+    "N15": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "source_anchors": [
+        {
+          "customer_id": "N15",
+          "bundle_path": "customers/N15/corpus.json",
+          "sha256": "7a42a21e67e5a5b040e4c4759711aca2014be1336ea64d7526d37493f5424176"
+        }
+      ],
+      "fact_ids": [
+        "N15-F004"
+      ],
+      "post_ids": [
+        "N15_P026"
+      ],
+      "changes": {
+        "list_line": "마운틴뷰 객실이 좁게 느껴졌고 포장 피자와 룸서비스를 이용한 가족",
+        "fact_summaries": {
+          "N15-F004": "르 파사쥬에서 피자힐 피자를 포장 주문한 경험을 기록했다. 갈릭새우 피자 71,200원·포장 20% 할인·수령 약 15분은 해당 후기의 기록이며 현재 판매 계약이나 피자힐 매장 식사로 확정하지 않는다."
+        },
+        "signature": "주말 요금을 보고 가성비 좋은 그랜드로 바꿨다."
+      },
+      "team_reviewer": "소연",
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도; N15-F004는 표시 보정만 유지, 엔진 입력 정정은 별도 HOLD",
+      "evidence_file": "profile-review-sources/N15-display-evidence.json",
+      "evidence_sha256": "25b40e62283db264221cd78311b6784ba1a4e28685526649ac7f0506e61f5c20"
+    },
+    "N23": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "슬기",
+      "post_ids": [
+        "N23_P004"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "할머니·어머니와 비스타에서 1박하며 식사와 스파를 즐긴 방문",
+        "signature": "비싼 스파도 받되 투숙객 할인은 전날 챙겼다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "N23",
+          "bundle_path": "customers/N23/corpus.json",
+          "sha256": "9be73dad59a6dc488995437ff504ab2c52a9dfbd37fdbd3fcd0e4aa53a38a49e"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/N23-display-evidence.json",
+      "evidence_sha256": "5232a83d8e04291fcc411dbdfd11636eb2c022fc9cea52d2950bde8373e69f17"
+    },
+    "WH-00131": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "한호",
+      "post_ids": [
+        "WH-00131_P001",
+        "WH-00131_P002"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "결혼 준비 중 더글라스에서 쉬며 라운지를 이용한 1박 방문",
+        "signature": "라운지 포함 객실로 식사를 전부 해결했다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "WH-00131",
+          "bundle_path": "customers/WH-00131/corpus.json",
+          "sha256": "8dc5a35f4481194c29e98c747f216e2e4d6f977ea3862a5ac69e5aceb310eb37"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/WH-00131-display-evidence.json",
+      "evidence_sha256": "db50adfc194a7841c8a37ee43dec295b065d04e1121a6bfbedeae902283dbb5b"
+    },
+    "WH-00265": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "소연",
+      "post_ids": [
+        "WH-00265_P015"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "특가 스파룸에서 한강을 보며 스파를 세 번 즐긴 1박 방문",
+        "signature": "정가를 알아서 특가 뜰 때만 잡았다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "WH-00265",
+          "bundle_path": "customers/WH-00265/corpus.json",
+          "sha256": "bee4692eb80de65e7ceac93d280fdc0385c190548b69e9321f9ad0be98f3c28d"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/WH-00265-display-evidence.json",
+      "evidence_sha256": "a204dd475df90f5dc360aa55bdb1b1ee81a6ff0215e31076d44365c6e101589c"
+    },
+    "WH-00276": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "슬기",
+      "post_ids": [
+        "WH-00276_P005"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "퇴근 후 워커힐 골프클럽에서 늦은 시간까지 연습하는 고객",
+        "signature": "자주 오는 곳이라 붐비면 그냥 안 갔다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "WH-00276",
+          "bundle_path": "customers/WH-00276/corpus.json",
+          "sha256": "8e260b6efca0d057448f28657dcae9c00a43c60f48eb7dca299283d74da8a8bf"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/WH-00276-display-evidence.json",
+      "evidence_sha256": "5034160f07a0cf43e24331cbd7c84f83e44d432574a84c87e7dd5eda7f6863fb"
+    },
+    "WH-00386": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "한호",
+      "post_ids": [
+        "WH-00386_P008"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "주말 피자힐에서 대기 후 두 명이 피자를 나눠 먹은 방문",
+        "signature": "숙박 할인 대신 통신사 혜택을 챙겼다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "WH-00386",
+          "bundle_path": "customers/WH-00386/corpus.json",
+          "sha256": "0e061bd139bece9887873d034fa25edad4bfab8f41cf450ae3a06d2ed085ebfb"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/WH-00386-display-evidence.json",
+      "evidence_sha256": "fa3f6274870b34d6372588f35808dc539d13f5661b2e6068016ae67f1137597e"
+    },
+    "WH-00392": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "소연",
+      "post_ids": [
+        "WH-00392_P030"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "추석에 가족과 워커힐을 찾고 멤버십 이용 경험을 정리한 고객",
+        "signature": "갱신할 때마다 멤버십 혜택을 다시 살폈다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "WH-00392",
+          "bundle_path": "customers/WH-00392/corpus.json",
+          "sha256": "d042c97342cf96d1b833dd2298117ea7551461f7ca4bf6d8ba37321a9e14bbf0"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/WH-00392-display-evidence.json",
+      "evidence_sha256": "aac0060979202c263a7d87690fb5850173d37e2ef6409b591a18a59900bc0950"
+    },
+    "WH-00410": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "슬기",
+      "post_ids": [
+        "WH-00410_P001"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "남자친구와 더글라스 라운지와 실내수영장을 이용한 방문",
+        "signature": "추가금 뷔페 대신 포함 조식을 택했다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "WH-00410",
+          "bundle_path": "customers/WH-00410/corpus.json",
+          "sha256": "d089e318d94996e3a30dcf15690ee3bc63377a398f36614cdff8e1f20ee13d10"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/WH-00410-display-evidence.json",
+      "evidence_sha256": "34749f3882f292420161d56261418b2aa2f3dd86268070148283579e3fffc38e"
+    },
+    "WH-00491": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "한호",
+      "post_ids": [
+        "WH-00491_P018",
+        "WH-00491_P019"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "더글라스 2박 중 라운지 조식과 피자힐 식사를 즐긴 부부",
+        "signature": "먹어 보니 그 값은 아니라고 봤다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "WH-00491",
+          "bundle_path": "customers/WH-00491/corpus.json",
+          "sha256": "f1b6461ba3c2e913e10e5f00ddba9dd92d973eb67cab67eee37e320d71b2b4e6"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/WH-00491-display-evidence.json",
+      "evidence_sha256": "cd7fa90f8851e7569309d3efa6afe34f110a1c0c4a3014975dab381ca3aafaf6"
+    },
+    "WH-00532": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "source_anchors": [
+        {
+          "customer_id": "WH-00532",
+          "bundle_path": "customers/WH-00532/corpus.json",
+          "sha256": "d7300dd65efaff7cd71731abdf619f278556d08d3fcb2e3c4fbbe1f549646f9b"
+        }
+      ],
+      "post_ids": [
+        "WH-00532_P001"
+      ],
+      "fact_ids": [
+        "WH-00532-F002",
+        "WH-00532-F003",
+        "WH-00532-F005"
+      ],
+      "changes": {
+        "list_line": "특가로 예약한 더글라스에서 친구 셋이 1박 동안 시설을 둘러본 방문",
+        "signature": "포함된 세 끼를 빠짐없이 챙겨 먹었다."
+      },
+      "team_reviewer": "소연",
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "evidence_file": "profile-review-sources/WH-00532-display-evidence.json",
+      "evidence_sha256": "92039587df6f40c115fcc49564c6fa7bf31458e05955e3d26658e93aa9d6e72a"
+    },
+    "A13": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "슬기",
+      "post_ids": [
+        "A13_P013"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "3대 가족이 비스타에서 2박하며 수영·족욕·식사를 나눠 즐긴 방문",
+        "signature": "호텔 한 끼는 제대로, 나머지는 밖에서 아꼈다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "A13",
+          "supplemental_path": "profile-review-sources/A13-display-evidence.json",
+          "sha256": "65b50278cd55303a57f6dc675740b6ea3ae07acffd1255b19f7c0abc01dca994"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/A13-display-evidence.json",
+      "evidence_sha256": "65b50278cd55303a57f6dc675740b6ea3ae07acffd1255b19f7c0abc01dca994"
+    },
+    "A14": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "한호",
+      "post_ids": [
+        "A14_P020"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "어머니와 그랜드에 묵으며 수영장·카페·조식을 이용한 방문",
+        "signature": "피자힐 고민하다 객실 배달 치맥을 택했다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "A14",
+          "supplemental_path": "profile-review-sources/A14-display-evidence.json",
+          "sha256": "47735cf3cc9c38995d346327c3c8c8475bd5eb3cd538a93d39cf6ccac64094e3"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/A14-display-evidence.json",
+      "evidence_sha256": "47735cf3cc9c38995d346327c3c8c8475bd5eb3cd538a93d39cf6ccac64094e3"
+    },
+    "A20": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "소연",
+      "post_ids": [
+        "A20_P029"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도; 연도·방문 사건·예약/취소의 엔진 연결은 이번 변경에서 수정하지 않음",
+      "changes": {
+        "list_line": "비스타 숙박 중 가족 행사 후보 식당인 금룡을 먼저 이용한 방문",
+        "signature": "행사 식당 후보를 직접 먹어 보고 따졌다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "A20",
+          "supplemental_path": "profile-review-sources/A20-display-evidence.json",
+          "sha256": "1df82c463d18c42b1f2235ed7c08846534f67a8db861c217a022df962c0987f9"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/A20-display-evidence.json",
+      "evidence_sha256": "1df82c463d18c42b1f2235ed7c08846534f67a8db861c217a022df962c0987f9"
+    },
+    "A22": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "슬기",
+      "post_ids": [
+        "A22_P018"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "워커힐 포럼에 참석해 와인파티와 갈라디너를 경험한 고객",
+        "signature": "행사장까지는 직접 운전하는 편이 편했다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "A22",
+          "supplemental_path": "profile-review-sources/A22-display-evidence.json",
+          "sha256": "11eeaf11d6d83c3020d9d02c507414a164a10a8e206ebdc67384f3106b34c232"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/A22-display-evidence.json",
+      "evidence_sha256": "11eeaf11d6d83c3020d9d02c507414a164a10a8e206ebdc67384f3106b34c232"
+    },
+    "A23": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "한호",
+      "post_ids": [
+        "A23_P052"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "아버지 생신 식사로 가족과 명월관을 처음 이용한 방문",
+        "signature": "특별한 날의 비싼 한 끼는 값한다고 봤다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "A23",
+          "supplemental_path": "profile-review-sources/A23-display-evidence.json",
+          "sha256": "ad0f43b01792d5bcff093217b11df424c15eb368d19470451f88f0edde6578af"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/A23-display-evidence.json",
+      "evidence_sha256": "ad0f43b01792d5bcff093217b11df424c15eb368d19470451f88f0edde6578af"
+    },
+    "A27": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "소연",
+      "post_ids": [
+        "A27_P003"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도; 연도·방문 사건·예약/취소의 엔진 연결은 이번 변경에서 수정하지 않음",
+      "changes": {
+        "list_line": "와인페어에서 시음하고 공연 시간에 맞춰 자리를 옮긴 방문",
+        "signature": "저녁 분위기를 즐기려고 오후권을 샀다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "A27",
+          "supplemental_path": "profile-review-sources/A27-display-evidence.json",
+          "sha256": "f5967ac5cedcbf5c9bfb39d6c6cc29214f18bb9b018c37c9cea01d06b87c4db6"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/A27-display-evidence.json",
+      "evidence_sha256": "f5967ac5cedcbf5c9bfb39d6c6cc29214f18bb9b018c37c9cea01d06b87c4db6"
+    },
+    "A28": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "슬기",
+      "post_ids": [
+        "A28_P002"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "친구들과 와인페어에서 시음하고 피자와 라면을 먹은 방문",
+        "signature": "집에서 마시기 좋아 보여 캔 와인을 샀다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "A28",
+          "supplemental_path": "profile-review-sources/A28-display-evidence.json",
+          "sha256": "d06c48850d233d2bf4723be40b012f60a3e473dfa32b7dfccea902e8c9bd3bef"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/A28-display-evidence.json",
+      "evidence_sha256": "d06c48850d233d2bf4723be40b012f60a3e473dfa32b7dfccea902e8c9bd3bef"
+    },
+    "N04": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "한호",
+      "post_ids": [
+        "N04_P006"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "더뷔페 주중 디너에 호텔 와인숍에서 산 와인을 가져간 방문",
+        "signature": "와인값을 비교해 미리 사서 가져갔다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "N04",
+          "supplemental_path": "profile-review-sources/N04-display-evidence.json",
+          "sha256": "6737c98c540570ae386832bfb1f7572129d9852c309af35d934639f5793f3527"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/N04-display-evidence.json",
+      "evidence_sha256": "6737c98c540570ae386832bfb1f7572129d9852c309af35d934639f5793f3527"
+    },
+    "N05": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "소연",
+      "post_ids": [
+        "N05_P001"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "가족과 더뷔페 평일 런치를 즐기며 와인 두 병을 반입한 방문",
+        "signature": "와인은 두 병 사 들고 가 콜키지로 마셨다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "N05",
+          "supplemental_path": "profile-review-sources/N05-display-evidence.json",
+          "sha256": "a6e73d9b16f2443bf160d55de9f4b9fedfdc016397c5cd84684a9ea5390af377"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/N05-display-evidence.json",
+      "evidence_sha256": "a6e73d9b16f2443bf160d55de9f4b9fedfdc016397c5cd84684a9ea5390af377"
+    },
+    "N06": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "슬기",
+      "post_ids": [
+        "N06_P002"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "오래 찾던 명월관에서 한우 갈비탕으로 점심을 먹은 고객",
+        "signature": "값 차이가 적어 한우 갈비탕을 골랐다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "N06",
+          "supplemental_path": "profile-review-sources/N06-display-evidence.json",
+          "sha256": "aedba15247033d4171cb2942a23723ab9c1f5d2a01aefdc82780e3aaf13e4598"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/N06-display-evidence.json",
+      "evidence_sha256": "aedba15247033d4171cb2942a23723ab9c1f5d2a01aefdc82780e3aaf13e4598"
+    },
+    "N08": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "한호",
+      "post_ids": [
+        "N08_P041"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "아버지 칠순에 가족·친척 17명과 금룡에서 식사한 방문",
+        "signature": "전망 있는 방이면 대관료 5만 원은 더 냈다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "N08",
+          "supplemental_path": "profile-review-sources/N08-display-evidence.json",
+          "sha256": "c8740a7f352c2e08110802cc2c1aecdfb2024c5afa595b820e972c9578a6b2e5"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/N08-display-evidence.json",
+      "evidence_sha256": "c8740a7f352c2e08110802cc2c1aecdfb2024c5afa595b820e972c9578a6b2e5"
+    },
+    "N09": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "소연",
+      "post_ids": [
+        "N09_P010"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "가을 와인페어에서 친구들과 시음·공연을 즐긴 방문",
+        "signature": "회원권 들고 와인페어에 해마다 왔다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "N09",
+          "supplemental_path": "profile-review-sources/N09-display-evidence.json",
+          "sha256": "ebea7a51917b4c94bef69db0e407a25b5255fa2decb5df74d438ef39c612c6a5"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/N09-display-evidence.json",
+      "evidence_sha256": "ebea7a51917b4c94bef69db0e407a25b5255fa2decb5df74d438ef39c612c6a5"
+    },
+    "N20": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "슬기",
+      "post_ids": [
+        "N20_P024"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "남은 멤버십 숙박권으로 가족 생일에 비스타를 찾은 고객",
+        "signature": "할인과 운반을 생각해 케이크는 호텔에서 샀다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "N20",
+          "supplemental_path": "profile-review-sources/N20-display-evidence.json",
+          "sha256": "fea2157864ae04d2d2b1f6a3d35525d7d2486ace874b16ebb372e78e718e4a05"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/N20-display-evidence.json",
+      "evidence_sha256": "fea2157864ae04d2d2b1f6a3d35525d7d2486ace874b16ebb372e78e718e4a05"
+    },
+    "N24": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "한호",
+      "post_ids": [
+        "N24_P003"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "부모님과 비스타 발코니 객실에서 한강을 바라본 1박 방문",
+        "signature": "바우처는 1박을 줄여서라도 가장 비싼 방에 썼다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "N24",
+          "supplemental_path": "profile-review-sources/N24-display-evidence.json",
+          "sha256": "3de522166c2a2722939d7bc4d908086c578cba9572d58d38c09657684781e149"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/N24-display-evidence.json",
+      "evidence_sha256": "3de522166c2a2722939d7bc4d908086c578cba9572d58d38c09657684781e149"
+    },
+    "N25": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "소연",
+      "post_ids": [
+        "N25_P051"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도; 연도·방문 사건·예약/취소의 엔진 연결은 이번 변경에서 수정하지 않음",
+      "changes": {
+        "list_line": "가족 생일에 그랜드에서 수영과 피자 포장·조식을 즐긴 방문",
+        "signature": "챙겨 간 수모 덕에 따로 사지 않았다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "N25",
+          "supplemental_path": "profile-review-sources/N25-display-evidence.json",
+          "sha256": "1dca9e35e1ee09bd412a3061f4504ee16e5be71b0b68c5321a9a1650829bc209"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/N25-display-evidence.json",
+      "evidence_sha256": "1dca9e35e1ee09bd412a3061f4504ee16e5be71b0b68c5321a9a1650829bc209"
+    },
+    "N27": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "슬기",
+      "post_ids": [
+        "N27_P004"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "연인 생일에 그랜드에 묵으며 수영과 족욕을 즐긴 방문",
+        "signature": "추가금은 낼 생각이었지만 미루다 한강뷰를 놓쳤다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "N27",
+          "supplemental_path": "profile-review-sources/N27-display-evidence.json",
+          "sha256": "76b81a98a948dbebe26eb56def21dcd2de980e0a070807480e03d77078bdd273"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/N27-display-evidence.json",
+      "evidence_sha256": "76b81a98a948dbebe26eb56def21dcd2de980e0a070807480e03d77078bdd273"
+    },
+    "N32": {
+      "status": "SOURCE_RECONCILED_DISPLAY_ONLY",
+      "team_reviewer": "한호",
+      "post_ids": [
+        "N32_P003"
+      ],
+      "engine_changed": false,
+      "semantic_approval": false,
+      "thumbnail_approval": false,
+      "review_scope": "선정한 원문 사례의 표시 두 문장만 대조; 전체 의미·Fact·썸네일 승인 아님",
+      "hold_reason": "전체 고객 의미 승인·썸네일 승인 및 엔진 Fact 영향 검수 별도",
+      "changes": {
+        "list_line": "부부가 그랜드에서 3박하며 외부 식사와 피자힐을 이용한 방문",
+        "signature": "비싸도 맛있다는 피자힐은 도전해 봤다."
+      },
+      "source_anchors": [
+        {
+          "customer_id": "N32",
+          "supplemental_path": "profile-review-sources/N32-display-evidence.json",
+          "sha256": "0dd36c85cbc57f901b4f9850cae653ea5641dd0620a91edd5097ea61941a80a8"
+        }
+      ],
+      "fact_ids": [],
+      "evidence_file": "profile-review-sources/N32-display-evidence.json",
+      "evidence_sha256": "0dd36c85cbc57f901b4f9850cae653ea5641dd0620a91edd5097ea61941a80a8"
+    }
+  }
+}

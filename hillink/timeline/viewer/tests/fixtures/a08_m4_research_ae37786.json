@@ -1,0 +1,2870 @@
+{
+  "source_commit": "ae37786b0c3a6cbb0de6ef71f2b0758cc293d191",
+  "scope": "ACCEPTED_RESEARCH_REFERENCE_NOT_REGENERATED_FROM_PRODUCT",
+  "cases": {
+    "none": {
+      "source_sha256": "920e7f0241db276eb2682c9065adc714bc08ac329abc7d57752e5a27abe85e17",
+      "request": {
+        "personas": [
+          "A08"
+        ],
+        "duration": "stay_2",
+        "event_mode": "none",
+        "start_date": "2026-10-24",
+        "seed": 0
+      },
+      "paid_krw": 772000,
+      "room_assumption_krw": 774000,
+      "activities": [
+        {
+          "date": "2026-10-24",
+          "start": "14:30",
+          "end": "14:45",
+          "action_id": "arrive",
+          "venue_id": "HOTEL_GATE",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-24",
+          "start": "15:16",
+          "end": "15:36",
+          "action_id": "checkin",
+          "venue_id": "DOUGLAS_LOBBY",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-24",
+          "start": "15:39",
+          "end": "16:14",
+          "action_id": "unpack",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-24",
+          "start": "16:26",
+          "end": "17:26",
+          "action_id": "SKYARD",
+          "venue_id": "SKYARD",
+          "fraction": 0.0
+        },
+        {
+          "date": "2026-10-24",
+          "start": "17:40",
+          "end": "19:10",
+          "action_id": "PIZZA_HILL",
+          "venue_id": "PIZZA_HILL",
+          "fraction": 1.0
+        },
+        {
+          "date": "2026-10-24",
+          "start": "19:30",
+          "end": "20:30",
+          "action_id": "SKYARD_NIGHT",
+          "venue_id": "SKYARD",
+          "fraction": 0.0
+        },
+        {
+          "date": "2026-10-24",
+          "start": "20:42",
+          "end": "21:42",
+          "action_id": "ROOM_REST",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 0.0
+        },
+        {
+          "date": "2026-10-24",
+          "start": "21:50",
+          "end": "22:50",
+          "action_id": "luxbar",
+          "venue_id": "LUX_BAR",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-24",
+          "start": "22:58",
+          "end": "23:00",
+          "action_id": "sleep",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "08:30",
+          "end": "09:10",
+          "action_id": "wake",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "09:10",
+          "end": "10:10",
+          "action_id": "RS_BREAKFAST_KOREAN",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 1.0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "10:22",
+          "end": "11:07",
+          "action_id": "footbath",
+          "venue_id": "SKYARD",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "11:13",
+          "end": "11:58",
+          "action_id": "library",
+          "venue_id": "GRAND_LIBRARY",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "12:01",
+          "end": "12:46",
+          "action_id": "lunch_cafe",
+          "venue_id": "THE_PAVILION",
+          "fraction": 0.5
+        },
+        {
+          "date": "2026-10-25",
+          "start": "12:54",
+          "end": "13:54",
+          "action_id": "room_rest",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "14:02",
+          "end": "15:17",
+          "action_id": "pool",
+          "venue_id": "GRAND_POOL",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "15:25",
+          "end": "16:05",
+          "action_id": "garden_walk",
+          "venue_id": "AG_GARDEN",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "16:13",
+          "end": "16:58",
+          "action_id": "FOREST_WALK",
+          "venue_id": "FOREST_PARK",
+          "fraction": 0.0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "17:06",
+          "end": "17:51",
+          "action_id": "room_rest",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "17:51",
+          "end": "18:51",
+          "action_id": "ROOM_MEAL",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 1.0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "18:51",
+          "end": "19:51",
+          "action_id": "ROOM_REST",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 0.0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "20:03",
+          "end": "21:03",
+          "action_id": "SKYARD_NIGHT",
+          "venue_id": "SKYARD",
+          "fraction": 0.0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "21:15",
+          "end": "21:50",
+          "action_id": "night_walk",
+          "venue_id": "AG_GARDEN",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "21:53",
+          "end": "22:43",
+          "action_id": "room_bath",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "22:43",
+          "end": "23:00",
+          "action_id": "sleep",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-26",
+          "start": "08:30",
+          "end": "09:10",
+          "action_id": "wake",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-26",
+          "start": "09:10",
+          "end": "10:10",
+          "action_id": "RS_BREAKFAST_KOREAN",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 1.0
+        },
+        {
+          "date": "2026-10-26",
+          "start": "10:10",
+          "end": "10:30",
+          "action_id": "pack",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-26",
+          "start": "10:33",
+          "end": "10:53",
+          "action_id": "checkout",
+          "venue_id": "DOUGLAS_LOBBY",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-26",
+          "start": "11:05",
+          "end": "12:15",
+          "action_id": "theatre",
+          "venue_id": "THEATRE_OF_LIGHT",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-26",
+          "start": "12:20",
+          "end": "12:55",
+          "action_id": "lunch_bakery",
+          "venue_id": "LE_PASSAGE",
+          "fraction": 0.5
+        },
+        {
+          "date": "2026-10-26",
+          "start": "12:55",
+          "end": "13:55",
+          "action_id": "idle",
+          "venue_id": "LE_PASSAGE",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-26",
+          "start": "14:05",
+          "end": "14:20",
+          "action_id": "leave",
+          "venue_id": "HOTEL_GATE",
+          "fraction": 0
+        }
+      ],
+      "quantitative_decisions": [
+        {
+          "date": "2026-10-24",
+          "time": 974,
+          "selected": "SKYARD",
+          "candidates": [
+            {
+              "candidate_id": "SKYARD",
+              "base_score": 2.27,
+              "context_adjustment": 0.0,
+              "final_score": 2.27,
+              "final_with_lookahead": 8.8793,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "WINE_FAIR",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "PIZZA_HILL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "THE_BUFFET",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "MYONGWOLGWAN",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ONDAL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "GEUMRYONG",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ROOM_MEAL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SIMPLE_MEAL_VIEW",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD_NIGHT",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "POOL",
+              "base_score": 0.828,
+              "context_adjustment": 0.0,
+              "final_score": 0.828,
+              "final_with_lookahead": 7.922,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "SAUNA",
+              "base_score": 0.692,
+              "context_adjustment": 0.0,
+              "final_score": 0.692,
+              "final_with_lookahead": 7.654,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "FOREST_WALK",
+              "base_score": 1.69,
+              "context_adjustment": 0.0,
+              "final_score": 1.69,
+              "final_with_lookahead": 8.586,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "ROOM_REST",
+              "base_score": 1.12,
+              "context_adjustment": 0.0,
+              "final_score": 1.12,
+              "final_with_lookahead": 8.082,
+              "world_allowed": true
+            }
+          ]
+        },
+        {
+          "date": "2026-10-24",
+          "time": 1046,
+          "selected": "PIZZA_HILL",
+          "candidates": [
+            {
+              "candidate_id": "PIZZA_HILL",
+              "base_score": 4.2873,
+              "context_adjustment": 0.0,
+              "final_score": 4.2873,
+              "final_with_lookahead": 8.4013,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "WINE_FAIR",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "THE_BUFFET",
+              "base_score": 0.1863,
+              "context_adjustment": 0.0,
+              "final_score": 0.1863,
+              "final_with_lookahead": 4.5603,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "MYONGWOLGWAN",
+              "base_score": 2.5773,
+              "context_adjustment": 0.0,
+              "final_score": 2.5773,
+              "final_with_lookahead": 6.6913,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "ONDAL",
+              "base_score": 2.5253,
+              "context_adjustment": 0.0,
+              "final_score": 2.5253,
+              "final_with_lookahead": 6.6393,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "GEUMRYONG",
+              "base_score": 1.3623,
+              "context_adjustment": 0.0,
+              "final_score": 1.3623,
+              "final_with_lookahead": 5.7363,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "ROOM_MEAL",
+              "base_score": 4.2573,
+              "context_adjustment": 0.0,
+              "final_score": 4.2573,
+              "final_with_lookahead": 8.1513,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "SIMPLE_MEAL_VIEW",
+              "base_score": 3.5733,
+              "context_adjustment": 0.0,
+              "final_score": 3.5733,
+              "final_with_lookahead": 7.4673,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "SKYARD",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD_NIGHT",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "POOL",
+              "base_score": 0.828,
+              "context_adjustment": 0.0,
+              "final_score": 0.828,
+              "final_with_lookahead": 7.898,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "SAUNA",
+              "base_score": 0.692,
+              "context_adjustment": 0.0,
+              "final_score": 0.692,
+              "final_with_lookahead": 7.6033,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "FOREST_WALK",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ROOM_REST",
+              "base_score": 1.12,
+              "context_adjustment": 0.0,
+              "final_score": 1.12,
+              "final_with_lookahead": 8.0313,
+              "world_allowed": true
+            }
+          ]
+        },
+        {
+          "date": "2026-10-24",
+          "time": 1150,
+          "selected": "SKYARD_NIGHT",
+          "candidates": [
+            {
+              "candidate_id": "SKYARD_NIGHT",
+              "base_score": 2.1367,
+              "context_adjustment": 0.0,
+              "final_score": 2.1367,
+              "final_with_lookahead": 5.2567,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "WINE_FAIR",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "POOL",
+              "base_score": 0.828,
+              "context_adjustment": 0.0,
+              "final_score": 0.828,
+              "final_with_lookahead": 4.998,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "SAUNA",
+              "base_score": 0.692,
+              "context_adjustment": 0.0,
+              "final_score": 0.692,
+              "final_with_lookahead": 4.682,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "FOREST_WALK",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ROOM_REST",
+              "base_score": 1.12,
+              "context_adjustment": 0.0,
+              "final_score": 1.12,
+              "final_with_lookahead": 5.11,
+              "world_allowed": true
+            }
+          ]
+        },
+        {
+          "date": "2026-10-24",
+          "time": 1230,
+          "selected": "ROOM_REST",
+          "candidates": [
+            {
+              "candidate_id": "ROOM_REST",
+              "base_score": 1.12,
+              "context_adjustment": 0.0,
+              "final_score": 1.12,
+              "final_with_lookahead": 4.08,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "WINE_FAIR",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD_NIGHT",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "POOL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SAUNA",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "FOREST_WALK",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-10-24",
+          "time": 1302,
+          "selected": "ROOM_REST",
+          "candidates": [
+            {
+              "candidate_id": "ROOM_REST",
+              "base_score": 1.12,
+              "context_adjustment": 0.0,
+              "final_score": 1.12,
+              "final_with_lookahead": 2.48,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "WINE_FAIR",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "THE_BUFFET",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "MYONGWOLGWAN",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ONDAL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "GEUMRYONG",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ROOM_MEAL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SIMPLE_MEAL_VIEW",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD_NIGHT",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "POOL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SAUNA",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "FOREST_WALK",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-10-25",
+          "time": 965,
+          "selected": "FOREST_WALK",
+          "candidates": [
+            {
+              "candidate_id": "FOREST_WALK",
+              "base_score": 1.69,
+              "context_adjustment": 0.0,
+              "final_score": 1.69,
+              "final_with_lookahead": 7.526,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "WINE_FAIR",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "PIZZA_HILL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "THE_BUFFET",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "MYONGWOLGWAN",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ONDAL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "GEUMRYONG",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ROOM_MEAL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SIMPLE_MEAL_VIEW",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD_NIGHT",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "POOL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SAUNA",
+              "base_score": 0.692,
+              "context_adjustment": 0.0,
+              "final_score": 0.692,
+              "final_with_lookahead": 6.99,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "ROOM_REST",
+              "base_score": 1.12,
+              "context_adjustment": 0.0,
+              "final_score": 1.12,
+              "final_with_lookahead": 7.418,
+              "world_allowed": true
+            }
+          ]
+        },
+        {
+          "date": "2026-10-25",
+          "time": 1071,
+          "selected": "ROOM_MEAL",
+          "candidates": [
+            {
+              "candidate_id": "ROOM_MEAL",
+              "base_score": 4.284,
+              "context_adjustment": 0.0,
+              "final_score": 4.284,
+              "final_with_lookahead": 8.154,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "WINE_FAIR",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "PIZZA_HILL",
+              "base_score": 4.314,
+              "context_adjustment": -1.954,
+              "final_score": 2.36,
+              "final_with_lookahead": 6.506,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "THE_BUFFET",
+              "base_score": 0.213,
+              "context_adjustment": 0.0,
+              "final_score": 0.213,
+              "final_with_lookahead": 4.563,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "MYONGWOLGWAN",
+              "base_score": 2.604,
+              "context_adjustment": 0.0,
+              "final_score": 2.604,
+              "final_with_lookahead": 6.75,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "ONDAL",
+              "base_score": 2.552,
+              "context_adjustment": 0.0,
+              "final_score": 2.552,
+              "final_with_lookahead": 6.698,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "GEUMRYONG",
+              "base_score": 1.389,
+              "context_adjustment": 0.0,
+              "final_score": 1.389,
+              "final_with_lookahead": 5.739,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "SIMPLE_MEAL_VIEW",
+              "base_score": 3.6,
+              "context_adjustment": 0.0,
+              "final_score": 3.6,
+              "final_with_lookahead": 7.47,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "SKYARD",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD_NIGHT",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "POOL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SAUNA",
+              "base_score": 0.692,
+              "context_adjustment": 0.0,
+              "final_score": 0.692,
+              "final_with_lookahead": 7.63,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "FOREST_WALK",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ROOM_REST",
+              "base_score": 1.12,
+              "context_adjustment": 0.0,
+              "final_score": 1.12,
+              "final_with_lookahead": 8.058,
+              "world_allowed": true
+            }
+          ]
+        },
+        {
+          "date": "2026-10-25",
+          "time": 1131,
+          "selected": "ROOM_REST",
+          "candidates": [
+            {
+              "candidate_id": "ROOM_REST",
+              "base_score": 1.12,
+              "context_adjustment": 0.0,
+              "final_score": 1.12,
+              "final_with_lookahead": 5.11,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "WINE_FAIR",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD_NIGHT",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "POOL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SAUNA",
+              "base_score": 0.692,
+              "context_adjustment": 0.0,
+              "final_score": 0.692,
+              "final_with_lookahead": 4.682,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "FOREST_WALK",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-10-25",
+          "time": 1191,
+          "selected": "SKYARD_NIGHT",
+          "candidates": [
+            {
+              "candidate_id": "SKYARD_NIGHT",
+              "base_score": 2.27,
+              "context_adjustment": 0.0,
+              "final_score": 2.27,
+              "final_with_lookahead": 5.23,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "WINE_FAIR",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "POOL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SAUNA",
+              "base_score": 0.692,
+              "context_adjustment": 0.0,
+              "final_score": 0.692,
+              "final_with_lookahead": 4.682,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "FOREST_WALK",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ROOM_REST",
+              "base_score": 1.12,
+              "context_adjustment": 0.0,
+              "final_score": 1.12,
+              "final_with_lookahead": 5.11,
+              "world_allowed": true
+            }
+          ]
+        },
+        {
+          "date": "2026-10-25",
+          "time": 1263,
+          "selected": "ROOM_REST",
+          "candidates": [
+            {
+              "candidate_id": "ROOM_REST",
+              "base_score": 1.12,
+              "context_adjustment": 0.0,
+              "final_score": 1.12,
+              "final_with_lookahead": 2.48,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "WINE_FAIR",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "PIZZA_HILL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "THE_BUFFET",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "MYONGWOLGWAN",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ONDAL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "GEUMRYONG",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SIMPLE_MEAL_VIEW",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD_NIGHT",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "POOL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SAUNA",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "FOREST_WALK",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            }
+          ]
+        }
+      ],
+      "transactions": [
+        {
+          "visit_day": 1,
+          "time": "16:26",
+          "venue_id": "SKYARD",
+          "product": "스카이야드 족욕(낮)",
+          "quantity": 1,
+          "unit_price_krw": 19000,
+          "paid_krw": 19000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE"
+        },
+        {
+          "visit_day": 1,
+          "time": "17:40",
+          "venue_id": "PIZZA_HILL",
+          "product": "피자힐 저녁",
+          "quantity": 2,
+          "unit_price_krw": 92000,
+          "paid_krw": 184000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE"
+        },
+        {
+          "visit_day": 1,
+          "time": "19:30",
+          "venue_id": "SKYARD",
+          "product": "스카이야드 족욕 · 야경(밤)",
+          "quantity": 1,
+          "unit_price_krw": 19000,
+          "paid_krw": 19000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE"
+        },
+        {
+          "visit_day": 1,
+          "time": "21:50",
+          "venue_id": "LUX_BAR",
+          "product": "럭스바에서 한잔",
+          "quantity": 2,
+          "unit_price_krw": 29000,
+          "paid_krw": 58000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE"
+        },
+        {
+          "visit_day": 1,
+          "time": "",
+          "venue_id": "DOUGLAS_ROOM",
+          "product": "객실 1박 · Rest Together · 2인",
+          "quantity": 1,
+          "unit_price_krw": 387000,
+          "paid_krw": 0,
+          "assumption_addition_krw": 387000,
+          "amount_status": "ASSUMED"
+        },
+        {
+          "visit_day": 2,
+          "time": "09:10",
+          "venue_id": "DOUGLAS_ROOM",
+          "product": "룸서비스 한국식 조식",
+          "quantity": 2,
+          "unit_price_krw": 47000,
+          "paid_krw": 94000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE"
+        },
+        {
+          "visit_day": 2,
+          "time": "10:22",
+          "venue_id": "SKYARD",
+          "product": "스카이야드 족욕",
+          "quantity": 1,
+          "unit_price_krw": 19000,
+          "paid_krw": 19000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE"
+        },
+        {
+          "visit_day": 2,
+          "time": "11:13",
+          "venue_id": "GRAND_LIBRARY",
+          "product": "라이브러리에서 책 · 음악",
+          "quantity": 2,
+          "unit_price_krw": 0,
+          "paid_krw": 0,
+          "assumption_addition_krw": 0,
+          "amount_status": "NO_CHARGE"
+        },
+        {
+          "visit_day": 2,
+          "time": "12:01",
+          "venue_id": "THE_PAVILION",
+          "product": "카페에서 가볍게 점심",
+          "quantity": 2,
+          "unit_price_krw": 49000,
+          "paid_krw": 98000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE"
+        },
+        {
+          "visit_day": 2,
+          "time": "14:02",
+          "venue_id": "GRAND_POOL",
+          "product": "수영장 이용",
+          "quantity": 2,
+          "unit_price_krw": 0,
+          "paid_krw": 0,
+          "assumption_addition_krw": 0,
+          "amount_status": "NO_CHARGE"
+        },
+        {
+          "visit_day": 2,
+          "time": "16:13",
+          "venue_id": "FOREST_PARK",
+          "product": "포레스트 파크 산책",
+          "quantity": 2,
+          "unit_price_krw": 0,
+          "paid_krw": 0,
+          "assumption_addition_krw": 0,
+          "amount_status": "NO_CHARGE"
+        },
+        {
+          "visit_day": 2,
+          "time": "17:51",
+          "venue_id": "DOUGLAS_ROOM",
+          "product": "객실에서 식사(룸서비스 · 배달)",
+          "quantity": 2,
+          "unit_price_krw": 43000,
+          "paid_krw": 86000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE"
+        },
+        {
+          "visit_day": 2,
+          "time": "20:03",
+          "venue_id": "SKYARD",
+          "product": "스카이야드 족욕 · 야경(밤)",
+          "quantity": 1,
+          "unit_price_krw": 19000,
+          "paid_krw": 19000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE"
+        },
+        {
+          "visit_day": 2,
+          "time": "",
+          "venue_id": "DOUGLAS_ROOM",
+          "product": "객실 1박 · Rest Together · 2인",
+          "quantity": 1,
+          "unit_price_krw": 387000,
+          "paid_krw": 0,
+          "assumption_addition_krw": 387000,
+          "amount_status": "ASSUMED"
+        },
+        {
+          "visit_day": 3,
+          "time": "09:10",
+          "venue_id": "DOUGLAS_ROOM",
+          "product": "룸서비스 한국식 조식",
+          "quantity": 2,
+          "unit_price_krw": 47000,
+          "paid_krw": 94000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE"
+        },
+        {
+          "visit_day": 3,
+          "time": "11:05",
+          "venue_id": "THEATRE_OF_LIGHT",
+          "product": "빛의 시어터 관람",
+          "quantity": 2,
+          "unit_price_krw": 29000,
+          "paid_krw": 58000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE"
+        },
+        {
+          "visit_day": 3,
+          "time": "12:20",
+          "venue_id": "LE_PASSAGE",
+          "product": "르 파사쥬 빵 · 샌드위치로 점심",
+          "quantity": 2,
+          "unit_price_krw": 12000,
+          "paid_krw": 24000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE"
+        }
+      ]
+    },
+    "wine": {
+      "source_sha256": "6288458003989eb22a60961cfa18a7d265d4d39328dbc1745654b5ac9a1875d2",
+      "request": {
+        "personas": [
+          "A08"
+        ],
+        "duration": "stay_2",
+        "event_mode": "wine",
+        "start_date": "2026-10-24",
+        "seed": 0
+      },
+      "paid_krw": 753000,
+      "room_assumption_krw": 774000,
+      "activities": [
+        {
+          "date": "2026-10-24",
+          "start": "14:30",
+          "end": "14:45",
+          "action_id": "arrive",
+          "venue_id": "HOTEL_GATE",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-24",
+          "start": "15:16",
+          "end": "15:36",
+          "action_id": "checkin",
+          "venue_id": "DOUGLAS_LOBBY",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-24",
+          "start": "15:39",
+          "end": "16:14",
+          "action_id": "unpack",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-24",
+          "start": "16:26",
+          "end": "17:26",
+          "action_id": "SKYARD",
+          "venue_id": "SKYARD",
+          "fraction": 0.0
+        },
+        {
+          "date": "2026-10-24",
+          "start": "17:40",
+          "end": "17:55",
+          "action_id": "WINE_FAIR:check",
+          "venue_id": "FOREST_PARK",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-24",
+          "start": "17:55",
+          "end": "19:55",
+          "action_id": "WINE_FAIR",
+          "venue_id": "FOREST_PARK",
+          "fraction": 0.15
+        },
+        {
+          "date": "2026-10-24",
+          "start": "20:03",
+          "end": "21:03",
+          "action_id": "ROOM_MEAL",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 1.0
+        },
+        {
+          "date": "2026-10-24",
+          "start": "21:03",
+          "end": "21:48",
+          "action_id": "room_rest",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-24",
+          "start": "21:48",
+          "end": "22:03",
+          "action_id": "sleep",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "08:30",
+          "end": "09:10",
+          "action_id": "wake",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "09:10",
+          "end": "10:10",
+          "action_id": "RS_BREAKFAST_KOREAN",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 1.0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "10:22",
+          "end": "11:07",
+          "action_id": "footbath",
+          "venue_id": "SKYARD",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "11:13",
+          "end": "11:58",
+          "action_id": "library",
+          "venue_id": "GRAND_LIBRARY",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "12:01",
+          "end": "12:46",
+          "action_id": "lunch_cafe",
+          "venue_id": "THE_PAVILION",
+          "fraction": 0.5
+        },
+        {
+          "date": "2026-10-25",
+          "start": "12:54",
+          "end": "13:44",
+          "action_id": "room_bath",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "13:47",
+          "end": "14:27",
+          "action_id": "garden_walk",
+          "venue_id": "AG_GARDEN",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "14:35",
+          "end": "15:50",
+          "action_id": "pool",
+          "venue_id": "GRAND_POOL",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "15:58",
+          "end": "16:58",
+          "action_id": "ROOM_REST",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 0.0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "17:30",
+          "end": "19:00",
+          "action_id": "PIZZA_HILL",
+          "venue_id": "PIZZA_HILL",
+          "fraction": 1.0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "19:30",
+          "end": "20:30",
+          "action_id": "SKYARD_NIGHT",
+          "venue_id": "SKYARD",
+          "fraction": 0.0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "20:36",
+          "end": "21:36",
+          "action_id": "luxbar",
+          "venue_id": "LUX_BAR",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "21:44",
+          "end": "22:44",
+          "action_id": "ROOM_REST",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 0.0
+        },
+        {
+          "date": "2026-10-25",
+          "start": "22:44",
+          "end": "23:00",
+          "action_id": "sleep",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-26",
+          "start": "08:30",
+          "end": "09:10",
+          "action_id": "wake",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-26",
+          "start": "09:10",
+          "end": "10:10",
+          "action_id": "RS_BREAKFAST_KOREAN",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 1.0
+        },
+        {
+          "date": "2026-10-26",
+          "start": "10:10",
+          "end": "10:30",
+          "action_id": "pack",
+          "venue_id": "DOUGLAS_ROOM",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-26",
+          "start": "10:33",
+          "end": "10:53",
+          "action_id": "checkout",
+          "venue_id": "DOUGLAS_LOBBY",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-26",
+          "start": "11:05",
+          "end": "12:15",
+          "action_id": "theatre",
+          "venue_id": "THEATRE_OF_LIGHT",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-26",
+          "start": "12:20",
+          "end": "12:55",
+          "action_id": "lunch_bakery",
+          "venue_id": "LE_PASSAGE",
+          "fraction": 0.5
+        },
+        {
+          "date": "2026-10-26",
+          "start": "12:55",
+          "end": "13:55",
+          "action_id": "idle",
+          "venue_id": "LE_PASSAGE",
+          "fraction": 0
+        },
+        {
+          "date": "2026-10-26",
+          "start": "14:05",
+          "end": "14:20",
+          "action_id": "leave",
+          "venue_id": "HOTEL_GATE",
+          "fraction": 0
+        }
+      ],
+      "quantitative_decisions": [
+        {
+          "date": "2026-10-24",
+          "time": 974,
+          "selected": "SKYARD",
+          "candidates": [
+            {
+              "candidate_id": "SKYARD",
+              "base_score": 2.27,
+              "context_adjustment": 0.0,
+              "final_score": 2.27,
+              "final_with_lookahead": 8.8793,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "WINE_FAIR",
+              "base_score": 1.925,
+              "context_adjustment": -0.45,
+              "final_score": 1.475,
+              "final_with_lookahead": 8.5703,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "PIZZA_HILL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "THE_BUFFET",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "MYONGWOLGWAN",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ONDAL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "GEUMRYONG",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ROOM_MEAL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SIMPLE_MEAL_VIEW",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD_NIGHT",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "POOL",
+              "base_score": 0.828,
+              "context_adjustment": 0.0,
+              "final_score": 0.828,
+              "final_with_lookahead": 7.922,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "SAUNA",
+              "base_score": 0.692,
+              "context_adjustment": 0.0,
+              "final_score": 0.692,
+              "final_with_lookahead": 7.654,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "FOREST_WALK",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ROOM_REST",
+              "base_score": 1.12,
+              "context_adjustment": 0.0,
+              "final_score": 1.12,
+              "final_with_lookahead": 8.082,
+              "world_allowed": true
+            }
+          ]
+        },
+        {
+          "date": "2026-10-24",
+          "time": 1046,
+          "selected": "WINE_FAIR",
+          "candidates": [
+            {
+              "candidate_id": "WINE_FAIR",
+              "base_score": 1.925,
+              "context_adjustment": -0.45,
+              "final_score": 1.475,
+              "final_with_lookahead": 8.677,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "PIZZA_HILL",
+              "base_score": 4.2873,
+              "context_adjustment": 0.0,
+              "final_score": 4.2873,
+              "final_with_lookahead": 8.4013,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "THE_BUFFET",
+              "base_score": 0.1863,
+              "context_adjustment": 0.0,
+              "final_score": 0.1863,
+              "final_with_lookahead": 4.5603,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "MYONGWOLGWAN",
+              "base_score": 2.5773,
+              "context_adjustment": 0.0,
+              "final_score": 2.5773,
+              "final_with_lookahead": 6.6913,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "ONDAL",
+              "base_score": 2.5253,
+              "context_adjustment": 0.0,
+              "final_score": 2.5253,
+              "final_with_lookahead": 6.6393,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "GEUMRYONG",
+              "base_score": 1.3623,
+              "context_adjustment": 0.0,
+              "final_score": 1.3623,
+              "final_with_lookahead": 5.7363,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "ROOM_MEAL",
+              "base_score": 4.2573,
+              "context_adjustment": 0.0,
+              "final_score": 4.2573,
+              "final_with_lookahead": 8.1513,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "SIMPLE_MEAL_VIEW",
+              "base_score": 3.5733,
+              "context_adjustment": 0.0,
+              "final_score": 3.5733,
+              "final_with_lookahead": 7.4673,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "SKYARD",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD_NIGHT",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "POOL",
+              "base_score": 0.828,
+              "context_adjustment": 0.0,
+              "final_score": 0.828,
+              "final_with_lookahead": 7.898,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "SAUNA",
+              "base_score": 0.692,
+              "context_adjustment": 0.0,
+              "final_score": 0.692,
+              "final_with_lookahead": 7.6033,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "FOREST_WALK",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ROOM_REST",
+              "base_score": 1.12,
+              "context_adjustment": 0.0,
+              "final_score": 1.12,
+              "final_with_lookahead": 8.0313,
+              "world_allowed": true
+            }
+          ]
+        },
+        {
+          "date": "2026-10-24",
+          "time": 1075,
+          "selected": "WINE_FAIR",
+          "candidates": [
+            {
+              "candidate_id": "WINE_FAIR",
+              "base_score": 1.925,
+              "context_adjustment": -0.45,
+              "final_score": 1.475,
+              "final_with_lookahead": 8.677,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "PIZZA_HILL",
+              "base_score": 4.314,
+              "context_adjustment": 0.0,
+              "final_score": 4.314,
+              "final_with_lookahead": 8.4707,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "THE_BUFFET",
+              "base_score": 0.213,
+              "context_adjustment": 0.0,
+              "final_score": 0.213,
+              "final_with_lookahead": 4.563,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "MYONGWOLGWAN",
+              "base_score": 2.604,
+              "context_adjustment": 0.0,
+              "final_score": 2.604,
+              "final_with_lookahead": 6.7607,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "ONDAL",
+              "base_score": 2.552,
+              "context_adjustment": 0.0,
+              "final_score": 2.552,
+              "final_with_lookahead": 6.7087,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "GEUMRYONG",
+              "base_score": 1.389,
+              "context_adjustment": 0.0,
+              "final_score": 1.389,
+              "final_with_lookahead": 5.739,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "ROOM_MEAL",
+              "base_score": 4.284,
+              "context_adjustment": 0.0,
+              "final_score": 4.284,
+              "final_with_lookahead": 8.154,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "SIMPLE_MEAL_VIEW",
+              "base_score": 3.6,
+              "context_adjustment": 0.0,
+              "final_score": 3.6,
+              "final_with_lookahead": 7.47,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "SKYARD",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD_NIGHT",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "POOL",
+              "base_score": 0.828,
+              "context_adjustment": 0.0,
+              "final_score": 0.828,
+              "final_with_lookahead": 7.898,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "SAUNA",
+              "base_score": 0.692,
+              "context_adjustment": 0.0,
+              "final_score": 0.692,
+              "final_with_lookahead": 7.63,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "FOREST_WALK",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ROOM_REST",
+              "base_score": 1.12,
+              "context_adjustment": 0.0,
+              "final_score": 1.12,
+              "final_with_lookahead": 8.058,
+              "world_allowed": true
+            }
+          ]
+        },
+        {
+          "date": "2026-10-24",
+          "time": 1195,
+          "selected": "ROOM_MEAL",
+          "candidates": [
+            {
+              "candidate_id": "ROOM_MEAL",
+              "base_score": 4.284,
+              "context_adjustment": 0.0,
+              "final_score": 4.284,
+              "final_with_lookahead": 8.274,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "WINE_FAIR",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "PIZZA_HILL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "THE_BUFFET",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "MYONGWOLGWAN",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ONDAL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "GEUMRYONG",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SIMPLE_MEAL_VIEW",
+              "base_score": 3.6,
+              "context_adjustment": 0.0,
+              "final_score": 3.6,
+              "final_with_lookahead": 7.59,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "SKYARD",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD_NIGHT",
+              "base_score": 0.77,
+              "context_adjustment": 0.0,
+              "final_score": 0.77,
+              "final_with_lookahead": 6.798,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "POOL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SAUNA",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "FOREST_WALK",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ROOM_REST",
+              "base_score": -0.38,
+              "context_adjustment": 0.0,
+              "final_score": -0.38,
+              "final_with_lookahead": 5.648,
+              "world_allowed": true
+            }
+          ]
+        },
+        {
+          "date": "2026-10-25",
+          "time": 950,
+          "selected": "ROOM_REST",
+          "candidates": [
+            {
+              "candidate_id": "ROOM_REST",
+              "base_score": 1.12,
+              "context_adjustment": 0.0,
+              "final_score": 1.12,
+              "final_with_lookahead": 7.6173,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "WINE_FAIR",
+              "base_score": 0.725,
+              "context_adjustment": -0.45,
+              "final_score": 0.275,
+              "final_with_lookahead": 7.2123,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "PIZZA_HILL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "THE_BUFFET",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "MYONGWOLGWAN",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ONDAL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "GEUMRYONG",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ROOM_MEAL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SIMPLE_MEAL_VIEW",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD_NIGHT",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "POOL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SAUNA",
+              "base_score": 0.692,
+              "context_adjustment": 0.0,
+              "final_score": 0.692,
+              "final_with_lookahead": 7.1893,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "FOREST_WALK",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-10-25",
+          "time": 1018,
+          "selected": "PIZZA_HILL",
+          "candidates": [
+            {
+              "candidate_id": "PIZZA_HILL",
+              "base_score": 4.1007,
+              "context_adjustment": 0.0,
+              "final_score": 4.1007,
+              "final_with_lookahead": 8.3827,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "WINE_FAIR",
+              "base_score": 0.725,
+              "context_adjustment": -0.45,
+              "final_score": 0.275,
+              "final_with_lookahead": 7.477,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "THE_BUFFET",
+              "base_score": -0.0003,
+              "context_adjustment": 0.0,
+              "final_score": -0.0003,
+              "final_with_lookahead": 4.5417,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "MYONGWOLGWAN",
+              "base_score": 2.3907,
+              "context_adjustment": 0.0,
+              "final_score": 2.3907,
+              "final_with_lookahead": 6.6727,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "ONDAL",
+              "base_score": 2.3387,
+              "context_adjustment": 0.0,
+              "final_score": 2.3387,
+              "final_with_lookahead": 6.6207,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "GEUMRYONG",
+              "base_score": 1.1757,
+              "context_adjustment": 0.0,
+              "final_score": 1.1757,
+              "final_with_lookahead": 5.7177,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "ROOM_MEAL",
+              "base_score": 4.0707,
+              "context_adjustment": 0.0,
+              "final_score": 4.0707,
+              "final_with_lookahead": 8.1327,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "SIMPLE_MEAL_VIEW",
+              "base_score": 3.3867,
+              "context_adjustment": 0.0,
+              "final_score": 3.3867,
+              "final_with_lookahead": 7.4487,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "SKYARD",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD_NIGHT",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "POOL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SAUNA",
+              "base_score": 0.692,
+              "context_adjustment": 0.0,
+              "final_score": 0.692,
+              "final_with_lookahead": 7.5627,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "FOREST_WALK",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ROOM_REST",
+              "base_score": 1.12,
+              "context_adjustment": 0.0,
+              "final_score": 1.12,
+              "final_with_lookahead": 7.9907,
+              "world_allowed": true
+            }
+          ]
+        },
+        {
+          "date": "2026-10-25",
+          "time": 1140,
+          "selected": "SKYARD_NIGHT",
+          "candidates": [
+            {
+              "candidate_id": "SKYARD_NIGHT",
+              "base_score": 2.07,
+              "context_adjustment": 0.0,
+              "final_score": 2.07,
+              "final_with_lookahead": 5.27,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "WINE_FAIR",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "POOL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SAUNA",
+              "base_score": 0.692,
+              "context_adjustment": 0.0,
+              "final_score": 0.692,
+              "final_with_lookahead": 4.682,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "FOREST_WALK",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ROOM_REST",
+              "base_score": 1.12,
+              "context_adjustment": 0.0,
+              "final_score": 1.12,
+              "final_with_lookahead": 5.11,
+              "world_allowed": true
+            }
+          ]
+        },
+        {
+          "date": "2026-10-25",
+          "time": 1230,
+          "selected": "ROOM_REST",
+          "candidates": [
+            {
+              "candidate_id": "ROOM_REST",
+              "base_score": 1.12,
+              "context_adjustment": 0.0,
+              "final_score": 1.12,
+              "final_with_lookahead": 4.08,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "WINE_FAIR",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "THE_BUFFET",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "MYONGWOLGWAN",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ONDAL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "GEUMRYONG",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ROOM_MEAL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SIMPLE_MEAL_VIEW",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD_NIGHT",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "POOL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SAUNA",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "FOREST_WALK",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-10-25",
+          "time": 1296,
+          "selected": "ROOM_REST",
+          "candidates": [
+            {
+              "candidate_id": "ROOM_REST",
+              "base_score": 1.12,
+              "context_adjustment": 0.0,
+              "final_score": 1.12,
+              "final_with_lookahead": 2.48,
+              "world_allowed": true
+            },
+            {
+              "candidate_id": "WINE_FAIR",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "THE_BUFFET",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "MYONGWOLGWAN",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ONDAL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "GEUMRYONG",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "ROOM_MEAL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SIMPLE_MEAL_VIEW",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SKYARD_NIGHT",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "POOL",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "SAUNA",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            },
+            {
+              "candidate_id": "FOREST_WALK",
+              "base_score": null,
+              "context_adjustment": 0,
+              "final_score": null,
+              "final_with_lookahead": null,
+              "world_allowed": false
+            }
+          ]
+        }
+      ],
+      "transactions": [
+        {
+          "visit_day": 1,
+          "time": "16:26",
+          "venue_id": "SKYARD",
+          "product": "스카이야드 족욕(낮)",
+          "quantity": 1,
+          "unit_price_krw": 19000,
+          "paid_krw": 19000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE"
+        },
+        {
+          "visit_day": 1,
+          "time": "17:55",
+          "venue_id": "FOREST_PARK",
+          "product": "와인페어(포레스트 파크)",
+          "quantity": 1,
+          "unit_price_krw": 0,
+          "paid_krw": 0,
+          "assumption_addition_krw": 0,
+          "amount_status": "NO_CHARGE"
+        },
+        {
+          "visit_day": 1,
+          "time": "20:03",
+          "venue_id": "DOUGLAS_ROOM",
+          "product": "객실에서 식사(룸서비스 · 배달)",
+          "quantity": 2,
+          "unit_price_krw": 43000,
+          "paid_krw": 86000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE"
+        },
+        {
+          "visit_day": 1,
+          "time": "",
+          "venue_id": "DOUGLAS_ROOM",
+          "product": "객실 1박 · Rest Together · 2인",
+          "quantity": 1,
+          "unit_price_krw": 387000,
+          "paid_krw": 0,
+          "assumption_addition_krw": 387000,
+          "amount_status": "ASSUMED"
+        },
+        {
+          "visit_day": 2,
+          "time": "09:10",
+          "venue_id": "DOUGLAS_ROOM",
+          "product": "룸서비스 한국식 조식",
+          "quantity": 2,
+          "unit_price_krw": 47000,
+          "paid_krw": 94000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE"
+        },
+        {
+          "visit_day": 2,
+          "time": "10:22",
+          "venue_id": "SKYARD",
+          "product": "스카이야드 족욕",
+          "quantity": 1,
+          "unit_price_krw": 19000,
+          "paid_krw": 19000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE"
+        },
+        {
+          "visit_day": 2,
+          "time": "11:13",
+          "venue_id": "GRAND_LIBRARY",
+          "product": "라이브러리에서 책 · 음악",
+          "quantity": 2,
+          "unit_price_krw": 0,
+          "paid_krw": 0,
+          "assumption_addition_krw": 0,
+          "amount_status": "NO_CHARGE"
+        },
+        {
+          "visit_day": 2,
+          "time": "12:01",
+          "venue_id": "THE_PAVILION",
+          "product": "카페에서 가볍게 점심",
+          "quantity": 2,
+          "unit_price_krw": 49000,
+          "paid_krw": 98000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE"
+        },
+        {
+          "visit_day": 2,
+          "time": "14:35",
+          "venue_id": "GRAND_POOL",
+          "product": "수영장 이용",
+          "quantity": 2,
+          "unit_price_krw": 0,
+          "paid_krw": 0,
+          "assumption_addition_krw": 0,
+          "amount_status": "NO_CHARGE"
+        },
+        {
+          "visit_day": 2,
+          "time": "17:30",
+          "venue_id": "PIZZA_HILL",
+          "product": "피자힐 저녁",
+          "quantity": 2,
+          "unit_price_krw": 92000,
+          "paid_krw": 184000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE"
+        },
+        {
+          "visit_day": 2,
+          "time": "19:30",
+          "venue_id": "SKYARD",
+          "product": "스카이야드 족욕 · 야경(밤)",
+          "quantity": 1,
+          "unit_price_krw": 19000,
+          "paid_krw": 19000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE"
+        },
+        {
+          "visit_day": 2,
+          "time": "20:36",
+          "venue_id": "LUX_BAR",
+          "product": "럭스바에서 한잔",
+          "quantity": 2,
+          "unit_price_krw": 29000,
+          "paid_krw": 58000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE"
+        },
+        {
+          "visit_day": 2,
+          "time": "",
+          "venue_id": "DOUGLAS_ROOM",
+          "product": "객실 1박 · Rest Together · 2인",
+          "quantity": 1,
+          "unit_price_krw": 387000,
+          "paid_krw": 0,
+          "assumption_addition_krw": 387000,
+          "amount_status": "ASSUMED"
+        },
+        {
+          "visit_day": 3,
+          "time": "09:10",
+          "venue_id": "DOUGLAS_ROOM",
+          "product": "룸서비스 한국식 조식",
+          "quantity": 2,
+          "unit_price_krw": 47000,
+          "paid_krw": 94000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE"
+        },
+        {
+          "visit_day": 3,
+          "time": "11:05",
+          "venue_id": "THEATRE_OF_LIGHT",
+          "product": "빛의 시어터 관람",
+          "quantity": 2,
+          "unit_price_krw": 29000,
+          "paid_krw": 58000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE"
+        },
+        {
+          "visit_day": 3,
+          "time": "12:20",
+          "venue_id": "LE_PASSAGE",
+          "product": "르 파사쥬 빵 · 샌드위치로 점심",
+          "quantity": 2,
+          "unit_price_krw": 12000,
+          "paid_krw": 24000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE"
+        }
+      ]
+    }
+  }
+}

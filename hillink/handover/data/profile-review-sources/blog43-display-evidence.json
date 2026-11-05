@@ -1,0 +1,432 @@
+{
+  "customer_id": "blog43",
+  "scope": "PRIVATE_REVIEW_DISPLAY_ONLY",
+  "posts": [],
+  "engine_changed": false,
+  "projection": {
+    "B43-P01": {
+      "gist": "낯선 퓨전 한식, 터키 샌드커피, 처음 보는 레스토랑, 제철 코스, 다양한 메뉴를 포기하기 싫어 추가 주문한 사례 / 파스타·면 선호 직접 표현과 반복 주문, 한 번 더 주문하거나 포기할 메뉴를 두 개 모두 맛보기 위해 요청, 조식에서 쌀국수 반복 이용",
+      "features": [
+        "new_food_exploration",
+        "food_specific_preferences"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P02": {
+      "gist": "더글라스 와인 2종, 와인 바 피노누아 바틀, 다른 바 화이트와인 바틀과 칵테일, 풀바 칵테일, 여러 식사에서 맥주·전통주를 주문한 서로 다른 맥락 / 더글라스 숲·한강뷰, 남양주 정원 브런치 카페, 속초/세부/나트랑 호텔 오션뷰, 제주신라 야경, 여러 바다·정원 카페 좌석을 직접 골라 체험 / 워커힐 더글라스, 아난티 제주·가평, 세부 리프, 속초 카시아, 나트랑 쉐라톤, 제주신라 등 각각 다른 숙박 후기 / 더글라스 성인전용 고요한 숙박에서 운동장·수영장보다 휴식, 아난티·속초 카시아에서 욕조·풍경·조용한 재충전, 자연뷰 카페에서 조용한 좌석 선택 / 더뷔페 대기 길어 라운지 조식으로 전환, 카시아 체크인 대기 중 식사부터, 제주 숙소 1+1박 대신 2박 연속 선택, 예약한 객실 유형 마감 시 다른 객실 이용 / 더글라스 라운지 포함 혜택·무료 미니바 이용, 다른 호텔 happy hour 인지, QR 서비스와 조식 추가요금 비교. 정기적인 카드 혜택 추적·쿠폰 매니아라는 근거는 상대적으로 적음",
+      "features": [
+        "wine_and_alcohol_experience",
+        "space_view_atmosphere",
+        "hotel_travel_experience",
+        "quiet_rest_context",
+        "flexible_alternative_choice",
+        "selective_benefits"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P04": {
+      "gist": "파스타·면 선호 직접 표현과 반복 주문, 한 번 더 주문하거나 포기할 메뉴를 두 개 모두 맛보기 위해 요청, 조식에서 쌀국수 반복 이용 / 오목교 중식당 약 3회, 닭볶음탕집 2회, 영흥도 카페 2회, 쭈꾸미집 2회 방문, 특정 메뉴 재주문",
+      "features": [
+        "food_specific_preferences",
+        "revisit_and_repeat"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P06": {
+      "gist": "더글라스 와인 2종, 와인 바 피노누아 바틀, 다른 바 화이트와인 바틀과 칵테일, 풀바 칵테일, 여러 식사에서 맥주·전통주를 주문한 서로 다른 맥락",
+      "features": [
+        "wine_and_alcohol_experience"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P07": {
+      "gist": "낯선 퓨전 한식, 터키 샌드커피, 처음 보는 레스토랑, 제철 코스, 다양한 메뉴를 포기하기 싫어 추가 주문한 사례 / 파스타·면 선호 직접 표현과 반복 주문, 한 번 더 주문하거나 포기할 메뉴를 두 개 모두 맛보기 위해 요청, 조식에서 쌀국수 반복 이용",
+      "features": [
+        "new_food_exploration",
+        "food_specific_preferences"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P10": {
+      "gist": "더글라스 숲·한강뷰, 남양주 정원 브런치 카페, 속초/세부/나트랑 호텔 오션뷰, 제주신라 야경, 여러 바다·정원 카페 좌석을 직접 골라 체험 / 낯선 퓨전 한식, 터키 샌드커피, 처음 보는 레스토랑, 제철 코스, 다양한 메뉴를 포기하기 싫어 추가 주문한 사례 / 더글라스 성인전용 고요한 숙박에서 운동장·수영장보다 휴식, 아난티·속초 카시아에서 욕조·풍경·조용한 재충전, 자연뷰 카페에서 조용한 좌석 선택",
+      "features": [
+        "space_view_atmosphere",
+        "new_food_exploration",
+        "quiet_rest_context"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P13": {
+      "gist": "더글라스 숲·한강뷰, 남양주 정원 브런치 카페, 속초/세부/나트랑 호텔 오션뷰, 제주신라 야경, 여러 바다·정원 카페 좌석을 직접 골라 체험",
+      "features": [
+        "space_view_atmosphere"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P16": {
+      "gist": "파스타·면 선호 직접 표현과 반복 주문, 한 번 더 주문하거나 포기할 메뉴를 두 개 모두 맛보기 위해 요청, 조식에서 쌀국수 반복 이용",
+      "features": [
+        "food_specific_preferences"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P17": {
+      "gist": "워커힐 더글라스, 아난티 제주·가평, 세부 리프, 속초 카시아, 나트랑 쉐라톤, 제주신라 등 각각 다른 숙박 후기 / 더글라스 성인전용 고요한 숙박에서 운동장·수영장보다 휴식, 아난티·속초 카시아에서 욕조·풍경·조용한 재충전, 자연뷰 카페에서 조용한 좌석 선택 / 더뷔페 대기 길어 라운지 조식으로 전환, 카시아 체크인 대기 중 식사부터, 제주 숙소 1+1박 대신 2박 연속 선택, 예약한 객실 유형 마감 시 다른 객실 이용",
+      "features": [
+        "hotel_travel_experience",
+        "quiet_rest_context",
+        "flexible_alternative_choice"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P18": {
+      "gist": "스시 오마카세(1인 11만원), 한식 오마카세(1인 6.9만원), 스테이크 전문점 세트, 와인바 바틀·한우, 호텔 조식과 뷔페 등 다수 서로 다른 이용",
+      "features": [
+        "premium_dining"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P20": {
+      "gist": "파스타·면 선호 직접 표현과 반복 주문, 한 번 더 주문하거나 포기할 메뉴를 두 개 모두 맛보기 위해 요청, 조식에서 쌀국수 반복 이용 / 오목교 중식당 약 3회, 닭볶음탕집 2회, 영흥도 카페 2회, 쭈꾸미집 2회 방문, 특정 메뉴 재주문",
+      "features": [
+        "food_specific_preferences",
+        "revisit_and_repeat"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P21": {
+      "gist": "스시 오마카세(1인 11만원), 한식 오마카세(1인 6.9만원), 스테이크 전문점 세트, 와인바 바틀·한우, 호텔 조식과 뷔페 등 다수 서로 다른 이용",
+      "features": [
+        "premium_dining"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P22": {
+      "gist": "더글라스 숲·한강뷰, 남양주 정원 브런치 카페, 속초/세부/나트랑 호텔 오션뷰, 제주신라 야경, 여러 바다·정원 카페 좌석을 직접 골라 체험 / 워커힐 더글라스, 아난티 제주·가평, 세부 리프, 속초 카시아, 나트랑 쉐라톤, 제주신라 등 각각 다른 숙박 후기",
+      "features": [
+        "space_view_atmosphere",
+        "hotel_travel_experience"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P24": {
+      "gist": "스시 오마카세(1인 11만원), 한식 오마카세(1인 6.9만원), 스테이크 전문점 세트, 와인바 바틀·한우, 호텔 조식과 뷔페 등 다수 서로 다른 이용 / 낯선 퓨전 한식, 터키 샌드커피, 처음 보는 레스토랑, 제철 코스, 다양한 메뉴를 포기하기 싫어 추가 주문한 사례 / 파스타·면 선호 직접 표현과 반복 주문, 한 번 더 주문하거나 포기할 메뉴를 두 개 모두 맛보기 위해 요청, 조식에서 쌀국수 반복 이용",
+      "features": [
+        "premium_dining",
+        "new_food_exploration",
+        "food_specific_preferences"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P26": {
+      "gist": "더글라스 숲·한강뷰, 남양주 정원 브런치 카페, 속초/세부/나트랑 호텔 오션뷰, 제주신라 야경, 여러 바다·정원 카페 좌석을 직접 골라 체험 / 워커힐 더글라스, 아난티 제주·가평, 세부 리프, 속초 카시아, 나트랑 쉐라톤, 제주신라 등 각각 다른 숙박 후기 / 더글라스 성인전용 고요한 숙박에서 운동장·수영장보다 휴식, 아난티·속초 카시아에서 욕조·풍경·조용한 재충전, 자연뷰 카페에서 조용한 좌석 선택 / 더뷔페 대기 길어 라운지 조식으로 전환, 카시아 체크인 대기 중 식사부터, 제주 숙소 1+1박 대신 2박 연속 선택, 예약한 객실 유형 마감 시 다른 객실 이용",
+      "features": [
+        "space_view_atmosphere",
+        "hotel_travel_experience",
+        "quiet_rest_context",
+        "flexible_alternative_choice"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P29": {
+      "gist": "파스타·면 선호 직접 표현과 반복 주문, 한 번 더 주문하거나 포기할 메뉴를 두 개 모두 맛보기 위해 요청, 조식에서 쌀국수 반복 이용",
+      "features": [
+        "food_specific_preferences"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P30": {
+      "gist": "스시 오마카세(1인 11만원), 한식 오마카세(1인 6.9만원), 스테이크 전문점 세트, 와인바 바틀·한우, 호텔 조식과 뷔페 등 다수 서로 다른 이용 / 더글라스 숲·한강뷰, 남양주 정원 브런치 카페, 속초/세부/나트랑 호텔 오션뷰, 제주신라 야경, 여러 바다·정원 카페 좌석을 직접 골라 체험 / 워커힐 더글라스, 아난티 제주·가평, 세부 리프, 속초 카시아, 나트랑 쉐라톤, 제주신라 등 각각 다른 숙박 후기 / 더글라스 성인전용 고요한 숙박에서 운동장·수영장보다 휴식, 아난티·속초 카시아에서 욕조·풍경·조용한 재충전, 자연뷰 카페에서 조용한 좌석 선택 / 파스타·면 선호 직접 표현과 반복 주문, 한 번 더 주문하거나 포기할 메뉴를 두 개 모두 맛보기 위해 요청, 조식에서 쌀국수 반복 이용 / 더뷔페 대기 길어 라운지 조식으로 전환, 카시아 체크인 대기 중 식사부터, 제주 숙소 1+1박 대신 2박 연속 선택, 예약한 객실 유형 마감 시 다른 객실 이용 / 더글라스 라운지 포함 혜택·무료 미니바 이용, 다른 호텔 happy hour 인지, QR 서비스와 조식 추가요금 비교. 정기적인 카드 혜택 추적·쿠폰 매니아라는 근거는 상대적으로 적음",
+      "features": [
+        "premium_dining",
+        "space_view_atmosphere",
+        "hotel_travel_experience",
+        "quiet_rest_context",
+        "food_specific_preferences",
+        "flexible_alternative_choice",
+        "selective_benefits"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P31": {
+      "gist": "더글라스 와인 2종, 와인 바 피노누아 바틀, 다른 바 화이트와인 바틀과 칵테일, 풀바 칵테일, 여러 식사에서 맥주·전통주를 주문한 서로 다른 맥락",
+      "features": [
+        "wine_and_alcohol_experience"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P32": {
+      "gist": "더글라스 와인 2종, 와인 바 피노누아 바틀, 다른 바 화이트와인 바틀과 칵테일, 풀바 칵테일, 여러 식사에서 맥주·전통주를 주문한 서로 다른 맥락 / 더글라스 숲·한강뷰, 남양주 정원 브런치 카페, 속초/세부/나트랑 호텔 오션뷰, 제주신라 야경, 여러 바다·정원 카페 좌석을 직접 골라 체험 / 워커힐 더글라스, 아난티 제주·가평, 세부 리프, 속초 카시아, 나트랑 쉐라톤, 제주신라 등 각각 다른 숙박 후기 / 파스타·면 선호 직접 표현과 반복 주문, 한 번 더 주문하거나 포기할 메뉴를 두 개 모두 맛보기 위해 요청, 조식에서 쌀국수 반복 이용 / 더글라스 라운지 포함 혜택·무료 미니바 이용, 다른 호텔 happy hour 인지, QR 서비스와 조식 추가요금 비교. 정기적인 카드 혜택 추적·쿠폰 매니아라는 근거는 상대적으로 적음",
+      "features": [
+        "wine_and_alcohol_experience",
+        "space_view_atmosphere",
+        "hotel_travel_experience",
+        "food_specific_preferences",
+        "selective_benefits"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P33": {
+      "gist": "더글라스 숲·한강뷰, 남양주 정원 브런치 카페, 속초/세부/나트랑 호텔 오션뷰, 제주신라 야경, 여러 바다·정원 카페 좌석을 직접 골라 체험 / 더글라스 성인전용 고요한 숙박에서 운동장·수영장보다 휴식, 아난티·속초 카시아에서 욕조·풍경·조용한 재충전, 자연뷰 카페에서 조용한 좌석 선택 / 오목교 중식당 약 3회, 닭볶음탕집 2회, 영흥도 카페 2회, 쭈꾸미집 2회 방문, 특정 메뉴 재주문",
+      "features": [
+        "space_view_atmosphere",
+        "quiet_rest_context",
+        "revisit_and_repeat"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P34": {
+      "gist": "오목교 중식당 약 3회, 닭볶음탕집 2회, 영흥도 카페 2회, 쭈꾸미집 2회 방문, 특정 메뉴 재주문",
+      "features": [
+        "revisit_and_repeat"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P35": {
+      "gist": "더글라스 와인 2종, 와인 바 피노누아 바틀, 다른 바 화이트와인 바틀과 칵테일, 풀바 칵테일, 여러 식사에서 맥주·전통주를 주문한 서로 다른 맥락 / 스시 오마카세(1인 11만원), 한식 오마카세(1인 6.9만원), 스테이크 전문점 세트, 와인바 바틀·한우, 호텔 조식과 뷔페 등 다수 서로 다른 이용",
+      "features": [
+        "wine_and_alcohol_experience",
+        "premium_dining"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P36": {
+      "gist": "낯선 퓨전 한식, 터키 샌드커피, 처음 보는 레스토랑, 제철 코스, 다양한 메뉴를 포기하기 싫어 추가 주문한 사례 / 파스타·면 선호 직접 표현과 반복 주문, 한 번 더 주문하거나 포기할 메뉴를 두 개 모두 맛보기 위해 요청, 조식에서 쌀국수 반복 이용",
+      "features": [
+        "new_food_exploration",
+        "food_specific_preferences"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P38": {
+      "gist": "스시 오마카세(1인 11만원), 한식 오마카세(1인 6.9만원), 스테이크 전문점 세트, 와인바 바틀·한우, 호텔 조식과 뷔페 등 다수 서로 다른 이용",
+      "features": [
+        "premium_dining"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P40": {
+      "gist": "더글라스 라운지 포함 혜택·무료 미니바 이용, 다른 호텔 happy hour 인지, QR 서비스와 조식 추가요금 비교. 정기적인 카드 혜택 추적·쿠폰 매니아라는 근거는 상대적으로 적음",
+      "features": [
+        "selective_benefits"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P41": {
+      "gist": "더글라스 숲·한강뷰, 남양주 정원 브런치 카페, 속초/세부/나트랑 호텔 오션뷰, 제주신라 야경, 여러 바다·정원 카페 좌석을 직접 골라 체험 / 낯선 퓨전 한식, 터키 샌드커피, 처음 보는 레스토랑, 제철 코스, 다양한 메뉴를 포기하기 싫어 추가 주문한 사례 / 더글라스 성인전용 고요한 숙박에서 운동장·수영장보다 휴식, 아난티·속초 카시아에서 욕조·풍경·조용한 재충전, 자연뷰 카페에서 조용한 좌석 선택",
+      "features": [
+        "space_view_atmosphere",
+        "new_food_exploration",
+        "quiet_rest_context"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P42": {
+      "gist": "더글라스 와인 2종, 와인 바 피노누아 바틀, 다른 바 화이트와인 바틀과 칵테일, 풀바 칵테일, 여러 식사에서 맥주·전통주를 주문한 서로 다른 맥락",
+      "features": [
+        "wine_and_alcohol_experience"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P44": {
+      "gist": "낯선 퓨전 한식, 터키 샌드커피, 처음 보는 레스토랑, 제철 코스, 다양한 메뉴를 포기하기 싫어 추가 주문한 사례",
+      "features": [
+        "new_food_exploration"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P45": {
+      "gist": "더글라스 와인 2종, 와인 바 피노누아 바틀, 다른 바 화이트와인 바틀과 칵테일, 풀바 칵테일, 여러 식사에서 맥주·전통주를 주문한 서로 다른 맥락 / 스시 오마카세(1인 11만원), 한식 오마카세(1인 6.9만원), 스테이크 전문점 세트, 와인바 바틀·한우, 호텔 조식과 뷔페 등 다수 서로 다른 이용 / 낯선 퓨전 한식, 터키 샌드커피, 처음 보는 레스토랑, 제철 코스, 다양한 메뉴를 포기하기 싫어 추가 주문한 사례",
+      "features": [
+        "wine_and_alcohol_experience",
+        "premium_dining",
+        "new_food_exploration"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P46": {
+      "gist": "더글라스 와인 2종, 와인 바 피노누아 바틀, 다른 바 화이트와인 바틀과 칵테일, 풀바 칵테일, 여러 식사에서 맥주·전통주를 주문한 서로 다른 맥락",
+      "features": [
+        "wine_and_alcohol_experience"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P47": {
+      "gist": "더글라스 숲·한강뷰, 남양주 정원 브런치 카페, 속초/세부/나트랑 호텔 오션뷰, 제주신라 야경, 여러 바다·정원 카페 좌석을 직접 골라 체험",
+      "features": [
+        "space_view_atmosphere"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "B43-P48": {
+      "gist": "더글라스 숲·한강뷰, 남양주 정원 브런치 카페, 속초/세부/나트랑 호텔 오션뷰, 제주신라 야경, 여러 바다·정원 카페 좌석을 직접 골라 체험 / 워커힐 더글라스, 아난티 제주·가평, 세부 리프, 속초 카시아, 나트랑 쉐라톤, 제주신라 등 각각 다른 숙박 후기 / 더글라스 성인전용 고요한 숙박에서 운동장·수영장보다 휴식, 아난티·속초 카시아에서 욕조·풍경·조용한 재충전, 자연뷰 카페에서 조용한 좌석 선택",
+      "features": [
+        "space_view_atmosphere",
+        "hotel_travel_experience",
+        "quiet_rest_context"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    }
+  },
+  "source_kind": "EXISTING_PROJECTION_NOT_ORIGINAL_SOURCE"
+}

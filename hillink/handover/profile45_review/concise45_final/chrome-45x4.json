@@ -1,0 +1,1877 @@
+{
+ "base": "http://127.0.0.1:9031/",
+ "widths": [
+  1536,
+  1440,
+  1280,
+  390
+ ],
+ "customers": {
+  "A01": {
+   "kind": "profile",
+   "list_line": "가족 행사 뒤 비스타에서 1박하며 족욕과 객실 조식을 이용한 4인 가족",
+   "signature": "기념할 경험엔 쓰고, 숙박 혜택은 꼼꼼히 따졌다.",
+   "hero_line": "가족 행사 뒤 비스타에서 1박하며 족욕과 객실 조식을 이용한 4인 가족",
+   "support": [
+    "사진과 공간을 위한 대안",
+    "가족 기록을 남길 사진·공간 조화를 중요하게 여기되 대안을 활용",
+    "원하는 경험에는 다시 시도",
+    "원하는 상품·장소에는 재시도와 대기를 감수하지만 일반 대기 한계는 미상"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 2,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "A02": {
+   "kind": "profile",
+   "list_line": "부모님과 워커힐 요가 프로그램 두 가지에 참여한 가족",
+   "signature": "2만 원짜리 체험은 부담 없이 더했다.",
+   "hero_line": "부모님과 워커힐 요가 프로그램 두 가지에 참여한 가족",
+   "support": [
+    "여행 목적에 맞춘 숙소",
+    "목적에 맞는 숙소 기능을 조망·등급보다 우선 조정",
+    "체험이 이어지는 소비",
+    "설명·직접 체험이 만족과 후속 소비로 이어짐",
+    "동행과 다음 일정 우선",
+    "동행 체력·다음 일정이 혜택보다 우선할 수 있음",
+    "경험 뒤 소비를 조정",
+    "장비·소비를 경험 후 수정하지만 초기 과잉구매도 있음"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "A03": {
+   "kind": "profile",
+   "list_line": "클럽 스위트에 묵으며 라운지와 더뷔페 조식을 이용한 부부",
+   "signature": "클럽 혜택은 다 누렸고, 창가는 아쉬웠다.",
+   "hero_line": "클럽 스위트에 묵으며 라운지와 더뷔페 조식을 이용한 부부",
+   "support": [
+    "호텔 내부 경험 동선의 풀패키지 소비",
+    "야경·조망·프라이빗 좌석·정갈한 공간",
+    "메뉴별 기호 및 사후 재구매 판단",
+    "와인과 음식 페어링에 대한 부분적 직접 경험"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 2,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "A04": {
+   "kind": "profile",
+   "list_line": "리버뷰 객실에서 혼자 쉬며 독서와 사진을 즐긴 1박 방문",
+   "signature": "지칠 땐 익숙한 호텔에 혼자 묵으며 쉬었다.",
+   "hero_line": "리버뷰 객실에서 혼자 쉬며 독서와 사진을 즐긴 1박 방문",
+   "support": [
+    "높은 식음 가격과 개인 우선순위를 비교"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 2,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "A05": {
+   "kind": "profile",
+   "list_line": "친구 셋이 비스타에 묵으며 가든 바비큐와 아침 수영을 즐긴 방문",
+   "signature": "많이 못 먹어도 경험값이면 납득했다.",
+   "hero_line": "친구 셋이 비스타에 묵으며 가든 바비큐와 아침 수영을 즐긴 방문",
+   "support": [
+    "동행과 체류 목적에 따라 활동량·예산을 바꿈",
+    "만족한 음식은 재방문하며 주문·예약 방식을 조정",
+    "가치가 선명한 체험·기억에 선택적으로 돈을 씀",
+    "현장 제약에 대안을 쓰지만 계획 누락도 경험함"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "A07": {
+   "kind": "profile",
+   "list_line": "한강뷰 스파 객실에 머물며 모에기 오마카세를 즐긴 부부",
+   "signature": "오마카세 27만 원이 숙박보다 더 좋았다.",
+   "hero_line": "한강뷰 스파 객실에 머물며 모에기 오마카세를 즐긴 부부",
+   "support": [
+    "미식과 주류를 비교·학습하며 새로운 형식을 경험",
+    "과거 만족을 재방문 동기로 쓰되 결과는 다시 …",
+    "과거 만족을 재방문 동기로 쓰되 결과는 다시 평가",
+    "포인트·제휴 혜택을 구체 결제 구조에 맞춰 활용"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 2,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "A08": {
+   "kind": "profile",
+   "list_line": "부부가 비스타 2박 동안 플로팅 명상과 요가를 경험한 휴식 방문",
+   "signature": "웰니스 수업엔 추가 요금을 내고 따로 등록했다.",
+   "hero_line": "부부가 비스타 2박 동안 플로팅 명상과 요가를 경험한 휴식 방문",
+   "support": [
+    "식사·공간·동행 경험을 세부적으로 평가하며 대…",
+    "식사·공간·동행 경험을 세부적으로 평가하며 대안 조정",
+    "음식·대화·공간에 와인을 곁들이되 다음 일정과…",
+    "음식·대화·공간에 와인을 곁들이되 다음 일정과 동반 조건에 따라 음주를 조절"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 2,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "A10": {
+   "kind": "profile",
+   "list_line": "비스타에서 1박하고 더뷔페 창가에서 조식을 먹은 방문",
+   "signature": "안 먹던 조식도 맛 기대로 추가했다.",
+   "hero_line": "비스타에서 1박하고 더뷔페 창가에서 조식을 먹은 방문",
+   "support": [
+    "체력·대기·동행 조건에 따라 활동 범위를 조정",
+    "조망·공간의 즐거움과 실제 시설 이용을 분리",
+    "혜택과 지출을 사용 목적에 맞게 선택",
+    "음식·와인·행사 선호는 시기 조건과 함께 발현"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "blog41": {
+   "kind": "profile",
+   "list_line": "피자힐에서 피자·파스타와 소스 세트를 주문한 방문",
+   "signature": "할인을 받아도 피자 값이 아까웠다.",
+   "hero_line": "피자힐에서 피자·파스타와 소스 세트를 주문한 방문",
+   "support": [
+    "공간 · 전망 · 분위기",
+    "구매 전 가치 비교",
+    "혜택 활용"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "blog42": {
+   "kind": "profile",
+   "list_line": "기존 후기 요약에 클럽룸 숙박과 조식 이용이 기록된 고객",
+   "signature": "선택 이유는 원문 대조를 기다리고 있다.",
+   "hero_line": "기존 후기 요약에 클럽룸 숙박과 조식 이용이 기록된 고객",
+   "support": [
+    "공간 · 전망 · 분위기",
+    "구매 전 가치 비교",
+    "혜택 활용",
+    "휴식 · 회복"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 2,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "blog43": {
+   "kind": "profile",
+   "list_line": "기존 후기 요약에 더글라스 라운지와 휴식 경험이 기록된 고객",
+   "signature": "선택의 맥락은 원문 확인이 더 필요하다.",
+   "hero_line": "기존 후기 요약에 더글라스 라운지와 휴식 경험이 기록된 고객",
+   "support": [],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 2,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "A06": {
+   "kind": "profile",
+   "list_line": "혼자 4박 출장하며 호텔 안에서 산책한 고객",
+   "signature": "출장 숙소도 한강뷰 하나 보고 골랐다.",
+   "hero_line": "혼자 4박 출장하며 호텔 안에서 산책한 고객",
+   "support": [
+    "공간 · 전망 · 분위기",
+    "구매 전 가치 비교",
+    "익숙한 곳 재방문"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "A12": {
+   "kind": "profile",
+   "list_line": "1박 동안 조식·수영은 건너뛰고 포장 계획을 피자힐 매장 식사로 바꾼 부부",
+   "signature": "평일 투숙객 20% 할인을 챙겨 피자힐에 갔다.",
+   "hero_line": "1박 동안 조식·수영은 건너뛰고 포장 계획을 피자힐 매장 식사로 바꾼 부부",
+   "support": [
+    "구매 전 가치 비교"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 2,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "A19": {
+   "kind": "profile",
+   "list_line": "친구들과 그랜드 커넥팅룸에서 1박하고 부대시설을 이용한 방문",
+   "signature": "뷰보다 서로 오가기 편한 객실을 골랐다.",
+   "hero_line": "친구들과 그랜드 커넥팅룸에서 1박하고 부대시설을 이용한 방문",
+   "support": [
+    "휴식 · 회복"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 2,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "A26": {
+   "kind": "profile",
+   "list_line": "저녁 수영과 다음 날 아침 러닝을 나눠 즐긴 호캉스",
+   "signature": "호캉스를 수영·러닝·피트니스로 꽉 채웠다.",
+   "hero_line": "저녁 수영과 다음 날 아침 러닝을 나눠 즐긴 호캉스",
+   "support": [
+    "휴식 · 회복"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 2,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "N03": {
+   "kind": "profile",
+   "list_line": "회사 제공 2박을 가족이 나눠 쓰고 피자힐에서는 자리 안내 뒤 나온 방문",
+   "signature": "그 값에 구석 자리면 안 먹고 나왔다.",
+   "hero_line": "회사 제공 2박을 가족이 나눠 쓰고 피자힐에서는 자리 안내 뒤 나온 방문",
+   "support": [
+    "공간 · 전망 · 분위기",
+    "구매 전 가치 비교"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "N10": {
+   "kind": "profile",
+   "list_line": "그랜드 워커힐 예식에 참석해 식사와 발렛을 이용한 하객",
+   "signature": "이름난 호텔이라 하객 식사부터 기대했다.",
+   "hero_line": "그랜드 워커힐 예식에 참석해 식사와 발렛을 이용한 하객",
+   "support": [
+    "구매 전 가치 비교",
+    "익숙한 곳 재방문"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 2,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "N13": {
+   "kind": "profile",
+   "list_line": "연휴에 이용권을 선결제하고 골프 연습장을 찾은 고객",
+   "signature": "좋은 장비에 끌려도 정기권은 일단 참았다.",
+   "hero_line": "연휴에 이용권을 선결제하고 골프 연습장을 찾은 고객",
+   "support": [
+    "구매 전 가치 비교"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 2,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "N15": {
+   "kind": "profile",
+   "list_line": "마운틴뷰 객실이 좁게 느껴졌고 포장 피자와 룸서비스를 이용한 가족",
+   "signature": "주말 요금을 보고 가성비 좋은 그랜드로 바꿨다.",
+   "hero_line": "마운틴뷰 객실이 좁게 느껴졌고 포장 피자와 룸서비스를 이용한 가족",
+   "support": [
+    "공간 · 전망 · 분위기",
+    "구매 전 가치 비교"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 2,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "N23": {
+   "kind": "profile",
+   "list_line": "할머니·어머니와 비스타에서 1박하며 식사와 스파를 즐긴 방문",
+   "signature": "비싼 스파도 받되 투숙객 할인은 전날 챙겼다.",
+   "hero_line": "할머니·어머니와 비스타에서 1박하며 식사와 스파를 즐긴 방문",
+   "support": [
+    "구매 전 가치 비교",
+    "휴식 · 회복"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 2,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "WH-00131": {
+   "kind": "profile",
+   "list_line": "결혼 준비 중 더글라스에서 쉬며 라운지를 이용한 1박 방문",
+   "signature": "라운지 포함 객실로 식사를 전부 해결했다.",
+   "hero_line": "결혼 준비 중 더글라스에서 쉬며 라운지를 이용한 1박 방문",
+   "support": [
+    "공간 · 전망 · 분위기",
+    "구매 전 가치 비교",
+    "휴식 · 회복",
+    "익숙한 곳 재방문"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 2,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "WH-00265": {
+   "kind": "profile",
+   "list_line": "특가 스파룸에서 한강을 보며 스파를 세 번 즐긴 1박 방문",
+   "signature": "정가를 알아서 특가 뜰 때만 잡았다.",
+   "hero_line": "특가 스파룸에서 한강을 보며 스파를 세 번 즐긴 1박 방문",
+   "support": [
+    "공간 · 전망 · 분위기",
+    "구매 전 가치 비교",
+    "휴식 · 회복",
+    "익숙한 곳 재방문"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "WH-00276": {
+   "kind": "profile",
+   "list_line": "퇴근 후 워커힐 골프클럽에서 늦은 시간까지 연습하는 고객",
+   "signature": "자주 오는 곳이라 붐비면 그냥 안 갔다.",
+   "hero_line": "퇴근 후 워커힐 골프클럽에서 늦은 시간까지 연습하는 고객",
+   "support": [
+    "공간 · 전망 · 분위기",
+    "구매 전 가치 비교",
+    "익숙한 곳 재방문"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "WH-00386": {
+   "kind": "profile",
+   "list_line": "주말 피자힐에서 대기 후 두 명이 피자를 나눠 먹은 방문",
+   "signature": "숙박 할인 대신 통신사 혜택을 챙겼다.",
+   "hero_line": "주말 피자힐에서 대기 후 두 명이 피자를 나눠 먹은 방문",
+   "support": [
+    "구매 전 가치 비교",
+    "휴식 · 회복"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "WH-00392": {
+   "kind": "profile",
+   "list_line": "추석에 가족과 워커힐을 찾고 멤버십 이용 경험을 정리한 고객",
+   "signature": "갱신할 때마다 멤버십 혜택을 다시 살폈다.",
+   "hero_line": "추석에 가족과 워커힐을 찾고 멤버십 이용 경험을 정리한 고객",
+   "support": [
+    "공간 · 전망 · 분위기",
+    "구매 전 가치 비교",
+    "혜택 활용",
+    "휴식 · 회복"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 2,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "WH-00410": {
+   "kind": "profile",
+   "list_line": "남자친구와 더글라스 라운지와 실내수영장을 이용한 방문",
+   "signature": "추가금 뷔페 대신 포함 조식을 택했다.",
+   "hero_line": "남자친구와 더글라스 라운지와 실내수영장을 이용한 방문",
+   "support": [
+    "공간 · 전망 · 분위기",
+    "구매 전 가치 비교",
+    "익숙한 곳 재방문"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "WH-00491": {
+   "kind": "profile",
+   "list_line": "더글라스 2박 중 라운지 조식과 피자힐 식사를 즐긴 부부",
+   "signature": "먹어 보니 그 값은 아니라고 봤다.",
+   "hero_line": "더글라스 2박 중 라운지 조식과 피자힐 식사를 즐긴 부부",
+   "support": [
+    "공간 · 전망 · 분위기",
+    "구매 전 가치 비교",
+    "휴식 · 회복",
+    "익숙한 곳 재방문"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "WH-00532": {
+   "kind": "profile",
+   "list_line": "특가로 예약한 더글라스에서 친구 셋이 1박 동안 시설을 둘러본 방문",
+   "signature": "포함된 세 끼를 빠짐없이 챙겨 먹었다.",
+   "hero_line": "특가로 예약한 더글라스에서 친구 셋이 1박 동안 시설을 둘러본 방문",
+   "support": [
+    "공간 · 전망 · 분위기",
+    "구매 전 가치 비교",
+    "휴식 · 회복",
+    "익숙한 곳 재방문"
+   ],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "A13": {
+   "kind": "card",
+   "list_line": "3대 가족이 비스타에서 2박하며 수영·족욕·식사를 나눠 즐긴 방문",
+   "signature": "호텔 한 끼는 제대로, 나머지는 밖에서 아꼈다.",
+   "hero_line": "3대 가족이 비스타에서 2박하며 수영·족욕·식사를 나눠 즐긴 방문",
+   "support": [],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 2,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "A14": {
+   "kind": "card",
+   "list_line": "어머니와 그랜드에 묵으며 수영장·카페·조식을 이용한 방문",
+   "signature": "피자힐 고민하다 객실 배달 치맥을 택했다.",
+   "hero_line": "어머니와 그랜드에 묵으며 수영장·카페·조식을 이용한 방문",
+   "support": [],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "A20": {
+   "kind": "card",
+   "list_line": "비스타 숙박 중 가족 행사 후보 식당인 금룡을 먼저 이용한 방문",
+   "signature": "행사 식당 후보를 직접 먹어 보고 따졌다.",
+   "hero_line": "비스타 숙박 중 가족 행사 후보 식당인 금룡을 먼저 이용한 방문",
+   "support": [],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "A22": {
+   "kind": "card",
+   "list_line": "워커힐 포럼에 참석해 와인파티와 갈라디너를 경험한 고객",
+   "signature": "행사장까지는 직접 운전하는 편이 편했다.",
+   "hero_line": "워커힐 포럼에 참석해 와인파티와 갈라디너를 경험한 고객",
+   "support": [],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "A23": {
+   "kind": "card",
+   "list_line": "아버지 생신 식사로 가족과 명월관을 처음 이용한 방문",
+   "signature": "특별한 날의 비싼 한 끼는 값한다고 봤다.",
+   "hero_line": "아버지 생신 식사로 가족과 명월관을 처음 이용한 방문",
+   "support": [],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "A27": {
+   "kind": "card",
+   "list_line": "와인페어에서 시음하고 공연 시간에 맞춰 자리를 옮긴 방문",
+   "signature": "저녁 분위기를 즐기려고 오후권을 샀다.",
+   "hero_line": "와인페어에서 시음하고 공연 시간에 맞춰 자리를 옮긴 방문",
+   "support": [],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "A28": {
+   "kind": "card",
+   "list_line": "친구들과 와인페어에서 시음하고 피자와 라면을 먹은 방문",
+   "signature": "집에서 마시기 좋아 보여 캔 와인을 샀다.",
+   "hero_line": "친구들과 와인페어에서 시음하고 피자와 라면을 먹은 방문",
+   "support": [],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "N04": {
+   "kind": "card",
+   "list_line": "더뷔페 주중 디너에 호텔 와인숍에서 산 와인을 가져간 방문",
+   "signature": "와인값을 비교해 미리 사서 가져갔다.",
+   "hero_line": "더뷔페 주중 디너에 호텔 와인숍에서 산 와인을 가져간 방문",
+   "support": [],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "N05": {
+   "kind": "card",
+   "list_line": "가족과 더뷔페 평일 런치를 즐기며 와인 두 병을 반입한 방문",
+   "signature": "와인은 두 병 사 들고 가 콜키지로 마셨다.",
+   "hero_line": "가족과 더뷔페 평일 런치를 즐기며 와인 두 병을 반입한 방문",
+   "support": [],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "N06": {
+   "kind": "card",
+   "list_line": "오래 찾던 명월관에서 한우 갈비탕으로 점심을 먹은 고객",
+   "signature": "값 차이가 적어 한우 갈비탕을 골랐다.",
+   "hero_line": "오래 찾던 명월관에서 한우 갈비탕으로 점심을 먹은 고객",
+   "support": [],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "N08": {
+   "kind": "card",
+   "list_line": "아버지 칠순에 가족·친척 17명과 금룡에서 식사한 방문",
+   "signature": "전망 있는 방이면 대관료 5만 원은 더 냈다.",
+   "hero_line": "아버지 칠순에 가족·친척 17명과 금룡에서 식사한 방문",
+   "support": [],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "N09": {
+   "kind": "card",
+   "list_line": "가을 와인페어에서 친구들과 시음·공연을 즐긴 방문",
+   "signature": "회원권 들고 와인페어에 해마다 왔다.",
+   "hero_line": "가을 와인페어에서 친구들과 시음·공연을 즐긴 방문",
+   "support": [],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "N20": {
+   "kind": "card",
+   "list_line": "남은 멤버십 숙박권으로 가족 생일에 비스타를 찾은 고객",
+   "signature": "할인과 운반을 생각해 케이크는 호텔에서 샀다.",
+   "hero_line": "남은 멤버십 숙박권으로 가족 생일에 비스타를 찾은 고객",
+   "support": [],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 2,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "N24": {
+   "kind": "card",
+   "list_line": "부모님과 비스타 발코니 객실에서 한강을 바라본 1박 방문",
+   "signature": "바우처는 1박을 줄여서라도 가장 비싼 방에 썼다.",
+   "hero_line": "부모님과 비스타 발코니 객실에서 한강을 바라본 1박 방문",
+   "support": [],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 2,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "N25": {
+   "kind": "card",
+   "list_line": "가족 생일에 그랜드에서 수영과 피자 포장·조식을 즐긴 방문",
+   "signature": "챙겨 간 수모 덕에 따로 사지 않았다.",
+   "hero_line": "가족 생일에 그랜드에서 수영과 피자 포장·조식을 즐긴 방문",
+   "support": [],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "N27": {
+   "kind": "card",
+   "list_line": "연인 생일에 그랜드에 묵으며 수영과 족욕을 즐긴 방문",
+   "signature": "추가금은 낼 생각이었지만 미루다 한강뷰를 놓쳤다.",
+   "hero_line": "연인 생일에 그랜드에 묵으며 수영과 족욕을 즐긴 방문",
+   "support": [],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 2,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  },
+  "N32": {
+   "kind": "card",
+   "list_line": "부부가 그랜드에서 3박하며 외부 식사와 피자힐을 이용한 방문",
+   "signature": "비싸도 맛있다는 피자힐은 도전해 봤다.",
+   "hero_line": "부부가 그랜드에서 3박하며 외부 식사와 피자힐을 이용한 방문",
+   "support": [],
+   "w1536": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1440": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w1280": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   },
+   "w390": {
+    "lines": 1,
+    "font": "20px",
+    "lh": "27px",
+    "overflowX": false,
+    "ellipsis": false,
+    "pageOverflow": false
+   }
+  }
+ },
+ "errors": []
+}

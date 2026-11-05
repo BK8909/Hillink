@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AuthorProfileV3",
+  "type": "object",
+  "required": ["persona_id", "profile_version", "analysis_unit", "documents", "visit_clusters", "known_distinct_lodging_visit_count", "claims", "promotion_mode", "human_review_status", "raw_quotes_stored", "public_urls_stored", "author_identifiers_stored", "model_calls"],
+  "properties": {
+    "persona_id": {"type":"string"},
+    "profile_version": {"const":"author_profile_v3.0"},
+    "analysis_unit": {"const":"author"},
+    "source_review_count": {"type":"integer","minimum":1},
+    "author_link_status": {"type":"string"},
+    "source_access_status": {"type":"string"},
+    "publication_dates_are_not_visit_dates": {"const":true},
+    "documents": {"type":"array","items":{"type":"object","required":["document_id","topic","published_date","event_date","date_basis","visit_cluster","pages","media","source_state"]}},
+    "visit_clusters": {"type":"array","items":{"type":"object","required":["visit_cluster_id","post_ids","event_ids","confidence","basis"]}},
+    "known_distinct_lodging_visit_count": {"type":"object","required":["minimum","maximum","count_status"]},
+    "claims": {"type":"array","items":{"type":"object","required":["claim_id","aspect","value","claim_layer","scope","anchors","reasoning","alternatives","decision_usable","review"]}},
+    "party_hypothesis_ranking": {"type":"object"},
+    "profile_summary": {"type":"string"},
+    "promotion_mode": {"type":"object"},
+    "human_review_status": {"type":"string"},
+    "raw_quotes_stored": {"const":false},
+    "public_urls_stored": {"const":false},
+    "author_identifiers_stored": {"const":false},
+    "model_calls": {"const":0}
+  },
+  "$comment":"Do not place raw screenshots, URLs, account identifiers, or verbatim review passages in public artifacts. A claim's extraction source state and human approval state remain separate."
+}

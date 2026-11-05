@@ -1,0 +1,18 @@
+{
+ "manifest": "HILLINK_GATE2_FIRST5_APPROVED_INPUTS_v1",
+ "note": "CL-1025-36c — 소비 경계가 신뢰하는 입력 파일의 고정 SHA256. 실행 시 파일 SHA 를 다시 계산해 이 값과 대조하고 다르면 중단. 값 변경은 코드 리뷰(커밋 diff)로만. SHA 는 서명이 아니며 악의적 동시 교체(파일+이 매니페스트)는 저장소 권한 통제로 막아야 함.",
+ "trust_basis": {
+  "boundary_csv": "LP-16C 안전 정본 SAFE_CLAUDE_FACT_BOUNDARY_IDS_ONLY.csv — CL-1025-31 사용자 첨부로 수령(62행 · PENDING 62)",
+  "approval_csv": "사용자 승인표 HILLINK_GATE2_USER_APPROVAL_SAFE_IDS_ONLY_14_APPROVED_1_HOLD_20261025.csv — CL-35/CL-36/CL-36C zip 내부 SHA256SUMS 와 동일",
+  "source_facts": "LP-16 첫5 번들 personas/<id>/candidate/facts_events_evidence.json — 번들 SHA256SUMS.txt(26d6b7ac…) 및 CD-14B source/SHA256SUMS.txt 와 동일(90/90 파일 일치)"
+ },
+ "boundary_csv": "5c9bec5b067375fe4f400b8f2c6907e4e8a29bb316d1b38abe32075855f33e71",
+ "approval_csv": "797b1e99eb1a0a4a9ff0b8f817c0ed9b71eff656e2272c9bc21e6acc273eb670",
+ "source_facts": {
+  "WH-00274": "94b331d91e85c6a16dff832fc471002448e324e2ebd44513b1a3e5d16562a9da",
+  "WH-00333": "eb72333809c7027d04939859dd816da954991ad64fe569c0eea95bc5314b6d7f",
+  "WH-00491": "a79a2d82e83ea893bb2d6af9f84ffa9cf171830bd5c541b3faaa3ccb6ad8bb21",
+  "WH-00499": "6bb952a4dd1f2f9e264150e201f58f87bbb89d9a8ea9fb93cba4be89f9400925",
+  "WH-00532": "7ca53a09f0db90ad62d43eda570886ad500eea6510c3c30ea23b04018eba45ee"
+ }
+}

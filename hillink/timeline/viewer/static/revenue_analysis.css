@@ -1,0 +1,68 @@
+.rev-consumption-summary{font-size:12px;line-height:1.5;overflow:visible;max-height:none}.rev-summary-total,.rev-summary-line{display:flex;justify-content:space-between;gap:12px}.rev-summary-total b{font-size:18px}.rev-consumption-summary h4{margin:10px 0 4px;font-size:12px;color:#6d6254}.rev-summary-line{margin:3px 0}.rev-summary-line>span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rev-summary-line b{white-space:nowrap;font-size:12px}.rev-summary-line small,.rev-summary-meta small{font-weight:400;color:#81776b}.rev-summary-meta{display:grid;gap:3px;border-top:1px solid #e5ded3;margin-top:8px;padding-top:7px}.rev-summary-meta strong{color:#9b4c32}.rev-console-heading #revAnalysisCustomer{max-width:140px;font-size:12px}.rev-table-summary{font-size:13px;padding:8px 0}.rev-table-filters{display:flex;flex-wrap:wrap;gap:12px;margin:8px 0 12px}.rev-table-filters label{display:grid;gap:4px;font-size:12px}.rev-table-filters select{font:inherit;max-width:220px;padding:6px;border:1px solid #d9d0c4;border-radius:5px;background:#fff}.rev-table-scroll{max-height:52vh;overflow:auto;border:1px solid #e7dfd4;border-radius:6px}.rev-transactions-table{width:100%;border-collapse:separate;border-spacing:0;font-size:12px;text-align:left}.rev-transactions-table thead th{position:sticky;top:0;z-index:1;background:#f4f0e9;padding:10px;white-space:nowrap;border-bottom:1px solid #d8cdbd}.rev-transactions-table td{padding:10px;vertical-align:top;border-bottom:1px solid #eae4dc}.rev-transactions-table td:nth-child(4){min-width:230px;max-width:400px}.rev-transactions-table small{display:block;color:#81776b;font-size:11px;margin-top:3px}.rev-transactions-table .cf-link{text-align:left;font-size:12px;white-space:normal}.rev-transactions-table tr.on td{background:#fbf2e5}.rev-transactions-table .rev-number{text-align:right;white-space:nowrap}.rev-table-pagination{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;font-size:12px}.rev-table-pagination>div{display:flex;gap:6px}.rev-table-selection{padding:12px;background:#f7f3ec;border:1px solid #e2d7c8;border-radius:6px;font-size:12px}.rev-table-selection p{margin:7px 0;color:#766a5c}@media(max-width:600px){.rev-table-filters{gap:8px}.rev-table-filters label{width:calc(50% - 4px)}.rev-table-filters select{width:100%;min-width:0}.rev-table-pagination{flex-wrap:wrap}.rev-summary-total b{font-size:16px}}
+
+.rev-transactions-table .cf-link{color:inherit}.rev-transactions-table .cf-link:hover,.rev-transactions-table .cf-link:focus{text-decoration:underline;color:#9f3932}.rev-table-mobile-hint{display:none}@media(max-width:600px){.rev-table-mobile-hint{display:block;font-size:11px;color:#81776b;margin:4px 0 8px}}
+
+.frp-scene-consumption {margin:8px 0;padding:8px 10px;background:#faf6ed;border-left:2px solid #c69b64;font-size:12px;line-height:1.45}
+.frp-scene-consumption ul {list-style:none;margin:4px 0;padding:0;max-height:112px;overflow:auto}
+.frp-scene-consumption li {display:flex;flex-direction:column;padding:2px 0}
+.frp-scene-consumption small {color:#756b60;font-size:11px}
+.frp-scene-consumption b {display:block;text-align:right;font-size:13px}
+
+/* Compact ledger receipts and independent, keyboard-accessible disclosure groups. */
+.frp-scene-consumption {padding:9px 10px;margin:8px 0;border:1px solid #e7dfd1;border-radius:7px;background:#fcfaf5}
+.frp-consumption-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.frp-consumption-head>span{font-size:11px;color:#746655}.frp-consumption-head strong{font-size:17px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.frp-scene-consumption ul{max-height:none;overflow:visible;margin:5px 0}.frp-scene-consumption li{padding:3px 0;font-size:12px}.frp-scene-consumption li+li{border-top:1px solid #eee6da}
+.frp-scene-consumption .cf-link,.frp-consumption-more>summary{font-size:11px;color:#856a4d;border:0;background:none;padding:2px 0;min-height:0;height:auto;box-shadow:none;cursor:pointer}
+/* Equal grid rows with content-driven height; no fixed-height empty cards. */
+.rev-board-middle,.rev-board-bottom{align-items:stretch}
+.rev-board-middle>.rev-console-panel,.rev-board-bottom>.rev-console-panel{height:auto;min-height:0;min-width:0;overflow:visible}
+.rev-board-time{display:flex;flex-direction:column}
+.rev-compact .rev-board-time .rev-spend-chart{flex:1;min-height:190px;height:auto}
+.rev-compact .rev-board-time .rev-spend-chart>svg{position:absolute;inset:0;height:100%;min-height:0}
+.rev-board-time .rev-hour-context{margin-top:5px}
+.rev-board-ledger{display:flex;flex-direction:column}
+.rev-board-ledger .rev-compact-transactions{flex:1;display:grid;grid-auto-rows:minmax(min-content,1fr)}
+.rev-board-ledger .rev-compact-transactions>.rc-note{align-self:start}
+.rev-compact .rev-board-flow .rev-compact-sankey{min-width:720px;flex-shrink:0}
+.rev-board-bottom>.rev-board-flow{overflow-x:auto}
+.rev-board-ledger .rev-board-transaction{padding:8px 0}
+.rev-analysis-group{border-top:1px solid #e7dfd4;margin:0;padding:0}
+.rev-analysis-group>summary{display:grid;grid-template-columns:minmax(0,1fr) auto 12px;gap:2px 6px;cursor:pointer;list-style:none;padding:5px 0;align-items:baseline}
+.rev-analysis-group>summary::-webkit-details-marker{display:none}.rev-analysis-group>summary>small{grid-column:1/-1;font-size:10px;color:#837765}
+.rev-analysis-label{min-width:0;overflow-wrap:anywhere;color:#443b31}.rev-analysis-value{font-size:12px;white-space:nowrap;font-variant-numeric:tabular-nums}.rev-analysis-chevron{font-size:13px;color:#8a7559}.rev-analysis-group[open] .rev-analysis-chevron{transform:rotate(180deg)}
+.rev-analysis-body{padding:0 0 9px;font-size:11px;line-height:1.55}.rev-analysis-body p{margin:5px 0;color:#827464}.rev-analysis-records{list-style:none;padding:0;margin:6px 0}.rev-analysis-records li{display:grid;gap:3px;padding:7px 0;border-top:1px solid #eee8df}.rev-analysis-records small{font-size:10px;color:#8a7e6e}.rev-analysis-records .cf-link,.rev-analysis-body>.cf-link{justify-self:start;padding:0;min-height:0;border:0;background:none;box-shadow:none;font-size:11px}.rev-analysis-math{font-variant-numeric:tabular-nums}.rev-analysis-foot{font-size:10px;color:#8a7c6c;margin:8px 0 0}.rev-summary-total{margin-bottom:7px;align-items:baseline}.rev-summary-total>span{font-size:11px}
+.frp-evidence .frp-fact-cards{gap:0}.frp-evidence .frp-fact-card{padding:10px 0;border:0;border-radius:0;background:transparent}.frp-evidence .frp-fact-card+.frp-fact-card{border-top:1px solid #e7dfd4}.frp-evidence .frp-fact-tags{margin:0 0 4px;gap:4px}.frp-evidence .frp-fact-tags span{font-size:11px;color:#857157}.frp-quote-kind{font-size:10px;color:#958670}.frp-evidence .frp-fact-summary{font-size:13px;line-height:1.75;color:#433c33;margin:5px 0}.frp-evidence .frp-fact-summary>.ag-readable-body{border-left:2px solid #c6ab85;padding-left:10px}.frp-evidence .frp-fact-summary>button,.frp-evidence .frp-fact-links .cf-link,.frp-evidence .frp-fact-links .lib-src{border:0;border-radius:0;background:none;box-shadow:none;padding:0;min-height:0;height:auto;font-size:11px;line-height:1.6;color:#8b7050}.frp-evidence .frp-fact-links{gap:12px;margin-top:5px}.frp-evidence .hls-fact-note{font-size:10px;color:#978875}
+@media(max-width:600px){.rev-analysis-group>summary{column-gap:5px}.rev-analysis-value{font-size:11px}.rev-summary-total b{font-size:16px}.frp-consumption-head strong{font-size:16px}}
+
+@media(max-width:760px){
+ .rev-board-middle,.rev-board-bottom{grid-template-columns:minmax(0,1fr)}
+ .rev-board-middle>.rev-board-choices,.rev-board-bottom>.rev-board-ledger{width:100%;max-width:100%}
+ .rev-harmonized.rev-compact .rev-command-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .rev-harmonized.rev-compact .rev-command-kpis>article{min-width:0;height:auto;min-height:88px;padding:10px;gap:6px}
+ .rev-harmonized.rev-compact .rev-command-kpis>article>div{min-width:0}
+ .rev-harmonized.rev-compact .rev-command-kpis strong,.rev-harmonized.rev-compact .rev-command-kpis .kpi-total strong{font-size:21px;line-height:28px}
+ .rev-harmonized.rev-compact .rev-command-kpis .rev-metric-icon{display:none}
+ .rev-board-flow{overflow-x:auto}
+ .rev-board-choices .rev-consumption-summary{overflow:visible;max-height:none}
+}
+.rev-summary-total{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}
+.rev-summary-total>span{min-width:0;white-space:normal;overflow-wrap:anywhere}
+.rev-summary-total>b{white-space:nowrap;font-variant-numeric:tabular-nums}
+.rev-analysis-body .rev-summary-line>span:last-child{flex:none;overflow:visible;white-space:nowrap}
+
+/* Expanded records use normal page flow. Keep the comparison plot readable,
+   instead of stretching it to the height of several transaction disclosures. */
+@media(min-width:761px){
+ .rev-board-middle:has(.rev-analysis-group[open]){align-items:start}
+ .rev-board-middle:has(.rev-analysis-group[open])>.rev-board-time{position:sticky;top:12px}
+ .rev-board-middle:has(.rev-analysis-group[open]) .rev-spend-chart{flex:none;height:clamp(190px,19vw,270px)}
+}
+
+/* On narrow screens the same content uses the page's vertical flow. */
+@media(max-width:760px){
+ .rev-board-middle>.rev-console-panel,.rev-board-bottom>.rev-console-panel{height:auto;min-height:0}
+ .rev-compact .rev-board-time .rev-spend-chart{flex:none;height:190px;min-height:0;overflow-x:auto;overflow-y:hidden}
+ .rev-board-ledger .rev-compact-transactions{display:block;flex:none}
+ .rev-board-ledger .rev-board-transaction{padding:10px 0}
+}

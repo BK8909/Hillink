@@ -1,0 +1,78 @@
+{
+ "plan": "baseline_0",
+ "blog": "blog41",
+ "created_at": "2026-10-20T14:17:52",
+ "git_head": "9e7ca26",
+ "git_dirty_timeline": [],
+ "model_ver": "d2a34bfd",
+ "input_ver": "65d4dc31",
+ "theta": {
+  "w_wait": 0.8983561398079523,
+  "w_travel": 1.1404126838031146,
+  "lam_trait": 0,
+  "meal": 6.0,
+  "included": 7.884896313357884,
+  "meal_other": 0.3299565338710213,
+  "bfast_room": 1.0523809827825645,
+  "kids": 0.6892480577003421,
+  "takeout": 1.5610287476491085,
+  "room_rest": 1.3329332359000041,
+  "booked": 5.003308859256185,
+  "incl_block": 99.0,
+  "gap_fill": 0.0,
+  "tau": 0.5
+ },
+ "K": 12,
+ "seed_base": 20260930,
+ "persona_sha256": "658ac6368008cf63",
+ "lab_run_sha256": "af749563a0f873f4",
+ "python": "3.13.16",
+ "command": "lab_run.py baseline_0 --blog blog41",
+ "note": "공용 모델 · 입력 · 골든셋 · 캐시 수정 없음 · 평가자 점수 미적용(관심 항 없음)",
+ "conditions": [
+  {
+   "name": "C0_실제체류",
+   "start": "후기 START_AT",
+   "scenario": "none",
+   "closed": [],
+   "virtual": null
+  },
+  {
+   "name": "V1a_와인페어_미개최",
+   "start": "2026-10-10",
+   "scenario": "none",
+   "closed": [],
+   "virtual": "가상 조건 · 10/10(토) · 와인페어 없음 — 실제 방문일 아님"
+  },
+  {
+   "name": "V1b_와인페어_개최",
+   "start": "2026-10-10",
+   "scenario": "winefair",
+   "closed": [],
+   "virtual": "가상 조건 · 10/10(토) · 와인페어 개최 — 실제 방문일 아님"
+  },
+  {
+   "name": "V3a_리버파크_휴장",
+   "start": "2026-08-25",
+   "scenario": "none",
+   "closed": [
+    "RIVERPARK"
+   ],
+   "virtual": "가상 조건 · 8/25(화) · 리버파크 휴장 — 실제 방문일 아님"
+  },
+  {
+   "name": "V3b_리버파크_개장",
+   "start": "2026-08-25",
+   "scenario": "none",
+   "closed": [],
+   "virtual": "가상 조건 · 8/25(화) · 리버파크 개장 — 실제 방문일 아님"
+  }
+ ],
+ "result_sha256": {
+  "C0_실제체류": "959dc02cb49c0d387b03db4e98adaa5d84cb0ea61f1dc5f5f60de7cee52be7c8",
+  "V1a_와인페어_미개최": "95f84435d7bd4e56395290f06bf250afd71d631617f8d54b7896e6ca90c14a04",
+  "V1b_와인페어_개최": "fcdb4053e10d37bc2208fed8974faeb43fa44dcbcea06ea1327cd0122d4c2b71",
+  "V3a_리버파크_휴장": "0efc6de1d08bb8ab2cdcd2722f72a854572fd8c7f005550ca488528309a595bc",
+  "V3b_리버파크_개장": "1ea25cc8d02a1450e327adbe1891a846183a872e70074e80dcba3cc8e0871016"
+ }
+}

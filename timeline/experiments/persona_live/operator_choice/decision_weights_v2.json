@@ -1,0 +1,8 @@
+{
+  "version": "profile_decision_weights_v2.0-exploratory",
+  "status": "fixed_initial_research_configuration_not_fitted",
+  "scale": {"direction": "-2 strong opposition to +2 strong support", "confidence": "0..1 qualitative evidence reliability", "relevance": "0..1 option-specific fit", "not_probability": true},
+  "weights": {"personal_fit": 4, "trip_fit": 3, "engagement_fit": 2, "value_fit": 2, "statistical_support": 1, "context_adjustment": 1},
+  "effort_rubric": "activity_engagement_v2.EFFORT_RUBRIC",
+  "policy": ["feasibility is a hard gate", "same evidence root contributes once per option and category", "unknown is zero evidence not dislike", "scenario attributes are assumptions unless independently sourced", "score is not choice probability", "no customer-id-specific overrides"]
+}

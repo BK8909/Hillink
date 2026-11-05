@@ -1,0 +1,399 @@
+{
+ "version": "demo_story_v2",
+ "title": "후기에서 시작한 고객, 행사에 따라 달라지는 하루",
+ "fixture": "/static/demo_story/flow_fixture_v1.json",
+ "legend": {
+  "OBS": {
+   "label": "후기 관측",
+   "note": "후기에서 LP가 추출 · 검수한 요약(원문 아님)"
+  },
+  "IMG": {
+   "label": "생성 이미지",
+   "note": "고객별 초안 이미지 · 사람 승인 전 · 실제 고객 사진 아님"
+  },
+  "REPLAY": {
+   "label": "저장된 엔진 재생",
+   "note": "실제 엔진 실행 결과를 저장해 다시 보여줌 · 실시간 계산 · LLM 추론 아님"
+  },
+  "PREVIEW": {
+   "label": "행사 미리보기",
+   "note": "공식 · 보도 근거의 행사 설명 · 엔진 행동 결과 아님"
+  }
+ },
+ "ledger": {
+  "app_ledger": 63,
+  "runnable": 11,
+  "image_drafts": 65,
+  "id_match": 26,
+  "type_conflict": 10,
+  "image_only": 39,
+  "app_only": 37,
+  "cards_shown": 76,
+  "human_image_approved": 0,
+  "list_62": "저장소에 없음"
+ },
+ "observations": {
+  "PERSONA_SCENE_015": {
+   "title": "A27 · 와인페어 반복 방문",
+   "lines": [
+    {
+     "src": "LP 검수 요약",
+     "text": "반복 와인페어 방문 관측",
+     "facts": [
+      "A27-F001",
+      "A27-F003"
+     ]
+    },
+    {
+     "src": "팀 라이브러리 요약",
+     "text": "2026 가을 와인페어 첫날 2부 비투숙 방문 · 와인 비교 · 구매 · 친구 동행"
+    },
+    {
+     "src": "관제 요약(검수 대상)",
+     "text": "사전 예약 · 실구매 · 재방문에 긍정"
+    }
+   ],
+   "cautions": [
+    "친구의 경품 당첨은 작성자 본인의 소비 행동이 아님",
+    "이미지의 무대 · 공연 장면은 사실 확인 전 연출"
+   ],
+   "engine": "행동 엔진 실행 안 함 — LP18 2차 승인 sidecar 계약 필요(NOT_RUN_SECOND_CONTRACT_REQUIRED)",
+   "engine_ko": "시뮬레이션 실행 전 — 후기 관측 사례(행동 엔진 실행 안 함)",
+   "unknown": [
+    "다음 행사 때 다시 갈지는 모름(관측은 과거 방문)",
+    "친구의 경품 당첨은 본인 행동이 아님"
+   ]
+  },
+  "PERSONA_SCENE_030": {
+   "title": "N27 · 호텔 실내 수영",
+   "lines": [
+    {
+     "src": "LP 검수 요약",
+     "text": "실제 실내 수영장 이용 관측",
+     "facts": [
+      "N27-F001",
+      "N27-F004"
+     ]
+    },
+    {
+     "src": "팀 라이브러리 요약",
+     "text": "회사 휴양소 당첨 숙박 · 한강뷰 추가금을 미루다 마감 · 저녁은 호텔 밖"
+    }
+   ],
+   "cautions": [
+    "수영 선호는 그날의 이용 가능 여부와 별개",
+    "인원 · 외모를 이미지로 확정하지 않음"
+   ],
+   "engine": "행동 엔진 실행 안 함 — LP18 2차 승인 sidecar 계약 필요(NOT_RUN_SECOND_CONTRACT_REQUIRED)",
+   "engine_ko": "시뮬레이션 실행 전 — 후기 관측 사례(행동 엔진 실행 안 함)",
+   "unknown": [
+    "그날 수영장을 쓸 수 있을지는 별개",
+    "인원 · 동행 구성은 확정하지 않음"
+   ]
+  },
+  "PERSONA_SCENE_046": {
+   "title": "후기 사례 46 · 부모님 칠순 식사",
+   "lines": [
+    {
+     "src": "LP 검수 요약",
+     "text": "부모님 칠순에 온달에서 실제 식사 · 식음 멤버십 가입",
+     "facts": [
+      "사례46-F001",
+      "사례46-F003"
+     ]
+    }
+   ],
+   "cautions": [
+    "미용실 이용권은 고르기만 함 — 시술 방문 사실 아님",
+    "가족 총인원은 추정하지 않음"
+   ],
+   "engine": "행동 엔진 실행 안 함 — LP18 2차 승인 sidecar 계약 필요(NOT_RUN_SECOND_CONTRACT_REQUIRED)",
+   "engine_ko": "시뮬레이션 실행 전 — 후기 관측 사례(행동 엔진 실행 안 함)",
+   "unknown": [
+    "미용실 이용권은 고르기만 함 — 방문 아님",
+    "가족 총인원은 모름"
+   ]
+  },
+  "PERSONA_SCENE_063": {
+   "title": "후기 사례 63 · 피자힐 첫 방문",
+   "lines": [
+    {
+     "src": "LP 검수 요약",
+     "text": "피자힐 첫 방문 · 전망과 음식에 긍정",
+     "facts": [
+      "사례63-F001",
+      "사례63-F004"
+     ]
+    }
+   ],
+   "cautions": [
+    "본인 결제는 확정 아님",
+    "음료 가격 언급을 업장 기피 성향으로 보지 않음"
+   ],
+   "engine": "행동 엔진 실행 안 함 — LP18 2차 승인 sidecar 계약 필요(NOT_RUN_SECOND_CONTRACT_REQUIRED)",
+   "engine_ko": "시뮬레이션 실행 전 — 후기 관측 사례(행동 엔진 실행 안 함)",
+   "unknown": [
+    "본인 결제 여부는 모름",
+    "음료 가격 언급 ≠ 업장 기피"
+   ]
+  }
+ },
+ "chapters": [
+  {
+   "id": "C1",
+   "label": "라이브러리"
+  },
+  {
+   "id": "C2",
+   "label": "후기"
+  },
+  {
+   "id": "C3",
+   "label": "행사"
+  },
+  {
+   "id": "C4",
+   "label": "하루 행동"
+  },
+  {
+   "id": "C5",
+   "label": "비교"
+  },
+  {
+   "id": "C6",
+   "label": "결론"
+  }
+ ],
+ "featured": [
+  "PERSONA_SCENE_015",
+  "PERSONA_SCENE_030",
+  "PERSONA_SCENE_046",
+  "PERSONA_SCENE_063"
+ ],
+ "steps": [
+  {
+   "id": "L1",
+   "ch": "C1",
+   "sec": 14,
+   "title": "후기에서 시작한 고객",
+   "kinds": [
+    "OBS",
+    "IMG"
+   ],
+   "view": {
+    "m": "card",
+    "card": "intro"
+   },
+   "caption": "실제 후기에서 확인한 경험으로 고객 유형을 정리했습니다."
+  },
+  {
+   "id": "L2",
+   "ch": "C1",
+   "sec": 26,
+   "title": "고객 유형 라이브러리",
+   "kinds": [
+    "IMG"
+   ],
+   "view": {
+    "m": "lib"
+   },
+   "caption": "11개 유형에서 사진이 준비된 고객부터 살펴봅니다. 이미지는 고객별 초안이며 검수 중입니다."
+  },
+  {
+   "id": "R1",
+   "ch": "C2",
+   "sec": 28,
+   "title": "A27 · 와인페어를 반복해서 찾은 고객",
+   "kinds": [
+    "OBS",
+    "IMG"
+   ],
+   "view": {
+    "m": "draft",
+    "card": "PERSONA_SCENE_015"
+   },
+   "caption": "후기에서 확인된 경험과 아직 모르는 것을 나눠서 봅니다."
+  },
+  {
+   "id": "R2",
+   "ch": "C2",
+   "sec": 24,
+   "title": "N27 · 호텔 실내 수영을 즐긴 고객",
+   "kinds": [
+    "OBS",
+    "IMG"
+   ],
+   "view": {
+    "m": "draft",
+    "card": "PERSONA_SCENE_030"
+   },
+   "caption": "좋아한 경험이 있어도, 그날 이용할 수 있는지는 따로 확인합니다."
+  },
+  {
+   "id": "R3",
+   "ch": "C2",
+   "sec": 16,
+   "title": "다른 후기 사례",
+   "kinds": [
+    "OBS",
+    "IMG"
+   ],
+   "view": {
+    "m": "card",
+    "card": "cases"
+   },
+   "caption": "고르기만 한 것과 실제로 한 것을 구분합니다."
+  },
+  {
+   "id": "E1",
+   "ch": "C3",
+   "sec": 30,
+   "title": "어떤 행사 환경에서 볼까요?",
+   "kinds": [
+    "REPLAY",
+    "PREVIEW"
+   ],
+   "view": {
+    "m": "events"
+   },
+   "caption": "와인페어는 저장된 실행으로 볼 수 있고, 성격이 다른 행사는 미리보기로만 비교합니다."
+  },
+  {
+   "id": "D1",
+   "ch": "C4",
+   "sec": 8,
+   "title": "대상 전환",
+   "kinds": [
+    "REPLAY"
+   ],
+   "view": {
+    "m": "card",
+    "card": "switch"
+   },
+   "caption": "이어서, 저장된 엔진 실행이 있는 기존 검증 고객 A08의 하루입니다. 앞의 후기 사례와는 다른 사람입니다."
+  },
+  {
+   "id": "D2",
+   "ch": "C4",
+   "sec": 22,
+   "title": "A08 · 와인페어가 없는 날",
+   "kinds": [
+    "REPLAY"
+   ],
+   "view": {
+    "m": "flow",
+    "p": "A08",
+    "e": 0,
+    "play": {
+     "turn": "dinner",
+     "back": 2
+    },
+    "chip": "dinner"
+   },
+   "caption": "행사를 열지 않은 가상 편성입니다. 저녁 장소로 이동하는 모습을 저장된 실행 그대로 재생합니다."
+  },
+  {
+   "id": "D3",
+   "ch": "C4",
+   "sec": 24,
+   "title": "A08 · 와인페어가 열린 날",
+   "kinds": [
+    "REPLAY"
+   ],
+   "view": {
+    "m": "flow",
+    "p": "A08",
+    "e": 1,
+    "play": {
+     "turn": "event",
+     "back": 2
+    },
+    "chip": "event"
+   },
+   "caption": "같은 고객, 같은 조건에서 와인페어만 열었습니다. 포레스트 파크로 이동해 와인페어를 고릅니다."
+  },
+  {
+   "id": "D4",
+   "ch": "C4",
+   "sec": 24,
+   "title": "왜 와인페어를 골랐나",
+   "kinds": [
+    "REPLAY"
+   ],
+   "view": {
+    "m": "flow",
+    "p": "A08",
+    "e": 1,
+    "turn": "event"
+   },
+   "caption": "선택 · 비교 대안 · 후기 근거와 공통 계산의 몫을 저장된 결정 기록에서 확인합니다."
+  },
+  {
+   "id": "D5",
+   "ch": "C4",
+   "sec": 20,
+   "title": "A04 · 같은 환경, 근소한 차이",
+   "kinds": [
+    "REPLAY"
+   ],
+   "view": {
+    "m": "flow",
+    "p": "A04",
+    "e": 1,
+    "play": {
+     "turn": "event",
+     "back": 2
+    },
+    "chip": "event"
+   },
+   "caption": "A04도 와인페어를 골랐지만 객실 휴식과의 점수 차가 매우 작습니다."
+  },
+  {
+   "id": "C1s",
+   "ch": "C5",
+   "sec": 26,
+   "title": "기존 검증 고객 11명에게 같은 와인페어",
+   "kinds": [
+    "REPLAY"
+   ],
+   "view": {
+    "m": "many",
+    "e": 1
+   },
+   "caption": "같은 와인페어 조건을 기존 검증 고객 11명에게 적용한 저장 실행입니다. 신규 후기 고객의 결과가 아닙니다."
+  },
+  {
+   "id": "C2s",
+   "ch": "C5",
+   "sec": 22,
+   "title": "관측과 가설",
+   "kinds": [
+    "REPLAY",
+    "PREVIEW"
+   ],
+   "view": {
+    "m": "card",
+    "card": "obs_vs_hyp"
+   },
+   "caption": "저장된 실행에서 관측한 차이와 아직 만들지 않은 보정 가설을 나눠 둡니다."
+  },
+  {
+   "id": "Z1",
+   "ch": "C6",
+   "sec": 16,
+   "title": "정리",
+   "kinds": [
+    "REPLAY"
+   ],
+   "view": {
+    "m": "flow",
+    "p": "A08",
+    "e": 1,
+    "arrive": "event",
+    "chip": "event",
+    "outro": true
+   },
+   "caption": "후기에서 경험과 근거를 정리하고, 행사 조건에 따라 달라지는 하루를 저장된 실행으로 확인합니다."
+  }
+ ]
+}

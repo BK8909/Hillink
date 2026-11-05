@@ -1,0 +1,56 @@
+{
+  "version": "population_screening_v2",
+  "review_date": "2026-10-21",
+  "review_kind": "Codex_primary_source_screening_not_human_research_signoff",
+  "active_priors": [],
+  "individual_probability_estimates": false,
+  "screened_sources": [
+    {
+      "evidence_id": "STAT-KCTI-TRAVEL-2024",
+      "publisher": "한국문화관광연구원",
+      "source_url": "https://www.kcti.re.kr/web/board/boardContentsView.do?board_id=14&contents_id=3c3b9d91e0ef40f2a58d3fe4bcabb803&mode=W&searchkey=ALL",
+      "methodology_url": "https://datalab.visitkorea.or.kr/datalab/portal/getMetaInfoList.do",
+      "country": "KR", "survey_period": "2024", "published": "2025-07-09",
+      "population": "만 15세 이상 국민",
+      "sample": {"annual_n": 51600, "monthly_n": 4300, "mode": "가구방문 면접", "activity_question_denominator": "요약 인포그래픽만으로 정확한 문항 유효 표본수 미확정"},
+      "measured_question": "국내여행 중 활동 및 동반자 유형; 활동은 중복응답",
+      "result": {"nature_scenery_pct": 77.4, "rest_pct": 58.1, "family_companion_pct": 60.5},
+      "measurement_gap": "여행에서 실제 한 활동의 비율이며 호텔 내 대안 간 선호나 야외 수영장 선택률이 아님",
+      "customer_population_link": "연령·국민 여부가 카드에서 관측되지 않아 일치 확인 불가",
+      "decision": "exclude_from_directional_choice",
+      "permitted_use": "후속 조사 설계의 배경; 개인 기억·성향·참여확률로 사용 금지"
+    },
+    {
+      "evidence_id": "STAT-MCST-SPORT-2024",
+      "publisher": "문화체육관광부",
+      "source_url": "https://www.mcst.go.kr/site/s_policy/dept/deptView.jsp?pCurrentPage=1&pDataCD=0417000000&pSearchType=01&pSearchWord=&pSeq=1967&pTab=01&pType=07",
+      "country": "KR", "survey_period": "2023-09~2024-08", "published": "2025-01-13",
+      "population": "전국 만 10세 이상 국민",
+      "sample": {"n": 9000, "mode": "가구방문 면접", "fieldwork": "2024-09-01~2024-11-04"},
+      "measured_question": "생활체육 참여 실태",
+      "result": null,
+      "measurement_gap": "호텔 실내·야외 수영 대안의 상대 선호나 신규 개장 반응 문항을 확보하지 못함",
+      "customer_population_link": "연령·국민 여부 및 실제 운동 참여 속성 미상",
+      "decision": "exclude_no_comparable_question",
+      "permitted_use": "보고서의 수영 세부 문항을 후속 탐색하는 경로; 현재 선택 점수 없음"
+    },
+    {
+      "evidence_id": "STAT-MAFRA-LIQUOR-2015",
+      "publisher": "농림축산식품부·한국농수산식품유통공사",
+      "source_url": "https://www.mafra.go.kr/bbs/mafra/71/219290/download.do",
+      "country": "KR", "survey_period": "2015-11-30~2015-12-07", "publication_year": 2015,
+      "population": "주류 구입 경험이 있는 20~50대 소비자",
+      "sample": {"n": 500, "mode": "온라인", "not_representative_of_all_hotel_guests": true},
+      "measured_question": "가장 선호하는 주종; 설문 Q2, 표4-2",
+      "result": {"beer_pct": 48.8, "wine_pct": 4.0},
+      "pdf_anchors": {"survey_overview_zero_based_page": 6, "table_4_2_zero_based_page": 70},
+      "verification": "공식 PDF 텍스트 및 표 추출 확인; 스크린샷 캐시 오류로 시각 검증 미완료",
+      "measurement_gap": "주종 선호와 유료 호텔 행사 참여는 다른 구성개념; 2015년 조사로 시점도 부적합",
+      "customer_population_link": "연령·주류 구입 경험 미상; 가족 여행에서 음주 속성 추정 금지",
+      "decision": "exclude_outdated_and_unmatched",
+      "permitted_use": "문항·시점·모집단 불일치의 감사 예시; 비어 축제 선택 입력에 주입 금지"
+    }
+  ],
+  "next_search": ["최근 호텔·리조트 투숙객 대상 실내/야외 시설의 상대 선택 조사", "가격·동행·계절을 함께 측정한 행사 참여 의향 조사", "해당 고객의 관측 속성만으로 모집단을 연결할 수 있는 자료"],
+  "absence_policy": "통계 0건을 정상 상태로 유지. 개인 근거와 현재 상황으로 선택하되 낮은 확신·대안·가정을 기록"
+}

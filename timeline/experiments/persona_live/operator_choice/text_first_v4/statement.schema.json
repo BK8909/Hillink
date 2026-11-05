@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "additionalProperties": false,
+  "required": ["span", "quote", "kind", "actor", "time_scope", "domain", "tags", "polarity", "confidence", "reasoning", "context_tags", "action_stage"],
+  "properties": {
+    "span": {"type": "array", "items": {"type": "integer", "minimum": 0}, "minItems": 2, "maxItems": 2},
+    "quote": {"type": "string", "minLength": 1},
+    "kind": {"enum": ["positive_mention", "participation", "purchase", "explicit_motive", "appraisal", "specific_preference", "revisit", "decline", "prepurchase_information"]},
+    "actor": {"enum": ["author", "author_inferred", "other", "unknown"]},
+    "time_scope": {"enum": ["source_experience", "past_experience", "future_plan", "recommendation", "mixed_unresolved"]},
+    "domain": {"enum": ["hotel", "dining", "travel", "shopping", "leisure", "event", "other"]},
+    "tags": {"type": "array", "uniqueItems": true, "items": {"enum": ["food", "pizza", "garlic", "olive_oil", "space", "atmosphere", "seasonal_event", "discount_used", "wine", "beer", "nonalcoholic", "premium", "new_trial", "value_appraisal", "pool", "rest"]}},
+    "polarity": {"enum": ["positive", "negative", "mixed", "neutral"]},
+    "confidence": {"enum": ["high", "medium", "low"]},
+    "reasoning": {"enum": ["literal_action", "explicit_expression", "contextual_interpretation", "unresolved_scope"]},
+    "context_tags": {"type": "array", "uniqueItems": true, "items": {"enum": ["family", "partner", "friends", "solo", "business", "unknown"]}},
+    "amount_krw": {"type": ["integer", "null"], "minimum": 0},
+    "amount_kind": {"enum": ["reported_paid", "order_amount", "listed_price", "unknown"]},
+    "action_stage": {"enum": ["reservation_reported", "order_reported", "purchase_reported", "participation_reported", "consumption_reported", "not_applicable"]}
+  }
+}

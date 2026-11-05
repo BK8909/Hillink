@@ -1,0 +1,5171 @@
+{
+ "items": [
+  {
+   "id": "blog25",
+   "source": "블로그 후기 · 고객 카드 v1(사람 사실 확인)",
+   "source_kind": "card",
+   "summary": "그랜드 1박 · 4인 아이 동반 · 실내 수영장·더뷔페",
+   "memo": "그랜드 1박 가족 4인 아이 동반·조식 포함 패키지·수영장 이용·더뷔페 조식",
+   "when": {
+    "text": "2026년 8월",
+    "season": "여름",
+    "year": 2026,
+    "level": "observed"
+   },
+   "stay": "그랜드",
+   "nights": 1,
+   "size": 4,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "아이 동반",
+     "level": "observed",
+     "basis": "카드 v1 동행"
+    },
+    {
+     "group": "목적",
+     "label": "가족 여행",
+     "level": "inferred",
+     "basis": "카드 v1 목적"
+    },
+    {
+     "group": "시기",
+     "label": "여름",
+     "level": "observed",
+     "basis": "카드 v1 방문일"
+    },
+    {
+     "group": "숙박",
+     "label": "그랜드",
+     "level": "observed",
+     "basis": "카드 v1"
+    },
+    {
+     "group": "시설",
+     "label": "실내 수영장",
+     "level": "observed",
+     "basis": "카드 v1 관측 r003:pool",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "observed",
+     "basis": "카드 v1 관측 r003:breakfast",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "빛의 시어터",
+     "level": "observed",
+     "basis": "카드 v1 혜택(이용 기록 없음) r003:package",
+     "status": "entitled"
+    },
+    {
+     "group": "관심",
+     "label": "조망",
+     "level": "observed",
+     "basis": "카드 v1 명시 선호 r003:view"
+    }
+   ],
+   "customer_key": "team-blog25",
+   "visit_key": "stay-r003-01",
+   "ready": true,
+   "source_id": "blog25",
+   "type": "card",
+   "ready_status": "agent_ready"
+  },
+  {
+   "id": "blog26",
+   "source": "블로그 후기 · 고객 카드 v1(사람 사실 확인)",
+   "source_kind": "card",
+   "summary": "그랜드 2박 · 2인 부모님 동반 · 르파사쥬·라이브러리·더파빌리온·포레스트 파크·온달·더뷔페",
+   "memo": "그랜드 2박 성인 2인·파빌리온 브런치/애프터눈티·온달 수라상·더뷔페 조식·객실 휴식",
+   "when": {
+    "text": "2026년 2월",
+    "season": "겨울",
+    "year": 2026,
+    "level": "inferred"
+   },
+   "stay": "그랜드",
+   "nights": 2,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "부모님 동반",
+     "level": "observed",
+     "basis": "카드 v1 동행"
+    },
+    {
+     "group": "목적",
+     "label": "가족 여행",
+     "level": "inferred",
+     "basis": "카드 v1 목적"
+    },
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "inferred",
+     "basis": "카드 v1 목적"
+    },
+    {
+     "group": "목적",
+     "label": "미식 · 식사",
+     "level": "inferred",
+     "basis": "카드 v1 목적"
+    },
+    {
+     "group": "시기",
+     "label": "겨울",
+     "level": "inferred",
+     "basis": "카드 v1 방문일"
+    },
+    {
+     "group": "숙박",
+     "label": "그랜드",
+     "level": "observed",
+     "basis": "카드 v1"
+    },
+    {
+     "group": "시설",
+     "label": "르파사쥬",
+     "level": "observed",
+     "basis": "카드 v1 관측 r001:takeout",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "라이브러리",
+     "level": "observed",
+     "basis": "카드 v1 관측 r001:library",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "더파빌리온",
+     "level": "observed",
+     "basis": "카드 v1 관측 r001:pavilion",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "포레스트 파크",
+     "level": "observed",
+     "basis": "카드 v1 관측 r001:forest",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "온달",
+     "level": "observed",
+     "basis": "카드 v1 관측 r001:ondal",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "observed",
+     "basis": "카드 v1 관측 r001:buffet",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "별실",
+     "level": "observed",
+     "basis": "카드 v1 명시 선호 r001:ondal"
+    },
+    {
+     "group": "관심",
+     "label": "조망",
+     "level": "observed",
+     "basis": "카드 v1 명시 선호 r001:view_walk"
+    },
+    {
+     "group": "이벤트",
+     "label": "설 연휴",
+     "level": "inferred",
+     "basis": "카드 v1 목적",
+     "status": "purpose"
+    }
+   ],
+   "customer_key": "team-blog26",
+   "visit_key": "stay-r001-01",
+   "ready": true,
+   "source_id": "blog26",
+   "type": "card",
+   "ready_status": "agent_ready"
+  },
+  {
+   "id": "blog36",
+   "source": "블로그 후기 · 고객 카드 v1(사람 사실 확인)",
+   "source_kind": "card",
+   "summary": "그랜드 1박 · 4인 부모님 동반 · 명월관·럭스 바·피트니스/사우나",
+   "memo": "그랜드 1박 성인 4인·명월관 예약 석식·LUX 바 와인·객실 휴식",
+   "when": {
+    "text": "방문 시기 미상",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "그랜드",
+   "nights": 1,
+   "size": 4,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "부모님 동반",
+     "level": "observed",
+     "basis": "카드 v1 동행"
+    },
+    {
+     "group": "목적",
+     "label": "가족 여행",
+     "level": "inferred",
+     "basis": "카드 v1 목적"
+    },
+    {
+     "group": "목적",
+     "label": "미식 · 식사",
+     "level": "inferred",
+     "basis": "카드 v1 목적"
+    },
+    {
+     "group": "목적",
+     "label": "모임",
+     "level": "inferred",
+     "basis": "카드 v1 목적"
+    },
+    {
+     "group": "숙박",
+     "label": "그랜드",
+     "level": "observed",
+     "basis": "카드 v1"
+    },
+    {
+     "group": "시설",
+     "label": "명월관",
+     "level": "observed",
+     "basis": "카드 v1 관측 r037:dinner",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "럭스 바",
+     "level": "observed",
+     "basis": "카드 v1 관측 r037:bar",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "피트니스 · 사우나",
+     "level": "observed",
+     "basis": "카드 v1 관측 r037:fitness",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "이동 최소화",
+     "level": "observed",
+     "basis": "카드 v1 명시 선호 r037:no_drive"
+    },
+    {
+     "group": "관심",
+     "label": "조용함",
+     "level": "observed",
+     "basis": "카드 v1 명시 선호 r037:quiet"
+    }
+   ],
+   "customer_key": "team-blog36",
+   "visit_key": "stay-r037-01",
+   "ready": true,
+   "source_id": "blog36",
+   "type": "card",
+   "ready_status": "agent_ready"
+  },
+  {
+   "id": "blog40",
+   "source": "블로그 후기 · 고객 카드 v1(사람 사실 확인)",
+   "source_kind": "card",
+   "summary": "비투숙 방문 · 2인 커플 · 더뷔페",
+   "memo": "비투숙 2인 더뷔페 예약·선결제 방문·시간대는 보류지만 식사 자체는 명확",
+   "when": {
+    "text": "2024년 2월",
+    "season": "겨울",
+    "year": 2024,
+    "level": "observed"
+   },
+   "stay": "비투숙",
+   "nights": 0,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "observed",
+     "basis": "카드 v1 동행"
+    },
+    {
+     "group": "목적",
+     "label": "미식 · 식사",
+     "level": "inferred",
+     "basis": "카드 v1 목적"
+    },
+    {
+     "group": "시기",
+     "label": "겨울",
+     "level": "observed",
+     "basis": "카드 v1 방문일"
+    },
+    {
+     "group": "숙박",
+     "label": "비투숙",
+     "level": "observed",
+     "basis": "카드 v1"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "observed",
+     "basis": "카드 v1 관측 r058:buffet_meal",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "조망",
+     "level": "observed",
+     "basis": "카드 v1 명시 선호 r058:window"
+    }
+   ],
+   "customer_key": "team-blog40",
+   "visit_key": "visit-r058-01",
+   "ready": true,
+   "source_id": "blog40",
+   "type": "card",
+   "ready_status": "agent_ready"
+  },
+  {
+   "id": "blog41",
+   "source": "블로그 후기 · 고객 카드 v1(사람 사실 확인)",
+   "source_kind": "card",
+   "summary": "비스타 2박 · 2인 커플 · 실내 수영장·스카이야드·더뷔페·피자힐",
+   "memo": "비스타 2박 2인 추정·더뷔페 디너·피자힐 점심·수영장/스카이야드/라이브러리/피트니스 이용",
+   "when": {
+    "text": "2026년 9월",
+    "season": "가을",
+    "year": 2026,
+    "level": "inferred"
+   },
+   "stay": "비스타",
+   "nights": 2,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "inferred",
+     "basis": "카드 v1 동행"
+    },
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "inferred",
+     "basis": "카드 v1 목적"
+    },
+    {
+     "group": "목적",
+     "label": "미식 · 식사",
+     "level": "inferred",
+     "basis": "카드 v1 목적"
+    },
+    {
+     "group": "시기",
+     "label": "가을",
+     "level": "inferred",
+     "basis": "카드 v1 방문일"
+    },
+    {
+     "group": "숙박",
+     "label": "비스타",
+     "level": "observed",
+     "basis": "카드 v1"
+    },
+    {
+     "group": "시설",
+     "label": "실내 수영장",
+     "level": "observed",
+     "basis": "카드 v1 관측 r011:pool",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "스카이야드",
+     "level": "observed",
+     "basis": "카드 v1 관측 r011:skyard",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "observed",
+     "basis": "카드 v1 관측 r011:buffet",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "피자힐",
+     "level": "observed",
+     "basis": "카드 v1 관측 r011:pizzahill",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "객실 조망 무관",
+     "level": "observed",
+     "basis": "카드 v1 명시 선호 r011:view"
+    },
+    {
+     "group": "관심",
+     "label": "새로운 경험",
+     "level": "observed",
+     "basis": "카드 v1 명시 선호 r011:facility_series"
+    }
+   ],
+   "customer_key": "team-blog41",
+   "visit_key": "stay-r011-01",
+   "ready": true,
+   "source_id": "blog41",
+   "type": "card",
+   "ready_status": "agent_ready"
+  },
+  {
+   "id": "blog43",
+   "source": "블로그 후기 · 고객 카드 v1(사람 사실 확인)",
+   "source_kind": "card",
+   "summary": "더글라스 1박 · 1인 혼자 · 더글라스 라운지",
+   "memo": "판단 유보: 파일에 시험용 표시가 있어 식당 선택 기본값 입력에서 제외",
+   "when": {
+    "text": "2026년 9월",
+    "season": "가을",
+    "year": 2026,
+    "level": "observed"
+   },
+   "stay": "더글라스",
+   "nights": 1,
+   "size": 1,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "혼자",
+     "level": "inferred",
+     "basis": "카드 v1 동행"
+    },
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "observed",
+     "basis": "카드 v1 목적"
+    },
+    {
+     "group": "시기",
+     "label": "가을",
+     "level": "observed",
+     "basis": "카드 v1 방문일"
+    },
+    {
+     "group": "숙박",
+     "label": "더글라스",
+     "level": "observed",
+     "basis": "카드 v1"
+    },
+    {
+     "group": "시설",
+     "label": "더글라스 라운지",
+     "level": "observed",
+     "basis": "카드 v1 관측 r023:snack",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "observed",
+     "basis": "카드 v1 관측(포기) r023:queue",
+     "status": "failed"
+    },
+    {
+     "group": "관심",
+     "label": "조용함",
+     "level": "observed",
+     "basis": "카드 v1 명시 선호 r023:rest"
+    }
+   ],
+   "customer_key": "team-blog43",
+   "visit_key": "stay-r023-01",
+   "ready": true,
+   "source_id": "blog43",
+   "type": "card",
+   "ready_status": "agent_ready"
+  },
+  {
+   "id": "blog44",
+   "source": "블로그 후기 · 고객 카드 v1(사람 사실 확인)",
+   "source_kind": "card",
+   "summary": "비투숙 방문 · 2인 아이 동반 · 빛의 시어터",
+   "memo": "비투숙 아이 동반·빛의 시어터 전시 관람 후 카페 음료·로비 공연 관람",
+   "when": {
+    "text": "방문 시기 미상",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "비투숙",
+   "nights": 0,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "아이 동반",
+     "level": "observed",
+     "basis": "카드 v1 동행"
+    },
+    {
+     "group": "숙박",
+     "label": "비투숙",
+     "level": "observed",
+     "basis": "카드 v1"
+    },
+    {
+     "group": "시설",
+     "label": "빛의 시어터",
+     "level": "observed",
+     "basis": "카드 v1 관측 r048:exhibition",
+     "status": "used"
+    }
+   ],
+   "customer_key": "team-blog44",
+   "visit_key": "visit-r048-01",
+   "ready": false,
+   "source_id": "blog44",
+   "type": "card",
+   "ready_status": "profile_only"
+  },
+  {
+   "id": "blog46",
+   "source": "블로그 후기 · 고객 카드 v1(사람 사실 확인)",
+   "source_kind": "card",
+   "summary": "비스타 1박 · 2인 커플 · 실내 수영장·스카이야드",
+   "memo": "비스타 스파 디럭스 1박 2인·늦은 체크인·객실 스파/수영장/스카이야드 이용·식당 방문 없음",
+   "when": {
+    "text": "방문 시기 미상",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "비스타",
+   "nights": 1,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "inferred",
+     "basis": "카드 v1 동행"
+    },
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "inferred",
+     "basis": "카드 v1 목적"
+    },
+    {
+     "group": "숙박",
+     "label": "비스타",
+     "level": "observed",
+     "basis": "카드 v1"
+    },
+    {
+     "group": "시설",
+     "label": "실내 수영장",
+     "level": "observed",
+     "basis": "카드 v1 관측 r016:pool",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "스카이야드",
+     "level": "observed",
+     "basis": "카드 v1 관측 r016:skyard",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "조망",
+     "level": "observed",
+     "basis": "카드 v1 명시 선호 r016:hotel_choice"
+    }
+   ],
+   "customer_key": "team-blog46",
+   "visit_key": "stay-r016-01",
+   "ready": true,
+   "source_id": "blog46",
+   "type": "card",
+   "ready_status": "agent_ready"
+  },
+  {
+   "id": "blog57",
+   "source": "블로그 후기 · 고객 카드 v1(사람 사실 확인)",
+   "source_kind": "card",
+   "summary": "비투숙 방문 · 4인 아이 동반 · 피자힐",
+   "memo": "",
+   "when": {
+    "text": "방문 시기 미상",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "비투숙",
+   "nights": 0,
+   "size": 4,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "아이 동반",
+     "level": "inferred",
+     "basis": "카드 v1 동행"
+    },
+    {
+     "group": "목적",
+     "label": "기념일 · 데이트",
+     "level": "observed",
+     "basis": "카드 v1 목적"
+    },
+    {
+     "group": "숙박",
+     "label": "비투숙",
+     "level": "observed",
+     "basis": "카드 v1"
+    },
+    {
+     "group": "시설",
+     "label": "피자힐",
+     "level": "observed",
+     "basis": "카드 v1 관측 r052:dinner",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "조망",
+     "level": "observed",
+     "basis": "카드 v1 명시 선호 r052:view"
+    },
+    {
+     "group": "관심",
+     "label": "재방문",
+     "level": "observed",
+     "basis": "카드 v1 명시 선호 r052:fourth_visit"
+    },
+    {
+     "group": "이벤트",
+     "label": "기념일",
+     "level": "observed",
+     "basis": "카드 v1 목적",
+     "status": "purpose"
+    }
+   ],
+   "customer_key": "team-blog57",
+   "visit_key": "visit-r052-01",
+   "ready": true,
+   "source_id": "blog57",
+   "type": "card",
+   "ready_status": "agent_ready"
+  },
+  {
+   "id": "blog58",
+   "source": "블로그 후기 · 고객 카드 v1(사람 사실 확인)",
+   "source_kind": "card",
+   "summary": "그랜드 1박 · 2인 아이 동반 · 클럽 라운지·포레스트 파크·더뷔페",
+   "memo": "",
+   "when": {
+    "text": "2026년 9월",
+    "season": "가을",
+    "year": 2026,
+    "level": "inferred"
+   },
+   "stay": "그랜드",
+   "nights": 1,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "아이 동반",
+     "level": "observed",
+     "basis": "카드 v1 동행"
+    },
+    {
+     "group": "동행",
+     "label": "부모님 동반",
+     "level": "observed",
+     "basis": "카드 v1 동행"
+    },
+    {
+     "group": "목적",
+     "label": "기념일 · 데이트",
+     "level": "observed",
+     "basis": "카드 v1 목적"
+    },
+    {
+     "group": "목적",
+     "label": "미식 · 식사",
+     "level": "observed",
+     "basis": "카드 v1 목적"
+    },
+    {
+     "group": "시기",
+     "label": "가을",
+     "level": "inferred",
+     "basis": "카드 v1 방문일"
+    },
+    {
+     "group": "숙박",
+     "label": "그랜드",
+     "level": "observed",
+     "basis": "카드 v1"
+    },
+    {
+     "group": "시설",
+     "label": "클럽 라운지",
+     "level": "observed",
+     "basis": "카드 v1 관측 r046:tea",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "포레스트 파크",
+     "level": "observed",
+     "basis": "카드 v1 관측 r046:forest",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "observed",
+     "basis": "카드 v1 관측 r046:buffet",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "조망",
+     "level": "observed",
+     "basis": "카드 v1 명시 선호 r046:view_queue"
+    },
+    {
+     "group": "관심",
+     "label": "클럽 혜택",
+     "level": "observed",
+     "basis": "카드 v1 명시 선호 r046:room_choice"
+    },
+    {
+     "group": "이벤트",
+     "label": "기념일",
+     "level": "observed",
+     "basis": "카드 v1 목적",
+     "status": "purpose"
+    }
+   ],
+   "customer_key": "team-blog58",
+   "visit_key": "stay-r046-01",
+   "ready": true,
+   "source_id": "blog58",
+   "type": "card",
+   "ready_status": "agent_ready"
+  },
+  {
+   "id": "blog59",
+   "source": "블로그 후기 · 고객 카드 v1(사람 사실 확인)",
+   "source_kind": "card",
+   "summary": "비스타 1박 · 5인 아이 동반 · 더파빌리온·리버파크·더뷔페",
+   "memo": "",
+   "when": {
+    "text": "2026년 8월",
+    "season": "여름",
+    "year": 2026,
+    "level": "inferred"
+   },
+   "stay": "비스타",
+   "nights": 1,
+   "size": 5,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "아이 동반",
+     "level": "observed",
+     "basis": "카드 v1 동행"
+    },
+    {
+     "group": "목적",
+     "label": "가족 여행",
+     "level": "observed",
+     "basis": "카드 v1 목적"
+    },
+    {
+     "group": "시기",
+     "label": "여름",
+     "level": "inferred",
+     "basis": "카드 v1 방문일"
+    },
+    {
+     "group": "숙박",
+     "label": "비스타",
+     "level": "observed",
+     "basis": "카드 v1"
+    },
+    {
+     "group": "시설",
+     "label": "더파빌리온",
+     "level": "observed",
+     "basis": "카드 v1 관측 r006:pavilion",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "리버파크",
+     "level": "observed",
+     "basis": "카드 v1 관측 r006:riverpark",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "observed",
+     "basis": "카드 v1 관측 r006:monday_breakfast",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "조망",
+     "level": "observed",
+     "basis": "카드 v1 명시 선호 r006:window_request"
+    }
+   ],
+   "customer_key": "team-blog59",
+   "visit_key": "stay-r006-01",
+   "ready": true,
+   "source_id": "blog59",
+   "type": "card",
+   "ready_status": "agent_ready"
+  },
+  {
+   "id": "blog01",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "그랜드 2박 · 4인 아이 동반 · 실내 수영장·더뷔페·피자힐·포레스트 파크·빛의 시어터",
+   "memo": "그랜드 본관 2박 가족 4인·더뷔페 조식/중식 패키지·피자힐·수영장/포레스트파크/빛의 시어터 이용",
+   "when": {
+    "text": "방문 시기 미상",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "그랜드",
+   "nights": 2,
+   "size": 4,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "아이 동반",
+     "level": "estimated",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "가족 여행",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "그랜드",
+     "level": "estimated",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시설",
+     "label": "실내 수영장",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "피자힐",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "포레스트 파크",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "빛의 시어터",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "새로운 경험",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "함께 먹기",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog01",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog02",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "더글라스 1박 · 4인 친구/모임 · 더글라스 라운지·실내 수영장",
+   "memo": "더글라스 1박 4인 추정·라이트 스낵/더글라스 아워/조식 라운지 이용·수영장 이용",
+   "when": {
+    "text": "2024년 6월",
+    "season": "여름",
+    "year": 2024,
+    "level": "estimated"
+   },
+   "stay": "더글라스",
+   "nights": 1,
+   "size": 4,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "친구 · 모임",
+     "level": "estimated",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "모임",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "더글라스",
+     "level": "estimated",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시기",
+     "label": "여름",
+     "level": "estimated",
+     "basis": "후기 파일 방문일 등급"
+    },
+    {
+     "group": "시설",
+     "label": "더글라스 라운지",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "실내 수영장",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "대기 회피",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "이동 최소화",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "조망",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "함께 먹기",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "조용함",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog02",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog03",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "그랜드 1박 · 2인 커플 · 스카이야드·피자힐·더뷔페",
+   "memo": "그랜드 1박·스카이야드 족욕·피자힐 포장 석식·더뷔페 조식·같은 사람의 비스타 체류는 르파사쥬 TOGO 기록",
+   "when": {
+    "text": "2023년 5월",
+    "season": "봄",
+    "year": 2023,
+    "level": "estimated"
+   },
+   "stay": "그랜드",
+   "nights": 1,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "estimated",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "그랜드",
+     "level": "estimated",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시기",
+     "label": "봄",
+     "level": "estimated",
+     "basis": "후기 파일 방문일 등급"
+    },
+    {
+     "group": "시설",
+     "label": "스카이야드",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "피자힐",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "조망",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "새로운 경험",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": "같은 작성자의 다른 체류 기록이 함께 있음(유형표)",
+   "ready": false,
+   "source_id": "blog03",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog04",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "그랜드 1박 · 2인 커플 · 클럽 라운지",
+   "memo": "그랜드 클럽스위트 1박·클럽라운지 티타임/조식 이용·객실과 라운지 중심 체류",
+   "when": {
+    "text": "2025년 4월",
+    "season": "봄",
+    "year": 2025,
+    "level": "estimated"
+   },
+   "stay": "그랜드",
+   "nights": 1,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "estimated",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "그랜드",
+     "level": "estimated",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시기",
+     "label": "봄",
+     "level": "estimated",
+     "basis": "후기 파일 방문일 등급"
+    },
+    {
+     "group": "시설",
+     "label": "클럽 라운지",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "이동 최소화",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog04",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog05",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "비스타 1박 · 3인 친구/모임 · 실내 수영장·스카이야드·더뷔페",
+   "memo": "비스타 1박 성인 3명 확인·라운지 해피아워/더뷔페 조식·수영장/스카이야드 이용",
+   "when": {
+    "text": "2025년 3월",
+    "season": "봄",
+    "year": 2025,
+    "level": "estimated"
+   },
+   "stay": "비스타",
+   "nights": 1,
+   "size": 3,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "친구 · 모임",
+     "level": "estimated",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "모임",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "비스타",
+     "level": "estimated",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시기",
+     "label": "봄",
+     "level": "estimated",
+     "basis": "후기 파일 방문일 등급"
+    },
+    {
+     "group": "시설",
+     "label": "실내 수영장",
+     "level": "estimated",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "스카이야드",
+     "level": "estimated",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "estimated",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "대기 회피",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "조망",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog05",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog06",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "그랜드 1박 · 2인 커플 · 빛의 시어터·피자힐·라이브러리",
+   "memo": "전시 관람 뒤 피자힐 포장·객실 식사·수영장/라이브러리 이용 흐름, 숙박 건물은 추가 확인 필요",
+   "when": {
+    "text": "방문 시기 미상",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "그랜드",
+   "nights": 1,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "estimated",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "그랜드",
+     "level": "estimated",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시설",
+     "label": "빛의 시어터",
+     "level": "estimated",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "피자힐",
+     "level": "estimated",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "라이브러리",
+     "level": "estimated",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "대기 회피",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "이동 최소화",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog06",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog07",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "더글라스 1박 · 2인 커플 · 더글라스 라운지·실내 수영장·피자힐",
+   "memo": "더글라스 크리스마스 1박 2인 추정·라운지 3타임·피자힐 포장·수영장 이용",
+   "when": {
+    "text": "2025년 12월",
+    "season": "겨울",
+    "year": 2025,
+    "level": "estimated"
+   },
+   "stay": "더글라스",
+   "nights": 1,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "inferred",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "기념일 · 데이트",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "더글라스",
+     "level": "observed",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시기",
+     "label": "겨울",
+     "level": "estimated",
+     "basis": "후기 파일 방문일 등급"
+    },
+    {
+     "group": "이벤트",
+     "label": "크리스마스",
+     "level": "estimated",
+     "basis": "방문일",
+     "status": "date"
+    },
+    {
+     "group": "시설",
+     "label": "더글라스 라운지",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "실내 수영장",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "피자힐",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "이동 최소화",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "조망",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "새로운 경험",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "조용함",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog07",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog08",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "비스타 1박 · 2인 아이 동반 · 빛의 시어터·실내 수영장",
+   "memo": "비스타 리버뷰 1박 아이 동반·빛의 시어터/라운지 카페 음료·비스타 수영장 이용",
+   "when": {
+    "text": "2025년 10월",
+    "season": "가을",
+    "year": 2025,
+    "level": "estimated"
+   },
+   "stay": "비스타",
+   "nights": 1,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "아이 동반",
+     "level": "inferred",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "가족 여행",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "비스타",
+     "level": "observed",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시기",
+     "label": "가을",
+     "level": "estimated",
+     "basis": "후기 파일 방문일 등급"
+    },
+    {
+     "group": "시설",
+     "label": "빛의 시어터",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "실내 수영장",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "조망",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "새로운 경험",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "함께 먹기",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "조용함",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog08",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog09",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "비투숙 방문 · 2인 성인 가족 · 더뷔페",
+   "memo": "비투숙 가족 기념일 방문·네이버 예약 할인으로 더뷔페 식사·호텔뷔페 방문 목적",
+   "when": {
+    "text": "방문 시기 미상 · 게시 2023년 8월",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "비투숙",
+   "nights": 0,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "성인 가족",
+     "level": "estimated",
+     "basis": "유형표 목적 + 아이 없음"
+    },
+    {
+     "group": "목적",
+     "label": "가족 여행",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "비투숙",
+     "level": "inferred",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "대기 회피",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "새로운 경험",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "조용함",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "이벤트",
+     "label": "기념일",
+     "level": "estimated",
+     "basis": "유형표 요약에 낱말이 나옴",
+     "status": "mention"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog09",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog10",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "더글라스 1박 · 2인 커플 · 라이브러리·더글라스 라운지·실내 수영장",
+   "memo": "더글라스 1박·라운지 스낵/해피아워/조식 3회 이용·도서관/수영장 이용",
+   "when": {
+    "text": "2025년 3월",
+    "season": "봄",
+    "year": 2025,
+    "level": "estimated"
+   },
+   "stay": "더글라스",
+   "nights": 1,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "inferred",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "더글라스",
+     "level": "observed",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시기",
+     "label": "봄",
+     "level": "estimated",
+     "basis": "후기 파일 방문일 등급"
+    },
+    {
+     "group": "시설",
+     "label": "라이브러리",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "더글라스 라운지",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "실내 수영장",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "조망",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "새로운 경험",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "조용함",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog10",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog11",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "더글라스 1박 · 2인 커플 · 더글라스 라운지",
+   "memo": "더글라스 1박 커플 기념일·더글라스 아워 투고·객실과 숲속 조용한 휴식 중심",
+   "when": {
+    "text": "2021년 11월",
+    "season": "가을",
+    "year": 2021,
+    "level": "estimated"
+   },
+   "stay": "더글라스",
+   "nights": 1,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "observed",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "기념일 · 데이트",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "더글라스",
+     "level": "observed",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시기",
+     "label": "가을",
+     "level": "estimated",
+     "basis": "후기 파일 방문일 등급"
+    },
+    {
+     "group": "시설",
+     "label": "더글라스 라운지",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "조망",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "함께 먹기",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "조용함",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "이벤트",
+     "label": "기념일",
+     "level": "estimated",
+     "basis": "유형표 요약에 낱말이 나옴",
+     "status": "mention"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog11",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog12",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "비스타 1박 · 4인 아이 동반 · 실내 수영장·모에기·금룡",
+   "memo": "비스타 리버뷰 1박 가족 아이 동반·수영장 후 금룡 석식·같은 체류 중 모에기 이용 기록",
+   "when": {
+    "text": "2019년 2월",
+    "season": "겨울",
+    "year": 2019,
+    "level": "estimated"
+   },
+   "stay": "비스타",
+   "nights": 1,
+   "size": 4,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "아이 동반",
+     "level": "inferred",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "가족 여행",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "비스타",
+     "level": "observed",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시기",
+     "label": "겨울",
+     "level": "estimated",
+     "basis": "후기 파일 방문일 등급"
+    },
+    {
+     "group": "시설",
+     "label": "실내 수영장",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "모에기",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "금룡",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "조망",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "새로운 경험",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "함께 먹기",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog12",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog13",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "비투숙 방문 · 2인 아이 동반 · 온달",
+   "memo": "비투숙 온달 궁중상차림 코스 저녁·아이 동반 동행자와 룸에서 한정식 코스 식사",
+   "when": {
+    "text": "2023년 9월",
+    "season": "가을",
+    "year": 2023,
+    "level": "estimated"
+   },
+   "stay": "비투숙",
+   "nights": 0,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "아이 동반",
+     "level": "observed",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "미식 · 식사",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "비투숙",
+     "level": "inferred",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시기",
+     "label": "가을",
+     "level": "estimated",
+     "basis": "후기 파일 방문일 등급"
+    },
+    {
+     "group": "시설",
+     "label": "온달",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "격식 있는 식사",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "함께 먹기",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "조용함",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog13",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog14",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "비투숙 방문 · 2인 커플 · 빛의 시어터",
+   "memo": "비투숙 커플 실내 데이트·빛의 시어터 관람 후 라운지 커피와 서울 전경",
+   "when": {
+    "text": "방문 시기 미상 · 게시 2025년 8월",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "비투숙",
+   "nights": 0,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "inferred",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "기념일 · 데이트",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "비투숙",
+     "level": "inferred",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시설",
+     "label": "빛의 시어터",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "대기 회피",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "이동 최소화",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog14",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog15",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "그랜드 1박 · 2인 아이 동반 · 실내 수영장·피자힐",
+   "memo": "워커힐 1박 아이 동반·수영장/키즈클럽·피자힐 포장 석식·빙수/조식 장소는 추정이라 제외",
+   "when": {
+    "text": "2023년 8월",
+    "season": "여름",
+    "year": 2023,
+    "level": "estimated"
+   },
+   "stay": "그랜드",
+   "nights": 1,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "아이 동반",
+     "level": "estimated",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "가족 여행",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "그랜드",
+     "level": "estimated",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시기",
+     "label": "여름",
+     "level": "estimated",
+     "basis": "후기 파일 방문일 등급"
+    },
+    {
+     "group": "시설",
+     "label": "실내 수영장",
+     "level": "estimated",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "피자힐",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "새로운 경험",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog15",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog16",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "비스타 1박 · 2인 커플 · 피트니스/사우나·라이브러리·피자힐·스카이야드·더뷔페·실내 수영장",
+   "memo": "비스타 1박 2인·피자힐 석식·더뷔페 조식·수영장/스카이야드/피트니스/라이브러리 이용",
+   "when": {
+    "text": "방문 시기 미상 · 게시 2026년 8월",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "비스타",
+   "nights": 1,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "inferred",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "비스타",
+     "level": "observed",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시설",
+     "label": "피트니스 · 사우나",
+     "level": "inferred",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "라이브러리",
+     "level": "inferred",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "피자힐",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "스카이야드",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "실내 수영장",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "새로운 경험",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog16",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog17",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "더글라스 1박 · 2인 커플 · 더글라스 라운지",
+   "memo": "더글라스 1박 2인 기념일·라운지 석식/조식 포함·객실 휴식 기록",
+   "when": {
+    "text": "방문 시기 미상 · 게시 2026년 9월",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "더글라스",
+   "nights": 1,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "inferred",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "기념일 · 데이트",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "더글라스",
+     "level": "observed",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시설",
+     "label": "더글라스 라운지",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "이벤트",
+     "label": "기념일",
+     "level": "estimated",
+     "basis": "유형표 요약에 낱말이 나옴",
+     "status": "mention"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog17",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog18",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "비투숙 방문 · 3인 친구/모임 · 피자힐",
+   "memo": "비투숙 지인 3인 평일 모임·피자힐 창가 좌석에서 세트 식사·고급진 곳에서 식사 목적",
+   "when": {
+    "text": "방문 시기 미상 · 게시 2026년 9월",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "비투숙",
+   "nights": 0,
+   "size": 3,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "친구 · 모임",
+     "level": "observed",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "모임",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "비투숙",
+     "level": "inferred",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시설",
+     "label": "피자힐",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "격식 있는 식사",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "새로운 경험",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "함께 먹기",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog18",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog19",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "비스타 1박 · 2인 커플 · 실내 수영장·피자힐·스카이야드·더뷔페·피트니스/사우나·라이브러리",
+   "memo": "비스타 1박 2인·피자힐 포장·더뷔페 조식·수영장/스카이야드/피트니스/라이브러리 이용",
+   "when": {
+    "text": "방문 시기 미상 · 게시 2026년 8월",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "비스타",
+   "nights": 1,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "observed",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "비스타",
+     "level": "observed",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시설",
+     "label": "실내 수영장",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "피자힐",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "스카이야드",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "피트니스 · 사우나",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "라이브러리",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "대기 회피",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "새로운 경험",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog19",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog20",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "비투숙 방문 · 2인 아이 동반 · 빛의 시어터",
+   "memo": "비투숙 아이 동반·빛의 시어터 전시 관람 후 연계 카페에서 음료와 파운드케이크 이용",
+   "when": {
+    "text": "2026년 8월",
+    "season": "여름",
+    "year": 2026,
+    "level": "observed"
+   },
+   "stay": "비투숙",
+   "nights": 0,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "아이 동반",
+     "level": "observed",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "가족 여행",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "비투숙",
+     "level": "inferred",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시기",
+     "label": "여름",
+     "level": "observed",
+     "basis": "후기 파일 방문일 등급"
+    },
+    {
+     "group": "시설",
+     "label": "빛의 시어터",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "새로운 경험",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog20",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog21",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "그랜드 1박 · 4인 아이 동반 · 실내 수영장·라이브러리·피자힐·피트니스/사우나",
+   "memo": "그랜드 1박 아이 동반·피자힐 석식·수영장/라이브러리/헬스/사우나 이용",
+   "when": {
+    "text": "방문 시기 미상 · 게시 2026년 9월",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "그랜드",
+   "nights": 1,
+   "size": 4,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "아이 동반",
+     "level": "estimated",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "가족 여행",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "그랜드",
+     "level": "observed",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시설",
+     "label": "실내 수영장",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "라이브러리",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "피자힐",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "피트니스 · 사우나",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog21",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog22",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "비투숙 방문 · 2인 성인 가족 · 더뷔페",
+   "memo": "비투숙 가족 기념일 식사·더뷔페 평일 런치 예약·창가 자리 요청",
+   "when": {
+    "text": "방문 시기 미상 · 게시 2026년 9월",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "비투숙",
+   "nights": 0,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "성인 가족",
+     "level": "estimated",
+     "basis": "유형표 목적 + 아이 없음"
+    },
+    {
+     "group": "목적",
+     "label": "가족 여행",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "비투숙",
+     "level": "inferred",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "조망",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "이벤트",
+     "label": "기념일",
+     "level": "estimated",
+     "basis": "유형표 요약에 낱말이 나옴",
+     "status": "mention"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog22",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog23",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "그랜드 1박 · 1인 혼자 · 클럽 라운지·더뷔페",
+   "memo": "그랜드 클럽스위트 1박·클럽라운지 티타임/해피아워·더뷔페 조식·객실 휴식",
+   "when": {
+    "text": "방문 시기 미상 · 게시 2026년 9월",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "그랜드",
+   "nights": 1,
+   "size": 1,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "혼자",
+     "level": "estimated",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "그랜드",
+     "level": "observed",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시설",
+     "label": "클럽 라운지",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "조용함",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog23",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog24",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "비투숙 방문 · 2인 커플 · 더뷔페",
+   "memo": "비투숙 2인 데이트·더뷔페 런치 이용·한강뷰가 좋았다는 식사 후기",
+   "when": {
+    "text": "방문 시기 미상 · 게시 2026년 8월",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "비투숙",
+   "nights": 0,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "inferred",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "기념일 · 데이트",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "비투숙",
+     "level": "inferred",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog24",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog27",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "비스타 1박 · 2인 커플 · 르파사쥬·실내 수영장·스카이야드·피트니스/사우나",
+   "memo": "비스타 1박 2인 추정·케이크 간식·수영장/스카이야드/피트니스 이용·석식 장소 미상",
+   "when": {
+    "text": "방문 시기 미상 · 게시 2026년 8월",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "비스타",
+   "nights": 1,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "inferred",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "비스타",
+     "level": "observed",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시설",
+     "label": "르파사쥬",
+     "level": "inferred",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "실내 수영장",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "스카이야드",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "피트니스 · 사우나",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "조망",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog27",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog28",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "그랜드 1박 · 4인 아이 동반 · 클럽 라운지·리버파크·실내 수영장·스카이야드·피자힐",
+   "memo": "그랜드 클럽스위트 1박 4인 가족·클럽라운지 해피아워/조식·아이 저녁 피자힐 포장·리버파크/수영장",
+   "when": {
+    "text": "방문 시기 미상 · 게시 2026년 8월",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "그랜드",
+   "nights": 1,
+   "size": 4,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "아이 동반",
+     "level": "observed",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "가족 여행",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "그랜드",
+     "level": "observed",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시설",
+     "label": "클럽 라운지",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "리버파크",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "실내 수영장",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "스카이야드",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "피자힐",
+     "level": "inferred",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "이동 최소화",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "조용함",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog28",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog30",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "비스타 1박 · 2인 커플 · 스카이야드·르파사쥬·더뷔페",
+   "memo": "비스타 1박 2인 추정·객실 휴식/스카이야드 족욕·르파사쥬 와인 구매·더뷔페 조식",
+   "when": {
+    "text": "방문 시기 미상 · 게시 2026년 9월",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "비스타",
+   "nights": 1,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "estimated",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "비스타",
+     "level": "observed",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시설",
+     "label": "스카이야드",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "르파사쥬",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "inferred",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "대기 회피",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "이벤트",
+     "label": "와인페어",
+     "level": "estimated",
+     "basis": "유형표 요약에 낱말이 나옴",
+     "status": "mention"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog30",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog31",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "그랜드 1박 · 2인 커플 · 더파빌리온·더뷔페",
+   "memo": "그랜드 1박 2인·체크인 전 파빌리온 애프터눈티·객실 휴식·더뷔페 석식/조식",
+   "when": {
+    "text": "2026년 9월",
+    "season": "가을",
+    "year": 2026,
+    "level": "estimated"
+   },
+   "stay": "그랜드",
+   "nights": 1,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "observed",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "기념일 · 데이트",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "그랜드",
+     "level": "observed",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시기",
+     "label": "가을",
+     "level": "estimated",
+     "basis": "후기 파일 방문일 등급"
+    },
+    {
+     "group": "시설",
+     "label": "더파빌리온",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog31",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog35",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "비스타 1박 · 2인 커플 · 더파빌리온·스카이야드·실내 수영장·더뷔페",
+   "memo": "비스타 1박 2인·더파빌리온 커피/쿠키 방문·스카이야드/수영장·더뷔페 조식",
+   "when": {
+    "text": "방문 시기 미상 · 게시 2026년 9월",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "비스타",
+   "nights": 1,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "observed",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "비스타",
+     "level": "observed",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시설",
+     "label": "더파빌리온",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "스카이야드",
+     "level": "inferred",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "실내 수영장",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "조망",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog35",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog38",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "비스타 1박 · 2인 커플 · 더뷔페",
+   "memo": "더뷔페 디너와 다음날 조식 식사 자체는 명확하나 투숙 건물/박수/인원은 보류",
+   "when": {
+    "text": "방문 시기 미상 · 게시 2026년 9월",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "비스타",
+   "nights": 1,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "estimated",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "미식 · 식사",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "비스타",
+     "level": "estimated",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog38",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog39",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "그랜드 2박 · 2인 커플 · 빛의 시어터·피트니스/사우나·라이브러리·더뷔페",
+   "memo": "그랜드 2박 2인 추정·빛의 시어터/헬스장/라이브러리·조식은 더뷔페 추정",
+   "when": {
+    "text": "방문 시기 미상 · 게시 2024년 9월",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "그랜드",
+   "nights": 2,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "inferred",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "그랜드",
+     "level": "observed",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시설",
+     "label": "빛의 시어터",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "피트니스 · 사우나",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "라이브러리",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "inferred",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "조망",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "조용함",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog39",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog45",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "비스타 1박 · 2인 커플 · 피자힐·더뷔페·피트니스/사우나",
+   "memo": "비스타 1박 2인 추정·피자힐 포장 석식·더뷔페 조식·피트니스 이용·룸콕",
+   "when": {
+    "text": "2026년 8월",
+    "season": "여름",
+    "year": 2026,
+    "level": "observed"
+   },
+   "stay": "비스타",
+   "nights": 1,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "estimated",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "estimated",
+     "basis": "후기 유형표(자동 분류)"
+    },
+    {
+     "group": "숙박",
+     "label": "비스타",
+     "level": "observed",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시기",
+     "label": "여름",
+     "level": "observed",
+     "basis": "후기 파일 방문일 등급"
+    },
+    {
+     "group": "시설",
+     "label": "피자힐",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "피트니스 · 사우나",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "대기 회피",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "조망",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "조용함",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog45",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog47",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "더글라스 1박 · 2인 커플 · 더글라스 라운지·라이브러리",
+   "memo": "",
+   "when": {
+    "text": "방문 시기 미상 · 게시 2026년 9월",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "더글라스",
+   "nights": 1,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "observed",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "숙박",
+     "label": "더글라스",
+     "level": "observed",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시설",
+     "label": "더글라스 라운지",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "라이브러리",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "이동 최소화",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "조용함",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog47",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog48",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "그랜드 1박 · 2인 커플 · 클럽 라운지·더뷔페·스카이야드·르파사쥬·빛의 시어터",
+   "memo": "",
+   "when": {
+    "text": "2026년 7월",
+    "season": "여름",
+    "year": 2026,
+    "level": "observed"
+   },
+   "stay": "그랜드",
+   "nights": 1,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "observed",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "숙박",
+     "label": "그랜드",
+     "level": "observed",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시기",
+     "label": "여름",
+     "level": "observed",
+     "basis": "후기 파일 방문일 등급"
+    },
+    {
+     "group": "시설",
+     "label": "클럽 라운지",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "inferred",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "스카이야드",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "르파사쥬",
+     "level": "inferred",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "빛의 시어터",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "조망",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "새로운 경험",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog48",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog49",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "그랜드 1박 · 2인 커플 · 더뷔페·라이브러리·포레스트 파크",
+   "memo": "",
+   "when": {
+    "text": "방문 시기 미상 · 게시 2026년 9월",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "그랜드",
+   "nights": 1,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "estimated",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "숙박",
+     "label": "그랜드",
+     "level": "observed",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "라이브러리",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "포레스트 파크",
+     "level": "inferred",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "조망",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "새로운 경험",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "함께 먹기",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog49",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog54",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "그랜드 1박 · 2인 커플 · 실내 수영장·피트니스/사우나",
+   "memo": "",
+   "when": {
+    "text": "방문 시기 미상 · 게시 2026년 9월",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "그랜드",
+   "nights": 1,
+   "size": 2,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "inferred",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "숙박",
+     "label": "그랜드",
+     "level": "observed",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시설",
+     "label": "실내 수영장",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "피트니스 · 사우나",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "대기 회피",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "조망",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "새로운 경험",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog54",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog55",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "비스타 1박 · 3인 · 더뷔페·실내 수영장·스카이야드·라이브러리",
+   "memo": "",
+   "when": {
+    "text": "방문 시기 미상 · 게시 2026년 9월",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "비스타",
+   "nights": 1,
+   "size": 3,
+   "tags": [
+    {
+     "group": "숙박",
+     "label": "비스타",
+     "level": "observed",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "실내 수영장",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "스카이야드",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "라이브러리",
+     "level": "inferred",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "대기 회피",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "조망",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    },
+    {
+     "group": "관심",
+     "label": "새로운 경험",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog55",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "blog56",
+   "source": "블로그 후기 · 후기 파일(사람 정리 · 자동 초안 포함)",
+   "source_kind": "file",
+   "summary": "비스타 1박 · 3인 아이 동반 · 라이브러리·스카이야드·더뷔페",
+   "memo": "",
+   "when": {
+    "text": "방문 시기 미상 · 게시 2026년 9월",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "비스타",
+   "nights": 1,
+   "size": 3,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "아이 동반",
+     "level": "observed",
+     "basis": "후기 파일 동행 칸"
+    },
+    {
+     "group": "숙박",
+     "label": "비스타",
+     "level": "inferred",
+     "basis": "후기 파일 건물 칸"
+    },
+    {
+     "group": "시설",
+     "label": "라이브러리",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "스카이야드",
+     "level": "observed",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "inferred",
+     "basis": "후기 파일 이용 장소",
+     "status": "used"
+    },
+    {
+     "group": "관심",
+     "label": "이동 최소화",
+     "level": "estimated",
+     "basis": "성향 초안(검수 안 됨)"
+    }
+   ],
+   "dup_note": null,
+   "ready": false,
+   "source_id": "blog56",
+   "type": "file",
+   "ready_status": "profile_only",
+   "customer_key": null,
+   "visit_key": null
+  },
+  {
+   "id": "IG01",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "부부 데이트 호캉스로 족욕과 야경을 이용",
+   "when": {
+    "text": "방문 시기 미상",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "비스타",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "목적",
+     "label": "기념일 · 데이트",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "시설",
+     "label": "스카이야드",
+     "level": "inferred",
+     "basis": "SNS 표본 이용시설(게시물에 보인 이용)",
+     "status": "used"
+    },
+    {
+     "group": "숙박",
+     "label": "비스타",
+     "level": "inferred",
+     "basis": "SNS 표본 이용시설"
+    }
+   ],
+   "sponsored": null,
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IG01",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IG02",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "가족 투숙 중 수영장을 이용하고 식당 만석으로 피자힐 포장",
+   "when": {
+    "text": "게시 2026년 9월",
+    "season": "가을",
+    "year": 2026,
+    "level": "estimated"
+   },
+   "stay": "그랜드",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "아이 동반",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "목적",
+     "label": "가족 여행",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "시설",
+     "label": "실내 수영장",
+     "level": "inferred",
+     "basis": "SNS 표본 이용시설(게시물에 보인 이용)",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "피자힐",
+     "level": "inferred",
+     "basis": "SNS 표본 이용시설(게시물에 보인 이용)",
+     "status": "used"
+    },
+    {
+     "group": "시기",
+     "label": "가을",
+     "level": "estimated",
+     "basis": "게시월(방문월과 다를 수 있음)"
+    },
+    {
+     "group": "숙박",
+     "label": "그랜드",
+     "level": "inferred",
+     "basis": "SNS 표본 이용시설"
+    }
+   ],
+   "sponsored": null,
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IG02",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IG03",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "퇴근 후 객실에서 넷플릭스와 휴식 중심의 호캉스",
+   "when": {
+    "text": "게시 2026년 8월",
+    "season": "여름",
+    "year": 2026,
+    "level": "estimated"
+   },
+   "stay": "미상",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "estimated",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "시기",
+     "label": "여름",
+     "level": "estimated",
+     "basis": "게시월(방문월과 다를 수 있음)"
+    }
+   ],
+   "sponsored": null,
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IG03",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IG04",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "부모와 더뷔페를 방문해 식사",
+   "when": {
+    "text": "게시 2023년 4월",
+    "season": "봄",
+    "year": 2023,
+    "level": "estimated"
+   },
+   "stay": "미상",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "부모님 동반",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "목적",
+     "label": "가족 여행",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "inferred",
+     "basis": "SNS 표본 이용시설(게시물에 보인 이용)",
+     "status": "used"
+    },
+    {
+     "group": "시기",
+     "label": "봄",
+     "level": "estimated",
+     "basis": "게시월(방문월과 다를 수 있음)"
+    }
+   ],
+   "sponsored": null,
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IG04",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IG05",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "WPC 멤버십과 가족 모임 맥락에서 포레스트 파크를 이용",
+   "when": {
+    "text": "게시 2024년 12월",
+    "season": "겨울",
+    "year": 2024,
+    "level": "estimated"
+   },
+   "stay": "그랜드",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "친구 · 모임",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "목적",
+     "label": "가족 여행",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "시설",
+     "label": "포레스트 파크",
+     "level": "inferred",
+     "basis": "SNS 표본 이용시설(게시물에 보인 이용)",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "클럽 라운지",
+     "level": "inferred",
+     "basis": "SNS 표본 이용시설(게시물에 보인 이용)",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "피트니스 · 사우나",
+     "level": "inferred",
+     "basis": "SNS 표본 이용시설(게시물에 보인 이용)",
+     "status": "used"
+    },
+    {
+     "group": "시기",
+     "label": "겨울",
+     "level": "estimated",
+     "basis": "게시월(방문월과 다를 수 있음)"
+    },
+    {
+     "group": "숙박",
+     "label": "그랜드",
+     "level": "inferred",
+     "basis": "SNS 표본 이용시설"
+    }
+   ],
+   "sponsored": null,
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IG05",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IG06",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "가을 산책과 단풍 관람을 주요 행동으로 기록",
+   "when": {
+    "text": "게시 2022년 10월",
+    "season": "가을",
+    "year": 2022,
+    "level": "estimated"
+   },
+   "stay": "미상",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "이벤트",
+     "label": "단풍 · 가을 산책",
+     "level": "inferred",
+     "basis": "SNS 표본 요약에 낱말이 나옴",
+     "status": "mention"
+    },
+    {
+     "group": "시기",
+     "label": "가을",
+     "level": "estimated",
+     "basis": "게시월(방문월과 다를 수 있음)"
+    }
+   ],
+   "sponsored": null,
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IG06",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IG07",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "부부 기념일과 아이 동반 가족 호캉스로 야외활동과 라운지·조식을 이용",
+   "when": {
+    "text": "게시 2026년 9월",
+    "season": "가을",
+    "year": 2026,
+    "level": "estimated"
+   },
+   "stay": "미상",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "아이 동반",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "목적",
+     "label": "가족 여행",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "시설",
+     "label": "더뷔페",
+     "level": "inferred",
+     "basis": "SNS 표본 이용시설(게시물에 보인 이용)",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "포레스트 파크",
+     "level": "inferred",
+     "basis": "SNS 표본 이용시설(게시물에 보인 이용)",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "스카이야드",
+     "level": "inferred",
+     "basis": "SNS 표본 이용시설(게시물에 보인 이용)",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "클럽 라운지",
+     "level": "inferred",
+     "basis": "SNS 표본 이용시설(게시물에 보인 이용)",
+     "status": "used"
+    },
+    {
+     "group": "이벤트",
+     "label": "기념일",
+     "level": "inferred",
+     "basis": "SNS 표본 요약에 낱말이 나옴",
+     "status": "mention"
+    },
+    {
+     "group": "시기",
+     "label": "가을",
+     "level": "estimated",
+     "basis": "게시월(방문월과 다를 수 있음)"
+    }
+   ],
+   "sponsored": null,
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IG07",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IG08",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "직접 체류하며 독서·포켓볼·라운지·반신욕을 이용",
+   "when": {
+    "text": "방문 시기 미상",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "더글라스",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "시설",
+     "label": "라이브러리",
+     "level": "inferred",
+     "basis": "SNS 표본 이용시설(게시물에 보인 이용)",
+     "status": "used"
+    },
+    {
+     "group": "시설",
+     "label": "더글라스 라운지",
+     "level": "inferred",
+     "basis": "SNS 표본 이용시설(게시물에 보인 이용)",
+     "status": "used"
+    },
+    {
+     "group": "숙박",
+     "label": "더글라스",
+     "level": "inferred",
+     "basis": "SNS 표본 이용시설"
+    }
+   ],
+   "sponsored": null,
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IG08",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IG09",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "크리스마스 호캉스로 객실과 전망을 시간대별로 즐김",
+   "when": {
+    "text": "게시 2020년 12월",
+    "season": "겨울",
+    "year": 2020,
+    "level": "estimated"
+   },
+   "stay": "비스타",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "이벤트",
+     "label": "크리스마스",
+     "level": "inferred",
+     "basis": "SNS 표본 요약에 낱말이 나옴",
+     "status": "mention"
+    },
+    {
+     "group": "시기",
+     "label": "겨울",
+     "level": "estimated",
+     "basis": "게시월(방문월과 다를 수 있음)"
+    },
+    {
+     "group": "숙박",
+     "label": "비스타",
+     "level": "inferred",
+     "basis": "SNS 표본 이용시설"
+    }
+   ],
+   "sponsored": null,
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IG09",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IGW01",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "와인·야외 음악을 함께 즐긴 실제 방문",
+   "when": {
+    "text": "방문 시기 미상",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "미상",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "목적",
+     "label": "미식 · 식사",
+     "level": "estimated",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "이벤트",
+     "label": "와인페어",
+     "level": "estimated",
+     "basis": "SNS 표본 · 와인페어 현장 게시물",
+     "status": "used"
+    }
+   ],
+   "sponsored": "모름",
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IGW01",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IGW02",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "와인페어에서 뱅쇼를 고르고 등심 샐러드·떡볶이를 이용",
+   "when": {
+    "text": "방문 시기 미상",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "미상",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "목적",
+     "label": "미식 · 식사",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "이벤트",
+     "label": "와인페어",
+     "level": "inferred",
+     "basis": "SNS 표본 · 와인페어 현장 게시물",
+     "status": "used"
+    }
+   ],
+   "sponsored": "아니오",
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IGW02",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IGW03",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "벚꽃 피크닉과 와인 시음·푸드트럭을 이용",
+   "when": {
+    "text": "게시 2026년 4월",
+    "season": "봄",
+    "year": 2026,
+    "level": "estimated"
+   },
+   "stay": "미상",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "estimated",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "시설",
+     "label": "포레스트 파크",
+     "level": "estimated",
+     "basis": "SNS 표본 이용시설(게시물에 보인 이용)",
+     "status": "used"
+    },
+    {
+     "group": "이벤트",
+     "label": "와인페어",
+     "level": "estimated",
+     "basis": "SNS 표본 · 와인페어 현장 게시물",
+     "status": "used"
+    },
+    {
+     "group": "이벤트",
+     "label": "벚꽃",
+     "level": "estimated",
+     "basis": "SNS 표본 요약에 낱말이 나옴",
+     "status": "mention"
+    },
+    {
+     "group": "시기",
+     "label": "봄",
+     "level": "estimated",
+     "basis": "게시월(방문월과 다를 수 있음)"
+    }
+   ],
+   "sponsored": "모름",
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IGW03",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IGW04",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "아이 동반 맥락에서 와인페어와 저녁 식사를 이용",
+   "when": {
+    "text": "게시 2023년 9월",
+    "season": "가을",
+    "year": 2023,
+    "level": "estimated"
+   },
+   "stay": "미상",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "아이 동반",
+     "level": "estimated",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "목적",
+     "label": "가족 여행",
+     "level": "estimated",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "이벤트",
+     "label": "와인페어",
+     "level": "estimated",
+     "basis": "SNS 표본 · 와인페어 현장 게시물",
+     "status": "used"
+    },
+    {
+     "group": "시기",
+     "label": "가을",
+     "level": "estimated",
+     "basis": "게시월(방문월과 다를 수 있음)"
+    }
+   ],
+   "sponsored": "아니오",
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IGW04",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IGW05",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "지인들과 와인페어를 즐긴 실제 방문",
+   "when": {
+    "text": "방문 시기 미상",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "미상",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "친구 · 모임",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "목적",
+     "label": "모임",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "이벤트",
+     "label": "와인페어",
+     "level": "inferred",
+     "basis": "SNS 표본 · 와인페어 현장 게시물",
+     "status": "used"
+    }
+   ],
+   "sponsored": "아니오",
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IGW05",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IGW06",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "선물 받은 티켓으로 장터를 둘러보고 닭꼬치·타코야끼 이용",
+   "when": {
+    "text": "게시 2024년 5월",
+    "season": "봄",
+    "year": 2024,
+    "level": "estimated"
+   },
+   "stay": "미상",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "estimated",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "이벤트",
+     "label": "와인페어",
+     "level": "estimated",
+     "basis": "SNS 표본 · 와인페어 현장 게시물",
+     "status": "used"
+    },
+    {
+     "group": "시기",
+     "label": "봄",
+     "level": "estimated",
+     "basis": "게시월(방문월과 다를 수 있음)"
+    }
+   ],
+   "sponsored": "티켓 선물",
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IGW06",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IGW07",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "벚꽃·와인 시음·도슨트·라이브 공연을 행사 종료까지 이용",
+   "when": {
+    "text": "게시 2026년 4월",
+    "season": "봄",
+    "year": 2026,
+    "level": "estimated"
+   },
+   "stay": "미상",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "시설",
+     "label": "포레스트 파크",
+     "level": "inferred",
+     "basis": "SNS 표본 이용시설(게시물에 보인 이용)",
+     "status": "used"
+    },
+    {
+     "group": "이벤트",
+     "label": "와인페어",
+     "level": "inferred",
+     "basis": "SNS 표본 · 와인페어 현장 게시물",
+     "status": "used"
+    },
+    {
+     "group": "이벤트",
+     "label": "벚꽃",
+     "level": "inferred",
+     "basis": "SNS 표본 요약에 낱말이 나옴",
+     "status": "mention"
+    },
+    {
+     "group": "시기",
+     "label": "봄",
+     "level": "estimated",
+     "basis": "게시월(방문월과 다를 수 있음)"
+    }
+   ],
+   "sponsored": "모름",
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IGW07",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IGW08",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "소믈리에 지인과 여러 와인을 시음한 실제 방문",
+   "when": {
+    "text": "게시 2018년 10월",
+    "season": "가을",
+    "year": 2018,
+    "level": "estimated"
+   },
+   "stay": "미상",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "친구 · 모임",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "목적",
+     "label": "모임",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "이벤트",
+     "label": "와인페어",
+     "level": "inferred",
+     "basis": "SNS 표본 · 와인페어 현장 게시물",
+     "status": "used"
+    },
+    {
+     "group": "시기",
+     "label": "가을",
+     "level": "estimated",
+     "basis": "게시월(방문월과 다를 수 있음)"
+    }
+   ],
+   "sponsored": "아니오",
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IGW08",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IGW09",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "와인페어 방문과 숙박권 당첨을 기록",
+   "when": {
+    "text": "게시 2026년 5월",
+    "season": "봄",
+    "year": 2026,
+    "level": "estimated"
+   },
+   "stay": "미상",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "목적",
+     "label": "미식 · 식사",
+     "level": "estimated",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "이벤트",
+     "label": "와인페어",
+     "level": "estimated",
+     "basis": "SNS 표본 · 와인페어 현장 게시물",
+     "status": "used"
+    },
+    {
+     "group": "시기",
+     "label": "봄",
+     "level": "estimated",
+     "basis": "게시월(방문월과 다를 수 있음)"
+    }
+   ],
+   "sponsored": "모름",
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IGW09",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IGW10",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "배우자·아이와 피크닉·와인 시음·구매·푸드트럭을 이용",
+   "when": {
+    "text": "게시 2026년 4월",
+    "season": "봄",
+    "year": 2026,
+    "level": "estimated"
+   },
+   "stay": "미상",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "아이 동반",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "목적",
+     "label": "가족 여행",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "시설",
+     "label": "포레스트 파크",
+     "level": "inferred",
+     "basis": "SNS 표본 이용시설(게시물에 보인 이용)",
+     "status": "used"
+    },
+    {
+     "group": "이벤트",
+     "label": "와인페어",
+     "level": "inferred",
+     "basis": "SNS 표본 · 와인페어 현장 게시물",
+     "status": "used"
+    },
+    {
+     "group": "시기",
+     "label": "봄",
+     "level": "estimated",
+     "basis": "게시월(방문월과 다를 수 있음)"
+    }
+   ],
+   "sponsored": "아니오",
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IGW10",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IGW11",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "낮 시간 와인 시음과 푸드트럭 이용을 구체적으로 기록",
+   "when": {
+    "text": "방문 시기 미상",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "미상",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "목적",
+     "label": "미식 · 식사",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "이벤트",
+     "label": "와인페어",
+     "level": "inferred",
+     "basis": "SNS 표본 · 와인페어 현장 게시물",
+     "status": "used"
+    }
+   ],
+   "sponsored": "아니오",
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IGW11",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IGW12",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "와인 시음·한 박스 구매·음악 행사를 이용",
+   "when": {
+    "text": "방문 시기 미상",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "미상",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "목적",
+     "label": "미식 · 식사",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "이벤트",
+     "label": "와인페어",
+     "level": "inferred",
+     "basis": "SNS 표본 · 와인페어 현장 게시물",
+     "status": "used"
+    }
+   ],
+   "sponsored": "아니오",
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IGW12",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IGW13",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "와인 구매와 꽃구경을 함께 한 실제 방문",
+   "when": {
+    "text": "방문 시기 미상",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "미상",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "이벤트",
+     "label": "와인페어",
+     "level": "inferred",
+     "basis": "SNS 표본 · 와인페어 현장 게시물",
+     "status": "used"
+    },
+    {
+     "group": "이벤트",
+     "label": "벚꽃",
+     "level": "inferred",
+     "basis": "SNS 표본 이용시설",
+     "status": "used"
+    }
+   ],
+   "sponsored": "아니오",
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IGW13",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IGW14",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "피크닉·와인·푸드트럭·공연을 저녁까지 이용",
+   "when": {
+    "text": "방문 시기 미상",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "미상",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "이벤트",
+     "label": "와인페어",
+     "level": "inferred",
+     "basis": "SNS 표본 · 와인페어 현장 게시물",
+     "status": "used"
+    }
+   ],
+   "sponsored": "아니오",
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IGW14",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IGW15",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "와인 시음·구매와 푸드트럭 식사를 이용",
+   "when": {
+    "text": "방문 시기 미상",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "미상",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "목적",
+     "label": "미식 · 식사",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "이벤트",
+     "label": "와인페어",
+     "level": "inferred",
+     "basis": "SNS 표본 · 와인페어 현장 게시물",
+     "status": "used"
+    }
+   ],
+   "sponsored": "아니오",
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IGW15",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IGW16",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "파트너와 시음·구매·버스킹을 즐긴 실제 방문",
+   "when": {
+    "text": "게시 2025년 9월",
+    "season": "가을",
+    "year": 2025,
+    "level": "estimated"
+   },
+   "stay": "미상",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "2인 · 커플",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "목적",
+     "label": "기념일 · 데이트",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "시설",
+     "label": "포레스트 파크",
+     "level": "inferred",
+     "basis": "SNS 표본 이용시설(게시물에 보인 이용)",
+     "status": "used"
+    },
+    {
+     "group": "이벤트",
+     "label": "와인페어",
+     "level": "inferred",
+     "basis": "SNS 표본 · 와인페어 현장 게시물",
+     "status": "used"
+    },
+    {
+     "group": "시기",
+     "label": "가을",
+     "level": "estimated",
+     "basis": "게시월(방문월과 다를 수 있음)"
+    }
+   ],
+   "sponsored": "아니오",
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IGW16",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IGW17",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "친구와 낮 시간 와인페어를 이용",
+   "when": {
+    "text": "방문 시기 미상",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "미상",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "동행",
+     "label": "친구 · 모임",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "목적",
+     "label": "모임",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "이벤트",
+     "label": "와인페어",
+     "level": "inferred",
+     "basis": "SNS 표본 · 와인페어 현장 게시물",
+     "status": "used"
+    }
+   ],
+   "sponsored": "아니오",
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IGW17",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  },
+  {
+   "id": "IGW18",
+   "source": "인스타그램 공개 게시물 표본(게시물 단위 요약 · 인물 후기 아님)",
+   "source_kind": "sns",
+   "summary": "벚꽃 피크닉과 와인 시음을 함께 한 실제 방문",
+   "when": {
+    "text": "방문 시기 미상",
+    "season": null,
+    "year": null,
+    "level": null
+   },
+   "stay": "미상",
+   "nights": null,
+   "size": null,
+   "tags": [
+    {
+     "group": "목적",
+     "label": "호캉스 · 휴식",
+     "level": "inferred",
+     "basis": "SNS 표본 수동 분류"
+    },
+    {
+     "group": "이벤트",
+     "label": "와인페어",
+     "level": "inferred",
+     "basis": "SNS 표본 · 와인페어 현장 게시물",
+     "status": "used"
+    },
+    {
+     "group": "이벤트",
+     "label": "벚꽃",
+     "level": "inferred",
+     "basis": "SNS 표본 이용시설",
+     "status": "used"
+    }
+   ],
+   "sponsored": "아니오",
+   "visit_key": null,
+   "ready": false,
+   "source_id": "IGW18",
+   "type": "sns",
+   "ready_status": "profile_only",
+   "customer_key": null
+  }
+ ],
+ "excluded": [
+  {
+   "id": "blog29",
+   "reason": "직접 방문기가 아님(파일 표시)"
+  },
+  {
+   "id": "blog32",
+   "reason": "3차 봉인 평가셋 — 열지 않음"
+  },
+  {
+   "id": "blog33",
+   "reason": "직접 방문기가 아님(파일 표시)"
+  },
+  {
+   "id": "blog34",
+   "reason": "3차 봉인 평가셋 — 열지 않음"
+  },
+  {
+   "id": "blog37",
+   "reason": "직접 방문기가 아님(파일 표시)"
+  },
+  {
+   "id": "blog42",
+   "reason": "3차 봉인 평가셋 — 열지 않음"
+  },
+  {
+   "id": "blog50",
+   "reason": "3차 봉인 평가셋 — 열지 않음"
+  },
+  {
+   "id": "blog51",
+   "reason": "3차 봉인 평가셋 — 열지 않음"
+  },
+  {
+   "id": "blog52",
+   "reason": "3차 봉인 평가셋 — 열지 않음"
+  },
+  {
+   "id": "blog53",
+   "reason": "직접 방문기가 아님(파일 표시)"
+  },
+  {
+   "id": "blog60",
+   "reason": "3차 봉인 평가셋 — 열지 않음"
+  },
+  {
+   "id": "blog61",
+   "reason": "3차 봉인 평가셋 — 열지 않음"
+  }
+ ],
+ "facets": {
+  "동행": [
+   "2인 · 커플",
+   "부모님 동반",
+   "성인 가족",
+   "아이 동반",
+   "친구 · 모임",
+   "혼자"
+  ],
+  "목적": [
+   "가족 여행",
+   "기념일 · 데이트",
+   "모임",
+   "미식 · 식사",
+   "호캉스 · 휴식"
+  ],
+  "시기": [
+   "가을",
+   "겨울",
+   "봄",
+   "여름"
+  ],
+  "숙박": [
+   "그랜드",
+   "더글라스",
+   "비스타",
+   "비투숙"
+  ],
+  "시설": [
+   "금룡",
+   "더글라스 라운지",
+   "더뷔페",
+   "더파빌리온",
+   "라이브러리",
+   "럭스 바",
+   "르파사쥬",
+   "리버파크",
+   "명월관",
+   "모에기",
+   "빛의 시어터",
+   "스카이야드",
+   "실내 수영장",
+   "온달",
+   "클럽 라운지",
+   "포레스트 파크",
+   "피자힐",
+   "피트니스 · 사우나"
+  ],
+  "이벤트": [
+   "기념일",
+   "단풍 · 가을 산책",
+   "벚꽃",
+   "설 연휴",
+   "와인페어",
+   "크리스마스"
+  ],
+  "관심": [
+   "객실 조망 무관",
+   "격식 있는 식사",
+   "대기 회피",
+   "별실",
+   "새로운 경험",
+   "이동 최소화",
+   "재방문",
+   "조망",
+   "조용함",
+   "클럽 혜택",
+   "함께 먹기"
+  ]
+ },
+ "groups": [
+  "동행",
+  "목적",
+  "시기",
+  "숙박",
+  "시설",
+  "이벤트",
+  "관심"
+ ],
+ "status": {
+  "used": "실제 이용",
+  "reserved": "예약만",
+  "failed": "시도 후 실패 · 포기",
+  "entitled": "혜택만 보유(이용 미확인)",
+  "mention": "언급 · 방문 미확인",
+  "purpose": "방문 목적",
+  "date": "방문 날짜로 추정"
+ },
+ "counts": {
+  "total": 76,
+  "ready": 10,
+  "blog": 49,
+  "sns": 27,
+  "excluded": 12,
+  "customer_keys": 38,
+  "no_customer_key": 65
+ }
+}

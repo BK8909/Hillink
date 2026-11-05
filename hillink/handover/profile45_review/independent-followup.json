@@ -1,0 +1,88 @@
+{
+  "base_head": "2ae808c4ffc293a5593e5c5ecd840d686829ea75",
+  "review_ref": "refs/heads/review/profile45-source-1106",
+  "changes": [
+    {
+      "customer_id": "A08",
+      "display_number": "No.0007",
+      "list_line_unchanged": "부부가 비스타 2박 동안 플로팅 명상과 요가를 경험한 휴식 방문",
+      "signature_before": "이번 숙박에서는 플로팅 명상과 요가에 추가 비용을 지불했고, 비가 오자 실내로 옮긴 요가 수업에 참여했다.",
+      "signature_after": "패키지와 별도로 회복 프로그램에 비용을 쓰고, 비가 오자 실내 요가 수업에 참여했다.",
+      "source_post_id": "A08-03",
+      "source_excerpt": "이 수업도 추가요금을 내고 따로 수강 등록했다. / 비가 오는 바람에 그랜드 워커힐 GX룸에서 수업을 들었다.",
+      "source_evidence_sha256": "c47f1311382a077690f26567c6643adb941750b4a3f1ee6bab1132887895ec35",
+      "scope": "표시 문구만 보정; 원문·Fact·계수·엔진·전체 의미 승인 변경 없음"
+    },
+    {
+      "customer_id": "N13",
+      "display_number": "No.0018",
+      "list_line_unchanged": "연휴에 이용권을 선결제하고 골프 연습장을 찾은 고객",
+      "signature_before": "이번 연습장 방문에서는 이용권을 미리 결제했고, 장비에 만족해도 정기권 구매는 보류했다.",
+      "signature_after": "최신 시설에 만족했지만 정기권 결제는 당장 하지 않고 보류했다.",
+      "source_post_id": "N13_P010",
+      "source_excerpt": "이것 때문에 정기권 결제할 뻔 했습니다.. 일단 참아보자 ㅎㅎ / 기대했던 것 보다 훨씬 좋았고",
+      "source_evidence_sha256": "ae227555ac2eac7ceb605559317c38f20b82aba19c8c588abf95bb0496de5d01",
+      "scope": "표시 문구만 보정; 원문·Fact·계수·엔진·전체 의미 승인 변경 없음"
+    }
+  ],
+  "full_semantic_approval": false,
+  "thumbnail_approval": false,
+  "source_holds": [
+    "blog42",
+    "blog43"
+  ],
+  "new_paid_calls": 0,
+  "new_visit_replays": 0,
+  "test_status": "PASS",
+  "mapping": {
+    "customers": 45,
+    "unique_ids": 45,
+    "duplicate_list_signature_pairs": 0,
+    "list_lines_unchanged": 45,
+    "signature_changes": [
+      "A08",
+      "N13"
+    ],
+    "unrequested_data_changes": 0
+  },
+  "node": {
+    "pass": 37,
+    "fail": 0,
+    "log": "minimal-tests/independent-followup-node.log"
+  },
+  "chrome": {
+    "url": "http://127.0.0.1:9028/",
+    "build": {
+      "head": "0c9e801a55357f94f627261bdae56b442081e4ae",
+      "branch": "review/profile45-source-1106",
+      "agent_mode": "replay"
+    },
+    "profile_mapping_cards": 45,
+    "customers": [
+      {
+        "id": "A08",
+        "cardLine": "부부가 비스타 2박 동안 플로팅 명상과 요가를 경험한 휴식 방문",
+        "detailLine": "부부가 비스타 2박 동안 플로팅 명상과 요가를 경험한 휴식 방문",
+        "signature": "패키지와 별도로 회복 프로그램에 비용을 쓰고, 비가 오자 실내 요가 수업에 참여했다.",
+        "runButtonPresent": true,
+        "horizontalOverflow": false,
+        "status": "PASS"
+      },
+      {
+        "id": "N13",
+        "cardLine": "연휴에 이용권을 선결제하고 골프 연습장을 찾은 고객",
+        "detailLine": "연휴에 이용권을 선결제하고 골프 연습장을 찾은 고객",
+        "signature": "최신 시설에 만족했지만 정기권 결제는 당장 하지 않고 보류했다.",
+        "runButtonPresent": true,
+        "horizontalOverflow": false,
+        "status": "PASS"
+      }
+    ],
+    "errors": [],
+    "newPaidCalls": 0,
+    "newVisitExecutions": 0,
+    "displayManifestSha256": "2bf100caf15ba4c7860ad8d6b84915b87286bfee69b877eaaff1aab6c535fa11"
+  },
+  "reviewed_display_manifest_sha256": "2bf100caf15ba4c7860ad8d6b84915b87286bfee69b877eaaff1aab6c535fa11",
+  "result": "사용자 눈검수 대기. 동결·제품 병합·대표 동기화·최종 제출 없음."
+}

@@ -1,0 +1,332 @@
+{
+ "version": 1,
+ "note": "시설 썸네일 목록. 파일은 이 폴더에 <장소코드>.jpg (4:3 · 800x600 · 100KB 이하). kind: concept(팀 제작 콘셉트 이미지) · team_photo(팀 촬영 · 인물 없음) · official_permitted(사용 허락을 받은 공식 사진만). 허락이 확인되지 않은 사진은 넣지 않는다. items 가 비어 있으면 화면은 바뀌지 않는다. 선택 칸: at(이 장소 대신 보일 때) · when(그 상황에서만, 예: winefair) · use(arrival = 손님 한 팀 도착 전 · route_end = 하루 끝, 오른쪽 맨 위 대표 그림).",
+ "items": {
+  "THE_BUFFET": {
+   "file": "THE_BUFFET.jpg",
+   "kind": "concept",
+   "name": "더뷔페",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "PIZZA_HILL": {
+   "file": "PIZZA_HILL.jpg",
+   "kind": "concept",
+   "name": "피자힐",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "MYONGWOLGWAN": {
+   "file": "MYONGWOLGWAN.jpg",
+   "kind": "concept",
+   "name": "명월관",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "GEUMRYONG": {
+   "file": "GEUMRYONG.jpg",
+   "kind": "concept",
+   "name": "금룡",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "ONDAL": {
+   "file": "ONDAL.jpg",
+   "kind": "concept",
+   "name": "온달",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "MOEGI": {
+   "file": "MOEGI.jpg",
+   "kind": "concept",
+   "name": "모에기",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "THE_PAVILION": {
+   "file": "THE_PAVILION.jpg",
+   "kind": "concept",
+   "name": "더 파빌리온",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "LE_PASSAGE": {
+   "file": "LE_PASSAGE.jpg",
+   "kind": "concept",
+   "name": "르파사쥬",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "LUX_BAR": {
+   "file": "LUX_BAR.jpg",
+   "kind": "concept",
+   "name": "LUX BAR",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "GRAND_ROOM": {
+   "file": "GRAND_ROOM.jpg",
+   "kind": "concept",
+   "name": "그랜드 객실",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "VISTA_ROOM": {
+   "file": "VISTA_ROOM.jpg",
+   "kind": "concept",
+   "name": "비스타 객실",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "DOUGLAS_ROOM": {
+   "file": "DOUGLAS_ROOM.jpg",
+   "kind": "concept",
+   "name": "더글라스 객실",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "DOUGLAS_LOUNGE": {
+   "file": "DOUGLAS_LOUNGE.jpg",
+   "kind": "concept",
+   "name": "더글라스 라운지",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "GRAND_CLUB_LOUNGE": {
+   "file": "GRAND_CLUB_LOUNGE.jpg",
+   "kind": "concept",
+   "name": "그랜드 클럽라운지",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "GRAND_POOL": {
+   "file": "GRAND_POOL.jpg",
+   "kind": "concept",
+   "name": "그랜드 실내수영장",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "WELLNESS_SAUNA": {
+   "file": "WELLNESS_SAUNA.jpg",
+   "kind": "concept",
+   "name": "사우나",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "THEATRE_OF_LIGHT": {
+   "file": "THEATRE_OF_LIGHT.jpg",
+   "kind": "concept",
+   "name": "빛의 시어터",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "FOREST_PARK": {
+   "file": "FOREST_PARK.jpg",
+   "kind": "concept",
+   "name": "포레스트 파크",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "SKYARD": {
+   "file": "SKYARD.jpg",
+   "kind": "concept",
+   "name": "스카이야드",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "RIVERPARK": {
+   "file": "RIVERPARK.jpg",
+   "kind": "concept",
+   "name": "리버파크",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "VISTA_POOL": {
+   "file": "VISTA_POOL.jpg",
+   "name": "비스타 수영장",
+   "kind": "concept",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "GRAND_LOBBY": {
+   "file": "GRAND_LOBBY.jpg",
+   "name": "그랜드 로비",
+   "kind": "concept",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "GRAND_FRONT_DESK": {
+   "file": "GRAND_FRONT_DESK.jpg",
+   "name": "그랜드 프런트",
+   "kind": "concept",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "DOUGLAS_LIBRARY": {
+   "file": "DOUGLAS_LIBRARY.jpg",
+   "name": "더글라스 라이브러리",
+   "kind": "concept",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "VISTA_FITNESS": {
+   "file": "VISTA_FITNESS.jpg",
+   "name": "비스타 피트니스",
+   "kind": "concept",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "DOUGLAS_LOBBY": {
+   "file": "DOUGLAS_LOBBY.jpg",
+   "name": "더글라스 로비",
+   "kind": "concept",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "GRAND_LIBRARY": {
+   "file": "GRAND_LIBRARY.jpg",
+   "name": "그랜드 라이브러리",
+   "kind": "concept",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "VISTA_LOBBY": {
+   "file": "VISTA_LOBBY.jpg",
+   "name": "비스타 로비",
+   "kind": "concept",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "사용자 제공 · HILLINK 제품 사용 승인",
+   "made": "2026-11-04",
+   "size": "1600x900 JPG",
+   "width": 1600,
+   "height": 900,
+   "source": "사용자 제공 비스타 로비 콘셉트 PNG",
+   "production": "첨부 PNG를 내용 변경 없이 1600×900 JPEG로 변환",
+   "revision": "8c2dc6c56384",
+   "sha256": "8c2dc6c56384f5973d3a3fda44fabb2b3ab9c3d52ed279883e1d1fe5d50420ed",
+   "source_sha256": "97cbfe911e2a702c09c82cee16ea361da10d36ff24c8af180573b781e663c3ad"
+  },
+  "PARKING_TOWER_B1": {
+   "file": "PARKING_TOWER.jpg",
+   "name": "주차타워",
+   "kind": "concept",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "PARKING_TOWER_4F": {
+   "file": "PARKING_TOWER.jpg",
+   "name": "주차타워",
+   "kind": "concept",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "WINE_FAIR": {
+   "file": "WINE_FAIR.jpg",
+   "name": "와인페어 · 포레스트 파크",
+   "at": "FOREST_PARK",
+   "when": "winefair",
+   "kind": "concept",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "ROUTE_END": {
+   "file": "ROUTE_END.jpg",
+   "name": "동선 종료",
+   "use": "route_end",
+   "kind": "concept",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "GOLF_CLUB": {
+   "file": "GOLF_CLUB.jpg",
+   "kind": "concept",
+   "name": "골프 클럽",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "ARRIVAL": {
+   "file": "ARRIVAL.jpg",
+   "kind": "concept",
+   "name": "도착 전",
+   "use": "arrival",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-17",
+   "size": "800x600 JPG"
+  },
+  "AG_GARDEN": {
+   "file": "AG_GARDEN.jpg",
+   "kind": "concept",
+   "name": "더글라스 가든",
+   "credit": "콘셉트 이미지 · 실제 사진 아님",
+   "license": "팀 자체 제작 (강경수)",
+   "made": "2026-10-26",
+   "size": "800x600 JPG"
+  }
+ }
+}

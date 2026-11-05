@@ -1,0 +1,559 @@
+{
+ "version": "historical-buffet-2025-v1",
+ "as_of": "2026-11-03",
+ "policy": {
+  "price_class": "2025_HISTORICAL_REFERENCE",
+  "lunch": "2025 중식 요금 근거 없음 → 상품 추가 안 함(금액 미확인 유지)",
+  "seasonal": "2026 한정·계절 상품은 2025로 소급하지 않음 · 일반 조식·석식만",
+  "hours": "2026 공개 회차 패턴을 2025에 가정 적용(원문 미대조) · 12월은 검증기 2025-12 시간표(17:30·20:00 2부)와 일치",
+  "eligibility": "어린이 요금은 36개월~초등(2026 조건과 같음) · 36개월 미만 무료 규칙은 기존 확인값"
+ },
+ "products": [
+  {
+   "venue_id": "THE_BUFFET",
+   "category": "F&B",
+   "price_tier": "EXISTING_REFERENCE",
+   "billing_unit": "person",
+   "minimum_quantity": 1,
+   "source_path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/historical_buffet_2025.json",
+   "included_description": "",
+   "source_room_types": "",
+   "requires_reservation": false,
+   "tags": [
+    "buffet",
+    "variety"
+   ],
+   "tax_status": "UNKNOWN",
+   "source_checked_at": "2026-11-03_OPERATOR_SUPPLIED_SOURCES",
+   "quantity_rule": "DEFINED_BY_HC_V1_COMMON_ORDER_ASSUMPTIONS_NOT_OBSERVED",
+   "change_history": [
+    {
+     "version": "hist-2025-v1",
+     "reason": "OPERATOR_APPROVED_2025_GENERAL_RATE_REFERENCE_1103"
+    }
+   ],
+   "sku_id": "HC-HIST2025-BUFFET-BF-ADULT-WKDY-GEN",
+   "label": "조식 · 성인 · 화~금 · 2025 1~11월",
+   "unit_price_krw": 82000,
+   "role": "MAIN",
+   "source_unit": "1인",
+   "source_day_rule": "화수목금-공휴일",
+   "source_service_windows": "07:00-10:00",
+   "valid_from": "2025-01-01",
+   "valid_until": "2025-11-30",
+   "price_status": "2025_HISTORICAL_REFERENCE",
+   "price_basis_date": "2025_GENERAL_RATE",
+   "source_document": "관제 제공 2025 일반 요금 근거: biz.newdaily.co.kr 2024-11-04(no=2024110400099) · biz.sbs.co.kr 20000279281 · 방문 후기(minyeo-muse.tistory.com) · 세션 내 원문 대조 못 함",
+   "source_grade": "○",
+   "price_class_ko": "2025 일반 요금 참고가(과거 참고)",
+   "service_window_basis": "2026_PUBLISHED_SESSION_PATTERN_APPLIED_TO_2025_UNVERIFIED"
+  },
+  {
+   "venue_id": "THE_BUFFET",
+   "category": "F&B",
+   "price_tier": "EXISTING_REFERENCE",
+   "billing_unit": "person",
+   "minimum_quantity": 1,
+   "source_path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/historical_buffet_2025.json",
+   "included_description": "",
+   "source_room_types": "",
+   "requires_reservation": false,
+   "tags": [
+    "buffet",
+    "variety"
+   ],
+   "tax_status": "UNKNOWN",
+   "source_checked_at": "2026-11-03_OPERATOR_SUPPLIED_SOURCES",
+   "quantity_rule": "DEFINED_BY_HC_V1_COMMON_ORDER_ASSUMPTIONS_NOT_OBSERVED",
+   "change_history": [
+    {
+     "version": "hist-2025-v1",
+     "reason": "OPERATOR_APPROVED_2025_GENERAL_RATE_REFERENCE_1103"
+    }
+   ],
+   "sku_id": "HC-HIST2025-BUFFET-BF-ADULT-WKND-GEN",
+   "label": "조식 · 성인 · 토~월 · 공휴일 · 2025 1~11월",
+   "unit_price_krw": 82000,
+   "role": "MAIN",
+   "source_unit": "1인",
+   "source_day_rule": "토일월+공휴일",
+   "source_service_windows": "06:30-08:10,08:30-10:00",
+   "valid_from": "2025-01-01",
+   "valid_until": "2025-11-30",
+   "price_status": "2025_HISTORICAL_REFERENCE",
+   "price_basis_date": "2025_GENERAL_RATE",
+   "source_document": "관제 제공 2025 일반 요금 근거: biz.newdaily.co.kr 2024-11-04(no=2024110400099) · biz.sbs.co.kr 20000279281 · 방문 후기(minyeo-muse.tistory.com) · 세션 내 원문 대조 못 함",
+   "source_grade": "○",
+   "price_class_ko": "2025 일반 요금 참고가(과거 참고)",
+   "service_window_basis": "2026_PUBLISHED_SESSION_PATTERN_APPLIED_TO_2025_UNVERIFIED"
+  },
+  {
+   "venue_id": "THE_BUFFET",
+   "category": "F&B",
+   "price_tier": "EXISTING_REFERENCE",
+   "billing_unit": "person",
+   "minimum_quantity": 1,
+   "source_path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/historical_buffet_2025.json",
+   "included_description": "",
+   "source_room_types": "",
+   "requires_reservation": false,
+   "tags": [
+    "buffet",
+    "variety"
+   ],
+   "tax_status": "UNKNOWN",
+   "source_checked_at": "2026-11-03_OPERATOR_SUPPLIED_SOURCES",
+   "quantity_rule": "DEFINED_BY_HC_V1_COMMON_ORDER_ASSUMPTIONS_NOT_OBSERVED",
+   "change_history": [
+    {
+     "version": "hist-2025-v1",
+     "reason": "OPERATOR_APPROVED_2025_GENERAL_RATE_REFERENCE_1103"
+    }
+   ],
+   "sku_id": "HC-HIST2025-BUFFET-BF-CHILD-WKDY-GEN",
+   "label": "조식 · 어린이 · 화~금 · 2025 1~11월",
+   "unit_price_krw": 40000,
+   "role": "CHILD_COMPONENT",
+   "source_unit": "1인 · 어린이 (36개월~초등)",
+   "source_day_rule": "화수목금-공휴일",
+   "source_service_windows": "07:00-10:00",
+   "valid_from": "2025-01-01",
+   "valid_until": "2025-11-30",
+   "price_status": "2025_HISTORICAL_REFERENCE",
+   "price_basis_date": "2025_GENERAL_RATE",
+   "source_document": "관제 제공 2025 일반 요금 근거: biz.newdaily.co.kr 2024-11-04(no=2024110400099) · biz.sbs.co.kr 20000279281 · 방문 후기(minyeo-muse.tistory.com) · 세션 내 원문 대조 못 함",
+   "source_grade": "○",
+   "price_class_ko": "2025 일반 요금 참고가(과거 참고)",
+   "service_window_basis": "2026_PUBLISHED_SESSION_PATTERN_APPLIED_TO_2025_UNVERIFIED"
+  },
+  {
+   "venue_id": "THE_BUFFET",
+   "category": "F&B",
+   "price_tier": "EXISTING_REFERENCE",
+   "billing_unit": "person",
+   "minimum_quantity": 1,
+   "source_path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/historical_buffet_2025.json",
+   "included_description": "",
+   "source_room_types": "",
+   "requires_reservation": false,
+   "tags": [
+    "buffet",
+    "variety"
+   ],
+   "tax_status": "UNKNOWN",
+   "source_checked_at": "2026-11-03_OPERATOR_SUPPLIED_SOURCES",
+   "quantity_rule": "DEFINED_BY_HC_V1_COMMON_ORDER_ASSUMPTIONS_NOT_OBSERVED",
+   "change_history": [
+    {
+     "version": "hist-2025-v1",
+     "reason": "OPERATOR_APPROVED_2025_GENERAL_RATE_REFERENCE_1103"
+    }
+   ],
+   "sku_id": "HC-HIST2025-BUFFET-BF-CHILD-WKND-GEN",
+   "label": "조식 · 어린이 · 토~월 · 공휴일 · 2025 1~11월",
+   "unit_price_krw": 40000,
+   "role": "CHILD_COMPONENT",
+   "source_unit": "1인 · 어린이 (36개월~초등)",
+   "source_day_rule": "토일월+공휴일",
+   "source_service_windows": "06:30-08:10,08:30-10:00",
+   "valid_from": "2025-01-01",
+   "valid_until": "2025-11-30",
+   "price_status": "2025_HISTORICAL_REFERENCE",
+   "price_basis_date": "2025_GENERAL_RATE",
+   "source_document": "관제 제공 2025 일반 요금 근거: biz.newdaily.co.kr 2024-11-04(no=2024110400099) · biz.sbs.co.kr 20000279281 · 방문 후기(minyeo-muse.tistory.com) · 세션 내 원문 대조 못 함",
+   "source_grade": "○",
+   "price_class_ko": "2025 일반 요금 참고가(과거 참고)",
+   "service_window_basis": "2026_PUBLISHED_SESSION_PATTERN_APPLIED_TO_2025_UNVERIFIED"
+  },
+  {
+   "venue_id": "THE_BUFFET",
+   "category": "F&B",
+   "price_tier": "EXISTING_REFERENCE",
+   "billing_unit": "person",
+   "minimum_quantity": 1,
+   "source_path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/historical_buffet_2025.json",
+   "included_description": "",
+   "source_room_types": "",
+   "requires_reservation": false,
+   "tags": [
+    "buffet",
+    "variety"
+   ],
+   "tax_status": "UNKNOWN",
+   "source_checked_at": "2026-11-03_OPERATOR_SUPPLIED_SOURCES",
+   "quantity_rule": "DEFINED_BY_HC_V1_COMMON_ORDER_ASSUMPTIONS_NOT_OBSERVED",
+   "change_history": [
+    {
+     "version": "hist-2025-v1",
+     "reason": "OPERATOR_APPROVED_2025_GENERAL_RATE_REFERENCE_1103"
+    }
+   ],
+   "sku_id": "HC-HIST2025-BUFFET-BF-ADULT-WKDY-DEC",
+   "label": "조식 · 성인 · 화~금 · 2025 12월",
+   "unit_price_krw": 82000,
+   "role": "MAIN",
+   "source_unit": "1인",
+   "source_day_rule": "화수목금-공휴일",
+   "source_service_windows": "07:00-10:00",
+   "valid_from": "2025-12-01",
+   "valid_until": "2025-12-31",
+   "price_status": "2025_HISTORICAL_REFERENCE_DECEMBER_SPECIAL_RATE_UNCONFIRMED_VIRTUAL_COMPARISON",
+   "price_basis_date": "2025_GENERAL_RATE",
+   "source_document": "관제 제공 2025 일반 요금 근거: biz.newdaily.co.kr 2024-11-04(no=2024110400099) · biz.sbs.co.kr 20000279281 · 방문 후기(minyeo-muse.tistory.com) · 세션 내 원문 대조 못 함",
+   "source_grade": "○",
+   "price_class_ko": "2025 일반 요금 참고가 · 12월 특별 요금 미확인 → 가상 비교 기준가",
+   "service_window_basis": "2026_PUBLISHED_SESSION_PATTERN_APPLIED_TO_2025_UNVERIFIED"
+  },
+  {
+   "venue_id": "THE_BUFFET",
+   "category": "F&B",
+   "price_tier": "EXISTING_REFERENCE",
+   "billing_unit": "person",
+   "minimum_quantity": 1,
+   "source_path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/historical_buffet_2025.json",
+   "included_description": "",
+   "source_room_types": "",
+   "requires_reservation": false,
+   "tags": [
+    "buffet",
+    "variety"
+   ],
+   "tax_status": "UNKNOWN",
+   "source_checked_at": "2026-11-03_OPERATOR_SUPPLIED_SOURCES",
+   "quantity_rule": "DEFINED_BY_HC_V1_COMMON_ORDER_ASSUMPTIONS_NOT_OBSERVED",
+   "change_history": [
+    {
+     "version": "hist-2025-v1",
+     "reason": "OPERATOR_APPROVED_2025_GENERAL_RATE_REFERENCE_1103"
+    }
+   ],
+   "sku_id": "HC-HIST2025-BUFFET-BF-ADULT-WKND-DEC",
+   "label": "조식 · 성인 · 토~월 · 공휴일 · 2025 12월",
+   "unit_price_krw": 82000,
+   "role": "MAIN",
+   "source_unit": "1인",
+   "source_day_rule": "토일월+공휴일",
+   "source_service_windows": "06:30-08:10,08:30-10:00",
+   "valid_from": "2025-12-01",
+   "valid_until": "2025-12-31",
+   "price_status": "2025_HISTORICAL_REFERENCE_DECEMBER_SPECIAL_RATE_UNCONFIRMED_VIRTUAL_COMPARISON",
+   "price_basis_date": "2025_GENERAL_RATE",
+   "source_document": "관제 제공 2025 일반 요금 근거: biz.newdaily.co.kr 2024-11-04(no=2024110400099) · biz.sbs.co.kr 20000279281 · 방문 후기(minyeo-muse.tistory.com) · 세션 내 원문 대조 못 함",
+   "source_grade": "○",
+   "price_class_ko": "2025 일반 요금 참고가 · 12월 특별 요금 미확인 → 가상 비교 기준가",
+   "service_window_basis": "2026_PUBLISHED_SESSION_PATTERN_APPLIED_TO_2025_UNVERIFIED"
+  },
+  {
+   "venue_id": "THE_BUFFET",
+   "category": "F&B",
+   "price_tier": "EXISTING_REFERENCE",
+   "billing_unit": "person",
+   "minimum_quantity": 1,
+   "source_path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/historical_buffet_2025.json",
+   "included_description": "",
+   "source_room_types": "",
+   "requires_reservation": false,
+   "tags": [
+    "buffet",
+    "variety"
+   ],
+   "tax_status": "UNKNOWN",
+   "source_checked_at": "2026-11-03_OPERATOR_SUPPLIED_SOURCES",
+   "quantity_rule": "DEFINED_BY_HC_V1_COMMON_ORDER_ASSUMPTIONS_NOT_OBSERVED",
+   "change_history": [
+    {
+     "version": "hist-2025-v1",
+     "reason": "OPERATOR_APPROVED_2025_GENERAL_RATE_REFERENCE_1103"
+    }
+   ],
+   "sku_id": "HC-HIST2025-BUFFET-BF-CHILD-WKDY-DEC",
+   "label": "조식 · 어린이 · 화~금 · 2025 12월",
+   "unit_price_krw": 40000,
+   "role": "CHILD_COMPONENT",
+   "source_unit": "1인 · 어린이 (36개월~초등)",
+   "source_day_rule": "화수목금-공휴일",
+   "source_service_windows": "07:00-10:00",
+   "valid_from": "2025-12-01",
+   "valid_until": "2025-12-31",
+   "price_status": "2025_HISTORICAL_REFERENCE_DECEMBER_SPECIAL_RATE_UNCONFIRMED_VIRTUAL_COMPARISON",
+   "price_basis_date": "2025_GENERAL_RATE",
+   "source_document": "관제 제공 2025 일반 요금 근거: biz.newdaily.co.kr 2024-11-04(no=2024110400099) · biz.sbs.co.kr 20000279281 · 방문 후기(minyeo-muse.tistory.com) · 세션 내 원문 대조 못 함",
+   "source_grade": "○",
+   "price_class_ko": "2025 일반 요금 참고가 · 12월 특별 요금 미확인 → 가상 비교 기준가",
+   "service_window_basis": "2026_PUBLISHED_SESSION_PATTERN_APPLIED_TO_2025_UNVERIFIED"
+  },
+  {
+   "venue_id": "THE_BUFFET",
+   "category": "F&B",
+   "price_tier": "EXISTING_REFERENCE",
+   "billing_unit": "person",
+   "minimum_quantity": 1,
+   "source_path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/historical_buffet_2025.json",
+   "included_description": "",
+   "source_room_types": "",
+   "requires_reservation": false,
+   "tags": [
+    "buffet",
+    "variety"
+   ],
+   "tax_status": "UNKNOWN",
+   "source_checked_at": "2026-11-03_OPERATOR_SUPPLIED_SOURCES",
+   "quantity_rule": "DEFINED_BY_HC_V1_COMMON_ORDER_ASSUMPTIONS_NOT_OBSERVED",
+   "change_history": [
+    {
+     "version": "hist-2025-v1",
+     "reason": "OPERATOR_APPROVED_2025_GENERAL_RATE_REFERENCE_1103"
+    }
+   ],
+   "sku_id": "HC-HIST2025-BUFFET-BF-CHILD-WKND-DEC",
+   "label": "조식 · 어린이 · 토~월 · 공휴일 · 2025 12월",
+   "unit_price_krw": 40000,
+   "role": "CHILD_COMPONENT",
+   "source_unit": "1인 · 어린이 (36개월~초등)",
+   "source_day_rule": "토일월+공휴일",
+   "source_service_windows": "06:30-08:10,08:30-10:00",
+   "valid_from": "2025-12-01",
+   "valid_until": "2025-12-31",
+   "price_status": "2025_HISTORICAL_REFERENCE_DECEMBER_SPECIAL_RATE_UNCONFIRMED_VIRTUAL_COMPARISON",
+   "price_basis_date": "2025_GENERAL_RATE",
+   "source_document": "관제 제공 2025 일반 요금 근거: biz.newdaily.co.kr 2024-11-04(no=2024110400099) · biz.sbs.co.kr 20000279281 · 방문 후기(minyeo-muse.tistory.com) · 세션 내 원문 대조 못 함",
+   "source_grade": "○",
+   "price_class_ko": "2025 일반 요금 참고가 · 12월 특별 요금 미확인 → 가상 비교 기준가",
+   "service_window_basis": "2026_PUBLISHED_SESSION_PATTERN_APPLIED_TO_2025_UNVERIFIED"
+  },
+  {
+   "venue_id": "THE_BUFFET",
+   "category": "F&B",
+   "price_tier": "EXISTING_REFERENCE",
+   "billing_unit": "person",
+   "minimum_quantity": 1,
+   "source_path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/historical_buffet_2025.json",
+   "included_description": "",
+   "source_room_types": "",
+   "requires_reservation": false,
+   "tags": [
+    "buffet",
+    "variety"
+   ],
+   "tax_status": "UNKNOWN",
+   "source_checked_at": "2026-11-03_OPERATOR_SUPPLIED_SOURCES",
+   "quantity_rule": "DEFINED_BY_HC_V1_COMMON_ORDER_ASSUMPTIONS_NOT_OBSERVED",
+   "change_history": [
+    {
+     "version": "hist-2025-v1",
+     "reason": "OPERATOR_APPROVED_2025_GENERAL_RATE_REFERENCE_1103"
+    }
+   ],
+   "sku_id": "HC-HIST2025-BUFFET-DN-ADULT-WKDY-GEN",
+   "label": "석식 · 성인 · 월~금 · 일 · 2025 1~11월",
+   "unit_price_krw": 195000,
+   "role": "MAIN",
+   "source_unit": "1인",
+   "source_day_rule": "월화수목금일-공휴일",
+   "source_service_windows": "18:00-21:00",
+   "valid_from": "2025-01-01",
+   "valid_until": "2025-11-30",
+   "price_status": "2025_HISTORICAL_REFERENCE",
+   "price_basis_date": "2025_GENERAL_RATE",
+   "source_document": "관제 제공 2025 일반 요금 근거: biz.newdaily.co.kr 2024-11-04(no=2024110400099) · biz.sbs.co.kr 20000279281 · 방문 후기(minyeo-muse.tistory.com) · 세션 내 원문 대조 못 함",
+   "source_grade": "○",
+   "price_class_ko": "2025 일반 요금 참고가(과거 참고)",
+   "service_window_basis": "2026_PUBLISHED_SESSION_PATTERN_APPLIED_TO_2025_UNVERIFIED"
+  },
+  {
+   "venue_id": "THE_BUFFET",
+   "category": "F&B",
+   "price_tier": "EXISTING_REFERENCE",
+   "billing_unit": "person",
+   "minimum_quantity": 1,
+   "source_path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/historical_buffet_2025.json",
+   "included_description": "",
+   "source_room_types": "",
+   "requires_reservation": false,
+   "tags": [
+    "buffet",
+    "variety"
+   ],
+   "tax_status": "UNKNOWN",
+   "source_checked_at": "2026-11-03_OPERATOR_SUPPLIED_SOURCES",
+   "quantity_rule": "DEFINED_BY_HC_V1_COMMON_ORDER_ASSUMPTIONS_NOT_OBSERVED",
+   "change_history": [
+    {
+     "version": "hist-2025-v1",
+     "reason": "OPERATOR_APPROVED_2025_GENERAL_RATE_REFERENCE_1103"
+    }
+   ],
+   "sku_id": "HC-HIST2025-BUFFET-DN-ADULT-SAT-GEN",
+   "label": "석식 · 성인 · 토 · 공휴일 · 2025 1~11월",
+   "unit_price_krw": 195000,
+   "role": "MAIN",
+   "source_unit": "1인",
+   "source_day_rule": "토+공휴일",
+   "source_service_windows": "17:30-19:30,20:00-22:00",
+   "valid_from": "2025-01-01",
+   "valid_until": "2025-11-30",
+   "price_status": "2025_HISTORICAL_REFERENCE",
+   "price_basis_date": "2025_GENERAL_RATE",
+   "source_document": "관제 제공 2025 일반 요금 근거: biz.newdaily.co.kr 2024-11-04(no=2024110400099) · biz.sbs.co.kr 20000279281 · 방문 후기(minyeo-muse.tistory.com) · 세션 내 원문 대조 못 함",
+   "source_grade": "○",
+   "price_class_ko": "2025 일반 요금 참고가(과거 참고)",
+   "service_window_basis": "2026_PUBLISHED_SESSION_PATTERN_APPLIED_TO_2025_UNVERIFIED"
+  },
+  {
+   "venue_id": "THE_BUFFET",
+   "category": "F&B",
+   "price_tier": "EXISTING_REFERENCE",
+   "billing_unit": "person",
+   "minimum_quantity": 1,
+   "source_path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/historical_buffet_2025.json",
+   "included_description": "",
+   "source_room_types": "",
+   "requires_reservation": false,
+   "tags": [
+    "buffet",
+    "variety"
+   ],
+   "tax_status": "UNKNOWN",
+   "source_checked_at": "2026-11-03_OPERATOR_SUPPLIED_SOURCES",
+   "quantity_rule": "DEFINED_BY_HC_V1_COMMON_ORDER_ASSUMPTIONS_NOT_OBSERVED",
+   "change_history": [
+    {
+     "version": "hist-2025-v1",
+     "reason": "OPERATOR_APPROVED_2025_GENERAL_RATE_REFERENCE_1103"
+    }
+   ],
+   "sku_id": "HC-HIST2025-BUFFET-DN-CHILD-WKDY-GEN",
+   "label": "석식 · 어린이 · 월~금 · 일 · 2025 1~11월",
+   "unit_price_krw": 98000,
+   "role": "CHILD_COMPONENT",
+   "source_unit": "1인 · 어린이 (36개월~초등)",
+   "source_day_rule": "월화수목금일-공휴일",
+   "source_service_windows": "18:00-21:00",
+   "valid_from": "2025-01-01",
+   "valid_until": "2025-11-30",
+   "price_status": "2025_HISTORICAL_REFERENCE",
+   "price_basis_date": "2025_GENERAL_RATE",
+   "source_document": "관제 제공 2025 일반 요금 근거: biz.newdaily.co.kr 2024-11-04(no=2024110400099) · biz.sbs.co.kr 20000279281 · 방문 후기(minyeo-muse.tistory.com) · 세션 내 원문 대조 못 함",
+   "source_grade": "○",
+   "price_class_ko": "2025 일반 요금 참고가(과거 참고)",
+   "service_window_basis": "2026_PUBLISHED_SESSION_PATTERN_APPLIED_TO_2025_UNVERIFIED"
+  },
+  {
+   "venue_id": "THE_BUFFET",
+   "category": "F&B",
+   "price_tier": "EXISTING_REFERENCE",
+   "billing_unit": "person",
+   "minimum_quantity": 1,
+   "source_path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/historical_buffet_2025.json",
+   "included_description": "",
+   "source_room_types": "",
+   "requires_reservation": false,
+   "tags": [
+    "buffet",
+    "variety"
+   ],
+   "tax_status": "UNKNOWN",
+   "source_checked_at": "2026-11-03_OPERATOR_SUPPLIED_SOURCES",
+   "quantity_rule": "DEFINED_BY_HC_V1_COMMON_ORDER_ASSUMPTIONS_NOT_OBSERVED",
+   "change_history": [
+    {
+     "version": "hist-2025-v1",
+     "reason": "OPERATOR_APPROVED_2025_GENERAL_RATE_REFERENCE_1103"
+    }
+   ],
+   "sku_id": "HC-HIST2025-BUFFET-DN-CHILD-SAT-GEN",
+   "label": "석식 · 어린이 · 토 · 공휴일 · 2025 1~11월",
+   "unit_price_krw": 98000,
+   "role": "CHILD_COMPONENT",
+   "source_unit": "1인 · 어린이 (36개월~초등)",
+   "source_day_rule": "토+공휴일",
+   "source_service_windows": "17:30-19:30,20:00-22:00",
+   "valid_from": "2025-01-01",
+   "valid_until": "2025-11-30",
+   "price_status": "2025_HISTORICAL_REFERENCE",
+   "price_basis_date": "2025_GENERAL_RATE",
+   "source_document": "관제 제공 2025 일반 요금 근거: biz.newdaily.co.kr 2024-11-04(no=2024110400099) · biz.sbs.co.kr 20000279281 · 방문 후기(minyeo-muse.tistory.com) · 세션 내 원문 대조 못 함",
+   "source_grade": "○",
+   "price_class_ko": "2025 일반 요금 참고가(과거 참고)",
+   "service_window_basis": "2026_PUBLISHED_SESSION_PATTERN_APPLIED_TO_2025_UNVERIFIED"
+  },
+  {
+   "venue_id": "THE_BUFFET",
+   "category": "F&B",
+   "price_tier": "EXISTING_REFERENCE",
+   "billing_unit": "person",
+   "minimum_quantity": 1,
+   "source_path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/historical_buffet_2025.json",
+   "included_description": "",
+   "source_room_types": "",
+   "requires_reservation": false,
+   "tags": [
+    "buffet",
+    "variety"
+   ],
+   "tax_status": "UNKNOWN",
+   "source_checked_at": "2026-11-03_OPERATOR_SUPPLIED_SOURCES",
+   "quantity_rule": "DEFINED_BY_HC_V1_COMMON_ORDER_ASSUMPTIONS_NOT_OBSERVED",
+   "change_history": [
+    {
+     "version": "hist-2025-v1",
+     "reason": "OPERATOR_APPROVED_2025_GENERAL_RATE_REFERENCE_1103"
+    }
+   ],
+   "sku_id": "HC-HIST2025-BUFFET-DN-ADULT-DEC",
+   "label": "석식 · 성인 · 2025 12월",
+   "unit_price_krw": 195000,
+   "role": "MAIN",
+   "source_unit": "1인",
+   "source_day_rule": "",
+   "source_service_windows": "17:30-19:30,20:00-22:00",
+   "valid_from": "2025-12-01",
+   "valid_until": "2025-12-31",
+   "price_status": "2025_HISTORICAL_REFERENCE_DECEMBER_SPECIAL_RATE_UNCONFIRMED_VIRTUAL_COMPARISON",
+   "price_basis_date": "2025_GENERAL_RATE",
+   "source_document": "관제 제공 2025 일반 요금 근거: biz.newdaily.co.kr 2024-11-04(no=2024110400099) · biz.sbs.co.kr 20000279281 · 방문 후기(minyeo-muse.tistory.com) · 세션 내 원문 대조 못 함",
+   "source_grade": "○",
+   "price_class_ko": "2025 일반 요금 참고가 · 12월 특별 요금 미확인 → 가상 비교 기준가",
+   "service_window_basis": "2026_PUBLISHED_SESSION_PATTERN_APPLIED_TO_2025_UNVERIFIED"
+  },
+  {
+   "venue_id": "THE_BUFFET",
+   "category": "F&B",
+   "price_tier": "EXISTING_REFERENCE",
+   "billing_unit": "person",
+   "minimum_quantity": 1,
+   "source_path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/historical_buffet_2025.json",
+   "included_description": "",
+   "source_room_types": "",
+   "requires_reservation": false,
+   "tags": [
+    "buffet",
+    "variety"
+   ],
+   "tax_status": "UNKNOWN",
+   "source_checked_at": "2026-11-03_OPERATOR_SUPPLIED_SOURCES",
+   "quantity_rule": "DEFINED_BY_HC_V1_COMMON_ORDER_ASSUMPTIONS_NOT_OBSERVED",
+   "change_history": [
+    {
+     "version": "hist-2025-v1",
+     "reason": "OPERATOR_APPROVED_2025_GENERAL_RATE_REFERENCE_1103"
+    }
+   ],
+   "sku_id": "HC-HIST2025-BUFFET-DN-CHILD-DEC",
+   "label": "석식 · 어린이 · 2025 12월",
+   "unit_price_krw": 98000,
+   "role": "CHILD_COMPONENT",
+   "source_unit": "1인 · 어린이 (36개월~초등)",
+   "source_day_rule": "",
+   "source_service_windows": "17:30-19:30,20:00-22:00",
+   "valid_from": "2025-12-01",
+   "valid_until": "2025-12-31",
+   "price_status": "2025_HISTORICAL_REFERENCE_DECEMBER_SPECIAL_RATE_UNCONFIRMED_VIRTUAL_COMPARISON",
+   "price_basis_date": "2025_GENERAL_RATE",
+   "source_document": "관제 제공 2025 일반 요금 근거: biz.newdaily.co.kr 2024-11-04(no=2024110400099) · biz.sbs.co.kr 20000279281 · 방문 후기(minyeo-muse.tistory.com) · 세션 내 원문 대조 못 함",
+   "source_grade": "○",
+   "price_class_ko": "2025 일반 요금 참고가 · 12월 특별 요금 미확인 → 가상 비교 기준가",
+   "service_window_basis": "2026_PUBLISHED_SESSION_PATTERN_APPLIED_TO_2025_UNVERIFIED"
+  }
+ ]
+}

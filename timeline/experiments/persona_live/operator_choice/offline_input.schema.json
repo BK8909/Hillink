@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fixed offline operator choice input v2",
+  "type": "object", "additionalProperties": false,
+  "required": ["input_version", "customer_id", "scenario", "environment", "factors", "payload", "input_sha256", "source_head"],
+  "properties": {
+    "input_version": {"const": "offline_choice_input_v2"},
+    "customer_id": {"type": "string", "pattern": "^blog[0-9]+$"},
+    "scenario": {"enum": ["riverpark", "wine_fair", "beer_festival"]},
+    "environment": {"enum": ["off", "on"]},
+    "factors": {"type": "object", "additionalProperties": false, "required": ["personal", "statistics"], "properties": {"personal": {"type": "boolean"}, "statistics": {"type": "boolean"}}},
+    "input_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "source_head": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+    "payload": {
+      "type": "object", "additionalProperties": false,
+      "required": ["rules", "options", "context", "population_priors"],
+      "properties": {
+        "rules": {"type": "array", "items": {"type": "object", "required": ["rule_id", "kind", "evidence_ids", "source_verification", "verification_status", "predicate", "decision_usable"], "properties": {
+          "kind": {"enum": ["behavior_observation", "explicit_preference", "explicit_evaluation", "choice_motivation", "contextual_constraint", "context_only"]},
+          "evidence_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+          "decision_usable": {"type": "boolean"},
+          "source_verification": {"type": "object", "required": ["source_access", "original_anchor_verified", "layer"], "properties": {
+            "original_anchor_verified": {"type": "boolean"}, "layer": {"enum": ["observed", "human_inference", "ai_estimate", "assumption", "evaluator_comment", "unknown"]}
+          }}
+        }}},
+        "options": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["option_code", "available", "domain", "attributes", "attribute_provenance", "known_total_cost_krw"], "properties": {
+          "option_code": {"type": "string"}, "available": {"type": "boolean"}, "domain": {"const": "activity"},
+          "attributes": {"type": "object"}, "known_total_cost_krw": {"type": ["integer", "null"], "minimum": 0}
+        }}},
+        "context": {"type": "object", "required": ["scenario", "goal_continuity", "goal_continuity_status", "assumptions", "stage", "effective_party", "policies"], "properties": {
+          "scenario": {"type": "string"}, "goal_continuity": {"type": "boolean"}, "assumptions": {"type": "object"},
+          "stage": {"type": "object", "required": ["options"], "properties": {"options": {"type": "array", "items": {"type": "object", "required": ["code"], "properties": {"code": {"type": "string"}}}}}}
+        }},
+        "population_priors": {"type": "array"}
+      }
+    }
+  }
+}

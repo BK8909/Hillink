@@ -1,0 +1,12 @@
+{
+  "customer": "blog43",
+  "change": "Unverified solo classification removed; display label is 휴식 · 동행 미확인",
+  "source_file": "timeline/viewer/static/library.js",
+  "source_sha256": "94252f9e0333c0966fa3cde14e439fc18a8549052b77ec76bac041f87d92220b",
+  "cards": 45,
+  "execution_button_preserved": true,
+  "thumbnail_changed": false,
+  "engine_changed": false,
+  "check": "PASS: 45 cards; blog43 companion uncertainty consistent; execution button preserved",
+  "initial_harness_issue": "Card text contains nonbreaking spaces; comparison normalized whitespace. No application failure."
+}

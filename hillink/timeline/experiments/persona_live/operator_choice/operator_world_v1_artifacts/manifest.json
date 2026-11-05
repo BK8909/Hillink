@@ -1,0 +1,31 @@
+{
+ "version": "operator_world_engine_v1",
+ "files": {
+  "presets.json": "5d24ef0322f258bf",
+  "grid.json": "53fe5f8ae6ea4358",
+  "traits.json": "4b2e57849382d9d6"
+ },
+ "personas": [
+  "blog41",
+  "blog42",
+  "blog43",
+  "blog43_rest"
+ ],
+ "presets": [
+  "base",
+  "price_down",
+  "bundle",
+  "pairing",
+  "chef",
+  "nonalc",
+  "closed",
+  "evening",
+  "menu_board"
+ ],
+ "grid_cells": 1440,
+ "model_calls": 0,
+ "human_review": "pending",
+ "demo_approved": false,
+ "profile_source": "author_method_v4_1_artifacts/profiles_and_quality.json (scope recent_added)",
+ "note": "모든 운영 조건은 연구용 가상값 · 행동은 규칙 엔진 계산 결과이지 실제 고객 행동 · 예측 확률이 아님"
+}

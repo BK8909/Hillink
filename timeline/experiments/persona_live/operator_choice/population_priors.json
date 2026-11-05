@@ -1,0 +1,25 @@
+{
+  "version": "population_prior_registry_v1",
+  "checked_on": "2026-10-21",
+  "priors": [],
+  "screened_sources": [
+    {
+      "source_id": "STAT-TIMEUSE-2024",
+      "source_url": "https://www.kostat.go.kr/statDesc.es?act=view&mid=a10501010000&sttr_cd=S004003",
+      "publisher": "국가데이터처·통계청 생활시간조사",
+      "survey_period": "2024",
+      "verification_status": "official_survey_overview_checked",
+      "disposition": "not_injected",
+      "reason": "일상 시간 배분 조사다. 호텔 비어 페스티벌 참여나 실내→야외 수영장 대체의 직접 측정 문항·효과·해당 고객 집단 연결을 확보하지 않았다. 일반 생활시간을 개인 행사 선호로 대입하지 않는다."
+    },
+    {
+      "source_id": "STAT-SPORTS-2024",
+      "source_url": "https://mcst.go.kr/kor/s_policy/dept/deptView.jsp?pSeq=1967",
+      "publisher": "문화체육관광부 국민생활체육조사",
+      "survey_period": "2024",
+      "verification_status": "official_search_metadata_only_page_unavailable",
+      "disposition": "not_injected",
+      "reason": "조사 개요의 검색 메타데이터만 확인했다. 해당 원문 표·질문·실내외 수영장 선택 효과를 확인하지 못했고 고객의 집단 일치도 미확인이다. 수치나 방향을 생성하지 않는다."
+    }
+  ]
+}

@@ -1,0 +1,376 @@
+{
+  "catalog_version": "cd1024-15-isolated-v1",
+  "source_checked_at": "2026-10-24",
+  "offers": [
+    {
+      "venue_id": "PIZZA_HILL",
+      "offer_id": "PH_COUPLE_SET",
+      "offer_name": "피자힐 커플 세트",
+      "offer_kind": "set",
+      "meal_period": [
+        "dinner"
+      ],
+      "price_amount": 184000,
+      "price_basis": "fixed_set_for_2",
+      "party_size_min": 2,
+      "party_size_max": 2,
+      "valid_from": "2026-07-09",
+      "valid_to": null,
+      "day_of_week": null,
+      "holiday_policy": "unknown",
+      "session_start": null,
+      "session_end": null,
+      "reservation_required": true,
+      "eligibility_conditions": {
+        "reservation_window_months": 2
+      },
+      "source_url": "https://www.walkerhill.com/vistawalkerhillseoul/dining/PizzaHill",
+      "source_checked_at": "2026-10-24",
+      "price_source": "official menu PDF 2026-07 in catalog; 184000 KRW / set of 2",
+      "verification_status": "PARTIAL",
+      "scenario_only": false,
+      "gap": "Current menu validity window and available session/seat booking not confirmed. At the fixed 18:30 decision and 90-minute duration no session can be declared eligible without a rescheduling rule.",
+      "session_rules": [
+        {
+          "days": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sat",
+            "Sun"
+          ],
+          "holiday": "any",
+          "start": "17:30",
+          "end": "19:00"
+        },
+        {
+          "days": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sat",
+            "Sun"
+          ],
+          "holiday": "any",
+          "start": "19:00",
+          "end": "20:30"
+        },
+        {
+          "days": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sat",
+            "Sun"
+          ],
+          "holiday": "any",
+          "start": "20:30",
+          "end": "22:00"
+        }
+      ]
+    },
+    {
+      "venue_id": "ROOM_MEAL",
+      "offer_id": "RS_CLUB_SANDWICH",
+      "offer_name": "룸서비스 클럽 샌드위치",
+      "offer_kind": "single",
+      "meal_period": [
+        "dinner"
+      ],
+      "price_amount": null,
+      "price_basis": "per_item",
+      "party_size_min": 1,
+      "party_size_max": null,
+      "valid_from": null,
+      "valid_to": null,
+      "day_of_week": null,
+      "holiday_policy": "unknown",
+      "sessions": [],
+      "session_start": "17:30",
+      "session_end": "22:30",
+      "reservation_required": false,
+      "eligibility_conditions": {
+        "stay_required": true
+      },
+      "source_url": null,
+      "source_checked_at": "2026-10-24",
+      "price_source": "2021 customer photo 32000; separate world note 43000",
+      "verification_status": "PARTIAL",
+      "scenario_only": false,
+      "gap": "Current selling price and current IRD terms not verified. Conflicting historical price sources remain distinct.",
+      "session_rules": []
+    },
+    {
+      "venue_id": "MYONGWOLGWAN",
+      "offer_id": "MYONGWOLGWAN",
+      "offer_name": "명월관 저녁 대표 오퍼",
+      "offer_kind": "representative_offer",
+      "meal_period": [
+        "dinner"
+      ],
+      "price_amount": null,
+      "price_basis": null,
+      "party_size_min": null,
+      "party_size_max": null,
+      "valid_from": null,
+      "valid_to": null,
+      "day_of_week": null,
+      "holiday_policy": "unknown",
+      "sessions": [],
+      "session_start": "17:30",
+      "session_end": "21:00",
+      "reservation_required": true,
+      "eligibility_conditions": {
+        "party_rules": "see reservation"
+      },
+      "source_url": "https://app.walkerhill.com/vistawalkerhillseoul/dining/Myongwolgwan",
+      "source_checked_at": "2026-10-24",
+      "price_source": "dinner hours verified; current standard dinner offer price not verified",
+      "verification_status": "PARTIAL",
+      "scenario_only": false,
+      "gap": "Current dinner menu price and party-level service conditions unavailable.",
+      "session_rules": []
+    },
+    {
+      "venue_id": "ONDAL",
+      "offer_id": "ONDAL",
+      "offer_name": "온달 계절 저녁 코스",
+      "offer_kind": "course",
+      "meal_period": [
+        "dinner"
+      ],
+      "price_amount": null,
+      "price_basis": null,
+      "party_size_min": 2,
+      "party_size_max": null,
+      "valid_from": null,
+      "valid_to": null,
+      "day_of_week": null,
+      "holiday_policy": "unknown",
+      "sessions": [],
+      "session_start": "18:00",
+      "session_end": "21:00",
+      "reservation_required": true,
+      "eligibility_conditions": {
+        "weekend_holiday_course_only": true
+      },
+      "source_url": "https://www.walkerhill.com/dining/Ondal",
+      "source_checked_at": "2026-10-24",
+      "price_source": "hours and weekend minimum verified; current matching course price not verified",
+      "verification_status": "PARTIAL",
+      "scenario_only": false,
+      "gap": "A current date-valid dinner course price is required for score input.",
+      "session_rules": []
+    },
+    {
+      "venue_id": "GEUMRYONG",
+      "offer_id": "GEUMRYONG",
+      "offer_name": "금룡 추미진향 코스 (주중 Hall 프로모션)",
+      "offer_kind": "promotion_course",
+      "meal_period": [
+        "dinner"
+      ],
+      "price_amount": 150000,
+      "price_basis": "per_person_course",
+      "party_size_min": 2,
+      "party_size_max": null,
+      "valid_from": "2026-09-01",
+      "valid_to": "2026-10-30",
+      "day_of_week": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri"
+      ],
+      "holiday_policy": "exclude",
+      "sessions": [],
+      "session_start": "18:00",
+      "session_end": "21:00",
+      "reservation_required": true,
+      "eligibility_conditions": {
+        "seating_type": "hall",
+        "reservation_must_name_promotion": true
+      },
+      "source_url": "https://www.walkerhill.com/grandwalkerhillseoul/Promotion/8835",
+      "source_checked_at": "2026-10-24",
+      "price_source": "official promotion; 150000 KRW course; weekday dinner, Hall only, minimum 2 orders",
+      "verification_status": "VERIFIED",
+      "scenario_only": false,
+      "gap": null,
+      "session_rules": [
+        {
+          "days": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ],
+          "holiday": "non_holiday",
+          "start": "18:00",
+          "end": "21:00"
+        }
+      ]
+    },
+    {
+      "venue_id": "THE_BUFFET",
+      "offer_id": "THE_BUFFET",
+      "offer_name": "더뷔페 저녁 성인",
+      "offer_kind": "buffet_admission",
+      "meal_period": [
+        "dinner"
+      ],
+      "price_amount": 198000,
+      "price_basis": "per_adult",
+      "party_size_min": 1,
+      "party_size_max": null,
+      "valid_from": "2026-10-01",
+      "valid_to": "2026-11-30",
+      "day_of_week": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ],
+      "holiday_policy": "conditional_schedule",
+      "sessions": [],
+      "session_start": "18:00",
+      "session_end": "21:00",
+      "reservation_required": true,
+      "eligibility_conditions": {
+        "age_class": "adult"
+      },
+      "source_url": "https://app.walkerhill.com/vistawalkerhillseoul/dining/TheBuffet",
+      "source_checked_at": "2026-10-24",
+      "price_source": "official 10-11 month dining schedule, adult dinner admission",
+      "verification_status": "VERIFIED",
+      "scenario_only": false,
+      "gap": null,
+      "session_rules": [
+        {
+          "days": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sun"
+          ],
+          "holiday": "non_holiday",
+          "start": "18:00",
+          "end": "21:00"
+        },
+        {
+          "days": [
+            "Sat"
+          ],
+          "holiday": "any",
+          "start": "17:30",
+          "end": "19:30"
+        },
+        {
+          "days": [
+            "Sat"
+          ],
+          "holiday": "any",
+          "start": "20:00",
+          "end": "22:00"
+        },
+        {
+          "days": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sun"
+          ],
+          "holiday": "public_holiday",
+          "start": "17:30",
+          "end": "19:30"
+        },
+        {
+          "days": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sun"
+          ],
+          "holiday": "public_holiday",
+          "start": "20:00",
+          "end": "22:00"
+        }
+      ]
+    },
+    {
+      "venue_id": "MOEGI",
+      "offer_id": "MOEGI_DINNER",
+      "offer_name": "모에기 저녁 상품",
+      "offer_kind": "unknown_dinner_menu",
+      "meal_period": [
+        "dinner"
+      ],
+      "price_amount": null,
+      "price_basis": null,
+      "party_size_min": null,
+      "party_size_max": null,
+      "valid_from": null,
+      "valid_to": null,
+      "day_of_week": null,
+      "holiday_policy": "unknown",
+      "sessions": [],
+      "session_start": "18:00",
+      "session_end": "21:00",
+      "reservation_required": true,
+      "eligibility_conditions": {},
+      "source_url": "https://app.walkerhill.com/vistawalkerhillseoul/dining/MOEGI",
+      "source_checked_at": "2026-10-24",
+      "price_source": "official dinner hours; current dinner menu prices unavailable; 98000 promotion is weekday lunch only",
+      "verification_status": "PARTIAL",
+      "scenario_only": false,
+      "gap": "Do not use 98000 lunch promotion or dated 2017 menu as current dinner price.",
+      "session_rules": []
+    },
+    {
+      "venue_id": "LE_PASSAGE",
+      "offer_id": "LE_PASSAGE_SIMPLE",
+      "offer_name": "르파사쥬 간단식",
+      "offer_kind": "light_meal",
+      "meal_period": [
+        "dinner"
+      ],
+      "price_amount": null,
+      "price_basis": null,
+      "party_size_min": null,
+      "party_size_max": null,
+      "valid_from": null,
+      "valid_to": null,
+      "day_of_week": null,
+      "holiday_policy": "unknown",
+      "sessions": [],
+      "session_start": null,
+      "session_end": null,
+      "reservation_required": false,
+      "eligibility_conditions": {},
+      "source_url": null,
+      "source_checked_at": "2026-10-24",
+      "price_source": "weak review-reported 12000; current official price/portion unavailable",
+      "verification_status": "PARTIAL",
+      "scenario_only": false,
+      "gap": "DATA_GAP; cannot treat as verified full dinner or normalize with restaurant menus.",
+      "session_rules": []
+    }
+  ]
+}

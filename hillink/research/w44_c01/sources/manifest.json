@@ -1,0 +1,42 @@
+{
+  "verified_price_catalog.json": {
+    "git_blob_sha": "d75dafa7515d743f90eff85f31c32d372808d4dd",
+    "sha256": "dd2950decbce9ead1cdc642de9a50afa71f633d12428529cf65f4e2d2692d90c",
+    "byte_length": 83165,
+    "repository": "BK8909/walkerhill",
+    "ref": "merge/validator-0923",
+    "verified": true
+  },
+  "official_source_register.json": {
+    "git_blob_sha": "abc488dc5e3e6b7587942371b66a8423cebb0c46",
+    "sha256": "9138179a269f34bea5a1415a1a6e9d755f96bce74eddf13024a557a69359e21c",
+    "byte_length": 17609,
+    "repository": "BK8909/walkerhill",
+    "ref": "merge/validator-0923",
+    "verified": true
+  },
+  "facility_entitlement_rules.json": {
+    "git_blob_sha": "3ba8aa0c7909566dfa17ea6756c1c7e61ee33b68",
+    "sha256": "e17c2702feb02171174e9ab1a7f7a5e886c262bf77c2b74e0728f7c061b1f1df",
+    "byte_length": 1852,
+    "repository": "BK8909/walkerhill",
+    "ref": "merge/validator-0923",
+    "verified": true
+  },
+  "seasonal_price_references.json": {
+    "git_blob_sha": "5a978eae57e33281c1c54185af28fd31149851ee",
+    "sha256": "bda80370e83baeb5a588ff27aaa983b2130f00cd4e5fe5500d0de9d1fdaba48e",
+    "byte_length": 9225,
+    "repository": "BK8909/walkerhill",
+    "ref": "merge/validator-0923",
+    "verified": true
+  },
+  "outlet_action_crosswalk.json": {
+    "git_blob_sha": "b01bb37ec67cefedf672f3bb0d1581c691ff1cf9",
+    "sha256": "d57d19894879d74f002de7bc9674a99807c44126357c65681e532e83a09b0606",
+    "byte_length": 5625,
+    "repository": "BK8909/walkerhill",
+    "ref": "merge/validator-0923",
+    "verified": true
+  }
+}

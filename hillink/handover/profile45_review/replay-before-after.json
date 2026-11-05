@@ -1,0 +1,16 @@
+[
+  {
+    "customer": "A12",
+    "run_id_equal": true,
+    "decision_input_and_selected_plan_equal": true,
+    "ledger_sha_equal": false,
+    "checks_equal": true
+  },
+  {
+    "customer": "N15",
+    "run_id_equal": true,
+    "decision_input_and_selected_plan_equal": true,
+    "ledger_sha_equal": false,
+    "checks_equal": true
+  }
+]

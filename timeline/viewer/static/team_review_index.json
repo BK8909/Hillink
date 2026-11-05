@@ -1,0 +1,886 @@
+{
+ "schema_version": "team_review_display_v1",
+ "team_commit": "b6c4e77f874d8aeba23d2358608c04e89d667298",
+ "cross_review": {
+  "source_commit": "130d5f979c67fd035eab38899f80f12f2172ea18",
+  "source_version": "2026-10-22 15:32 received material; later #99 updates not fully cross-reviewed",
+  "layer": "reviewer_opinion_not_original_observation",
+  "team_consensus": false,
+  "items": [
+   {
+    "review_id": "SG-01",
+    "author": "A01",
+    "scope": "관측",
+    "claims": "E01",
+    "point": "행사·숙박 동일 방문",
+    "verdict": "수용",
+    "opinion": "낮 모에기 행사와 당일 숙박을 원문이 직접 연결한다. 연재 글을 별도 호텔 방문으로 늘리지 않는 해석에 동의.",
+    "actor_time": "같은 날 행사와 숙박; 준비 피팅은 별도 외부 방문",
+    "independence": "숙박1회와 여러 업체·행동 수 구분",
+    "event_refs": [
+     "A01-E01"
+    ],
+    "comparison_status": "awaiting_latest_detail_and_joint_review"
+   },
+   {
+    "review_id": "SG-02",
+    "author": "A01",
+    "scope": "관측",
+    "claims": "E02",
+    "point": "예약 실패 뒤 취소분 재시도",
+    "verdict": "수용",
+    "opinion": "마감 안내 뒤 다음날 취소분에 다시 전화해 평일 점심 예약에 성공했다. 모든 만석의 즉시 대안 이동 규칙으로 쓰지 않음.",
+    "actor_time": "당시 선호 장소가 분명한 예약; 현재 취소분 보장 아님",
+    "independence": "전화 횟수는 자기보고이며 독립 구매·방문 수가 아님",
+    "event_refs": [
+     "A01-E02"
+    ],
+    "comparison_status": "awaiting_latest_detail_and_joint_review"
+   },
+   {
+    "review_id": "SG-03",
+    "author": "A01",
+    "scope": "관측",
+    "claims": "E09",
+    "point": "수영 후 가족 분담",
+    "verdict": "수용",
+    "opinion": null,
+    "actor_time": "배우자·본인·첫째·둘째의 역할 분리",
+    "independence": "같은 숙박의 연속 수영; 가족 전원 동일 체류 아님",
+    "event_refs": [
+     "A01-E09"
+    ],
+    "comparison_status": "awaiting_latest_detail_and_joint_review"
+   },
+   {
+    "review_id": "SG-04",
+    "author": "A01",
+    "scope": "관측",
+    "claims": "E10",
+    "point": "피자 포장과 식당 실패 구분",
+    "verdict": "수용",
+    "opinion": "포장을 미리 주문하고 셔틀로 수령해 객실에서 식사했다. 만석·입장 거절 때문에 포장했다는 근거는 없음.",
+    "actor_time": null,
+    "independence": "포장 주문·수령·객실 식사는 하나의 식사 흐름",
+    "event_refs": [
+     "A01-E10"
+    ],
+    "comparison_status": "awaiting_latest_detail_and_joint_review"
+   },
+   {
+    "review_id": "SG-05",
+    "author": "A01",
+    "scope": "관측",
+    "claims": "E11",
+    "point": "조식 미실행·대체 주문",
+    "verdict": "수용",
+    "opinion": "행사 다음날 늦잠으로 추가 결제 예정 뷔페를 포기하고 미국식 조식 하나를 나눠 먹었다. 만석·상시 조식 회피로 설명하지 않음.",
+    "actor_time": "멤버십 할인 가능성과 실제 룸서비스 할인 불가를 구분",
+    "independence": null,
+    "event_refs": [
+     "A01-E11"
+    ],
+    "comparison_status": "awaiting_latest_detail_and_joint_review"
+   },
+   {
+    "review_id": "SG-06",
+    "author": "A01",
+    "scope": "관측",
+    "claims": "E54;E55",
+    "point": "놀이시설과 보호자 휴식의 거리",
+    "verdict": "수용",
+    "opinion": null,
+    "actor_time": "서로 다른 장소; 정확 방문일은 미상",
+    "independence": "장소 경험2개이며 여행2회로 확정하지 않음",
+    "event_refs": [
+     "A01-E54",
+     "A01-E55"
+    ],
+    "comparison_status": "awaiting_latest_detail_and_joint_review"
+   },
+   {
+    "review_id": "SG-07",
+    "author": "A01",
+    "scope": "관측",
+    "claims": "E60",
+    "point": "와인 필수 조건과 실제 조정",
+    "verdict": "수용",
+    "opinion": "적은 음주량을 설명해 반 병 주문을 허용받고 음식과 조합을 호평했다. 와인 무관심·전 업장 반 병 가능으로 확대하지 않음.",
+    "actor_time": null,
+    "independence": "실제 식사1회; 예약 알림·메뉴 평가가 방문을 늘리지 않음",
+    "event_refs": [
+     "A01-E60"
+    ],
+    "comparison_status": "awaiting_latest_detail_and_joint_review"
+   },
+   {
+    "review_id": "SG-08",
+    "author": "A01",
+    "scope": "관측",
+    "claims": "E61",
+    "point": "내돈내산과 리뷰 페이백",
+    "verdict": "수용",
+    "opinion": "5천원 후기 페이백 안내는 확인되지만 실제 수령·이 글 대가는 불명확하다. 금액을 차감하거나 일반 성향의 확정 근거로 쓰지 않은 처리에 동의.",
+    "actor_time": "보증금·대여료·배송비 분리",
+    "independence": "할인·서비스 구매와 게시 대가를 동일시하지 않음",
+    "event_refs": [
+     "A01-E61"
+    ],
+    "comparison_status": "awaiting_latest_detail_and_joint_review"
+   },
+   {
+    "review_id": "SG-09",
+    "author": "A01",
+    "scope": "관측",
+    "claims": "E62;E63",
+    "point": "후속 글과 동일 구매",
+    "verdict": "수용",
+    "opinion": "중고 구매 과정→후속 활용, 새 전집 구매→수업 후기는 직접 연결되는 같은 구매다. 각 후속 글을 신규 결제로 중복 계산하지 않는 해석에 동의.",
+    "actor_time": "상품·구매 주체·후속 이용 단계 구분",
+    "independence": "중고 월팸과 새 잉글리시에그는 서로 다른 상품 구매",
+    "event_refs": [
+     "A01-E62",
+     "A01-E63"
+    ],
+    "comparison_status": "awaiting_latest_detail_and_joint_review"
+   },
+   {
+    "review_id": "SG-10",
+    "author": "A01",
+    "scope": "T04",
+    "claims": "E02;E23;E24",
+    "point": "재시도·대기 성향의 한계",
+    "verdict": "수용",
+    "opinion": "선호 장소·의자·운동화의3개 선택 맥락은 반복 해석에 활용 가능하다. 상품 대기3시간을 식당 전반의 대기 허용 한도로 옮기지 않음.",
+    "actor_time": "원하는 대상이 분명한 상황과 새벽 줄서기 거절 반례",
+    "independence": "3개 맥락 하한; 글 수·총 방문 수와 별개",
+    "event_refs": [
+     "A01-E02",
+     "A01-E23",
+     "A01-E24"
+    ],
+    "comparison_status": "awaiting_latest_detail_and_joint_review"
+   },
+   {
+    "review_id": "SG-11",
+    "author": "A01",
+    "scope": "H04",
+    "claims": "E65;E67",
+    "point": "타 업종 혜택 경험을 호텔에 적용",
+    "verdict": "부분 수용",
+    "opinion": "포함 서비스 비교·과거 휴식 부족의 이유는 원문에 있다. 다만 비호텔 서비스의 회복 목적을 호텔 저녁의 휴식계수로 직접 전환하는 적용은 유보.",
+    "actor_time": "당시 서비스 업종과 이용 목적을 표시",
+    "independence": "관측은 수용; 새 호텔 행동 가설은 별도 검증",
+    "event_refs": [
+     "A01-E65",
+     "A01-E67"
+    ],
+    "comparison_status": "awaiting_latest_detail_and_joint_review"
+   },
+   {
+    "review_id": "SG-12",
+    "author": "A08",
+    "scope": "관측",
+    "claims": "E01;E27",
+    "point": "최근 워커힐과 과거 더글라스",
+    "verdict": "수용",
+    "opinion": "여름 워커힐 두 글은 같은 숙박이고 과거 신혼 더글라스는 별도다. 같은 작성자의 서로 다른 시기·방문을 분리한 처리에 동의.",
+    "actor_time": "게시 시점·실제 방문 시기·동행 구분",
+    "independence": "최근 글2개를 숙박2회로 세지 않음",
+    "event_refs": [
+     "A08-E01",
+     "A08-E27"
+    ],
+    "comparison_status": "awaiting_latest_detail_and_joint_review"
+   },
+   {
+    "review_id": "SG-13",
+    "author": "A08",
+    "scope": "관측",
+    "claims": "E04;E06",
+    "point": "시설 이용 목적과 우천 대안",
+    "verdict": "수용",
+    "opinion": "유료 리버파크에서 주로 선베드 독서를 한 것과 비 때문에 실내로 옮겨 요가한 것을 구분했다. 유료시설=강한 수영 선호, 우천=취소로 해석하지 않음.",
+    "actor_time": "본인 음식·배우자 음식 및 장소 변경 분리",
+    "independence": "같은 숙박의 시설·프로그램 이용 단계",
+    "event_refs": [
+     "A08-E04",
+     "A08-E06"
+    ],
+    "comparison_status": "awaiting_latest_detail_and_joint_review"
+   },
+   {
+    "review_id": "SG-14",
+    "author": "A08",
+    "scope": "관측",
+    "claims": "E29",
+    "point": "예약 취소·당일 식사·포장 안내",
+    "verdict": "수용",
+    "opinion": "일정상 예약 취소 후 다시 방문했지만 대기 없이 입장했다. 남긴 음식과 포장 가능 안내는 실제 포장 완료·만석 전환의 증거가 아니다.",
+    "actor_time": "당시 주문·맛 평가·햇빛 불편을 업장별로 보존",
+    "independence": "한 식사 안 여러 메뉴를 독립 방문으로 세지 않음",
+    "event_refs": [
+     "A08-E29"
+    ],
+    "comparison_status": "awaiting_latest_detail_and_joint_review"
+   },
+   {
+    "review_id": "SG-15",
+    "author": "A08",
+    "scope": "관측",
+    "claims": "E36",
+    "point": "표시가·지출 충돌·행사 범위",
+    "verdict": "수용",
+    "opinion": "본문 약450만원과 요약440만원의 차이를 보류한 처리에 동의. 친구 파티와 친지 예식은 같은 결혼의 다른 행사이며 호텔 숙박 근거가 아니다.",
+    "actor_time": "실제24명과 장소 수용 인원·일반 할인 안내 구분",
+    "independence": "행사·준비·호텔 투숙 수를 구분",
+    "event_refs": [
+     "A08-E36"
+    ],
+    "comparison_status": "awaiting_latest_detail_and_joint_review"
+   },
+   {
+    "review_id": "SG-16",
+    "author": "A08",
+    "scope": "관측",
+    "claims": "E44;E46",
+    "point": "유연한 예약과 대기 후 일정 변경",
+    "verdict": "수용",
+    "opinion": "첫날 취소 유연성·동선과 둘째날 부부 전용 온천 가치를 다르게 판단했다. 라멘 대기 뒤 다음 버스를 탄 실제 행동은 고정 대기 회피의 반례.",
+    "actor_time": "14시 체크인 예정과 실제 도착·픽업 실패 구분",
+    "independence": "같은 고베 여행 안 숙소2곳; 여행2회 아님",
+    "event_refs": [
+     "A08-E44",
+     "A08-E46"
+    ],
+    "comparison_status": "awaiting_latest_detail_and_joint_review"
+   },
+   {
+    "review_id": "SG-17",
+    "author": "A08",
+    "scope": "관측",
+    "claims": "E48;E49",
+    "point": "조식 생략·업그레이드·대기 수용",
+    "verdict": "수용",
+    "opinion": "외부 음식을 위해 조식을 빼면서 객실 업그레이드는 결제했다. 장어집 대기 중 관광·대화는 줄에서 계속 서 있던 시간으로 바꾸지 않음.",
+    "actor_time": "현재 운영요금이 아닌 당시 자기보고",
+    "independence": "낮은 가격 선호·대기 회피를 절대 규칙으로 만들지 않음",
+    "event_refs": [
+     "A08-E48",
+     "A08-E49"
+    ],
+    "comparison_status": "awaiting_latest_detail_and_joint_review"
+   },
+   {
+    "review_id": "SG-18",
+    "author": "A08",
+    "scope": "관측",
+    "claims": "E52;E68",
+    "point": "홍보 노출과 실제 리뷰 보상",
+    "verdict": "수용",
+    "opinion": "홍보를 보고 예약한 마사지와 실제 리뷰 이벤트 초밥을 받은 일을 구별한 처리에 동의. N123은 보상 종류·게시 대가가 미상인 만큼 일반 비보상 성향에서 보류.",
+    "actor_time": "내돈내산 표기만으로 대가 관계를 해소하지 않음",
+    "independence": "다른 글·다른 업장에 보상 여부를 전이하지 않음",
+    "event_refs": [
+     "A08-E52",
+     "A08-E68"
+    ],
+    "comparison_status": "awaiting_latest_detail_and_joint_review"
+   },
+   {
+    "review_id": "SG-19",
+    "author": "A08",
+    "scope": "관측",
+    "claims": "E73;E75;E76",
+    "point": "와인 관심과 상황별 생략",
+    "verdict": "수용",
+    "opinion": "화이트와인 선택·콜키지 활용과 후속 일정 때문에 레몬에이드를 고른 반례가 함께 있다. 평생 음주량·모든 행사 구매 확률로 환산하지 않음.",
+    "actor_time": "본인 주문·동행 주문·지참 와인과 판매 안내 구분",
+    "independence": "3개 장소의 경험 맥락이며 독립 여행3회 아님",
+    "event_refs": [
+     "A08-E73",
+     "A08-E75",
+     "A08-E76"
+    ],
+    "comparison_status": "awaiting_latest_detail_and_joint_review"
+   },
+   {
+    "review_id": "SG-20",
+    "author": "A08",
+    "scope": "관측",
+    "claims": "E15;E62;E64",
+    "point": null,
+    "verdict": "수용",
+    "opinion": null,
+    "actor_time": "관계·발화 주체·당시 시점 유지",
+    "independence": "추천·관찰·타인 경험과 본인 방문을 분리",
+    "event_refs": [
+     "A08-E15",
+     "A08-E62",
+     "A08-E64"
+    ],
+    "comparison_status": "awaiting_latest_detail_and_joint_review"
+   },
+   {
+    "review_id": "SG-21",
+    "author": "A08",
+    "scope": "T05",
+    "claims": "E73;E75;E76",
+    "point": "와인 성향의 반복 범위",
+    "verdict": "수용",
+    "opinion": "세 업장의 주문·지참·평가와 비음주 반례를 연결한 해석에 동의. 와인 판매·타인 결제·추가 음주량은 미상으로 유지.",
+    "actor_time": "현재 가상 방문의 음주 의사는 별도 입력",
+    "independence": "음식·공간 맥락3개; 술 구매3회로 치환하지 않음",
+    "event_refs": [
+     "A08-E73",
+     "A08-E75",
+     "A08-E76"
+    ],
+    "comparison_status": "awaiting_latest_detail_and_joint_review"
+   },
+   {
+    "review_id": "SG-22",
+    "author": "A08",
+    "scope": "H04",
+    "claims": "E02;E04;E09;E47;E51;E54;E75;E76",
+    "point": "회차·동선 충돌의 새 환경 가설",
+    "verdict": "부분 수용",
+    "opinion": "실제 선택 이유와 비음주 반례는 수용한다. 원문에 없는 일정 충돌의 우선순위·정확 시간·일반 확률을 새 상황의 확정 행동으로 쓰는 적용은 유보.",
+    "actor_time": "원인으로 명시된 조건과 나중에 분석한 가설 구분",
+    "independence": "가설의 납득 가능성과 예측 성능 검증은 별개",
+    "event_refs": [
+     "A08-E02",
+     "A08-E04",
+     "A08-E09",
+     "A08-E47",
+     "A08-E51",
+     "A08-E54",
+     "A08-E75",
+     "A08-E76"
+    ],
+    "comparison_status": "awaiting_latest_detail_and_joint_review"
+   }
+  ]
+ },
+ "slgi": {
+  "source_pr": 102,
+  "source_commit": "713a3fc0c818a60dcb416b431b514e0976b5f5b1",
+  "aggregate_path": "docs/customer_type_library/common_workbook_review_20261023/README.md",
+  "aggregate_sha256": "100d5e7388d053ed1f9a9f65bcbc795392a1680d7b9c7b07f50c473bf143edf7",
+  "detail_workbook_status": "not_received",
+  "reported_workbook_sha256": "e3fd4d6fe6a84a3eb1be30773439300a45dae7fac9272f0d8a510cc9267abf2b",
+  "authors": [
+   "A01",
+   "A03",
+   "A06",
+   "A08",
+   "A09"
+  ],
+  "comparison_keys": [
+   "author_group_id",
+   "event_id",
+   "claim_ids",
+   "source_version"
+  ],
+  "required_detail_fields": [
+   "author_group_id",
+   "event_id",
+   "claim_ids",
+   "source_version",
+   "reviewer_judgment",
+   "reviewer_reason",
+   "restricted_anchor_refs"
+  ],
+  "latest_detail_comparison_complete": false
+ },
+ "machine_field_proposals": {
+  "date": "2026-10-23",
+  "source_commit": "2e1575e3a19c0e177ea3665f6495f8918fe4071d",
+  "scope": "로컬 검수용 정정본에만 적용. PR98 원본·원문·공용 엔진·성향 계수는 변경하지 않음.",
+  "changes": [
+   {
+    "author": "A04",
+    "fact_id": "A04-F10",
+    "before": {
+     "kind": "purchase",
+     "dimension": "participation_history",
+     "action_stage": "purchase_reported"
+    },
+    "after": {
+     "kind": "decline",
+     "dimension": "prepurchase_criteria",
+     "action_stage": "not_applicable"
+    },
+    "reason": "본문과 단계는 미주문. 구매 이력으로 가져오면 잘못된 룸서비스 친숙성 가점 발생.",
+    "evidence_ids": [
+     "A04-C10"
+    ],
+    "stage_detail": "고려/구매하지않음/이유"
+   },
+   {
+    "author": "A04",
+    "fact_id": "A04-F12",
+    "before": {
+     "kind": "participation",
+     "dimension": "participation_history",
+     "action_stage": "participation_reported"
+    },
+    "after": {
+     "kind": "decline",
+     "dimension": "participation_history",
+     "action_stage": "not_applicable"
+    },
+    "reason": "늦잠으로 운동·조식 미실행. 실제 참여로 집계하지 않음.",
+    "evidence_ids": [
+     "A04-C12"
+    ],
+    "stage_detail": "일정변경/미실행"
+   },
+   {
+    "author": "A05",
+    "fact_id": "A05-F08",
+    "before": {
+     "kind": "purchase",
+     "dimension": "participation_history",
+     "action_stage": "purchase_reported"
+    },
+    "after": {
+     "kind": "decline",
+     "dimension": "prepurchase_criteria",
+     "action_stage": "not_applicable"
+    },
+    "reason": "포만감으로 안주 미구매·미니바 맥주 미음주. 구매로 집계하지 않음.",
+    "evidence_ids": [
+     "A05-C08"
+    ],
+    "stage_detail": "방문/구매하지않음"
+   },
+   {
+    "author": "A07",
+    "fact_id": "A07-F26",
+    "before": {
+     "kind": "participation",
+     "dimension": "participation_history",
+     "action_stage": "participation_reported"
+    },
+    "after": {
+     "kind": "expectation",
+     "dimension": "prepurchase_criteria",
+     "action_stage": "not_applicable"
+    },
+    "reason": "다시 가고 싶으나 아직 미방문. 재방문 의향과 실행을 구분.",
+    "evidence_ids": [
+     "A07-C26"
+    ],
+    "stage_detail": "재방문계획/미실행보고"
+   }
+  ],
+  "status": "pending_owner_approval_not_applied",
+  "engine_modified": false
+ },
+ "runtime_fact_mapping": {
+  "source_pr": 101,
+  "mapping_status": "team_summary_mapping_not_direct_original_verification",
+  "items": [
+   {
+    "author": "A04",
+    "runtime_fact_id": "A04-F04",
+    "base_fact_id": "A04-F04",
+    "claim_ids": "A04-C04",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A04",
+    "runtime_fact_id": "A04-F08",
+    "base_fact_id": "A04-F08",
+    "claim_ids": "A04-C08",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A05",
+    "runtime_fact_id": "A05-F13",
+    "base_fact_id": "A05-F13",
+    "claim_ids": "A05-C13",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A05",
+    "runtime_fact_id": "A05-F63",
+    "base_fact_id": "A05-F63",
+    "claim_ids": "A05-C63",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A05",
+    "runtime_fact_id": "A05-F64",
+    "base_fact_id": "A05-F64",
+    "claim_ids": "A05-C64",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A07",
+    "runtime_fact_id": "A07-F24",
+    "base_fact_id": "A07-F24",
+    "claim_ids": "A07-C24",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A07",
+    "runtime_fact_id": "A07-F29",
+    "base_fact_id": "A07-F29",
+    "claim_ids": "A07-C29",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A07",
+    "runtime_fact_id": "A07-F42",
+    "base_fact_id": "A07-F42",
+    "claim_ids": "A07-C42",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A07",
+    "runtime_fact_id": "A07-F71",
+    "base_fact_id": "A07-F71",
+    "claim_ids": "A07-C71",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A07",
+    "runtime_fact_id": "A07-F83",
+    "base_fact_id": "A07-F83",
+    "claim_ids": "A07-C83.1;A07-C83.2;A07-C83.3",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A07",
+    "runtime_fact_id": "A07-F89",
+    "base_fact_id": "A07-F89",
+    "claim_ids": "A07-C89.1;A07-C89.2",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A07",
+    "runtime_fact_id": "A07-F46",
+    "base_fact_id": "A07-F46",
+    "claim_ids": "A07-C46",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A07",
+    "runtime_fact_id": "A07-F70",
+    "base_fact_id": "A07-F70",
+    "claim_ids": "A07-C70",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A07",
+    "runtime_fact_id": "A07-F14",
+    "base_fact_id": "A07-F14",
+    "claim_ids": "A07-C14",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A07",
+    "runtime_fact_id": "A07-F03",
+    "base_fact_id": "A07-F03",
+    "claim_ids": "A07-C03",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A07",
+    "runtime_fact_id": "A07-F25",
+    "base_fact_id": "A07-F25",
+    "claim_ids": "A07-C25.1;A07-C25.2",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A07",
+    "runtime_fact_id": "A07-F28",
+    "base_fact_id": "A07-F28",
+    "claim_ids": "A07-C28",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A07",
+    "runtime_fact_id": "A07-F36",
+    "base_fact_id": "A07-F36",
+    "claim_ids": "A07-C36",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A07",
+    "runtime_fact_id": "A07-F64",
+    "base_fact_id": "A07-F64",
+    "claim_ids": "A07-C64",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A07",
+    "runtime_fact_id": "A07-F96",
+    "base_fact_id": "A07-F96",
+    "claim_ids": "A07-C96",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A07",
+    "runtime_fact_id": "A07-F97",
+    "base_fact_id": "A07-F97",
+    "claim_ids": "A07-C97.1;A07-C97.2",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A07",
+    "runtime_fact_id": "A07-F08b",
+    "base_fact_id": "A07-F08",
+    "claim_ids": "A07-C08",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A10",
+    "runtime_fact_id": "A10-F08",
+    "base_fact_id": "A10-F08",
+    "claim_ids": "A10-C08",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A10",
+    "runtime_fact_id": "A10-F18",
+    "base_fact_id": "A10-F18",
+    "claim_ids": "A10-C18",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A10",
+    "runtime_fact_id": "A10-F25",
+    "base_fact_id": "A10-F25",
+    "claim_ids": "A10-C25",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A10",
+    "runtime_fact_id": "A10-F41",
+    "base_fact_id": "A10-F41",
+    "claim_ids": "A10-C41",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A10",
+    "runtime_fact_id": "A10-F68",
+    "base_fact_id": "A10-F68",
+    "claim_ids": "A10-C68",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A10",
+    "runtime_fact_id": "A10-F01",
+    "base_fact_id": "A10-F01",
+    "claim_ids": "A10-C01",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A10",
+    "runtime_fact_id": "A10-F14",
+    "base_fact_id": "A10-F14",
+    "claim_ids": "A10-C14",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   },
+   {
+    "author": "A10",
+    "runtime_fact_id": "A10-F07c",
+    "base_fact_id": "A10-F07",
+    "claim_ids": "A10-C07",
+    "mapping_scope": "실행ID→원본 사실·근거 위치 매핑. 분리된 세부 사실과 원본 전체 문장을 동일 텍스트로 단정하지 않음."
+   }
+  ]
+ },
+ "rbase_comparison": {
+  "source_pr": 101,
+  "engine_commit": "b0d20159715dda862478565841be924c2e42ef07",
+  "result_kind": "reported_rule_engine_reproduction_not_future_behavior_accuracy",
+  "same_as_current_profiles": false,
+  "independent_llm_runs": 0,
+  "items": [
+   {
+    "author": "A02",
+    "runtime_facts": "63",
+    "choice": "룸서비스 클럽 샌드위치",
+    "score": "4.232",
+    "runner_up": "룸서비스 수제 치즈버거",
+    "runner_score": "4.212",
+    "margin": "0.02",
+    "previous_local_choice": "룸서비스 클럽 샌드위치",
+    "previous_local_score": "4.232",
+    "score_delta": "0.0",
+    "code_and_input_hash": "일치",
+    "cli_vs_function": "일치",
+    "source_ids_resolved": "0"
+   },
+   {
+    "author": "A04",
+    "runtime_facts": "20",
+    "choice": "피자힐 단품 파스타(해산물 토마토)",
+    "score": "3.8076",
+    "runner_up": "룸서비스 클럽 샌드위치",
+    "runner_score": "3.732",
+    "margin": "0.0756",
+    "previous_local_choice": "피자힐 단품 파스타(해산물 토마토)",
+    "previous_local_score": "3.8076",
+    "score_delta": "0.0",
+    "code_and_input_hash": "일치",
+    "cli_vs_function": "일치",
+    "source_ids_resolved": "2"
+   },
+   {
+    "author": "A05",
+    "runtime_facts": "78",
+    "choice": "룸서비스 클럽 샌드위치",
+    "score": "4.4912",
+    "runner_up": "룸서비스 수제 치즈버거",
+    "runner_score": "4.4712",
+    "margin": "0.02",
+    "previous_local_choice": "룸서비스 클럽 샌드위치",
+    "previous_local_score": "4.4912",
+    "score_delta": "0.0",
+    "code_and_input_hash": "일치",
+    "cli_vs_function": "일치",
+    "source_ids_resolved": "3"
+   },
+   {
+    "author": "A07",
+    "runtime_facts": "102",
+    "choice": "피자힐 커플 세트",
+    "score": "5.154",
+    "runner_up": "피자힐 단품 파스타(해산물 토마토)",
+    "runner_score": "4.882",
+    "margin": "0.272",
+    "previous_local_choice": "피자힐 커플 세트",
+    "previous_local_score": "5.09",
+    "score_delta": "0.064",
+    "code_and_input_hash": "일치",
+    "cli_vs_function": "일치",
+    "source_ids_resolved": "17"
+   },
+   {
+    "author": "A10",
+    "runtime_facts": "78",
+    "choice": "피자힐 단품 파스타(해산물 토마토)",
+    "score": "4.5896",
+    "runner_up": "룸서비스 클럽 샌드위치",
+    "runner_score": "4.488",
+    "margin": "0.1016",
+    "previous_local_choice": "피자힐 단품 파스타(해산물 토마토)",
+    "previous_local_score": "4.5896",
+    "score_delta": "0.0",
+    "code_and_input_hash": "일치",
+    "cli_vs_function": "일치",
+    "source_ids_resolved": "8"
+   }
+  ],
+  "limits": [
+   "runtime_facts is an older runtime snapshot count, not the canonical fact count",
+   "A07 public baseline score 5.154 differs from previous direct-import score 5.09; inputs differ"
+  ]
+ },
+ "human_behavior_approved": false,
+ "demo_approved": false,
+ "future_signal_review": {
+  "source_pr": 105,
+  "common_commit": "43f4e296451af5d374241d2ef8679c9547fa758f",
+  "source_path": "docs/customer_type_library/future_action_signal_review_20261023/README.md",
+  "sha256": "fdb00338761f34e7f9693937f6eae579d707066ae78e63b4e93df35184ca8e53",
+  "cases": [
+   {
+    "runtime_fact_id": "A07-F11",
+    "reported_connection": "미래 관심이 routine의 rep·repeat 및 활성 근거로 연결",
+    "review_question": "미래 관심을 실제 재방문과 어떤 기준으로 분리하는가",
+    "behavior_impact_verified": false
+   },
+   {
+    "runtime_fact_id": "A05-F08a",
+    "reported_connection": "미구매·미음주 문장이 alcohol_familiar 활성 근거로 연결",
+    "review_question": "음주 의향/친숙성과 실제 구매·음주 이력을 구분하는가",
+    "behavior_impact_verified": false
+   },
+   {
+    "runtime_fact_id": "A02-F58",
+    "reported_connection": "실행한 대안과 다음 준비 계획이 혼합되어 routine 근거로 연결",
+    "review_question": "준비 의향이 반복 이용으로 계산되는지, 문장을 분리해야 하는가",
+    "behavior_impact_verified": false
+   },
+   {
+    "runtime_fact_id": "A10-F51",
+    "reported_connection": "실제 숙박 평가와 다음 다른 숙소 이용 계획이 routine 근거로 연결",
+    "review_question": "만족·방문 의향과 실제 반복 이력의 단위가 구분되는가",
+    "behavior_impact_verified": false
+   }
+  ],
+  "applied_to_engine": false,
+  "joint_approved": false
+ },
+ "pr106_review": {
+  "source_pr": 106,
+  "source_commit": "23ef33bffc36aa71633071bed5889409350c4d2b",
+  "review_only": true,
+  "applied_to_profiles_or_engine": false,
+  "hypothesis_reviews": 20,
+  "machine_field_proposals": 7,
+  "machine_field_status": "proposal_only",
+  "mixed_action_stage_opinions": 5,
+  "pr105_followups": 4,
+  "comparison_scope": "five_public_personas_not_new_eleven",
+  "comparison_runtime_commit": "b0d20159715dda862478565841be924c2e42ef07",
+  "comparison_customer_decisions": 46,
+  "comparison_scenario_calls": 22,
+  "comparison_model_calls": 0,
+  "source_index_checks": 3,
+  "a05_reference_review": {
+   "source_fact_id": "A05-F08",
+   "runtime_fact_id": "A05-F08a",
+   "relationship": "distinct_ids_under_review_not_aliases",
+   "profile_or_runtime_change_applied": false
+  },
+  "shared_paths": [
+   "docs/data/persona_evidence_signal_followup_shh_20261023/행동가설_20건_후속검수.json",
+   "docs/data/persona_evidence_signal_followup_shh_20261023/기계필드_정정제안_7건.json",
+   "docs/data/persona_evidence_signal_followup_shh_20261023/혼합행동단계_분리의견_5건.json",
+   "docs/data/persona_evidence_signal_followup_shh_20261023/PR105_네사례_교차의견.json",
+   "docs/data/persona_evidence_signal_followup_shh_20261023/미래계획_신호제외_아침저녁_대조결과.json",
+   "docs/data/persona_evidence_signal_followup_shh_20261023/선택이유_사용근거와전체색인_구분.json"
+  ],
+  "human_review_complete": false,
+  "joint_approved": false
+ },
+ "pr107_library_followup": {
+  "source_pr": 107,
+  "source_commit": "23ef33bffc36aa71633071bed5889409350c4d2b",
+  "candidate_additions": 5,
+  "candidate_ids": [
+   "N28",
+   "N29",
+   "N30",
+   "N31",
+   "N32"
+  ],
+  "total_candidate_inventory": 60,
+  "validated_profiles": 0,
+  "runtime_agents_added": 0,
+  "morning_exposure_rows": 155,
+  "afternoon_additional_exposure_rows": 36,
+  "afternoon_overlap_with_morning": 0,
+  "next_in_depth_profile_proposals": [
+   "A16",
+   "N04",
+   "N09",
+   "N24",
+   "A20",
+   "A13",
+   "A15",
+   "A25",
+   "N14",
+   "N16"
+  ],
+  "photo_and_source_link_indexes_included": false,
+  "applied_to_runtime": false
+ }
+}

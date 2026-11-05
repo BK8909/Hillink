@@ -1,0 +1,333 @@
+{
+  "customer_id": "blog42",
+  "scope": "PRIVATE_REVIEW_DISPLAY_ONLY",
+  "posts": [],
+  "engine_changed": false,
+  "projection": {
+    "P058_F01": {
+      "gist": "호텔 베이커리에서 투숙객 할인을 받음",
+      "features": [
+        "bakery_guest_discount"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "P059_F01": {
+      "gist": "조식에 맞춰 일찍 움직임",
+      "features": [
+        "early_breakfast_routine"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "P060_F01": {
+      "gist": "낮과 밤 두 번 족욕을 이용함",
+      "features": [
+        "day_night_footbath"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "P061_F01": {
+      "gist": "호텔 빙수를 카드 혜택과 추가 결제로 이용함",
+      "features": [
+        "hotel_ice_card_topup"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "P062_F01": {
+      "gist": "포레스트 파크를 셔틀·산책으로 이용함",
+      "features": [
+        "forest_shuttle_walk"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "P063_F01": {
+      "gist": "라운지 음식을 먹고 헬스장을 이용함",
+      "features": [
+        "lounge_food_then_gym"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "P064_F01": {
+      "gist": "과거 여러 호텔 빙수 경험",
+      "features": [
+        "prior_hotel_ices"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "P065_F01": {
+      "gist": "매년 빙수 안내 글에 과거 경험을 반복 인용함",
+      "features": [
+        "annual_ice_review_references"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "P066_F01": {
+      "gist": "올해 빙수는 계획만 적음(실제 구매 아님)",
+      "features": [
+        "annual_ice_plan_not_purchase"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "P067_F01": {
+      "gist": "할인 식재료를 가격 확인 후 구매함",
+      "features": [
+        "sale_food_purchase"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "P068_F01": {
+      "gist": "익숙한 식당에서 새 메뉴를 시도함",
+      "features": [
+        "new_menu_after_previous"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "P071_F01": {
+      "gist": "백화점 정원에서 쉬는 습관",
+      "features": [
+        "garden_break_habit"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "P073_F01": {
+      "gist": "시그니처 음료가 궁금해 주문함",
+      "features": [
+        "signature_drink_curiosity"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "P073_F02": {
+      "gist": "말차·에그타르트를 구체적으로 좋아함",
+      "features": [
+        "matcha_egg_tart_preference"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "P078_F01": {
+      "gist": "쉬려고 시간을 따로 내어 브런치를 감",
+      "features": [
+        "brunch_rest_purpose"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "P082_F01": {
+      "gist": "별도 아침 식사 쿠폰을 사용함",
+      "features": [
+        "breakfast_coupon_used"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "P087_F01": {
+      "gist": "아동 · 건강 관련 문장이라 화면에서 제외",
+      "features": [
+        "icecream_card_benefit"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": true,
+      "post": null
+    },
+    "P089_F01": {
+      "gist": "오래 쓴 생활 가전을 비교 후 교체함(기능적 구매)",
+      "features": [
+        "functional_shaver_replacement"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "P090_F01": {
+      "gist": "정원과 차를 결합해 쉼",
+      "features": [
+        "garden_tea_break"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "P091_F01": {
+      "gist": "할인 구매한 음식의 상태에 실망함(이용 후 평가)",
+      "features": [
+        "sale_food_disappointment"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "P092_F01": {
+      "gist": "회복(마사지) 서비스 이용 ①",
+      "features": [
+        "recovery_service_a"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "P097_F01": {
+      "gist": "팝업 음식을 시도해 봄",
+      "features": [
+        "popup_food_trial"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "P099_F01": {
+      "gist": "전에 먹은 것과 다른 메뉴를 고름",
+      "features": [
+        "earlier_menu_different"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "P100_F01": {
+      "gist": "회복(마사지) 서비스 이용 ②",
+      "features": [
+        "recovery_service_b"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "P104_F01": {
+      "gist": "회복(마사지) 서비스 이용 ③",
+      "features": [
+        "recovery_service_c"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "P113_F01": {
+      "gist": "다른 호텔 빙수도 비교해 이용함",
+      "features": [
+        "hotel_ice_different"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    },
+    "P114_F01": {
+      "gist": "연간 바우처의 대안을 비교해 교환함",
+      "features": [
+        "voucher_choice_not_brunch"
+      ],
+      "in_team": null,
+      "wh": true,
+      "exp": null,
+      "kind": null,
+      "hidden": false,
+      "post": null
+    }
+  },
+  "source_kind": "EXISTING_PROJECTION_NOT_ORIGINAL_SOURCE"
+}

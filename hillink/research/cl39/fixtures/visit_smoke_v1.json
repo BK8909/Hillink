@@ -1,0 +1,369 @@
+{
+  "fixture_id": "cl42-current-visit-smoke-v1",
+  "fixture_status": "NEW_POST_CL40_CURRENT_ENGINE_BASELINE_NOT_HISTORICAL_GOLD",
+  "created_engine_version": "autonomy_v1-2026-10-24+visit-state-v2.2",
+  "case_count": 6,
+  "notes": [
+    "Expected values were recorded from the current engine; this does not replace or recreate the unavailable historical 264-case Gold fixture.",
+    "Personal source text and profile fingerprints are not stored in this fixture.",
+    "Tests require the approved local run inputs; when they are absent the suite reports SKIP, not PASS."
+  ],
+  "cases": [
+    {
+      "request": {
+        "personas": [
+          "A01"
+        ],
+        "duration": "day_visit",
+        "event_mode": "none",
+        "seed": 0,
+        "start_date": "2026-10-24"
+      },
+      "request_sha256": "7cabe5cd38700ac81c7da6bf2adb059a52a67e7b60274600515e7b4da3426aa9",
+      "expected": {
+        "engine_version": "autonomy_v1-2026-10-24+visit-state-v2.2",
+        "day_count": 1,
+        "nights": 0,
+        "phases": [
+          "visit"
+        ],
+        "event_dates": [],
+        "paid_krw": 532000,
+        "room_assumption_krw": 0,
+        "unknown_count": 0,
+        "day_rows": [
+          {
+            "day_index": 1,
+            "phase": "visit",
+            "event_available": false,
+            "paid_krw": 532000,
+            "room_assumption_krw": 0,
+            "unknown_count": 0
+          }
+        ],
+        "L4_L3_L2_L1_paid_totals": {
+          "L4": 532000,
+          "L3": 532000,
+          "L2": 532000,
+          "L1": 532000
+        },
+        "checks": {
+          "day_totals_equal_visit_total": true,
+          "room_nights_equal_duration": true,
+          "date_rows_unique": true,
+          "visit_id_attached": true
+        }
+      }
+    },
+    {
+      "request": {
+        "personas": [
+          "A01"
+        ],
+        "duration": "day_visit",
+        "event_mode": "wine",
+        "seed": 0,
+        "start_date": "2026-10-24"
+      },
+      "request_sha256": "95fd608f876c329a3c32188b3f163bae69cf16c5c7e223f84d282284410e96a2",
+      "expected": {
+        "engine_version": "autonomy_v1-2026-10-24+visit-state-v2.2",
+        "day_count": 1,
+        "nights": 0,
+        "phases": [
+          "visit"
+        ],
+        "event_dates": [
+          "2026-10-24"
+        ],
+        "paid_krw": 636000,
+        "room_assumption_krw": 0,
+        "unknown_count": 0,
+        "day_rows": [
+          {
+            "day_index": 1,
+            "phase": "visit",
+            "event_available": true,
+            "paid_krw": 636000,
+            "room_assumption_krw": 0,
+            "unknown_count": 0
+          }
+        ],
+        "L4_L3_L2_L1_paid_totals": {
+          "L4": 636000,
+          "L3": 636000,
+          "L2": 636000,
+          "L1": 636000
+        },
+        "checks": {
+          "day_totals_equal_visit_total": true,
+          "room_nights_equal_duration": true,
+          "date_rows_unique": true,
+          "visit_id_attached": true
+        }
+      }
+    },
+    {
+      "request": {
+        "personas": [
+          "A01"
+        ],
+        "duration": "stay_2",
+        "event_mode": "none",
+        "seed": 0,
+        "start_date": "2026-10-24"
+      },
+      "request_sha256": "2b258e1cc3f15f133064cb6d06e17b17912296b27a8640a11755b34351219f9f",
+      "expected": {
+        "engine_version": "autonomy_v1-2026-10-24+visit-state-v2.2",
+        "day_count": 3,
+        "nights": 2,
+        "phases": [
+          "checkin",
+          "mid",
+          "checkout"
+        ],
+        "event_dates": [],
+        "paid_krw": 1556000,
+        "room_assumption_krw": 680000,
+        "unknown_count": 2,
+        "day_rows": [
+          {
+            "day_index": 1,
+            "phase": "checkin",
+            "event_available": false,
+            "paid_krw": 368000,
+            "room_assumption_krw": 307000,
+            "unknown_count": 1
+          },
+          {
+            "day_index": 2,
+            "phase": "mid",
+            "event_available": false,
+            "paid_krw": 656000,
+            "room_assumption_krw": 373000,
+            "unknown_count": 1
+          },
+          {
+            "day_index": 3,
+            "phase": "checkout",
+            "event_available": false,
+            "paid_krw": 532000,
+            "room_assumption_krw": 0,
+            "unknown_count": 0
+          }
+        ],
+        "L4_L3_L2_L1_paid_totals": {
+          "L4": 1556000,
+          "L3": 1556000,
+          "L2": 1556000,
+          "L1": 1556000
+        },
+        "checks": {
+          "day_totals_equal_visit_total": true,
+          "room_nights_equal_duration": true,
+          "date_rows_unique": true,
+          "visit_id_attached": true
+        }
+      }
+    },
+    {
+      "request": {
+        "personas": [
+          "A01"
+        ],
+        "duration": "stay_2",
+        "event_mode": "wine",
+        "seed": 0,
+        "start_date": "2026-10-24"
+      },
+      "request_sha256": "6bf1d5367f7802c214bbacb587a15a1618636276cb683bd1b4f790647f65e20d",
+      "expected": {
+        "engine_version": "autonomy_v1-2026-10-24+visit-state-v2.2",
+        "day_count": 3,
+        "nights": 2,
+        "phases": [
+          "checkin",
+          "mid",
+          "checkout"
+        ],
+        "event_dates": [
+          "2026-10-24",
+          "2026-10-25"
+        ],
+        "paid_krw": 1704000,
+        "room_assumption_krw": 680000,
+        "unknown_count": 2,
+        "day_rows": [
+          {
+            "day_index": 1,
+            "phase": "checkin",
+            "event_available": true,
+            "paid_krw": 368000,
+            "room_assumption_krw": 307000,
+            "unknown_count": 1
+          },
+          {
+            "day_index": 2,
+            "phase": "mid",
+            "event_available": true,
+            "paid_krw": 656000,
+            "room_assumption_krw": 373000,
+            "unknown_count": 1
+          },
+          {
+            "day_index": 3,
+            "phase": "checkout",
+            "event_available": false,
+            "paid_krw": 680000,
+            "room_assumption_krw": 0,
+            "unknown_count": 0
+          }
+        ],
+        "L4_L3_L2_L1_paid_totals": {
+          "L4": 1704000,
+          "L3": 1704000,
+          "L2": 1704000,
+          "L1": 1704000
+        },
+        "checks": {
+          "day_totals_equal_visit_total": true,
+          "room_nights_equal_duration": true,
+          "date_rows_unique": true,
+          "visit_id_attached": true
+        }
+      }
+    },
+    {
+      "request": {
+        "personas": [
+          "A07"
+        ],
+        "duration": "stay_2",
+        "event_mode": "none",
+        "seed": 0,
+        "start_date": "2026-10-24"
+      },
+      "request_sha256": "f30c3d5a2ac541addba647255390bdd4a7937b0c63ffe3757ee939a64530e807",
+      "expected": {
+        "engine_version": "autonomy_v1-2026-10-24+visit-state-v2.2",
+        "day_count": 3,
+        "nights": 2,
+        "phases": [
+          "checkin",
+          "mid",
+          "checkout"
+        ],
+        "event_dates": [],
+        "paid_krw": 836000,
+        "room_assumption_krw": 680000,
+        "unknown_count": 2,
+        "day_rows": [
+          {
+            "day_index": 1,
+            "phase": "checkin",
+            "event_available": false,
+            "paid_krw": 144000,
+            "room_assumption_krw": 307000,
+            "unknown_count": 1
+          },
+          {
+            "day_index": 2,
+            "phase": "mid",
+            "event_available": false,
+            "paid_krw": 610000,
+            "room_assumption_krw": 373000,
+            "unknown_count": 1
+          },
+          {
+            "day_index": 3,
+            "phase": "checkout",
+            "event_available": false,
+            "paid_krw": 82000,
+            "room_assumption_krw": 0,
+            "unknown_count": 0
+          }
+        ],
+        "L4_L3_L2_L1_paid_totals": {
+          "L4": 836000,
+          "L3": 836000,
+          "L2": 836000,
+          "L1": 836000
+        },
+        "checks": {
+          "day_totals_equal_visit_total": true,
+          "room_nights_equal_duration": true,
+          "date_rows_unique": true,
+          "visit_id_attached": true
+        }
+      }
+    },
+    {
+      "request": {
+        "personas": [
+          "A07"
+        ],
+        "duration": "stay_2",
+        "event_mode": "wine",
+        "seed": 0,
+        "start_date": "2026-10-24"
+      },
+      "request_sha256": "1c53166d8db142b3cbe0746b5d23c91faa72046db11489c3c588e02a697bc724",
+      "expected": {
+        "engine_version": "autonomy_v1-2026-10-24+visit-state-v2.2",
+        "day_count": 3,
+        "nights": 2,
+        "phases": [
+          "checkin",
+          "mid",
+          "checkout"
+        ],
+        "event_dates": [
+          "2026-10-24",
+          "2026-10-25"
+        ],
+        "paid_krw": 628000,
+        "room_assumption_krw": 680000,
+        "unknown_count": 2,
+        "day_rows": [
+          {
+            "day_index": 1,
+            "phase": "checkin",
+            "event_available": true,
+            "paid_krw": 144000,
+            "room_assumption_krw": 307000,
+            "unknown_count": 1
+          },
+          {
+            "day_index": 2,
+            "phase": "mid",
+            "event_available": true,
+            "paid_krw": 328000,
+            "room_assumption_krw": 373000,
+            "unknown_count": 1
+          },
+          {
+            "day_index": 3,
+            "phase": "checkout",
+            "event_available": false,
+            "paid_krw": 156000,
+            "room_assumption_krw": 0,
+            "unknown_count": 0
+          }
+        ],
+        "L4_L3_L2_L1_paid_totals": {
+          "L4": 628000,
+          "L3": 628000,
+          "L2": 628000,
+          "L1": 628000
+        },
+        "checks": {
+          "day_totals_equal_visit_total": true,
+          "room_nights_equal_duration": true,
+          "date_rows_unique": true,
+          "visit_id_attached": true
+        }
+      }
+    }
+  ]
+}

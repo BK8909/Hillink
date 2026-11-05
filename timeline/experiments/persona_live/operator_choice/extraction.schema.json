@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Anonymous extraction exchange contract; not an approved persona",
+  "type": "object", "additionalProperties": false,
+  "required": ["version", "agent_id", "source_access", "verification_status", "evidence_units", "excluded_fields"],
+  "properties": {
+    "version": {"const": "extraction_exchange_v1"},
+    "agent_id": {"type": "string"},
+    "source_access": {"enum": ["card_only", "unavailable", "permitted_source_checked"]},
+    "verification_status": {"enum": ["automatic_draft", "human_review_pending", "source_checked"]},
+    "excluded_fields": {"type": "array", "items": {"type": "string"}},
+    "evidence_units": {"type": "array", "items": {
+      "type": "object", "additionalProperties": false,
+      "required": ["unit_id", "observed_behavior", "evaluated_aspect", "personal_reason", "context", "evidence_ids", "provenance", "original_anchor_verified"],
+      "properties": {
+        "unit_id": {"type": "string"}, "observed_behavior": {"type": "string"},
+        "evaluated_aspect": {"type": "object", "required": ["target", "polarity"],
+          "properties": {"target": {"type": "string"}, "polarity": {"enum": ["positive", "negative", "mixed", "neutral", "unknown"]}}},
+        "personal_reason": {"type": ["string", "null"]},
+        "context": {"type": "object"}, "evidence_ids": {"type": "array", "items": {"type": "string"}},
+        "provenance": {"enum": ["observed", "human_inference", "ai_estimate", "unknown"]},
+        "original_anchor_verified": {"type": "boolean"}
+      }
+    }}
+  }
+}

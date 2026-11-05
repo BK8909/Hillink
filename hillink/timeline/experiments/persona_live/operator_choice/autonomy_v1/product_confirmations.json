@@ -1,0 +1,11 @@
+{
+  "version": "c01-user-product-confirmations-v1",
+  "date": "2026-10-28",
+  "authority": "EXPLICIT_USER_INSTRUCTION",
+  "scope": "C01 simulation product contracts; not a claim of independently verified current sale or reservation",
+  "products": [
+    {"venue_id":"MYONGWOLGWAN","product":"명월관 모둠 한상","source_line":165,"sku_id":"C01-MENU-MYONGWOLGWAN-165","unit_price_krw":770000,"billing_unit":"set","serving_size":4,"menu_day_rule":"ALL_DAYS_WITHIN_VENUE_SERVICE_WINDOW","confirmation_id":"USER-20261028-MYONG-PLATTER-DAYS","confirmed_fields":["menu_weekday_weekend_holiday_eligibility"],"note":"User directs availability without a separate stated menu-day restriction. Price and four-person serving remain from existing sources."},
+    {"venue_id":"ONDAL","product":"수라상차림","source_line":147,"sku_id":"ONDAL-SURA","unit_price_krw":195000,"billing_unit":"person_meal","minimum_order_portions":2,"confirmation_id":"USER-20261028-ONDAL-SURA-UNIT","confirmed_fields":["listed_amount_per_portion","minimum_order_portions"],"note":"User confirms listed price per portion and minimum order two portions."},
+    {"venue_id":"ONDAL","product":"궁중상차림","source_line":148,"sku_id":"ONDAL-GUNGJUNG","unit_price_krw":165000,"billing_unit":"person_meal","minimum_order_portions":2,"confirmation_id":"USER-20261028-ONDAL-GUNGJUNG-UNIT","confirmed_fields":["listed_amount_per_portion","minimum_order_portions"],"note":"User confirms listed price per portion and minimum order two portions."}
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "source_file": "submission-QA.json.gz",
+  "source_sha256": "6061b269a0e0419910a50b0df2351e298d4561507d22518f1992bce3a18c15c4",
+  "coverage": {
+    "customers": 28,
+    "visits": 36,
+    "decisions": 312,
+    "sources": {
+      "LIVE_RESPONSES": 301,
+      "CACHE_REPLAY": 11
+    },
+    "independent_evaluations": 36,
+    "failed_preserved_visit_attempts": 2,
+    "total_preserved_visit_artifacts": 38
+  },
+  "budget_at_that_report": {
+    "calls": 1933,
+    "max_calls": 2500,
+    "max_usd": 20.0,
+    "cost_upper_usd": 11.371026944999993,
+    "states": {
+      "ERROR": 13,
+      "COMPLETED": 1919,
+      "INTERRUPTED_BILLING_UNKNOWN": 1
+    },
+    "new_calls": 516,
+    "new_purposes": {
+      "CUSTOMER_ACTION_PLAN": 407,
+      "BREAKFAST_PLAN": 56,
+      "INDEPENDENT_QUALITY_REVIEW": 53
+    },
+    "new_states": {
+      "COMPLETED": 513,
+      "ERROR": 3
+    },
+    "journal_sha256": "71ec1bec75648953df381a8be1b22d2b2c62dfd1b97946d831e6c1d0187e6ab5",
+    "preserved_prior_1417": true,
+    "original395_sha256": "62891f0e85916633b8a81ee0e95ddd009c14bb81e84a1ff223b2c4031d1d0622",
+    "unresolved_count": 0,
+    "unattributed_new_requests": 0,
+    "cost_basis": "CONSERVATIVE_TOKEN_ESTIMATE_INCLUDING_HISTORIC_ERROR_AND_INTERRUPTED_RESERVATIONS_NOT_INVOICE"
+  },
+  "failed_attempts": [
+    {
+      "tag": "A12-v16-stochastic-repeat",
+      "customer": "A12",
+      "decisions": 7,
+      "contract_status": "EXECUTION_INCOMPLETE_HOLD",
+      "holds": [
+        {
+          "date": "2026-11-05",
+          "minute": 592,
+          "reason": "HTTP_500"
+        }
+      ],
+      "independent_review_status": "NOT_RUN_EXECUTION_HOLD",
+      "recovery_tag": "A12-v16-stochastic-repeat-recovery"
+    },
+    {
+      "tag": "A26-v16-discount20",
+      "customer": "A26",
+      "decisions": 6,
+      "contract_status": "EXECUTION_INCOMPLETE_HOLD",
+      "holds": [
+        {
+          "date": "2026-11-05",
+          "minute": 523,
+          "reason": "HTTP_500"
+        }
+      ],
+      "independent_review_status": "NOT_RUN_EXECUTION_HOLD",
+      "recovery_tag": "A26-v16-discount20-recovery"
+    }
+  ],
+  "holds": [
+    {
+      "id": "SEMANTIC_REVIEW",
+      "status": "REVIEW_REQUIRED",
+      "scope": "Original source meaning and attribution, weak preference transfers, amount/intake assumptions, repeated rest and alternatives require human review; independent model outputs do not grant approval."
+    },
+    {
+      "id": "FACT_LINK_COVERAGE",
+      "status": "OPEN",
+      "scope": "Independent review can flag narrative source references absent from structured Fact IDs. Validity of emitted IDs does not prove complete semantic citation coverage."
+    },
+    {
+      "id": "MERGED_ACTIVITY_TRACE",
+      "status": "OPEN",
+      "scope": "Consecutive rest executions may merge into one activity-memory block, obscuring decision boundaries and the later selected action ID; passing schedule and ledger audits do not certify complete per-action memory trace."
+    },
+    {
+      "id": "AGE_ACCESS",
+      "status": "REVIEW_REQUIRED",
+      "scope": "Legacy all-adult pricing assumptions are not verified current ages or operational admission rights."
+    },
+    {
+      "id": "COHORT_CAUSAL_EFFECT",
+      "status": "HOLD",
+      "scope": "Three paired simulations are exploratory; single responses per condition do not establish discount causality or a 28-customer cohort effect."
+    },
+    {
+      "id": "EXISTING_REGRESSIONS",
+      "status": "OPEN",
+      "scope": "The same 11 test IDs produce 16 failures; privacy/scope and frozen baseline issues are not all obsolete expectations."
+    },
+    {
+      "id": "UI_INTEGRATION",
+      "status": "SESSION_B",
+      "scope": "App, strategy service, revenue UI and security ownership preserved. See AGENT_SESSION_A_1105_INTEGRATION_REQUESTS.json."
+    }
+  ],
+  "new_paid_calls_in_profile_review": 0,
+  "note": "기존 보고 시점의 비용 상한 추정치(청구서 아님). 이번에 6시간 실행/전체 LLM을 재검증한 것이 아님. 상세 실응답·원장은 제품 handover/data/v16 및 product_acceptance에 보존."
+}

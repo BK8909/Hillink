@@ -1,0 +1,238 @@
+{
+  "url": "http://127.0.0.1:9028",
+  "build": {
+    "head": "967d2710f735a56eaf8416ea61c77af35dd23098",
+    "branch": "review/profile45-source-1106",
+    "agent_mode": "replay"
+  },
+  "customer": "A03",
+  "form": {
+    "personas": [
+      "A03"
+    ],
+    "duration": "day_visit",
+    "event_mode": "none",
+    "seed": 62,
+    "start_date": "2026-11-09",
+    "include_ledger": true,
+    "environment": {
+      "arrival_time": "14:30"
+    },
+    "behavior_engine": "m4_c01",
+    "catalog_policy": "C01_HOTEL_CATALOG_V1",
+    "judgment_mode": "replay",
+    "hybrid_policy": "LLM_AUTONOMOUS_CUSTOMER_V16",
+    "simulation_mode": "independent"
+  },
+  "initial": {
+    "error": null,
+    "judgment": {
+      "requested": "replay",
+      "actual": "replay",
+      "policy": "LLM_AUTONOMOUS_CUSTOMER_V16",
+      "customers": {
+        "A03": {
+          "decisions": 3,
+          "origins": [
+            "CACHE_REPLAY",
+            "CACHE_REPLAY",
+            "CACHE_REPLAY"
+          ],
+          "holds": []
+        }
+      },
+      "current_paid_calls": 0,
+      "human_approval": false
+    },
+    "run": "413ea9387d99edc079b76b9374be2b96c7365d5ba8d3c4439b5c1eb833cd6c3a",
+    "request": {
+      "personas": [
+        "A03"
+      ],
+      "duration": "day_visit",
+      "event_mode": "none",
+      "seed": 62,
+      "start_date": "2026-11-09",
+      "include_ledger": true,
+      "environment": {
+        "arrival_time": "14:30"
+      },
+      "behavior_engine": "m4_c01",
+      "catalog_policy": "C01_HOTEL_CATALOG_V1",
+      "judgment_mode": "replay",
+      "hybrid_policy": "LLM_AUTONOMOUS_CUSTOMER_V16",
+      "simulation_mode": "independent"
+    },
+    "head": null
+  },
+  "dialogue": {
+    "run": "413ea9387d99edc079b76b9374be2b96c7365d5ba8d3c4439b5c1eb833cd6c3a",
+    "state": {
+      "key": "[\"413ea9387d99edc079b76b9374be2b96c7365d5ba8d3c4439b5c1eb833cd6c3a\",\"A03\",1,\"2026-11-09\",897,\"HC_HC-ORDER-a5b63f2c45183b4104ab\"]",
+      "index": 0,
+      "all": false
+    },
+    "text": "왜 이 행동인가?\n왜 이 행동인가?\n기록 안내 · 실제 발언 아님\n행동근거 보기 →\n지금의 선택\n\n지금 가능한 늦은 점심으로 갈릭새우 피자 S 한 판을 두 사람 몫으로 나누는 선택입니다.\n\n대화 전체 보기\n1 / 2\n▼",
+    "allText": "지금 가능한 늦은 점심으로 갈릭새우 피자 S 한 판을 두 사람 몫으로 나누는 선택입니다. 과거 워커힐 해피아워의 새우 피자 경험을 참고하되, 이번 방문의 선호나 실제 섭취를 확정하지는 않습니다.",
+    "summary": "지금 가능한 늦은 점심으로 갈릭새우 피자 S 한 판을 두 사람 몫으로 나누는 선택입니다. 과거 워커힐 해피아워의 새우 피자 경험을 참고하되, 이번 방문의 선호나 실제 섭취를 확정하지는 않습니다.",
+    "input_sha256": "41a39edd748b13a0b5a1a7b9c1b1650c8a71eab479ec54e24d63880d44ee6e8e",
+    "manualPaused": true
+  },
+  "evidence": {
+    "run": "413ea9387d99edc079b76b9374be2b96c7365d5ba8d3c4439b5c1eb833cd6c3a",
+    "text": "④ 최종 판단 · LLM 선택과 운영 검증\n선택 전 LLM 판단·운영 검증\n캐시 재생 · 저장된 LLM 판단\nLLM_AUTONOMOUS_CUSTOMER_V16\n\n운영 계약을 통과한 후보 8개\n\n현재 판단 기록\n\n원문 의미·행동 품질: 사람 승인 미완료. 유효한 Fact ID만으로 근거의 의미나 누락 없는 연결을 승인하지 않습니다.\n\n판단 경계: 2026-11-09 14:45 · meal:PIZZA_HILL. 연속 휴식이 합쳐진 장면과 개별 판단의 일대일 대응은 별도 검수 대상입니다.\n\n1. 고객 근거와 당시 방문 상황\n\n이번 방문 목적 미확인 · 2인 · 관계·연령 미확인\n\n전원 성인 요금은 계산 참고 가정입니다. 실제 동행 구성·연령·운영 이용 자격은 확인이 필요합니다 (REVIEW_REQUIRED).\n\n2026-11-09 14:45 · 방문 종료 23:00\n\n연결된 이전 가상 식사 기록 없음 · 도착 전 식사를 하지 않았다는 뜻은 아닙니다.\n\n이번 방문에서 이미 실행한 활동 · 1건\n\n조식 권리: 포함 성인 0명 · 동행 전체 포함 여부·추가 요금 계약 확인\n\nA03_F04 — 해피아워 새우 피자 4~5조각 섭취, 부라타 치즈·어향가지 등 긍정 평가 (원문 의미 검수 미완료 · 독립 반복 횟수 미확정)\nA03_F33 — 물놀이 뒤 두 사람 식사에 메뉴 3개를 주문했다가 양이 과해 후회 (다른 장소의 경험 · 원문 의미 검수 미완료 · 독립 반복 횟수 미확정)\n2. LLM이 선택한 이유\n\n지금 가능한 늦은 점심으로 갈릭새우 피자 S 한 판을 두 사람 몫으로 나누는 선택입니다. 과거 워커힐 해피아워의 새우 피자 경험을 참고하되, 이번 방문의 선호나 실제 섭취를 확정하지는 않습니다.\n\n현재 식사·휴식 필요 판단: 도착 전 섭취와 현재 허기는 미확인이고 기록된 식사가 없다는 사실만으로 굶었다고 판단할 수 없습니다. 다만 지금 가능한 늦은 점심으로 과하지 않은 한 판을 선택할 수 있습니다. 모델 판단 · 실측 상태 아님\n\n계획한 주문 갈릭새우 피자 S × 1 · 79,000원\n\n나눠 먹는 방식: 두 사람 일행이 피자 한 판을 함께 나누는 가정입니다. 과거 두 사람이 메뉴를 세 개 주문해 양이 많았다고 한 기록을 고려해 추가 메뉴는 붙이지 않습니다.\n\n식사량 판단: S 한 판의 기존 일반 제공량 추정은 두 사람 몫에 해당하지만 실측이 아니므로 추가 피자나 파스타는 주문하지 않습니다. · 실제 섭취는 미관측입니다.\n\n14:45 출발, 이동 추정 12분(대기 0분), 14:57 도착 및 식사 시작, 16:27 종료 예정입니다.\n\n모델의 식사 의도: LIGHT_MEAL · 두 사람 일행이 한 판을 나눌 수 있다고 가정합니다. 주문량은 실제 섭취량을 뜻하지 않습니다.\n\n회계·서비스 시간대: lunch · 식사 의도와 별도. CLOCK_SERVICE_CLASSIFICATION_NOT_CUSTOMER_MEAL_INTENT; LATER_MEALS_NOT_PROHIBITED\n\n3. 비교한 대안\nTHE_PAVILION · 화이트 갈릭 모짜렐라 피자 × 1\n더글라스 가든 산책\n공용 로비에서 잠시 쉬며 대기 · 좌석 미확인\n\n선택과 비교한 판단 명월관은 도착 예상이 17:30이고 대기 시간이 143분이라 지금 가능한 식사보다 불리합니다. 파빌리온도 가능한 대안이지만, 과거 새우 피자 경험과 맞닿은 메뉴를 소량으로 고를 수 있어 이 계획을 우선합니다. 입장권은 제시된 성인 요금이 기존 참고값이고 실제 자격·판매 여부가 확인되지 않았으며, 일정도 식사와 겹쳐 제외합니다.\n\n4. 운영 규칙의 검증과 실행\n\n등록 후보·시간·주문 계약 검증을 통과한 계획으로 실행했습니다. 고객 선호나 실제 효과가 입증됐다는 뜻은 아닙니다.\n\n엔진이 제공한 실행 일정 판단 14:45 · 출발 14:45 · 최종 이동 출발 14:45 · 도착 14:57 · 이용 14:57–16:27 · 이동 12분 · 대기 0분 운영 모델 계산 · 실제 예약 확정 아님\n\n기록된 재계획 거절 없음\n\n최종 LLM 의도를 기존 가격 점수로 재정렬하지 않았습니다.\n\n제시된 메뉴 참고 단가를 적용했으며 실제 판매가·제공 가능 여부는 별도 확인되지 않았습니다.\n두 사람 일행이 나눠 먹는다고 모델링했지만 구성과 연령, 실제 섭취량은 미확인입니다.\n반례·다음 의도·후보 제외 및 기술 기록",
+    "context": {
+      "customer_id": "A03",
+      "run_id": "413ea9387d99edc079b76b9374be2b96c7365d5ba8d3c4439b5c1eb833cd6c3a",
+      "visit_id": "48d1f54431fabe2d8ce518523e5f797340f9ce2c4ad7cf1cd8712ae032086cfe",
+      "stay_id": null,
+      "visit_day": 1,
+      "visit_date": "2026-11-09",
+      "scene_index": 1,
+      "action_id": "A03|1",
+      "action_code": "HC_HC-ORDER-a5b63f2c45183b4104ab",
+      "decision_id": null,
+      "ledger_tx_id": "4ca34937ec2d1f6636a5cb9e",
+      "returnTo": "flow"
+    },
+    "input_sha256": "41a39edd748b13a0b5a1a7b9c1b1650c8a71eab479ec54e24d63880d44ee6e8e",
+    "rows": [
+      {
+        "sku": "HC-PDF-PIZZA_HILL-GARLIC-SHRIMP-S",
+        "quantity": 1,
+        "paid": 79000
+      }
+    ],
+    "allText": "현재 run의 고객\nNo.0003\n방문 행동\n1일차 14:30 · 호텔 도착\n1일차 14:57 · 갈릭새우 피자 S\n1일차 16:39 · 공용 로비에서 잠시 쉬며 대기 · 좌석 미확인\n1일차 17:19 · 호텔 방문을 마치고 귀가\n같은 방문의 행동으로 돌아가기\n같은 실행 매출 집계\n실행된 가상 방문 · No.0003 · 2026-11-09 14:57\n갈릭새우 피자 S\n캐시 재생 · 저장된 LLM 판단\n④ 최종 판단 · LLM 선택과 운영 검증\n선택 전 LLM 판단·운영 검증\n캐시 재생 · 저장된 LLM 판단\nLLM_AUTONOMOUS_CUSTOMER_V16\n\n운영 계약을 통과한 후보 8개\n\n현재 판단 기록\n\n원문 의미·행동 품질: 사람 승인 미완료. 유효한 Fact ID만으로 근거의 의미나 누락 없는 연결을 승인하지 않습니다.\n\n판단 경계: 2026-11-09 14:45 · meal:PIZZA_HILL. 연속 휴식이 합쳐진 장면과 개별 판단의 일대일 대응은 별도 검수 대상입니다.\n\n1. 고객 근거와 당시 방문 상황\n\n이번 방문 목적 미확인 · 2인 · 관계·연령 미확인\n\n전원 성인 요금은 계산 참고 가정입니다. 실제 동행 구성·연령·운영 이용 자격은 확인이 필요합니다 (REVIEW_REQUIRED).\n\n2026-11-09 14:45 · 방문 종료 23:00\n\n연결된 이전 가상 식사 기록 없음 · 도착 전 식사를 하지 않았다는 뜻은 아닙니다.\n\n이번 방문에서 이미 실행한 활동 · 1건\n\n조식 권리: 포함 성인 0명 · 동행 전체 포함 여부·추가 요금 계약 확인\n\nA03_F04 — 해피아워 새우 피자 4~5조각 섭취, 부라타 치즈·어향가지 등 긍정 평가 (원문 의미 검수 미완료 · 독립 반복 횟수 미확정)\nA03_F33 — 물놀이 뒤 두 사람 식사에 메뉴 3개를 주문했다가 양이 과해 후회 (다른 장소의 경험 · 원문 의미 검수 미완료 · 독립 반복 횟수 미확정)\n2. LLM이 선택한 이유\n\n지금 가능한 늦은 점심으로 갈릭새우 피자 S 한 판을 두 사람 몫으로 나누는 선택입니다. 과거 워커힐 해피아워의 새우 피자 경험을 참고하되, 이번 방문의 선호나 실제 섭취를 확정하지는 않습니다.\n\n현재 식사·휴식 필요 판단: 도착 전 섭취와 현재 허기는 미확인이고 기록된 식사가 없다는 사실만으로 굶었다고 판단할 수 없습니다. 다만 지금 가능한 늦은 점심으로 과하지 않은 한 판을 선택할 수 있습니다. 모델 판단 · 실측 상태 아님\n\n계획한 주문 갈릭새우 피자 S × 1 · 79,000원\n\n나눠 먹는 방식: 두 사람 일행이 피자 한 판을 함께 나누는 가정입니다. 과거 두 사람이 메뉴를 세 개 주문해 양이 많았다고 한 기록을 고려해 추가 메뉴는 붙이지 않습니다.\n\n식사량 판단: S 한 판의 기존 일반 제공량 추정은 두 사람 몫에 해당하지만 실측이 아니므로 추가 피자나 파스타는 주문하지 않습니다. · 실제 섭취는 미관측입니다.\n\n14:45 출발, 이동 추정 12분(대기 0분), 14:57 도착 및 식사 시작, 16:27 종료 예정입니다.\n\n모델의 식사 의도: LIGHT_MEAL · 두 사람 일행이 한 판을 나눌 수 있다고 가정합니다. 주문량은 실제 섭취량을 뜻하지 않습니다.\n\n회계·서비스 시간대: lunch · 식사 의도와 별도. CLOCK_SERVICE_CLASSIFICATION_NOT_CUSTOMER_MEAL_INTENT; LATER_MEALS_NOT_PROHIBITED\n\n3. 비교한 대안\nTHE_PAVILION · 화이트 갈릭 모짜렐라 피자 × 1\n더글라스 가든 산책\n공용 로비에서 잠시 쉬며 대기 · 좌석 미확인\n\n선택과 비교한 판단 명월관은 도착 예상이 17:30이고 대기 시간이 143분이라 지금 가능한 식사보다 불리합니다. 파빌리온도 가능한 대안이지만, 과거 새우 피자 경험과 맞닿은 메뉴를 소량으로 고를 수 있어 이 계획을 우선합니다. 입장권은 제시된 성인 요금이 기존 참고값이고 실제 자격·판매 여부가 확인되지 않았으며, 일정도 식사와 겹쳐 제외합니다.\n\n4. 운영 규칙의 검증과 실행\n\n등록 후보·시간·주문 계약 검증을 통과한 계획으로 실행했습니다. 고객 선호나 실제 효과가 입증됐다는 뜻은 아닙니다.\n\n엔진이 제공한 실행 일정 판단 14:45 · 출발 14:45 · 최종 이동 출발 14:45 · 도착 14:57 · 이용 14:57–16:27 · 이동 12분 · 대기 0분 운영 모델 계산 · 실제 예약 확정 아님\n\n기록된 재계획 거절 없음\n\n최종 LLM 의도를 기존 가격 점수로 재정렬하지 않았습니다.\n\n제시된 메뉴 참고 단가를 적용했으며 실제 판매가·제공 가능 여부는 별도 확인되지 않았습니다.\n두 사람 일행이 나눠 먹는다고 모델링했지만 구성과 연령, 실제 섭취량은 미확인입니다.\n반례·다음 의도·후보 제외 및 기술 기록\n선택 계획이 참조한 Fact·반례\n\n원문 의미 승인과 선택에 대한 인과 기여는 별도 검수 대상입니다.\n\nA03_F04 · 프로필 근거 보기A03_F33 · 프로필 근거 보기\n5. 최종 행동·주문과 L5 원장\n\n갈릭새우 피자 S · 2026-11-09 14:57–16:27\n\n갈릭새우 피자 S × 1 · 79,000원 · 가상 결제\n\n실행 식별자·상품 수량·가격 계약"
+  },
+  "ledger": {
+    "run": "413ea9387d99edc079b76b9374be2b96c7365d5ba8d3c4439b5c1eb833cd6c3a",
+    "checks": {
+      "receipts_equal_L4_L3_L2_L1": true,
+      "duplicate_transactions": null,
+      "duplicate_simulation_rows": 0,
+      "net_revenue_calculated": false,
+      "tax_status": "UNKNOWN",
+      "actual_pos_transactions": null,
+      "actual_pos_data_supplied": false,
+      "day_totals_equal_visit_total": true,
+      "room_nights_equal_duration": true,
+      "date_rows_unique": true,
+      "visit_id_attached": true
+    },
+    "total": 79000,
+    "rows": [
+      {
+        "id": "4ca34937ec2d1f6636a5cb9e",
+        "sku": "HC-PDF-PIZZA_HILL-GARLIC-SHRIMP-S",
+        "quantity": 1,
+        "paid": 79000
+      }
+    ]
+  },
+  "strategy": {
+    "sourceRun": "413ea9387d99edc079b76b9374be2b96c7365d5ba8d3c4439b5c1eb833cd6c3a",
+    "selectedActions": {
+      "A03": {
+        "date": "2026-11-09",
+        "start": 897,
+        "venue": "PIZZA_HILL"
+      }
+    },
+    "inputOptions": "2026-11-09 · 갈릭새우 피자 S · 79,000원",
+    "results": [
+      {
+        "customer": "A03",
+        "status": "PROVIDER_UNAVAILABLE",
+        "holds": [
+          "REPLAY_MISS"
+        ],
+        "strategies": 0
+      }
+    ],
+    "generated": 0,
+    "measuredEffect": null,
+    "text": "LLM으로 운영 개입 검토\n\n행사 없음 · 보존된 현재 실행 · 서버에 보존된 실제 가상 방문\n\nNo.0003의 실제 소비 결정\n2026-11-09 · 갈릭새우 피자 S · 79,000원\n\n제안은 미검증 운영 가설이며, 실제 A/B 실행과 구분합니다.\n\nLLM 전략 분석 실행\n\n1명 분석 · 0명 제안 생성 · 사람 의미 검수 대기\n\nNo.0003 · LLM 실행 불가\n\n미선택 이유: ()\n\nREPLAY_MISS\n\n운영자 판단"
+  },
+  "requests": [
+    {
+      "url": "http://127.0.0.1:9028/api/packages",
+      "body": {
+        "date": "2026-10-10",
+        "scenario": "none",
+        "crowd": "",
+        "is_guest": true,
+        "property": "GRAND",
+        "nights": 1,
+        "party": 2,
+        "kids": false,
+        "sex": "남성",
+        "age": "20~29세",
+        "purpose": "커플·기념일",
+        "package": "auto",
+        "prefers": "auto",
+        "wf_go": false,
+        "arrive": "15:00",
+        "depart": "22:00",
+        "wake": "07:30",
+        "arrival": "",
+        "seed": 7,
+        "anomaly": null
+      }
+    },
+    {
+      "url": "http://127.0.0.1:9028/api/lab",
+      "body": {
+        "avail": true
+      }
+    },
+    {
+      "url": "http://127.0.0.1:9028/api/visit",
+      "body": {
+        "personas": [
+          "A03"
+        ],
+        "duration": "day_visit",
+        "event_mode": "none",
+        "seed": 62,
+        "start_date": "2026-11-09",
+        "include_ledger": true,
+        "environment": {
+          "arrival_time": "14:30"
+        },
+        "behavior_engine": "m4_c01",
+        "catalog_policy": "C01_HOTEL_CATALOG_V1",
+        "judgment_mode": "replay",
+        "hybrid_policy": "LLM_AUTONOMOUS_CUSTOMER_V16",
+        "simulation_mode": "independent"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:9028/api/strategy/agent",
+      "body": {
+        "customers": [
+          "A03"
+        ],
+        "run_id": "413ea9387d99edc079b76b9374be2b96c7365d5ba8d3c4439b5c1eb833cd6c3a",
+        "goal": {
+          "target_venue": "PIZZA_HILL",
+          "intent": "switch",
+          "basis": "ACTUAL_RUN",
+          "scenario_context": "행사 없음 · 보존된 현재 실행"
+        },
+        "source_actions": {
+          "A03": {
+            "date": "2026-11-09",
+            "start": 897,
+            "venue": "PIZZA_HILL"
+          }
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "newPaidCalls": 0,
+  "technicalVisitConnected": true,
+  "strategyInputConnected": true,
+  "newStrategyEffectApproved": false
+}

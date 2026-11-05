@@ -1,0 +1,2047 @@
+{
+  "version": "live-l5-v2",
+  "run_id": "8452dd90c9957895e3d50fdd1fcacee2bdc4dd2c634c822f601f4b7b75c08b9c",
+  "source": "live_engine",
+  "context": {
+    "personas": [
+      "A12"
+    ],
+    "mode": "one",
+    "event": false,
+    "seed": 73,
+    "duration": "stay_1",
+    "start_date": "2026-11-04",
+    "engine_version": "autonomy_v1-2026-10-24+visit-state-v2.3-date-closure+m4-c01-service-windows-v2-party-orders-7226aea554f7+external-delivery-v1+c01-event-card-runtime-v3-admission-124f13992dc8",
+    "profile_sha": "790e2f7efe84abacafc1b93210b7c8c6fbb831a8b38a24e8d4b2a38c67fea448",
+    "price_version": null,
+    "scenario_id": "C01-EVENT-7c26b8391ad57cfdae84708c",
+    "scenario_snapshot_sha256": "c6942887fa6e0e54aca1bc8b4b6222cbc0e6dc02597b0b30528f2e21b87cfc52",
+    "event_card_id": "NONE",
+    "event_label": "행사 없음",
+    "scenario_enabled": true,
+    "room_valuation_version": "native-room-l5-v4",
+    "room_price_source_sha256": "62c323039ee0d0949acd24885ea70f14901a19d94c58b8575d7de57ec563ffba",
+    "room_payment_basis": "2026_PROJECT_VIRTUAL_MODEL_NOT_OBSERVED_CASH"
+  },
+  "input_missing": [],
+  "filters": {
+    "customer_type": null,
+    "stay_status": "all"
+  },
+  "receipts": {
+    "A12": {
+      "customer_id": "A12",
+      "display_id": "No.0013",
+      "customer_type": "가족 · 영유아",
+      "stay": true,
+      "party_size": 3,
+      "phase": "stay",
+      "nights": 1,
+      "visit_profile_layer": "operator_override",
+      "visit_profile_note": "사용자가 설정한 가상 체류 기간. 건물·동행은 고객별 프로필 해결값이며 원문 사실과 모델 가정을 구분합니다.",
+      "day_window": [
+        870,
+        1380
+      ],
+      "building": "GRAND",
+      "engine_scene_paid_krw": 164000,
+      "actions": [
+        {
+          "action_id": "A12|0",
+          "slot": "arrive",
+          "occurrence": 1,
+          "turn": null,
+          "decision_id": null,
+          "time": "14:30",
+          "venue_id": "HOTEL_GATE",
+          "action": "arrive",
+          "label": "호텔 도착",
+          "action_status": "SIMULATED_SELECTED_ACTION",
+          "purchase_status": "NO_PURCHASE",
+          "amount_krw": 0,
+          "amount_is_in_receipt": false,
+          "row_id": null,
+          "fact_ids": [],
+          "considered": [],
+          "blocked": [],
+          "visit_day": 1,
+          "visit_date": "2026-11-04"
+        },
+        {
+          "action_id": "A12|1",
+          "slot": "lunch",
+          "occurrence": 1,
+          "turn": null,
+          "decision_id": null,
+          "time": "14:55",
+          "venue_id": "THE_PAVILION",
+          "action": "HC_HC-ORDER-09db784a973059996cef",
+          "label": "클럽샌드위치와 감자튀김 + 브리오슈 치즈버거와 감자튀김",
+          "action_status": "SIMULATED_SELECTED_ACTION",
+          "purchase_status": "SIMULATED_CHARGE",
+          "amount_krw": 85000,
+          "amount_is_in_receipt": true,
+          "row_id": "f0456ee85394c1b48477d6ff",
+          "fact_ids": [],
+          "considered": [],
+          "blocked": [],
+          "visit_day": 1,
+          "visit_date": "2026-11-04"
+        },
+        {
+          "action_id": "A12|2",
+          "slot": "checkin",
+          "occurrence": 1,
+          "turn": null,
+          "decision_id": null,
+          "time": "15:43",
+          "venue_id": "GRAND_LOBBY",
+          "action": "checkin",
+          "label": "체크인",
+          "action_status": "SIMULATED_SELECTED_ACTION",
+          "purchase_status": "NO_PURCHASE",
+          "amount_krw": 0,
+          "amount_is_in_receipt": false,
+          "row_id": null,
+          "fact_ids": [],
+          "considered": [],
+          "blocked": [],
+          "visit_day": 1,
+          "visit_date": "2026-11-04"
+        },
+        {
+          "action_id": "A12|3",
+          "slot": "unpack",
+          "occurrence": 1,
+          "turn": null,
+          "decision_id": null,
+          "time": "16:06",
+          "venue_id": "GRAND_ROOM",
+          "action": "unpack",
+          "label": "객실 짐 정리 · 휴식",
+          "action_status": "SIMULATED_SELECTED_ACTION",
+          "purchase_status": "NO_PURCHASE",
+          "amount_krw": 0,
+          "amount_is_in_receipt": false,
+          "row_id": null,
+          "fact_ids": [],
+          "considered": [],
+          "blocked": [],
+          "visit_day": 1,
+          "visit_date": "2026-11-04"
+        },
+        {
+          "action_id": "A12|4",
+          "slot": "room_rest",
+          "occurrence": 1,
+          "turn": null,
+          "decision_id": null,
+          "time": "16:41",
+          "venue_id": "GRAND_ROOM",
+          "action": "room_rest",
+          "label": "객실 휴식",
+          "action_status": "SIMULATED_SELECTED_ACTION",
+          "purchase_status": "NO_PURCHASE",
+          "amount_krw": 0,
+          "amount_is_in_receipt": false,
+          "row_id": null,
+          "fact_ids": [],
+          "considered": [],
+          "blocked": [],
+          "visit_day": 1,
+          "visit_date": "2026-11-04"
+        },
+        {
+          "action_id": "A12|5",
+          "slot": "dinner",
+          "occurrence": 1,
+          "turn": null,
+          "decision_id": null,
+          "time": "17:53",
+          "venue_id": "PIZZA_HILL",
+          "action": "HC_HC-ORDER-5ca91e6d8afb571ddd80",
+          "label": "갈릭새우 피자 S",
+          "action_status": "SIMULATED_SELECTED_ACTION",
+          "purchase_status": "SIMULATED_CHARGE",
+          "amount_krw": 79000,
+          "amount_is_in_receipt": true,
+          "row_id": "2f046ab3c43a136961211dcd",
+          "fact_ids": [],
+          "considered": [],
+          "blocked": [],
+          "visit_day": 1,
+          "visit_date": "2026-11-04"
+        },
+        {
+          "action_id": "A12|6",
+          "slot": "sleep",
+          "occurrence": 1,
+          "turn": null,
+          "decision_id": null,
+          "time": "19:35",
+          "venue_id": "GRAND_ROOM",
+          "action": "sleep",
+          "label": "객실로 돌아가 오늘 일정을 마치고 쉬기",
+          "action_status": "SIMULATED_SELECTED_ACTION",
+          "purchase_status": "NO_PURCHASE",
+          "amount_krw": 0,
+          "amount_is_in_receipt": false,
+          "row_id": null,
+          "fact_ids": [],
+          "considered": [],
+          "blocked": [],
+          "visit_day": 1,
+          "visit_date": "2026-11-04"
+        },
+        {
+          "action_id": "A12|0",
+          "slot": "wake",
+          "occurrence": 1,
+          "turn": null,
+          "decision_id": null,
+          "time": "07:30",
+          "venue_id": "GRAND_ROOM",
+          "action": "wake",
+          "label": "기상 · 준비",
+          "action_status": "SIMULATED_SELECTED_ACTION",
+          "purchase_status": "NO_PURCHASE",
+          "amount_krw": 0,
+          "amount_is_in_receipt": false,
+          "row_id": null,
+          "fact_ids": [],
+          "considered": [],
+          "blocked": [],
+          "visit_day": 2,
+          "visit_date": "2026-11-05"
+        },
+        {
+          "action_id": "A12|1",
+          "slot": "breakfast",
+          "occurrence": 1,
+          "turn": null,
+          "decision_id": null,
+          "time": "08:16",
+          "venue_id": "THE_BUFFET",
+          "action": "BREAKFAST_BUFFET",
+          "label": "호텔 조식 뷔페(더뷔페)",
+          "action_status": "SIMULATED_SELECTED_ACTION",
+          "purchase_status": "PACKAGE_INCLUDED",
+          "amount_krw": 0,
+          "amount_is_in_receipt": true,
+          "row_id": "b4b9020b5104464847ffc4dd",
+          "fact_ids": [],
+          "considered": [],
+          "blocked": [],
+          "visit_day": 2,
+          "visit_date": "2026-11-05"
+        },
+        {
+          "action_id": "A12|2",
+          "slot": "idle",
+          "occurrence": 1,
+          "turn": null,
+          "decision_id": null,
+          "time": "09:22",
+          "venue_id": "GRAND_LOBBY",
+          "action": "idle",
+          "label": "공용 로비에서 잠시 쉬며 대기 · 좌석 미확인",
+          "action_status": "SIMULATED_SELECTED_ACTION",
+          "purchase_status": "NO_PURCHASE",
+          "amount_krw": 0,
+          "amount_is_in_receipt": false,
+          "row_id": null,
+          "fact_ids": [],
+          "considered": [],
+          "blocked": [],
+          "visit_day": 2,
+          "visit_date": "2026-11-05"
+        },
+        {
+          "action_id": "A12|3",
+          "slot": "wait",
+          "occurrence": 1,
+          "turn": null,
+          "decision_id": null,
+          "time": "09:52",
+          "venue_id": "GRAND_LOBBY",
+          "action": "wait",
+          "label": "잠시 대기한 뒤 일정 다시 판단",
+          "action_status": "SIMULATED_SELECTED_ACTION",
+          "purchase_status": "NO_PURCHASE",
+          "amount_krw": null,
+          "amount_is_in_receipt": false,
+          "row_id": null,
+          "fact_ids": [],
+          "considered": [],
+          "blocked": [],
+          "visit_day": 2,
+          "visit_date": "2026-11-05"
+        },
+        {
+          "action_id": "A12|4",
+          "slot": "pack",
+          "occurrence": 1,
+          "turn": null,
+          "decision_id": null,
+          "time": "10:05",
+          "venue_id": "GRAND_ROOM",
+          "action": "pack",
+          "label": "짐 정리",
+          "action_status": "SIMULATED_SELECTED_ACTION",
+          "purchase_status": "NO_PURCHASE",
+          "amount_krw": 0,
+          "amount_is_in_receipt": false,
+          "row_id": null,
+          "fact_ids": [],
+          "considered": [],
+          "blocked": [],
+          "visit_day": 2,
+          "visit_date": "2026-11-05"
+        },
+        {
+          "action_id": "A12|5",
+          "slot": "checkout",
+          "occurrence": 1,
+          "turn": null,
+          "decision_id": null,
+          "time": "10:28",
+          "venue_id": "GRAND_LOBBY",
+          "action": "checkout",
+          "label": "체크아웃",
+          "action_status": "SIMULATED_SELECTED_ACTION",
+          "purchase_status": "NO_PURCHASE",
+          "amount_krw": 0,
+          "amount_is_in_receipt": false,
+          "row_id": null,
+          "fact_ids": [],
+          "considered": [],
+          "blocked": [],
+          "visit_day": 2,
+          "visit_date": "2026-11-05"
+        },
+        {
+          "action_id": "A12|6",
+          "slot": "leave",
+          "occurrence": 1,
+          "turn": null,
+          "decision_id": null,
+          "time": "10:58",
+          "venue_id": "HOTEL_GATE",
+          "action": "leave",
+          "label": "호텔 방문을 마치고 귀가",
+          "action_status": "SIMULATED_SELECTED_ACTION",
+          "purchase_status": "NO_PURCHASE",
+          "amount_krw": 0,
+          "amount_is_in_receipt": false,
+          "row_id": null,
+          "fact_ids": [],
+          "considered": [],
+          "blocked": [],
+          "visit_day": 2,
+          "visit_date": "2026-11-05"
+        }
+      ],
+      "day_windows": [
+        {
+          "day_index": 1,
+          "date": "2026-11-04",
+          "window": [
+            870,
+            1380
+          ]
+        },
+        {
+          "day_index": 2,
+          "date": "2026-11-05",
+          "window": [
+            450,
+            673
+          ]
+        }
+      ],
+      "duration": "stay_1",
+      "visit_id": "93c501d075e43dba2b0399b7394cde64bb49064cd1c41ff8e0968da2a15347ca",
+      "paid_krw": 477000,
+      "assumption_addition_krw": 0,
+      "with_assumptions_krw": 477000,
+      "unknown_count": 0,
+      "net_revenue_krw": null,
+      "known_net_revenue_krw": 0.0,
+      "tax_unknown_count": 4,
+      "rows": [
+        {
+          "row_id": "7a7a75f55dfa198c20d8e2b9",
+          "simulation_entry_id": "7a7a75f55dfa198c20d8e2b9",
+          "actual_transaction_id": null,
+          "customer_id": "A12",
+          "department": "F&B",
+          "venue": "파빌리온",
+          "venue_id": "THE_PAVILION",
+          "product": "클럽샌드위치와 감자튀김",
+          "product_id": "HC-PDF-THE_PAVILION-CLUB-SANDWICH",
+          "action_id": "HC_HC-ORDER-09db784a973059996cef",
+          "time": "14:55",
+          "status": "실결제",
+          "quantity": 1,
+          "unit_price_krw": 41000,
+          "unit_basis": "portion",
+          "billing_quantity": 1,
+          "billing_unit": "portion",
+          "participant_count": 3,
+          "paid_krw": 41000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE",
+          "purchase_status": "SIMULATED_CHARGE",
+          "tax_status": "UNKNOWN",
+          "net_revenue_krw": null,
+          "price_source_status": "OFFICIAL_MENU_REFERENCE_VALIDITY_NOT_GUARANTEED",
+          "quantity_role": "ENGINE_ROW_QUANTITY",
+          "price_basis": "호텔 상품 시뮬레이션 주문 · COMPOSED_EXISTING_REFERENCE · 실제 구매/예약 아님",
+          "price_grade": "",
+          "notes": [
+            "HC 주문 구성품; 부모 주문 금액 중복 합산 안 함"
+          ],
+          "scene_index": 1,
+          "loc": "THE_PAVILION",
+          "act": "HC_HC-ORDER-09db784a973059996cef",
+          "turn": null,
+          "decision_id": null,
+          "fact_ids": [],
+          "package_entitlement_id": null,
+          "t0": 895,
+          "t1": 940,
+          "meal": "lunch",
+          "parent_order_id": "f0456ee85394c1b48477d6ff",
+          "component_index": 0,
+          "sku_id": "HC-PDF-THE_PAVILION-CLUB-SANDWICH",
+          "run_id": "8452dd90c9957895e3d50fdd1fcacee2bdc4dd2c634c822f601f4b7b75c08b9c",
+          "visit_id": "93c501d075e43dba2b0399b7394cde64bb49064cd1c41ff8e0968da2a15347ca",
+          "visit_day": 1,
+          "visit_date": "2026-11-04",
+          "day_phase": "checkin",
+          "event_available": false,
+          "virtual_valuation": {
+            "row_id": "7a7a75f55dfa198c20d8e2b9",
+            "visit_id": "93c501d075e43dba2b0399b7394cde64bb49064cd1c41ff8e0968da2a15347ca",
+            "customer_id": "A12",
+            "date": "2026-11-04",
+            "department": "F&B",
+            "venue": "파빌리온",
+            "product": "클럽샌드위치와 감자튀김",
+            "action_id": "HC_HC-ORDER-09db784a973059996cef",
+            "original_scene_index": 1,
+            "visit_day": 1,
+            "quantity": 1,
+            "virtual_gross_krw": 41000,
+            "price_status": "EXISTING_SIMULATED_CHARGE_OR_INCLUDED",
+            "net_ex_vat_krw": null,
+            "tax_status": "UNKNOWN"
+          },
+          "selection_id": null,
+          "sku_contract": {
+            "sku_id": "HC-PDF-THE_PAVILION-CLUB-SANDWICH",
+            "venue_id": "THE_PAVILION",
+            "label": "클럽샌드위치와 감자튀김",
+            "role": "MAIN",
+            "category": "F&B",
+            "unit_price_krw": 41000,
+            "price_tier": "EXISTING_REFERENCE",
+            "price_status": "OFFICIAL_MENU_REFERENCE_VALIDITY_NOT_GUARANTEED",
+            "price_basis_date": "SOURCE_EFFECTIVE_PERIOD_WHEN_STATED; OTHERWISE_REFERENCE_DATE_UNCONFIRMED",
+            "billing_unit": "portion",
+            "minimum_quantity": 1,
+            "source_unit": "portion",
+            "source_day_rule": "",
+            "source_service_windows": "10:00-19:30",
+            "valid_from": null,
+            "valid_until": null,
+            "source_path": "261030_thepavilion.pdf",
+            "source_line": null,
+            "source_sha256": "54767832ac3db9f48f7a50859798930dc6ebeba5faccc81ead79a3474ac273aa",
+            "source_document": "261030_thepavilion.pdf",
+            "source_grade": "○",
+            "included_description": "",
+            "source_room_types": "",
+            "requires_reservation": false,
+            "tags": [
+              "sandwich"
+            ],
+            "tax_status": "UNKNOWN",
+            "source_checked_at": "2026-10-31",
+            "quantity_rule": "DEFINED_BY_HC_V1_COMMON_ORDER_ASSUMPTIONS_NOT_OBSERVED",
+            "requires_operating_override": false,
+            "native_product_id": null,
+            "service_periods": [
+              "lunch",
+              "dinner",
+              "snack"
+            ],
+            "official_source": {
+              "file": "261030_thepavilion.pdf",
+              "sha256": "54767832ac3db9f48f7a50859798930dc6ebeba5faccc81ead79a3474ac273aa",
+              "page": 10,
+              "checked_at": "2026-10-31",
+              "effective_period": "UNSPECIFIED_UNLESS_EXPLICIT",
+              "fields": [
+                "menu_name",
+                "unit_price",
+                "sale_unit"
+              ]
+            },
+            "sales_channel": "HOTEL_ON_PREMISE",
+            "condition_source_status": "EXISTING_CONTRACT_EXCEPT_EXPLICIT_PDF_FIELDS",
+            "billing_quantity": 1,
+            "quantity_observed": false,
+            "order_quantity_basis": "EXPLICIT_VIRTUAL_MIXED_ORDER_QUANTITY",
+            "applicability_status": "SIMULATION_PRODUCT_CONTRACT_NOT_BOOKING",
+            "current_sale_confirmed": false,
+            "reservation_confirmed": false,
+            "transaction_confirmed": false,
+            "party_composition": {
+              "adult_count": 2,
+              "children": [
+                {
+                  "age_months": 12,
+                  "school_stage": "preschool"
+                }
+              ]
+            },
+            "catalog_sha256": "d9cede8e5cefc0f84e2ab647cdc8f1f69eea4b3d3611d19ce2c05758196e452d",
+            "input_provenance": "OPERATOR_SIMULATION_NOT_REVIEW_FACT",
+            "included_benefit": null,
+            "original_list_unit_price_krw": 41000,
+            "parent_order_id": "f0456ee85394c1b48477d6ff"
+          },
+          "product_sku_id": "HC-PDF-THE_PAVILION-CLUB-SANDWICH",
+          "price_status": "OFFICIAL_MENU_REFERENCE_VALIDITY_NOT_GUARANTEED",
+          "current_sale_confirmed": false,
+          "reservation_confirmed": false,
+          "product_classification": "PRICED_VIRTUAL_PRODUCT",
+          "price_tier": "EXISTING_REFERENCE",
+          "price_tier_declared": "EXISTING_REFERENCE",
+          "price_tier_resolution": "SOURCE_GRADE_OR_RECORDED_STATUS_V2",
+          "catalog_sha256": "d9cede8e5cefc0f84e2ab647cdc8f1f69eea4b3d3611d19ce2c05758196e452d",
+          "discount_krw": 0,
+          "price_trace": null,
+          "included_benefit": null,
+          "quantity_observed": false
+        },
+        {
+          "row_id": "cf7c79a87967119058660e4b",
+          "simulation_entry_id": "cf7c79a87967119058660e4b",
+          "actual_transaction_id": null,
+          "customer_id": "A12",
+          "department": "F&B",
+          "venue": "파빌리온",
+          "venue_id": "THE_PAVILION",
+          "product": "브리오슈 치즈버거와 감자튀김",
+          "product_id": "HC-PDF-THE_PAVILION-BURGER",
+          "action_id": "HC_HC-ORDER-09db784a973059996cef",
+          "time": "14:55",
+          "status": "실결제",
+          "quantity": 1,
+          "unit_price_krw": 44000,
+          "unit_basis": "portion",
+          "billing_quantity": 1,
+          "billing_unit": "portion",
+          "participant_count": 3,
+          "paid_krw": 44000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE",
+          "purchase_status": "SIMULATED_CHARGE",
+          "tax_status": "UNKNOWN",
+          "net_revenue_krw": null,
+          "price_source_status": "OFFICIAL_MENU_REFERENCE_VALIDITY_NOT_GUARANTEED",
+          "quantity_role": "ENGINE_ROW_QUANTITY",
+          "price_basis": "호텔 상품 시뮬레이션 주문 · COMPOSED_EXISTING_REFERENCE · 실제 구매/예약 아님",
+          "price_grade": "",
+          "notes": [
+            "HC 주문 구성품; 부모 주문 금액 중복 합산 안 함"
+          ],
+          "scene_index": 1,
+          "loc": "THE_PAVILION",
+          "act": "HC_HC-ORDER-09db784a973059996cef",
+          "turn": null,
+          "decision_id": null,
+          "fact_ids": [],
+          "package_entitlement_id": null,
+          "t0": 895,
+          "t1": 940,
+          "meal": "lunch",
+          "parent_order_id": "f0456ee85394c1b48477d6ff",
+          "component_index": 1,
+          "sku_id": "HC-PDF-THE_PAVILION-BURGER",
+          "run_id": "8452dd90c9957895e3d50fdd1fcacee2bdc4dd2c634c822f601f4b7b75c08b9c",
+          "visit_id": "93c501d075e43dba2b0399b7394cde64bb49064cd1c41ff8e0968da2a15347ca",
+          "visit_day": 1,
+          "visit_date": "2026-11-04",
+          "day_phase": "checkin",
+          "event_available": false,
+          "virtual_valuation": {
+            "row_id": "cf7c79a87967119058660e4b",
+            "visit_id": "93c501d075e43dba2b0399b7394cde64bb49064cd1c41ff8e0968da2a15347ca",
+            "customer_id": "A12",
+            "date": "2026-11-04",
+            "department": "F&B",
+            "venue": "파빌리온",
+            "product": "브리오슈 치즈버거와 감자튀김",
+            "action_id": "HC_HC-ORDER-09db784a973059996cef",
+            "original_scene_index": 1,
+            "visit_day": 1,
+            "quantity": 1,
+            "virtual_gross_krw": 44000,
+            "price_status": "EXISTING_SIMULATED_CHARGE_OR_INCLUDED",
+            "net_ex_vat_krw": null,
+            "tax_status": "UNKNOWN"
+          },
+          "selection_id": null,
+          "sku_contract": {
+            "sku_id": "HC-PDF-THE_PAVILION-BURGER",
+            "venue_id": "THE_PAVILION",
+            "label": "브리오슈 치즈버거와 감자튀김",
+            "role": "MAIN",
+            "category": "F&B",
+            "unit_price_krw": 44000,
+            "price_tier": "EXISTING_REFERENCE",
+            "price_status": "OFFICIAL_MENU_REFERENCE_VALIDITY_NOT_GUARANTEED",
+            "price_basis_date": "SOURCE_EFFECTIVE_PERIOD_WHEN_STATED; OTHERWISE_REFERENCE_DATE_UNCONFIRMED",
+            "billing_unit": "portion",
+            "minimum_quantity": 1,
+            "source_unit": "portion",
+            "source_day_rule": "",
+            "source_service_windows": "10:00-19:30",
+            "valid_from": null,
+            "valid_until": null,
+            "source_path": "261030_thepavilion.pdf",
+            "source_line": null,
+            "source_sha256": "54767832ac3db9f48f7a50859798930dc6ebeba5faccc81ead79a3474ac273aa",
+            "source_document": "261030_thepavilion.pdf",
+            "source_grade": "○",
+            "included_description": "",
+            "source_room_types": "",
+            "requires_reservation": false,
+            "tags": [
+              "sandwich"
+            ],
+            "tax_status": "UNKNOWN",
+            "source_checked_at": "2026-10-31",
+            "quantity_rule": "DEFINED_BY_HC_V1_COMMON_ORDER_ASSUMPTIONS_NOT_OBSERVED",
+            "requires_operating_override": false,
+            "native_product_id": null,
+            "service_periods": [
+              "lunch",
+              "dinner",
+              "snack"
+            ],
+            "official_source": {
+              "file": "261030_thepavilion.pdf",
+              "sha256": "54767832ac3db9f48f7a50859798930dc6ebeba5faccc81ead79a3474ac273aa",
+              "page": 10,
+              "checked_at": "2026-10-31",
+              "effective_period": "UNSPECIFIED_UNLESS_EXPLICIT",
+              "fields": [
+                "menu_name",
+                "unit_price",
+                "sale_unit"
+              ]
+            },
+            "sales_channel": "HOTEL_ON_PREMISE",
+            "condition_source_status": "EXISTING_CONTRACT_EXCEPT_EXPLICIT_PDF_FIELDS",
+            "billing_quantity": 1,
+            "quantity_observed": false,
+            "order_quantity_basis": "EXPLICIT_VIRTUAL_MIXED_ORDER_QUANTITY",
+            "applicability_status": "SIMULATION_PRODUCT_CONTRACT_NOT_BOOKING",
+            "current_sale_confirmed": false,
+            "reservation_confirmed": false,
+            "transaction_confirmed": false,
+            "party_composition": {
+              "adult_count": 2,
+              "children": [
+                {
+                  "age_months": 12,
+                  "school_stage": "preschool"
+                }
+              ]
+            },
+            "catalog_sha256": "d9cede8e5cefc0f84e2ab647cdc8f1f69eea4b3d3611d19ce2c05758196e452d",
+            "input_provenance": "OPERATOR_SIMULATION_NOT_REVIEW_FACT",
+            "included_benefit": null,
+            "original_list_unit_price_krw": 44000,
+            "parent_order_id": "f0456ee85394c1b48477d6ff"
+          },
+          "product_sku_id": "HC-PDF-THE_PAVILION-BURGER",
+          "price_status": "OFFICIAL_MENU_REFERENCE_VALIDITY_NOT_GUARANTEED",
+          "current_sale_confirmed": false,
+          "reservation_confirmed": false,
+          "product_classification": "PRICED_VIRTUAL_PRODUCT",
+          "price_tier": "EXISTING_REFERENCE",
+          "price_tier_declared": "EXISTING_REFERENCE",
+          "price_tier_resolution": "SOURCE_GRADE_OR_RECORDED_STATUS_V2",
+          "catalog_sha256": "d9cede8e5cefc0f84e2ab647cdc8f1f69eea4b3d3611d19ce2c05758196e452d",
+          "discount_krw": 0,
+          "price_trace": null,
+          "included_benefit": null,
+          "quantity_observed": false
+        },
+        {
+          "row_id": "0cb4555e21abef1c996243a2",
+          "simulation_entry_id": "0cb4555e21abef1c996243a2",
+          "actual_transaction_id": null,
+          "customer_id": "A12",
+          "department": "F&B",
+          "venue": "피자힐",
+          "venue_id": "PIZZA_HILL",
+          "product": "갈릭새우 피자 S",
+          "product_id": "HC-PDF-PIZZA_HILL-GARLIC-SHRIMP-S",
+          "action_id": "HC_HC-ORDER-5ca91e6d8afb571ddd80",
+          "time": "17:53",
+          "status": "실결제",
+          "quantity": 1,
+          "unit_price_krw": 79000,
+          "unit_basis": "pizza",
+          "billing_quantity": 1,
+          "billing_unit": "pizza",
+          "participant_count": 3,
+          "paid_krw": 79000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE",
+          "purchase_status": "SIMULATED_CHARGE",
+          "tax_status": "UNKNOWN",
+          "net_revenue_krw": null,
+          "price_source_status": "OFFICIAL_MENU_REFERENCE_VALIDITY_NOT_GUARANTEED",
+          "quantity_role": "ENGINE_ROW_QUANTITY",
+          "price_basis": "호텔 상품 시뮬레이션 주문 · COMPOSED_EXISTING_REFERENCE · 실제 구매/예약 아님",
+          "price_grade": "",
+          "notes": [
+            "HC 주문 구성품; 부모 주문 금액 중복 합산 안 함"
+          ],
+          "scene_index": 5,
+          "loc": "PIZZA_HILL",
+          "act": "HC_HC-ORDER-5ca91e6d8afb571ddd80",
+          "turn": null,
+          "decision_id": null,
+          "fact_ids": [],
+          "package_entitlement_id": null,
+          "t0": 1073,
+          "t1": 1163,
+          "meal": "dinner",
+          "parent_order_id": "2f046ab3c43a136961211dcd",
+          "component_index": 0,
+          "sku_id": "HC-PDF-PIZZA_HILL-GARLIC-SHRIMP-S",
+          "run_id": "8452dd90c9957895e3d50fdd1fcacee2bdc4dd2c634c822f601f4b7b75c08b9c",
+          "visit_id": "93c501d075e43dba2b0399b7394cde64bb49064cd1c41ff8e0968da2a15347ca",
+          "visit_day": 1,
+          "visit_date": "2026-11-04",
+          "day_phase": "checkin",
+          "event_available": false,
+          "virtual_valuation": {
+            "row_id": "0cb4555e21abef1c996243a2",
+            "visit_id": "93c501d075e43dba2b0399b7394cde64bb49064cd1c41ff8e0968da2a15347ca",
+            "customer_id": "A12",
+            "date": "2026-11-04",
+            "department": "F&B",
+            "venue": "피자힐",
+            "product": "갈릭새우 피자 S",
+            "action_id": "HC_HC-ORDER-5ca91e6d8afb571ddd80",
+            "original_scene_index": 5,
+            "visit_day": 1,
+            "quantity": 1,
+            "virtual_gross_krw": 79000,
+            "price_status": "EXISTING_SIMULATED_CHARGE_OR_INCLUDED",
+            "net_ex_vat_krw": null,
+            "tax_status": "UNKNOWN"
+          },
+          "selection_id": null,
+          "sku_contract": {
+            "sku_id": "HC-PDF-PIZZA_HILL-GARLIC-SHRIMP-S",
+            "venue_id": "PIZZA_HILL",
+            "label": "갈릭새우 피자 S",
+            "role": "MAIN",
+            "category": "F&B",
+            "unit_price_krw": 79000,
+            "price_tier": "EXISTING_REFERENCE",
+            "price_status": "OFFICIAL_MENU_REFERENCE_VALIDITY_NOT_GUARANTEED",
+            "price_basis_date": "SOURCE_EFFECTIVE_PERIOD_WHEN_STATED; OTHERWISE_REFERENCE_DATE_UNCONFIRMED",
+            "billing_unit": "pizza",
+            "minimum_quantity": 1,
+            "source_unit": "pizza",
+            "source_day_rule": "",
+            "source_service_windows": "11:30-21:00",
+            "valid_from": null,
+            "valid_until": null,
+            "source_path": "20260709_pizzahill (1).pdf",
+            "source_line": null,
+            "source_sha256": "1cd2c5d588c5a26fc71f327130f6bcfd30b44c6ab500b5bd6e5034cdb3390889",
+            "source_document": "20260709_pizzahill (1).pdf",
+            "source_grade": "○",
+            "included_description": "",
+            "source_room_types": "",
+            "requires_reservation": false,
+            "tags": [
+              "pizza"
+            ],
+            "tax_status": "UNKNOWN",
+            "source_checked_at": "2026-10-31",
+            "quantity_rule": "DEFINED_BY_HC_V1_COMMON_ORDER_ASSUMPTIONS_NOT_OBSERVED",
+            "requires_operating_override": false,
+            "native_product_id": null,
+            "official_source": {
+              "file": "20260709_pizzahill (1).pdf",
+              "sha256": "1cd2c5d588c5a26fc71f327130f6bcfd30b44c6ab500b5bd6e5034cdb3390889",
+              "page": 11,
+              "checked_at": "2026-10-31",
+              "effective_period": "UNSPECIFIED_UNLESS_EXPLICIT",
+              "fields": [
+                "menu_name",
+                "unit_price",
+                "sale_unit"
+              ]
+            },
+            "sales_channel": "HOTEL_ON_PREMISE",
+            "condition_source_status": "EXISTING_CONTRACT_EXCEPT_EXPLICIT_PDF_FIELDS",
+            "billing_quantity": 1,
+            "quantity_observed": false,
+            "order_quantity_basis": "EXPLICIT_VIRTUAL_MIXED_ORDER_QUANTITY",
+            "applicability_status": "SIMULATION_PRODUCT_CONTRACT_NOT_BOOKING",
+            "current_sale_confirmed": false,
+            "reservation_confirmed": false,
+            "transaction_confirmed": false,
+            "party_composition": {
+              "adult_count": 2,
+              "children": [
+                {
+                  "age_months": 12,
+                  "school_stage": "preschool"
+                }
+              ]
+            },
+            "catalog_sha256": "d9cede8e5cefc0f84e2ab647cdc8f1f69eea4b3d3611d19ce2c05758196e452d",
+            "input_provenance": "OPERATOR_SIMULATION_NOT_REVIEW_FACT",
+            "included_benefit": null,
+            "original_list_unit_price_krw": 79000,
+            "parent_order_id": "2f046ab3c43a136961211dcd"
+          },
+          "product_sku_id": "HC-PDF-PIZZA_HILL-GARLIC-SHRIMP-S",
+          "price_status": "OFFICIAL_MENU_REFERENCE_VALIDITY_NOT_GUARANTEED",
+          "current_sale_confirmed": false,
+          "reservation_confirmed": false,
+          "product_classification": "PRICED_VIRTUAL_PRODUCT",
+          "price_tier": "EXISTING_REFERENCE",
+          "price_tier_declared": "EXISTING_REFERENCE",
+          "price_tier_resolution": "SOURCE_GRADE_OR_RECORDED_STATUS_V2",
+          "catalog_sha256": "d9cede8e5cefc0f84e2ab647cdc8f1f69eea4b3d3611d19ce2c05758196e452d",
+          "discount_krw": 0,
+          "price_trace": null,
+          "included_benefit": null,
+          "quantity_observed": false
+        },
+        {
+          "row_id": "9a8382aa038e69ccf8daf7b4",
+          "simulation_entry_id": "9a8382aa038e69ccf8daf7b4",
+          "actual_transaction_id": null,
+          "customer_id": "A12",
+          "department": "ROOM",
+          "venue": "그랜드",
+          "venue_id": "GRAND_ROOM",
+          "product": "객실 1박 · 조식 포함 가상 모델 단가(성인 2인 조식)",
+          "product_id": "HC-ROOM-BASE-GRAND",
+          "action_id": "room_night",
+          "time": "",
+          "status": "가상 결제",
+          "quantity": 1,
+          "unit_price_krw": 313000,
+          "unit_basis": "room_night",
+          "billing_quantity": 1,
+          "billing_unit": "room_night",
+          "participant_count": 3,
+          "paid_krw": 313000,
+          "assumption_addition_krw": 0,
+          "amount_status": "SIMULATED_CHARGE",
+          "purchase_status": "SIMULATED_CHARGE",
+          "tax_status": "UNKNOWN",
+          "net_revenue_krw": null,
+          "price_source_status": "VIRTUAL_MODEL_UNIT_PRICE_BREAKFAST_INCLUDED",
+          "quantity_role": "ROOM_NIGHT_NOT_PARTICIPANT_COUNT",
+          "price_basis": "operator_choice/autonomy_v1/breakfast_policy.py:INCLUDED_ROOM_RATE.GRAND",
+          "price_grade": "조식 포함 가상 모델 단가",
+          "notes": [
+            "가상 실행 거래 · 실제 예약 확정액 아님 · VIRTUAL_MODEL_UNIT_PRICE_BREAKFAST_INCLUDED",
+            "HC 주문 구성품; 부모 주문 금액 중복 합산 안 함"
+          ],
+          "scene_index": null,
+          "loc": "GRAND_ROOM",
+          "act": "room_night",
+          "turn": null,
+          "decision_id": null,
+          "fact_ids": [],
+          "t0": null,
+          "t1": null,
+          "meal": null,
+          "run_id": "8452dd90c9957895e3d50fdd1fcacee2bdc4dd2c634c822f601f4b7b75c08b9c",
+          "visit_id": "93c501d075e43dba2b0399b7394cde64bb49064cd1c41ff8e0968da2a15347ca",
+          "visit_day": 1,
+          "visit_date": "2026-11-04",
+          "day_phase": "checkin",
+          "event_available": false,
+          "room_pricing": {
+            "version": "hotel-catalog-room-v1",
+            "stay_id": "82e2736b930fdc6dd2858310c8225bf975b52e9825e2aa0710ebbb3ea2ddcc32",
+            "room_id": "82e2736b930fdc6dd2858310c8225bf975b52e9825e2aa0710ebbb3ea2ddcc32:1",
+            "room_count": 1,
+            "building": "GRAND",
+            "service_date": "2026-11-04",
+            "billing_unit": "room_night",
+            "room_count_basis": "ONE_ROOM_PER_TEAM_NOT_PARTICIPANT_COUNT",
+            "participant_count": 3,
+            "tax_status": "UNKNOWN",
+            "net_ex_vat_krw": null,
+            "actual_cash_observed": false,
+            "package_id": null,
+            "price_tier": "SIMULATION_ASSUMPTION",
+            "catalog_sha256": "d9cede8e5cefc0f84e2ab647cdc8f1f69eea4b3d3611d19ce2c05758196e452d",
+            "source_sha256": "62c323039ee0d0949acd24885ea70f14901a19d94c58b8575d7de57ec563ffba",
+            "virtual_gross_krw": 313000,
+            "unit_price_krw": 313000,
+            "product": "객실 1박 · 조식 포함 가상 모델 단가(성인 2인 조식)",
+            "price_status": "VIRTUAL_MODEL_UNIT_PRICE_BREAKFAST_INCLUDED",
+            "price_source": "operator_choice/autonomy_v1/breakfast_policy.py:INCLUDED_ROOM_RATE.GRAND",
+            "source_note": "캠크닉 TYPE 2 공식 시작가(객실 + 더뷔페 조식 성인 2인) · 실제 판매가 아님 · 조식 혜택은 객실 금액에만 반영(식음 원장 0원)",
+            "breakfast_included_in_room": true,
+            "breakfast_contract_adults": 2,
+            "model_rate_outside_model_year": false,
+            "room_order_contract": {
+              "sku_id": "HC-ROOM-ORDER-66c2eac63b3a69a1780b",
+              "label": "객실 및 명시 추가 주문",
+              "venue_id": "GRAND",
+              "billing_unit": "order",
+              "billing_quantity": 1,
+              "unit_price_krw": 313000,
+              "components": [
+                {
+                  "sku_id": "HC-ROOM-BASE-GRAND",
+                  "label": "객실 1박 · 조식 포함 가상 모델 단가(성인 2인 조식)",
+                  "venue_id": "GRAND",
+                  "unit_price_krw": 313000,
+                  "billing_quantity": 1,
+                  "billing_unit": "room_night",
+                  "source_path": "operator_choice/autonomy_v1/breakfast_policy.py:INCLUDED_ROOM_RATE.GRAND",
+                  "source_sha256": "62c323039ee0d0949acd24885ea70f14901a19d94c58b8575d7de57ec563ffba",
+                  "catalog_sha256": "d9cede8e5cefc0f84e2ab647cdc8f1f69eea4b3d3611d19ce2c05758196e452d",
+                  "price_tier": "SIMULATION_ASSUMPTION",
+                  "price_status": "VIRTUAL_MODEL_UNIT_PRICE_BREAKFAST_INCLUDED",
+                  "price_reference_contract": null,
+                  "price_trace": null,
+                  "discount_krw": 0
+                }
+              ],
+              "catalog_sha256": "d9cede8e5cefc0f84e2ab647cdc8f1f69eea4b3d3611d19ce2c05758196e452d",
+              "source_sha256": "d9cede8e5cefc0f84e2ab647cdc8f1f69eea4b3d3611d19ce2c05758196e452d",
+              "source_path": "hotel_catalog.json",
+              "price_tier": "SIMULATION_ASSUMPTION",
+              "price_status": "EXPLICIT_ROOM_COMPONENT_ORDER"
+            }
+          },
+          "parent_order_id": "7f2d4d561ed3eddb85005312",
+          "component_index": 0,
+          "sku_id": "HC-ROOM-BASE-GRAND",
+          "virtual_valuation": {
+            "row_id": "9a8382aa038e69ccf8daf7b4",
+            "visit_id": "93c501d075e43dba2b0399b7394cde64bb49064cd1c41ff8e0968da2a15347ca",
+            "customer_id": "A12",
+            "date": "2026-11-04",
+            "department": "ROOM",
+            "venue": "그랜드",
+            "product": "객실 1박 · 조식 포함 가상 모델 단가(성인 2인 조식)",
+            "action_id": "room_night",
+            "original_scene_index": null,
+            "visit_day": 1,
+            "quantity": 1,
+            "virtual_gross_krw": 313000,
+            "price_status": "VIRTUAL_MODEL_UNIT_PRICE_BREAKFAST_INCLUDED",
+            "net_ex_vat_krw": null,
+            "tax_status": "UNKNOWN",
+            "version": "hotel-catalog-room-v1",
+            "stay_id": "82e2736b930fdc6dd2858310c8225bf975b52e9825e2aa0710ebbb3ea2ddcc32",
+            "room_id": "82e2736b930fdc6dd2858310c8225bf975b52e9825e2aa0710ebbb3ea2ddcc32:1",
+            "room_count": 1,
+            "building": "GRAND",
+            "service_date": "2026-11-04",
+            "billing_unit": "room_night",
+            "room_count_basis": "ONE_ROOM_PER_TEAM_NOT_PARTICIPANT_COUNT",
+            "participant_count": 3,
+            "actual_cash_observed": false,
+            "package_id": null,
+            "price_tier": "SIMULATION_ASSUMPTION",
+            "catalog_sha256": "d9cede8e5cefc0f84e2ab647cdc8f1f69eea4b3d3611d19ce2c05758196e452d",
+            "source_sha256": "62c323039ee0d0949acd24885ea70f14901a19d94c58b8575d7de57ec563ffba",
+            "unit_price_krw": 313000,
+            "price_source": "operator_choice/autonomy_v1/breakfast_policy.py:INCLUDED_ROOM_RATE.GRAND",
+            "source_note": "캠크닉 TYPE 2 공식 시작가(객실 + 더뷔페 조식 성인 2인) · 실제 판매가 아님 · 조식 혜택은 객실 금액에만 반영(식음 원장 0원)",
+            "breakfast_included_in_room": true,
+            "breakfast_contract_adults": 2,
+            "model_rate_outside_model_year": false,
+            "room_order_contract": {
+              "sku_id": "HC-ROOM-ORDER-66c2eac63b3a69a1780b",
+              "label": "객실 및 명시 추가 주문",
+              "venue_id": "GRAND",
+              "billing_unit": "order",
+              "billing_quantity": 1,
+              "unit_price_krw": 313000,
+              "components": [
+                {
+                  "sku_id": "HC-ROOM-BASE-GRAND",
+                  "label": "객실 1박 · 조식 포함 가상 모델 단가(성인 2인 조식)",
+                  "venue_id": "GRAND",
+                  "unit_price_krw": 313000,
+                  "billing_quantity": 1,
+                  "billing_unit": "room_night",
+                  "source_path": "operator_choice/autonomy_v1/breakfast_policy.py:INCLUDED_ROOM_RATE.GRAND",
+                  "source_sha256": "62c323039ee0d0949acd24885ea70f14901a19d94c58b8575d7de57ec563ffba",
+                  "catalog_sha256": "d9cede8e5cefc0f84e2ab647cdc8f1f69eea4b3d3611d19ce2c05758196e452d",
+                  "price_tier": "SIMULATION_ASSUMPTION",
+                  "price_status": "VIRTUAL_MODEL_UNIT_PRICE_BREAKFAST_INCLUDED",
+                  "price_reference_contract": null,
+                  "price_trace": null,
+                  "discount_krw": 0
+                }
+              ],
+              "catalog_sha256": "d9cede8e5cefc0f84e2ab647cdc8f1f69eea4b3d3611d19ce2c05758196e452d",
+              "source_sha256": "d9cede8e5cefc0f84e2ab647cdc8f1f69eea4b3d3611d19ce2c05758196e452d",
+              "source_path": "hotel_catalog.json",
+              "price_tier": "SIMULATION_ASSUMPTION",
+              "price_status": "EXPLICIT_ROOM_COMPONENT_ORDER"
+            }
+          },
+          "selection_id": null,
+          "sku_contract": {
+            "sku_id": "HC-ROOM-BASE-GRAND",
+            "label": "객실 1박 · 조식 포함 가상 모델 단가(성인 2인 조식)",
+            "venue_id": "GRAND",
+            "unit_price_krw": 313000,
+            "billing_quantity": 1,
+            "billing_unit": "room_night",
+            "source_path": "operator_choice/autonomy_v1/breakfast_policy.py:INCLUDED_ROOM_RATE.GRAND",
+            "source_sha256": "62c323039ee0d0949acd24885ea70f14901a19d94c58b8575d7de57ec563ffba",
+            "catalog_sha256": "d9cede8e5cefc0f84e2ab647cdc8f1f69eea4b3d3611d19ce2c05758196e452d",
+            "price_tier": "SIMULATION_ASSUMPTION",
+            "price_status": "VIRTUAL_MODEL_UNIT_PRICE_BREAKFAST_INCLUDED",
+            "price_reference_contract": null,
+            "price_trace": null,
+            "discount_krw": 0,
+            "included_benefit": null,
+            "original_list_unit_price_krw": 313000,
+            "parent_order_id": "7f2d4d561ed3eddb85005312"
+          },
+          "product_sku_id": "HC-ROOM-BASE-GRAND",
+          "price_status": "VIRTUAL_MODEL_UNIT_PRICE_BREAKFAST_INCLUDED",
+          "current_sale_confirmed": false,
+          "reservation_confirmed": false,
+          "stay_id": "82e2736b930fdc6dd2858310c8225bf975b52e9825e2aa0710ebbb3ea2ddcc32",
+          "room_id": "82e2736b930fdc6dd2858310c8225bf975b52e9825e2aa0710ebbb3ea2ddcc32:1",
+          "room_count": 1,
+          "virtual_gross_krw": 313000,
+          "actual_cash_observed": false,
+          "product_classification": "PRICED_VIRTUAL_PRODUCT",
+          "price_tier": "SIMULATION_ASSUMPTION",
+          "price_tier_declared": "SIMULATION_ASSUMPTION",
+          "price_tier_resolution": "SOURCE_GRADE_OR_RECORDED_STATUS_V2",
+          "catalog_sha256": "d9cede8e5cefc0f84e2ab647cdc8f1f69eea4b3d3611d19ce2c05758196e452d",
+          "discount_krw": 0,
+          "price_trace": null,
+          "included_benefit": null,
+          "quantity_observed": false
+        },
+        {
+          "row_id": "578aa71e25a11a16b93a78e7",
+          "simulation_entry_id": "578aa71e25a11a16b93a78e7",
+          "actual_transaction_id": null,
+          "customer_id": "A12",
+          "department": "F&B",
+          "venue": "더뷔페",
+          "venue_id": "THE_BUFFET",
+          "product": "조식 · 성인 · 화~금 · 10~11월",
+          "product_id": "HC-MENU-097",
+          "action_id": "BREAKFAST_BUFFET",
+          "time": "08:16",
+          "status": "포함",
+          "quantity": 2,
+          "unit_price_krw": 0,
+          "unit_basis": "person",
+          "billing_quantity": 2,
+          "billing_unit": "person",
+          "participant_count": 3,
+          "paid_krw": 0,
+          "assumption_addition_krw": 0,
+          "amount_status": "NO_CHARGE",
+          "purchase_status": "PACKAGE_INCLUDED",
+          "tax_status": "UNKNOWN",
+          "net_revenue_krw": null,
+          "price_source_status": "DATED_OFFICIAL_BUFFET_RATE",
+          "quantity_role": "ENGINE_ROW_QUANTITY",
+          "price_basis": "호텔 상품 시뮬레이션 주문 · PACKAGE_INCLUDED_NOT_NEW_REVENUE · 실제 구매/예약 아님",
+          "price_grade": "",
+          "notes": [
+            "HC 주문 구성품; 부모 주문 금액 중복 합산 안 함"
+          ],
+          "scene_index": 1,
+          "loc": "THE_BUFFET",
+          "act": "BREAKFAST_BUFFET",
+          "turn": null,
+          "decision_id": null,
+          "fact_ids": [],
+          "package_entitlement_id": null,
+          "t0": 496,
+          "t1": 556,
+          "meal": "breakfast",
+          "parent_order_id": "b4b9020b5104464847ffc4dd",
+          "component_index": 0,
+          "sku_id": "HC-MENU-097",
+          "run_id": "8452dd90c9957895e3d50fdd1fcacee2bdc4dd2c634c822f601f4b7b75c08b9c",
+          "visit_id": "93c501d075e43dba2b0399b7394cde64bb49064cd1c41ff8e0968da2a15347ca",
+          "visit_day": 2,
+          "visit_date": "2026-11-05",
+          "day_phase": "checkout",
+          "event_available": false,
+          "virtual_valuation": {
+            "row_id": "578aa71e25a11a16b93a78e7",
+            "visit_id": "93c501d075e43dba2b0399b7394cde64bb49064cd1c41ff8e0968da2a15347ca",
+            "customer_id": "A12",
+            "date": "2026-11-05",
+            "department": "F&B",
+            "venue": "더뷔페",
+            "product": "조식 · 성인 · 화~금 · 10~11월",
+            "action_id": "BREAKFAST_BUFFET",
+            "original_scene_index": 1,
+            "visit_day": 2,
+            "quantity": 2,
+            "virtual_gross_krw": 0,
+            "price_status": "EXISTING_SIMULATED_CHARGE_OR_INCLUDED",
+            "net_ex_vat_krw": null,
+            "tax_status": "UNKNOWN"
+          },
+          "selection_id": null,
+          "sku_contract": {
+            "sku_id": "HC-MENU-097",
+            "venue_id": "THE_BUFFET",
+            "label": "조식 · 성인 · 화~금 · 10~11월",
+            "role": "MAIN",
+            "category": "F&B",
+            "unit_price_krw": 0,
+            "price_tier": "OFFICIAL",
+            "price_status": "DATED_OFFICIAL_BUFFET_RATE",
+            "price_basis_date": "SOURCE_EFFECTIVE_PERIOD_WHEN_STATED; OTHERWISE_REFERENCE_DATE_UNCONFIRMED",
+            "billing_unit": "person",
+            "minimum_quantity": 1,
+            "source_unit": "1인",
+            "source_day_rule": "화수목금-공휴일",
+            "source_service_windows": "07:00-10:00",
+            "valid_from": "2026-10-01",
+            "valid_until": "2026-11-30",
+            "source_path": "timeline/menu.csv",
+            "source_line": 97,
+            "source_sha256": "e8d2740ad4c33db6ce29cd022af21e50dc4b44e67a055d60c2f747918303e65d",
+            "source_document": "walkerhill.com /vistawalkerhillseoul/dining/TheBuffet · \"성인 KRW 85,000 어린이 KRW 43,000\"",
+            "source_grade": "◎",
+            "included_description": "",
+            "source_room_types": "",
+            "requires_reservation": false,
+            "tags": [
+              "buffet",
+              "variety"
+            ],
+            "tax_status": "UNKNOWN",
+            "source_checked_at": "2026-10-31",
+            "quantity_rule": "DEFINED_BY_HC_V1_COMMON_ORDER_ASSUMPTIONS_NOT_OBSERVED",
+            "verified_source_aliases": [
+              "BUFFET-BREAKFAST-ADULT"
+            ],
+            "official_source": {
+              "url": "https://www.walkerhill.com/vistawalkerhillseoul/m/dining/TheBuffet",
+              "checked_at": "2026-10-31",
+              "source_period": "2026-10-01/2026-11-30",
+              "fields": [
+                "unit_price",
+                "age_band",
+                "sessions"
+              ]
+            },
+            "sales_channel": "HOTEL_ON_PREMISE",
+            "age_band": "ADULT",
+            "max_quantity_basis": "MATCHED_PARTY_COHORT",
+            "billing_quantity": 2,
+            "quantity_observed": false,
+            "order_quantity_basis": "COMMON_VIRTUAL_ORDER_NOT_OBSERVED",
+            "applicability_status": "SIMULATION_PRODUCT_CONTRACT_NOT_BOOKING",
+            "current_sale_confirmed": false,
+            "reservation_confirmed": false,
+            "transaction_confirmed": false,
+            "party_composition": {
+              "adult_count": 2,
+              "children": [
+                {
+                  "age_months": 12,
+                  "school_stage": "preschool"
+                }
+              ]
+            },
+            "catalog_sha256": "d9cede8e5cefc0f84e2ab647cdc8f1f69eea4b3d3611d19ce2c05758196e452d",
+            "input_provenance": "OPERATOR_SIMULATION_NOT_REVIEW_FACT",
+            "included_benefit": "ALL_VIRTUAL_GUESTS_BREAKFAST",
+            "original_list_unit_price_krw": 85000,
+            "parent_order_id": "b4b9020b5104464847ffc4dd"
+          },
+          "product_sku_id": "HC-MENU-097",
+          "price_status": "DATED_OFFICIAL_BUFFET_RATE",
+          "current_sale_confirmed": false,
+          "reservation_confirmed": false,
+          "product_classification": "INCLUDED_BENEFIT",
+          "price_tier": "OFFICIAL",
+          "price_tier_declared": "OFFICIAL",
+          "price_tier_resolution": "SOURCE_GRADE_OR_RECORDED_STATUS_V2",
+          "catalog_sha256": "d9cede8e5cefc0f84e2ab647cdc8f1f69eea4b3d3611d19ce2c05758196e452d",
+          "discount_krw": 0,
+          "price_trace": null,
+          "included_benefit": "ALL_VIRTUAL_GUESTS_BREAKFAST",
+          "quantity_observed": false
+        },
+        {
+          "row_id": "9656b6d4e4e9a6e858d6460a",
+          "simulation_entry_id": "9656b6d4e4e9a6e858d6460a",
+          "actual_transaction_id": null,
+          "customer_id": "A12",
+          "department": "F&B",
+          "venue": "더뷔페",
+          "venue_id": "THE_BUFFET",
+          "product": "더뷔페 · 36개월 미만 유아",
+          "product_id": "HC-MENU-097-INFANT",
+          "action_id": "BREAKFAST_BUFFET",
+          "time": "08:16",
+          "status": "포함",
+          "quantity": 1,
+          "unit_price_krw": 0,
+          "unit_basis": "person",
+          "billing_quantity": 1,
+          "billing_unit": "person",
+          "participant_count": 3,
+          "paid_krw": 0,
+          "assumption_addition_krw": 0,
+          "amount_status": "NO_CHARGE",
+          "purchase_status": "PACKAGE_INCLUDED",
+          "tax_status": "UNKNOWN",
+          "net_revenue_krw": null,
+          "price_source_status": "USER_CONFIRMED_INFANT_FREE",
+          "quantity_role": "ENGINE_ROW_QUANTITY",
+          "price_basis": "호텔 상품 시뮬레이션 주문 · PACKAGE_INCLUDED_NOT_NEW_REVENUE · 실제 구매/예약 아님",
+          "price_grade": "",
+          "notes": [
+            "HC 주문 구성품; 부모 주문 금액 중복 합산 안 함"
+          ],
+          "scene_index": 1,
+          "loc": "THE_BUFFET",
+          "act": "BREAKFAST_BUFFET",
+          "turn": null,
+          "decision_id": null,
+          "fact_ids": [],
+          "package_entitlement_id": null,
+          "t0": 496,
+          "t1": 556,
+          "meal": "breakfast",
+          "parent_order_id": "b4b9020b5104464847ffc4dd",
+          "component_index": 1,
+          "sku_id": "HC-MENU-097-INFANT",
+          "run_id": "8452dd90c9957895e3d50fdd1fcacee2bdc4dd2c634c822f601f4b7b75c08b9c",
+          "visit_id": "93c501d075e43dba2b0399b7394cde64bb49064cd1c41ff8e0968da2a15347ca",
+          "visit_day": 2,
+          "visit_date": "2026-11-05",
+          "day_phase": "checkout",
+          "event_available": false,
+          "virtual_valuation": {
+            "row_id": "9656b6d4e4e9a6e858d6460a",
+            "visit_id": "93c501d075e43dba2b0399b7394cde64bb49064cd1c41ff8e0968da2a15347ca",
+            "customer_id": "A12",
+            "date": "2026-11-05",
+            "department": "F&B",
+            "venue": "더뷔페",
+            "product": "더뷔페 · 36개월 미만 유아",
+            "action_id": "BREAKFAST_BUFFET",
+            "original_scene_index": 1,
+            "visit_day": 2,
+            "quantity": 1,
+            "virtual_gross_krw": 0,
+            "price_status": "EXISTING_SIMULATED_CHARGE_OR_INCLUDED",
+            "net_ex_vat_krw": null,
+            "tax_status": "UNKNOWN"
+          },
+          "selection_id": null,
+          "sku_contract": {
+            "sku_id": "HC-MENU-097-INFANT",
+            "venue_id": "THE_BUFFET",
+            "label": "더뷔페 · 36개월 미만 유아",
+            "role": "MAIN",
+            "category": "F&B",
+            "unit_price_krw": 0,
+            "price_tier": "EXISTING_REFERENCE",
+            "price_status": "USER_CONFIRMED_INFANT_FREE",
+            "price_basis_date": "SOURCE_EFFECTIVE_PERIOD_WHEN_STATED; OTHERWISE_REFERENCE_DATE_UNCONFIRMED",
+            "billing_unit": "person",
+            "minimum_quantity": 1,
+            "source_unit": "1인",
+            "source_day_rule": "화수목금-공휴일",
+            "source_service_windows": "07:00-10:00",
+            "valid_from": "2026-10-01",
+            "valid_until": "2026-11-30",
+            "source_path": "timeline/menu.csv",
+            "source_line": 97,
+            "source_sha256": "e8d2740ad4c33db6ce29cd022af21e50dc4b44e67a055d60c2f747918303e65d",
+            "source_document": "walkerhill.com /vistawalkerhillseoul/dining/TheBuffet · \"성인 KRW 85,000 어린이 KRW 43,000\"",
+            "source_grade": "◎",
+            "included_description": "",
+            "source_room_types": "",
+            "requires_reservation": false,
+            "tags": [
+              "buffet",
+              "variety"
+            ],
+            "tax_status": "UNKNOWN",
+            "source_checked_at": "2026-10-31",
+            "quantity_rule": "DEFINED_BY_HC_V1_COMMON_ORDER_ASSUMPTIONS_NOT_OBSERVED",
+            "verified_source_aliases": [
+              "BUFFET-BREAKFAST-ADULT"
+            ],
+            "official_source": {
+              "url": "https://www.walkerhill.com/vistawalkerhillseoul/m/dining/TheBuffet",
+              "checked_at": "2026-10-31",
+              "source_period": "2026-10-01/2026-11-30",
+              "fields": [
+                "unit_price",
+                "age_band",
+                "sessions"
+              ]
+            },
+            "sales_channel": "HOTEL_ON_PREMISE",
+            "age_band": "INFANT_UNDER_36_MONTHS",
+            "max_quantity_basis": "MATCHED_PARTY_COHORT",
+            "billing_quantity": 1,
+            "quantity_observed": false,
+            "order_quantity_basis": "EXPLICIT_VIRTUAL_INFANT_AGE",
+            "applicability_status": "SIMULATION_PRODUCT_CONTRACT_NOT_BOOKING",
+            "current_sale_confirmed": false,
+            "reservation_confirmed": false,
+            "transaction_confirmed": false,
+            "party_composition": {
+              "adult_count": 2,
+              "children": [
+                {
+                  "age_months": 12,
+                  "school_stage": "preschool"
+                }
+              ]
+            },
+            "catalog_sha256": "d9cede8e5cefc0f84e2ab647cdc8f1f69eea4b3d3611d19ce2c05758196e452d",
+            "input_provenance": "OPERATOR_SIMULATION_NOT_REVIEW_FACT",
+            "party_cohort": "INFANT",
+            "age_inputs": [
+              {
+                "age_months": 12,
+                "school_stage": "preschool"
+              }
+            ],
+            "included_benefit": "ALL_VIRTUAL_GUESTS_BREAKFAST",
+            "original_list_unit_price_krw": 0,
+            "parent_order_id": "b4b9020b5104464847ffc4dd"
+          },
+          "product_sku_id": "HC-MENU-097-INFANT",
+          "price_status": "USER_CONFIRMED_INFANT_FREE",
+          "current_sale_confirmed": false,
+          "reservation_confirmed": false,
+          "product_classification": "INCLUDED_BENEFIT",
+          "price_tier": "EXISTING_REFERENCE",
+          "price_tier_declared": "EXISTING_REFERENCE",
+          "price_tier_resolution": "SOURCE_GRADE_OR_RECORDED_STATUS_V2",
+          "catalog_sha256": "d9cede8e5cefc0f84e2ab647cdc8f1f69eea4b3d3611d19ce2c05758196e452d",
+          "discount_krw": 0,
+          "price_trace": null,
+          "included_benefit": "ALL_VIRTUAL_GUESTS_BREAKFAST",
+          "quantity_observed": false
+        }
+      ],
+      "status_counts": {
+        "실결제": 3,
+        "가상 결제": 1,
+        "포함": 2
+      }
+    }
+  },
+  "levels": {
+    "L4": [
+      {
+        "key": [
+          "ROOM",
+          "그랜드",
+          "객실 1박 · 조식 포함 가상 모델 단가(성인 2인 조식)"
+        ],
+        "quantity": 1,
+        "paid_krw": 313000,
+        "assumption_addition_krw": 0,
+        "with_assumptions_krw": 313000,
+        "net_revenue_krw": null,
+        "known_net_revenue_krw": 0.0,
+        "tax_unknown_count": 1,
+        "quantity_by_unit": [
+          {
+            "unit": "room_night",
+            "quantity": 1
+          }
+        ],
+        "unknown_count": 0
+      },
+      {
+        "key": [
+          "F&B",
+          "피자힐",
+          "갈릭새우 피자 S"
+        ],
+        "quantity": 1,
+        "paid_krw": 79000,
+        "assumption_addition_krw": 0,
+        "with_assumptions_krw": 79000,
+        "net_revenue_krw": null,
+        "known_net_revenue_krw": 0.0,
+        "tax_unknown_count": 1,
+        "quantity_by_unit": [
+          {
+            "unit": "pizza",
+            "quantity": 1
+          }
+        ],
+        "unknown_count": 0
+      },
+      {
+        "key": [
+          "F&B",
+          "파빌리온",
+          "브리오슈 치즈버거와 감자튀김"
+        ],
+        "quantity": 1,
+        "paid_krw": 44000,
+        "assumption_addition_krw": 0,
+        "with_assumptions_krw": 44000,
+        "net_revenue_krw": null,
+        "known_net_revenue_krw": 0.0,
+        "tax_unknown_count": 1,
+        "quantity_by_unit": [
+          {
+            "unit": "portion",
+            "quantity": 1
+          }
+        ],
+        "unknown_count": 0
+      },
+      {
+        "key": [
+          "F&B",
+          "파빌리온",
+          "클럽샌드위치와 감자튀김"
+        ],
+        "quantity": 1,
+        "paid_krw": 41000,
+        "assumption_addition_krw": 0,
+        "with_assumptions_krw": 41000,
+        "net_revenue_krw": null,
+        "known_net_revenue_krw": 0.0,
+        "tax_unknown_count": 1,
+        "quantity_by_unit": [
+          {
+            "unit": "portion",
+            "quantity": 1
+          }
+        ],
+        "unknown_count": 0
+      },
+      {
+        "key": [
+          "F&B",
+          "더뷔페",
+          "더뷔페 · 36개월 미만 유아"
+        ],
+        "quantity": 1,
+        "paid_krw": 0,
+        "assumption_addition_krw": 0,
+        "with_assumptions_krw": 0,
+        "net_revenue_krw": 0.0,
+        "known_net_revenue_krw": 0.0,
+        "tax_unknown_count": 0,
+        "quantity_by_unit": [
+          {
+            "unit": "person",
+            "quantity": 1
+          }
+        ],
+        "unknown_count": 0
+      },
+      {
+        "key": [
+          "F&B",
+          "더뷔페",
+          "조식 · 성인 · 화~금 · 10~11월"
+        ],
+        "quantity": 2,
+        "paid_krw": 0,
+        "assumption_addition_krw": 0,
+        "with_assumptions_krw": 0,
+        "net_revenue_krw": 0.0,
+        "known_net_revenue_krw": 0.0,
+        "tax_unknown_count": 0,
+        "quantity_by_unit": [
+          {
+            "unit": "person",
+            "quantity": 2
+          }
+        ],
+        "unknown_count": 0
+      }
+    ],
+    "L3": [
+      {
+        "key": [
+          "ROOM",
+          "그랜드"
+        ],
+        "quantity": 1,
+        "paid_krw": 313000,
+        "assumption_addition_krw": 0,
+        "with_assumptions_krw": 313000,
+        "net_revenue_krw": null,
+        "known_net_revenue_krw": 0.0,
+        "tax_unknown_count": 1,
+        "quantity_by_unit": [
+          {
+            "unit": "room_night",
+            "quantity": 1
+          }
+        ],
+        "unknown_count": 0
+      },
+      {
+        "key": [
+          "F&B",
+          "파빌리온"
+        ],
+        "quantity": 2,
+        "paid_krw": 85000,
+        "assumption_addition_krw": 0,
+        "with_assumptions_krw": 85000,
+        "net_revenue_krw": null,
+        "known_net_revenue_krw": 0.0,
+        "tax_unknown_count": 2,
+        "quantity_by_unit": [
+          {
+            "unit": "portion",
+            "quantity": 2
+          }
+        ],
+        "unknown_count": 0
+      },
+      {
+        "key": [
+          "F&B",
+          "피자힐"
+        ],
+        "quantity": 1,
+        "paid_krw": 79000,
+        "assumption_addition_krw": 0,
+        "with_assumptions_krw": 79000,
+        "net_revenue_krw": null,
+        "known_net_revenue_krw": 0.0,
+        "tax_unknown_count": 1,
+        "quantity_by_unit": [
+          {
+            "unit": "pizza",
+            "quantity": 1
+          }
+        ],
+        "unknown_count": 0
+      },
+      {
+        "key": [
+          "F&B",
+          "더뷔페"
+        ],
+        "quantity": 3,
+        "paid_krw": 0,
+        "assumption_addition_krw": 0,
+        "with_assumptions_krw": 0,
+        "net_revenue_krw": 0.0,
+        "known_net_revenue_krw": 0.0,
+        "tax_unknown_count": 0,
+        "quantity_by_unit": [
+          {
+            "unit": "person",
+            "quantity": 3
+          }
+        ],
+        "unknown_count": 0
+      }
+    ],
+    "L2": [
+      {
+        "key": [
+          "ROOM"
+        ],
+        "quantity": 1,
+        "paid_krw": 313000,
+        "assumption_addition_krw": 0,
+        "with_assumptions_krw": 313000,
+        "net_revenue_krw": null,
+        "known_net_revenue_krw": 0.0,
+        "tax_unknown_count": 1,
+        "quantity_by_unit": [
+          {
+            "unit": "room_night",
+            "quantity": 1
+          }
+        ],
+        "unknown_count": 0
+      },
+      {
+        "key": [
+          "F&B"
+        ],
+        "quantity": null,
+        "paid_krw": 164000,
+        "assumption_addition_krw": 0,
+        "with_assumptions_krw": 164000,
+        "net_revenue_krw": null,
+        "known_net_revenue_krw": 0.0,
+        "tax_unknown_count": 3,
+        "quantity_by_unit": [
+          {
+            "unit": "person",
+            "quantity": 3
+          },
+          {
+            "unit": "pizza",
+            "quantity": 1
+          },
+          {
+            "unit": "portion",
+            "quantity": 2
+          }
+        ],
+        "unknown_count": 0
+      }
+    ],
+    "L1": [
+      {
+        "key": [
+          "전체"
+        ],
+        "quantity": null,
+        "paid_krw": 477000,
+        "assumption_addition_krw": 0,
+        "with_assumptions_krw": 477000,
+        "net_revenue_krw": null,
+        "known_net_revenue_krw": 0.0,
+        "tax_unknown_count": 4,
+        "quantity_by_unit": [
+          {
+            "unit": "person",
+            "quantity": 3
+          },
+          {
+            "unit": "pizza",
+            "quantity": 1
+          },
+          {
+            "unit": "portion",
+            "quantity": 2
+          },
+          {
+            "unit": "room_night",
+            "quantity": 1
+          }
+        ],
+        "unknown_count": 0
+      }
+    ]
+  },
+  "venues": [
+    {
+      "key": [
+        "ROOM",
+        "그랜드"
+      ],
+      "quantity": 1,
+      "paid_krw": 313000,
+      "assumption_addition_krw": 0,
+      "with_assumptions_krw": 313000,
+      "net_revenue_krw": null,
+      "known_net_revenue_krw": 0.0,
+      "tax_unknown_count": 1,
+      "quantity_by_unit": [
+        {
+          "unit": "room_night",
+          "quantity": 1
+        }
+      ],
+      "unknown_count": 0,
+      "name": "그랜드",
+      "department": "ROOM",
+      "team_count": 1,
+      "customer_ids": [
+        "A12"
+      ],
+      "types": [
+        {
+          "name": "가족 · 영유아",
+          "team_count": 1,
+          "paid_krw": 313000
+        }
+      ]
+    },
+    {
+      "key": [
+        "F&B",
+        "파빌리온"
+      ],
+      "quantity": 2,
+      "paid_krw": 85000,
+      "assumption_addition_krw": 0,
+      "with_assumptions_krw": 85000,
+      "net_revenue_krw": null,
+      "known_net_revenue_krw": 0.0,
+      "tax_unknown_count": 2,
+      "quantity_by_unit": [
+        {
+          "unit": "portion",
+          "quantity": 2
+        }
+      ],
+      "unknown_count": 0,
+      "name": "파빌리온",
+      "department": "F&B",
+      "team_count": 1,
+      "customer_ids": [
+        "A12"
+      ],
+      "types": [
+        {
+          "name": "가족 · 영유아",
+          "team_count": 1,
+          "paid_krw": 85000
+        }
+      ]
+    },
+    {
+      "key": [
+        "F&B",
+        "피자힐"
+      ],
+      "quantity": 1,
+      "paid_krw": 79000,
+      "assumption_addition_krw": 0,
+      "with_assumptions_krw": 79000,
+      "net_revenue_krw": null,
+      "known_net_revenue_krw": 0.0,
+      "tax_unknown_count": 1,
+      "quantity_by_unit": [
+        {
+          "unit": "pizza",
+          "quantity": 1
+        }
+      ],
+      "unknown_count": 0,
+      "name": "피자힐",
+      "department": "F&B",
+      "team_count": 1,
+      "customer_ids": [
+        "A12"
+      ],
+      "types": [
+        {
+          "name": "가족 · 영유아",
+          "team_count": 1,
+          "paid_krw": 79000
+        }
+      ]
+    },
+    {
+      "key": [
+        "F&B",
+        "더뷔페"
+      ],
+      "quantity": 3,
+      "paid_krw": 0,
+      "assumption_addition_krw": 0,
+      "with_assumptions_krw": 0,
+      "net_revenue_krw": 0.0,
+      "known_net_revenue_krw": 0.0,
+      "tax_unknown_count": 0,
+      "quantity_by_unit": [
+        {
+          "unit": "person",
+          "quantity": 3
+        }
+      ],
+      "unknown_count": 0,
+      "name": "더뷔페",
+      "department": "F&B",
+      "team_count": 1,
+      "customer_ids": [
+        "A12"
+      ],
+      "types": [
+        {
+          "name": "가족 · 영유아",
+          "team_count": 1,
+          "paid_krw": 0
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "paid_krw": 477000,
+    "assumption_addition_krw": 0,
+    "with_assumptions_krw": 477000,
+    "unknown_count": 0,
+    "net_revenue_krw": null,
+    "known_net_revenue_krw": 0.0,
+    "tax_unknown_count": 4
+  },
+  "team_count": 1,
+  "customer_types": [
+    "가족 · 영유아"
+  ],
+  "aggregation_contract": {
+    "hillink_row_grain": "one simulation run × one customer team × one selected action/charge row",
+    "ontology_row_grain": "service date × pool × product × customer dimensions (already aggregated)",
+    "direct_row_mapping": false,
+    "comparison_rollup_keys": [
+      "service date",
+      "venue_id",
+      "product_id only when explicitly known",
+      "verified customer dimensions only"
+    ],
+    "quantity_views": [
+      "billing_quantity + billing_unit",
+      "participant_count"
+    ],
+    "quantity_views_are_alternatives": true,
+    "excluded_from_paid_sum": [
+      "ASSUMED",
+      "UNKNOWN",
+      "PACKAGE_INCLUDED",
+      "FREE_USE",
+      "NO_PURCHASE"
+    ],
+    "pos_actuals_supplied": false
+  },
+  "checks": {
+    "receipts_equal_L4_L3_L2_L1": true,
+    "duplicate_transactions": null,
+    "duplicate_simulation_rows": 0,
+    "net_revenue_calculated": false,
+    "tax_status": "UNKNOWN",
+    "actual_pos_transactions": null,
+    "actual_pos_data_supplied": false
+  },
+  "price_class_aggregates": {
+    "policy_version": "source-grade-resolution-v2",
+    "classes": {
+      "OFFICIAL": {
+        "amount_krw": 0,
+        "transaction_rows": 1,
+        "row_ids": [
+          "578aa71e25a11a16b93a78e7"
+        ]
+      },
+      "EXISTING_REFERENCE": {
+        "amount_krw": 164000,
+        "transaction_rows": 4,
+        "row_ids": [
+          "7a7a75f55dfa198c20d8e2b9",
+          "cf7c79a87967119058660e4b",
+          "0cb4555e21abef1c996243a2",
+          "9656b6d4e4e9a6e858d6460a"
+        ]
+      },
+      "COMPARABLE_ESTIMATE": {
+        "amount_krw": 0,
+        "transaction_rows": 0,
+        "row_ids": []
+      },
+      "SIMULATION_ASSUMPTION": {
+        "amount_krw": 313000,
+        "transaction_rows": 1,
+        "row_ids": [
+          "9a8382aa038e69ccf8daf7b4"
+        ]
+      },
+      "LEGACY_OR_INCLUDED": {
+        "amount_krw": 0,
+        "transaction_rows": 0,
+        "row_ids": []
+      }
+    },
+    "confirmed_current_source_krw": 0,
+    "historical_reference_krw": 164000,
+    "estimated_or_assumed_krw": 313000,
+    "actual_cash_observed": false,
+    "note": "Source price class, not observed sales; dated references and model assumptions separated. Tax UNKNOWN unless independently supplied."
+  },
+  "consumption_audit": {
+    "version": "consumption-audit-v2-sale-contract",
+    "run_id": "8452dd90c9957895e3d50fdd1fcacee2bdc4dd2c634c822f601f4b7b75c08b9c",
+    "status": "PASS",
+    "mode": "FULL_SCENES_AND_LEDGER",
+    "scene_count": 14,
+    "counts": {
+      "NO_PURCHASE": 11,
+      "PAID_PRICED": 2,
+      "INCLUDED": 1
+    },
+    "l5_rows": 6,
+    "paid_rows": 4,
+    "paid_krw": 477000,
+    "issue_counts": {},
+    "issues": [],
+    "scenes": [
+      {
+        "customer_id": "A12",
+        "visit_day": 1,
+        "scene_index": 0,
+        "action_id": "arrive",
+        "state": "NO_PURCHASE",
+        "issues": [],
+        "row_ids": []
+      },
+      {
+        "customer_id": "A12",
+        "visit_day": 1,
+        "scene_index": 1,
+        "action_id": "HC_HC-ORDER-09db784a973059996cef",
+        "state": "PAID_PRICED",
+        "issues": [],
+        "row_ids": [
+          "7a7a75f55dfa198c20d8e2b9",
+          "cf7c79a87967119058660e4b"
+        ]
+      },
+      {
+        "customer_id": "A12",
+        "visit_day": 1,
+        "scene_index": 2,
+        "action_id": "checkin",
+        "state": "NO_PURCHASE",
+        "issues": [],
+        "row_ids": []
+      },
+      {
+        "customer_id": "A12",
+        "visit_day": 1,
+        "scene_index": 3,
+        "action_id": "unpack",
+        "state": "NO_PURCHASE",
+        "issues": [],
+        "row_ids": []
+      },
+      {
+        "customer_id": "A12",
+        "visit_day": 1,
+        "scene_index": 4,
+        "action_id": "room_rest",
+        "state": "NO_PURCHASE",
+        "issues": [],
+        "row_ids": []
+      },
+      {
+        "customer_id": "A12",
+        "visit_day": 1,
+        "scene_index": 5,
+        "action_id": "HC_HC-ORDER-5ca91e6d8afb571ddd80",
+        "state": "PAID_PRICED",
+        "issues": [],
+        "row_ids": [
+          "0cb4555e21abef1c996243a2"
+        ]
+      },
+      {
+        "customer_id": "A12",
+        "visit_day": 1,
+        "scene_index": 6,
+        "action_id": "sleep",
+        "state": "NO_PURCHASE",
+        "issues": [],
+        "row_ids": []
+      },
+      {
+        "customer_id": "A12",
+        "visit_day": 2,
+        "scene_index": 7,
+        "action_id": "wake",
+        "state": "NO_PURCHASE",
+        "issues": [],
+        "row_ids": []
+      },
+      {
+        "customer_id": "A12",
+        "visit_day": 2,
+        "scene_index": 8,
+        "action_id": "BREAKFAST_BUFFET",
+        "state": "INCLUDED",
+        "issues": [],
+        "row_ids": [
+          "578aa71e25a11a16b93a78e7",
+          "9656b6d4e4e9a6e858d6460a"
+        ]
+      },
+      {
+        "customer_id": "A12",
+        "visit_day": 2,
+        "scene_index": 9,
+        "action_id": "idle",
+        "state": "NO_PURCHASE",
+        "issues": [],
+        "row_ids": []
+      },
+      {
+        "customer_id": "A12",
+        "visit_day": 2,
+        "scene_index": 10,
+        "action_id": "wait",
+        "state": "NO_PURCHASE",
+        "issues": [],
+        "row_ids": []
+      },
+      {
+        "customer_id": "A12",
+        "visit_day": 2,
+        "scene_index": 11,
+        "action_id": "pack",
+        "state": "NO_PURCHASE",
+        "issues": [],
+        "row_ids": []
+      },
+      {
+        "customer_id": "A12",
+        "visit_day": 2,
+        "scene_index": 12,
+        "action_id": "checkout",
+        "state": "NO_PURCHASE",
+        "issues": [],
+        "row_ids": []
+      },
+      {
+        "customer_id": "A12",
+        "visit_day": 2,
+        "scene_index": 13,
+        "action_id": "leave",
+        "state": "NO_PURCHASE",
+        "issues": [],
+        "row_ids": []
+      }
+    ],
+    "stored_run_mutated": false,
+    "warnings": []
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "url": "http://127.0.0.1:9028/",
+  "build": {
+    "head": "0c9e801a55357f94f627261bdae56b442081e4ae",
+    "branch": "review/profile45-source-1106",
+    "agent_mode": "replay"
+  },
+  "profile_mapping_cards": 45,
+  "customers": [
+    {
+      "id": "A08",
+      "cardLine": "부부가 비스타 2박 동안 플로팅 명상과 요가를 경험한 휴식 방문",
+      "detailLine": "부부가 비스타 2박 동안 플로팅 명상과 요가를 경험한 휴식 방문",
+      "signature": "패키지와 별도로 회복 프로그램에 비용을 쓰고, 비가 오자 실내 요가 수업에 참여했다.",
+      "runButtonPresent": true,
+      "horizontalOverflow": false,
+      "status": "PASS"
+    },
+    {
+      "id": "N13",
+      "cardLine": "연휴에 이용권을 선결제하고 골프 연습장을 찾은 고객",
+      "detailLine": "연휴에 이용권을 선결제하고 골프 연습장을 찾은 고객",
+      "signature": "최신 시설에 만족했지만 정기권 결제는 당장 하지 않고 보류했다.",
+      "runButtonPresent": true,
+      "horizontalOverflow": false,
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "newPaidCalls": 0,
+  "newVisitExecutions": 0,
+  "displayManifestSha256": "2bf100caf15ba4c7860ad8d6b84915b87286bfee69b877eaaff1aab6c535fa11"
+}

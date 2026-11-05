@@ -1,0 +1,52 @@
+{
+ "version": "manual_pilot_profile_v1",
+ "persona_id": "blog43",
+ "source": "경수 2026-10-22 텍스트 중심 작성자 통합 페르소나 파일럿(GPT 수동 분석 · 최근 글 50편 + 워커힐 더글라스 1편 · 고유 50편)",
+ "status": "비승인 연구용 수동 분석 · V4.2 독립 자동 추출 아님 · 사람 공식 검수 전 · 시연 승인 없음",
+ "scale": "수동 5점 척도(초기 강도) — V4.1 근거 누적 지표와 다른 척도 · 작성자 간 절대 비교 금지",
+ "source_post_count": 50,
+ "photo_notes": 0,
+ "traits": [
+  {"key": "wine_alcohol_enjoyment", "label": "와인·주류 경험과 즐김", "strength": 5.0, "facets": ["alcohol_familiar"],
+   "fact_ids": ["B43-P02", "B43-P06", "B43-P31", "B43-P32", "B43-P35", "B43-P42"],
+   "gist": "독립 장소·방문 3회 이상에서 와인 바틀·칵테일·맥주 등을 실제 주문·음용", "independent_min": 3},
+  {"key": "premium_dining", "label": "프리미엄 식음 경험 참여", "strength": 5.0, "facets": ["premium", "food"],
+   "fact_ids": ["B43-P18", "B43-P21", "B43-P24", "B43-P30", "B43-P35", "B43-P38"],
+   "gist": "독립 업장 3곳 이상에서 오마카세·페어링 등 프리미엄 식사를 실제 예약·이용", "independent_min": 3},
+  {"key": "view_space_preference", "label": "전망·자연·공간 연출 선호", "strength": 5.0, "facets": ["space"],
+   "fact_ids": ["B43-P02", "B43-P10", "B43-P13", "B43-P22", "B43-P26", "B43-P30"],
+   "gist": "서로 다른 호텔·카페·여행에서 뷰·분위기를 반복해서 선택 기준으로 삼음", "independent_min": 3},
+  {"key": "hotel_travel_experience", "label": "호텔 체류와 여행 경험", "strength": 5.0, "facets": [],
+   "fact_ids": ["B43-P02", "B43-P17", "B43-P22", "B43-P26", "B43-P30", "B43-P32"],
+   "gist": "서로 다른 숙소 7곳의 이용·투숙 서술(정보용 · 행동 계수 아님)", "independent_min": 3},
+  {"key": "new_menu_place_exploration", "label": "새 메뉴·새 장소 탐색", "strength": 4.7, "facets": ["novelty", "food"],
+   "fact_ids": ["B43-P01", "B43-P07", "B43-P10", "B43-P24", "B43-P36", "B43-P41"],
+   "gist": "독립 메뉴·장소 3종 이상을 실제로 시도", "independent_min": 3},
+  {"key": "quiet_rest_contextual", "label": "조용한 휴식·재충전의 상황별 선호", "strength": 4.5, "facets": ["rest_need"],
+   "fact_ids": ["B43-P02", "B43-P10", "B43-P17", "B43-P26", "B43-P30", "B43-P33"],
+   "gist": "휴식이 목적인 방문에서는 시설 탐방보다 조용한 좌석·편안함을 택함(상황별)", "independent_min": 3,
+   "conditional_on": "visit.purpose == rest"},
+  {"key": "rich_food_specific_taste", "label": "풍성한 음식 구성과 세부 기호", "strength": 4.7, "facets": ["food_specific"],
+   "fact_ids": ["B43-P01", "B43-P04", "B43-P07", "B43-P16", "B43-P20", "B43-P24"],
+   "gist": "여러 메뉴를 함께 주문하고 세부 기호를 직접 표현(파스타·볶음밥 둘 다 · 퓨전한식 4종)", "independent_min": 3,
+   "menu_tags": ["pasta", "korean", "variety", "seafood"], "menu_weight": 0.6},
+  {"key": "flexible_replanning", "label": "실행 제약 대응·유연한 대안 선택", "strength": 4.5, "facets": ["practical_alt"],
+   "fact_ids": ["B43-P02", "B43-P17", "B43-P26", "B43-P30"],
+   "gist": "대기·예약·만실 때 식사 순서·객실·일정을 실용적으로 바꿈", "independent_min": 3},
+  {"key": "revisit_liked_places", "label": "마음에 든 곳·메뉴의 재방문", "strength": 4.5, "facets": ["routine"],
+   "fact_ids": ["B43-P04", "B43-P20", "B43-P33", "B43-P34"],
+   "gist": "만족한 식당·카페를 2~3회 재방문한다고 명시", "independent_min": 4},
+  {"key": "situational_benefit_use", "label": "혜택과 비용의 상황적 활용", "strength": 2.6, "facets": ["benefit"],
+   "fact_ids": ["B43-P02", "B43-P30", "B43-P32", "B43-P40"],
+   "gist": "혜택 활용 사례는 있으나 blog42처럼 반복적·직접적이지 않음", "independent_min": 1}
+ ],
+ "venues": [
+  {"feature": "douglas_lounge_rest", "venue": "ROOM", "kind": "used", "fact_ids": ["B43-P02"], "gist": "더글라스 라운지·객실에서 조용한 휴식에 집중"},
+  {"feature": "buffet_queue_switch", "venue": "THE_BUFFET", "kind": "used", "fact_ids": ["B43-P02"], "gist": "더뷔페 조식 대기가 길어 라운지 조식으로 전환"}
+ ],
+ "counterexamples": [
+  "'더글라스에서 쉬었다'만으로 평소 활동이 적다고 고정하지 않음",
+  "와인 경험이 많다는 이유로 어느 행사든 무조건 참여한다고 가정하지 않음",
+  "육아 중이라는 서술이 이번 숙박에 아이 동반을 뜻하지 않음"
+ ]
+}

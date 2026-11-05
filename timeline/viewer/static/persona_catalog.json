@@ -1,0 +1,804 @@
+{
+ "about": "CL-37 P7 라이브러리 열람 카탈로그 — 제품 고객 원장(앱 ID)과 표시 레지스트리 · 썸네일 카드가 1:1 로 맞는 고객만. 열람 전용(시뮬레이션 준비 중) · 엔진 허용 목록 · 게시 승인과 별개. 프로필 독립 검수 전 · 이미지 사람 승인 전.",
+ "version": "catalog_p7_v1",
+ "generated_by": "tools/build_catalog_p7.py",
+ "counts": {
+  "ledger": 63,
+  "runnable": 11,
+  "catalogue": 26,
+  "with_image": 23,
+  "excluded_ledger": 26,
+  "thumbnail_cards": 65,
+  "thumbnail_cards_unjoined": 39
+ },
+ "customers": [
+  {
+   "id": "A06",
+   "scene": "PERSONA_SCENE_006",
+   "no": "0017",
+   "type": null,
+   "type_note": "고객 원장 유형과 이미지 원장 유형 후보가 달라 확인 중 — 11개 유형에 넣지 않음",
+   "type_review": true,
+   "summary": "포레스트 파크는 늦게 가서 못 들어감",
+   "notes": [
+    "포레스트 파크는 늦게 가서 못 들어감"
+   ],
+   "visit": "숙박 · 그랜드",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_006_p36.webp",
+    "sha256": "3ba22413d7c35c6c083585fff606b15314082c19fec175f8ebcc98ecb46f846a",
+    "qa": "PHOTO_QA_PASS_CANDIDATE",
+    "label": "생성 이미지 · 검수 중 · 실제 고객 사진 아님"
+   },
+   "image_withheld": null,
+   "photo_delta": "APPLIED",
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  },
+  {
+   "id": "A12",
+   "scene": "PERSONA_SCENE_007",
+   "no": "0018",
+   "type": "가족 · 영유아",
+   "type_note": null,
+   "type_review": false,
+   "summary": null,
+   "notes": [],
+   "visit": null,
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_007.webp",
+    "sha256": "ff380b3b50f343062e9d050974143d9849a9c966b00f2e659220dd4a255d33ec",
+    "qa": "HOLD_LEGACY_FACT_OR_DESIGN",
+    "label": "생성 이미지 · 검수 중 · 실제 고객 사진 아님"
+   },
+   "image_withheld": null,
+   "photo_delta": "HOLD",
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  },
+  {
+   "id": "A13",
+   "scene": "PERSONA_SCENE_008",
+   "no": "0019",
+   "type": null,
+   "type_note": "고객 원장 유형과 이미지 원장 유형 후보가 달라 확인 중 — 11개 유형에 넣지 않음",
+   "type_review": true,
+   "summary": null,
+   "notes": [],
+   "visit": "숙박 · 비스타 2박 3일",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_008.webp",
+    "sha256": "15c5b97d0d4f1ea35d6f41a8fcc087a5a8420b205ad756adabc8690874f386cb",
+    "qa": "HOLD",
+    "label": "생성 이미지 · 검수 중 · 실제 고객 사진 아님"
+   },
+   "image_withheld": null,
+   "photo_delta": "HOLD",
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  },
+  {
+   "id": "A14",
+   "scene": "PERSONA_SCENE_009",
+   "no": "0020",
+   "type": "가족 · 부모 동반",
+   "type_note": null,
+   "type_review": false,
+   "summary": "모녀 방문",
+   "notes": [
+    "모녀 방문",
+    "피자힐 대신 객실 배달 선택"
+   ],
+   "visit": "숙박 · 그랜드 리버뷰",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_009_p36.webp",
+    "sha256": "72e468c216b6e55835a7841e0d9282ffae4d13bba94a0cb5af41294490da3e82",
+    "qa": "PHOTO_QA_PASS_CANDIDATE",
+    "label": "생성 이미지 · 검수 중 · 실제 고객 사진 아님"
+   },
+   "image_withheld": null,
+   "photo_delta": "APPLIED",
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  },
+  {
+   "id": "A19",
+   "scene": "PERSONA_SCENE_010",
+   "no": "0021",
+   "type": "친구 모임",
+   "type_note": null,
+   "type_review": false,
+   "summary": "친구들과 커넥팅룸",
+   "notes": [
+    "친구들과 커넥팅룸",
+    "함께 쓰는 공간과 개인 휴식 조정"
+   ],
+   "visit": "숙박 · 그랜드 디럭스 커넥팅룸 1박",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_010_p36.webp",
+    "sha256": "ad3d9e5ec29d6fd321906655aa0b61d9982e1cc841c76881bce8ae5ee42b7d36",
+    "qa": "PHOTO_QA_PASS_CANDIDATE",
+    "label": "생성 이미지 · 검수 중 · 실제 고객 사진 아님"
+   },
+   "image_withheld": null,
+   "photo_delta": "APPLIED",
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  },
+  {
+   "id": "A20",
+   "scene": "PERSONA_SCENE_011",
+   "no": "0022",
+   "type": null,
+   "type_note": "고객 원장 유형과 이미지 원장 유형 후보가 달라 확인 중 — 11개 유형에 넣지 않음",
+   "type_review": true,
+   "summary": null,
+   "notes": [],
+   "visit": null,
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_011_p36.webp",
+    "sha256": "92473aaeb96e2bb64cc0101d57208c1d7ce17bbb2774c97a4ba36a0749fdd559",
+    "qa": "PHOTO_QA_PASS_CANDIDATE",
+    "label": "생성 이미지 · 검수 중 · 실제 고객 사진 아님"
+   },
+   "image_withheld": null,
+   "photo_delta": "APPLIED",
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  },
+  {
+   "id": "A22",
+   "scene": "PERSONA_SCENE_012",
+   "no": "0023",
+   "type": "업무 · 출장",
+   "type_note": null,
+   "type_review": false,
+   "summary": "승진 인정·보상 행사 참여와 1인 1실 숙박·갈라 행사 경험",
+   "notes": [
+    "승진 인정·보상 행사 참여와 1인 1실 숙박·갈라 행사 경험"
+   ],
+   "visit": "숙박 · 그랜드 1인 1실",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_012_p36.webp",
+    "sha256": "1f6899223bdb4cab3a801a3224ac1367f25ed863c2565b2b5b719665a64874e3",
+    "qa": "PHOTO_QA_PASS_CANDIDATE",
+    "label": "생성 이미지 · 검수 중 · 실제 고객 사진 아님"
+   },
+   "image_withheld": null,
+   "photo_delta": "APPLIED",
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  },
+  {
+   "id": "A23",
+   "scene": "PERSONA_SCENE_013",
+   "no": "0024",
+   "type": null,
+   "type_note": "고객 원장 유형과 이미지 원장 유형 후보가 달라 확인 중 — 11개 유형에 넣지 않음",
+   "type_review": true,
+   "summary": "명월관 재방문",
+   "notes": [
+    "명월관 재방문",
+    "동행별 주문과 음식·가격 비교"
+   ],
+   "visit": "비투숙 · 명월관",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_013.webp",
+    "sha256": "42c3923a936d0736c6f603298218f189b996c9413da2500990a495d6247f692f",
+    "qa": "HOLD",
+    "label": "생성 이미지 · 검수 중 · 실제 고객 사진 아님"
+   },
+   "image_withheld": null,
+   "photo_delta": "HOLD",
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  },
+  {
+   "id": "A26",
+   "scene": "PERSONA_SCENE_014",
+   "no": "0025",
+   "type": "웰니스",
+   "type_note": null,
+   "type_review": false,
+   "summary": "수영·러닝·헬스를 묶은 활동적인 호캉스",
+   "notes": [
+    "수영·러닝·헬스를 묶은 활동적인 호캉스"
+   ],
+   "visit": "숙박 · 그랜드",
+   "image": null,
+   "image_withheld": "이미지 수정 필요(FIX) — 중립 표지로 대체",
+   "photo_delta": null,
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  },
+  {
+   "id": "A27",
+   "scene": "PERSONA_SCENE_015",
+   "no": "0026",
+   "type": "행사 체험",
+   "type_note": null,
+   "type_review": false,
+   "summary": "와인페어 비교·구매·친구 동행",
+   "notes": [
+    "와인페어 비교·구매·친구 동행"
+   ],
+   "visit": "비투숙 · 2026 가을 와인페어 첫날 2부",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_015_p36.webp",
+    "sha256": "1bd83b193e15bd7da19de353c192ad8af4d8061f3cb09596109d28036b31f345",
+    "qa": "PHOTO_QA_PASS_CANDIDATE",
+    "label": "생성 이미지 · 검수 중 · 실제 고객 사진 아님"
+   },
+   "image_withheld": null,
+   "photo_delta": "APPLIED",
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  },
+  {
+   "id": "A28",
+   "scene": "PERSONA_SCENE_016",
+   "no": "0027",
+   "type": "행사 체험",
+   "type_note": null,
+   "type_review": false,
+   "summary": "자비 와인페어 방문·구매·재방문 의향",
+   "notes": [
+    "자비 와인페어 방문·구매·재방문 의향"
+   ],
+   "visit": "비투숙 · 2026 가을 와인페어",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_016_p36.webp",
+    "sha256": "bd7ea7aeabc1b34f6c3384b969eec59d67674ccac0c53d149869e5a1fa552984",
+    "qa": "PHOTO_QA_PASS_CANDIDATE",
+    "label": "생성 이미지 · 검수 중 · 실제 고객 사진 아님"
+   },
+   "image_withheld": null,
+   "photo_delta": "APPLIED",
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  },
+  {
+   "id": "N03",
+   "scene": "PERSONA_SCENE_017",
+   "no": "0028",
+   "type": "가족 · 부모 동반",
+   "type_note": null,
+   "type_review": false,
+   "summary": "회사가 예약해 준 2박을 가족이 하루씩 나눠 씀",
+   "notes": [
+    "회사가 예약해 준 2박을 가족이 하루씩 나눠 씀",
+    "출근 때문에 조식은 안 먹음 · 무료 시설 중 스카이야드만 이용",
+    "기념품을 살까 고민하다 두고 나옴"
+   ],
+   "visit": "숙박 · 비스타 디럭스 퀸 마운틴뷰",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_017.webp",
+    "sha256": "6af65b17852bca3b3e72a9322aaa6236f9565110e208ca86e86a9cf22fefd652",
+    "qa": "HOLD",
+    "label": "생성 이미지 · 검수 중 · 실제 고객 사진 아님"
+   },
+   "image_withheld": null,
+   "photo_delta": "HOLD",
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  },
+  {
+   "id": "N04",
+   "scene": "PERSONA_SCENE_018",
+   "no": "0029",
+   "type": null,
+   "type_note": "고객 원장 유형과 이미지 원장 유형 후보가 달라 확인 중 — 11개 유형에 넣지 않음",
+   "type_review": true,
+   "summary": "요즘 더뷔페를 자주 감 (런치 → 처음 디너)",
+   "notes": [
+    "요즘 더뷔페를 자주 감 (런치 → 처음 디너)",
+    "멤버십 25% 할인",
+    "와인은 미리 사 감 (가게 와인이 비쌈)"
+   ],
+   "visit": "비투숙 · 더뷔페 주중 디너",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_018.webp",
+    "sha256": "b9924fbb7273d61f500f5d589617e8baf93fb20cf63600611b747107a4501a85",
+    "qa": "HOLD",
+    "label": "생성 이미지 · 검수 중 · 실제 고객 사진 아님"
+   },
+   "image_withheld": null,
+   "photo_delta": "HOLD",
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  },
+  {
+   "id": "N05",
+   "scene": "PERSONA_SCENE_019",
+   "no": "0030",
+   "type": null,
+   "type_note": "고객 원장 유형과 이미지 원장 유형 후보가 달라 확인 중 — 11개 유형에 넣지 않음",
+   "type_review": true,
+   "summary": "회원권이 있을 땐 동네 마실처럼 다님 → 오랜만에 방문",
+   "notes": [
+    "회원권이 있을 땐 동네 마실처럼 다님 → 오랜만에 방문",
+    "2주 전 공식 앱 예약 · 생일 기념 메모",
+    "와인 두 병 사서 콜키지"
+   ],
+   "visit": "비투숙 · 더뷔페 평일 런치",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_019.webp",
+    "sha256": "408b25ef1900a3fc5f19dd06ed82f87114cd33456916aa371a66ed584dcf4ae7",
+    "qa": "HOLD_LEGACY_FACT_OR_DESIGN",
+    "label": "생성 이미지 · 검수 중 · 실제 고객 사진 아님"
+   },
+   "image_withheld": null,
+   "photo_delta": null,
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  },
+  {
+   "id": "N06",
+   "scene": "PERSONA_SCENE_020",
+   "no": "0031",
+   "type": "미식",
+   "type_note": null,
+   "type_review": false,
+   "summary": "갈비탕 가격을 따져 봄 (T 멤버십 할인 언급)",
+   "notes": [
+    "갈비탕 가격을 따져 봄 (T 멤버십 할인 언급)"
+   ],
+   "visit": "비투숙 · 명월관 점심",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_020_p36.webp",
+    "sha256": "e49f75d695bb96ab1c759036435d3c6d6b7a8983a4e83ff116165fb6da589b2c",
+    "qa": "PHOTO_QA_PASS_CANDIDATE",
+    "label": "생성 이미지 · 검수 중 · 실제 고객 사진 아님"
+   },
+   "image_withheld": null,
+   "photo_delta": "APPLIED",
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  },
+  {
+   "id": "N08",
+   "scene": "PERSONA_SCENE_021",
+   "no": "0032",
+   "type": "행사 체험",
+   "type_note": null,
+   "type_review": false,
+   "summary": "인원이 바뀌어 한강 1 · 2룸 → 금봉룸으로 옮김",
+   "notes": [
+    "인원이 바뀌어 한강 1 · 2룸 → 금봉룸으로 옮김",
+    "멤버십 담당자가 예약 오픈일 첫날 잡음",
+    "와인 리스트에서 가성비 괜찮은 샴페인 2병을 고름"
+   ],
+   "visit": "비투숙 · 금룡 금봉룸",
+   "image": null,
+   "image_withheld": "이미지 수정 필요(FIX) — 중립 표지로 대체",
+   "photo_delta": null,
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  },
+  {
+   "id": "N09",
+   "scene": "PERSONA_SCENE_022",
+   "no": "0033",
+   "type": "행사 체험",
+   "type_note": null,
+   "type_review": false,
+   "summary": "회원이라 행사 문자를 받고 매년 골든 나이트 · 와인페어에 감",
+   "notes": [
+    "회원이라 행사 문자를 받고 매년 골든 나이트 · 와인페어에 감",
+    "예약 순서대로 무대 앞 좌석 배정",
+    "내년에도 미리 예약하겠다고 함"
+   ],
+   "visit": "비투숙 · 골든나이트 스페셜",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_022.webp",
+    "sha256": "6f94ead44b33888ac1532887b83f9fc3ebb57509247ea1ad465ade3904c74630",
+    "qa": "HOLD",
+    "label": "생성 이미지 · 검수 중 · 실제 고객 사진 아님"
+   },
+   "image_withheld": null,
+   "photo_delta": null,
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  },
+  {
+   "id": "N10",
+   "scene": "PERSONA_SCENE_023",
+   "no": "0034",
+   "type": "행사 체험",
+   "type_note": null,
+   "type_review": false,
+   "summary": "결혼식 하객으로 방문",
+   "notes": [
+    "결혼식 하객으로 방문",
+    "발렛 도착 때는 거의 안 기다리고 귀가 때 약 10분",
+    "홀 시야 · 식사 코스 평가"
+   ],
+   "visit": "비투숙 · 그랜드 워커홀 결혼식",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_023_p36.webp",
+    "sha256": "6cd024319eb07319abd32b65d82552db0d3a805f7d66f715e33cd0e49f08f747",
+    "qa": "PHOTO_QA_PASS_CANDIDATE",
+    "label": "생성 이미지 · 검수 중 · 실제 고객 사진 아님"
+   },
+   "image_withheld": null,
+   "photo_delta": "APPLIED",
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  },
+  {
+   "id": "N13",
+   "scene": "PERSONA_SCENE_024",
+   "no": "0035",
+   "type": "스포츠 목적",
+   "type_note": null,
+   "type_review": false,
+   "summary": "영상을 보고 연휴에 첫 방문",
+   "notes": [
+    "영상을 보고 연휴에 첫 방문",
+    "네이버 예약 선결제 · 타석 지정 불가",
+    "할인 기간을 아쉬워하고 재방문 의향"
+   ],
+   "visit": "비투숙 · 골프클럽",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_024.webp",
+    "sha256": "8caebbd818a65a5bf74d6ce197c6eb39b409e6d90c5e603951caf062ac1fda18",
+    "qa": "PASS",
+    "label": "생성 이미지 · 검수 중 · 실제 고객 사진 아님"
+   },
+   "image_withheld": null,
+   "photo_delta": "HOLD",
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  },
+  {
+   "id": "N15",
+   "scene": "PERSONA_SCENE_025",
+   "no": "0036",
+   "type": null,
+   "type_note": "고객 원장 유형과 이미지 원장 유형 후보가 달라 확인 중 — 11개 유형에 넣지 않음",
+   "type_review": true,
+   "summary": "주말만 시간이 남",
+   "notes": [
+    "주말만 시간이 남",
+    "비스타 주말 가격이 비싸 그랜드로 결정",
+    "피자힐 포장 20% 할인 이용"
+   ],
+   "visit": "숙박 · 그랜드 디럭스 트윈",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_025.webp",
+    "sha256": "0fc1e6ed1832ae058f21adbaa8de2f5129ae886c7415e9fb40a0721772244c9d",
+    "qa": "PASS",
+    "label": "생성 이미지 · 검수 중 · 실제 고객 사진 아님"
+   },
+   "image_withheld": null,
+   "photo_delta": "HOLD",
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  },
+  {
+   "id": "N20",
+   "scene": "PERSONA_SCENE_026",
+   "no": "0037",
+   "type": null,
+   "type_note": "고객 원장 유형과 이미지 원장 유형 후보가 달라 확인 중 — 11개 유형에 넣지 않음",
+   "type_review": true,
+   "summary": "남은 숙박권을 생일에 맞춰 씀",
+   "notes": [
+    "남은 숙박권을 생일에 맞춰 씀",
+    "다시 가입 (객실형 · 혼합형 · 식음형 비교)",
+    "가족 연회 할인으로 '본전' 판단"
+   ],
+   "visit": null,
+   "image": null,
+   "image_withheld": "이미지 수정 필요(FIX) — 중립 표지로 대체",
+   "photo_delta": null,
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  },
+  {
+   "id": "N23",
+   "scene": "PERSONA_SCENE_027",
+   "no": "0038",
+   "type": "가족 · 부모 동반",
+   "type_note": null,
+   "type_review": false,
+   "summary": "작년 경험 ('저녁 먹고 마사지는 부담') 을 바탕으로 이번엔 체크아웃하며 스파",
+   "notes": [
+    "작년 경험 ('저녁 먹고 마사지는 부담') 을 바탕으로 이번엔 체크아웃하며 스파",
+    "회사 복지로 받은 멤버십 회원권 이용 (작년)"
+   ],
+   "visit": "숙박 · 비스타 한강뷰 1박",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_027.webp",
+    "sha256": "66a4eeaaa049ef870173e4e3286a0409ff80ed0e876b2e1817e8ae477cc8fcfe",
+    "qa": "HOLD",
+    "label": "생성 이미지 · 검수 중 · 실제 고객 사진 아님"
+   },
+   "image_withheld": null,
+   "photo_delta": "HOLD",
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  },
+  {
+   "id": "N24",
+   "scene": "PERSONA_SCENE_028",
+   "no": "0039",
+   "type": null,
+   "type_note": "고객 원장 유형과 이미지 원장 유형 후보가 달라 확인 중 — 11개 유형에 넣지 않음",
+   "type_review": true,
+   "summary": "바우처 (2박 1실 또는 1박 2실) 로 세 호텔 중 가장 비싼 비스타 발코니 객실을 고름",
+   "notes": [
+    "바우처 (2박 1실 또는 1박 2실) 로 세 호텔 중 가장 비싼 비스타 발코니 객실을 고름",
+    "1박을 포기하고 부모님과 함께 옴",
+    "객실 매트리스를 보고 다음엔 같은 브랜드를 사겠다고 함"
+   ],
+   "visit": "숙박 · 비스타 발코니 객실",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_028_p36.webp",
+    "sha256": "290ec537570a3f09a5d3f9f4644c4e6705c5b88be29cfbf23a473d8735cca4f5",
+    "qa": "PHOTO_QA_PASS_CANDIDATE",
+    "label": "생성 이미지 · 검수 중 · 실제 고객 사진 아님"
+   },
+   "image_withheld": null,
+   "photo_delta": "APPLIED",
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  },
+  {
+   "id": "N25",
+   "scene": "PERSONA_SCENE_029",
+   "no": "0040",
+   "type": null,
+   "type_note": "고객 원장 유형과 이미지 원장 유형 후보가 달라 확인 중 — 11개 유형에 넣지 않음",
+   "type_review": true,
+   "summary": "충동적으로 떠나 2박을 함",
+   "notes": [
+    "충동적으로 떠나 2박을 함"
+   ],
+   "visit": null,
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_029_p36.webp",
+    "sha256": "711c6ed2e062e4f9970bceb5cbc14e1b8fb05b953a11b02e188ab9edebc0f7e3",
+    "qa": "PHOTO_QA_PASS_CANDIDATE",
+    "label": "생성 이미지 · 검수 중 · 실제 고객 사진 아님"
+   },
+   "image_withheld": null,
+   "photo_delta": "APPLIED",
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  },
+  {
+   "id": "N27",
+   "scene": "PERSONA_SCENE_030",
+   "no": "0041",
+   "type": "커플 · 기념일",
+   "type_note": null,
+   "type_review": false,
+   "summary": "회사 휴양소 당첨 숙박",
+   "notes": [
+    "회사 휴양소 당첨 숙박",
+    "추가금을 내면 한강뷰가 가능했지만 미루다 예약해 한강뷰 마감",
+    "저녁은 호텔 밖 오마카세"
+   ],
+   "visit": "숙박 · 그랜드",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_030_p36.webp",
+    "sha256": "f4b831df9b52eee8408901b9e4efa101a86c8acfa904a84662bf5a011e4ca913",
+    "qa": "PHOTO_QA_PASS_CANDIDATE",
+    "label": "생성 이미지 · 검수 중 · 실제 고객 사진 아님"
+   },
+   "image_withheld": null,
+   "photo_delta": "APPLIED",
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  },
+  {
+   "id": "N32",
+   "scene": "PERSONA_SCENE_031",
+   "no": "0042",
+   "type": "커플 · 기념일",
+   "type_note": null,
+   "type_review": false,
+   "summary": "3박 4일 동안 대부분 밖에서 식사 · 조식은 하루만",
+   "notes": [
+    "3박 4일 동안 대부분 밖에서 식사 · 조식은 하루만",
+    "남편 말을 듣고 피자힐"
+   ],
+   "visit": "숙박 · 그랜드 3박 4일",
+   "image": {
+    "src": "/static/persona_gallery/PERSONA_SCENE_031.webp",
+    "sha256": "14eece1fec414b6cbc3bf79aafcd107d98426941f8b531457c72593af0534131",
+    "qa": "PASS",
+    "label": "생성 이미지 · 검수 중 · 실제 고객 사진 아님"
+   },
+   "image_withheld": null,
+   "photo_delta": "EXCLUDED",
+   "profile": "정리 중",
+   "reviewed": false,
+   "catalogue_visible": true,
+   "engine_runnable": false
+  }
+ ],
+ "excluded": [
+  {
+   "id": "A09",
+   "type": "스포츠 목적",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  },
+  {
+   "id": "A11",
+   "type": "가족 · 영유아",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  },
+  {
+   "id": "A15",
+   "type": "커플 · 기념일",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  },
+  {
+   "id": "A16",
+   "type": "혜택 · 멤버십",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  },
+  {
+   "id": "A17",
+   "type": "혼자 휴식",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  },
+  {
+   "id": "A18",
+   "type": "혼자 휴식",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  },
+  {
+   "id": "A21",
+   "type": "업무 · 출장",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  },
+  {
+   "id": "A24",
+   "type": "웰니스",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  },
+  {
+   "id": "A25",
+   "type": "스포츠 목적",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  },
+  {
+   "id": "N01",
+   "type": "혜택 · 멤버십",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  },
+  {
+   "id": "N02",
+   "type": "혜택 · 멤버십",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  },
+  {
+   "id": "N07",
+   "type": "행사 체험",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  },
+  {
+   "id": "N11",
+   "type": "행사 체험",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  },
+  {
+   "id": "N12",
+   "type": "스포츠 목적",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  },
+  {
+   "id": "N14",
+   "type": "가족 · 학령기 (제안)",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  },
+  {
+   "id": "N16",
+   "type": "가족 · 아이 동반 (나이 미확인)",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  },
+  {
+   "id": "N17",
+   "type": "커플 · 기념일",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  },
+  {
+   "id": "N18",
+   "type": "공항 이동 · 여행",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  },
+  {
+   "id": "N19",
+   "type": "혜택 · 멤버십",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  },
+  {
+   "id": "N21",
+   "type": "업무 · 출장",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  },
+  {
+   "id": "N22",
+   "type": "친구 모임",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  },
+  {
+   "id": "N26",
+   "type": "행사 체험",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  },
+  {
+   "id": "N28",
+   "type": "혜택 · 멤버십",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  },
+  {
+   "id": "N29",
+   "type": "가족 · 아이 동반 (나이 미확인)",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  },
+  {
+   "id": "N30",
+   "type": "혜택 · 멤버십",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  },
+  {
+   "id": "N31",
+   "type": "혜택 · 멤버십",
+   "reason": "표시 번호 없음 — 썸네일 원장(65)에 이 고객 행이 없어 No. 미배정(새 번호 생성 금지)"
+  }
+ ]
+}

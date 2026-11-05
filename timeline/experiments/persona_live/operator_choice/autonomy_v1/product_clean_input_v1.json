@@ -1,0 +1,85 @@
+{
+ "_about": "CL-1025-27 제품용 정제 입력 오버레이(비파괴) — 동결 연구 입력(R-BASE · turn_personas)은 그대로 두고, 실사용 입력을 만들 때만 아래 항목을 성향 근거 · 업장 이용 기록에서 뺀다. 원문 · 사실 ID · 요지는 보존(삭제하지 않음). 활성화는 사용자 승인 전 보류: HILLINK_CLEAN_INPUT=1 일 때만 적용.",
+ "version": "product_clean_input_v1",
+ "rules": {
+  "EXCLUDED_TOPIC": "사용자가 제품 범위에서 뺀 주제(포장/매장 선택 · 대기 감수 · 줄 서기 · 혼잡 · 좌석 · 정원)를 다룬 사실은 성향 근거로 쓰지 않는다",
+  "NOT_DONE": "실제로 하지 않은(포기 · 전환한) 경험은 그 업장의 '실제 이용' 기록으로 쓰지 않는다(같은 사실의 다른 성향 근거는 유지)"
+ },
+ "items": [
+  {
+   "persona": "A08",
+   "fact_id": "A08S_E54",
+   "code": "EXCLUDED_TOPIC",
+   "remove": {
+    "facets": [
+     "practical_alt"
+    ]
+   },
+   "why": "다른 여행에서 남은 음식을 포장해 숙소에서 먹은 경험"
+  },
+  {
+   "persona": "A07",
+   "fact_id": "A07-F03",
+   "code": "EXCLUDED_TOPIC",
+   "remove": {
+    "facets": [
+     "space",
+     "practical_alt"
+    ]
+   },
+   "why": "피자를 포장해 객실에서 나눠 먹은 경험"
+  },
+  {
+   "persona": "A07",
+   "fact_id": "A07-F95",
+   "code": "EXCLUDED_TOPIC",
+   "remove": {
+    "facets": [
+     "practical_alt"
+    ]
+   },
+   "why": "룸서비스 대신 음식을 포장해 와 객실에서 먹은 경험(포장 선택) — 맥주 구매 · 음용은 주류 경험 근거로 유지",
+   "found_by": "CL-27 11명 전체 기록 점검(정제 전 A07 20:33 늦은 룸서비스 항)"
+  },
+  {
+   "persona": "A02",
+   "fact_id": "A02-F13",
+   "code": "EXCLUDED_TOPIC",
+   "remove": {
+    "facets": [
+     "value_check"
+    ]
+   },
+   "why": "예약이 차 현장 대기를 받아들인 경험"
+  },
+  {
+   "persona": "A01",
+   "fact_id": "A01S_E11",
+   "code": "NOT_DONE",
+   "remove": {
+    "venue_used": [
+     "THE_BUFFET"
+    ]
+   },
+   "why": "더뷔페를 추가 결제하려다 늦잠으로 포기 — 더뷔페 실제 이용 아님(음식 · 아침 성향 근거는 유지)"
+  },
+  {
+   "persona": "blog43",
+   "fact_id": "B43-P02",
+   "code": "NOT_DONE",
+   "remove": {
+    "venue_used": [
+     "THE_BUFFET"
+    ]
+   },
+   "why": "더뷔페 대신 라운지 조식으로 전환 — 더뷔페 실제 이용 아님"
+  }
+ ],
+ "kept_on_purpose": [
+  {
+   "persona": "A08",
+   "fact_id": "A08S_E28",
+   "why": "룸서비스(업장) 이용은 사실 — 업장 이용 기록 · 실용 대안 성향 근거로 유지. 한국식 조식 상품 직접 이용 횟수는 0(표시 · API 에서 맥락 이전 추론)"
+  }
+ ]
+}

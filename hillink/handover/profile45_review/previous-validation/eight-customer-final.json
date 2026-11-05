@@ -1,0 +1,216 @@
+[
+  {
+    "customer": "N15",
+    "source_verified": "PASS: previously read original unchanged; SHA rechecked",
+    "source_anchors": [
+      {
+        "reference": "customers/N15/corpus.json",
+        "sha256": "7a42a21e67e5a5b040e4c4759711aca2014be1336ea64d7526d37493f5424176"
+      }
+    ],
+    "verified_posts": [
+      "N15_P026"
+    ],
+    "before": "사용 가능한 후기 사실 14개 · 개인 성향과 방문 조건으로 선택",
+    "after": "마운틴뷰 객실이 좁게 느껴졌고 포장 피자와 룸서비스를 이용한 가족",
+    "fields": [
+      "list_line",
+      "fact_summaries"
+    ],
+    "chrome_before_after": "PASS",
+    "run_id": "f9370a2d2ca389decc9d36900e927490ac9f226db113ad655426aed85fdc4446",
+    "replay_judgment_and_input_match": "PASS",
+    "ledger_sku_quantity_price_aggregate_match": "PASS; relocation-derived IDs differ",
+    "fact_engine_input_changed": false,
+    "thumbnail_or_signature_changed": false,
+    "semantic_approval": false,
+    "holds": "목록 및 F004 표시만 반영. 주문 업장/Fact의 엔진 정본 변경과 현재 판매 가격 계약은 HOLD."
+  },
+  {
+    "customer": "A12",
+    "source_verified": "PASS: previously read original unchanged; SHA rechecked",
+    "source_anchors": [
+      {
+        "reference": "customers/A12/corpus.json",
+        "sha256": "f7e3533242b22a51f13352bfc03ac3dd77de6f799c797c63c6971ff830f311dd"
+      }
+    ],
+    "verified_posts": [
+      "A12_P014"
+    ],
+    "before": "사용 가능한 후기 사실 24개 · 개인 성향과 방문 조건으로 선택",
+    "after": "1박 동안 조식·수영은 건너뛰고 포장 계획을 피자힐 매장 식사로 바꾼 부부",
+    "fields": [
+      "list_line"
+    ],
+    "chrome_before_after": "PASS",
+    "run_id": "8452dd90c9957895e3d50fdd1fcacee2bdc4dd2c634c822f601f4b7b75c08b9c",
+    "replay_judgment_and_input_match": "PASS",
+    "ledger_sku_quantity_price_aggregate_match": "PASS; relocation-derived IDs differ",
+    "fact_engine_input_changed": false,
+    "thumbnail_or_signature_changed": false,
+    "semantic_approval": false,
+    "holds": "P014 표시만 반영. 다른 글의 F008/F009를 같은 방문 근거로 사용하지 않음."
+  },
+  {
+    "customer": "N03",
+    "source_verified": "PASS: previously read original unchanged; SHA rechecked",
+    "source_anchors": [
+      {
+        "reference": "customers/N03/corpus.json",
+        "sha256": "77dd2a10ad46832a8157a60674948d5758e4f49b946cd82f72082f2c796b0b40"
+      }
+    ],
+    "verified_posts": [
+      "N03_P009"
+    ],
+    "before": "사용 가능한 후기 사실 15개 · 개인 성향과 방문 조건으로 선택",
+    "after": "회사 제공 2박을 가족이 나눠 쓰고 피자힐에서는 자리 안내 뒤 나온 방문",
+    "fields": [
+      "list_line"
+    ],
+    "chrome_before_after": "PASS",
+    "run_id": "da85a4c13c567888194fe89ac05e15d4ed640fc7aae829ca1d2c7c5e6770a2c3",
+    "replay_judgment_and_input_match": "PASS",
+    "ledger_sku_quantity_price_aggregate_match": "PASS; relocation-derived IDs differ",
+    "fact_engine_input_changed": false,
+    "thumbnail_or_signature_changed": false,
+    "semantic_approval": false,
+    "holds": "P009 표시만 반영. P051/P058 Fact 혼합 제외; 엔진 사건·행동 추가 HOLD."
+  },
+  {
+    "customer": "WH-00532",
+    "source_verified": "PASS: previously read original unchanged; SHA rechecked",
+    "source_anchors": [
+      {
+        "reference": "customers/WH-00532/corpus.json",
+        "sha256": "d7300dd65efaff7cd71731abdf619f278556d08d3fcb2e3c4fbbe1f549646f9b"
+      }
+    ],
+    "verified_posts": [
+      "WH-00532_P001"
+    ],
+    "before": "사용 가능한 후기 사실 70개 · 개인 성향과 방문 조건으로 선택",
+    "after": "특가로 예약한 더글라스에서 친구 셋이 1박 동안 시설을 둘러본 방문",
+    "fields": [
+      "list_line"
+    ],
+    "chrome_before_after": "PASS",
+    "run_id": "809607a048d2ff7e552365bffa4dc290e8b199d0068fe56126479d5e5705e2e0",
+    "replay_judgment_and_input_match": "PASS",
+    "ledger_sku_quantity_price_aggregate_match": "PASS; relocation-derived IDs differ",
+    "fact_engine_input_changed": false,
+    "thumbnail_or_signature_changed": false,
+    "semantic_approval": false,
+    "holds": "목록 표시만 확인. 1인 휴식 이미지와 친구 셋 방문 표현 일치 검수 HOLD."
+  },
+  {
+    "customer": "A08",
+    "source_verified": "PASS: previously read original unchanged; SHA rechecked",
+    "source_anchors": [
+      {
+        "reference": "profile-review-sources/A08-02.txt",
+        "sha256": "de711d160368c7229baaf2885e83279e5c954202d347b640722dacce3e992684"
+      },
+      {
+        "reference": "profile-review-sources/A08-03.txt",
+        "sha256": "a8b53559124b17f157867817bd624b322b97763761207db9b76ad1ce75b23805"
+      }
+    ],
+    "verified_posts": [
+      "A08-02",
+      "A08-03"
+    ],
+    "before": "자연 조망·독서·명상·가벼운 운동을 함께 배치하는 휴식",
+    "after": "부부가 비스타 2박 동안 플로팅 명상과 요가를 경험한 휴식 방문",
+    "fields": [
+      "list_line"
+    ],
+    "chrome_before_after": "PASS",
+    "run_id": "2102b8e3ab81a806902e43bba6a46ce4c41ec9487c1b492b0741db67388245c3",
+    "replay_judgment_and_input_match": "PASS",
+    "ledger_sku_quantity_price_aggregate_match": "PASS; relocation-derived IDs differ",
+    "fact_engine_input_changed": false,
+    "thumbnail_or_signature_changed": false,
+    "semantic_approval": false,
+    "holds": "목록 표시만 확인. 스파 이미지와 명상·요가 장면 일치 의미 검수 HOLD."
+  },
+  {
+    "customer": "A06",
+    "source_verified": "PASS: previously read original unchanged; SHA rechecked",
+    "source_anchors": [
+      {
+        "reference": "customers/A06/corpus.json",
+        "sha256": "0fe5fe88c8b2214f4a96408c4535417e9091534d8e24651d9d9af2ac8d8ea3c1"
+      }
+    ],
+    "verified_posts": [
+      "A06_P001"
+    ],
+    "before": "사용 가능한 후기 사실 11개 · 개인 성향과 방문 조건으로 선택",
+    "after": "혼자 4박 출장하며 호텔 안에서 산책한 고객",
+    "fields": [
+      "list_line"
+    ],
+    "chrome_before_after": "PASS",
+    "run_id": "0483122bb3088d9e98a09d69736d08c731c734f6a4f5e66d283874990ebea215",
+    "replay_judgment_and_input_match": "PASS",
+    "ledger_sku_quantity_price_aggregate_match": "PASS; relocation-derived IDs differ",
+    "fact_engine_input_changed": false,
+    "thumbnail_or_signature_changed": false,
+    "semantic_approval": false,
+    "holds": "단일 출장 원문 확인. 반복 성향 HOLD. 2인 썸네일과 1인 원문 모순 유지: 임의 교체 금지."
+  },
+  {
+    "customer": "A26",
+    "source_verified": "PASS: previously read original unchanged; SHA rechecked",
+    "source_anchors": [
+      {
+        "reference": "customers/A26/corpus.json",
+        "sha256": "01aefe54cbb67df225c8b2dabebf5a6d56959a905d8775cacabc2418bc4174ed"
+      }
+    ],
+    "verified_posts": [
+      "A26_P011"
+    ],
+    "before": "사용 가능한 후기 사실 13개 · 개인 성향과 방문 조건으로 선택",
+    "after": "저녁 수영과 다음 날 아침 러닝을 나눠 즐긴 호캉스",
+    "fields": [
+      "list_line"
+    ],
+    "chrome_before_after": "PASS",
+    "run_id": "664a982fb9eaa4eb2f38990a986629066ca4b20a7fbb9b52f010a349ad35bd4b",
+    "replay_judgment_and_input_match": "PASS",
+    "ledger_sku_quantity_price_aggregate_match": "PASS; relocation-derived IDs differ",
+    "fact_engine_input_changed": false,
+    "thumbnail_or_signature_changed": false,
+    "semantic_approval": false,
+    "holds": "목록 표시만 확인. 객실 휴식 이미지와 운동 장면 일치 의미 검수 HOLD."
+  },
+  {
+    "customer": "N13",
+    "source_verified": "PASS: previously read original unchanged; SHA rechecked",
+    "source_anchors": [
+      {
+        "reference": "customers/N13/corpus.json",
+        "sha256": "62b4f2f1c2c8e245542c8c75f7bbaab75eb79c107deb4958f08f3b2130229d60"
+      }
+    ],
+    "verified_posts": [
+      "N13_P010"
+    ],
+    "before": "사용 가능한 후기 사실 16개 · 개인 성향과 방문 조건으로 선택",
+    "after": "연휴에 이용권을 선결제하고 골프 연습장을 찾은 고객",
+    "fields": [
+      "list_line"
+    ],
+    "chrome_before_after": "PASS",
+    "run_id": "b85745464f9b400f4741de8d7f776e8816b7c35db7bedf2603e3a6755714d11f",
+    "replay_judgment_and_input_match": "PASS",
+    "ledger_sku_quantity_price_aggregate_match": "PASS; relocation-derived IDs differ",
+    "fact_engine_input_changed": false,
+    "thumbnail_or_signature_changed": false,
+    "semantic_approval": false,
+    "holds": "골프 장면은 부합하나 동행 인원·반복 성향·썸네일 전체 의미 승인 HOLD."
+  }
+]

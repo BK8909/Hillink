@@ -1,0 +1,172 @@
+{
+  "status": "READY_FOR_INDEPENDENT_AND_USER_REVIEW_NOT_FROZEN",
+  "branch": "review/profile45-source-1106",
+  "base_head": "532f514821adc78ad8663c0413f8a7add07bc48b",
+  "representative_delivery_preserved": "3f6ec49839921b7af2015950c231826182933291",
+  "review_url": "http://127.0.0.1:9028/",
+  "scope": "표시 문구 두 개·중복 하위 설명 정리·등록 고객 카드 누락 수정. 엔진 Fact·계수·정책·SKU·썸네일 수정 없음. blog43의 근거 없는 독행 표시 유형을 미확인으로 정정.",
+  "profile_result": {
+    "reviewed": 45,
+    "display_applied": 45,
+    "selected_original_source_reconciled": 43,
+    "source_limited_hold": 2,
+    "original_eight_list_corrections_preserved": true,
+    "cards_before": 42,
+    "cards_after": 45,
+    "restored": [
+      "blog41",
+      "blog42",
+      "blog43"
+    ],
+    "No.0009_accessible": true,
+    "runnable": 28,
+    "read_only": 17,
+    "exact_duplicate_list_signature_pairs": 0,
+    "whole_customer_human_approvals_added": 0,
+    "support_duplicates_removed_for": [
+      "A03",
+      "A04",
+      "A07",
+      "A08"
+    ],
+    "blog43_companion_display": "휴식 · 동행 미확인; 혼자 휴식 분류 제외, 썸네일 및 엔진 입력 유지"
+  },
+  "historical_tests_reused": {
+    "head": "532f514821adc78ad8663c0413f8a7add07bc48b",
+    "python_pass": 721,
+    "python_existing_fail": 12,
+    "python_skip": 1,
+    "node_pass": 245,
+    "claim": "이전 기록 재사용. 이번 HEAD의 전체 시험 결과로 기재하지 않음."
+  },
+  "existing_failures": [
+    {
+      "cause": "Fact ID 투영 계약",
+      "count": 1
+    },
+    {
+      "cause": "과거 방문 정책·금액 봉인 사례",
+      "count": 6
+    },
+    {
+      "cause": "과거 원장 합계",
+      "count": 1
+    },
+    {
+      "cause": "M4 연구 거래 fixture",
+      "count": 1
+    },
+    {
+      "cause": "OPX 봉인 기준",
+      "count": 2
+    },
+    {
+      "cause": "제품 패키지에 redteam_cl19 과거 검수 모듈 없음",
+      "count": 1
+    }
+  ],
+  "holds": [
+    {
+      "scope": "blog42·blog43",
+      "status": "HOLD",
+      "detail": "수집 원문 대응 불충분. 기존 요약 존재만 표시; 외부 경험을 워커힐 경험으로 승인하지 않음."
+    },
+    {
+      "scope": "45명 전체 의미·썸네일·동행 세부 승인",
+      "status": "HOLD",
+      "detail": "선택 문구의 원문 대조와 전체 프로필 의미 승인은 다름. 기존 썸네일 유지."
+    },
+    {
+      "scope": "슬기 789행",
+      "status": "HOLD",
+      "detail": "전수 의미 대조 미완료. 28명 저장 원장 L5~L1 검증과 별개."
+    },
+    {
+      "scope": "N15-F004 및 A27·N03·N25·A20 사건 정정",
+      "status": "HOLD",
+      "detail": "표시 외 엔진 Fact·연도·방문·예약/취소 정정은 미적용."
+    },
+    {
+      "scope": "전략 Replay",
+      "status": "FAIL_EXISTING",
+      "detail": "정수/실수 JSON 직렬화 차이로 입력 해시와 파생 ID 불일치(REPLAY_MISS). 같은 방문·소비는 전략 입력으로 연결되나 새 제안 0, 새 A/B 실행·효과 미검증."
+    },
+    {
+      "scope": "기존 Python 12 실패·캐시 SKIP",
+      "status": "FAIL_EXISTING_AND_SKIP",
+      "detail": "이번 문구 작업에서 기대값·봉인 SHA·엔진을 수정하지 않음."
+    }
+  ],
+  "llm_validation": "기존 실호출 검증: V16 완료 28명/36방문, 판단312개(LIVE301·Replay11), 실패 시도2건과 의미 HOLD 보존. 당시 누적1933회·비용상한 추정11.371026945달러는 당시 보고치이며 현재 비용·청구액 아님. 이전 프로필 검수의 A03·A12·N15는 무과금 Replay였다. 이번 두 문구 보정에서는 LLM 실호출과 방문 Replay 모두 재실행하지 않고 기존 기록을 재사용했다.",
+  "approval": "ChatGPT 독립 검수 후 사용자의 실제 화면 승인 대기. 동결·제출·대표 저장소 동기화 안 함.",
+  "code_review_ref": "refs/heads/review/profile45-source-1106",
+  "revision_binding": "이 보고서가 포함된 브랜치 HEAD를 git rev-parse HEAD로 확인. 실제 서버 /api/build 및 로컬 final-version.json과 일치해야 한다.",
+  "independent_review_base_head": "2ae808c4ffc293a5593e5c5ecd840d686829ea75",
+  "prior_profile_review_checks": {
+    "python_display": {
+      "pass": 8,
+      "fail": 0
+    },
+    "python_http_boundary": {
+      "pass": 32,
+      "fail": 0
+    },
+    "node_selected_connections": {
+      "pass": 37,
+      "fail": 0
+    },
+    "chrome_profiles": {
+      "cards": 45,
+      "details": 45,
+      "browser_errors": 0
+    },
+    "representative_replay_customers": [
+      "A03",
+      "A12",
+      "N15"
+    ],
+    "new_paid_calls": 0,
+    "A03_run_id": "413ea9387d99edc079b76b9374be2b96c7365d5ba8d3c4439b5c1eb833cd6c3a",
+    "A03_policy": "LLM_AUTONOMOUS_CUSTOMER_V16",
+    "A03_source": "CACHE_REPLAY",
+    "A03_RPG_evidence_ledger_strategy_input_same_run": true,
+    "new_failures_in_executed_checks": 0,
+    "full_suite_rerun": false
+  },
+  "minimal_tests": {
+    "scope": "A08·N13 표시 보정 후 최소 검수",
+    "status": "PASS",
+    "node_mapping_and_connections": {
+      "pass": 37,
+      "fail": 0
+    },
+    "chrome_customers": [
+      "A08",
+      "N13"
+    ],
+    "python_rerun": false,
+    "http_rerun": false,
+    "live_llm_rerun": false,
+    "visit_replay_rerun": false,
+    "fresh_clone_rerun": false,
+    "new_paid_calls": 0,
+    "profile_mapping": {
+      "customers": 45,
+      "unique_ids": 45,
+      "list_lines_unchanged": 45,
+      "duplicate_list_signature_pairs": 0
+    },
+    "chrome": {
+      "customers": 2,
+      "errors": 0,
+      "layout_overflow": 0,
+      "log": "followup-after/chrome.json"
+    },
+    "new_failures": 0
+  },
+  "existing_failure_count_note": "현재 기준 기존 실패는 12건이다. 과거 11건 목록에 redteam_cl19 모듈 부재로 실패하는 CL19Followup.test_redteam_validator_rejects_violations 1건이 더 확인됐다. 이 항목은 기존 인계본과 제출 후보 모두에 있어 이번 프로필 변경의 신규 실패가 아니다.",
+  "followup": "independent-followup.json",
+  "reviewed_display_manifest_sha256": "2bf100caf15ba4c7860ad8d6b84915b87286bfee69b877eaaff1aab6c535fa11",
+  "chrome_capture_head": "0c9e801a55357f94f627261bdae56b442081e4ae",
+  "current_revision_note": "Chrome 검수 후 커밋은 문서·화면 근거만 갱신한다. 현재 HEAD의 표시 데이터 SHA가 reviewed_display_manifest_sha256와 일치해야 한다."
+}

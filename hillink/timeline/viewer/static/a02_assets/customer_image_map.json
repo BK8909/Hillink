@@ -1,0 +1,771 @@
+{
+  "version": "a02-45-images-20261031",
+  "base_sha": "2b9875b1bebe8d99ed5289a7e594a0e71711cf86",
+  "customers": [
+    {
+      "customer_id": "A01",
+      "display_no": "0001",
+      "thumbnail": "/static/persona_thumbs/%EA%B0%80%EC%A1%B1_%EC%98%81%EC%9C%A0%EC%95%84_%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg",
+      "portrait_key": "family_kid2",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": 4,
+        "origin": "REVIEW_OBSERVED",
+        "label": "가족 4인 · 아이 동반",
+        "scen": 4
+      },
+      "previous_thumbnail": "/static/persona_thumbs/%EA%B0%80%EC%A1%B1_%EC%98%81%EC%9C%A0%EC%95%84_%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg",
+      "previous_avatar_key": "family_kid2",
+      "mapping_kind": "preserved",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "A02",
+      "display_no": "0002",
+      "thumbnail": "/static/persona_thumbs/%EA%B0%80%EC%A1%B1_%EB%B6%80%EB%AA%A8%EB%8F%99%EB%B0%98_%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg",
+      "portrait_key": "neutral_group_3",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": 3,
+        "origin": "REVIEW_OBSERVED",
+        "label": "본인 + 부모 3인",
+        "scen": 3
+      },
+      "previous_thumbnail": "/static/persona_thumbs/%EA%B0%80%EC%A1%B1_%EB%B6%80%EB%AA%A8%EB%8F%99%EB%B0%98_%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "A03",
+      "display_no": "0003",
+      "thumbnail": "/static/a02_assets/thumbs/no0003_A03_couple_user_20261030.png",
+      "portrait_key": "couple_vacation",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": 2,
+        "origin": "REVIEW_OBSERVED",
+        "label": "커플 2인",
+        "scen": 2
+      },
+      "previous_thumbnail": "/static/a02_assets/thumbs/no0003_A03_couple_user_20261030.png",
+      "previous_avatar_key": "couple_vacation",
+      "mapping_kind": "preserved",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "A04",
+      "display_no": "0004",
+      "thumbnail": "/static/persona_thumbs/%ED%98%BC%EC%9E%90%ED%9C%B4%EC%8B%9D_%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg",
+      "portrait_key": "solo_casual",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": 1,
+        "origin": "REVIEW_OBSERVED",
+        "label": "혼자",
+        "scen": 1
+      },
+      "previous_thumbnail": "/static/persona_thumbs/%ED%98%BC%EC%9E%90%ED%9C%B4%EC%8B%9D_%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg",
+      "previous_avatar_key": "solo_casual",
+      "mapping_kind": "preserved",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "A05",
+      "display_no": "0005",
+      "thumbnail": "/static/persona_thumbs/%EC%B9%9C%EA%B5%AC%EB%AA%A8%EC%9E%84_%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg",
+      "portrait_key": "friends_neutral_3",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": 3,
+        "origin": "REVIEW_OBSERVED",
+        "label": "친구 3인",
+        "scen": 3
+      },
+      "previous_thumbnail": "/static/persona_thumbs/%EC%B9%9C%EA%B5%AC%EB%AA%A8%EC%9E%84_%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "A07",
+      "display_no": "0006",
+      "thumbnail": "/static/persona_thumbs/%EB%AF%B8%EC%8B%9D_%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg",
+      "portrait_key": "couple_wine",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": 2,
+        "origin": "REVIEW_OBSERVED",
+        "label": "부부 2인",
+        "scen": 2
+      },
+      "previous_thumbnail": "/static/persona_thumbs/%EB%AF%B8%EC%8B%9D_%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg",
+      "previous_avatar_key": "couple_wine",
+      "mapping_kind": "preserved",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "A08",
+      "display_no": "0007",
+      "thumbnail": "/static/persona_thumbs/%EC%9B%B0%EB%8B%88%EC%8A%A4_%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg",
+      "portrait_key": "user_no0023",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": 2,
+        "origin": "REVIEW_OBSERVED",
+        "label": "배우자 동행 2인(후기 사실)",
+        "scen": 2
+      },
+      "previous_thumbnail": "/static/persona_thumbs/%EC%9B%B0%EB%8B%88%EC%8A%A4_%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "A10",
+      "display_no": "0008",
+      "thumbnail": "/static/persona_thumbs/%ED%96%89%EC%82%AC%EC%B2%B4%ED%97%98_%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg",
+      "portrait_key": "friends_2f",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": 2,
+        "origin": "REVIEW_OBSERVED",
+        "label": "친구 2인",
+        "scen": 2
+      },
+      "previous_thumbnail": "/static/persona_thumbs/%ED%96%89%EC%82%AC%EC%B2%B4%ED%97%98_%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg",
+      "previous_avatar_key": "friends_2f",
+      "mapping_kind": "preserved",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "blog41",
+      "display_no": "0009",
+      "thumbnail": "/static/persona_thumbs/%EC%BB%A4%ED%94%8C_%EA%B8%B0%EB%85%90%EC%9D%BC_%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg",
+      "portrait_key": "couple_vacation",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": 2,
+        "origin": "USER_CONFIRMED",
+        "label": "커플 동행 2인(사용자 확인 10/24)",
+        "scen": 2
+      },
+      "previous_thumbnail": "/static/persona_thumbs/%EC%BB%A4%ED%94%8C_%EA%B8%B0%EB%85%90%EC%9D%BC_%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg",
+      "previous_avatar_key": "couple_vacation",
+      "mapping_kind": "preserved",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "blog42",
+      "display_no": "0010",
+      "thumbnail": "/static/a02_assets/thumbs/no0010_blog42_user_20261028.png",
+      "portrait_key": "user_no0021",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": 2
+      },
+      "previous_thumbnail": "/static/a02_assets/thumbs/no0010_blog42_user_20261028.png",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "blog43",
+      "display_no": "0011",
+      "thumbnail": "/static/a02_assets/thumbs/no0011_blog43_user_20261028.png",
+      "portrait_key": "user_no0026",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": 2
+      },
+      "previous_thumbnail": "/static/a02_assets/thumbs/no0011_blog43_user_20261028.png",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "A06",
+      "display_no": "0012",
+      "thumbnail": "/static/a02_assets/thumbs/no0017_A06_user_20261028.png",
+      "portrait_key": "user_no0024",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/a02_assets/thumbs/no0017_A06_user_20261028.png",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "A12",
+      "display_no": "0013",
+      "thumbnail": "/static/persona_gallery/PERSONA_SCENE_007.webp",
+      "portrait_key": "user_no0021",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/persona_gallery/PERSONA_SCENE_007.webp",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "A19",
+      "display_no": "0014",
+      "thumbnail": "/static/persona_gallery/PERSONA_SCENE_010_p36.webp",
+      "portrait_key": "user_no0028",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/persona_gallery/PERSONA_SCENE_010_p36.webp",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "A26",
+      "display_no": "0015",
+      "thumbnail": "/static/a02_assets/thumbs/no0025_A26_user_20261028.png",
+      "portrait_key": "user_no0028",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/a02_assets/thumbs/no0025_A26_user_20261028.png",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "N03",
+      "display_no": "0016",
+      "thumbnail": "/static/a02_assets/thumbs/no0028_N03_user_20261028.png",
+      "portrait_key": "user_no0026",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/a02_assets/thumbs/no0028_N03_user_20261028.png",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "N10",
+      "display_no": "0017",
+      "thumbnail": "/static/persona_gallery/PERSONA_SCENE_023_p36.webp",
+      "portrait_key": "user_no0024",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/persona_gallery/PERSONA_SCENE_023_p36.webp",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "N13",
+      "display_no": "0018",
+      "thumbnail": "/static/a02_assets/thumbs/no0035_N13_photo_20261026.webp",
+      "portrait_key": "user_no0026",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/a02_assets/thumbs/no0035_N13_photo_20261026.webp",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "N15",
+      "display_no": "0019",
+      "thumbnail": "/static/a02_assets/thumbs/no0019_N15_acd9ef01ac6c.webp",
+      "portrait_key": "user_no0021",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/a02_assets/thumbs/no0036_N15_user_20261028.png",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "N23",
+      "display_no": "0020",
+      "thumbnail": "/static/a02_assets/thumbs/no0020_N23_8aeba094542c.webp",
+      "portrait_key": "user_no0028",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/a02_assets/thumbs/no0038_N23_user_20261028.png",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "WH-00131",
+      "display_no": "0021",
+      "thumbnail": "/static/a02_assets/thumbs/no0021_WH-00131_e4014ea29298.webp",
+      "portrait_key": "user_no0021",
+      "native_avatar_key": "user_no0021",
+      "source_party": {
+        "n": null,
+        "origin": null,
+        "label": null,
+        "scen": null
+      },
+      "previous_thumbnail": null,
+      "previous_avatar_key": null,
+      "mapping_kind": "customer_supplied",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "WH-00265",
+      "display_no": "0022",
+      "thumbnail": "/static/a02_assets/thumbs/no0022_WH-00265_09e0602df728.webp",
+      "portrait_key": "user_no0022_single",
+      "native_avatar_key": "user_no0022",
+      "source_party": {
+        "n": null,
+        "origin": null,
+        "label": null,
+        "scen": null
+      },
+      "previous_thumbnail": null,
+      "previous_avatar_key": null,
+      "mapping_kind": "customer_supplied",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "WH-00276",
+      "display_no": "0023",
+      "thumbnail": "/static/a02_assets/thumbs/no0023_WH-00276_9be95237cc35.webp",
+      "portrait_key": "user_no0023_single",
+      "native_avatar_key": "user_no0023",
+      "source_party": {
+        "n": null,
+        "origin": null,
+        "label": null,
+        "scen": null
+      },
+      "previous_thumbnail": null,
+      "previous_avatar_key": null,
+      "mapping_kind": "customer_supplied",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "WH-00386",
+      "display_no": "0024",
+      "thumbnail": "/static/a02_assets/thumbs/no0024_WH-00386_6f5401a2aa1c.webp",
+      "portrait_key": "user_no0024",
+      "native_avatar_key": "user_no0024",
+      "source_party": {
+        "n": null,
+        "origin": null,
+        "label": null,
+        "scen": null
+      },
+      "previous_thumbnail": null,
+      "previous_avatar_key": null,
+      "mapping_kind": "customer_supplied",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "WH-00392",
+      "display_no": "0025",
+      "thumbnail": "/static/a02_assets/thumbs/no0025_WH-00392_user_20261031.webp",
+      "portrait_key": "user_no0025_single",
+      "native_avatar_key": "user_no0025",
+      "source_party": {
+        "n": null,
+        "origin": null,
+        "label": null,
+        "scen": null
+      },
+      "previous_thumbnail": null,
+      "previous_avatar_key": null,
+      "mapping_kind": "customer_supplied",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "WH-00410",
+      "display_no": "0026",
+      "thumbnail": "/static/a02_assets/thumbs/no0026_WH-00410_user_20261031.webp",
+      "portrait_key": "user_no0026",
+      "native_avatar_key": "user_no0026",
+      "source_party": {
+        "n": null,
+        "origin": null,
+        "label": null,
+        "scen": null
+      },
+      "previous_thumbnail": null,
+      "previous_avatar_key": null,
+      "mapping_kind": "customer_supplied",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "WH-00491",
+      "display_no": "0027",
+      "thumbnail": "/static/a02_assets/thumbs/no0027_WH-00491_user_20261031.webp",
+      "portrait_key": "user_no0027_single",
+      "native_avatar_key": "user_no0027",
+      "source_party": {
+        "n": null,
+        "origin": null,
+        "label": null,
+        "scen": null
+      },
+      "previous_thumbnail": null,
+      "previous_avatar_key": null,
+      "mapping_kind": "customer_supplied",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "WH-00532",
+      "display_no": "0028",
+      "thumbnail": "/static/a02_assets/thumbs/no0028_WH-00532_user_20261031.webp",
+      "portrait_key": "user_no0028",
+      "native_avatar_key": "user_no0028",
+      "source_party": {
+        "n": null,
+        "origin": null,
+        "label": null,
+        "scen": null
+      },
+      "previous_thumbnail": null,
+      "previous_avatar_key": null,
+      "mapping_kind": "customer_supplied",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "A13",
+      "display_no": "0029",
+      "thumbnail": "/static/a02_assets/thumbs/no0019_A13_user_20261028.png",
+      "portrait_key": "user_no0028",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/a02_assets/thumbs/no0019_A13_user_20261028.png",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "A14",
+      "display_no": "0030",
+      "thumbnail": "/static/persona_gallery/PERSONA_SCENE_009_p36.webp",
+      "portrait_key": "user_no0026",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/persona_gallery/PERSONA_SCENE_009_p36.webp",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "A20",
+      "display_no": "0031",
+      "thumbnail": "/static/persona_gallery/PERSONA_SCENE_011_p36.webp",
+      "portrait_key": "user_no0028",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/persona_gallery/PERSONA_SCENE_011_p36.webp",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "A22",
+      "display_no": "0032",
+      "thumbnail": "/static/persona_gallery/PERSONA_SCENE_012_p36.webp",
+      "portrait_key": "user_no0024",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/persona_gallery/PERSONA_SCENE_012_p36.webp",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "A23",
+      "display_no": "0033",
+      "thumbnail": "/static/a02_assets/thumbs/no0024_A23_user_20261028.png",
+      "portrait_key": "user_no0024",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/a02_assets/thumbs/no0024_A23_user_20261028.png",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "A27",
+      "display_no": "0034",
+      "thumbnail": "/static/persona_gallery/PERSONA_SCENE_015_p36.webp",
+      "portrait_key": "user_no0026",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/persona_gallery/PERSONA_SCENE_015_p36.webp",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "A28",
+      "display_no": "0035",
+      "thumbnail": "/static/persona_gallery/PERSONA_SCENE_016_p36.webp",
+      "portrait_key": "user_no0021",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/persona_gallery/PERSONA_SCENE_016_p36.webp",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "N04",
+      "display_no": "0036",
+      "thumbnail": "/static/a02_assets/thumbs/no0029_N04_user_20261028.png",
+      "portrait_key": "user_no0028",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/a02_assets/thumbs/no0029_N04_user_20261028.png",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "N05",
+      "display_no": "0037",
+      "thumbnail": "/static/persona_gallery/PERSONA_SCENE_019.webp",
+      "portrait_key": "user_no0024",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/persona_gallery/PERSONA_SCENE_019.webp",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "N06",
+      "display_no": "0038",
+      "thumbnail": "/static/persona_gallery/PERSONA_SCENE_020_p36.webp",
+      "portrait_key": "user_no0028",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/persona_gallery/PERSONA_SCENE_020_p36.webp",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "N08",
+      "display_no": "0039",
+      "thumbnail": "/static/a02_assets/thumbs/no0032_N08_user_20261028.png",
+      "portrait_key": "user_no0026",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/a02_assets/thumbs/no0032_N08_user_20261028.png",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "N09",
+      "display_no": "0040",
+      "thumbnail": "/static/a02_assets/thumbs/no0033_N09_user_20261028.png",
+      "portrait_key": "user_no0024",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/a02_assets/thumbs/no0033_N09_user_20261028.png",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "N20",
+      "display_no": "0041",
+      "thumbnail": "/static/a02_assets/thumbs/no0037_N20_user_20261028.png",
+      "portrait_key": "user_no0021",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/a02_assets/thumbs/no0037_N20_user_20261028.png",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "N24",
+      "display_no": "0042",
+      "thumbnail": "/static/persona_gallery/PERSONA_SCENE_028_p36.webp",
+      "portrait_key": "user_no0026",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/persona_gallery/PERSONA_SCENE_028_p36.webp",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "N25",
+      "display_no": "0043",
+      "thumbnail": "/static/persona_gallery/PERSONA_SCENE_029_p36.webp",
+      "portrait_key": "user_no0028",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/persona_gallery/PERSONA_SCENE_029_p36.webp",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "N27",
+      "display_no": "0044",
+      "thumbnail": "/static/persona_gallery/PERSONA_SCENE_030_p36.webp",
+      "portrait_key": "user_no0024",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/persona_gallery/PERSONA_SCENE_030_p36.webp",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    },
+    {
+      "customer_id": "N32",
+      "display_no": "0045",
+      "thumbnail": "/static/a02_assets/thumbs/no0042_N32_user_20261028.png",
+      "portrait_key": "user_no0026",
+      "native_avatar_key": null,
+      "source_party": {
+        "n": null,
+        "origin": "UNKNOWN",
+        "label": "동행 인원 확인 전",
+        "scen": null
+      },
+      "previous_thumbnail": "/static/a02_assets/thumbs/no0042_N32_user_20261028.png",
+      "previous_avatar_key": null,
+      "mapping_kind": "shared_reuse",
+      "note": "미확인 동행은 대표 캐릭터만 표시; 실행 아바타는 실제 요청 인원으로 결정"
+    }
+  ]
+}

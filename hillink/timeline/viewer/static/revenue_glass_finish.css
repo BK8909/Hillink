@@ -1,0 +1,194 @@
+/* Revenue presentation only: a translucent sheet, raised cards, readable color. */
+#opxView .rev-command-kpis>article,#opxView .rev-console-panel{border-radius:18px}
+#opxView .kpi-total{--kpi-color:#b32f35}#opxView .kpi-fnb{--kpi-color:#a95212}#opxView .kpi-leisure{--kpi-color:#187365}#opxView .kpi-room{--kpi-color:#345da3}
+#opxView .rev-command-kpis strong{color:var(--kpi-color);font-size:29px;font-weight:760;letter-spacing:-.8px;font-variant-numeric:tabular-nums;line-height:1.25}
+#opxView .rev-command-kpis>article{align-items:center;min-height:112px}
+#opxView .rev-command-kpis small{color:#3c3a38;font-weight:650}
+#opxView .rev-command-kpis .rev-metric-icon{color:var(--kpi-color);background:color-mix(in srgb,var(--kpi-color) 8%,#fff);border:1px solid #fff;box-shadow:inset 0 2px 0 #ffffffd9,0 5px 9px -3px #6c4e3421}
+#opxView .rev-command-kpis>article>div{display:grid;gap:5px}
+#opxView .rev-command-kpis span:not(.rev-metric-icon){color:#69615c}
+#opxView .rev-console-heading h3{font-size:18px;letter-spacing:-.35px}
+#opxView .rev-console-heading h3:before{content:'';display:inline-block;width:3px;height:16px;border-radius:2px;background:#b54a40;margin-right:8px;vertical-align:-2px}
+#opxView .rev-summary-total{gap:10px;align-items:center;padding-bottom:7px}
+#opxView .rev-summary-total>span{font-size:12px;color:#544b44;line-height:1.45}
+#opxView .rev-summary-total b{color:#a93635;font-variant-numeric:tabular-nums;white-space:nowrap;font-size:22px}
+#opxView .rev-analysis-group{--analysis-tone:#587092}
+#opxView [data-analysis-group="product"]{--analysis-tone:#a9662c}#opxView [data-analysis-group="event"]{--analysis-tone:#7d608f}#opxView [data-analysis-group="benefits"]{--analysis-tone:#347e70}#opxView [data-analysis-group="checks"]{--analysis-tone:#6b6e73}
+#opxView .rev-analysis-group>summary{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto 12px;column-gap:8px;row-gap:3px;padding:6px 0 6px 11px;line-height:1.35;align-items:center}
+#opxView .rev-analysis-group>summary:before{content:'';position:absolute;left:0;top:8px;width:3px;height:16px;border-radius:2px;background:var(--analysis-tone)}
+#opxView .rev-analysis-group>summary>small{grid-column:1/-1;color:#45403c;font-size:12px;font-weight:650}
+#opxView .rev-analysis-label{grid-column:1;grid-row:2;font-size:13px;font-weight:650;color:#282b30;overflow-wrap:anywhere}
+#opxView .rev-analysis-value{grid-column:2;grid-row:2;text-align:right;font-size:13px;font-weight:700;color:#30343a;font-variant-numeric:tabular-nums;white-space:nowrap}
+#opxView .rev-analysis-chevron{grid-column:3;grid-row:2;font-size:14px;color:#6c6259}
+#opxView .rev-analysis-body{padding:4px 0 12px 11px;font-size:12px;line-height:1.6}
+#opxView .rev-analysis-foot{font-size:11px;color:#6d655d;line-height:1.5;margin:12px 0 0}
+#opxView .rev-time-legend>span:nth-child(1){color:#4778bc}#opxView .rev-time-legend>span:nth-child(2){color:#c87824}#opxView .rev-time-legend>span:nth-child(3){color:#298873}
+#opxView .rev-spend-chart rect[fill="#5c83a6"]{fill:#5488cf}#opxView .rev-spend-chart rect[fill="#d8a449"]{fill:#e3953e}#opxView .rev-spend-chart rect[fill="#49a39a"]{fill:#43a38d}
+#opxView .rev-spend-chart polyline{stroke:#82736c}#opxView .rev-spend-chart circle[stroke="#b0a99d"]{stroke:#82736c}
+#opxView .rev-axis-label{fill:#655e59}#opxView .rev-chart-hitareas button.on{background:#b05c3e05;box-shadow:inset 0 0 0 1px #a16a4422}
+#opxView .rev-hour-context{color:#544d47;font-variant-numeric:tabular-nums}
+#opxView .rev-compact-sankey .rev-roll-name{fill:#393532}#opxView .rev-compact-sankey .rev-roll-share{fill:#74675c}
+#opxView .rev-roll-node .rev-roll-surface{filter:none;fill:color-mix(in srgb,var(--roll-tone) 9%,#fff);stroke:color-mix(in srgb,var(--roll-tone) 42%,#e7e0d6)}
+#opxView .rev-roll-total .rev-roll-surface{fill:#fbefeb;stroke:#bb7165}
+#opxView .rev-chart-row[data-rev-department="ROOM"]{--venue-tone:#5488cf}#opxView .rev-chart-row[data-rev-department="F&B"]{--venue-tone:#e3953e}#opxView .rev-chart-row[data-rev-department="레저"]{--venue-tone:#43a38d}
+#opxView .rev-chart-track{background:#e7e4e1;box-shadow:inset 0 1px 2px #685e5410}#opxView .rev-chart-track i{box-shadow:inset 0 1px #ffffff42}
+#opxView .rev-board-ledger .rev-compact-transactions{justify-content:flex-start}
+#opxView .rev-board-transaction{background:transparent;padding:11px 0;border-bottom:1px solid #e8e1da;box-shadow:none}
+#opxView .rev-board-transaction time{color:#766c62;font-size:11px}#opxView .rev-board-transaction b{color:#2d3034}#opxView .rev-board-transaction strong{color:#303943;white-space:nowrap;font-variant-numeric:tabular-nums}#opxView .rev-board-transaction small{line-height:1.45;color:#6c645d}
+#opxView .rev-board-transaction.on{background:#f8f0e655}
+#opxView .rev-command :is(button,summary,select):focus-visible{outline:2px solid #9c7054;outline-offset:3px}
+@media(max-width:1100px){#opxView .rev-command-kpis strong{font-size:24px}#opxView .rev-command-kpis>article{padding:15px 13px;gap:10px}#opxView .rev-summary-total b{font-size:20px}}
+@media(max-width:650px){#opxView .rev-root.rev-command{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}#opxView .rev-command-kpis>article{min-height:100px;padding:12px;border-radius:14px}#opxView .rev-command-kpis strong{font-size:21px!important}#opxView .rev-analysis-group>summary{padding-top:6px;padding-bottom:6px;column-gap:5px}#opxView .rev-analysis-label,#opxView .rev-analysis-value{font-size:12px}#opxView .rev-summary-total{align-items:start}#opxView .rev-summary-total b{font-size:20px}#opxView .rev-console-panel{border-radius:14px}}
+
+@media(min-width:651px) and (max-width:1100px){#opxView .rev-board-bottom{grid-template-columns:minmax(0,1fr)}#opxView .rev-board-ledger .rev-compact-transactions{flex:none}#opxView .rev-board-bottom>.rev-console-panel{height:auto}}
+
+@media(max-width:650px){#opxView .rev-compact .rev-board-flow .rev-chart-row{grid-template-columns:minmax(0,1fr) minmax(40px,.6fr) 86px;gap:6px;font-size:12px}#opxView .rev-chart-row>b{font-size:12px}}
+
+.ev-fact-preview>button{border:0;background:none;padding:0;font:inherit;font-size:12px}.ev-fact-preview.is-expanded{min-height:102px}
+.ev-fact-actions{grid-row:6}.ev-trait-link{grid-row:5}
+
+.ev-fact-heading{min-height:24px}.ev-fact-tags{min-height:20px;margin:6px 0}.ev-fact-preview:not(:has(button:not([hidden]))){min-height:80px;padding-bottom:0}.ev-fact-card{padding:16px}
+
+/* One complete board at desktop height; detail views retain natural expansion. */
+#opxView .rev-command-head h2{background:linear-gradient(180deg,#626469 0%,#292c32 32%,#11141a 55%,#30333a 72%,#171a20 100%);background-clip:text;-webkit-background-clip:text;color:transparent;filter:drop-shadow(0 1px 0 #ffffffc9) drop-shadow(0 1px 1px #30291f38);font-weight:800;letter-spacing:-.6px}
+#opxView .rev-board-time .rev-roll-tabs{flex-wrap:wrap;gap:12px}
+#opxView .rev-board-time .rev-roll-tabs button{font-size:14px}
+#opxView .rev-board-flow>.rev-chart{margin-top:0}
+#opxView .rev-board-time>.rev-compact-sankey{min-width:680px}
+#opxView .rev-board-bottom>.rev-board-time{overflow-x:auto}
+@media(min-width:1101px){
+ main.opx>#opxView{padding:18px 24px}
+ #opxView .rev-root.rev-command{max-width:1392px;margin:0 auto;padding:14px 18px;border-radius:24px}
+ #opxView .rev-command-head{padding-bottom:7px;min-height:44px;gap:10px}
+ #opxView .rev-heading-main{display:flex;align-items:center;gap:16px;min-width:0}
+ #opxView .rev-command-head h2{white-space:nowrap;margin:0;font-size:22px}
+ #opxView .rev-context-chips{margin:0;gap:4px 0;line-height:1.5}
+ #opxView .rev-command-tools .cf-btn{padding:7px 12px;min-height:32px}
+ #opxView .rev-command-kpis{margin:10px 0;gap:12px}
+ #opxView .rev-command-kpis>article{min-height:86px;padding:6px 14px}
+ #opxView .rev-board-middle,#opxView .rev-board-bottom{grid-template-columns:minmax(0,2.15fr) minmax(340px,1fr);gap:12px}
+ #opxView .rev-board-middle{margin-bottom:12px}
+ #opxView .rev-console-panel{padding:12px 16px}
+ #opxView .rev-console-heading{margin-bottom:6px;min-height:25px;gap:8px}
+ #opxView .rev-console-heading h3{font-size:16px}
+ #opxView .rev-analysis-group>summary{padding-top:3px;padding-bottom:3px;row-gap:1px;line-height:1.25}
+ #opxView .rev-summary-total{padding-bottom:3px}
+ #opxView .rev-analysis-foot{margin-top:6px;line-height:1.3}
+ #opxView .rev-board-flow .rev-chart-row{padding:4px 0;grid-template-columns:minmax(130px,1fr) minmax(80px,1.3fr) 100px}
+ #opxView .rev-board-flow .rev-chart-label{gap:1px}
+ #opxView .rev-board-transaction{padding:6px 0}
+ #opxView .rev-compact-sankey{height:260px}
+ #opxView .rev-board-bottom .rev-spend-chart{min-height:190px}
+ #opxView .rev-board-footer{padding-top:6px;line-height:1.4}
+}
+@media(max-width:650px){
+ #opxView .rev-board-time .rev-roll-tabs{gap:8px}
+ #opxView .rev-board-time .rev-roll-tabs button{font-size:12px}
+ #opxView .rev-board-flow .rev-chart-row{grid-template-columns:minmax(0,1fr) minmax(40px,.6fr) 86px;gap:6px}
+}
+@media(min-width:1101px){
+ #opxView #revenueContent{padding:0}
+ #opxView .rev-board-middle,#opxView .rev-board-bottom{margin-top:10px}
+ #opxView .rev-board-middle{margin-bottom:10px}
+ #opxView .rev-analysis-group>summary>small{line-height:15px}
+ #opxView .rev-analysis-group>summary .rev-analysis-label,#opxView .rev-analysis-group>summary .rev-analysis-value{line-height:16px}
+ #opxView .rev-analysis-group>summary{min-height:0}
+ #opxView .rev-board-time>.rev-compact-sankey{height:246px}
+}
+@media(min-width:1101px){
+ #opxView .rev-board-footer{margin-top:0}
+ #opxView .rev-board-time>.rev-compact-sankey{height:220px}
+ #opxView .rev-board-transaction{padding:3px 0}
+ #opxView .rev-board-transaction>span{gap:2px}
+ #opxView .rev-board-transaction b{line-height:16px}
+ #opxView .rev-board-transaction small{line-height:14px}
+ #opxView .rev-analysis-group>summary{padding-top:2px;padding-bottom:2px;row-gap:0}
+ #opxView .rev-analysis-chevron{line-height:16px}
+ #opxView .rev-board-choices .rev-console-heading select{padding:3px 8px}
+ #opxView .rev-summary-total{margin-bottom:3px}
+ #opxView .rev-summary-total b{line-height:26px}
+}
+@media(min-width:1101px){main.opx>#opxView{padding-top:14px;padding-bottom:14px}}
+/* Final header: calm typography, one unboxed execution summary. */
+#opxView .rev-command-head{display:block}
+#opxView .rev-heading-main{display:flex;align-items:center;justify-content:space-between;width:100%;gap:14px}
+#opxView .rev-command-head h2{font-family:"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;font-weight:650;letter-spacing:-.7px;background:linear-gradient(180deg,#484d53 0%,#252a31 48%,#171c23 100%);background-clip:text;-webkit-background-clip:text;filter:drop-shadow(0 -.35px 0 #ffffff99) drop-shadow(0 .65px .5px #28242220);margin:0}
+#opxView .rev-run-summary{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 18px;margin-top:3px;color:#625b54;font-size:12px;line-height:1.5}
+#opxView .rev-run-details{margin-left:auto;font-size:11px;color:#70675f}
+#opxView .rev-run-details>summary{cursor:pointer;list-style:none;white-space:nowrap}
+#opxView .rev-run-details>summary:after{content:' ⌄'}
+#opxView .rev-run-details[open]>summary:after{content:' ⌃'}
+#opxView .rev-run-details[open]{flex-basis:100%;margin-left:0}
+#opxView .rev-run-details .rev-context-chips{display:flex;flex-wrap:wrap;gap:5px 16px;margin:7px 0}
+#opxView .rev-run-details .rev-context-chips>span{border:0;border-radius:0;background:none;box-shadow:none;padding:0;color:#625b54;font-size:12px}
+#opxView .rev-run-details .cf-link{font-size:12px}
+@media(min-width:1101px){
+ main.opx>#opxView{padding:12px}
+ #opxView .rev-root.rev-command{max-width:1440px;padding:14px 18px}
+ #opxView .rev-command-head{padding-bottom:4px;min-height:0}
+ #opxView .rev-command-head .cf-btn{min-height:28px;padding:5px 12px}
+ #opxView .rev-command-kpis>article{min-height:90px;padding-top:8px;padding-bottom:8px}
+ #opxView .rev-board-middle,#opxView .rev-board-bottom{gap:14px;margin-top:12px}
+ #opxView .rev-console-panel{padding-top:15px;padding-bottom:15px}
+ #opxView .rev-analysis-group>summary{padding-top:3px;padding-bottom:3px}
+}
+@media(max-width:650px){
+ #opxView .rev-heading-main{align-items:center;gap:8px}
+ #opxView .rev-command-tools{gap:5px}
+ #opxView .rev-command-tools .cf-btn{font-size:11px;padding:6px 9px}
+ #opxView .rev-run-summary{font-size:12px;gap:6px;margin-top:8px}
+ #opxView .rev-run-details{margin-left:0}
+}
+@media(min-width:1101px){
+ #opxView .rev-command-head .cf-btn{height:28px;line-height:16px;padding:5px 12px}
+ #opxView .rev-command-head .rev-heading-main{margin:0}
+ #opxView .rev-run-summary{margin:1px 0 0}
+ #opxView .rev-run-details{margin-top:0;margin-bottom:0}
+}
+@media(min-width:1101px){
+ #opxView .rev-root.rev-command .rev-command-head h2{font-size:22px;line-height:28px}
+ #opxView .rev-run-summary>span,#opxView .rev-run-details>summary{line-height:18px}
+ #opxView .rev-run-details>summary{padding:0;margin:0}
+}
+/* Balanced board spacing and a distinct secondary header control. */
+#opxView .rev-run-details{margin-left:auto}
+#opxView .rev-run-details>summary{text-align:right;padding:3px 0;min-height:24px;box-sizing:border-box}
+#opxView .rev-run-details[open]>summary{width:max-content;margin-left:auto}
+@media(min-width:1101px){
+ #opxView .rev-run-summary{margin-top:10px}
+ #opxView .rev-run-details>summary{padding:3px 0}
+ #opxView .rev-command-head{padding-bottom:0}
+ #opxView .rev-command-kpis{margin:8px 0}
+ #opxView .rev-board-middle,#opxView .rev-board-bottom{margin-top:10px;gap:12px}
+ #opxView .rev-board-footer{padding-top:4px}
+}
+@media(min-width:651px) and (max-width:1100px){#opxView .rev-run-summary{margin-top:10px}}
+@media(min-width:1101px){
+ main.opx>#opxView{padding-top:14px;padding-bottom:12px}
+ #opxView .rev-root.rev-command{padding-top:12px;padding-bottom:12px}
+}
+/* Final Glass surfaces: restored champagne depth with restrained peach edge light.
+   Revenue-only surfaces. Department colours and inner board geometry are untouched. */
+body:has(main.opx .rev-command){display:flex;flex-direction:column}
+body:has(main.opx .rev-command)>header{flex:none}
+body:has(main.opx .rev-command)>main.opx{flex:1;min-height:0;height:auto}
+main.opx>#opxView:has(.rev-command){display:flex;flex-direction:column;padding-block:clamp(18px,4.6dvh,44px);background:
+ radial-gradient(ellipse 58% 65% at 0% 0%,rgba(209,169,137,.25),transparent 72%),
+ radial-gradient(ellipse 46% 62% at 100% 100%,rgba(173,163,158,.14),transparent 72%),
+ radial-gradient(ellipse 65% 90% at 110% -45%,transparent 80%,rgba(255,255,255,.32) 80.15%,transparent 80.5%),
+ linear-gradient(135deg,#e9d9c6 0%,#eee2d2 51%,#e1d1bf 100%)}
+/* Setup and results share a top anchor. Short setup panels must not centre vertically. */
+main.opx>#opxView:has(.rev-command)>#revenueContent{flex:none;margin-block:0;min-width:0}
+#opxView .rev-root.rev-command{background:linear-gradient(145deg,rgba(251,242,229,.76),rgba(242,227,207,.72) 62%,rgba(237,223,205,.78));backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);border:1px solid rgba(255,253,249,.91);box-shadow:inset 0 1px 0 #fffdf9,inset 1px 0 0 rgba(255,253,249,.45),inset 0 -1px 0 rgba(158,139,117,.14),0 28px 52px -26px rgba(112,87,64,.31),0 8px 18px -10px rgba(111,91,73,.18)}
+#opxView .rev-command-kpis>article,#opxView .rev-board-middle>:is(section,aside),#opxView .rev-board-bottom>:is(section,aside){background:linear-gradient(180deg,rgba(255,255,255,.18),transparent 46px),rgba(255,249,239,.86);backdrop-filter:none;-webkit-backdrop-filter:none;border:1px solid rgba(255,255,255,.94);box-shadow:inset 0 1px 0 #fff,inset 1px 0 0 rgba(255,255,255,.55),inset 0 -1px 0 rgba(175,157,135,.12),0 10px 20px -14px rgba(107,85,65,.28),0 3px 7px rgba(107,85,65,.045)}
+#opxView .rev-command-kpis>article{background:linear-gradient(145deg,rgba(255,255,255,.2),transparent 60%),rgba(255,249,239,.88)}
+@media(max-width:650px){#opxView .rev-root.rev-command{backdrop-filter:none;-webkit-backdrop-filter:none}main.opx>#opxView:has(.rev-command){padding-block:12px}}
+/* Room-night amount excluded from the total: stated right under the total KPI (not hidden in details). */
+#opxView .rev-command-kpis .kpi-exclusion,.rev-command-kpis .kpi-exclusion{display:inline-block;justify-self:start;margin-top:1px;padding:1px 8px;border-radius:999px;font-style:normal;font-size:11.5px;font-weight:700;color:#a8312f;background:#cc45441a;border:1px solid #cc454433;line-height:1.45}
+#opxView .rev-command-kpis .kpi-aux,.rev-command-kpis .kpi-aux{color:#8a5a1c!important}
+#opxView .rev-command-kpis>article{height:auto!important;max-height:none!important;overflow:visible!important}#opxView .rev-command-kpis>article span:not(.rev-metric-icon){white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;max-width:100%}#opxView .rev-command-kpis>article>div{gap:3px}
+
+/* ROOM supporting text is one complete line; widen the grid on smaller screens. */
+.rev-command-kpis .kpi-room [data-room-split]{white-space:nowrap;overflow:visible;text-overflow:clip;font-size:clamp(10px,.83vw,12px);letter-spacing:-.25px}
+@media(max-width:1200px){.rev-command-kpis{grid-template-columns:repeat(2,minmax(0,1fr))!important}.rev-command-kpis .kpi-room [data-room-split]{font-size:12px}}
+@media(max-width:600px){.rev-command-kpis{grid-template-columns:minmax(0,1fr)!important}}

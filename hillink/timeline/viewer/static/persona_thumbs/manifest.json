@@ -1,0 +1,118 @@
+{
+ "_about": "build_type_assets.py 가 정식 자산 목록(asset_registry.json) → 파일 이름 유형명 순으로 만든 목록 · 손으로 고치지 않음",
+ "types": [
+  "가족 · 영유아",
+  "가족 · 부모 동반",
+  "커플 · 기념일",
+  "혼자 휴식",
+  "친구 모임",
+  "업무 · 출장",
+  "미식",
+  "웰니스",
+  "스포츠 목적",
+  "행사 체험",
+  "혜택 · 멤버십"
+ ],
+ "type_ids": {
+  "가족 · 영유아": "family_infant",
+  "가족 · 부모 동반": "family_parents",
+  "커플 · 기념일": "couple_anniversary",
+  "혼자 휴식": "solo_rest",
+  "친구 모임": "friends",
+  "업무 · 출장": "business",
+  "미식": "gourmet",
+  "웰니스": "wellness",
+  "스포츠 목적": "sports",
+  "행사 체험": "event",
+  "혜택 · 멤버십": "benefit_membership"
+ },
+ "thumbs": {
+  "items": {
+   "가족 · 부모 동반": "가족_부모동반_썸네일.jpg",
+   "가족 · 영유아": "가족_영유아_썸네일.jpg",
+   "미식": "미식_썸네일.jpg",
+   "스포츠 목적": "스포츠목적_썸네일.jpg",
+   "업무 · 출장": "업무_출장_썸네일.jpg",
+   "웰니스": "웰니스_썸네일.jpg",
+   "친구 모임": "친구모임_썸네일.jpg",
+   "커플 · 기념일": "커플_기념일_썸네일.jpg",
+   "행사 체험": "행사체험_썸네일.jpg",
+   "혜택 · 멤버십": "혜택_멤버십_썸네일.jpg",
+   "혼자 휴식": "혼자휴식_썸네일.jpg"
+  },
+  "report": [
+   {
+    "file": "가족_부모동반_썸네일.jpg",
+    "type": "가족 · 부모 동반",
+    "status": "MANUAL_BY_CONTENT",
+    "user_approved": false
+   },
+   {
+    "file": "가족_영유아_썸네일.jpg",
+    "type": "가족 · 영유아",
+    "status": "MANUAL_BY_CONTENT",
+    "user_approved": false
+   },
+   {
+    "file": "미식_썸네일.jpg",
+    "type": "미식",
+    "status": "MANUAL_BY_CONTENT",
+    "user_approved": false
+   },
+   {
+    "file": "스포츠목적_썸네일.jpg",
+    "type": "스포츠 목적",
+    "status": "MANUAL_BY_CONTENT",
+    "user_approved": false
+   },
+   {
+    "file": "업무_출장_썸네일.jpg",
+    "type": "업무 · 출장",
+    "status": "MANUAL_BY_CONTENT",
+    "user_approved": false
+   },
+   {
+    "file": "웰니스_썸네일.jpg",
+    "type": "웰니스",
+    "status": "MANUAL_BY_CONTENT",
+    "user_approved": false
+   },
+   {
+    "file": "친구모임_썸네일.jpg",
+    "type": "친구 모임",
+    "status": "MANUAL_BY_CONTENT",
+    "user_approved": false
+   },
+   {
+    "file": "커플_기념일_썸네일.jpg",
+    "type": "커플 · 기념일",
+    "status": "MANUAL_BY_CONTENT",
+    "user_approved": false
+   },
+   {
+    "file": "행사체험_썸네일.jpg",
+    "type": "행사 체험",
+    "status": "MANUAL_BY_CONTENT",
+    "user_approved": false
+   },
+   {
+    "file": "혜택_멤버십_썸네일.jpg",
+    "type": "혜택 · 멤버십",
+    "status": "MANUAL_BY_CONTENT",
+    "user_approved": false
+   },
+   {
+    "file": "혼자휴식_썸네일.jpg",
+    "type": "혼자 휴식",
+    "status": "MANUAL_BY_CONTENT",
+    "user_approved": false
+   }
+  ],
+  "unmatched": []
+ },
+ "icons": {
+  "items": {},
+  "report": [],
+  "unmatched": []
+ }
+}

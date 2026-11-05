@@ -1,0 +1,274 @@
+{
+  "OFF-BUFFET": {
+    "url": "https://www.walkerhill.com/vistawalkerhillseoul/kr/dining/TheBuffet",
+    "checked_at_kst": "2026-10-26T13:15:05.779028+09:00",
+    "scope": "10~11월 가격표와 어린이 구분",
+    "limits": "연도 표기가 별도로 보이지 않아 특정 과거/미래 연도에 자동 적용하지 않음. 월·요일·공휴일·연령 조건 확인 필요",
+    "rechecked_at_kst": "2026-10-26T14:39:45.119396+09:00",
+    "recheck_method": "공식 페이지 웹 열람; 서버 원본 수정일/가격 적용일을 열람일로 대체하지 않음",
+    "evidence_location": "운영시간 및 가격 > 10~11월 > 조식/중식; 석식 셀 연결은 보류"
+  },
+  "OFF-GRAND-FAQ": {
+    "url": "https://www.walkerhill.com/grandwalkerhillseoul/customer/FAQ",
+    "checked_at_kst": "2026-10-26T13:15:05.779028+09:00",
+    "scope": "일반 객실2인 수영장/체련장 포함·초과인원·주차·발렛",
+    "limits": "그랜드 FAQ를 비스타 초과인원/모든 객실/재입장 단위에 일반 적용하지 않음",
+    "rechecked_at_kst": "2026-10-26T14:39:45.119396+09:00",
+    "recheck_method": "공식 페이지 웹 열람; 서버 원본 수정일/가격 적용일을 열람일로 대체하지 않음",
+    "evidence_location": "헬스클럽 & 수영장 이용요금 / 주차요금 / 발렛요금 답변"
+  },
+  "OFF-PIZZA": {
+    "url": "https://www.walkerhill.com/dining/PizzaHill",
+    "checked_at_kst": "2026-10-26T13:15:05.779028+09:00",
+    "scope": "피자 포장20%할인 정책",
+    "limits": "전체 메뉴 PDF 접근 실패로 세트/단품 현재 가격은 미재확인. 세트 전체·다른 할인 중복 적용은 미확인",
+    "rechecked_at_kst": "2026-10-26T14:39:45.119396+09:00",
+    "recheck_method": "공식 페이지 웹 열람; 서버 원본 수정일/가격 적용일을 열람일로 대체하지 않음",
+    "evidence_location": "PIZZA HILL 이용안내 > 피자 포장 주문 할인"
+  },
+  "OFF-YOGA": {
+    "url": "https://www.walkerhill.com/vistawalkerhillseoul/Promotion/8418",
+    "checked_at_kst": "2026-10-26T13:15:05.779028+09:00",
+    "scope": "마인드케어 요가 금액·기간·대상·토요일 시간",
+    "limits": "기상/호텔 사정 취소 가능. 과금 인원/포함 패키지·최종 청구 조건 확인 필요",
+    "rechecked_at_kst": "2026-10-26T14:39:45.119396+09:00",
+    "recheck_method": "공식 페이지 웹 열람; 서버 원본 수정일/가격 적용일을 열람일로 대체하지 않음",
+    "evidence_location": "Price / What / When 및 하단 운영 유의사항"
+  },
+  "OFF-EXPERIENCE": {
+    "url": "https://www.walkerhill.com/grandwalkerhillseoul/activity/Experience",
+    "checked_at_kst": "2026-10-26T14:33:08.741505+09:00",
+    "scope": "사우나·테니스·키즈클럽 게시 요금 및 포함 혜택",
+    "limits": "키즈클럽 리뉴얼 안내로 현재 이용 가능 여부 미확인. 테니스 기본요금 시간 단위 불명확",
+    "rechecked_at_kst": "2026-10-26T14:39:45.119396+09:00",
+    "recheck_method": "공식 페이지 웹 열람; 서버 원본 수정일/가격 적용일을 열람일로 대체하지 않음",
+    "evidence_location": "키즈클럽 이용요금/규정; 피트니스 입장제한 사우나; 테네즈 요금표"
+  },
+  "OFF-WALKEE-LIST": {
+    "url": "https://www.walkerhill.com/grandwalkerhillseoul/activity/Walkee",
+    "checked_at_kst": "2026-10-26T14:33:08.741505+09:00",
+    "scope": "프로그램별 게시 기간",
+    "limits": "대상·요일·시간은 개별 상세 페이지 확인; 실제 예약/참여 아님",
+    "rechecked_at_kst": "2026-10-26T14:39:45.119396+09:00",
+    "recheck_method": "공식 페이지 웹 열람; 서버 원본 수정일/가격 적용일을 열람일로 대체하지 않음",
+    "evidence_location": "각 프로그램 기간/가격 목록"
+  },
+  "OFF-GEUM-SEASON": {
+    "url": "https://www.walkerhill.com/grandwalkerhillseoul/Promotion/8835",
+    "checked_at_kst": "2026-10-26T14:33:08.741505+09:00",
+    "scope": "추미진향 코스 가격·기간·최소인원·할인 조건",
+    "limits": "1인 가격인지 과금 단위 추가 확인; 전체 상시 메뉴 검증 아님",
+    "rechecked_at_kst": "2026-10-26T14:39:45.119396+09:00",
+    "recheck_method": "공식 페이지 웹 열람; 서버 원본 수정일/가격 적용일을 열람일로 대체하지 않음",
+    "evidence_location": "Price & Menu / When / Special Benefit 및 주문·할인 유의사항"
+  },
+  "OFF-WALKEE-LIQUEUR": {
+    "url": "https://www.walkerhill.com/grandwalkerhillseoul/Promotion/8824?walkeeYN=Y",
+    "checked_at_kst": "2026-10-26T14:33:08.741505+09:00",
+    "scope": "워커힐을 담다: 시그니처 리큐어 가격·대상·일정·포함사항",
+    "limits": "금액 게시 확인. 1인/회당 과금 명시 여부와 패키지 포함·실제 결제 별도 확인. 기간은 공식 목록과 교차 확인",
+    "rechecked_at_kst": "2026-10-26T14:39:45.119396+09:00",
+    "recheck_method": "공식 페이지 웹 열람; 서버 원본 수정일/가격 적용일을 열람일로 대체하지 않음",
+    "evidence_location": "Price / 대상 / When / 프로그램 내용 및 운영 유의사항; 기간은 OFF-WALKEE-LIST와 대조"
+  },
+  "OFF-WALKEE-TOUR": {
+    "url": "https://www.walkerhill.com/grandwalkerhillseoul/Promotion/8271?walkeeYN=Y",
+    "checked_at_kst": "2026-10-26T14:33:08.741505+09:00",
+    "scope": "워커힐 투어 가격·대상·일정·포함사항",
+    "limits": "금액 게시 확인. 1인/회당 과금 명시 여부와 패키지 포함·실제 결제 별도 확인. 기간은 공식 목록과 교차 확인",
+    "rechecked_at_kst": "2026-10-26T14:39:45.119396+09:00",
+    "recheck_method": "공식 페이지 웹 열람; 서버 원본 수정일/가격 적용일을 열람일로 대체하지 않음",
+    "evidence_location": "Price / 대상 / When / 프로그램 내용 및 운영 유의사항; 기간은 OFF-WALKEE-LIST와 대조"
+  },
+  "OFF-WALKEE-HEALING-FOREST": {
+    "url": "https://www.walkerhill.com/grandwalkerhillseoul/Promotion/5584?walkeeYN=Y",
+    "checked_at_kst": "2026-10-26T14:33:08.741505+09:00",
+    "scope": "힐링 포레스트 가격·대상·일정·포함사항",
+    "limits": "금액 게시 확인. 1인/회당 과금 명시 여부와 패키지 포함·실제 결제 별도 확인. 기간은 공식 목록과 교차 확인",
+    "rechecked_at_kst": "2026-10-26T14:39:45.119396+09:00",
+    "recheck_method": "공식 페이지 웹 열람; 서버 원본 수정일/가격 적용일을 열람일로 대체하지 않음",
+    "evidence_location": "Price / 대상 / When / 프로그램 내용 및 운영 유의사항; 기간은 OFF-WALKEE-LIST와 대조"
+  },
+  "OFF-WALKEE-GUIDED-FOREST": {
+    "url": "https://www.walkerhill.com/grandwalkerhillseoul/Promotion/3941?walkeeYN=Y",
+    "checked_at_kst": "2026-10-26T14:33:08.741505+09:00",
+    "scope": "숲 해설 가격·대상·일정·포함사항",
+    "limits": "금액 게시 확인. 1인/회당 과금 명시 여부와 패키지 포함·실제 결제 별도 확인. 기간은 공식 목록과 교차 확인",
+    "rechecked_at_kst": "2026-10-26T14:39:45.119396+09:00",
+    "recheck_method": "공식 페이지 웹 열람; 서버 원본 수정일/가격 적용일을 열람일로 대체하지 않음",
+    "evidence_location": "Price / 대상 / When / 프로그램 내용 및 운영 유의사항; 기간은 OFF-WALKEE-LIST와 대조"
+  },
+  "OFF-WALKEE-KIDSPLAY": {
+    "url": "https://www.walkerhill.com/grandwalkerhillseoul/Promotion/8619?walkeeYN=Y",
+    "checked_at_kst": "2026-10-26T14:33:08.741505+09:00",
+    "scope": "키즈 플레이 위드 워키 가격·대상·일정·포함사항",
+    "limits": "금액 게시 확인. 1인/회당 과금 명시 여부와 패키지 포함·실제 결제 별도 확인. 기간은 공식 목록과 교차 확인",
+    "rechecked_at_kst": "2026-10-26T14:39:45.119396+09:00",
+    "recheck_method": "공식 페이지 웹 열람; 서버 원본 수정일/가격 적용일을 열람일로 대체하지 않음",
+    "evidence_location": "Price / 대상 / When / 프로그램 내용 및 운영 유의사항; 기간은 OFF-WALKEE-LIST와 대조"
+  },
+  "OFF-MENU-PIZZAHILL": {
+    "url": "https://www.walkerhill.com/FileDownload.wh?guid=EBFBDC8A-1115-8498-EAED-F8EC0DB7CDAC",
+    "parent_page_url": "https://www.walkerhill.com/dining/PizzaHill",
+    "checked_at_kst": "2026-10-26T14:55:29.534577+09:00",
+    "filename_header": "attachment;filename=\"20260709_pizzahill.pdf\";",
+    "sha256": "1cd2c5d588c5a26fc71f327130f6bcfd30b44c6ab500b5bd6e5034cdb3390889",
+    "pages_downloaded": 20,
+    "pages_visually_reviewed": [
+      4,
+      7,
+      8,
+      11,
+      16,
+      19,
+      20
+    ],
+    "scope": "선정한 가격·단위 항목의 텍스트와 렌더 이미지 대조; 전체 메뉴 전수 검수 아님",
+    "limits": "파일명 날짜를 전체 상품 적용일로 확정하지 않음. 현장 품절/가격 변경·과거 방문 결제·개별 할인/포함 혜택 별도 확인",
+    "rechecked_at_kst": "2026-10-26T16:07:52.726116+09:00"
+  },
+  "OFF-MENU-ONDAL": {
+    "url": "https://www.walkerhill.com/FileDownload.wh?guid=8C7DE4EF-937B-DE02-9646-140B488DC281",
+    "parent_page_url": "https://www.walkerhill.com/dining/Ondal",
+    "checked_at_kst": "2026-10-26T14:55:29.534577+09:00",
+    "filename_header": "attachment;filename=\"20260930_Ondal.pdf\";",
+    "sha256": "761809c44d8855886108dd0e9b991f321ce44287caf5d07e18fc7d70686cb726",
+    "pages_downloaded": 31,
+    "pages_visually_reviewed": [
+      5,
+      6,
+      12,
+      15
+    ],
+    "scope": "선정한 가격·단위 항목의 텍스트와 렌더 이미지 대조; 전체 메뉴 전수 검수 아님",
+    "limits": "파일명 날짜를 전체 상품 적용일로 확정하지 않음. 현장 품절/가격 변경·과거 방문 결제·개별 할인/포함 혜택 별도 확인",
+    "rechecked_at_kst": "2026-10-26T16:07:52.726116+09:00"
+  },
+  "OFF-MENU-GEUMRYONG": {
+    "url": "https://www.walkerhill.com/FileDownload.wh?guid=D26F976B-6928-E571-CBB6-B8306C8D3603",
+    "parent_page_url": "https://www.walkerhill.com/grandwalkerhillseoul/dining/Geumryong",
+    "checked_at_kst": "2026-10-26T14:55:29.534577+09:00",
+    "filename_header": "attachment;filename=\"20260918_geumryong.pdf\";",
+    "sha256": "da6c65fc2dd059b4fe520d00885cebbb50d61b1fed96c8251e8156bd07abd452",
+    "pages_downloaded": 51,
+    "pages_visually_reviewed": [
+      5,
+      6
+    ],
+    "scope": "선정한 가격·단위 항목의 텍스트와 렌더 이미지 대조; 전체 메뉴 전수 검수 아님",
+    "limits": "파일명 날짜를 전체 상품 적용일로 확정하지 않음. 현장 품절/가격 변경·과거 방문 결제·개별 할인/포함 혜택 별도 확인"
+  },
+  "OFF-MENU-MYONGWOLGWAN": {
+    "url": "https://www.walkerhill.com/FileDownload.wh?guid=A5FA9AD1-763E-E3E2-7754-DDD4BD033F53",
+    "parent_page_url": "https://www.walkerhill.com/vistawalkerhillseoul/dining/Myongwolgwan",
+    "checked_at_kst": "2026-10-26T14:55:29.534577+09:00",
+    "filename_header": "attachment;filename=\"20261010_mwg.pdf\";",
+    "sha256": "3f28340d540b14b67f01180bd46e74b49f40457423c2833938770945c62f8c14",
+    "pages_downloaded": 34,
+    "pages_visually_reviewed": [
+      14,
+      15
+    ],
+    "scope": "선정한 가격·단위 항목의 텍스트와 렌더 이미지 대조; 전체 메뉴 전수 검수 아님",
+    "limits": "파일명 날짜를 전체 상품 적용일로 확정하지 않음. 현장 품절/가격 변경·과거 방문 결제·개별 할인/포함 혜택 별도 확인"
+  },
+  "OFF-MENU-MOEGI": {
+    "url": "https://www.walkerhill.com/FileDownload.wh?guid=0C4E8D86-96D6-AB38-083C-5DAC1BF2C785",
+    "parent_page_url": "https://www.walkerhill.com/vistawalkerhillseoul/dining/MOEGI",
+    "checked_at_kst": "2026-10-26T14:55:29.534577+09:00",
+    "filename_header": "attachment;filename=\"20260630_moegi.pdf\";",
+    "sha256": "e22ccb0445e2b3af1722daa322a9b17e7ac34279baedee9af5448992e3a0b4ad",
+    "pages_downloaded": 46,
+    "pages_visually_reviewed": [
+      4,
+      5,
+      15
+    ],
+    "scope": "선정한 가격·단위 항목의 텍스트와 렌더 이미지 대조; 전체 메뉴 전수 검수 아님",
+    "limits": "파일명 날짜를 전체 상품 적용일로 확정하지 않음. 현장 품절/가격 변경·과거 방문 결제·개별 할인/포함 혜택 별도 확인",
+    "rechecked_at_kst": "2026-10-26T16:07:52.726116+09:00"
+  },
+  "OFF-BUFFET-TABLE": {
+    "url": "https://www.walkerhill.com/vistawalkerhillseoul/kr/dining/TheBuffet",
+    "checked_at_kst": "2026-10-26T14:55:29.534577+09:00",
+    "html_sha256": "78807c701dd40cceb0984b0fb8787519991da455b3fd9647e25f8b1b76260bd7",
+    "evidence_location": "10~11월 주말 중식 가격 td rowspan=3 / 12월 주중 중식 가격 td rowspan=3",
+    "scope": "병합셀을 원 HTML과 대조하여 석식·12월 가격 연결 확인",
+    "limits": "표의 연도 미명시; 열람일을 가격 적용 연도로 확정하지 않음"
+  },
+  "OFF-EXPERIENCE-MOBILE": {
+    "url": "https://www.walkerhill.com/grandwalkerhillseoul/m/activity/Experience",
+    "checked_at_kst": "2026-10-26T16:07:52.726116+09:00",
+    "scope": "키즈클럽 이용규정: 2시간 이후 시간당 어린이1만원; 리뉴얼 오픈 예정",
+    "limits": "초과요금의 어린이 단위 확인. 기본 입장권 인원범위·재개일·올림·할인 범위는 미확인"
+  },
+  "OFF-RIVERPARK-SUMMER": {
+    "url": "https://www.walkerhill.com/grandwalkerhillseoul/activity/Riverpark",
+    "checked_at_kst": "2026-10-26T16:07:52.726116+09:00",
+    "scope": "Blue/Gold 입장 가격·객실당 선베드 및 인당 타월/생수·쁘띠카바나4시간·성인1인 프로그램 요금",
+    "limits": "6/26~8/30 여름 안내, 표의 연도 미명시. 10/26 현재 운영/구매 가능 가격으로 사용하지 않음. 마인드케어 요가와 다른 프로그램"
+  },
+  "OFF-DOUGLAS-FACILITY": {
+    "url": "https://www.walkerhill.com/grandwalkerhillseoul/douglas/Facility",
+    "checked_at_kst": "2026-10-26T17:14:44.199733+09:00",
+    "scope": "라운지 객실당2인 무료·추가최대1인96800; 조식/스낵/아워 시간과 구성",
+    "limits": "96800원의 일/체류/회당 단위 미명시. 개인 예약/포함인원·실제 이용 별도확인"
+  },
+  "OFF-VISTA-FITNESS": {
+    "url": "https://www.walkerhill.com/vistawalkerhillseoul/wellness/Fitness",
+    "checked_at_kst": "2026-10-26T17:14:44.199733+09:00",
+    "scope": "수영장 객실당성인2/어린이2, 초과유료·최대2시간·체크아웃전",
+    "limits": "기본/초과금액 미명시. 그랜드19000원/무료규정을 대체 적용하지 않음"
+  },
+  "OFF-VISTA-EXPERIENCE": {
+    "url": "https://www.walkerhill.com/vistawalkerhillseoul/facility/Experience",
+    "checked_at_kst": "2026-10-26T17:14:44.199733+09:00",
+    "scope": "스카이야드 시설/시간 및 바 운영 안내",
+    "limits": "이용금액/무료혜택 명시 미확보. 사진/방문만으로 음료 구매 생성 금지"
+  },
+  "OFF-WINE-GRAND-2026": {
+    "url": "https://www.walkerhill.com/grandwalkerhillseoul/Package/8837",
+    "checked_at_kst": "2026-10-26T17:14:44.199733+09:00",
+    "scope": "2026와인포레스트 패키지 입장권/행사일/포함혜택",
+    "limits": "10/25종료.2매110000원상당은 패키지혜택 가치표시로 별도매출 아님. 실제 패키지보유 미확인"
+  },
+  "OFF-WINE-VISTA-2026": {
+    "url": "https://www.walkerhill.com/vistawalkerhillseoul/Package/8838",
+    "checked_at_kst": "2026-10-26T17:14:44.199733+09:00",
+    "scope": "입장권2매·시음/푸드교환권/글라스 등, 추가성인55000/아동10000",
+    "limits": "패키지입장과일반무료입장조건을동일시하지않음. 현재판매종료. 아동연령/실제예약미확인"
+  },
+  "OFF-CAMP-WINE-2026": {
+    "url": "https://www.walkerhill.com/grandwalkerhillseoul/Package/8829?monthSearch=2",
+    "checked_at_kst": "2026-10-26T17:14:44.199733+09:00",
+    "scope": "행사일공원이용변경·무료입장/시음과푸드/프로그램별도티켓",
+    "limits": "특정공식패키지안내문맥.모든고객무료/푸드포함으로일반화금지"
+  },
+  "OFF-MENU-PAVILION": {
+    "url": "https://www.walkerhill.com/FileDownload.wh?guid=6155C3EE-8D62-E920-E841-436E54A918E9",
+    "parent_page_url": "https://www.walkerhill.com/grandwalkerhillseoul/dining/ThePavilion",
+    "filename_header": "attachment;filename=\"20261013_the_pavilion.pdf\";",
+    "sha256": "9c94d306eedbc91c5b3021b21494febbb19b79acf66b084aaab5cd1302b39ed2",
+    "checked_at_kst": "2026-10-26T17:14:44.199733+09:00",
+    "pages_downloaded": 20,
+    "pages_visually_reviewed": [
+      9
+    ],
+    "scope": "행동대응에필요한선정상품가격/주문조건만확인",
+    "limits": "전체메뉴전수검증/적용일확정/실제주문검증아님"
+  },
+  "OFF-MENU-LUXBAR": {
+    "url": "https://www.walkerhill.com/FileDownload.wh?guid=E65F4294-09BF-89AC-AD16-4EFE17623C70",
+    "parent_page_url": "https://www.walkerhill.com/grandwalkerhillseoul/dining/LuxBar",
+    "filename_header": "attachment;filename=\"20260814_LUX+BAR.pdf\";",
+    "sha256": "dbcc739e6295862f259e836900c7e3abc387022172475b9e23f0cea5692312ef",
+    "checked_at_kst": "2026-10-26T17:14:44.199733+09:00",
+    "pages_downloaded": 26,
+    "pages_visually_reviewed": [
+      3,
+      4
+    ],
+    "scope": "행동대응에필요한선정상품가격/주문조건만확인",
+    "limits": "전체메뉴전수검증/적용일확정/실제주문검증아님"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"ContextualAppraisalExtractionV2",
+  "type":"object",
+  "required":["version","claims","source_access","raw_text_stored","profile_aggregation","model_calls"],
+  "properties":{
+    "version":{"const":"contextual_appraisal_v2.0"},
+    "claims":{"type":"array","items":{"type":"object","required":["target","polarity","valence_score","evidence_strength","interpretation_confidence","inference_level","scope","source_ids","segment_ids","contextual_reasoning","alternative_readings","behavioral_implication","stable_trait_status","raw_text_stored"],"properties":{"polarity":{"enum":["positive","negative","mixed","neutral"]},"valence_score":{"type":"integer","minimum":-2,"maximum":2},"evidence_strength":{"type":"integer","minimum":0,"maximum":3},"interpretation_confidence":{"enum":["low","moderate","high"]},"inference_level":{"enum":["D1","D2","D3","D4","P"]},"raw_text_stored":{"const":false}}}},
+    "source_access":{"type":"string"},"raw_text_stored":{"const":false},"profile_aggregation":{"type":"string"},"model_calls":{"const":0}
+  }
+}

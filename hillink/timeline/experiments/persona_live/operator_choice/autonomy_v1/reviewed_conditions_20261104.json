@@ -1,0 +1,29 @@
+{
+  "version": "REVIEWED_SALE_CONDITIONS_20261104_V1",
+  "conditions": [
+    {
+      "sku_id": "HC-SRC-PIZZA-AMERICANO-WITH-MEAL",
+      "expected_unit_price_krw": 10000,
+      "discount_policy": "NO_ADDITIONAL_DISCOUNT",
+      "source": {
+        "file": "20260709_pizzahill.pdf",
+        "sha256": "1cd2c5d588c5a26fc71f327130f6bcfd30b44c6ab500b5bd6e5034cdb3390889",
+        "page": 16,
+        "review": "VISUAL_SOURCE_CONDITION_CHECKED_20261104",
+        "condition": "식사 주문 시 할인 가격에 추가 할인 적용 불가. 포인트 정책은 이 조건으로 확정하지 않음."
+      }
+    },
+    {
+      "sku_id": "HC-SRC-PIZZA-ICED-AMERICANO-WITH-MEAL",
+      "expected_unit_price_krw": 12000,
+      "discount_policy": "NO_ADDITIONAL_DISCOUNT",
+      "source": {
+        "file": "20260709_pizzahill.pdf",
+        "sha256": "1cd2c5d588c5a26fc71f327130f6bcfd30b44c6ab500b5bd6e5034cdb3390889",
+        "page": 16,
+        "review": "VISUAL_SOURCE_CONDITION_CHECKED_20261104",
+        "condition": "식사 주문 시 할인 가격에 추가 할인 적용 불가. 포인트 정책은 이 조건으로 확정하지 않음."
+      }
+    }
+  ]
+}

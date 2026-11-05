@@ -1,0 +1,14 @@
+/* Scoped to map figures. Library portraits, source PNGs and map dimensions are unchanged. */
+#map .ag-avatar.ag-vis-enhanced { filter:none!important; }
+#map .ag-vis-enhanced .ag-avflip { filter:url(#hlAvatarSilhouette); }
+#map .ag-vis-enhanced .ag-avm { filter:url(#hlAvatarSilhouette); }
+#map .ag-vis-enhanced .ag-avsh { fill:rgba(45,40,34,.24);stroke:none;animation:none; }
+#map .ag-vis-selected,#map .ag-vis-selected.gen { opacity:1; }
+#map #route .ag-hl-glow,#map #route .ag-hl-ring { display:none; }
+#map #route .ag-hl-gnd { fill:rgba(45,40,34,.12); }
+#map #route .ag-hl-tag rect,#map #agent .single .ag-tag rect { fill:#fff8ed;stroke:#766a60;stroke-width:.8;filter:none; }
+#map #route .ag-hl-tag text,#map #agent .single .ag-tag text { fill:#393532;font-weight:600; }
+/* Existing other-team pins remain subdued; no unsupported simultaneous world is added. */
+#map #agent .ag-pin.dim { opacity:.38; }
+/* No pulse/bounce is needed once the silhouette and foot shadow are clear. */
+#map .ag-vis-enhanced.walk .ag-avm { animation:none; }

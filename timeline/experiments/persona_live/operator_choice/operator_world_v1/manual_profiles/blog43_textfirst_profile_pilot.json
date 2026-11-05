@@ -1,0 +1,266 @@
+{
+  "profile_id": "blog43",
+  "version": "text_first_manual_pilot_20261022",
+  "source_scope": {
+    "workbook_recent": "naver_blog_recent_posts.xlsx",
+    "recent_posts": 50,
+    "workbook_walkerhill": "walkerhill_reviews_from_links(3).xlsx",
+    "walkerhill_posts": 1,
+    "overlap_posts": 1,
+    "unique_posts": 50,
+    "image_collection": false,
+    "text_characters": 69403
+  },
+  "study_status": "manual_exploratory_profile_not_codex_v4_schema_or_validated_behavior_prediction",
+  "core": "프리미엄 미식·호텔·와인 경험에 적극적이며, 전망과 분위기를 즐기고, 휴식이 중요한 방문에서는 조용한 성인 전용 환경으로 활동을 조절하는 유형",
+  "primary_context": "워커힐 더글라스 하우스 — 육아에서 벗어난 성인 중심 휴식 목적 (어린이 동반 투숙으로 분류 금지)",
+  "secondary_tags": [
+    "프리미엄 미식",
+    "와인·식음 행사",
+    "자연·전망·라운지",
+    "여행·호텔 반복",
+    "새 메뉴 탐색",
+    "휴식 목적 전환"
+  ],
+  "traits": [
+    {
+      "key": "wine_and_alcohol_experience",
+      "label": "와인·주류 경험과 즐김",
+      "score": 5.0,
+      "basis": "더글라스 와인 2종, 와인 바 피노누아 바틀, 다른 바 화이트와인 바틀과 칵테일, 풀바 칵테일, 여러 식사에서 맥주·전통주를 주문한 서로 다른 맥락",
+      "repeat": "독립 장소·방문 3회 이상에 실제 음용·주문 표현",
+      "rule": "식음·페스티벌 상황에서 시음·페어링·바 분위기의 적합성을 적극 높인다. 특정 방문의 절주 선택과 음주 적합성을 동일시하지 않는다.",
+      "evidence_ids": [
+        "B43-P02",
+        "B43-P06",
+        "B43-P31",
+        "B43-P32",
+        "B43-P35",
+        "B43-P42",
+        "B43-P45",
+        "B43-P46"
+      ]
+    },
+    {
+      "key": "premium_dining",
+      "label": "프리미엄 식음 경험 참여",
+      "score": 5.0,
+      "basis": "스시 오마카세(1인 11만원), 한식 오마카세(1인 6.9만원), 스테이크 전문점 세트, 와인바 바틀·한우, 호텔 조식과 뷔페 등 다수 서로 다른 이용",
+      "repeat": "독립 업장 3곳 이상 실제 식사·주문",
+      "rule": "특별한 메뉴·품질·셰프 체험에 강하게 관심을 보일 수 있으며, 식사비만 낮은 선택지에 일방적으로 끌리지 않는다.",
+      "evidence_ids": [
+        "B43-P18",
+        "B43-P21",
+        "B43-P24",
+        "B43-P30",
+        "B43-P35",
+        "B43-P38",
+        "B43-P45"
+      ]
+    },
+    {
+      "key": "space_view_atmosphere",
+      "label": "전망·자연·공간 연출 선호",
+      "score": 5.0,
+      "basis": "더글라스 숲·한강뷰, 남양주 정원 브런치 카페, 속초/세부/나트랑 호텔 오션뷰, 제주신라 야경, 여러 바다·정원 카페 좌석을 직접 골라 체험",
+      "repeat": "서로 다른 호텔·카페·여행 3개 이상",
+      "rule": "자연 전망·좌석 분위기·라운지 경험을 상품 매력에 반영한다. 혼잡/소음과 쉬고 싶은 현재 목적도 같이 본다.",
+      "evidence_ids": [
+        "B43-P02",
+        "B43-P10",
+        "B43-P13",
+        "B43-P22",
+        "B43-P26",
+        "B43-P30",
+        "B43-P32",
+        "B43-P33",
+        "B43-P41",
+        "B43-P47",
+        "B43-P48"
+      ]
+    },
+    {
+      "key": "hotel_travel_experience",
+      "label": "호텔 체류와 여행 경험",
+      "score": 5.0,
+      "basis": "워커힐 더글라스, 아난티 제주·가평, 세부 리프, 속초 카시아, 나트랑 쉐라톤, 제주신라 등 각각 다른 숙박 후기",
+      "repeat": "서로 다른 7개 숙소의 이용·투숙 서술",
+      "rule": "호텔 서비스·객실·라운지·부대시설을 비교하고 실제 운영 조건에 맞춰 대안을 선택한다.",
+      "evidence_ids": [
+        "B43-P02",
+        "B43-P17",
+        "B43-P22",
+        "B43-P26",
+        "B43-P30",
+        "B43-P32",
+        "B43-P48"
+      ]
+    },
+    {
+      "key": "new_food_exploration",
+      "label": "새 메뉴·새 장소 탐색",
+      "score": 4.7,
+      "basis": "낯선 퓨전 한식, 터키 샌드커피, 처음 보는 레스토랑, 제철 코스, 다양한 메뉴를 포기하기 싫어 추가 주문한 사례",
+      "repeat": "독립 메뉴·장소 3종 이상 실제 시도",
+      "rule": "새롭고 독특한 식음 경험·시즌 행사에 강하게 반응하며 식사 충족 목적이 아니어도 참여 가능하다.",
+      "evidence_ids": [
+        "B43-P01",
+        "B43-P07",
+        "B43-P10",
+        "B43-P24",
+        "B43-P36",
+        "B43-P41",
+        "B43-P44",
+        "B43-P45"
+      ]
+    },
+    {
+      "key": "quiet_rest_context",
+      "label": "조용한 휴식·재충전의 상황별 선호",
+      "score": 4.5,
+      "basis": "더글라스 성인전용 고요한 숙박에서 운동장·수영장보다 휴식, 아난티·속초 카시아에서 욕조·풍경·조용한 재충전, 자연뷰 카페에서 조용한 좌석 선택",
+      "repeat": "독립 호텔·카페 3곳 이상 휴식·조용한 좌석 선택",
+      "rule": "육아/업무 등 이후 휴식이 목적일 땐 행사 참여보다 조용한 공간을 선택할 수 있다. 동시에 평상시 활동성은 높을 수 있다.",
+      "evidence_ids": [
+        "B43-P02",
+        "B43-P10",
+        "B43-P17",
+        "B43-P26",
+        "B43-P30",
+        "B43-P33",
+        "B43-P41",
+        "B43-P48"
+      ]
+    },
+    {
+      "key": "food_specific_preferences",
+      "label": "풍성한 음식 구성과 세부 기호",
+      "score": 4.7,
+      "basis": "파스타·면 선호 직접 표현과 반복 주문, 한 번 더 주문하거나 포기할 메뉴를 두 개 모두 맛보기 위해 요청, 조식에서 쌀국수 반복 이용",
+      "repeat": "복수 독립 업장과 숙소에서 직접 표현·반복 주문",
+      "rule": "메뉴 선택지가 다양하고 자신이 선호하는 구성이 포함되면 매력을 크게 느끼며, 코스 식사가 유일한 경험 목적은 아니다.",
+      "evidence_ids": [
+        "B43-P01",
+        "B43-P04",
+        "B43-P07",
+        "B43-P16",
+        "B43-P20",
+        "B43-P24",
+        "B43-P29",
+        "B43-P30",
+        "B43-P32",
+        "B43-P36"
+      ]
+    },
+    {
+      "key": "flexible_alternative_choice",
+      "label": "실행 제약 대응·유연한 대안 선택",
+      "score": 4.5,
+      "basis": "더뷔페 대기 길어 라운지 조식으로 전환, 카시아 체크인 대기 중 식사부터, 제주 숙소 1+1박 대신 2박 연속 선택, 예약한 객실 유형 마감 시 다른 객실 이용",
+      "repeat": "서로 다른 3개 숙소 이상에서 대기·예약·일정 제약에 따른 실제 조정",
+      "rule": "혼잡·예약 실패 때 전체 일정 포기보다 가능한 다른 선택지로 전환한다. 대안 품질·시간·현재 목적에 따라 선택.",
+      "evidence_ids": [
+        "B43-P02",
+        "B43-P17",
+        "B43-P26",
+        "B43-P30"
+      ]
+    },
+    {
+      "key": "revisit_and_repeat",
+      "label": "마음에 든 곳·메뉴의 재방문",
+      "score": 4.5,
+      "basis": "오목교 중식당 약 3회, 닭볶음탕집 2회, 영흥도 카페 2회, 쭈꾸미집 2회 방문, 특정 메뉴 재주문",
+      "repeat": "최소 4개 서로 다른 업장에 명시된 재방문 서술",
+      "rule": "만족했던 메뉴와 공간이면 반복 방문하며, 신규 탐색 욕구와 재방문 성향을 동시에 보유할 수 있다.",
+      "evidence_ids": [
+        "B43-P04",
+        "B43-P20",
+        "B43-P33",
+        "B43-P34"
+      ]
+    },
+    {
+      "key": "selective_benefits",
+      "label": "혜택과 비용의 상황적 활용",
+      "score": 2.6,
+      "basis": "더글라스 라운지 포함 혜택·무료 미니바 이용, 다른 호텔 happy hour 인지, QR 서비스와 조식 추가요금 비교. 정기적인 카드 혜택 추적·쿠폰 매니아라는 근거는 상대적으로 적음",
+      "repeat": "사례는 있지만 블로그42의 반복된 카드·쿠폰 사용만큼 직접적이지 않음",
+      "rule": "제공 혜택과 운영상 편의를 적절히 이용하지만 절약을 모든 선택의 최우선 동기로 가정하지 않는다.",
+      "evidence_ids": [
+        "B43-P02",
+        "B43-P30",
+        "B43-P32",
+        "B43-P40"
+      ]
+    }
+  ],
+  "scenario_rules": [
+    {
+      "scenario": "wine_fair_attractive",
+      "if": "와인 시음과 분위기·페어링 메뉴·특별 경험이 있고 일정·자리가 허용되면",
+      "then": "관심과 참여 의향을 높게 평가; 음식 1종뿐이라도 행사 후 별도 식사 검토",
+      "evidence_ids": [
+        "B43-P02",
+        "B43-P31",
+        "B43-P35",
+        "B43-P45",
+        "B43-P06",
+        "B43-P24"
+      ]
+    },
+    {
+      "scenario": "adult_quiet_escape",
+      "if": "조용한 휴식과 개인 시간을 목적으로 더글라스 숙박 중이면",
+      "then": "그 날은 행사·운동·수영보다 객실·라운지·자연 경관에서 쉬는 선택의 적합성이 상승",
+      "evidence_ids": [
+        "B43-P02",
+        "B43-P26",
+        "B43-P30"
+      ]
+    },
+    {
+      "scenario": "buffet_wait",
+      "if": "기대하던 더뷔페 조식에 긴 대기가 발생하면",
+      "then": "대기 지속보다 가능한 라운지 조식으로 전환 가능성이 높음",
+      "evidence_ids": [
+        "B43-P02"
+      ]
+    },
+    {
+      "scenario": "attractive_new_menu",
+      "if": "독특한 메뉴·복수의 흥미로운 메뉴가 제시되면",
+      "then": "다양한 주문이나 유료 추가까지 검토",
+      "evidence_ids": [
+        "B43-P24",
+        "B43-P36",
+        "B43-P44",
+        "B43-P04"
+      ]
+    },
+    {
+      "scenario": "visit_again",
+      "if": "특정 메뉴나 장소에서 만족한 경험이 충분하면",
+      "then": "재방문·재주문 후보에 가점을 부여",
+      "evidence_ids": [
+        "B43-P04",
+        "B43-P20",
+        "B43-P33",
+        "B43-P34"
+      ]
+    }
+  ],
+  "advertising": {
+    "explicit_compensation_disclosure_found_in_collected_text": false,
+    "status": "no_disclosure_found_in_text_not_proof_of_unsponsored",
+    "action": "Exclude confirmed sponsored posts individually if later discovered; keep normal posts and self-initiated responses to ads."
+  },
+  "profile_quality": {
+    "direct_evidence": "50 unique texts; one Walkerhill text",
+    "method": "manual reading + source_id linkage",
+    "image_validation": false,
+    "model_run": false,
+    "human_cross_reviewer": false
+  },
+  "safety_note": "Raw source links, real author name and complete text intentionally omitted; retain access in restricted source workbooks."
+}

@@ -1,0 +1,11 @@
+{
+  "version": "author_method_v4.1-policy-0.1",
+  "weights": {"participation": 2.0, "purchase_bonus": 1.0, "explicit_motive_bonus": 1.0, "preference": 1.0, "appraisal": 0.5},
+  "uncertain_experience_discount": 0.45,
+  "source_explicit_distinct_discount": 0.8,
+  "strength_scale": 4.0,
+  "strong_repeat_minimum": 3,
+  "images_required": false,
+  "exclude_only_explicit_own_compensation": true,
+  "interpretation": "Unbounded logarithmic research index, not probability or calibrated personality. Repetition status is separate from score. No per-person exceptions."
+}

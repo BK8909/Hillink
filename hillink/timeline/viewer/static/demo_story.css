@@ -1,0 +1,119 @@
+/* CL-1025-37 P0 — 시연 저장 스토리 바 · 단계 카드 · 근거 종류 배지 */
+:root { --ds-h: 92px; }
+body.ds-on main { height: calc(100% - 57px - var(--ds-h)); }
+body.ds-on main.library, body.ds-on main.guest { padding-bottom: 0; }
+.ds-k { display: inline-flex; align-items: center; font-size: 11px; font-weight: 700; border-radius: 999px; padding: 2px 8px; border: 1px solid #d9cdb8; background: #fff; color: #5b4a37; white-space: nowrap; }
+.ds-k.obs { background: #e8f3ea; border-color: #a9cfb2; color: #24613a; }
+.ds-k.img { background: #fff4e0; border-color: #e3c58f; color: #7a5212; }
+.ds-k.rep { background: #e7eef8; border-color: #a9bfdf; color: #22487a; }
+.ds-k.pre { background: #f3e9f7; border-color: #cfb0de; color: #66317f; }
+#dsBar { position: fixed; left: 0; right: 0; bottom: 0; height: var(--ds-h); z-index: 60; background: rgba(255,253,248,.97); border-top: 1px solid #e3d6c2; box-shadow: 0 -4px 16px rgba(60,40,20,.08); }
+#dsBar .ds-in { height: 100%; max-width: 1440px; margin: 0 auto; display: grid; grid-template-columns: 300px minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 0 16px; }
+.ds-steps { display: flex; flex-wrap: wrap; gap: 3px; }
+.ds-st { min-width: 30px; height: 24px; border: 1px solid #ddd0bb; background: #fff; border-radius: 6px; font: 600 11px inherit; color: #6f5a45; cursor: pointer; padding: 0 4px; }
+.ds-st.on { background: #2b2118; color: #fff; border-color: #2b2118; }
+.ds-src { margin-top: 6px; font-size: 11px; color: #22487a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ds-src.live { color: #8a3b2b; }
+.ds-c { min-width: 0; }
+.ds-t { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; } .ds-t b { font-size: 15px; margin-right: 4px; }
+.ds-c p { margin: 4px 0 0; font-size: 13px; line-height: 1.45; color: #3f3226; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.ds-r { display: flex; gap: 6px; }
+#dsCard { position: fixed; left: 0; right: 0; top: 57px; bottom: var(--ds-h); z-index: 55; background: rgba(250,246,238,.97); overflow: auto; display: flex; align-items: flex-start; justify-content: center; padding: 36px 20px; }
+.ds-card { max-width: 1120px; width: 100%; background: #fff; border: 1px solid #e3d6c2; border-radius: 14px; padding: 28px 32px; box-shadow: 0 10px 30px rgba(60,40,20,.08); }
+.ds-card h2 { margin: 0 0 6px; font-size: 26px; } .ds-sub { color: #6f5a45; margin: 0 0 18px; }
+.ds-leg { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; } .ds-leg div { border: 1px solid #eee3d3; border-radius: 10px; padding: 14px; } .ds-leg p { margin: 8px 0 0; font-size: 13px; color: #4b3c2e; line-height: 1.5; }
+.ds-note { margin: 18px 0 0; font-size: 12px; color: #8a7560; word-break: break-all; }
+.ds-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 14px; }
+.ds-3 section { border: 1px solid #eee3d3; border-radius: 10px; padding: 16px; } .ds-3 section.hyp { border-style: dashed; background: #fcf8fd; }
+.ds-3 h3 { margin: 10px 0 8px; font-size: 16px; } .ds-3 ul { margin: 0; padding-left: 18px; font-size: 13.5px; line-height: 1.6; color: #3f3226; }
+.ds-big { font-size: 18px; line-height: 1.7; color: #2b2118; } .ds-next { font-size: 14px; line-height: 1.7; color: #4b3c2e; }
+/* 라이브러리 보조 */
+.lb-gobs .lb-sh { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; } .lb-gobs .lb-sh h3 { margin: 0; }
+.lb-gol { list-style: none; margin: 10px 0; padding: 0; display: grid; gap: 8px; }
+.lb-gol li { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 14px; } .lb-gol em { font-style: normal; font-size: 11px; color: #24613a; border: 1px solid #a9cfb2; border-radius: 4px; padding: 1px 6px; }
+.lb-gol code { font-size: 11px; background: #f3ece1; border-radius: 4px; padding: 1px 6px; color: #5b4a37; }
+.lb-gca { display: flex; flex-wrap: wrap; gap: 6px 10px; font-size: 12.5px; color: #8a3b2b; margin-top: 6px; } .lb-gca b { color: #8a3b2b; }
+.lb-geng { margin-top: 10px; font-size: 12.5px; color: #4b3c2e; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.lb-ledger { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; font-size: 12.5px; color: #5b4a37; border: 1px dashed #d7c6a8; border-radius: 8px; padding: 8px 12px; background: #fffdf8; } .lb-ledger b { color: #2b2118; }
+.lb-evk { margin-bottom: 2px; }
+@media (max-width: 900px) { :root { --ds-h: 128px; } #dsBar .ds-in { grid-template-columns: 1fr; gap: 4px; padding: 6px 10px; align-content: center; } .ds-r { position: absolute; right: 10px; top: 6px; } .ds-src { display: none; } .ds-leg, .ds-3 { grid-template-columns: 1fr; } .ds-c p { -webkit-line-clamp: 2; } }
+body.ds-on .drawer { bottom: var(--ds-h); }
+body.ds-on .drawer-bg { bottom: var(--ds-h); }
+#dsBar { z-index: 70; }
+@media (max-width: 640px) { #dsBar .ds-steps .ds-st:not(.on) { display: none; } .ds-r { position: absolute; right: 8px; top: 6px; } .ds-steps { min-height: 26px; } }
+/* ---------------------------------------------------------------- CL-1025-37 P1 — 6장 스토리 바 · 큰 자막 · 발표 모드 · 결정 칩 · 폭 제한 패널 */
+:root { --ds-h: 112px; }
+#dsBar .ds-in { grid-template-columns: 330px minmax(0, 1fr) auto; gap: 18px; }
+.ds-chs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; }
+.ds-ch { display: flex; align-items: center; gap: 5px; height: 26px; border: 1px solid #ddd0bb; background: #fff; border-radius: 7px; font: 600 12px inherit; color: #6f5a45; cursor: pointer; padding: 0 7px; white-space: nowrap; }
+.ds-ch i { font-style: normal; font-size: 10.5px; width: 16px; height: 16px; border-radius: 50%; background: #f1e8da; display: inline-flex; align-items: center; justify-content: center; color: #6f5a45; }
+.ds-ch.on { background: #2b2118; color: #fff; border-color: #2b2118; } .ds-ch.on i { background: #fff; color: #2b2118; }
+.ds-src { display: flex; align-items: center; gap: 6px; margin-top: 7px; font-size: 11.5px; }
+.ds-dot { width: 8px; height: 8px; border-radius: 50%; background: #3b6fb5; flex: none; } .ds-src.live .ds-dot { background: #c0392b; box-shadow: 0 0 0 3px rgba(192,57,43,.18); }
+.ds-t b { font-size: 18px; } .ds-c p { font-size: 16px; line-height: 1.45; margin-top: 5px; color: #2b2118; }
+.ds-nav { min-width: 44px; height: 40px; font-size: 15px; }
+.ds-tg { height: 32px; align-self: center; border: 1px solid #d9cdb8; background: #fff; color: #8a7560; border-radius: 999px; font: 600 11.5px inherit; padding: 0 12px; cursor: pointer; opacity: .8; }
+.ds-tg.live { background: #c0392b; border-color: #c0392b; color: #fff; opacity: 1; }
+body.ds-live #dsBar { border-top: 3px solid #c0392b; }
+/* 발표 모드 — 상단 메뉴 · 실행 조작을 흐리게(마우스를 올리면 다시 또렷) */
+body.ds-present header nav, body.ds-present .g-runbar { opacity: .32; transition: opacity .2s; } body.ds-present header nav:hover, body.ds-present .g-runbar:hover { opacity: 1; }
+body.ds-present header .brand small { display: none; }
+/* 도착 후 결정 칩 — 지도 위쪽 가운데, 작게 */
+#dsChip { position: fixed; z-index: 58; top: 72px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center; max-width: min(760px, calc(100vw - 32px)); background: rgba(255,253,248,.97); border: 1px solid #d9cdb8; border-radius: 14px; padding: 9px 14px; box-shadow: 0 8px 24px rgba(60,40,20,.16); font-size: 14px; animation: dsIn .25s ease-out; }
+#dsChip b { font-size: 14px; } .dsc-pick { font-weight: 700; color: #22487a; font-size: 15px; } .dsc-vs { color: #6f5a45; font-size: 13px; } .dsc-vs em { font-style: normal; color: #8a3b2b; font-weight: 700; }
+@keyframes dsIn { from { opacity: 0; transform: translate(-50%, -6px); } to { opacity: 1; transform: translate(-50%, 0); } }
+/* 폭 제한 결정 패널(발표) */
+body.ds-on .drawer.ds-narrow, body.ds-on .drawer.ds-narrow.wide { width: min(460px, 42vw); min-width: 0; max-width: none; }
+body.ds-on .drawer-bg { background: rgba(43,36,32,.06); }
+/* 지도 위 큰 자막(비교 · 결론) */
+#dsMsg { position: fixed; z-index: 57; left: 50%; transform: translateX(-50%); bottom: calc(var(--ds-h) + 18px); width: min(820px, calc(100vw - 32px)); background: rgba(43,33,24,.9); color: #fff; border-radius: 16px; padding: 18px 24px; box-shadow: 0 12px 32px rgba(0,0,0,.25); }
+#dsMsg .ds-k { background: #e7eef8; } .dsm-big { margin: 0; font-size: 22px; line-height: 1.5; font-weight: 700; } .dsm-sub { margin: 10px 0 0; font-size: 13.5px; line-height: 1.55; color: #e9dfd0; }
+.dsm-row { display: flex; align-items: center; gap: 10px; font-size: 16px; } .dsm-nums { display: flex; gap: 28px; margin-top: 10px; } .dsm-nums b { display: block; font-size: 34px; line-height: 1.1; } .dsm-nums span { font-size: 13.5px; color: #e9dfd0; }
+/* 단계 카드 */
+.ds-road { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 4px 0 22px; } .ds-road li { display: flex; align-items: center; gap: 6px; font-weight: 700; font-size: 15px; color: #2b2118; background: #faf4ea; border-radius: 999px; padding: 6px 14px 6px 8px; } .ds-road i { font-style: normal; width: 22px; height: 22px; border-radius: 50%; background: #2b2118; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; }
+.ds-audit { margin-top: 18px; font-size: 12px; color: #8a7560; } .ds-audit summary { cursor: pointer; } .ds-audit p { margin: 6px 0 0; word-break: break-all; }
+.ds-cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 8px; } .ds-case { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 14px; border: 1px solid #eee3d3; border-radius: 12px; padding: 12px; } .ds-case img { width: 150px; height: 150px; object-fit: cover; border-radius: 10px; } .ds-case h3 { margin: 2px 0 10px; font-size: 17px; } .ds-case p { margin: 0 0 8px; font-size: 14.5px; line-height: 1.5; }
+.dsl { display: block; font-size: 11.5px; font-weight: 700; margin-bottom: 2px; } .dsl.ok { color: #24613a; } .dsl.unk { color: #8a3b2b; }
+.ds-sw { display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center; } .ds-sw > div:not(.ds-swarr) { border: 1px solid #eee3d3; border-radius: 12px; padding: 18px; } .ds-swb { border-color: #a9bfdf !important; background: #f4f7fc; } .ds-sw h3 { margin: 10px 0 4px; font-size: 20px; } .ds-sw p { margin: 0; color: #5b4a37; } .ds-swarr { font-size: 34px; color: #8a7560; } .ds-swcap { text-align: center; margin: 26px 0 0; font-size: 21px; }
+.ds-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 14px; } .ds-2 section { border: 1px solid #eee3d3; border-radius: 12px; padding: 18px; } .ds-2 section.hyp { border-style: dashed; background: #fcf8fd; } .ds-2 h3 { margin: 10px 0 8px; font-size: 18px; } .ds-2 ul { margin: 0; padding-left: 18px; font-size: 16px; line-height: 1.7; }
+/* 라이브러리 발표 모드 · 상세 재구성 */
+.lb-audit { margin-top: 16px; font-size: 12.5px; color: #8a7560; } .lb-audit summary { cursor: pointer; display: flex; align-items: center; gap: 8px; } .lb-chip { font-size: 11px; border: 1px solid #e3c58f; background: #fff4e0; color: #7a5212; border-radius: 999px; padding: 1px 8px; }
+.lb-headp p { font-size: 15px; } .lb-ptypes { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 16px; } .lb-pt { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 600; background: #fff; border: 1px solid #eadfcd; border-radius: 999px; padding: 4px 12px 4px 6px; } .lb-pt em { font-style: normal; color: #8a7560; } .lb-pt.mute { color: #a39079; font-weight: 500; border-style: dashed; padding-left: 12px; }
+.lb-pgrid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); } .lb-pcard .lb-line { font-size: 13px; }
+.lb-gsum { font-size: 15.5px; color: #4b3c2e; margin: 6px 0 10px; } .lb-gstat { display: flex; gap: 8px; flex-wrap: wrap; } .lb-gstat span { font-size: 12px; color: #6f5a45; border: 1px solid #e3d6c2; border-radius: 999px; padding: 2px 10px; }
+.lb-d3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 16px; } .lb-dc { border: 1px solid #eee3d3; border-radius: 12px; padding: 16px; background: #fff; } .lb-dc h3 { margin: 0 0 10px; font-size: 16px; } .lb-dc.ok h3 { color: #24613a; } .lb-dc.ctx h3 { color: #22487a; } .lb-dc.unk { border-style: dashed; } .lb-dc.unk h3 { color: #8a3b2b; }
+.lb-dc ul { margin: 0; padding-left: 18px; font-size: 15px; line-height: 1.6; } .lb-dc li em { display: block; font-style: normal; font-size: 11.5px; color: #8a7560; } .lb-dnone { color: #a39079; font-size: 14px; margin: 0; }
+.lb-tech { margin-top: 16px; font-size: 13px; } .lb-tech summary { cursor: pointer; color: #6f5a45; } .lb-tech summary span { color: #a39079; font-size: 12px; margin-left: 6px; } .lb-tech code { font-size: 11px; background: #f3ece1; border-radius: 4px; padding: 1px 6px; }
+.lb-evg2 { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; margin-top: 10px; } .lb-evc.main { border: 2px solid #a9bfdf; background: #f7f9fd; } .lb-evc.main b { font-size: 19px; } .lb-evonly { margin-top: 6px; } .lb-evmore { margin-top: 14px; } .lb-evmore summary { cursor: pointer; color: #6f5a45; font-size: 13.5px; } .lb-evsrc { font-size: 11.5px; color: #8a7560; margin: 6px 0; } .lb-evsrc summary { cursor: pointer; }
+@media (max-width: 1100px) { #dsBar .ds-in { grid-template-columns: 250px minmax(0, 1fr) auto; } .ds-ch { font-size: 11px; padding: 0 4px; } .ds-c p { font-size: 14.5px; } }
+@media (max-width: 900px) { :root { --ds-h: 150px; } #dsBar .ds-in { grid-template-columns: 1fr; gap: 6px; padding: 8px 10px; } .ds-chs { grid-template-columns: repeat(6, minmax(0, 1fr)); padding-right: 130px; } .ds-ch { justify-content: center; } .ds-ch i { display: none; } .ds-r { position: absolute; right: 10px; top: 8px; } .ds-tg { display: none; } .ds-src { display: none; } .ds-t b { font-size: 15.5px; } .ds-c p { font-size: 14px; -webkit-line-clamp: 3; }
+  .lb-d3, .ds-2, .ds-cases, .lb-evg2 { grid-template-columns: 1fr; } .ds-sw { grid-template-columns: 1fr; } .ds-swarr { transform: rotate(90deg); justify-self: center; } #dsMsg { padding: 12px 16px; } .dsm-big { font-size: 17px; } .dsm-nums b { font-size: 26px; } body.ds-on .drawer.ds-narrow { width: 100vw; } }
+@media (max-width: 640px) { #dsBar .ds-steps .ds-st:not(.on) { display: inherit; } .ds-chs { grid-template-columns: repeat(3, minmax(0, 1fr)); padding-right: 100px; } .ds-ch { height: 22px; font-size: 10.5px; } .ds-nav { min-width: 40px; height: 34px; } :root { --ds-h: 160px; } .ds-case { grid-template-columns: 90px 1fr; } .ds-case img { width: 90px; height: 90px; } #dsChip { top: 64px; font-size: 12.5px; padding: 7px 10px; gap: 6px; } }
+/* P2 — 발표 모드: 라이브러리 머리의 원장 수치 숨김(관리 상세로) */
+body.ds-present .lb-cnt { display: none; }
+body.ds-present .lb-foot { display: none; }
+#dsChip.corner { max-width: 300px; flex-direction: column; align-items: flex-start; gap: 4px; animation: none; padding: 10px 14px; }
+#dsChip.corner .dsc-vs { font-size: 12.5px; }
+@media (max-width: 900px) { #dsChip { top: auto !important; bottom: calc(var(--ds-h) + 8px); max-width: calc(100vw - 24px); font-size: 12.5px; } }
+/* P5 — 하단 가이드: 장 이름 + 한 줄 설명만 · 낮은 높이 · 기술 상태는 개발 정보에서만 */
+:root { --ds-h: 78px; }
+#dsBar .ds-in { grid-template-columns: 360px minmax(0, 1fr) auto; }
+.ds-chs { grid-template-columns: repeat(3, minmax(0, 1fr)); } .ds-ch { height: 26px; font-size: 12.5px; }
+.ds-t b { font-size: 16px; } .ds-c p { font-size: 15px; margin-top: 3px; -webkit-line-clamp: 1; }
+.ds-miss { color: #8a3b2b !important; font-size: 13px !important; }
+.ds-nav { min-width: 40px; height: 36px; }
+@media (max-width: 900px) { :root { --ds-h: 128px; } .ds-c p { -webkit-line-clamp: 2; } }
+@media (max-width: 640px) { :root { --ds-h: 140px; } }
+/* ---------------------------------------------------------------- CL-1025-37 P6 — 화면 아래 시연 챕터 바 삭제 · 빈 띠 없음 · 발표 모드 흐림 없음 */
+:root { --ds-h: 0px; }
+#dsBar { display: none !important; }
+body .drawer, body .drawer-bg { bottom: 0; }
+.drawer.ds-narrow, .drawer.ds-narrow.wide { width: min(460px, 42vw); min-width: 0; max-width: none; }
+body.ds-present header nav, body.ds-present .g-runbar { opacity: 1; }
+#dsChip, #dsMsg, #dsCard { display: none !important; }
+/* 고객흐름 준비(정지) 화면 — 지도를 가리지 않는 작은 안내 */
+#mapEmpty.ag-ready { display: flex; flex-direction: column; gap: 6px; align-items: center; padding: 16px 22px; font-size: 15px; color: #2b2118; box-shadow: 0 6px 18px rgba(60,40,20,.08); }
+#mapEmpty.ag-ready b { font-weight: 700; }
+#mapEmpty.ag-ready span { font-size: 13px; color: #6f5a45; line-height: 1.5; }
+#mapEmpty.ag-ready.hidden { display: none; }
+.ag-ready-p { margin: 20px; padding: 18px 20px; border: 1px dashed #d9cdb8; border-radius: 12px; color: #6f5a45; font-size: 13.5px; line-height: 1.6; background: #fffdf8; }

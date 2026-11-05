@@ -1,0 +1,12 @@
+{
+  "version": "text_first_v4_policy_0.1_unvalidated",
+  "weights": {"positive_mention": 0.5, "actual_action": 2, "purchase_bonus": 1, "explicit_motive_bonus": 1, "cross_visit_bonus": 1, "cross_domain_bonus": 1},
+  "trait_score_cap": 12,
+  "confidence_multipliers": {"high": 1.0, "medium": 0.75, "low": 0.5},
+  "repeat_bonus_cap": 2,
+  "cross_domain_bonus_cap": 2,
+  "premium_price_threshold_krw": {"dining": 200000, "hotel": 300000, "shopping": 300000},
+  "exclude_sponsorship_statuses": ["disclosed_sponsored", "promotional_signals"],
+  "images_required": false,
+  "interpretation": "Initial shared research weights, not learned utility, probability or actual personality test. Source recurrence and current visit fit remain separate."
+}

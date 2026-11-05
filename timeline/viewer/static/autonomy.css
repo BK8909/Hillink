@@ -1,0 +1,86 @@
+/* 자율 하루 (CL-1024-18) — opx.css 의 3열 틀(.ox)을 그대로 쓰고 하루 막대 · 시간순 로그만 더한다 */
+main.auto { display: block; overflow: hidden; }
+main.auto > aside, main.auto > #center { display: none; }
+#autoView { display: none; }
+main.auto > #autoView { display: block; height: 100%; background: var(--c-surface2); }
+.au-pick { display: flex; flex-wrap: wrap; gap: 6px; }
+.au-pick .ox-pill { height: 30px; }
+.au-pick .ox-pill:not(.on) { opacity: .55; }
+.au-row { display: flex; gap: 14px; }
+.au-sum { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: var(--sp-3) 0 0; font-size: var(--fs-sm); color: var(--c-text2); }
+.au-sum b { font-size: var(--fs-lg); color: var(--c-text); margin-right: 2px; }
+.au-scale { position: relative; height: 16px; margin: 0 0 4px 0; font-size: 10.5px; color: var(--c-sub); }
+.au-scale span { position: absolute; transform: translateX(-50%); }
+.au-p { padding: 10px 10px 8px; margin: 0 -10px; border-radius: var(--r-2); cursor: pointer; border-bottom: 1px solid var(--c-line2); }
+.au-p:hover { background: #fffdf8; }
+.au-p.on { background: var(--c-key-bg); }
+.au-ph { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.au-ph img { border-radius: 50%; background: #fff; }
+.au-ph b { font-size: var(--fs-md); margin-right: 6px; }
+.au-v { margin-left: auto; font-size: var(--fs-sm); color: var(--c-text2); white-space: nowrap; }
+.au-cls { font-size: var(--fs-xs); font-weight: 700; padding: 2px 8px; border-radius: 10px; white-space: nowrap; }
+.au-cls-chg { background: var(--c-key-bg); color: var(--c-key); }
+.au-cls-keep { background: var(--c-surface2); color: var(--c-sub); border: 1px solid var(--c-line); }
+.au-bar { position: relative; height: 14px; background: #efe8dc; border-radius: 4px; overflow: hidden; }
+.au-bar.base { height: 9px; opacity: .55; }
+.au-seg { position: absolute; top: 0; bottom: 0; border-right: 1px solid rgba(255,255,255,.7); }
+.au-bars { display: grid; grid-template-columns: 44px 1fr; align-items: center; gap: 3px 8px; }
+.au-bl { font-size: 10.5px; color: var(--c-sub); }
+.au-hl { margin-top: 5px; font-size: var(--fs-xs); color: var(--c-sub); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.au-leg { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: var(--sp-3); font-size: var(--fs-xs); color: var(--c-text2); }
+.au-leg i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+.au-vline { margin: 0 0 4px; font-size: var(--fs-sm); color: var(--c-text2); }
+.au-cline { margin: 0 0 var(--sp-2); font-size: var(--fs-sm); color: var(--c-key); }
+.au-log { list-style: none; margin: var(--sp-3) 0 0; padding: 0; }
+.au-it { display: grid; grid-template-columns: 46px 1fr; gap: 8px; padding: 9px 0; border-bottom: 1px solid var(--c-line2); }
+.au-it.new .au-bd { box-shadow: inset 3px 0 0 var(--c-key); padding-left: 8px; }
+.au-tm { font-size: var(--fs-sm); font-weight: 700; color: var(--c-text2); font-variant-numeric: tabular-nums; border-left: 3px solid var(--dc); padding-left: 6px; height: fit-content; }
+.au-bd b { font-size: var(--fs-md); }
+.au-bd p { margin: 3px 0 4px; font-size: var(--fs-sm); line-height: 1.5; color: var(--c-text2); }
+.au-ev { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; font-size: var(--fs-xs); margin-top: 3px; line-height: 1.45; }
+.au-ev b { white-space: nowrap; padding: 1px 6px; border-radius: 8px; font-weight: 700; }
+.au-ev-r b { background: #eef5ee; color: #2f6b3a; }
+.au-ev-p b { background: #eef2f7; color: #34506e; }
+.au-ev span { color: var(--c-text2); }
+/* 요지는 원문 인용이 아니라 요약 — 따옴표 쓰지 않음 */
+.au-dev summary { font-size: var(--fs-xs); color: var(--c-sub); cursor: pointer; }
+.au-dev code { display: block; font-size: 10.5px; word-break: break-all; color: var(--c-sub); }
+/* CL-1024-21 — 지도(선택 시각의 위치 · 초점 고객 동선) · 운영자 개입 이야기 · 다른 선택 */
+.au-map { background: #fff; border: 1px solid var(--c-line); border-radius: var(--r-3, 10px); padding: 10px 12px 8px; margin: var(--sp-3) 0; }
+.au-mh { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; font-size: var(--fs-sm); color: var(--c-text2); }
+.au-mh b { font-size: var(--fs-lg); font-variant-numeric: tabular-nums; color: var(--c-text); }
+.au-mh em { font-style: normal; color: var(--c-key); font-weight: 700; }
+.au-mh .cf-btn { margin-left: auto; }
+.au-mwrap { background: #f6f1e7; border-radius: 8px; overflow: hidden; }
+.au-svg { display: block; width: 100%; height: auto; max-height: 420px; }
+.au-path { fill: none; stroke: var(--c-key, #b5452f); stroke-width: 2.5; stroke-dasharray: 6 5; opacity: .75; }
+.au-pdot { fill: #fff; stroke: var(--c-key, #b5452f); stroke-width: 1.5; }
+.au-mk { cursor: pointer; }
+.au-mkr { fill: #fff; stroke-width: 3; }
+.au-mk.on .au-mkr { stroke-width: 4; filter: drop-shadow(0 1px 3px rgba(0,0,0,.35)); }
+.au-mkt { font-size: 11px; font-weight: 700; text-anchor: middle; fill: #2b2620; paint-order: stroke; stroke: #fff; stroke-width: 3px; }
+.au-range { width: 100%; margin: 8px 0 2px; accent-color: var(--c-key, #b5452f); }
+.au-mfoot { display: flex; justify-content: space-between; gap: 10px; font-size: 10.5px; color: var(--c-sub); }
+.au-prof { margin-left: auto; font-size: var(--fs-sm); }
+.au-lh { margin: var(--sp-3) 0 0; font-size: var(--fs-sm); font-weight: 700; }
+.au-lh span { font-weight: 400; color: var(--c-sub); font-size: var(--fs-xs); margin-left: 6px; }
+.au-it { cursor: pointer; }
+.au-it.now { background: #fff8e8; }
+.au-story { margin: var(--sp-2) 0 0; padding: 10px 12px; border-radius: 8px; background: var(--c-key-bg, #fbeee9); }
+.au-story.keep { background: var(--c-surface2); border: 1px solid var(--c-line); }
+.au-sh { font-size: var(--fs-sm); color: var(--c-text2); margin-bottom: 6px; }
+.au-sh b { color: var(--c-key); }
+.au-story ol { list-style: none; margin: 0; padding: 0; }
+.au-story li { display: grid; grid-template-columns: 58px 1fr; gap: 8px; padding: 4px 0; font-size: var(--fs-sm); line-height: 1.5; border-top: 1px dashed rgba(0,0,0,.08); }
+.au-story li:first-child { border-top: 0; }
+.au-sk { font-size: var(--fs-xs); font-weight: 700; color: var(--c-sub); padding-top: 2px; }
+.au-sev { margin-top: 3px; font-size: var(--fs-xs); color: var(--c-text2); }
+.au-tag { display: inline-block; font-size: 10.5px; font-weight: 700; padding: 0 6px; border-radius: 8px; margin-right: 5px; }
+.au-tag.r { background: #eef5ee; color: #2f6b3a; }
+.au-tag.p { background: #eef2f7; color: #34506e; }
+.au-ch { margin-top: 4px; font-size: var(--fs-xs); color: var(--c-text2); }
+.au-ch summary { cursor: pointer; color: var(--c-sub); }
+.au-ch div { margin-top: 3px; line-height: 1.5; }
+.au-ch i { font-style: normal; color: var(--c-sub); }
+.au-pay { margin: 2px 0 3px; font-size: var(--fs-xs); color: #7a5a1e; } .au-pay i { font-style: normal; color: var(--c-sub); }
+.au-story li.hit .au-sk { color: var(--c-key); }

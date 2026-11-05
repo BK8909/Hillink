@@ -1,0 +1,48 @@
+{
+  "baseline": {
+    "failure_instances": 12,
+    "failed_tests": {
+      "timeline.viewer.tests.test_autonomy.CL19Followup::test_redteam_validator_rejects_violations": 1,
+      "timeline.viewer.tests.test_cl32_boundary.ApiEvidenceMinimal::test_flow_evidence_only_cited_and_masked": 1,
+      "timeline.viewer.tests.test_ledger_l5.LedgerTest::test_all_sums": 1,
+      "timeline.viewer.tests.test_m4_live_visit.M4LiveVisitTests::test_complete_action_sequence_and_l5_transactions_match_research": 1,
+      "timeline.viewer.tests.test_opx_adapter.OpxAdapter::test_arbitrary_value_recomputed": 1,
+      "timeline.viewer.tests.test_opx_adapter.OpxAdapter::test_four_baselines": 1,
+      "timeline.viewer.tests.test_visit_smoke_v1.VisitSmokeBaselineV1::test_six_frozen_current_engine_cases": 6
+    },
+    "skip": [
+      {
+        "test": "timeline.viewer.tests.test_query_qa.QueryCacheRegression::test_cached_query_invariants",
+        "reason": "건너뜀: 10/10 기본 캐시 없음"
+      }
+    ],
+    "summary": "12 failed, 717 passed, 1 skipped, 12 subtests passed in 313.01s (0:05:13)"
+  },
+  "candidate": {
+    "failure_instances": 12,
+    "failed_tests": {
+      "timeline.viewer.tests.test_autonomy.CL19Followup::test_redteam_validator_rejects_violations": 1,
+      "timeline.viewer.tests.test_cl32_boundary.ApiEvidenceMinimal::test_flow_evidence_only_cited_and_masked": 1,
+      "timeline.viewer.tests.test_ledger_l5.LedgerTest::test_all_sums": 1,
+      "timeline.viewer.tests.test_m4_live_visit.M4LiveVisitTests::test_complete_action_sequence_and_l5_transactions_match_research": 1,
+      "timeline.viewer.tests.test_opx_adapter.OpxAdapter::test_arbitrary_value_recomputed": 1,
+      "timeline.viewer.tests.test_opx_adapter.OpxAdapter::test_four_baselines": 1,
+      "timeline.viewer.tests.test_visit_smoke_v1.VisitSmokeBaselineV1::test_six_frozen_current_engine_cases": 6
+    },
+    "skip": [
+      {
+        "test": "timeline.viewer.tests.test_query_qa.QueryCacheRegression::test_cached_query_invariants",
+        "reason": "건너뜀: 10/10 기본 캐시 없음"
+      }
+    ],
+    "summary": "12 failed, 721 passed, 1 skipped, 12 subtests passed in 314.53s (0:05:14)"
+  },
+  "new_failures": 0,
+  "removed_failures": 0,
+  "known_11_reproduced": true,
+  "additional_existing_failure": {
+    "test": "CL19Followup.test_redteam_validator_rejects_violations",
+    "cause": "redteam_cl19 module absent in both baseline and candidate product packages",
+    "product_engine_runtime_dependency": "No import from current engine; legacy regression subprocess only"
+  }
+}

@@ -1,0 +1,67 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.*
+
+# next.js
+.next/
+out/
+next-env.d.ts
+
+# production
+build/
+dist/
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# testing / tooling artifacts
+.playwright-mcp/
+coverage/
+
+# env
+.env
+.env*.local
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# editors / os
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# vercel / typescript
+.vercel
+*.tsbuildinfo
+
+# 생성물
+timeline/timeline_viz.html
+__pycache__/
+
+# 생성물
+timeline/timeline_viz.html
+__pycache__/
+
+# 지도 화면 하루 계산 캐시 (timeline/viewer/app.py)
+timeline/viewer/cache/
+
+# 10/14 화면 — 후기 원문 링크 · 로컬 사진은 저장소에 올리지 않는다 (링크는 노션, 사진은 10/7 현장 · 공식 장소 사진만)
+timeline/viewer/links.local.csv
+timeline/viewer/photos.local/
+# 10/23 로컬 전용 — 원문 링크 · 비공개 보관 프로파일(저장소에 올리지 않음)
+timeline/viewer/static/*.local.json
+timeline/experiments/persona_live/operator_choice/operator_world_v1_1/*.local.json
+
+# 비공개 제품 인계 브랜치의 기존 실행 입력
+!timeline/viewer/static/persona_library.local.json
+!timeline/viewer/static/persona_links.local.json
+!timeline/viewer/links.local.csv
+!timeline/experiments/persona_live/operator_choice/operator_world_v1_1/turn_personas_ext.local.json

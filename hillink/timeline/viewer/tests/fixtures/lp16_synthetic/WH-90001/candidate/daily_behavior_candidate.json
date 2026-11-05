@@ -1,0 +1,24 @@
+{
+ "facets": {
+  "activity_rest": {
+   "evidence_relation": "SAME_BEHAVIOR_OBSERVED",
+   "same_behavior_fact_ids": [
+    "WH-90001-F002"
+   ],
+   "cross_context_fact_ids": [],
+   "source_fact_ids_for_inference": [
+    "WH-90001-F002"
+   ]
+  },
+  "lunch_dinner": {
+   "evidence_relation": "CONTEXT_TRANSFER_INFERENCE",
+   "same_behavior_fact_ids": [],
+   "cross_context_fact_ids": [
+    "WH-90001-F003"
+   ],
+   "source_fact_ids_for_inference": [
+    "WH-90001-F003"
+   ]
+  }
+ }
+}

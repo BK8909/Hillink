@@ -1,0 +1,151 @@
+{
+ "_about": "유형 썸네일 정식 자산 목록(CL-1024-15). 원본 파일 이름에 유형명이 없어 그림 내용으로 유형을 지정한 11장 — 사용자 승인 전. 이 목록이 파일 이름 자동 매칭보다 우선한다. 썸네일 파일을 다시 만들거나 바꾸지 않는다.",
+ "conversion": "PNG → JPEG 1200px 폭 · 품질 82 · progressive (Pillow LANCZOS) · 2026-10-24 CL-1024-14",
+ "type_ids": {
+  "가족 · 영유아": "family_infant",
+  "가족 · 부모 동반": "family_parents",
+  "커플 · 기념일": "couple_anniversary",
+  "혼자 휴식": "solo_rest",
+  "친구 모임": "friends",
+  "업무 · 출장": "business",
+  "미식": "gourmet",
+  "웰니스": "wellness",
+  "스포츠 목적": "sports",
+  "행사 체험": "event",
+  "혜택 · 멤버십": "benefit_membership"
+ },
+ "thumbs": [
+  {
+   "source_file": "c5b5d0d9-image.png",
+   "source_note": "사용자 첨부 10/24 15:00 (파일 이름은 첨부 시스템이 붙인 임의 이름)",
+   "source_sha256": "bafcfdc8f812fb518a28894307a0b27ef69606ca903623f1653c0684bdca803b",
+   "file": "가족_부모동반_썸네일.jpg",
+   "file_sha256": "8a29785d10c5b4eba14e5db5313a9a3117d85dd1cd2a3bafe9ea36b69410e593",
+   "type": "가족 · 부모 동반",
+   "type_id": "family_parents",
+   "basis": "그림 내용으로 지정 — 성인 자녀 2명과 부모님이 함께 산책",
+   "match": "MANUAL_BY_CONTENT",
+   "user_approved": false
+  },
+  {
+   "source_file": "7eca02fd-image.png",
+   "source_note": "사용자 첨부 10/24 15:00 (파일 이름은 첨부 시스템이 붙인 임의 이름)",
+   "source_sha256": "ee37ec1c3ae2efcb432794f89d9676eead6584b8b3d483a666311aac4c2c3de8",
+   "file": "가족_영유아_썸네일.jpg",
+   "file_sha256": "cb1cba766478af537d63e519fa0f7557a35f54e836df92e69be4ba39382eb740",
+   "type": "가족 · 영유아",
+   "type_id": "family_infant",
+   "basis": "그림 내용으로 지정 — 유모차 · 어린 자녀와 부모",
+   "match": "MANUAL_BY_CONTENT",
+   "user_approved": false
+  },
+  {
+   "source_file": "b7a51b88-image.png",
+   "source_note": "사용자 첨부 10/24 15:00 (파일 이름은 첨부 시스템이 붙인 임의 이름)",
+   "source_sha256": "8a798f934e0159143156d7c9072d416ef151182285d4d4ebfa0a70e315a38cfe",
+   "file": "미식_썸네일.jpg",
+   "file_sha256": "c56a676861cfe5862519c9772bbfd94a1d7d942db24fbb01fbc9ae7dc77daa7c",
+   "type": "미식",
+   "type_id": "gourmet",
+   "basis": "그림 내용으로 지정 — 파인다이닝 코스 접시",
+   "match": "MANUAL_BY_CONTENT",
+   "user_approved": false
+  },
+  {
+   "source_file": "a8716fc8-image.png",
+   "source_note": "사용자 첨부 10/24 15:00 (파일 이름은 첨부 시스템이 붙인 임의 이름)",
+   "source_sha256": "fedac3f95f3480438d4674f7c4aec6d0e4a7189b787144fd05629ca4731a5b9c",
+   "file": "스포츠목적_썸네일.jpg",
+   "file_sha256": "eb4e3a1c0bfca2c57bb2287371a89700fa1bdbc06c366987dda0fc04c45a9ef8",
+   "type": "스포츠 목적",
+   "type_id": "sports",
+   "basis": "그림 내용으로 지정 — 골프 연습장 스윙",
+   "match": "MANUAL_BY_CONTENT",
+   "user_approved": false
+  },
+  {
+   "source_file": "c63df1c8-image.png",
+   "source_note": "사용자 첨부 10/24 15:00 (파일 이름은 첨부 시스템이 붙인 임의 이름)",
+   "source_sha256": "73e640cd28c9ea7b87ed62e37820ad1de307b37deb70cee33cde95772257eeca",
+   "file": "업무_출장_썸네일.jpg",
+   "file_sha256": "7a3a8d56bdfbe89432514c4adb5ca69910f5a74f5fd3a0dd4576a895141a74e8",
+   "type": "업무 · 출장",
+   "type_id": "business",
+   "basis": "그림 내용으로 지정 — 로비 · 노트북 · 캐리어",
+   "match": "MANUAL_BY_CONTENT",
+   "user_approved": false
+  },
+  {
+   "source_file": "32409279-image.png",
+   "source_note": "사용자 첨부 10/24 15:00 (파일 이름은 첨부 시스템이 붙인 임의 이름)",
+   "source_sha256": "2cb0cf2cdeec4944abb0c5936881be8798e063b6ee31124c547c3435c132fd2a",
+   "file": "웰니스_썸네일.jpg",
+   "file_sha256": "830667b175c9fc7b6e66517ff9f0e200f28705df566c8e892965378e038a2494",
+   "type": "웰니스",
+   "type_id": "wellness",
+   "basis": "그림 내용으로 지정 — 스파 마사지",
+   "match": "MANUAL_BY_CONTENT",
+   "user_approved": false
+  },
+  {
+   "source_file": "674a21f9-image.png",
+   "source_note": "사용자 첨부 10/24 15:00 (파일 이름은 첨부 시스템이 붙인 임의 이름)",
+   "source_sha256": "36f49da1a416c4106ee00845f6f53a69119588ee90f6cff4017e150e3064eadf",
+   "file": "친구모임_썸네일.jpg",
+   "file_sha256": "5e6210897f4c98c227404eac6f5f78fa797ff265ae35a947a649046d1a7aa07a",
+   "type": "친구 모임",
+   "type_id": "friends",
+   "basis": "그림 내용으로 지정 — 친구 4명 · 화로 · 음료",
+   "match": "MANUAL_BY_CONTENT",
+   "user_approved": false
+  },
+  {
+   "source_file": "50e10bfd-image.png",
+   "source_note": "사용자 첨부 10/24 15:00 (파일 이름은 첨부 시스템이 붙인 임의 이름)",
+   "source_sha256": "a8f9b493ef26dbfd520a2020efc59390693e37e4bc831072fa8db9e5d313c0e8",
+   "file": "커플_기념일_썸네일.jpg",
+   "file_sha256": "43ea1d4d19ef70aa7d7f0d5cf215c9b73e518d9af156bbba535cfc6ddae7b8f6",
+   "type": "커플 · 기념일",
+   "type_id": "couple_anniversary",
+   "basis": "그림 내용으로 지정 — 야경 · 샴페인 건배 커플",
+   "match": "MANUAL_BY_CONTENT",
+   "user_approved": false
+  },
+  {
+   "source_file": "9499da5b-image.png",
+   "source_note": "사용자 첨부 10/24 15:00 (파일 이름은 첨부 시스템이 붙인 임의 이름)",
+   "source_sha256": "98f50c9475c8bb45ecd9c054c92c12a1fb6264984933f4f0d5b25b546ea7579c",
+   "file": "행사체험_썸네일.jpg",
+   "file_sha256": "6c896307436b2a639f31c608fd6ff57d983cd3f7a2e05c1a7c388fdb9ca36fca",
+   "type": "행사 체험",
+   "type_id": "event",
+   "basis": "그림 내용으로 지정 — 야외 와인 행사",
+   "match": "MANUAL_BY_CONTENT",
+   "user_approved": false
+  },
+  {
+   "source_file": "0461a109-image.png",
+   "source_note": "사용자 첨부 10/24 15:00 (파일 이름은 첨부 시스템이 붙인 임의 이름)",
+   "source_sha256": "ec6286a3c9d161021f761bad93648ee69ab6c93bdd3b11d9109ba57c2976a1ad",
+   "file": "혜택_멤버십_썸네일.jpg",
+   "file_sha256": "7da5c19b956c4b12f677cd1b11dffe5352a08c3718aacb9554117385895e98de",
+   "type": "혜택 · 멤버십",
+   "type_id": "benefit_membership",
+   "basis": "그림 내용으로 지정 — 프런트 카드 전달",
+   "match": "MANUAL_BY_CONTENT",
+   "user_approved": false
+  },
+  {
+   "source_file": "1bdbfedf-image.png",
+   "source_note": "사용자 첨부 10/24 15:00 (파일 이름은 첨부 시스템이 붙인 임의 이름)",
+   "source_sha256": "c20ddf1a9e3ce767659e2eb3e488fbd99b1542c83e3865344d983bacd2862c31",
+   "file": "혼자휴식_썸네일.jpg",
+   "file_sha256": "fed85d5fec9631829cd47621127b37452df04de406b3feb618d8ef33960c8410",
+   "type": "혼자 휴식",
+   "type_id": "solo_rest",
+   "basis": "그림 내용으로 지정 — 객실 창가에서 혼자 커피",
+   "match": "MANUAL_BY_CONTENT",
+   "user_approved": false
+  }
+ ]
+}

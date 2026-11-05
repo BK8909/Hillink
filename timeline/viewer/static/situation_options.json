@@ -1,0 +1,24 @@
+{
+  "version": "visit-setup-v1",
+  "events": [
+    {"id":"none","label":"행사 없음","description":"기존 고객의 조건으로 하루를 계산합니다.","enabled":true,"event":false},
+    {"id":"wine","label":"와인페어","description":"행사 여부만 바꿔 같은 고객의 선택을 비교합니다.","enabled":true,"event":true},
+    {"id":"pool_party","label":"여름 풀파티","description":"확장 예정 · 행사 선택 계산 미연결","enabled":false,"source":"product_roadmap"},
+    {"id":"beer_fest","label":"가을 맥주 축제","description":"연구 시나리오 · 하루 엔진 미연결","enabled":false,"source":"S3_OCTOBER_BEER_FEST"},
+    {"id":"christmas","label":"크리스마스 시즌","description":"연구 시나리오 · 하루 엔진 미연결","enabled":false,"source":"S4_WINTER_CHRISTMAS_EVENT"}
+  ],
+  "weather": [
+    {"id":"clear","label":"맑은 날","enabled":false},
+    {"id":"rain","label":"비 오는 날","enabled":false}
+  ],
+  "timing": [
+    {"id":"weekday","label":"평일","enabled":false},
+    {"id":"weekend","label":"주말·공휴일","enabled":false},
+    {"id":"morning","label":"오전 방문","enabled":false},
+    {"id":"afternoon","label":"오후 방문","enabled":false},
+    {"id":"night","label":"야간 방문","enabled":false}
+  ],
+  "purposes": [
+    {"id":"weekday_golf","label":"골프 고객의 평일 방문","description":"복합 상황 확장 예정 · 현재 고객의 방문 목적은 기존 프로필을 유지합니다.","enabled":false}
+  ]
+}

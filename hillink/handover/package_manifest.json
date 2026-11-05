@@ -6847,8 +6847,8 @@
     {
       "path": "timeline/viewer/static/situation.js",
       "included": true,
-      "bytes": 38811,
-      "sha256": "64aaa229ffb1e5ea157b61531c109e2ce6f69e62e3b65624102317829f7538cb"
+      "bytes": 40906,
+      "sha256": "f04187971c804bd53d6b45e92e288d7eef44678acee5ee355aa5c03e715a1eb2"
     },
     {
       "path": "timeline/viewer/static/situation_options.json",

@@ -38,3 +38,25 @@
 
 .st-choice .st-event-title {display:flex;flex-direction:column;gap:2px;min-width:0}
 .st-choice .st-event-english {white-space:nowrap;font-size:11px;letter-spacing:-.25px;line-height:1.3}
+/* 11/05 고객 흐름 오른쪽 패널 — 함께 저울질한 선택 · 연결된 후기 근거 (기술 기록은 행동근거 화면) */
+.frp-brief-decision h4{font-size:12px;line-height:1.5;margin:12px 0 6px;color:#6f6252;}
+.frp-brief-origin{font-size:11px;line-height:1.6;color:#91816e;margin:0 0 8px;}
+.frp-brief-alts,.frp-brief-facts{list-style:none;margin:0;padding:0;display:grid;gap:7px;}
+.frp-brief-alts li{display:grid;gap:2px;padding:8px 10px;border:1px solid #ece4d8;border-radius:9px;background:#fbf8f2;}
+.frp-brief-alts b{font-size:12px;line-height:1.5;color:#51483d;word-break:keep-all;}
+.frp-brief-alts span{font-size:12px;line-height:1.6;color:#7c6c56;word-break:keep-all;}
+.frp-brief-facts li{font-size:12px;line-height:1.6;color:#7c6c56;word-break:keep-all;}
+.frp-brief-facts .cf-link{font-size:11px;padding:0;margin-right:2px;}
+.frp-brief-facts small{font-size:10px;color:#b4552f;border:1px solid #ecc9b9;border-radius:5px;padding:0 4px;margin-right:4px;}
+.frp-brief-decision .frp-note{margin-top:8px;}
+/* 11/05 고객 흐름 패널 간결화 — 소비 요약 접기 · 정밀 근거 링크 */
+.frp-links{padding:10px 15px;}
+.frp-links .rp-link{font-size:12px;line-height:1.6;text-align:left;white-space:normal;word-break:keep-all;}
+.frp-spend .frp-spend-more{margin-top:10px;}
+.frp-spend .frp-spend-more>summary{cursor:pointer;font-size:12px;color:#7c6c56;}
+.frp-spend .frp-department-list{margin-top:8px;}
+/* 11/05 정밀 근거 버튼 — RPG 대화창 바로 아래, 내용에 맞는 너비 */
+.frp-links{display:none;}
+.hls-rpg-evidence{display:flex;justify-content:flex-end;margin:-6px 0 12px;}
+.hls-rpg-evidence .rp-link{font-size:13px;line-height:1.4;padding:5px 11px;border:1px solid #cdbfae;border-radius:8px;background:#fbf8f2;color:#7a5a3a;width:auto;white-space:nowrap;}
+.hls-rpg-evidence .rp-link:hover{background:#f3ebdd;border-color:#b9a68f;}

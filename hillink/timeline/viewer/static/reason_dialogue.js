@@ -58,6 +58,18 @@
     }
     return pages.map((item,i)=>({...item,title:i===0?'지금의 선택':i===1?'경험과 이유':'선택의 맥락'}));
   }
+  const clip=(t,n)=>{t=String(t||'').trim();return t.length>n?t.slice(0,n-1)+'…':t;};
+  function modelPages(model) {
+    const d=model.decision||{},last=(d.attempts||[]).at(-1),answer=last?.answer||{},plans=answer.plans||[];
+    const actions=(d.input_context||{}).actions||[],label=id=>actions.find(a=>a.action_id===id)?.label||null;
+    const sents=splitSentences(String(model.summary||'').trim()).filter(s=>!technical.test(s));
+    const choice=sents[0]||(d.execution_state==='EXECUTION_HOLD'?'이 장면에서는 유효한 선택을 확정하지 못했어요.':'이 선택의 요약은 행동근거에서 볼 수 있어요.');
+    const reason=clip(sents.slice(1,3).join(' '),170);
+    const alt=plans.map((p,i)=>i===answer.selected_index?null:p).find(p=>p&&label(p.action_id));
+    const altLine=alt?`대신 둔 선택은 ${label(alt.action_id)}${clip(splitSentences(String(alt.decision_summary||''))[0]||'',80)?` — ${clip(splitSentences(String(alt.decision_summary||''))[0],80)}`:''}`:'';
+    const second=[reason,altLine].filter(Boolean).join(' ')||(d.day_end_review?'남은 일정과 휴식을 검토한 뒤 정한 선택이에요.':'이 선택과 비교한 대안은 행동근거에서 볼 수 있어요.');
+    return [{text:choice,voice:'record',title:'지금의 선택',count:1},{text:second,voice:'record',title:'이유와 대안',count:1}];
+  }
   function keyOf({run,customer,scene,date,start,action}) {
     return JSON.stringify([run||null,customer,scene,date||null,start,action]);
   }
@@ -148,7 +160,10 @@
       // Legacy score templates have no autonomous packets. They must not erase
       // the actual pre-choice model reason or invent a missing-record message.
       const source=model?[model.summary]:autonomous?['이 장면은 공통 방문 절차이며 별도의 LLM 선택 판단과 구분합니다.']:reason?reason.sentences:sentencesOf(why);
-      const pages=build(source,{party:V?.party,verified:!autonomous&&(!!reason||why.dataset.storyOk==='1'),reasonDriven:!!reason});
+      // A recorded LLM decision gets exactly two pages: the choice, then a short reason with
+      // the one alternative it set aside. Text comes from the decision record only; nothing
+      // about feelings or motives is added, and the full record stays on the evidence page.
+      const pages=model?modelPages(model):build(source,{party:V?.party,verified:!autonomous&&(!!reason||why.dataset.storyOk==='1'),reasonDriven:!!reason});
       root.__HL_REASON_LAST=reason?{pid,scene:D?.index??sc.si,...reason}:null;
       // Retain the precise existing link and every non-reason card, with its handlers.
       const kind=input&&root.HLDecisionExplain?.classify(input);
@@ -157,11 +172,18 @@
       box.className='frp-section frp-why hls-rpg';box.dataset.frpSection='why';box.dataset.dialogueKey=key;
       if(why.dataset.reasonKey)box.dataset.reasonKey=why.dataset.reasonKey;
       box.innerHTML=`<div class="hls-rpg-speaker"><b>왜 이 행동인가?</b></div>
-        <div class="hls-rpg-heading"><h3>왜 이 행동인가?</h3><small data-dialogue-voice></small>${link}</div>
+        <div class="hls-rpg-heading"><h3>왜 이 행동인가?</h3><small data-dialogue-voice></small></div>
         <div class="hls-rpg-message"><span class="hls-rpg-chapter" data-dialogue-title></span><div class="hls-rpg-lines" aria-live="polite" aria-atomic="true">${pages.map((p,i)=>`<p data-dialogue-page="${i}" data-voice="${p.voice}" data-page-title="${p.title}"${i?' hidden':''}>${esc(p.text)}</p>`).join('')}</div></div>
         <div class="hls-rpg-footer"><details data-dialogue-all><summary>대화 전체 보기</summary><ol>${pages.map(p=>`<li>${esc(p.text)}</li>`).join('')}</ol><p>실행 기록을 옮긴 가상 대화이며 실제 후기 원문 발언이 아닙니다.</p></details><span class="hls-rpg-pager"><small data-dialogue-count></small><button type="button" data-dialogue-next aria-label="다음 대사"><span aria-hidden="true">▼</span></button></span></div>`;
       paint(box,active.index,active.all);
+      // The dialog already carries the recorded decision summary; the card keeps action, place, time and spend.
+      if(model)current.querySelector('.frp-current-description')?.remove();
       why.replaceWith(box);current.insertAdjacentElement('afterend',box);
+      // One small evidence button directly under the dialog, outside the paged text, above 다음 일정.
+      // Same handler and scene/person/run context as before (data-ux-scene).
+      const evidence=root.document.createElement('div');evidence.className='hls-rpg-evidence';
+      evidence.innerHTML=link.replace(/>[^<]*<\/button>/,'>정밀 근거 보기 →</button>');
+      if(evidence.querySelector('[data-ux-scene]'))box.insertAdjacentElement('afterend',evidence);
       return card.outerHTML;
     } catch (_) { return html; }
   };

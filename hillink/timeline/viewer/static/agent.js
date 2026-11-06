@@ -492,7 +492,7 @@ async function agRunFlow(ids, cond, auto) {
     // 2025 dates exist only inside an explicit event-card scenario (server date policy); a plain visit moves to the 2026 default date, visibly.
     AG.dateNotice=null;
     if(!request.scenario && String(request.start_date)<'2026-01-01'){AG.dateNotice=`행사 카드 없이 계산하는 방문이라 ${request.start_date} 대신 2026-10-24로 계산했습니다 (2025년은 행사 시나리오에서만 지원).`;request.start_date='2026-10-24';}
-    Object.assign(request,HLVisitExecution.request(request,AG.visitRequest?.judgment_mode||AG.judgmentMode||'replay'));
+    Object.assign(request,HLVisitExecution.request(request,AG.visitRequest?.judgment_mode||AG.judgmentMode||'replay',AG.visitRequest?.hybrid_policy||null));
     if(request.judgment_mode==='rules')delete request.hybrid_policy;
     const r = await api("/api/visit", request);
     if (r.error) throw new Error(r.error);
@@ -590,6 +590,22 @@ function agVisitDaySelect(dayNumber) {
   AG.focusLoc = null; AG._sc = null; AG.si = 0; AG.keep[AG.mode] = { runs: AG.runs, sel: AG.sel, plans: AG.plans, visits: AG.visits, flow: AG.flow };
   agPlanHint(); agShow(false); document.dispatchEvent(new Event("hl:agrun"));
 }
+// LIVE runs call the model once per decision (30~70초씩 · 1박 8~12회) and the server reports
+// nothing until the whole visit is done, so the only honest progress signal is elapsed time
+// against the recorded range. No decision count is invented from the clock.
+const AG_RUN_EXPECT = { day_visit: [2, 3, '약 2~3분'], stay_1: [8, 12, '약 5~12분'], stay_2: [14, 20, '약 10~20분'], stay_3: [20, 31, '약 15~30분'] };
+function agRunTicker(button, teams, mode, duration) {
+  const bar = button.closest('.g-runbar'); let note = document.querySelector('#agGenerationStatus');
+  if (!note && bar) { note = document.createElement('p'); note.id = 'agGenerationStatus'; note.setAttribute('role', 'status'); bar.appendChild(note); }
+  const t0 = Date.now(), base = teams > 1 ? `${teams}팀 가상 방문 생성 중…` : '가상 방문 생성 중…';
+  const expect = AG_RUN_EXPECT[duration] || AG_RUN_EXPECT.stay_1;
+  const label = mode === 'live' ? `새로운 LLM 판단 실행 중 · 판단마다 30~70초 · ${duration === 'day_visit' ? '당일' : duration.replace('stay_', '') + '박'} 방문은 보통 ${expect[0]}~${expect[1]}회(${expect[2]})${teams > 1 ? ' · 팀 수만큼 곱' : ''} · 이 화면을 떠나면 결과를 받을 수 없습니다`
+    : mode === 'rules' ? '규칙 계산 중 · LLM 호출 없음' : '저장된 LLM 판단 재생 중 · 유료 호출 없음';
+  if (note) note.textContent = label;
+  const tick = () => { const s = Math.round((Date.now() - t0) / 1000); button.textContent = `${base} ${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`; };
+  const timer = setInterval(tick, 1000); tick();
+  return () => { clearInterval(timer); };
+}
 async function agRun() {
   if (AG.busy) return;
   if (AG.mode !== "agents" && !AG.one) { agReady(); return; }
@@ -601,7 +617,8 @@ async function agRun() {
     let runs, visits = null;
     if (AG.duration) {   // 선택한 전체 기간을 /api/visit duration 계약으로 전달
       b.textContent = ids.length > 1 ? `${ids.length}팀 가상 방문 생성 중…` : "가상 방문 생성 중…";
-      const F = await agRunFlow(ids, cond, auto);
+      const stopTicker = agRunTicker(b, ids.length, AG.visitRequest?.judgment_mode || AG.judgmentMode || 'replay', AG.duration);
+      let F; try { F = await agRunFlow(ids, cond, auto); } finally { stopTicker(); }
       runs = F.runs; visits = F.visits;
       if (!runs.length) throw new Error("이 고객은 실행 가능한 방문 행동이 없습니다. 조건을 확인해 다시 실행하세요.");
       AG.runs = runs; AG.ti = runs.length - 1; AG.res = runs[AG.ti]; AG.visits = visits;
@@ -642,7 +659,9 @@ async function agRun() {
   }
   finally { AG.busy = false; b.disabled = AG.mode !== "agents" && !AG.one; b.textContent = AG.flow ? "가상 방문 다시 생성" : "가상 방문 생성";
     const current=document.querySelector('#agRun');if(current)current.textContent=b.textContent;
-    if(generated){let notice=document.querySelector('#agGenerationStatus');if(!notice){notice=document.createElement('p');notice.id='agGenerationStatus';notice.setAttribute('role','status');current?.closest('.g-runbar')?.appendChild(notice);}notice.textContent='가상 방문이 생성되었습니다. ▶ 재생으로 방문 흐름을 확인하세요.';}
+    let notice=document.querySelector('#agGenerationStatus');
+    if(generated){if(!notice){notice=document.createElement('p');notice.id='agGenerationStatus';notice.setAttribute('role','status');current?.closest('.g-runbar')?.appendChild(notice);}notice.textContent='가상 방문이 생성되었습니다. ▶ 재생으로 방문 흐름을 확인하세요.';}
+    else if(notice)notice.remove();
   }
 }
 
@@ -834,7 +853,7 @@ function agScenesLegacy(pid) {   // (대체) 계획 계층이 없을 때의 간�
 const AG_ACT_SHORT = { wake: "기상", unpack: "짐 정리", room_rest: "객실 휴식", room_nap: "아이와 휴식", room_bath: "욕조 휴식", room_snack: "객실 간식", pool: "수영장", sauna: "사우나", fitness: "피트니스", footbath: "족욕", night_footbath: "야경 족욕",
   forest_walk: "포레스트", garden_walk: "정원 산책", riverpark: "리버파크", tennez: "테네즈 파크", cafe: "카페", bakery: "빵 · 음료", lounge: "라운지", library: "라이브러리", theatre: "빛의 시어터",
   lunch_ondal: "점심 · 온달", lunch_geumryong: "점심 · 금룡", lunch_myongwol: "점심 · 명월관", lunch_moegi: "점심 · 모에기", lunch_pizzahill: "점심 · 피자힐", lunch_bakery: "점심 · 빵", lunch_cafe: "점심 · 카페", lunch_room: "점심 · 객실", lunch_skip: "점심 건너뜀", lunch_outside: "점심 · 외부",
-  luxbar: "럭스바", night_walk: "저녁 산책", room_night: "객실 복귀", checkin: "체크인", checkout: "체크아웃", pack: "짐 정리", arrive: "도착", leave: "귀가", sleep: "취침",
+  luxbar: "럭스바", night_walk: "저녁 산책", room_night: "객실 복귀", checkin: "체크인", checkout: "체크아웃", pack: "짐 정리", arrive: "도착", leave: "귀가", sleep: "하루 마무리",
   SKYARD: "족욕", SKYARD_NIGHT: "야경 족욕", POOL: "수영장", SAUNA: "사우나", ROOM_REST: "객실 휴식", FOREST_WALK: "포레스트", ROOM_MEAL: "룸서비스", SIMPLE_MEAL_VIEW: "빵 · 야경", PIZZA_HILL: "피자힐", MYONGWOLGWAN: "명월관", ONDAL: "온달", GEUMRYONG: "금룡", THE_BUFFET: "더뷔페",
   "WINE_FAIR:check": "와인페어 안내", "PIZZA_HILL:full": "피자힐 마감", "POOL:full": "수영장 마감", idle: "쉬어 감", wait: "여유 시간", lunch_skip: "점심 건너뜀" };
 const AG_ACT_ICON = { wake: "start", unpack: "home", room_rest: "rest", room_nap: "rest", room_bath: "rest", room_snack: "noon", pool: "pool", sauna: "sauna", fitness: "sauna", footbath: "foot", night_footbath: "foot", forest_walk: "forest", garden_walk: "garden", riverpark: "walk", tennez: "walk",
@@ -1785,7 +1804,7 @@ function agBRCard(c,sc) {
   const product=name&&(agMenuTitle(R,c.choice)||name.menu),showProduct=product&&!/^(아침|점심|저녁|식사|조식)$/.test(product)&&!title.includes(product),description=showProduct?product:typeof hlReasonView==='function'&&hlReasonView(AG.flow,pid,D.index)?'':sc.why||sc.name||'';
   const day=sc.visit_day||AG.visitDay||1,scenes=agScenes(pid),index=scenes.findIndex(s=>s.si===sc.si),next=scenes.slice(index+1).filter(s=>s.k!=='move'&&(s.visit_day||AG.visitDay||1)===day&&s.t0>=sc.t1).slice(0,2);
   const schedule=`<section class="frp-section frp-schedule" data-frp-section="schedule"><h3>다음 일정</h3>${next.length?`<ol>${next.map(s=>`<li data-frp-go="${s.si}" data-frp-person="${esc(pid)}" tabindex="0"><time>${agHM(s.t0)}</time>${agReadableHTML(agScLabel(s,pid),agReadingKey(pid,s,'next-label'),2)}</li>`).join('')}</ol>`:'<p class="frp-note">오늘의 일정이 끝났습니다.</p>'}<button class="rp-link" data-frp-customer="${esc(pid)}" data-frp-customer-tab="day">전체 일정 보기 →</button></section>`;
-  return `<section class="frp-brief u06-choice" data-frp-person="${esc(pid)}"><section class="frp-section frp-current" data-frp-section="current"><div class="frp-current-meta"><span>${esc(dno(pid))} · ${day}일차</span><time>${agHM(sc.t0)}–${agHM(sc.t1)}</time></div>${im?`<div class="frp-current-media"><img class="frp-current-thumb" src="${im.src}" alt="${esc(im.name)}" width="1600" height="900"></div>`:''}<h2>${esc(title)}</h2><span class="frp-place">${esc(place)}</span>${typeof revSceneConsumptionHTML==='function'?revSceneConsumptionHTML(AG.flow,pid,sc):''}${description?`${agReadableHTML(description,agReadingKey(pid,sc,'product'),2,'frp-current-description')}`:''}</section>${schedule}${agBRWhy(c,sc,D)}${window.HLAgentDecisionView?.panel(HLAgentDecisionView.resolve(AG.flow?.result?.plans?.[pid]?.scenes[D.index],AG.flow?.result?.plans?.[pid]))||''}${agBREvidence(c,sc)}${agBRCompanion(pid)}<div class="frp-receipt-slot" data-frp-receipt-slot></div></section>`;
+  return `<section class="frp-brief u06-choice" data-frp-person="${esc(pid)}"><section class="frp-section frp-current" data-frp-section="current"><div class="frp-current-meta"><span>${esc(dno(pid))} · ${day}일차</span><time>${agHM(sc.t0)}–${agHM(sc.t1)}</time></div>${im?`<div class="frp-current-media"><img class="frp-current-thumb" src="${im.src}" alt="${esc(im.name)}" width="1600" height="900"></div>`:''}<h2>${esc(title)}</h2><span class="frp-place">${esc(place)}</span>${typeof revSceneConsumptionHTML==='function'?revSceneConsumptionHTML(AG.flow,pid,sc):''}${description?`${agReadableHTML(description,agReadingKey(pid,sc,'product'),2,'frp-current-description')}`:''}</section>${schedule}${agBRWhy(c,sc,D)}<div class="frp-receipt-slot" data-frp-receipt-slot></div></section>`;
 }
 document.addEventListener('click',event=>{
   const tab=event.target.closest('[data-frp-detail-tab]');if(tab){const root=tab.closest('.frp-spend'),key=root.dataset.frpDetailKey;AG._frpDetailTab=AG._frpDetailTab||{};AG._frpDetailTab[key]=tab.dataset.frpDetailTab;root.querySelectorAll('[data-frp-detail-tab]').forEach(b=>b.setAttribute('aria-selected',String(b===tab)));root.querySelectorAll('[data-frp-detail-pane]').forEach(p=>p.hidden=p.dataset.frpDetailPane!==tab.dataset.frpDetailTab);return;}
@@ -1859,7 +1878,9 @@ function agU06ReceiptHTML(L,pid,comparison) {
   const benefits=free.length||unknownRows.length?`<div class="frp-benefits">${benefitLine('무료 이용',freeUse,'free')}${benefitLine('패키지 포함',included,'included')}${benefitLine('가격 미확인',unknownRows,'unknown')}<details class="frp-benefit-detail"><summary>무료·포함·미확인 상세</summary><div class="frp-free-list">${[...freeUse,...included,...unknownRows].map(rowBtn).join('')}</div></details>${unknownRows.length?'<p class="rc-note">가격 미확인은 무료나 0원 결제로 보지 않고 합계에서 제외합니다.</p>':''}</div>`:'';
   const ledger=`<div class="u06-ledger-rows">${rows.map(rowBtn).join('')}</div>`;
   const tabs=[['ledger','전체 원장',ledger],['compare','비교',rcComparisonHTML(pid,L,comparison)+rcABHTML(L,pid)]],active=AG._frpDetailTab&&AG._frpDetailTab[key]==='compare'?'compare':'ledger';
-  return `<section class="rc-receipt u06-receipt frp-spend" data-frp-section="spend" data-frp-detail-key="${esc(key)}" data-rc-p="${esc(pid)}"><div class="frp-spend-heading"><h3>${L.visit?'체류 전체':'하루'} 가상 소비</h3><strong>${rcMoney(r.paid_krw)}</strong><small>${esc(r.display_id||dno(pid))} · 선택 1팀 · 방문 ${r.party_size??'미확인'}명 · 실행 원장 기준 가상 소비</small></div><h4 class="frp-tier-title">부문별 소비</h4><div class="frp-department-list">${departments}</div>${r.unknown_count?`<p class="rc-note">금액 미확인 ${r.unknown_count}건은 합계에서 제외</p>`:''}<h4 class="frp-tier-title">업장별 소비</h4>${venues}${benefits?`<h4 class="frp-tier-title">무료·포함·미확인</h4>${benefits}`:''}<details class="frp-spend-detail" data-rc-open="${esc(key)}"${RC.open.has(key)?' open':''}><summary>전체 원장 · 조건 비교</summary><div class="frp-detail-tabs" role="tablist" aria-label="소비 상세">${tabs.map(([id,label])=>`<button type="button" role="tab" id="frp-tab-${esc(pid)}-${id}" aria-controls="frp-pane-${esc(pid)}-${id}" aria-selected="${active===id}" data-frp-detail-tab="${id}">${label}</button>`).join('')}</div>${tabs.map(([id,label,html])=>`<div role="tabpanel" id="frp-pane-${esc(pid)}-${id}" aria-labelledby="frp-tab-${esc(pid)}-${id}" data-frp-detail-pane="${id}"${active===id?'':' hidden'}>${html}</div>`).join('')}</details>${rcRevenueAction()}</section>`;
+  // Flow panel shows a short spend summary; venues, benefits and the full ledger stay one
+  // click away in the same card (same ledger rows), and 매출 집계 has the full view.
+  return `<section class="rc-receipt u06-receipt frp-spend" data-frp-section="spend" data-frp-detail-key="${esc(key)}" data-rc-p="${esc(pid)}"><div class="frp-spend-heading"><h3>${L.visit?'체류 전체':'하루'} 가상 소비</h3><strong>${rcMoney(r.paid_krw)}</strong><small>${esc(r.display_id||dno(pid))} · 방문 ${r.party_size??'미확인'}명 · 실행 원장 기준 가상 소비</small></div><div class="frp-department-list">${departments}</div>${r.unknown_count?`<p class="rc-note">금액 미확인 ${r.unknown_count}건은 합계에서 제외</p>`:''}<details class="frp-spend-more"><summary>업장별 소비 · 무료·포함 · 전체 원장</summary><h4 class="frp-tier-title">업장별 소비</h4>${venues}${benefits?`<h4 class="frp-tier-title">무료·포함·미확인</h4>${benefits}`:''}<details class="frp-spend-detail" data-rc-open="${esc(key)}"${RC.open.has(key)?' open':''}><summary>전체 원장 · 조건 비교</summary><div class="frp-detail-tabs" role="tablist" aria-label="소비 상세">${tabs.map(([id,label])=>`<button type="button" role="tab" id="frp-tab-${esc(pid)}-${id}" aria-controls="frp-pane-${esc(pid)}-${id}" aria-selected="${active===id}" data-frp-detail-tab="${id}">${label}</button>`).join('')}</div>${tabs.map(([id,label,html])=>`<div role="tabpanel" id="frp-pane-${esc(pid)}-${id}" aria-labelledby="frp-tab-${esc(pid)}-${id}" data-frp-detail-pane="${id}"${active===id?'':' hidden'}>${html}</div>`).join('')}</details></details>${rcRevenueAction()}</section>`;
 }
 document.addEventListener('click',ev=>{
   const b=ev.target.closest('[data-u06-row]');if(!b)return;

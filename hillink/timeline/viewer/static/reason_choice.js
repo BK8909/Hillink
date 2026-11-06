@@ -5,7 +5,7 @@
 'use strict';
 const VERSION='choice-reason-v2-action-phase';
 const VENUE={PIZZA_HILL:'피자힐',THE_BUFFET:'더뷔페',MOEGI:'모에기',GEUMRYONG:'금룡',MYONGWOLGWAN:'명월관',ONDAL:'온달',THE_PAVILION:'더 파빌리온',LE_PASSAGE:'르 파사쥬',ROOM_MEAL:'룸서비스',LUX_BAR:'럭스바'};
-const ACT={theatre:'빛의 시어터 관람',footbath:'족욕',night_footbath:'족욕',pool:'수영',sauna:'사우나',night_walk:'야경 산책',forest_walk:'산책',garden_walk:'산책',ROOM_REST:'객실 휴식',library:'독서와 음악 감상',room_rest:'객실 휴식',room_nap:'낮잠',room_bath:'객실 욕조에서 휴식',room_night:'객실 휴식',sleep:'취침',lunch_skip:'점심 건너뛰기'};
+const ACT={theatre:'빛의 시어터 관람',footbath:'족욕',night_footbath:'족욕',pool:'수영',sauna:'사우나',night_walk:'야경 산책',forest_walk:'산책',garden_walk:'산책',ROOM_REST:'객실 휴식',library:'독서와 음악 감상',room_rest:'객실 휴식',room_nap:'낮잠',room_bath:'객실 욕조에서 휴식',room_night:'객실 휴식',sleep:'하루 마무리',lunch_skip:'점심 건너뛰기'};
 const PERSONAL={space:'전망과 공간을 즐기는 성향',food:'음식 경험을 중요하게 여기는 성향',food_specific:'후기에서 확인된 메뉴 기호',routine:'전에 이용한 곳이라는 점',warm_rest:'따뜻하게 쉬는 활동을 선호하는 성향',rest_need:'쉬는 시간을 중요하게 여기는 성향',value_check:'비용을 따져 보는 성향',benefit:'혜택을 살피는 성향',novelty:'새로운 경험에 관심을 두는 성향',active:'몸을 움직이는 활동을 즐기는 성향',premium:'특별한 경험을 중시하는 성향',breakfast_priority:'아침 식사를 챙기는 성향',practical_alt:'간편한 대안을 찾는 성향',promo:'행사에 관심을 두는 성향'};
 const INTERNAL=/\b[A-Z]{2,}[_-][A-Z0-9_-]+\b|\b[a-z]+_[a-z0-9_]+\b/;
 function clean(s){return String(s||'').replace(/\s*·?\s*(객실포함|객실 포함|패키지 포함|포함 혜택|무료 대상 투숙객|규격 미정|이용료 가정|기존 메뉴 기준 가상 계산)/g,'').trim();}

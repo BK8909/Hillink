@@ -97,7 +97,7 @@ def visit_run(payload):
     if r.returncode != 0:
         sys.stderr.write((r.stderr or "")[-2000:] + "\n")
         raise RuntimeError("방문 전체 행동 실행 오류")
-    return visit_execution.describe(json.loads(r.stdout),mode)
+    return visit_execution.describe(json.loads(r.stdout),mode,request.get('hybrid_policy'))
 
 
 def turn_run(payload):
@@ -500,11 +500,11 @@ class H(BaseHTTPRequestHandler):
                 from room_options import room_options
                 return self.send(200, room_options())
             if u.path == '/api/runtime/capabilities':
-                from operator_choice.autonomy_v1.autonomous_agent import POLICY as autonomous_policy
+                from operator_choice.autonomy_v1.autonomous_agent import POLICY as autonomous_policy, LIVE_POLICY as live_policy, POLICIES as autonomous_policies
                 local = DEPLOY != 'public' and self.client_address[0] in ('127.0.0.1','::1')
                 return self.send(200,dict(common_candidate=local and os.environ.get('HILLINK_V12Z_COMMON')=='1',
                     autonomous_agent=local and os.environ.get('HILLINK_AUTONOMOUS_AGENT')=='1',
-                    autonomous_policy=autonomous_policy,
+                    autonomous_policy=autonomous_policy,live_policy=live_policy,replay_policies=sorted(autonomous_policies),
                     agent_mode=os.environ.get('HILLINK_AGENT_MODE','off') if local else 'off',
                     llm_strategy=local and reviewer_ok(self) and os.environ.get('HILLINK_AGENT_MODE') in ('live','replay') and (os.environ.get('HILLINK_AGENT_MODE')=='replay' or os.environ.get('HILLINK_LLM_EXTERNAL_OPT_IN')=='1'),
                     judgment_modes=dict(rules=True,replay=local and os.environ.get('HILLINK_AUTONOMOUS_AGENT')=='1',live=local and visit_execution.live_status()[0]),

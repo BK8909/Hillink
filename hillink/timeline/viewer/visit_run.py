@@ -295,11 +295,11 @@ def run_visit(request):
         from operator_choice.autonomy_v1 import autonomous_agent as AA
         if os.environ.get('HILLINK_NATIVE_HYBRID')!='1' or os.environ.get('HILLINK_V12Z_COMMON')!='1':
             return dict(error='통합 후보 엔진이 이 환경에서 활성화되지 않았습니다',code='E_VISIT_HYBRID_DISABLED')
-        if hybrid_policy == AA.POLICY:
+        autonomous = hybrid_policy in AA.POLICIES   # V16 (stored replays) and V17 (new LIVE) are distinct, both exact
+        if autonomous:
             if os.environ.get('HILLINK_AUTONOMOUS_AGENT') != '1' or request.get('catalog_policy') != 'C01_HOTEL_CATALOG_V1':
                 return dict(error='자율 에이전트 정책과 상품 계약 활성화가 필요합니다',code='E_AGENT_POLICY_DISABLED')
-            NH = AA
-        if behavior_engine != 'm4_c01' or hybrid_policy != NH.POLICY:
+        if behavior_engine != 'm4_c01' or not (autonomous or hybrid_policy == NH.POLICY):
             return {'error':'UNSUPPORTED_NATIVE_HYBRID_POLICY','code':'E_HYBRID_POLICY'}
     virtual_room_rates = request.get('virtual_room_rates')
     if virtual_room_rates is not None:

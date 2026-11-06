@@ -3625,8 +3625,8 @@
     {
       "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/agent_day.py",
       "included": true,
-      "bytes": 113011,
-      "sha256": "abf465113514d2e0c886376f8d258c66cd600861af4c94b17132bbfe78410d8e"
+      "bytes": 113073,
+      "sha256": "bbe18203f19ce8724a6721ddd72a13351d2123811927c52d4a3854051f89f5bb"
     },
     {
       "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/agent_experience.py",
@@ -3637,14 +3637,14 @@
     {
       "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/agent_provider.py",
       "included": true,
-      "bytes": 12105,
-      "sha256": "9cca9f7e7cdd247da3cb6b1135d8c90cfb65e28191bbba06e9429842373fa26d"
+      "bytes": 12809,
+      "sha256": "3c4e8520e436ed480e833c2b70b88b733a0a29efc2245c0f0e6378a6813c537e"
     },
     {
       "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/autonomous_agent.py",
       "included": true,
-      "bytes": 55724,
-      "sha256": "08efcd9c5a03d8b15df4a13f96e3c6c6b1260b49e6a28d1b30d36d013eb0edae"
+      "bytes": 67098,
+      "sha256": "92baaf1285698db10e5fc050c7b537520577eeca3c7f45935e33c2934bb5ec07"
     },
     {
       "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/breakfast_policy.py",
@@ -4627,8 +4627,8 @@
     {
       "path": "timeline/viewer/app.py",
       "included": true,
-      "bytes": 63526,
-      "sha256": "a32d3c3dc8a9b80c3ac64502dd9cb23e82cc381ae767783c3feca7664f438acf"
+      "bytes": 63684,
+      "sha256": "4c64996064a939effae143eaf2e3b9033ad3622c0473e4331841a8a657dc10f5"
     },
     {
       "path": "timeline/viewer/autonomy_run.py",
@@ -5101,14 +5101,14 @@
     {
       "path": "timeline/viewer/static/agent.js",
       "included": true,
-      "bytes": 321118,
-      "sha256": "b5df7148c1ccdf431c0ad193d2bf121ae684f2e6c7b1dd13f208e289207e60f1"
+      "bytes": 323091,
+      "sha256": "cdaef2551471a0f4acbef9b7da47f72947d38014dc844ae682ca895ce6d373be"
     },
     {
       "path": "timeline/viewer/static/agent_decision_view.js",
       "included": true,
-      "bytes": 13764,
-      "sha256": "e9738651555da1c1261fd244a748994f9c8321024eac17b07ae8d1c3fa3658f5"
+      "bytes": 17535,
+      "sha256": "4cd066c0afcec48bec33a4ca9a0ea8bca675050f1e6b1700c26c6ece84c6f821"
     },
     {
       "path": "timeline/viewer/static/anomaly_evidence.json",
@@ -6733,8 +6733,8 @@
     {
       "path": "timeline/viewer/static/reason_choice.js",
       "included": true,
-      "bytes": 14968,
-      "sha256": "4f8f6bd9fa3b569ddd9f685ad882927ae5842ba094cb184696351d130d8a2c6c"
+      "bytes": 14978,
+      "sha256": "b16b40a6e5bcb5de9e3e56fc4f44a74f89667ab312813d9a83d6d6a74d561467"
     },
     {
       "path": "timeline/viewer/static/reason_dialogue.css",
@@ -6745,14 +6745,14 @@
     {
       "path": "timeline/viewer/static/reason_dialogue.js",
       "included": true,
-      "bytes": 13426,
-      "sha256": "a12ce476dcf7190a559f85c5823db709e7d9c660ca9bc173493501d7c159642a"
+      "bytes": 15750,
+      "sha256": "e977b7b1708418e17d5d8327df79ab6a32090eefe290ad0c017c663c63aaffb6"
     },
     {
       "path": "timeline/viewer/static/reason_story.js",
       "included": true,
-      "bytes": 90019,
-      "sha256": "116ca1d2a71e1b60881240032f4d914796e0911c891e767d4b9b1cfa932478f4"
+      "bytes": 90039,
+      "sha256": "779d50d2ea748473f6565ff33ad0066bad3c168b9b82c3713ef475025a8d5b25"
     },
     {
       "path": "timeline/viewer/static/receipts.css",
@@ -6841,14 +6841,14 @@
     {
       "path": "timeline/viewer/static/situation.css",
       "included": true,
-      "bytes": 12550,
-      "sha256": "57f917863a6eedaf577393a184c885b15fc1f24d12104ee79dabe2220120e334"
+      "bytes": 13062,
+      "sha256": "c843341f0b9e2f3447193700e9fd1f49cbc09739c5adc9f4fbc5bb3bc1eb9ff0"
     },
     {
       "path": "timeline/viewer/static/situation.js",
       "included": true,
-      "bytes": 40906,
-      "sha256": "f04187971c804bd53d6b45e92e288d7eef44678acee5ee355aa5c03e715a1eb2"
+      "bytes": 42841,
+      "sha256": "0af38d27854db4ef8b8564d7a850543538c84d6f82197e1409eb68d63a203ba2"
     },
     {
       "path": "timeline/viewer/static/situation_options.json",
@@ -6949,14 +6949,14 @@
     {
       "path": "timeline/viewer/static/ui_finish.css",
       "included": true,
-      "bytes": 4430,
-      "sha256": "94b459b75fe4fb10fcb943faf46932292a808247458e5801b305ae58239e511c"
+      "bytes": 6312,
+      "sha256": "55c27b76c83900204948ee221187c33f51b052f0da7b6b5b04df4885afec8844"
     },
     {
       "path": "timeline/viewer/static/visit_execution.js",
       "included": true,
-      "bytes": 2277,
-      "sha256": "22c9580b476921a8249199a74f8ae207fa83af26198aef16d208db538261bc5d"
+      "bytes": 3222,
+      "sha256": "53aae2fabd1175b0857890508894b5ebdd998daaa0c928446454287cfb3a5a36"
     },
     {
       "path": "timeline/viewer/static/wait_inv.json",
@@ -7363,8 +7363,8 @@
     {
       "path": "timeline/viewer/tests/test_autonomy.py",
       "included": true,
-      "bytes": 22754,
-      "sha256": "13aa7a4cdef865ff0fac0cb5bcbb69f5633f995c4ea766b148b2d334baaa357b"
+      "bytes": 22830,
+      "sha256": "fd0526499dfbd96244e387925909dfa55d63eb4d6e28cc8197a1b961ec5ad4c9"
     },
     {
       "path": "timeline/viewer/tests/test_autonomy_public_projection.py",
@@ -7933,8 +7933,8 @@
     {
       "path": "timeline/viewer/tests/visit_execution.test.cjs",
       "included": true,
-      "bytes": 1033,
-      "sha256": "0ec5f5e92a19cd47d8e114a7f4996d7f50ade841ef439e6c315a56613627adbc"
+      "bytes": 2092,
+      "sha256": "dacbd0492305ad2b12bd9cf8d3906a67a23bccdf5afb29ad136eee1617438256"
     },
     {
       "path": "timeline/viewer/tests/visit_request_transition.test.cjs",
@@ -8023,8 +8023,8 @@
     {
       "path": "timeline/viewer/visit_execution.py",
       "included": true,
-      "bytes": 6237,
-      "sha256": "6c9da078987b1920cbb98d3de30cd862c92a21faba8258a7b5c070710185591c"
+      "bytes": 6690,
+      "sha256": "9033785d690cef161f2ad879dd4ac8b17a86e8f9b89298dcbcbc57da91f4c0c7"
     },
     {
       "path": "timeline/viewer/visit_operations.py",
@@ -8035,8 +8035,8 @@
     {
       "path": "timeline/viewer/visit_run.py",
       "included": true,
-      "bytes": 38573,
-      "sha256": "cbbe3560468f452bc29581c95344801cd2675183f2bcb7864008335b43ba2b43"
+      "bytes": 38676,
+      "sha256": "7bd191a977e5dcdf25fe87ab8989c649ee1e2ae7d01886084f295824dfa185d3"
     },
     {
       "path": "timeline/viewer/wait_inv.py",
@@ -8349,6 +8349,18 @@
       "included": true,
       "bytes": 2430,
       "sha256": "41780545b2bad8a714c859afa5e23c29df6b9d85f80f3e00028d505eb0184593"
+    },
+    {
+      "path": "timeline/viewer/tests/test_day_end_review_1105.py",
+      "included": true,
+      "bytes": 9573,
+      "sha256": "05bfeaa4fa79ff403d0ac77f51a148bf0efd3c11832d7fe842861279d57928d6"
+    },
+    {
+      "path": "timeline/viewer/tests/test_v17_day_end_visit_1105.py",
+      "included": true,
+      "bytes": 5237,
+      "sha256": "efa31b9c7b08963c6d2dd71eb22882fdc6f007288049d09f2a57fd6a140ad6a9"
     },
     {
       "path": "handover/data/profile-review-sources/blog41-display-evidence.json",

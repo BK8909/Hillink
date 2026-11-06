@@ -13,3 +13,16 @@ test('explicit rules remove a prior autonomous selection and cannot claim LLM',(
  assert.match(V.label({judgment:{actual:'replay'}}),/Replay.*0회/);
  assert.match(V.label({judgment:{actual:'BLOCKED'}}),/규칙 대체 없음/);
 });
+
+test('policy versions: replay keeps the stored run policy, live uses the current one, labels name the version', () => {
+  const api = require('../static/visit_execution.js');
+  assert.equal(api.request({ seed: 1 }, 'live').hybrid_policy, api.LIVE_POLICY);
+  assert.equal(api.request({ seed: 1, hybrid_policy: api.POLICY }, 'replay').hybrid_policy, api.POLICY);
+  assert.equal(api.request({ seed: 1 }, 'replay').hybrid_policy, api.POLICY);
+  assert.equal(api.request({ seed: 1 }, 'replay', api.LIVE_POLICY).hybrid_policy, api.LIVE_POLICY);
+  assert.equal(api.request({ seed: 1, hybrid_policy: api.POLICY }, 'live').hybrid_policy, api.LIVE_POLICY);
+  assert.equal('hybrid_policy' in api.request({ seed: 1, hybrid_policy: api.POLICY }, 'rules'), false);
+  assert.match(api.label({ judgment: { actual: 'replay', policy: api.POLICY } }), /V16.*과거 판단 기준/);
+  assert.match(api.label({ judgment: { actual: 'live', policy: api.LIVE_POLICY } }), /^V17 · 새로운 LLM 판단$/);
+  assert.match(api.version(api.POLICY), /조기 종료 검증 이전/);
+});

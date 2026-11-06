@@ -8,6 +8,8 @@ from pathlib import Path
 import saved_visits
 
 POLICY = 'LLM_AUTONOMOUS_CUSTOMER_V16'
+LIVE_POLICY = 'LLM_AUTONOMOUS_CUSTOMER_V17'
+POLICIES = (POLICY, LIVE_POLICY)   # stored V16 runs replay under V16; a request names the policy it wants and gets exactly that
 MODES = ('rules', 'replay', 'live')
 
 
@@ -75,7 +77,7 @@ def configure(payload):
         request.pop('hybrid_policy',None)
         env.update(HILLINK_AUTONOMOUS_AGENT='0',HILLINK_AGENT_MODE='off',HILLINK_LLM_ENABLED='0',HILLINK_LLM_EXTERNAL_OPT_IN='0')
     else:
-        if request.get('behavior_engine')!='m4_c01' or request.get('catalog_policy')!='C01_HOTEL_CATALOG_V1' or request.get('hybrid_policy')!=POLICY:
+        if request.get('behavior_engine')!='m4_c01' or request.get('catalog_policy')!='C01_HOTEL_CATALOG_V1' or request.get('hybrid_policy') not in POLICIES:
             raise ValueError('V16_PRODUCT_CONTRACT_REQUIRED')
         if os.environ.get('HILLINK_AUTONOMOUS_AGENT')!='1':raise ValueError('AUTONOMOUS_ENGINE_DISABLED')
         env.update(HILLINK_AUTONOMOUS_AGENT='1',HILLINK_AGENT_MODE=mode)
@@ -86,9 +88,10 @@ def configure(payload):
     return request,env,mode
 
 
-def describe(flow,mode):
+def describe(flow,mode,policy=None):
     if mode is None:return flow
     plans=flow.get('plans') or {}; customers={}; blocked=[]
+    policy=policy if policy in POLICIES else POLICY
     for pid,plan in plans.items():
         records=plan.get('autonomous_decisions') or []
         origins=[a['provider'].get('execution') for d in records for a in d.get('attempts',[]) if a.get('provider')]
@@ -98,7 +101,8 @@ def describe(flow,mode):
         if mode!='rules' and (not records or holds or not origins or any(o!=required for o in origins)):
             blocked.append(pid)
     flow['judgment']=dict(requested=mode,actual='rules' if mode=='rules' else ('BLOCKED' if blocked or not plans else mode),
-        policy=POLICY if mode!='rules' else 'RULE_ONLY',customers=customers,
+        policy=policy if mode!='rules' else 'RULE_ONLY',customers=customers,
+        policy_note=None if mode=='rules' else ('과거 판단 기준(V16) · 조기 종료 검증 이전의 저장 응답' if policy==POLICY else '현재 판단 기준(V17) · 조기 종료 검증 적용'),
         current_paid_calls=0 if mode in ('rules','replay') else None,human_approval=False)
     if mode!='rules' and (blocked or not plans):
         flow.update(error='V16 판단을 완료하지 못했습니다. 현재 조건과 일치하는 승인 응답·호출 권한·예산을 확인해 주세요. 규칙으로 대체하지 않았습니다.',

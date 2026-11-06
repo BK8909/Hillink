@@ -150,7 +150,7 @@ class CL19(unittest.TestCase):
             if co:
                 self.assertLessEqual(self.AD.hm(co[0]["e"]), self.AD.hm("11:00"), p)
                 self.assertFalse(any(x["loc"] in self.AD.SP.GUEST_ONLY for x in L if self.AD.hm(x["t"]) >= self.AD.hm(co[0]["e"])), p)
-            self.assertTrue(any(k in L[-1]["label"] for k in ("귀가", "취침")), f"{p} 하루 끝 상태 {L[-1]['label']}")
+            self.assertTrue(any(k in L[-1]["label"] for k in ("귀가", "하루 마무리")), f"{p} 하루 끝 상태 {L[-1]['label']}")   # 11/05: 수면은 미관측 — 취침 대신 하루 마무리
 
     def test_no_same_venue_two_meals_and_no_food_right_after_food(self):
         for p, r in self.ind.items():

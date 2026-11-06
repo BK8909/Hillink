@@ -1137,7 +1137,7 @@ def end_day(a, why=None):
         if not a.left:
             a.add("activity", "leave", "귀가", "HOTEL_GATE", a.t, 15, "체류", "obligation", "일정을 마치고 호텔을 나섭니다.", []); a.left = True
     elif not any(x["act"] == "sleep" for x in a.log):
-        a.add("activity", "sleep", "객실 복귀 · 취침", a.room, a.t, 15, "객실 휴식", "obligation", why or "하루를 마무리하고 쉽니다.", [])
+        a.add("activity", "sleep", "객실 복귀 · 하루 마무리", a.room, a.t, 15, "객실 휴식", "obligation", why or "하루를 마무리하고 쉽니다(수면은 미관측).", [])
     a.ended = True
 
 
@@ -1223,7 +1223,7 @@ def decide(a, world):
         duration=max(15, a.end - t)
         if AA.active(a):
             duration=max(0,a.end-t-SP.travel_min(a.loc,a.room))
-        a.add("activity", "sleep", "객실 복귀 · 취침", a.room, t, duration, "객실 휴식", "obligation", "하루를 마무리하고 쉽니다.", []); a.t = a.end; a.ended = True; return True
+        a.add("activity", "sleep", "객실 복귀 · 하루 마무리", a.room, t, duration, "객실 휴식", "obligation", "하루를 마무리하고 쉽니다(수면은 미관측).", []); a.t = a.end; a.ended = True; return True
     # Versioned opt-in: the agent chooses before the legacy utility planner.
     # Arrival, checkout, fixed sleep and breakfast contracts above remain intact.
     if AA.active(a) and AA.step(a, world, t):

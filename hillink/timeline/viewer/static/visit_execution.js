@@ -1,16 +1,22 @@
 /* Bind existing visit controls to the product engine; no new navigation. */
 (function(root){
 'use strict';
-const POLICY='LLM_AUTONOMOUS_CUSTOMER_V16';
-function request(value,mode='replay'){
+const POLICY='LLM_AUTONOMOUS_CUSTOMER_V16';        // stored runs: exact replay under the policy they were recorded with
+const LIVE_POLICY='LLM_AUTONOMOUS_CUSTOMER_V17';   // new LLM judgments: day-end review and the V17 request format
+const POLICIES=[POLICY,LIVE_POLICY];
+const VERSION_NOTE={[POLICY]:'과거 판단 기준(V16) · 조기 종료 검증 이전',[LIVE_POLICY]:'현재 판단 기준(V17) · 조기 종료 검증 적용'};
+function request(value,mode='replay',policy){
  if(!['rules','replay','live'].includes(mode))throw Error('판단 모드를 선택해 주세요.');
  const out={...value,judgment_mode:mode};
- if(mode==='rules')delete out.hybrid_policy;
- else Object.assign(out,{behavior_engine:'m4_c01',catalog_policy:'C01_HOTEL_CATALOG_V1',hybrid_policy:POLICY,simulation_mode:out.simulation_mode||'independent'});
+ if(mode==='rules'){delete out.hybrid_policy;return out;}
+ // Replay keeps the policy the stored run names (default V16); a new LIVE judgment uses the current policy.
+ const chosen=mode==='live'?LIVE_POLICY:(POLICIES.includes(policy)?policy:POLICIES.includes(out.hybrid_policy)?out.hybrid_policy:POLICY);
+ Object.assign(out,{behavior_engine:'m4_c01',catalog_policy:'C01_HOTEL_CATALOG_V1',hybrid_policy:chosen,simulation_mode:out.simulation_mode||'independent'});
  return out;
 }
+function version(policy){return VERSION_NOTE[policy]||(policy?String(policy):'판단 기준 미기록');}
 function options(mode){return [['replay','저장된 LLM 판단 (무과금)'],['live','새로운 LLM 판단 (API 호출)'],['rules','규칙 계산 (LLM 없음)']].map(([v,t])=>`<option value="${v}"${v===mode?' selected':''}>${t}</option>`).join('');}
-function label(result){const j=result?.judgment;return j?({rules:'규칙 계산 · LLM 판단 없음',replay:'V16 · 저장 응답 Replay · 현재 유료 호출 0회',live:'V16 · 새로운 LLM 판단',BLOCKED:'판단 미완료 · 규칙 대체 없음'})[j.actual]||'판단 출처 미확인':'판단 출처는 개별 실행 기록에서 확인';}
+function label(result){const j=result?.judgment;if(!j)return '판단 출처는 개별 실행 기록에서 확인';const v=j.policy===LIVE_POLICY?'V17':j.policy===POLICY?'V16':'';return ({rules:'규칙 계산 · LLM 판단 없음',replay:`${v} · 저장 응답 Replay · 현재 유료 호출 0회${j.policy===POLICY?' · 과거 판단 기준(조기 종료 검증 이전)':''}`,live:`${v} · 새로운 LLM 판단`,BLOCKED:'판단 미완료 · 규칙 대체 없음'})[j.actual]||'판단 출처 미확인';}
 // Read-only availability notice; execution and budget checks remain server-owned.
 function bindAvailability(select,notice){
  let revision=0;
@@ -33,5 +39,5 @@ function bindAvailability(select,notice){
  }
  select.addEventListener('change',refresh);refresh();
 }
-const api={request,options,label,bindAvailability,POLICY};root.HLVisitExecution=api;if(typeof module!=='undefined')module.exports=api;
+const api={request,options,label,version,bindAvailability,POLICY,LIVE_POLICY,POLICIES};root.HLVisitExecution=api;if(typeof module!=='undefined')module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);

@@ -138,7 +138,18 @@ def _publish_first(path, value):
         temporary.unlink()
 
 
-def request(*, policy, system, context, schema, purpose, model=None, effort=None, max_output=6000):
+def serialize_context(context, stable_prefix=False):
+    """Sorted keys everywhere (the stored V16 wire format), or, for stable_prefix,
+    the caller's top-level order with nested keys sorted, so the stable blocks
+    (profile, visit) lead the user message and the provider can cache that prefix.
+    Both are exact wire formats: the identity hash covers the resulting string."""
+    if not stable_prefix:
+        return json.dumps(context, ensure_ascii=False, sort_keys=True, separators=(',', ':'), allow_nan=False)
+    ordered = {k: json.loads(json.dumps(v, ensure_ascii=False, sort_keys=True, allow_nan=False)) for k, v in context.items()}
+    return json.dumps(ordered, ensure_ascii=False, separators=(',', ':'), allow_nan=False)
+
+
+def request(*, policy, system, context, schema, purpose, model=None, effort=None, max_output=6000, stable_prefix=False):
     """One attempt. The caller may replan, but each attempt reserves independently."""
     from openai_credentials import load_openai_api_key
     import jsonschema
@@ -149,7 +160,7 @@ def request(*, policy, system, context, schema, purpose, model=None, effort=None
     if effort not in ('low', 'medium', 'high') or not 256 <= max_output <= 16000:
         raise ValueError('INVALID_INFERENCE_SETTINGS')
     payload = dict(model=model, store=False, reasoning={'effort': effort}, max_output_tokens=max_output,
-        input=[{'role':'system', 'content':system}, {'role':'user', 'content':json.dumps(context, ensure_ascii=False, sort_keys=True, separators=(',', ':'), allow_nan=False)}],
+        input=[{'role':'system', 'content':system}, {'role':'user', 'content':serialize_context(context, stable_prefix)}],
         text={'format':{'type':'json_schema', 'name':'hillink_agent', 'strict':True, 'schema':schema}})
     identity = digest({'request_policy':REQUEST_POLICY, 'policy':policy, 'purpose':purpose, 'request':payload})
     mode = os.environ.get('HILLINK_AGENT_MODE', 'off')

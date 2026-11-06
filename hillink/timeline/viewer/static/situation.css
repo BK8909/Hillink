@@ -181,3 +181,8 @@ button.st-choice { cursor: pointer; }
 .st-room-condition details{font-size:12px;color:#746b63;margin-top:3px}
 .st-room-condition details summary{cursor:pointer}
 .st-room-condition details small{white-space:normal}
+/* 11/05 행동 판단 · 저장된 조건 불러오기(보조) */
+.st-judgment details.st-saved{margin-top:8px;border:1px solid #e8dfd2;border-radius:9px;padding:6px 10px;background:#fbf8f2;}
+.st-judgment details.st-saved summary{cursor:pointer;font-size:12px;color:#7c6c56;}
+.st-judgment details.st-saved select{margin-top:8px;width:100%;max-width:100%;text-overflow:ellipsis;}
+.st-judgment details.st-saved small{display:block;margin-top:6px;font-size:11px;line-height:1.5;color:#91816e;word-break:keep-all;}

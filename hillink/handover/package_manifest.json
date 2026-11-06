@@ -55,8 +55,8 @@
     {
       "path": "handover/RECOVERY.md",
       "included": true,
-      "bytes": 7701,
-      "sha256": "f07c2ee7186f30afd4098aaa1f5e16acba4c1dc300e853c1a591ae824f0259c2"
+      "bytes": 11069,
+      "sha256": "534beeab760035866b3cbd4ae328595faaecb9f67373e60b59ec8eeb27bd0722"
     },
     {
       "path": "handover/data/bundle.json",

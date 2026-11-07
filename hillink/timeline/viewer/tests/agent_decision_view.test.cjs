@@ -95,3 +95,21 @@ test('V19LS breakfast: room-contract coverage and extra cost are shown per line 
  const old=V.panel({basis:{autonomous_decision:dec([line(3)])}});
  assert.doesNotMatch(old,/data-agent-breakfast-inclusion|객실 조식 포함/);
 });
+test('V19LS party-subset breakfast: diners who do not eat are named, never shown as the whole party covered', () => {
+ const V=require('../static/agent_decision_view.js');
+ const line=(q,b)=>({sku_id:'S',label:'조식 성인',quantity:q,semantics:'PERSON_ACCESS_ENTITLEMENT',price_basis:b});
+ const d={policy:'LLM_AUTONOMOUS_CUSTOMER_V19LS',execution_state:'EXECUTED',date:'2026-11-10',minute:490,
+  input_context:{visit:{date:'2026-11-10',party_size:3},state:{time:'08:10'},actions:[{action_id:'BREAKFAST_BUFFET#D2',label:'더뷔페 조식 · 2명 이용',order_total_krw:0,item_contracts:[line(2,'객실 조식 포함(추가 비용 없음)')]}]},
+  selected_plan:{action_id:'BREAKFAST_BUFFET#D2',decision_summary:'두 명만',order_total_krw:0,items:[]}};
+ const html=V.panel({basis:{autonomous_decision:d}});
+ assert.match(html,/객실 조식 포함 2명 · 추가 비용 없음 · 1명은 조식을 먹지 않음/);
+ assert.doesNotMatch(html,/동행 전원 포함/);
+});
+test('V19LS meal quantity review is shown with the final quantity and no claim of forced upsizing', () => {
+ const V=require('../static/agent_decision_view.js');
+ const d={policy:'LLM_AUTONOMOUS_CUSTOMER_V19LS',execution_state:'EXECUTED',date:'2026-11-07',minute:1071,stability_policy:true,
+  meal_quantity_review:{first_rejection:'MEAL_QUANTITY_REVIEW_SHORTFALL_RECORD',final:{equivalents:4,party:3,cited:['A05-F25'],quantity_reason:'지난번 부족'}},
+  input_context:{visit:{date:'2026-11-07',party_size:3},state:{time:'17:51'},actions:[]},selected_plan:{action_id:'meal:PIZZA_HILL',decision_summary:'피자와 파스타',items:[]}};
+ const html=V.panel({basis:{autonomous_decision:d}});
+ assert.match(html,/식사량 재검토: .*일반 환산 4인분\(3명\)을 선택했습니다 · 인용 A05-F25\. 더 많이 주문하라고 강제하지 않습니다/);
+});

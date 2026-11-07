@@ -1010,6 +1010,11 @@ def breakfast_item_contracts(contract):
 def breakfast_choice(a, world, t, offers, fallback):
     """Choose before TC scoring, preserving its existing included/child contracts."""
     personal=persona(a);valid=[];excluded=[];contracts={}
+    if spec_of(a).get('stability'):
+        # V19LS: a partly covered party breakfast also offers the choices in which only some people eat
+        # (the executor finds the chosen variant in the same offer list).
+        for o in list(offers['offers']):
+            offers['offers'].extend(LSS.party_breakfast_variants(o,a.N,lambda parts,m:dict(H.compose(parts,a,'breakfast'),participant_count=m)))
     for o in offers['offers']:
         contracts[o['id']]=o.get('sku_contract')
         why=AD.EN.feasible(o,t,dict(used=set(a.used),hunger=1),dict(a.visit_e,checkin=AD.mh(t)))
@@ -1106,6 +1111,8 @@ def breakfast_choice(a, world, t, offers, fallback):
             if plan['items']!=chosen['items'] or plan['order_total_krw']!=chosen['order_total_krw']:raise ValueError('BREAKFAST_CONTRACT_CHANGED')
             if (set(plan['supporting_fact_ids'])|set(plan['counterevidence_fact_ids']))-set(cite):raise ValueError('FACT_NOT_CITABLE')
             X.validate_assessment(plan,a.N,plan['action_id']!='SKIP_BREAKFAST')
+            diners=((contracts.get(plan['action_id']) or {}).get('party_breakfast') or {}).get('diners')
+            if diners and plan['meal_assessment']['modeled_diners']!=diners:raise ValueError('MODELED_DINERS_DIFFER_FROM_BREAKFAST_DINERS')
         except P.ProviderUnavailable as exc:
             stable=bool(spec_of(a).get('stability'))
             klass=provider_failure_class(str(exc)) if stable else None
@@ -1392,6 +1399,7 @@ def select_step(a,world,t,record,actions,menus,w,personal,memory,context):
             record['attempts'][-1]['answer']=dict(plans=[plan]+([alternative] if alternative else []),selected_index=0)
             record['input_context']=X.decision_context(dict(full,personal=personal,actions=rows,menus=menus),[plan])
             action=validate_selection(a,plan,actions,menus,cite,full.get('previous_rejection'),spec,[r['action_id'] for r in rows],t)
+            if spec.get('stability'):LSS.meal_quantity_review(answer,full,(full.get('visit') or {}).get('party_size'),full.get('previous_rejection'))
         except P.ProviderUnavailable as exc:
             klass=provider_failure_class(str(exc))
             if getattr(exc,'trace',None):record['attempts'].append(dict(provider=exc.trace,error=str(exc),failure_class=klass))
@@ -1406,6 +1414,8 @@ def select_step(a,world,t,record,actions,menus,w,personal,memory,context):
         if spec.get('stance'):
             if answer.get('tradeoff_note'):plan['tradeoff_note']=answer['tradeoff_note']
             record['selection_diagnostics']=LSS.diagnose(answer,full,(full.get('visit') or {}).get('party_size'))
+            if str((full.get('previous_rejection') or {}).get('reason','')).startswith(LSS.MEAL_QUANTITY_REVIEW):
+                record['meal_quantity_review']=dict(first_rejection=LSS.MEAL_QUANTITY_REVIEW,final=LSS.quantity_summary(answer,full,(full.get('visit') or {}).get('party_size')))
             record['evidence_integrity']=LSS.integrity(personal,full) if full.get('personal',{}).get('records') is not None and personal.get('evidence_records') else []
             record['stability_policy']=LSS.POLICY
             prior=full.get('previous_rejection') or {}

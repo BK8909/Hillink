@@ -295,6 +295,7 @@ SYSTEM_LINES = [
     '혼합 기록을 이유로 쓸 때는 좋았던 점과 아쉬웠던 점을 함께 적으세요. 조건부 기록(예: 특별한 날이 아니면)은 그 조건이 이번 방문에 해당하는지 visit.purpose로 판단하세요. visit.purpose가 미확인이면 해당하지 않는 것으로 봅니다.',
     '남김 표시가 있는 기록이 있으면 과거에 양이 많았다는 참고입니다. options의 meal_equivalents나 수량이 인원보다 많은 구성을 고를 때는 나눠 먹기·추가 메뉴 등 이유를 meal_assessment.quantity_reason에 적으세요. 과거 주문량이 이번 식사량의 절대 제한은 아닙니다.',
     '조식 후보의 conditions.included가 객체이면 객실 계약으로 일부 인원의 조식이 포함된 경우입니다: included_persons는 추가 비용 없이 이용할 수 있는 인원, paid_persons와 price_krw는 포함되지 않은 인원의 추가 비용입니다. 조식을 건너뛰면 포함된 인원의 조식도 이용하지 않게 됩니다.',
+    '조식 후보의 conditions.included.diners가 일행 인원보다 적으면 일부 인원만 먹는 후보입니다(not_eating 명은 먹지 않음). 일부 인원만 먹는 후보를 고르면 meal_assessment.modeled_diners는 diners와 같아야 합니다.',
     '식사 options의 party_fit은 meal_equivalents(일반 1인분 환산 가정, 섭취 관측 아님)를 visit.party_size와 비교한 표시입니다. 인원과 같음은 여유가 없다는 뜻이고 인원보다 적음이면 부족할 수 있습니다. 양 부족 표시가 있는 기록이 있으면 그 경험과 동행 인원을 함께 고려하세요. 양을 늘리라는 지시가 아니며, 고른 양의 이유를 meal_assessment.quantity_reason에 적으세요.',
     'repeat_signal이 있으면 직전 두 번 같은 대기·휴식을 같은 이유로 골랐다는 뜻입니다. 그 사이 바뀐 정보가 있는지 확인하고 식사·활동·휴식·하루 종료를 다시 비교하세요. 다시 기다리는 것도 정상이며 강제되지 않습니다.',
     '기록이 없거나 근거가 약하면 일반적인 상황 판단으로 고르고, 그 사실을 reason에 짧게 밝히세요.',
@@ -361,6 +362,36 @@ DAY_END_REVIEW_HINT = (' 비교한 남은 후보 하나를 rejected_alternative.
                        'reason에 그 후보를 고르지 않는 현재 이유를 쓰세요(휴식 후보가 아니라 남은 식사·활동 후보).')
 
 
+INCLUDED_KEY = 'ROOM_BREAKFAST_INCLUDED_CONTRACT'
+
+
+def party_breakfast_variants(offer, party_size, compose):
+    """V19LS: from a party breakfast whose room contract covers only part of the party (k of N adults), add the
+    choices in which fewer people eat: m diners for k <= m < N (k included at no cost, m-k paid, N-m not eating).
+    Built from the same registered sale units and prices (compose), so quantities, unit prices and totals stay
+    integer and consistent with the ledger. Not generated for child menus or parties without a partial room contract."""
+    c = (offer or {}).get('sku_contract') or {}
+    parts = c.get('components') or []
+    if not offer.get('hc_contract') or offer.get('hc_included') or not parts: return []
+    inc = [p for p in parts if p.get('included_benefit') == INCLUDED_KEY]
+    paid = [p for p in parts if not p.get('included_benefit')]
+    if not inc or not paid or any(p.get('role') != 'MAIN' for p in parts) or len(paid) != 1 or len(inc) != 1: return []
+    k, extra = inc[0]['billing_quantity'], paid[0]['billing_quantity']
+    if k + extra != party_size: return []
+    out = []
+    for m in range(k, party_size):
+        lines = [dict(inc[0])] + ([dict(paid[0], billing_quantity=m - k)] if m > k else [])
+        v = compose(lines, m)
+        v.update(participant_count=m, candidate_available_at=c.get('candidate_available_at'), room_breakfast_contract=dict(covered_adults=k),
+                 party_breakfast=dict(diners=m, party=party_size, included=k, paid=m - k, not_eating=party_size - m, basis='PARTY_SUBSET_BREAKFAST_V19LS'))
+        o = dict(offer, id=f"{offer['id']}#D{m}", sku_contract=v, venue=offer.get('venue'),
+                 label=f"{offer['label']} · {m}명 이용(객실 포함 {k}명{f' · 추가 결제 {m - k}명' if m > k else ''} · {party_size - m}명 미이용)",
+                 party_breakfast=v['party_breakfast'], price_pp_krw=None)
+        o['food'] = dict(offer.get('food') or {}, meal_fraction=round((offer.get('food') or {}).get('meal_fraction', 1) * m / party_size, 4))
+        out.append(o)
+    return out
+
+
 def breakfast_inclusion(row, contract):
     """V19LS breakfast candidate: mark room-contract coverage per line and in the conditions (information only).
     The engine's items, quantities and total are not changed."""
@@ -371,8 +402,34 @@ def breakfast_inclusion(row, contract):
     cond = row.setdefault('conditions', {})
     cond['included'] = dict(status='PARTIAL' if paid else 'ALL', included_persons=inc, paid_persons=paid,
                             extra_cost_krw=cond.get('price_krw'), basis='ROOM_BREAKFAST_CONTRACT')
+    pb = (contract or {}).get('party_breakfast')
+    if pb: cond['included'].update(diners=pb['diners'], not_eating=pb['not_eating'])
     lines = row.get('item_contracts') or []
     for line, part in zip(lines, parts):
         if line.get('sku_id') == part.get('sku_id') and line.get('quantity') == part.get('billing_quantity'):
             line['price_basis'] = '객실 조식 포함(추가 비용 없음)' if part.get('included_benefit') else '추가 결제'
     return row
+
+
+MEAL_QUANTITY_REVIEW = 'MEAL_QUANTITY_REVIEW_SHORTFALL_RECORD'
+
+
+def quantity_summary(answer, lean, party):
+    eq = selected_equivalents(answer, lean, known_only=True)
+    ma = answer.get('meal_assessment') or {}
+    return dict(equivalents=eq, party=party, cited=sorted(set(answer.get('supporting_fact_ids') or []) | set(answer.get('counterevidence_fact_ids') or [])),
+                quantity_reason=ma.get('quantity_reason'))
+
+
+def meal_quantity_review(answer, lean, party, prior):
+    """V19LS, once per decision: a customer with a past 'not enough food' record picked a meal whose usual-portion
+    equivalents are at or below the party size, without citing that record or explaining the quantity. Ask to
+    reconsider once; the second answer stands whatever quantity it keeps (no forced upsizing)."""
+    if str((prior or {}).get('reason', '')).startswith(MEAL_QUANTITY_REVIEW): return
+    hit = next((d for d in diagnose(answer, lean, party) if d['code'] == 'QUANTITY_AT_OR_BELOW_PARTY_DESPITE_SHORTFALL_RECORD'), None)
+    if not hit: return
+    facts = hit['detail']['facts']
+    cited = set(answer.get('supporting_fact_ids') or []) | set(answer.get('counterevidence_fact_ids') or [])
+    if hit['detail']['shortfall_mentioned'] or cited & set(facts): return
+    raise ValueError(f"{MEAL_QUANTITY_REVIEW}: 과거 양 부족 기록({', '.join(facts)})이 있는데 일반 환산 {hit['detail']['equivalents']}인분을 {party}명이 먹는 구성을 골랐습니다. "
+                     "그 기록과 지금의 인원·직전 식사·포만을 비교해 양을 다시 정하세요. 그대로 두려면 quantity_reason에 이유를 적고 그 기록을 인용하세요. 더 많이 주문하라는 지시가 아닙니다.")

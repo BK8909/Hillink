@@ -78,4 +78,42 @@ check('7 operating strategy options', st == 200 and isinstance(opts, dict) and o
 st, live = call('/api/visit', dict(saved['request'], judgment_mode='live', hybrid_policy=LIVE), timeout=60)
 check('8 LIVE refused without approval (no rule substitute)', st in (400, 403) and isinstance(live, dict) and live.get('code') and 'plans' not in live,
       (st, live.get('code') if isinstance(live, dict) else live))
+
+# 9. one visit run links customer Facts -> judged action -> orders -> ledger (same run, same visit)
+import collections, re
+pid = 'A05'; rows = led['receipts'][pid]['rows']
+check('9 every ledger row belongs to this run and visit', {r['run_id'] for r in rows} == {led['run_id']} and {r['visit_id'] for r in rows} == {flow['visit_id']},
+      ({r['run_id'][:8] for r in rows}, led['run_id'][:8]))
+check('9 ledger customers are exactly the requested customers', set(led['receipts']) == set(saved['request']['personas']), list(led['receipts']))
+by_day = collections.defaultdict(list)
+for sc in scenes: by_day[sc['visit_date']].append(sc)
+linked = collections.defaultdict(int); unmatched = []
+for r in rows:
+    if r.get('scene_index') is None: continue
+    sc = by_day[r['visit_date']][r['scene_index']]
+    if sc['act'] != r['act']: unmatched.append((r['row_id'], r['act'], sc['act']))
+    d = (sc.get('basis') or {}).get('autonomous_decision')
+    if d: linked[(d['date'], d['minute'])] += r['paid_krw']
+check('9 each ledger row points at the scene that produced it', not unmatched, unmatched[:3])
+orders = [(d['date'], d['minute'], (d.get('selected_plan') or {}).get('order_total_krw') or 0) for d in decs if d.get('execution_state') == 'EXECUTED']
+check('9 each judged order equals the ledger rows of its scene', all(linked.get((a, b), 0) == t for a, b, t in orders), [(a, b, t, linked.get((a, b))) for a, b, t in orders if t])
+nights = sum(1 for r in rows if r['act'] == 'room_night')
+check('9 room-night rows = visit nights', nights == flow['visit']['nights'], (nights, flow['visit']['nights']))
+st, plib = call('/api/library/personas')
+profile = set(re.findall(pid + r'-F\d+', json.dumps([x for x in plib['personas'] if x['id'] == pid], ensure_ascii=False)))
+cited = {f for d in decs for k in ('supporting_fact_ids', 'counterevidence_fact_ids') for f in ((d.get('selected_plan') or {}).get(k) or [])}
+sent = {f for d in decs for x in ((d.get('input_context') or {}).get('facts') or []) for f in x['fact_ids']}
+check('9 cited Facts were sent with the judgment and exist in the customer profile', cited and cited <= sent <= profile, (sorted(cited - sent), sorted(sent - profile)))
+
+# 10. counterexamples: a changed request is a new run; a stored judgment is never reused for other inputs
+st, rerun = call('/api/visit', dict(saved['request'], judgment_mode='rules', duration='stay_2'))
+check('10 changed condition -> new run id, no rows of the previous run', st == 200 and rerun['ledger']['run_id'] != led['run_id']
+      and all(r['run_id'] == rerun['ledger']['run_id'] for c in rerun['ledger']['receipts'].values() for r in c['rows']), rerun['ledger']['run_id'][:8])
+st, again = call('/api/visit', dict(saved['request'], judgment_mode='replay'))
+check('10 same request -> same run id and same ledger (replay)', st == 200 and again['ledger']['run_id'] == led['run_id'] and again['ledger']['totals'] == led['totals'])
+for name, change in (('another customer', dict(personas=['A07'])), ('another start date', dict(start_date='2026-11-14'))):
+    st, held = call('/api/visit', dict(saved['request'], judgment_mode='replay', **change))
+    states = {d.get('execution_state') for p in ((held or {}).get('plans') or {}).values() for d in p.get('autonomous_decisions') or []} if isinstance(held, dict) else None
+    check('10 stored judgment refused for ' + name + ' (hold, no ledger, no rule substitute)', st in (400, 409) and held.get('code') and 'ledger' not in held
+          and states <= {'EXECUTION_HOLD'}, (st, held.get('code') if isinstance(held, dict) else held, states))
 print('\nHTTP E2E: %d/%d checks passed' % (sum(ok for _, ok in results), len(results)))

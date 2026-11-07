@@ -1,7 +1,7 @@
 {
  "product": "HILLINK",
  "version": "V19LS product release 2026-11-07",
- "source_head": "7ae4980cdbd5b545c53e2b90896dc50449e1f96b",
+ "source_head": "cfe312f8c4c1bcc31de9161a6fecd06339fb21bc",
  "data_scope": "RESEARCH_INPUTS_INCLUDED_IN_THIS_PUBLIC_REPOSITORY_REUSE_TERMS_NOT_DETERMINED_HERE",
  "files": [
   {
@@ -7111,8 +7111,8 @@
   {
    "path": "timeline/viewer/static/navigation_context.js",
    "included": true,
-   "bytes": 18837,
-   "sha256": "1c497b286fcdd9cb9e595acd61e2773fcb8de0d9e17db974c4699f4ac2c8775a"
+   "bytes": 19207,
+   "sha256": "4c580d331327d86702ebfc87d59da188699b5f1f87b6d2d6529ab3cf40174d4a"
   },
   {
    "path": "timeline/viewer/static/new_visit_contract.js",
@@ -8101,8 +8101,8 @@
   {
    "path": "timeline/viewer/static/strategy_ab.js",
    "included": true,
-   "bytes": 145685,
-   "sha256": "07ea00e229edb700e0634984453e1df714b33b97d620d461fe3d80ae3d3a3201"
+   "bytes": 145857,
+   "sha256": "6dc6cd002029047feded8d93746ee066e62d79c0344a86790e2d6a6f72bff5f5"
   },
   {
    "path": "timeline/viewer/static/strategy_agent_ui.js",
@@ -9355,8 +9355,8 @@
   {
    "path": "tools/ci/browser_e2e.cjs",
    "included": true,
-   "bytes": 6219,
-   "sha256": "6e1005ed06bc14b6f8a2f9886c632449a2021d40a95b5db769c570c6709cd697"
+   "bytes": 11610,
+   "sha256": "ac5014ed7d0e69abd5b56b9c3c3028b0545d5553895294143c13078ddc2a31b2"
   },
   {
    "path": "tools/ci/check_commit_metadata.py",
@@ -9391,8 +9391,8 @@
   {
    "path": "tools/ci/http_e2e.py",
    "included": true,
-   "bytes": 5274,
-   "sha256": "a2c39f55d76f510828000ae8c99bc08059b975e4a58aa1e087c61dd3221d3d31"
+   "bytes": 8850,
+   "sha256": "423190552ae21f60660f708dcc511ea33af25bb5c345be59e2e7c7cb4941544f"
   },
   {
    "path": "tools/ci/known_failures.tsv",

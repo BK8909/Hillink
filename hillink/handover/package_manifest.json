@@ -1,7 +1,7 @@
 {
  "product": "HILLINK",
- "version": "V19LS product promotion 2026-11-07 (public main candidate)",
- "source_head": "532f514821adc78ad8663c0413f8a7add07bc48b",
+ "version": "V19LS product release 2026-11-07",
+ "source_head": "0f3f12e11ddb66dd23a86bead3d6174a6b8746c4",
  "data_scope": "RESEARCH_INPUTS_INCLUDED_IN_THIS_PUBLIC_REPOSITORY_REUSE_TERMS_NOT_DETERMINED_HERE",
  "files": [
   {
@@ -43,8 +43,8 @@
   {
    "path": "docs/research/RESEARCH_AND_ARCHITECTURE_HANDOFF.md",
    "included": true,
-   "bytes": 83439,
-   "sha256": "17f25f70f789d2b8fe3706e331506cd76c1ddf5a1e9ae4895f4c81693359f6fb"
+   "bytes": 83429,
+   "sha256": "7069243f04fcfe48c8e59013353ec2412820db10caba44776df66e3c723462fc"
   },
   {
    "path": "docs/walkerhill-guest-state-machine.md",
@@ -61,14 +61,14 @@
   {
    "path": "handover/RECOVERY.md",
    "included": true,
-   "bytes": 11744,
-   "sha256": "a710e40f45db1ad453dce7d9dfa6261a1461bba91d728eb404c8d2553152b038"
+   "bytes": 11991,
+   "sha256": "7b4878e96f41f175eb78bd5f2a5243c66c35fda7b767ba9a805b51b95b0419d9"
   },
   {
    "path": "handover/data/bundle.json",
    "included": true,
-   "bytes": 267451,
-   "sha256": "3c6c740005362612b77e1bfb1510f8f56e4f263350dcc45e47dd474679472038"
+   "bytes": 267480,
+   "sha256": "0a264d84e1343ea3ba2f81b090424e1103a377b299a95a20e391eff0b4976005"
   },
   {
    "path": "handover/data/official/20260630_moegi (1).pdf",
@@ -9482,5 +9482,5 @@
  "excluded_self_manifests": [
   "handover/package_manifest.json"
  ],
- "source_head_role": "base commit; exact running review HEAD is exposed by /api/build"
+ "source_head_role": "walkerhill integration commit the product files were taken from (release.json source_commit); public commits are in GitHub history"
 }

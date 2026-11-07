@@ -4,7 +4,7 @@
   "files": 125,
   "uncompressed_bytes": 57650965,
   "manifest_sha256": "7e32e9b1187b0ed4c19481379f801821d3beec98f81212d2b9be241b5de221db",
-  "scope": "AUTHORIZED_PRIVATE_REPOSITORY_DATA_NOT_PUBLIC_RELEASE",
+  "scope": "RESEARCH_INPUTS_INCLUDED_IN_THIS_PUBLIC_REPOSITORY_REUSE_TERMS_NOT_DETERMINED_HERE",
   "required_external_input_files": 0,
   "supplemental_files": [
     {

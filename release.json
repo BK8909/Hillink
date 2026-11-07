@@ -4,7 +4,7 @@
   "product_directory": "hillink",
   "entrypoint": "hillink/tools/start_product.sh",
   "source_repository": "BK8909/walkerhill",
-  "source_commit": "ee9f1ec7820373fed075ec7f189196c09ebebaed",
+  "source_commit": "eb15d33e5e246ad18db701029a72fe3c0e728a30",
   "data_scope": "RESEARCH_INPUTS_INCLUDED_IN_THIS_PUBLIC_REPOSITORY_REUSE_TERMS_NOT_DETERMINED_HERE",
   "data_manifest": "hillink/handover/data/bundle.json",
   "source_branch": "research/partial-breakfast-20261107",

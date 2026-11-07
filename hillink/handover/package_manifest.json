@@ -1,7 +1,7 @@
 {
  "product": "HILLINK",
  "version": "V19LS product release 2026-11-07",
- "source_head": "ee9f1ec7820373fed075ec7f189196c09ebebaed",
+ "source_head": "eb15d33e5e246ad18db701029a72fe3c0e728a30",
  "data_scope": "RESEARCH_INPUTS_INCLUDED_IN_THIS_PUBLIC_REPOSITORY_REUSE_TERMS_NOT_DETERMINED_HERE",
  "files": [
   {
@@ -44,7 +44,7 @@
    "path": "docs/research/RESEARCH_AND_ARCHITECTURE_HANDOFF.md",
    "included": true,
    "bytes": 83566,
-   "sha256": "0a7b2e37756ab4ad3c4a05eea6db2db5b621added3a663ad606f82c5ac87bfdc"
+   "sha256": "bb9ac47fad3d07690d5f648c46bba0e76cd938220faf13b51c5ecbe88da191ce"
   },
   {
    "path": "docs/walkerhill-guest-state-machine.md",
@@ -6337,8 +6337,8 @@
   {
    "path": "timeline/viewer/static/agent_decision_view.js",
    "included": true,
-   "bytes": 23138,
-   "sha256": "138c9193ef03fdcada6b12587fdb1c437484f8430a86e319d183cdc2256e11ee"
+   "bytes": 23835,
+   "sha256": "db8ea0aebe23925727748306988cb1af57c34570b32600a14bd0943b1cb85ec8"
   },
   {
    "path": "timeline/viewer/static/anomaly_evidence.json",
@@ -8257,8 +8257,8 @@
   {
    "path": "timeline/viewer/tests/agent_decision_view.test.cjs",
    "included": true,
-   "bytes": 12656,
-   "sha256": "39f77ad67d47b9d8dc852d14547c4363b410cb53a1bca64bc47b98bae7a6bea6"
+   "bytes": 13903,
+   "sha256": "8b442057968551fedc093eac617e45598e42886a13557d7559ed4b38b667bdcc"
   },
   {
    "path": "timeline/viewer/tests/compare.test.cjs",

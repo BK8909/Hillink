@@ -40,7 +40,12 @@ function contextHTML(d){
  const partyText=party?`성인 ${party.adult_count}명${children.length?' · 어린이 '+children.map(x=>x.age_months==null?'연령 미확인':x.age_months+'개월').join(', '):''} · 운영자 시나리오`:`${v.party_size??'미확인'}인 · 관계·연령 미확인`;
  const prior=(c.meal_experiences||[]).at(-1),order=prior?.order?.map(x=>`${x.label||x.sku_id} × ${x.quantity}`).join(' + ');
  const fs=s.fatigue_scale,tr=s.today_remaining,sb=d.state_before||{};
- const stateLine=fs?`<p><b>판단 시점 상태</b> 피로 ${esc(fs.value)} · 휴식 한도 ${esc(fs.rest_limit)}의 ${esc(fs.ratio_percent)}% (${esc(fs.level)})${tr?` · 저녁 ${tr.dinner_resolved?'해결':'미해결'} · 남은 식사 후보 ${esc(tr.open_meal_options)}개 · 활동 후보 ${esc(tr.open_activity_options)}개 · 방문 종료 ${esc(tr.day_end)}`:''} <small>엔진 상태 모델 · 실측 아님</small></p>`
+ // The recorded context keeps only some fields (e.g. a breakfast record has the fatigue level and percent but no
+ // value / rest limit and an empty today_remaining): show what was recorded, never blanks.
+ const has=v=>v!==undefined&&v!==null&&v!=='';
+ const fatigueText=fs&&[has(fs.value)?`피로 ${esc(fs.value)}`:'',has(fs.ratio_percent)?(has(fs.rest_limit)?`휴식 한도 ${esc(fs.rest_limit)}의 ${esc(fs.ratio_percent)}%`:`휴식 한도의 ${esc(fs.ratio_percent)}%`)+(fs.level?` (${esc(fs.level)})`:''):fs.level?`피로 ${esc(fs.level)}`:''].filter(Boolean).join(' · ');
+ const todayText=tr&&[has(tr.dinner_resolved)?`저녁 ${tr.dinner_resolved?'해결':'미해결'}`:'',has(tr.open_meal_options)?`남은 식사 후보 ${esc(tr.open_meal_options)}개`:'',has(tr.open_activity_options)?`활동 후보 ${esc(tr.open_activity_options)}개`:'',has(tr.day_end)?`방문 종료 ${esc(tr.day_end)}`:''].filter(Boolean).join(' · ');
+ const stateLine=fs&&(fatigueText||todayText)?`<p><b>판단 시점 상태</b> ${[fatigueText,todayText].filter(Boolean).join(' · ')} <small>엔진 상태 모델 · 실측 아님</small></p>`
   :Number.isFinite(sb.fatigue)?`<p><b>판단 시점 상태</b> 피로 ${Number(sb.fatigue).toFixed(2)} · 허기 참고 ${esc(sb.hunger)} <small>V16 기록 · 당시 모델에는 휴식 한도 척도가 전달되지 않음</small></p>`:'';
  const activities=(c.activity_experiences||[]).filter(x=>x.action!=='move');
  const activityHTML=activities.length?`<details><summary>이번 방문에서 이미 실행한 활동 · ${activities.length}건</summary><p>전날부터 이어진 가상 실행 기록입니다. 이용했다는 사실만으로 만족·선호를 확인한 것은 아닙니다.</p><ul>${activities.map(x=>`<li>${esc(x.date)} ${esc(x.start_time||hm(x.start))}–${esc(x.end_time||hm(x.end))} · ${esc(x.label||x.action)}</li>`).join('')}</ul></details>`:'';

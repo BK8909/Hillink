@@ -113,3 +113,13 @@ test('V19LS meal quantity review is shown with the final quantity and no claim o
  const html=V.panel({basis:{autonomous_decision:d}});
  assert.match(html,/식사량 재검토: .*일반 환산 4인분\(3명\)을 선택했습니다 · 인용 A05-F25\. 더 많이 주문하라고 강제하지 않습니다/);
 });
+
+test('a breakfast record with partial state shows only the recorded fields (no blanks)',()=>{
+ const scene={basis:{autonomous_decision:{policy:'LLM_AUTONOMOUS_CUSTOMER_V19LS_P2',execution_state:'EXECUTED',candidate_count:4,price_score_rerank:false,
+  input_context:{visit:{party_size:3},state:{time:'08:10',fatigue_scale:{level:'여유',ratio_percent:0},today_remaining:{}}},selected_plan:{decision_summary:'포함 2명 이용'},attempts:[{provider:{execution:'LIVE_RESPONSES'}}]}}};
+ const text=V.panel(scene).replace(/<[^>]+>/g,' ').replace(/\s+/g,' ');
+ assert.match(text,/판단 시점 상태 휴식 한도의 0% \(여유\)/);
+ assert.doesNotMatch(text,/휴식 한도 의|후보 개|저녁 미해결|방문 종료 엔진/);
+ const full={...scene.basis.autonomous_decision,input_context:{visit:{party_size:3},state:{fatigue_scale:{value:0.4,rest_limit:2,ratio_percent:20,level:'여유'},today_remaining:{dinner_resolved:false,open_meal_options:8,open_activity_options:6,day_end:'23:00'}}}};
+ assert.match(V.panel({basis:{autonomous_decision:full}}).replace(/<[^>]+>/g,' ').replace(/\s+/g,' '),/피로 0.4 · 휴식 한도 2의 20% \(여유\) · 저녁 미해결 · 남은 식사 후보 8개 · 활동 후보 6개 · 방문 종료 23:00/);
+});

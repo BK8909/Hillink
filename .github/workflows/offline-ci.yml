@@ -64,6 +64,10 @@ jobs:
           set -e
           tail -3 "$RUNNER_TEMP/pytest.log"
           python tools/ci/check_failures.py "$RUNNER_TEMP/pytest.log" tools/ci/known_failures.tsv
+      - name: Historical contract reproduction (CD-15 sealed engine files from Git history; not a current-engine result)
+        run: python tools/ci/check_historical_contracts.py
+      - name: Explain the standing stored-ledger gaps (informational)
+        run: python tools/ci/explain_ledger_gaps.py "$RUNNER_TEMP/ledger_gaps.json"
       - name: V16 stored replay 38/38
         run: python tools/ci/check_replay.py
       - name: Start the product server (replay and rules only)

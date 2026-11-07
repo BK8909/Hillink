@@ -4,7 +4,7 @@
   "product_directory": "hillink",
   "entrypoint": "hillink/tools/start_product.sh",
   "source_repository": "BK8909/walkerhill",
-  "source_commit": "cfe312f8c4c1bcc31de9161a6fecd06339fb21bc",
+  "source_commit": "8334424bf301729928c2b80c25f2cd2d3515f3e4",
   "data_scope": "RESEARCH_INPUTS_INCLUDED_IN_THIS_PUBLIC_REPOSITORY_REUSE_TERMS_NOT_DETERMINED_HERE",
   "data_manifest": "hillink/handover/data/bundle.json",
   "source_branch": "integration/v19ls-product-20261107",

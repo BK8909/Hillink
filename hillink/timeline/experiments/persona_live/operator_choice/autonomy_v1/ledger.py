@@ -208,7 +208,14 @@ def charge(a, code, kind, loc, offer=None, in_package=False):
         if p is None or (p == 0 and g in ("가상", None) and offer.get("kind") not in ("rest",)):
             return dict(status="가격 미정", krw=None, grade=g, basis="엔진 상품 가격 미확인")
         out = max(0, p - (offer.get("guest_discount_krw") or 0) - (offer.get("card_benefit_krw") or 0))
-        return dict(status="무료" if out == 0 else "유료", krw=out * a.N, grade=g, basis=f"정량 엔진 상품 가격 {p:,}원 × {a.N}인", per="인")
+        total = out * a.N
+        if float(out).is_integer():
+            return dict(status="무료" if out == 0 else "유료", krw=int(total), grade=g, basis=f"정량 엔진 상품 가격 {int(p):,}원 × {a.N}인", per="인")
+        # A per-person price that is not a whole won (e.g. a breakfast whose room contract covers part of the party, spread
+        # over the party) is billed as one party total: KRW stays an integer and no fractional unit price reaches the ledger.
+        total = int(round(total))
+        return dict(status="무료" if total == 0 else "유료", krw=total, grade=g,
+                    basis=f"정량 엔진 상품 가격 {total:,}원 × 1세트({a.N}인 일행 합계 · 1인 환산 단가가 정수가 아님)", per="세트")
     if base in PLAN_PRICE:
         key, unit, note = PLAN_PRICE[base]
         krw, g = _price_of(key)

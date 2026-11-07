@@ -1,7 +1,7 @@
 {
  "product": "HILLINK",
  "version": "V19LS product release 2026-11-07",
- "source_head": "cfe312f8c4c1bcc31de9161a6fecd06339fb21bc",
+ "source_head": "8334424bf301729928c2b80c25f2cd2d3515f3e4",
  "data_scope": "RESEARCH_INPUTS_INCLUDED_IN_THIS_PUBLIC_REPOSITORY_REUSE_TERMS_NOT_DETERMINED_HERE",
  "files": [
   {
@@ -43,8 +43,8 @@
   {
    "path": "docs/research/RESEARCH_AND_ARCHITECTURE_HANDOFF.md",
    "included": true,
-   "bytes": 83558,
-   "sha256": "b721792b051218f9ff0ea7723ca2679d3ec8b365ea05b3bf80ff6c1d4fde00a0"
+   "bytes": 83566,
+   "sha256": "ef5e1b18e2f2570b6f573678b296a9e80f9c4e0f07aa3e83be16eeaa211021af"
   },
   {
    "path": "docs/walkerhill-guest-state-machine.md",
@@ -61,8 +61,8 @@
   {
    "path": "handover/RECOVERY.md",
    "included": true,
-   "bytes": 12904,
-   "sha256": "e53f875acf5d9f3382ff6654dee3be030eb4bd4442ec4fd2acd206e5074fefa3"
+   "bytes": 14354,
+   "sha256": "49f9a7fa30fb1b7248885dfe8bf8772b50550c31363e7678065c79b71317ac93"
   },
   {
    "path": "handover/data/bundle.json",
@@ -4963,8 +4963,8 @@
   {
    "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/ledger.py",
    "included": true,
-   "bytes": 16832,
-   "sha256": "b2998ca475dd31a3f184a37cea3748e61af52ea517ff2097d780c275956cc943"
+   "bytes": 17435,
+   "sha256": "a61c68c553a34251bdfe4301b31a3ce950ccdc3352ea67c2be69dff2a62ee9a2"
   },
   {
    "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/llm_layer.py",
@@ -8771,6 +8771,12 @@
    "sha256": "8e58aacbe514609092e397415fef2dfb75ef79b063c02b6b769a1e0af272078e"
   },
   {
+   "path": "timeline/viewer/tests/test_current_engine_invariants_1107.py",
+   "included": true,
+   "bytes": 3660,
+   "sha256": "6d947eefdd834f4934ada532d81ff2f8a87748327cc8aa2b58836a9125c17394"
+  },
+  {
    "path": "timeline/viewer/tests/test_day_end_review_1105.py",
    "included": true,
    "bytes": 9674,
@@ -8829,6 +8835,12 @@
    "included": true,
    "bytes": 11558,
    "sha256": "d43543f42df795c23bbe94b3c145bc6c6d581f4569b663bdbca1439f4cb956df"
+  },
+  {
+   "path": "timeline/viewer/tests/test_ledger_amount_invariants_1107.py",
+   "included": true,
+   "bytes": 2125,
+   "sha256": "37ceda7bba05c89807846fcd33273809a717b0f8fbaf15c4bdcec4baa69c894e"
   },
   {
    "path": "timeline/viewer/tests/test_ledger_department_classification.py",
@@ -9383,10 +9395,22 @@
    "sha256": "774cd7ea525a0d99e4f58fcea2f54d00573b08d8e849be284ebde7a7c32a4074"
   },
   {
+   "path": "tools/ci/check_historical_contracts.py",
+   "included": true,
+   "bytes": 3491,
+   "sha256": "844c5e71e6c6d7b9a10712393771c47b20c1f202bbcaa91e4fa4b5ec36970668"
+  },
+  {
    "path": "tools/ci/check_replay.py",
    "included": true,
    "bytes": 750,
    "sha256": "7628574b150e5c387da99635f77438d593cf8751e8d909c59ec93a7beb658f26"
+  },
+  {
+   "path": "tools/ci/explain_ledger_gaps.py",
+   "included": true,
+   "bytes": 2785,
+   "sha256": "7625a84e63fd983f2c7aa6ea7f9df220215aa1c0a784a8ce9d45a72d5fcbfddd"
   },
   {
    "path": "tools/ci/http_e2e.py",

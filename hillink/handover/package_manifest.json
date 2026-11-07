@@ -1,7 +1,7 @@
 {
  "product": "HILLINK",
  "version": "V19LS product release 2026-11-07",
- "source_head": "eb15d33e5e246ad18db701029a72fe3c0e728a30",
+ "source_head": "0801ef7a115b1b9c174b4461b006c0ef975ced9a",
  "data_scope": "RESEARCH_INPUTS_INCLUDED_IN_THIS_PUBLIC_REPOSITORY_REUSE_TERMS_NOT_DETERMINED_HERE",
  "files": [
   {
@@ -44,7 +44,7 @@
    "path": "docs/research/RESEARCH_AND_ARCHITECTURE_HANDOFF.md",
    "included": true,
    "bytes": 83566,
-   "sha256": "bb9ac47fad3d07690d5f648c46bba0e76cd938220faf13b51c5ecbe88da191ce"
+   "sha256": "9ed37740bd55f50447f99f6644ae3404b5acbfe5e23953bcc177898405c43980"
   },
   {
    "path": "docs/walkerhill-guest-state-machine.md",
@@ -8011,14 +8011,14 @@
   {
    "path": "timeline/viewer/static/revenue.css",
    "included": true,
-   "bytes": 75908,
-   "sha256": "4d3f0a65a9d3a88fd568c8ed050b4aefb3d8ba162a10bc8fa21fe59649e23762"
+   "bytes": 76083,
+   "sha256": "4669d29241ed62aa29eac9fb01413ff9dd6a792f0e40bc6996a67ff1df8fbd7e"
   },
   {
    "path": "timeline/viewer/static/revenue.js",
    "included": true,
-   "bytes": 84619,
-   "sha256": "1c9e7d446ce28b1a9cd5f9d0aebb0c91c84295e34cb09ef3bdaf11dbb5b73a72"
+   "bytes": 84642,
+   "sha256": "f291d01417d7a009f74cf71fa5f382d4dbab2754f10f6b0bf1e468a5a9e2d91c"
   },
   {
    "path": "timeline/viewer/static/revenue_analysis.css",
@@ -9379,8 +9379,8 @@
   {
    "path": "tools/ci/browser_e2e.cjs",
    "included": true,
-   "bytes": 11610,
-   "sha256": "ac5014ed7d0e69abd5b56b9c3c3028b0545d5553895294143c13078ddc2a31b2"
+   "bytes": 12212,
+   "sha256": "f2ae14b347154e72dea3621b9f7b336c4d42114cb0018a031b679f237ce642c4"
   },
   {
    "path": "tools/ci/check_commit_metadata.py",
@@ -9559,8 +9559,8 @@
   {
    "path": "timeline/viewer/operating_reference.py",
    "included": true,
-   "bytes": 12557,
-   "sha256": "5be1fac52c0004eec6aa2628bafe2036170bb4fb4297aef4586d7bacbad11617"
+   "bytes": 12752,
+   "sha256": "8d5e47db722faa980b1cbd37846fb8090b4a9dfa9536a9ab0c3c98f7f5a7c71c"
   },
   {
    "path": "timeline/viewer/operating_reference/external_research_v1.json",
@@ -9583,8 +9583,8 @@
   {
    "path": "timeline/viewer/tests/test_operating_reference_1107.py",
    "included": true,
-   "bytes": 6980,
-   "sha256": "c202c3b41fc01b86b699eae6b97619a3616eff16ea93d89dd2767040aa927787"
+   "bytes": 7618,
+   "sha256": "5735b330d01a0f4ef80557311fb33185a644a5f928cdba6b871069df82162e22"
   },
   {
    "path": "timeline/viewer/tests/test_v19ls_breakfast_default_1107.py",

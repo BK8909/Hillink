@@ -107,7 +107,7 @@ def aggregate(result):
     teams = persons = mornings = 0
     bf = dict(entitled=0, entitled_known_mornings=0, entitlement_unknown_mornings=0, diners=0, included_used=0, paid_diners=0, diners_split_unknown=0, not_entitled=0,
               paid_revenue_krw=0, skipped_team_mornings=0, skip_reasons={}, decided_by={})
-    other = dict(pool_teams=0, sauna_teams=0, room_service_orders=0, room_nights=0, dinner_evenings=0, in_hotel_dinners=0, event_teams=0)
+    other = dict(stay_teams=0, pool_teams=0, sauna_teams=0, room_service_orders=0, room_nights=0, dinner_evenings=0, in_hotel_dinners=0, event_teams=0)
     event_on = bool((result.get('visit') or {}).get('event_mode') not in (None, 'none'))
     for pid, plan in (result.get('plans') or {}).items():
         v = (result.get('visits') or {}).get(pid) or {}
@@ -158,22 +158,23 @@ def aggregate(result):
                 bf['skipped_team_mornings'] += 1
                 why = (d or {}).get('breakfast_outcome') or ('RULE_SELECTION' if not d else 'UNRECORDED')
                 bf['skip_reasons'][why] = bf['skip_reasons'].get(why, 0) + 1
-        # other services (definitions in metrics.json)
-        locs = [str(s.get('loc') or '') for s in scenes]
-        other['pool_teams'] += any('POOL' in l for l in locs)
-        other['sauna_teams'] += any('SAUNA' in l for l in locs)
+        # other services (definitions in metrics.json: per staying team / room-night / stay evening; day visits are not counted)
+        stay = bool(v.get('stay')); locs = [str(s.get('loc') or '') for s in scenes]
+        other['stay_teams'] += stay
+        other['pool_teams'] += stay and any('POOL' in l for l in locs)
+        other['sauna_teams'] += stay and any('SAUNA' in l for l in locs)
         other['room_service_orders'] += sum(1 for s in scenes if str(s.get('loc') or '').endswith('_ROOM') and s.get('meal') in ('lunch', 'dinner', 'late', 'snack') and ((s.get('basis') or {}).get('charge') or {}).get('status') == '유료')
         nights = len(stay_mornings); other['room_nights'] += nights
-        evenings = [d for d in (days[:-1] if v.get('stay') else days)]
+        evenings = days[:-1] if stay else []
         other['dinner_evenings'] += len(evenings)
         other['in_hotel_dinners'] += sum(1 for d in evenings if any(s.get('visit_date') == d and s.get('meal') == 'dinner' and 'EXTERNAL' not in str(s.get('act')) for s in scenes))
-        other['event_teams'] += bool(event_on and any('event' in str(s.get('act')).lower() or 'WINE' in str(s.get('act')) for s in scenes))
+        other['event_teams'] += bool(stay and event_on and any('event' in str(s.get('act')).lower() or 'WINE' in str(s.get('act')) for s in scenes))
     simulated = {'breakfast.included_use_rate': _rate(bf['included_used'], bf['entitled']),
                  'breakfast.paid_uptake_rate': _rate(bf['paid_diners'], bf['not_entitled']),
-                 'pool.team_use_rate': _rate(other['pool_teams'], teams), 'sauna.team_use_rate': _rate(other['sauna_teams'], teams),
+                 'pool.team_use_rate': _rate(other['pool_teams'], other['stay_teams']), 'sauna.team_use_rate': _rate(other['sauna_teams'], other['stay_teams']),
                  'room_service.orders_per_room_night': _rate(other['room_service_orders'], other['room_nights']),
                  'dinner.in_hotel_capture_rate': _rate(other['in_hotel_dinners'], other['dinner_evenings']),
-                 'event.team_participation_rate': _rate(other['event_teams'], teams) if event_on else None}
+                 'event.team_participation_rate': _rate(other['event_teams'], other['stay_teams']) if event_on else None}
     entries, rejected = load()
     return dict(schema='HILLINK_OPERATING_SUMMARY_V1', teams=teams, persons=persons, team_mornings=mornings,
                 breakfast=dict(bf, unused_entitlement=max(0, bf['entitled'] - bf['included_used'])), services=other, simulated=simulated,

@@ -161,12 +161,12 @@ function revOperatingHTML(o){
   const rows=(o.comparison||[]).filter(c=>c.simulated!=null||c.reference);
   return `<section class="rev-console-panel rev-board-ops" data-rev-operating><div class="rev-console-heading"><h3>운영 집계 · 조식 식수와 시설 이용</h3><small>시뮬레이션 집계 · 실측 아님</small></div>
   <p>참여 ${o.teams}팀 · ${o.persons}명 · 숙박 아침 ${o.team_mornings}팀·아침</p>
-  <table class="rev-ops-table"><tbody><tr><th>조식 포함 권리</th><td>${b.entitled}명·아침${b.entitlement_unknown_mornings?` (권리 미확인 ${b.entitlement_unknown_mornings}팀·아침)`:''}</td></tr>
+  <table class="rev-ops-table rev-ops-kv"><tbody><tr><th>조식 포함 권리</th><td>${b.entitled}명·아침${b.entitlement_unknown_mornings?` (권리 미확인 ${b.entitlement_unknown_mornings}팀·아침)`:''}</td></tr>
   <tr><th>실제 조식 이용</th><td>${b.diners}명·아침 = 포함 혜택 ${b.included_used} + 추가 결제 ${b.paid_diners}${b.diners_split_unknown?` + 구분 미확인 ${b.diners_split_unknown}`:''}</td></tr>
   <tr><th>포함 혜택 미사용</th><td>${b.unused_entitlement}명·아침</td></tr>
   <tr><th>조식 추가 결제 매출</th><td>${rcMoney(b.paid_revenue_krw)} <small>포함 혜택은 객실 패키지에 포함 · 별도 매출로 더하지 않음</small></td></tr>
   <tr><th>조식을 먹지 않은 아침</th><td>${b.skipped_team_mornings}팀·아침 · 사유 ${reasons}</td></tr></tbody></table>
-  <details><summary>기준값과 비교 (${rows.length}개 지표)</summary><table class="rev-ops-table"><thead><tr><th>지표</th><th>이 실행</th><th>기준값</th><th>상태</th></tr></thead><tbody>${rows.map(c=>`<tr data-ops-metric="${esc(c.metric_id)}"><td>${esc(c.name_ko)}</td><td>${c.metric_id.endsWith('per_room_night')?(c.simulated??'—'):pct(c.simulated)}</td><td>${ref(c.reference)}${c.reference?.url?` <a href="${esc(c.reference.url)}" target="_blank" rel="noopener">출처</a>`:''}</td><td>${esc(REV_OPS_STATUS[c.status]||c.status)}</td></tr>`).join('')}</tbody></table>
+  <details><summary>기준값과 비교 (${rows.length}개 지표)</summary><table class="rev-ops-table rev-ops-cmp"><thead><tr><th>지표</th><th>이 실행</th><th>기준값</th><th>상태</th></tr></thead><tbody>${rows.map(c=>`<tr data-ops-metric="${esc(c.metric_id)}"><td>${esc(c.name_ko)}</td><td>${c.metric_id.endsWith('per_room_night')?(c.simulated??'—'):pct(c.simulated)}</td><td>${ref(c.reference)}${c.reference?.url?` <a href="${esc(c.reference.url)}" target="_blank" rel="noopener">출처</a>`:''}</td><td>${esc(REV_OPS_STATUS[c.status]||c.status)}</td></tr>`).join('')}</tbody></table>
   <p class="rc-note">외부 연구 값은 다른 호텔·설문 자료로 워커힐 실측이 아닙니다. 호텔 실측값을 넣으면 같은 지표에서 자동으로 우선합니다. 기준값은 집계 비교와 보정 검토에만 쓰며 고객의 개별 선택을 바꾸지 않습니다.</p></details></section>`;
 }
 function revControlHTML(L) {

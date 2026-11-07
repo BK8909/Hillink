@@ -137,3 +137,12 @@ def test_skip_keeps_entitlement_unused_with_a_reason(tmp_path):
     b = p2_visit(tmp_path, 'SKIP')['breakfast']
     assert (b['diners'], b['unused_entitlement'], b['skipped_team_mornings']) == (0, 2, 1)
     assert sum(b['skip_reasons'].values()) == 1 and b['decided_by']
+
+
+def test_day_visits_do_not_enter_per_stay_service_rates():
+    day = dict(plans={'X': dict(scenes=[dict(visit_date='2026-11-09', loc='POOL_INDOOR', act='pool'), dict(visit_date='2026-11-09', meal='dinner', act='dinner', loc='PIZZA_HILL')])},
+               visits={'X': dict(party_size=2, stay=False)})
+    s = OR.aggregate(day)
+    assert s['services']['stay_teams'] == 0 and s['services']['pool_teams'] == 0 and s['services']['dinner_evenings'] == 0
+    assert s['simulated']['pool.team_use_rate'] is None and s['simulated']['dinner.in_hotel_capture_rate'] is None
+    assert s['team_mornings'] == 0 and s['breakfast']['diners'] == 0

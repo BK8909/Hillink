@@ -1,0 +1,15 @@
+{
+ "schema": "HILLINK_OPERATING_REFERENCE_V1",
+ "note": "Metric definitions shared by every reference source. A source value is used only for the metric whose numerator, denominator and level it states; it never sets an individual agent's choice.",
+ "metrics": {
+  "breakfast.use_share_when_included": {"name_ko": "조식 포함 투숙객 중 실제 조식 이용 비율", "numerator": "조식 포함 권리로 실제 조식을 먹은 인원·아침", "denominator": "조식 포함 권리가 있는 인원·아침", "level": "PERSON_MORNING", "simulated": "breakfast.included_use_rate"},
+  "breakfast.use_share_when_not_included": {"name_ko": "조식 미포함 투숙객 중 유료 조식 이용 비율", "numerator": "별도 결제로 조식을 먹은 인원·아침", "denominator": "조식 포함 권리가 없는 인원·아침", "level": "PERSON_MORNING", "simulated": "breakfast.paid_uptake_rate"},
+  "breakfast.included_room_share": {"name_ko": "조식 포함 예약 객실 비율", "numerator": "조식 포함 요금으로 예약된 객실·박", "denominator": "전체 예약 객실·박", "level": "ROOM_NIGHT", "simulated": null},
+  "breakfast.habit_always_share": {"name_ko": "호텔에서 조식을 항상 먹는다고 답한 응답자 비율", "numerator": "항상 먹는다고 답한 응답자", "denominator": "응답자", "level": "RESPONDENT", "simulated": null},
+  "pool.use_share_per_stay": {"name_ko": "숙박 팀 중 수영장 이용 비율", "numerator": "수영장을 이용한 숙박 팀", "denominator": "숙박 팀", "level": "TEAM_STAY", "simulated": "pool.team_use_rate"},
+  "sauna.use_share_per_stay": {"name_ko": "숙박 팀 중 사우나 이용 비율", "numerator": "사우나를 이용한 숙박 팀", "denominator": "숙박 팀", "level": "TEAM_STAY", "simulated": "sauna.team_use_rate"},
+  "room_service.orders_per_room_night": {"name_ko": "객실·박당 룸서비스 주문 건수", "numerator": "룸서비스 주문 건수", "denominator": "판매 객실·박", "level": "ROOM_NIGHT", "simulated": "room_service.orders_per_room_night"},
+  "dinner.in_hotel_capture_share": {"name_ko": "숙박 팀 중 호텔 안에서 저녁을 먹은 비율", "numerator": "호텔 업장·룸서비스로 저녁을 해결한 숙박 팀·저녁", "denominator": "숙박 팀·저녁", "level": "TEAM_EVENING", "simulated": "dinner.in_hotel_capture_rate"},
+  "event.participation_share": {"name_ko": "행사 기간 숙박 팀 중 행사 참여 비율", "numerator": "행사에 참여한 숙박 팀", "denominator": "행사 기간 숙박 팀", "level": "TEAM_STAY", "simulated": "event.team_participation_rate"}
+ }
+}

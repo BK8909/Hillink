@@ -151,6 +151,24 @@ function revRoomSummary(roomRows,inRoomRows){
  if(inRoomRows.length)parts.push(part('룸서비스',inRoomRows));
  return parts.join(' · ')||'객실·룸서비스 거래 없음';
 }
+// Operator aggregate of the run (operating_reference.aggregate): breakfast covers and extra payment, with the best
+// available reference value. References are labelled by source class and never change an agent's choice.
+const REV_OPS_STATUS={WITHIN_REFERENCE:'기준 범위 안',BELOW_REFERENCE:'기준보다 낮음 · 보정 검토',ABOVE_REFERENCE:'기준보다 높음 · 보정 검토',SAMPLE_TOO_SMALL:'표본이 작아 비교하지 않음',NO_REFERENCE:'기준값 없음(실측 입력 대기)',NOT_COMPARABLE:'지표 단위가 달라 비교하지 않음',CONTEXT_ONLY:'참고 정보',NOT_IN_RUN:'이 실행에 해당 없음'};
+function revOperatingHTML(o){
+  if(!o||!o.breakfast)return '';
+  const b=o.breakfast,pct=v=>v==null?'—':Math.round(v*100)+'%',ref=r=>!r?'—':`${r.low!=null?pct(r.low)+'~'+pct(r.high):pct(r.value)} · ${esc(r.source_ko)}`;
+  const reasons=Object.entries(b.skip_reasons||{}).map(([k,n])=>`${esc(k)} ${n}`).join(' · ')||'없음';
+  const rows=(o.comparison||[]).filter(c=>c.simulated!=null||c.reference);
+  return `<section class="rev-console-panel rev-board-ops" data-rev-operating><div class="rev-console-heading"><h3>운영 집계 · 조식 식수와 시설 이용</h3><small>시뮬레이션 집계 · 실측 아님</small></div>
+  <p>참여 ${o.teams}팀 · ${o.persons}명 · 숙박 아침 ${o.team_mornings}팀·아침</p>
+  <table class="rev-ops-table"><tbody><tr><th>조식 포함 권리</th><td>${b.entitled}명·아침${b.entitlement_unknown_mornings?` (권리 미확인 ${b.entitlement_unknown_mornings}팀·아침)`:''}</td></tr>
+  <tr><th>실제 조식 이용</th><td>${b.diners}명·아침 = 포함 혜택 ${b.included_used} + 추가 결제 ${b.paid_diners}${b.diners_split_unknown?` + 구분 미확인 ${b.diners_split_unknown}`:''}</td></tr>
+  <tr><th>포함 혜택 미사용</th><td>${b.unused_entitlement}명·아침</td></tr>
+  <tr><th>조식 추가 결제 매출</th><td>${rcMoney(b.paid_revenue_krw)} <small>포함 혜택은 객실 패키지에 포함 · 별도 매출로 더하지 않음</small></td></tr>
+  <tr><th>조식을 먹지 않은 아침</th><td>${b.skipped_team_mornings}팀·아침 · 사유 ${reasons}</td></tr></tbody></table>
+  <details><summary>기준값과 비교 (${rows.length}개 지표)</summary><table class="rev-ops-table"><thead><tr><th>지표</th><th>이 실행</th><th>기준값</th><th>상태</th></tr></thead><tbody>${rows.map(c=>`<tr data-ops-metric="${esc(c.metric_id)}"><td>${esc(c.name_ko)}</td><td>${c.metric_id.endsWith('per_room_night')?(c.simulated??'—'):pct(c.simulated)}</td><td>${ref(c.reference)}${c.reference?.url?` <a href="${esc(c.reference.url)}" target="_blank" rel="noopener">출처</a>`:''}</td><td>${esc(REV_OPS_STATUS[c.status]||c.status)}</td></tr>`).join('')}</tbody></table>
+  <p class="rc-note">외부 연구 값은 다른 호텔·설문 자료로 워커힐 실측이 아닙니다. 호텔 실측값을 넣으면 같은 지표에서 자동으로 우선합니다. 기준값은 집계 비교와 보정 검토에만 쓰며 고객의 개별 선택을 바꾸지 않습니다.</p></details></section>`;
+}
 function revControlHTML(L) {
   const dates=L.visit?L.visit.days.map(d=>d.date):[L.context.start_date].filter(Boolean);
   const date=dates.includes(REV.opsDate)?REV.opsDate:dates[0], bins=revOpsBins(L,date);
@@ -177,6 +195,7 @@ function revControlHTML(L) {
 
   <div class="rev-board-middle"><section class="rev-console-panel rev-board-flow"><div class="rev-console-heading"><h3>업장별 소비 비교</h3><button class="cf-link" data-rev-expand="venues">전체 보기 ↗</button></div>${revVenueAmountChart(L)}</section><section class="rev-console-panel rev-board-choices">${revOperatorSummaryHTML(L)}</section></div>
   <div class="rev-board-bottom"><section class="rev-console-panel rev-board-time"><div class="rev-console-heading"><div class="rev-roll-tabs" aria-label="분석 보기"><button class="cf-link" data-rev-analysis-view="flow" aria-pressed="${REV.analysisView!=='time'}">L5 → L1 집계 흐름</button><button class="cf-link" data-rev-analysis-view="time" aria-pressed="${REV.analysisView==='time'}">시간대별 활동·소비</button></div>${REV.analysisView!=='time'?'<button class="cf-link" data-rev-expand="flow">확장 보기 ↗</button>':''}</div>${REV.analysisView==='time'?`<div class="rev-console-heading"><select id="revOpsDate" aria-label="활동 일자">${dates.map(d=>`<option${d===date?' selected':''}>${d}</option>`).join('')}</select></div><div class="rev-time-legend"><span>● ROOM</span><span>● F&B</span><span>● 레저</span><small>막대 원 · 선 활동 건수</small></div>${revSpendChartHTML(bins,hour)}<div class="rev-hour-context">${hour}시 · 활동 ${selected.actions.length}건 · 유료 ${rcMoney(selected.paid)}${REV.hourFilter?' · 오른쪽 거래 필터 적용':''}</div>` : revRollupHTML(L)}</section><aside class="rev-console-panel rev-board-ledger">${revTransactionPanelHTML(L)}</aside></div>
+  ${revOperatingHTML(typeof REV!=='undefined'&&REV.flow?(REV.flow.operating_summary||REV.flow.result?.operating_summary):null)}
   <footer class="rev-board-footer"><span>고객 행동 시뮬레이션에 따른 가상 매출이며, 실제 매출 예측값은 아닙니다. ${L.totals.net_revenue_krw==null?'결제액 기준 · 순매출 미산정':''}</span><button class="cf-link" data-rev-all-transactions>상세 원장·가격 근거 ↗</button></footer>${revBoardOverlayHTML(L)}${REV.setupOpen?`<div class="rev-overlay" role="dialog" aria-modal="true" aria-label="새 계산 설정">${revSetupPanelHTML()}</div>`:''}</section>`;
 }
 function revBoardOverlayHTML(L) {

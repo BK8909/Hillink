@@ -5,11 +5,12 @@ const POLICY='LLM_AUTONOMOUS_CUSTOMER_V16';        // stored runs: exact replay 
 const LIVE_POLICY='LLM_AUTONOMOUS_CUSTOMER_V19LS'; // product LIVE default (2026-11-07): evidence stance, day-end review, selection diagnostics
 const PREVIOUS_LIVE_POLICY='LLM_AUTONOMOUS_CUSTOMER_V17';   // kept: only when the page names it (?policy=LLM_AUTONOMOUS_CUSTOMER_V17)
 const EXPERIMENT_POLICIES=['LLM_AUTONOMOUS_CUSTOMER_V18','LLM_AUTONOMOUS_CUSTOMER_V18B','LLM_AUTONOMOUS_CUSTOMER_V18BM','LLM_AUTONOMOUS_CUSTOMER_V18BD'];   // M4 shortlist experiments: only when a request names it (?policy=…)
-const SELECTABLE=[PREVIOUS_LIVE_POLICY,...EXPERIMENT_POLICIES];
+const RESEARCH_POLICIES=['LLM_AUTONOMOUS_CUSTOMER_V19LS_P2'];   // research on V19LS: only when a request names it
+const SELECTABLE=[PREVIOUS_LIVE_POLICY,...EXPERIMENT_POLICIES,...RESEARCH_POLICIES];
 const POLICIES=[POLICY,LIVE_POLICY,...SELECTABLE];
 const VERSION_NOTE={[POLICY]:'과거 판단 기준(V16) · 조기 종료 검증 이전',[LIVE_POLICY]:'현재 판단 기준(V19-LS) · 근거 성격 표시 · 하루 종료 재검토',[PREVIOUS_LIVE_POLICY]:'이전 판단 기준(V17)',
- LLM_AUTONOMOUS_CUSTOMER_V18:'실험 기준(V18) · 규칙 선별 후 LLM 선택',LLM_AUTONOMOUS_CUSTOMER_V18B:'실험 기준(V18-B) · 후보 관련 근거만',LLM_AUTONOMOUS_CUSTOMER_V18BM:'실험 기준(V18-C) · B 입력 · reasoning medium',LLM_AUTONOMOUS_CUSTOMER_V18BD:'실험 기준(V18-D) · B 입력 · 최소 출력'};
-const SHORT={[POLICY]:'V16',[LIVE_POLICY]:'V19-LS',[PREVIOUS_LIVE_POLICY]:'V17',LLM_AUTONOMOUS_CUSTOMER_V18:'V18 실험',LLM_AUTONOMOUS_CUSTOMER_V18B:'V18-B 실험',LLM_AUTONOMOUS_CUSTOMER_V18BM:'V18-C 실험',LLM_AUTONOMOUS_CUSTOMER_V18BD:'V18-D 실험'};
+ LLM_AUTONOMOUS_CUSTOMER_V18:'실험 기준(V18) · 규칙 선별 후 LLM 선택',LLM_AUTONOMOUS_CUSTOMER_V18B:'실험 기준(V18-B) · 후보 관련 근거만',LLM_AUTONOMOUS_CUSTOMER_V18BM:'실험 기준(V18-C) · B 입력 · reasoning medium',LLM_AUTONOMOUS_CUSTOMER_V18BD:'실험 기준(V18-D) · B 입력 · 최소 출력',LLM_AUTONOMOUS_CUSTOMER_V19LS_P2:'연구 기준(V19-LS P2) · 일부 인원 조식 후보 · 식사량 1회 재검토'};
+const SHORT={[POLICY]:'V16',[LIVE_POLICY]:'V19-LS',[PREVIOUS_LIVE_POLICY]:'V17',LLM_AUTONOMOUS_CUSTOMER_V18:'V18 실험',LLM_AUTONOMOUS_CUSTOMER_V18B:'V18-B 실험',LLM_AUTONOMOUS_CUSTOMER_V18BM:'V18-C 실험',LLM_AUTONOMOUS_CUSTOMER_V18BD:'V18-D 실험',LLM_AUTONOMOUS_CUSTOMER_V19LS_P2:'V19-LS P2 연구'};
 function experimentPolicy(){try{const p=new URLSearchParams(root.location?.search||'').get('policy');return SELECTABLE.includes(p)?p:null;}catch(e){return null;}}
 function request(value,mode='replay',policy){
  if(!['rules','replay','live'].includes(mode))throw Error('판단 모드를 선택해 주세요.');
@@ -47,5 +48,5 @@ function bindAvailability(select,notice){
  }
  select.addEventListener('change',refresh);refresh();
 }
-const api={request,options,label,version,bindAvailability,POLICY,LIVE_POLICY,PREVIOUS_LIVE_POLICY,POLICIES,EXPERIMENT_POLICIES,SELECTABLE};root.HLVisitExecution=api;if(typeof module!=='undefined')module.exports=api;
+const api={request,options,label,version,bindAvailability,POLICY,LIVE_POLICY,PREVIOUS_LIVE_POLICY,POLICIES,EXPERIMENT_POLICIES,RESEARCH_POLICIES,SELECTABLE};root.HLVisitExecution=api;if(typeof module!=='undefined')module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);

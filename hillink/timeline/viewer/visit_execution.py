@@ -11,15 +11,17 @@ POLICY = 'LLM_AUTONOMOUS_CUSTOMER_V16'
 LIVE_POLICY = 'LLM_AUTONOMOUS_CUSTOMER_V19LS'          # product LIVE default since 2026-11-07 (P5 + day-end LIVE re-check)
 PREVIOUS_LIVE_POLICY = 'LLM_AUTONOMOUS_CUSTOMER_V17'   # kept: selectable only when a request names it (?policy=V17)
 EXPERIMENT_POLICIES = ('LLM_AUTONOMOUS_CUSTOMER_V18', 'LLM_AUTONOMOUS_CUSTOMER_V18B', 'LLM_AUTONOMOUS_CUSTOMER_V18BM', 'LLM_AUTONOMOUS_CUSTOMER_V18BD')   # M4 shortlist experiments; never the default
-SELECTABLE_LIVE_POLICIES = (PREVIOUS_LIVE_POLICY,) + EXPERIMENT_POLICIES
-POLICIES = (POLICY, LIVE_POLICY, PREVIOUS_LIVE_POLICY) + EXPERIMENT_POLICIES   # stored V16 runs replay under V16; a request names the policy it wants and gets exactly that
+RESEARCH_POLICIES = ('LLM_AUTONOMOUS_CUSTOMER_V19LS_P2',)   # research on V19LS: only when a request names it
+SELECTABLE_LIVE_POLICIES = (PREVIOUS_LIVE_POLICY,) + EXPERIMENT_POLICIES + RESEARCH_POLICIES
+POLICIES = (POLICY, LIVE_POLICY, PREVIOUS_LIVE_POLICY) + EXPERIMENT_POLICIES + RESEARCH_POLICIES   # stored V16 runs replay under V16; a request names the policy it wants and gets exactly that
 POLICY_NOTES = {POLICY: '과거 판단 기준(V16) · 조기 종료 검증 이전의 저장 응답',
                 LIVE_POLICY: '현재 실시간 AI 판단 기준(V19-LS) · 근거 성격 표시 · 하루 종료 재검토 · 선택 진단 기록',
                 PREVIOUS_LIVE_POLICY: '이전 실시간 판단 기준(V17) · 명시적으로 선택한 경우에만',
                 'LLM_AUTONOMOUS_CUSTOMER_V18': '실험 기준(V18) · 규칙 선별 후 LLM 선택 · 조기 종료 검증 적용',
                 'LLM_AUTONOMOUS_CUSTOMER_V18B': '실험 기준(V18-B) · 규칙 선별 후 LLM 선택 · 후보 관련 근거만 전달',
                 'LLM_AUTONOMOUS_CUSTOMER_V18BM': '실험 기준(V18-C) · V18-B와 같은 입력 · reasoning medium',
-                'LLM_AUTONOMOUS_CUSTOMER_V18BD': '실험 기준(V18-D) · V18-B 입력 · 최소 출력'}
+                'LLM_AUTONOMOUS_CUSTOMER_V18BD': '실험 기준(V18-D) · V18-B 입력 · 최소 출력',
+                'LLM_AUTONOMOUS_CUSTOMER_V19LS_P2': '연구 기준(V19-LS P2) · V19-LS + 일부 인원 조식 후보 · 식사량 1회 재검토 · 이름으로 선택한 경우에만'}
 MODES = ('rules', 'replay', 'live')
 
 

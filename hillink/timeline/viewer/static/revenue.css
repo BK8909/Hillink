@@ -360,3 +360,5 @@ body:has(.rev-compact) .rev-product { padding:0 20px; margin:0; }body:has(.rev-c
 [data-picker="revenue"] .hl-picker-list>label>span{flex:1;min-width:0}
 @media(max-width:1000px){.rev-settings-panel .rev-controls{grid-template-columns:repeat(2,minmax(0,1fr))}.rev-settings-panel .rev-client-control{grid-column:1/-1}.rev-settings-panel #revRun{justify-self:end}}
 @media(max-width:600px){.rev-settings-panel{padding:16px}.rev-settings-panel .rev-controls{grid-template-columns:minmax(0,1fr);gap:16px}.rev-settings-panel #revRun{width:100%;justify-self:stretch}.rev-overlay{padding:16px}.rev-overlay .rev-settings-panel{margin-top:0}}
+
+.rev-board-ops{margin-top:12px}.rev-ops-table{width:100%;border-collapse:collapse;font-size:13px}.rev-ops-table th,.rev-ops-table td{padding:5px 6px;border-bottom:1px solid #eee7df;text-align:left;vertical-align:top;overflow-wrap:anywhere}.rev-ops-table th{width:34%;font-weight:600}

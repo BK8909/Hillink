@@ -115,6 +115,11 @@ def completed_visit(body,include_ledger=True,*,prepare_response=False):
         raise boundary.RequestError('RESULT_TOO_LARGE',413)
     if include_ledger and 'error' not in res:
         res['ledger']=receipts.register_visit(res,body)
+        try:
+            import operating_reference as _OR   # operator aggregate; references never change agent choices
+            res['operating_summary']=_OR.aggregate(res)
+        except Exception as exc:   # never fail a visit because of the operator aggregate
+            res['operating_summary']=dict(error=type(exc).__name__)
         res.pop('profile_sha',None)
         response=wire_json.serialize(res,execution.MAX_VISIT_RESULT_BYTES)
         if len(response)>execution.MAX_VISIT_RESULT_BYTES:

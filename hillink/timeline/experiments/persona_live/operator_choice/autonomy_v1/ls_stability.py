@@ -304,6 +304,7 @@ OUTPUT_LINE = 'tradeoff_note는 부정·재방문 거부·혼합 기록이 있�
 
 # V19LS-P2 research (party-subset breakfast, one-time meal quantity review): extra lines, V19LS unchanged.
 P2_LINES = [
+    '조식 포함 고객은 특별한 사정이 없으면 포함된 조식을 이용하는 것이 기본입니다. 늦잠·운영시간 충돌, 이른 체크아웃·외부 일정, 컨디션 저하·식욕 부족, 전날 식사·음주로 인한 포만, 구체적인 조식 기피 경험, 동행과 다른 아침 계획처럼 이번 방문에 해당하는 사정이 있을 때만 다르게 고르세요. 과거에 조식을 건너뛴 기록은 그 이유가 이번에도 해당하는지 확인하고, 확률이나 비율을 정하지 마세요.',
     '조식 후보의 conditions.included.diners가 일행 인원보다 적으면 일부 인원만 먹는 후보입니다(not_eating 명은 먹지 않음, waived_included 명은 객실 포함 조식을 쓰지 않음). 일부 인원만 먹는 후보를 고르면 meal_assessment.modeled_diners는 diners와 같아야 합니다.',
 ]
 
@@ -461,3 +462,67 @@ def meal_quantity_review(answer, lean, party, prior):
     facts = [f for r in short for f in r['fact_ids']]
     raise ValueError(f"{MEAL_QUANTITY_REVIEW}: 이 식사와 관련된 과거 양 부족 기록({', '.join(facts)})이 있는데 일반 환산 {eq}인분을 {party}명이 먹는 구성을 골랐고 양에 대한 설명이 없습니다. "
                      "그 기록과 지금의 인원·직전 식사·포만을 비교해 양을 다시 정하세요. 그대로 두려면 quantity_reason에 이유를 적으세요(기록 인용만으로는 설명이 되지 않습니다). 더 많이 주문하라는 지시가 아닙니다.")
+
+
+# ------------------------------------------------------------------ V19LS-P2: included breakfast default with exceptions
+BREAKFAST_DEFAULT = 'RULE_DEFAULT_INCLUDED_BREAKFAST'
+BREAKFAST_FORFEIT_REVIEW = 'INCLUDED_BREAKFAST_FORFEIT_REVIEW'
+# Words that tie a record, intention or recent action to this morning: breakfast itself, waking, leaving early, condition,
+# fullness or drinking, aversion. A match sends the decision to the model; nothing is removed from what it sees.
+MORNING_TERMS = re.compile(r'조식|아침|브런치|뷔페|늦잠|기상|일찍|이른|체크아웃|퇴실|외출|숙취|과음|음주|술|포만|배불|배부르|입맛|식욕|컨디션|몸살|아프')
+LATE_ACTS = re.compile(r'BAR|WINE|LATE|PUB|LOUNGE|와인|맥주|칵테일|술|야식', re.I)
+
+
+def _whole_party_included(row, party):
+    inc = (row.get('conditions') or {}).get('included')
+    if (row.get('conditions') or {}).get('price_krw'): return False
+    if inc is True: return True
+    return isinstance(inc, dict) and inc.get('status') == 'ALL' and inc.get('diners', party) == party
+
+
+def breakfast_route(rows, records, memory, fatigue, recent, minutes_left, party):
+    """Which of the three breakfast situations this is (b3582ba3 section 3):
+      RULE_DEFAULT_INCLUDED_BREAKFAST  the whole party is included, one included option, no sign of an exception -> no model call
+      LLM_EXCEPTION_CHECK              included, but a record / intention / state / schedule may make this morning different
+      LLM_EXTRA_PAYMENT_OR_PARTY       extra payment or a partly covered party (who eats) -> the model chooses
+    The rule never assigns a probability and never removes a Fact; it only decides whether a model call is needed."""
+    meals = [r for r in rows if r['action_id'] != 'SKIP_BREAKFAST']
+    whole = [r for r in meals if _whole_party_included(r, party)]
+    if not whole or len(meals) != len(whole):
+        return dict(route='LLM_EXTRA_PAYMENT_OR_PARTY', reasons=['PAID_OR_PARTLY_COVERED_OPTION'])
+    reasons = []
+    if len(whole) > 1: reasons.append('SEVERAL_INCLUDED_OPTIONS')
+    hits = sorted({f for r in records or [] for f in r.get('fact_ids') or []
+                   if MORNING_TERMS.search(' '.join([r.get('summary') or ''] + list(r.get('flags') or []) + list(r.get('about') or [])))
+                   or any('BREAKFAST' in str(x).upper() for x in r.get('about') or [])})
+    if hits: reasons.append('PERSONAL_RECORD:' + ','.join(hits))
+    prior = [d for d in (memory or {}).get('breakfast_decisions') or [] if str(d.get('outcome', '')).startswith('VOLUNTARY_NONUSE')]
+    if prior: reasons.append('SKIPPED_EARLIER_THIS_VISIT')
+    if any(MORNING_TERMS.search(str(x)) for x in (memory or {}).get('pending_intentions') or []): reasons.append('PENDING_INTENTION')
+    if (fatigue or {}).get('level') == '피곤': reasons.append('TIRED')
+    if any(LATE_ACTS.search(' '.join(str(x.get(k) or '') for k in ('act', 'label', 'loc'))) for x in recent or []): reasons.append('LATE_DRINK_OR_FOOD_BEFORE')
+    if minutes_left is not None and minutes_left < max(r.get('duration') or 60 for r in whole) + 60: reasons.append('TIGHT_SCHEDULE')
+    if reasons: return dict(route='LLM_EXCEPTION_CHECK', reasons=reasons)
+    return dict(route=BREAKFAST_DEFAULT, action_id=whole[0]['action_id'], reasons=[],
+                basis='WHOLE_PARTY_INCLUDED; ONE_INCLUDED_OPTION; NO_MORNING_EXCEPTION_SIGN_IN_RECORDS_INTENTIONS_STATE_SCHEDULE')
+
+
+def default_breakfast_answer(row, party):
+    """The default as a selection in the model's answer shape, labelled as a rule decision (not a model statement)."""
+    return dict(selected_action_id=row['action_id'], selected_basket_id=None,
+                reason='규칙 기본 판단: 일행 전원 조식 포함 · 추가 비용 없음 · 이번 아침에 해당하는 예외 근거 없음(모델 호출 없음)',
+                supporting_fact_ids=[], counterevidence_fact_ids=[], rejected_alternative=dict(action_id='SKIP_BREAKFAST', reason='예외 근거가 없어 기본 선택을 유지'),
+                next_intent=None, current_need_assessment=dict(state='UNCERTAIN', reason='규칙 판단 시점에는 모델의 필요 평가가 없습니다'),
+                meal_assessment=dict(kind='FULL_MEAL', modeled_diners=party, sharing_plan='각자 뷔페 이용(규칙 기본 가정)',
+                                     quantity_reason='포함 인원 기준 계약 수량(규칙 기본 가정)', expected_satiety='UNCERTAIN'),
+                tradeoff_note=None)
+
+
+def forfeit_review(answer, rows, records, memory, party, prior):
+    """One-time check (never forced): skipping an included breakfast again this visit with no concrete reason.
+    A concrete reason is a cited Fact or an exception named in the reason. The second answer stands."""
+    if prior or answer.get('selected_action_id') != 'SKIP_BREAKFAST': return
+    if not any(_whole_party_included(r, party) or isinstance((r.get('conditions') or {}).get('included'), dict) for r in rows if r['action_id'] != 'SKIP_BREAKFAST'): return
+    if not [d for d in (memory or {}).get('breakfast_decisions') or [] if str(d.get('outcome', '')).startswith('VOLUNTARY_NONUSE')]: return
+    if answer.get('supporting_fact_ids') or answer.get('counterevidence_fact_ids') or MORNING_TERMS.search(answer.get('reason') or ''): return
+    raise ValueError(BREAKFAST_FORFEIT_REVIEW + ': 이번 방문에서 포함 조식을 다시 건너뜁니다. 이번 아침에 해당하는 사정(일정·컨디션·포만·기피·동행 계획)이 있으면 근거와 함께 적고, 없다면 다시 고려하세요. 다시 고른 답은 그대로 따릅니다.')

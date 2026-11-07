@@ -219,7 +219,10 @@ def test_sync_visit_reuses_checked_response_without_losing_ledger(monkeypatch):
     with patch.object(app.agent_jobs, 'remember') as remember, patch.object(app.wire_json, 'serialize', wraps=app.wire_json.serialize) as encode:
         status, response = app.completed_visit({'personas': ['synthetic']}, prepare_response=True)
         assert status == 200
-        assert json.loads(response) == {'plans': {'synthetic': {'decisions': ['original']}}, 'ledger': {'run_id': 'same-run', 'total': 17}}
+        body = json.loads(response)
+        # 2026-11-07: the operator aggregate is attached after the ledger (a new field, never replacing it)
+        assert body.pop('operating_summary')['schema'] == 'HILLINK_OPERATING_SUMMARY_V1'
+        assert body == {'plans': {'synthetic': {'decisions': ['original']}}, 'ledger': {'run_id': 'same-run', 'total': 17}}
         assert encode.call_count == 2  # pre-registration boundary + final HTTP bytes
         remember.assert_called_once()
 

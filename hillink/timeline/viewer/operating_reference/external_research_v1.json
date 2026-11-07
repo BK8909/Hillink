@@ -1,0 +1,19 @@
+{
+ "schema": "HILLINK_OPERATING_REFERENCE_V1",
+ "source_set": "EXTERNAL_RESEARCH_2026-11-07",
+ "caution": "외부 호텔·설문 자료입니다. 워커힐 실측이 아니며, 워커힐 실측값이 들어오면 자동으로 그 값이 우선합니다. 개별 고객 행동을 이 비율에 맞추지 않습니다.",
+ "entries": [
+  {"metric_id": "breakfast.use_share_when_included", "source_class": "EXTERNAL_RESEARCH", "value": null, "low": 0.55, "high": 0.70,
+   "period": "2020년 이전(조식이 객실 요금에 포함되던 시기)", "segment": "all", "sample_size": null, "geography": "캐나다 · Germain Hotels",
+   "source": {"title": "Breakfast programs can be a profit centre for hotels", "publisher": "Hotelier Magazine", "url": "https://www.hoteliermagazine.com/breakfast-programs-can-be-a-profit-centre-for-hotels", "kind": "운영자 인터뷰(Germain Hotels F&B 디렉터)"},
+   "comparability": "PROXY_NOT_WALKERHILL", "note": "조식이 객실 요금에 포함됐을 때 투숙객 중 호텔에서 조식을 먹은 비율(운영자 진술 범위)."},
+  {"metric_id": "breakfast.use_share_when_not_included", "source_class": "EXTERNAL_RESEARCH", "value": 0.40, "low": null, "high": null,
+   "period": "2020년 이후(조식 분리 판매)", "segment": "all", "sample_size": null, "geography": "캐나다 · Germain Hotels",
+   "source": {"title": "Breakfast programs can be a profit centre for hotels", "publisher": "Hotelier Magazine", "url": "https://www.hoteliermagazine.com/breakfast-programs-can-be-a-profit-centre-for-hotels", "kind": "운영자 인터뷰"},
+   "comparability": "PROXY_NOT_WALKERHILL", "note": "조식을 객실 요금에서 분리한 뒤 약 40%. 팬데믹 시기와 겹쳐 분리 효과만으로 보기 어려움. 일부 지역 평일은 20~25%로 언급."},
+  {"metric_id": "breakfast.habit_always_share", "source_class": "EXTERNAL_RESEARCH", "value": 0.59, "low": null, "high": null,
+   "period": "2026-02~03", "segment": "all", "sample_size": 603, "geography": "프랑스 호텔 이용자(프랑스인 74% · 해외 26%)",
+   "source": {"title": "Étude Coach Omnium 2026 (attentes clients hôtellerie)", "publisher": "La Tribune de l'Hôtellerie", "url": "https://latribunedelhotellerie.com/etude-coach-omnium-attentes-clients-hotellerie-2026/", "kind": "대면 설문"},
+   "comparability": "DIFFERENT_LEVEL_CONTEXT_ONLY", "note": "응답자 습관 비율(2022년 63%). 실제 숙박 건별 이용률이 아니므로 시뮬레이션 비교에 쓰지 않음. 항상 먹지 않는 이유 1위는 가격(38%)."}
+ ]
+}

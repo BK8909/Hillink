@@ -268,3 +268,19 @@ test('ROOM supporting summary retains amounts and uncertainty in one text span',
  assert.match(ctx.revRoomSummary([room,{paid_krw:null,purchase_status:'UNKNOWN_AMOUNT'}],[ird]),/373000원 · 1건 미확인 · 룸서비스 138000원/);
  assert.doesNotMatch(ctx.revRoomSummary([room],[]),/룸서비스 없음/);
 });
+test('operator aggregate panel labels references by source class and keeps included breakfast out of revenue', () => {
+  const {ctx}=setup();
+  assert.equal(ctx.revOperatingHTML(null),'');
+  const html=ctx.revOperatingHTML({teams:1,persons:3,team_mornings:2,breakfast:{entitled:4,entitlement_unknown_mornings:0,diners:6,included_used:4,paid_diners:2,diners_split_unknown:0,unused_entitlement:0,paid_revenue_krw:170000,skipped_team_mornings:0,skip_reasons:{}},
+    comparison:[{metric_id:'breakfast.use_share_when_included',name_ko:'조식 포함 투숙객의 이용 비율',simulated:1,status:'SAMPLE_TOO_SMALL',reference:{low:.55,high:.7,source_ko:'외부 연구(워커힐 실측 아님)',url:'https://example.org/x'}},
+                {metric_id:'breakfast.included_room_share',name_ko:'조식 포함 객실 비율',simulated:null,status:'CONTEXT_ONLY',reference:null}]});
+  assert.match(html,/data-rev-operating/);
+  assert.match(html,/포함 혜택 4 \+ 추가 결제 2/);
+  assert.match(html,/170000원/);
+  assert.match(html,/별도 매출로 더하지 않음/);
+  assert.match(html,/외부 연구\(워커힐 실측 아님\)/);
+  assert.match(html,/표본이 작아 비교하지 않음/);
+  assert.match(html,/55%~70%/);
+  assert.doesNotMatch(html,/조식 포함 객실 비율/);   // no simulated value and no reference: not listed
+  assert.doesNotMatch(html,/구분 미확인/);
+});

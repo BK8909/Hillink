@@ -328,7 +328,7 @@ POLICIES = {
     POLICY_V18L2: dict(system=None, system_for=lean_system, schema=SELECTION_V18, day_end_review=DAY_END_POLICY, context='AUTONOMOUS_CONTEXT_V18_LEAN', stable_prefix=True, select=True, effort='medium', prefix_message='personal', topic=True),
     POLICY_V18LS: dict(system=None, system_for=lean_neutral_system, schema=SELECTION_V18, day_end_review=DAY_END_POLICY, context='AUTONOMOUS_CONTEXT_V18_LEAN', stable_prefix=True, select=True, effort='medium', prefix_message='personal', topic=True, neutral='NAME'),
     POLICY_V19LS: dict(system=None, system_for=lambda rows: LSS.system(lean_neutral_system(rows)), schema=LSS.schema(SELECTION_V18), day_end_review=DAY_END_POLICY, context='AUTONOMOUS_CONTEXT_V18_LEAN', stable_prefix=True, select=True, effort='medium', prefix_message='personal', topic=True, neutral='NAME', stance=True, stability=True),
-    POLICY_V19LS_P2: dict(system=None, system_for=lambda rows: LSS.system(lean_neutral_system(rows),LSS.P2_LINES), schema=LSS.schema(SELECTION_V18), day_end_review=DAY_END_POLICY, context='AUTONOMOUS_CONTEXT_V18_LEAN', stable_prefix=True, select=True, effort='medium', prefix_message='personal', topic=True, neutral='NAME', stance=True, stability=True, party_breakfast=True, meal_review=True),
+    POLICY_V19LS_P2: dict(system=None, system_for=lambda rows: LSS.system(lean_neutral_system(rows),LSS.P2_LINES), schema=LSS.schema(SELECTION_V18), day_end_review=DAY_END_POLICY, context='AUTONOMOUS_CONTEXT_V18_LEAN', stable_prefix=True, select=True, effort='medium', prefix_message='personal', topic=True, neutral='NAME', stance=True, stability=True, party_breakfast=True, meal_review=True, breakfast_default=True),
     POLICY_V18M: dict(system=SYSTEM_V18M, schema=SELECTION_V18M, day_end_review=DAY_END_POLICY, context='AUTONOMOUS_CONTEXT_V18_COMPACT', stable_prefix=True, select=True, effort='medium', prefix_message='personal'),
     POLICY_V18BD: dict(system=SYSTEM_V18D, schema=SELECTION_V18D, day_end_review=DAY_END_POLICY, context='AUTONOMOUS_CONTEXT_V18_COMPACT', stable_prefix=True, select=True, effort=None, prefix_message='personal', minimal_output=True),
 }
@@ -1085,6 +1085,30 @@ def breakfast_choice(a, world, t, offers, fallback):
     record['implementation_sha256']=P.digest(configuration()['source_sha256'])
     record['profile_evidence_sha256']=P.digest(personal)
     record['input_context']=X.decision_context(dict(context,personal=personal,actions=valid),[])
+    route=None
+    if spec_of(a).get('breakfast_default') and select:
+        # V19LS-P2: the included breakfast is the default. Only the clear case (whole party included, one option, no
+        # morning exception sign in what the model would see) is settled without a call; it is recorded as a rule decision.
+        lean_records=(context.get('personal') or {}).get('records') or []
+        route=LSS.breakfast_route(rows,lean_records,a._autonomous_memory,fatigue_scale(a),
+                                  (context.get('state') or {}).get('recent_actions'),max(0,a.end-t),a.N)
+        record['breakfast_route']=route
+    if route and route['route']==LSS.BREAKFAST_DEFAULT:
+        answer=LSS.default_breakfast_answer(next(r for r in rows if r['action_id']==route['action_id']),a.N)
+        plan,_alt=expand_selection(dict(answer),[dict(r,type='ACTIVITY') for r in rows],{v['action_id']:v for v in valid},{})
+        plan['selection_policy']='RULE_DEFAULT_INCLUDED_BREAKFAST_NO_LLM_CALL'
+        if plan.get('meal_assessment'):plan['meal_assessment'].update(intake_assumption='규칙 기본 가정(모델 진술 아님)',uncertainties=['RULE_DEFAULT_NOT_MODEL_STATEMENT'])
+        chosen=next(x for x in valid if x['action_id']==plan['action_id'])
+        if plan['items']!=chosen['items'] or plan['order_total_krw']!=chosen['order_total_krw']:raise ValueError('BREAKFAST_CONTRACT_CHANGED')
+        X.validate_assessment(plan,a.N,True)
+        record['input_context']=X.decision_context(dict(context,personal=personal,actions=valid),[plan])
+        record.update(execution_state='VALIDATED',selected_plan=plan,selection_owner=LSS.BREAKFAST_DEFAULT,rule_basis=route['basis'],price_score_rerank=False,llm_calls=0)
+        record['breakfast_outcome']=X.breakfast_outcome(plan['action_id'],sum(x['action_id']!='SKIP_BREAKFAST' for x in valid),excluded)
+        record['current_need_assessment']=copy.deepcopy(plan.get('current_need_assessment'))
+        a._autonomous_memory.setdefault('breakfast_decisions',[]).append(dict(date=a.sc['date'],outcome=record['breakfast_outcome'],excluded=copy.deepcopy(excluded),
+            status='CURRENT_SIMULATED_DECISION_NOT_STABLE_CUSTOMER_PREFERENCE'))
+        a._autonomous_memory['pending_intentions']=plan['pending_intentions']
+        return dict(chosen=dict(id=plan['action_id'],score=None),reasons=[],not_chosen=[],autonomous_decision=record)
     for attempt in range(2):
         try:
             if select:
@@ -1113,6 +1137,9 @@ def breakfast_choice(a, world, t, offers, fallback):
             if plan['items']!=chosen['items'] or plan['order_total_krw']!=chosen['order_total_krw']:raise ValueError('BREAKFAST_CONTRACT_CHANGED')
             if (set(plan['supporting_fact_ids'])|set(plan['counterevidence_fact_ids']))-set(cite):raise ValueError('FACT_NOT_CITABLE')
             X.validate_assessment(plan,a.N,plan['action_id']!='SKIP_BREAKFAST')
+            if route:
+                LSS.forfeit_review(answer,rows,(context.get('personal') or {}).get('records'),a._autonomous_memory,a.N,
+                                   next((x for x in record['attempts'][:-1] if LSS.BREAKFAST_FORFEIT_REVIEW in str(x.get('validation_rejection',''))),None))
             diners=((contracts.get(plan['action_id']) or {}).get('party_breakfast') or {}).get('diners')
             if diners and plan['meal_assessment']['modeled_diners']!=diners:raise ValueError('MODELED_DINERS_DIFFER_FROM_BREAKFAST_DINERS')
         except P.ProviderUnavailable as exc:

@@ -1,7 +1,7 @@
 {
  "product": "HILLINK",
  "version": "V19LS product release 2026-11-07",
- "source_head": "8334424bf301729928c2b80c25f2cd2d3515f3e4",
+ "source_head": "83bd43b5c97e89c474cc216ef98e1e2621ebd25b",
  "data_scope": "RESEARCH_INPUTS_INCLUDED_IN_THIS_PUBLIC_REPOSITORY_REUSE_TERMS_NOT_DETERMINED_HERE",
  "files": [
   {
@@ -4849,8 +4849,8 @@
   {
    "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/autonomous_agent.py",
    "included": true,
-   "bytes": 125887,
-   "sha256": "cab334eecfaf604ca1821509a5f1b2a574b4d51bd5abfeead34b39cdba2f9e8a"
+   "bytes": 128598,
+   "sha256": "77f85f5eb8c5c61a690cab27e3dba2ce8b7597a7c7d215695eb798304d77c2f2"
   },
   {
    "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/breakfast_policy.py",
@@ -4975,8 +4975,8 @@
   {
    "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/ls_stability.py",
    "included": true,
-   "bytes": 31815,
-   "sha256": "d28cfee44b42f958db18a997171187fb157995da149058a5396cdd4b8f174afe"
+   "bytes": 38002,
+   "sha256": "7a430c168dc9ff0cfc7d9cad4e1c045826dbb0e282221fb6dc61789ca165aaef"
   },
   {
    "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/lunch_products.py",
@@ -5857,8 +5857,8 @@
   {
    "path": "timeline/viewer/app.py",
    "included": true,
-   "bytes": 63684,
-   "sha256": "4c64996064a939effae143eaf2e3b9033ad3622c0473e4331841a8a657dc10f5"
+   "bytes": 64019,
+   "sha256": "fa9cc821a41f1e79427c8dfc42a7f9314a40a30b90320e38dde89206a737427d"
   },
   {
    "path": "timeline/viewer/autonomy_run.py",
@@ -6337,8 +6337,8 @@
   {
    "path": "timeline/viewer/static/agent_decision_view.js",
    "included": true,
-   "bytes": 23019,
-   "sha256": "90a525890e77c910cbeddb8a16daa70479bc080bcc19b9047a58ccfb50bbbaf7"
+   "bytes": 23138,
+   "sha256": "138c9193ef03fdcada6b12587fdb1c437484f8430a86e319d183cdc2256e11ee"
   },
   {
    "path": "timeline/viewer/static/anomaly_evidence.json",
@@ -8011,14 +8011,14 @@
   {
    "path": "timeline/viewer/static/revenue.css",
    "included": true,
-   "bytes": 75623,
-   "sha256": "2bb2096870dfbb4116a961d7781012dd0c243d00d912ba31225009ff82c5521c"
+   "bytes": 75908,
+   "sha256": "4d3f0a65a9d3a88fd568c8ed050b4aefb3d8ba162a10bc8fa21fe59649e23762"
   },
   {
    "path": "timeline/viewer/static/revenue.js",
    "included": true,
-   "bytes": 81382,
-   "sha256": "82f7572bee82f2f529ea81a27684bdf9a08a019c9e6292d26959a2eb86462637"
+   "bytes": 84619,
+   "sha256": "1c9e7d446ce28b1a9cd5f9d0aebb0c91c84295e34cb09ef3bdaf11dbb5b73a72"
   },
   {
    "path": "timeline/viewer/static/revenue_analysis.css",
@@ -8185,8 +8185,8 @@
   {
    "path": "timeline/viewer/static/visit_execution.js",
    "included": true,
-   "bytes": 4692,
-   "sha256": "226709f43cb856463d8a5aaa52545d8c1728af9aa47b5f62c486d0648d26af68"
+   "bytes": 5017,
+   "sha256": "3612f330679248ec274657db46980a2a10742f0e4f3232edceb2592cea1c0545"
   },
   {
    "path": "timeline/viewer/static/wait_inv.json",
@@ -8425,8 +8425,8 @@
   {
    "path": "timeline/viewer/tests/revenue_ui.test.cjs",
    "included": true,
-   "bytes": 22004,
-   "sha256": "b8718d053defccadbaa4cad88d6d6d2c3ab8009784eb21df4cbbcd9fcf7266c4"
+   "bytes": 23395,
+   "sha256": "244d7784f1a71186036816203b778e8841912b7b1bdecd746ef6c2a36767e5ab"
   },
   {
    "path": "timeline/viewer/tests/review_library.test.cjs",
@@ -9337,8 +9337,8 @@
   {
    "path": "timeline/viewer/visit_execution.py",
    "included": true,
-   "bytes": 8200,
-   "sha256": "70f849f77f81c423cce8bb5ec542828e4431b997c60c9bfa68a939c6575e58c0"
+   "bytes": 8537,
+   "sha256": "dcf0b1e0c48e9f40cf6aabda7572f8752f497ff46059f31c3c9b9d4100e6e6e5"
   },
   {
    "path": "timeline/viewer/visit_operations.py",
@@ -9555,6 +9555,42 @@
    "included": true,
    "bytes": 644,
    "sha256": "066c2e70c52cc757fb10ebd91d8920e5b3f9ba12aff9200e423901f01618f6af"
+  },
+  {
+   "path": "timeline/viewer/operating_reference.py",
+   "included": true,
+   "bytes": 12557,
+   "sha256": "5be1fac52c0004eec6aa2628bafe2036170bb4fb4297aef4586d7bacbad11617"
+  },
+  {
+   "path": "timeline/viewer/operating_reference/external_research_v1.json",
+   "included": true,
+   "bytes": 2566,
+   "sha256": "49ad2d36c53a2c9caff4f247506e5cf4dc1206f806280ab949d29abbd7eaeac9"
+  },
+  {
+   "path": "timeline/viewer/operating_reference/hotel_measured_template.json",
+   "included": true,
+   "bytes": 1099,
+   "sha256": "cbf3430e4b517b7a298042edbef88888414c6791348105d1e9dbec88455b9810"
+  },
+  {
+   "path": "timeline/viewer/operating_reference/metrics.json",
+   "included": true,
+   "bytes": 2635,
+   "sha256": "eebcd8ff4aa2aee382761b774e2d81de5bbbe12f0a243a819d11e250eed592eb"
+  },
+  {
+   "path": "timeline/viewer/tests/test_operating_reference_1107.py",
+   "included": true,
+   "bytes": 6980,
+   "sha256": "c202c3b41fc01b86b699eae6b97619a3616eff16ea93d89dd2767040aa927787"
+  },
+  {
+   "path": "timeline/viewer/tests/test_v19ls_breakfast_default_1107.py",
+   "included": true,
+   "bytes": 9257,
+   "sha256": "2f0167db793350db8444e22bd9268f07ebddcb6b26412475e50b44198ae1e474"
   }
  ],
  "excluded_self_manifests": [

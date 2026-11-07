@@ -6,7 +6,7 @@ const money=n=>Number.isFinite(n)?n.toLocaleString('ko-KR')+'원':'금액 미기
 const hm=n=>Number.isFinite(n)?`${String(Math.floor(n/60)).padStart(2,'0')}:${String(n%60).padStart(2,'0')}`:'시각 미기록';
 const list=xs=>xs?.length?`<ul>${xs.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'';
 // Policy versions are exact: a stored V16 answer is never relabeled as a V17 (day-end reviewed) judgment.
-const VERSION={LLM_AUTONOMOUS_CUSTOMER_V16:'과거 판단 기준(V16) · 조기 종료 검증 이전',LLM_AUTONOMOUS_CUSTOMER_V17:'이전 판단 기준(V17) · 조기 종료 검증 적용',LLM_AUTONOMOUS_CUSTOMER_V18:'실험 기준(V18) · 규칙 선별 후 LLM 선택',LLM_AUTONOMOUS_CUSTOMER_V18B:'실험 기준(V18-B) · 후보 관련 근거만',LLM_AUTONOMOUS_CUSTOMER_V18BM:'실험 기준(V18-C) · B 입력 · reasoning medium',LLM_AUTONOMOUS_CUSTOMER_V18BD:'실험 기준(V18-D) · B 입력 · 최소 출력',LLM_AUTONOMOUS_CUSTOMER_V19LS:'현재 판단 기준(V19-LS) · 근거 성격 표시 · 하루 종료 재검토 · 선택 진단 기록'};
+const VERSION={LLM_AUTONOMOUS_CUSTOMER_V19LS_P2:'연구 기준(V19-LS P2) · 일부 인원 조식 후보 · 식사량 1회 재검토',LLM_AUTONOMOUS_CUSTOMER_V16:'과거 판단 기준(V16) · 조기 종료 검증 이전',LLM_AUTONOMOUS_CUSTOMER_V17:'이전 판단 기준(V17) · 조기 종료 검증 적용',LLM_AUTONOMOUS_CUSTOMER_V18:'실험 기준(V18) · 규칙 선별 후 LLM 선택',LLM_AUTONOMOUS_CUSTOMER_V18B:'실험 기준(V18-B) · 후보 관련 근거만',LLM_AUTONOMOUS_CUSTOMER_V18BM:'실험 기준(V18-C) · B 입력 · reasoning medium',LLM_AUTONOMOUS_CUSTOMER_V18BD:'실험 기준(V18-D) · B 입력 · 최소 출력',LLM_AUTONOMOUS_CUSTOMER_V19LS:'현재 판단 기준(V19-LS) · 근거 성격 표시 · 하루 종료 재검토 · 선택 진단 기록'};
 const version=p=>VERSION[p]||(p?String(p):'판단 기준 미기록');
 function record(scene){return scene?.basis?.autonomous_decision||null;}
 // Join only the immutable decision in this customer's same stored plan. A scene

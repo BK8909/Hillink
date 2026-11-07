@@ -5,7 +5,7 @@ name: offline-ci
 # come from approved local runs.
 on:
   push:
-    branches: [main, 'integration/**', 'ci/**']
+    branches: [main, 'integration/**', 'ci/**', 'fix/**']
   pull_request:
   workflow_dispatch:
 permissions:

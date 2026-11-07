@@ -52,6 +52,8 @@ jobs:
           python -B tools/bootstrap_data.py --json > /dev/null
       - name: Start-up check (fresh-environment command, no external call)
         run: HILLINK_PYTHON="$(command -v python)" bash tools/start_product.sh --check
+      - name: Rule-mode determinism (same request under two hash seeds, whole result)
+        run: python tools/ci/check_determinism.py
       - name: Node tests
         run: cd timeline/viewer && node --test tests/*.cjs
       - name: Python tests (strict; only the classified standing failures are allowed)

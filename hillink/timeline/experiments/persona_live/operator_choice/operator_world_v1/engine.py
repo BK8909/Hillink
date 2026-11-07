@@ -394,7 +394,9 @@ def major_reason(c: dict, top: dict) -> str:
     mine = {x["factor"]: x["value"] for x in c["terms"]}
     theirs = {x["factor"]: x["value"] for x in top["terms"]}
     keys = set(mine) | set(theirs)
-    worst = sorted(keys, key=lambda k: mine.get(k, 0.0) - theirs.get(k, 0.0))
+    # Ties are broken by the factor name: set iteration order follows the per-process string hash, so without the
+    # second key the same run could name a different factor after a restart (explanation only; scores are unchanged).
+    worst = sorted(keys, key=lambda k: (mine.get(k, 0.0) - theirs.get(k, 0.0), k))
     k = worst[0] if worst else None
     if k is None:
         return "차이 없음"

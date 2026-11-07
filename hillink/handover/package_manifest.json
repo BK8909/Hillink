@@ -1,7 +1,7 @@
 {
  "product": "HILLINK",
  "version": "V19LS product release 2026-11-07",
- "source_head": "8faae4dbd88738bff1886196883177e1f9445da7",
+ "source_head": "7ae4980cdbd5b545c53e2b90896dc50449e1f96b",
  "data_scope": "RESEARCH_INPUTS_INCLUDED_IN_THIS_PUBLIC_REPOSITORY_REUSE_TERMS_NOT_DETERMINED_HERE",
  "files": [
   {
@@ -43,8 +43,8 @@
   {
    "path": "docs/research/RESEARCH_AND_ARCHITECTURE_HANDOFF.md",
    "included": true,
-   "bytes": 83492,
-   "sha256": "62fc16be85cb80f6272e61670aea16d9ba7c333715bc7dc8a1629c68d1d1d6e5"
+   "bytes": 83558,
+   "sha256": "b721792b051218f9ff0ea7723ca2679d3ec8b365ea05b3bf80ff6c1d4fde00a0"
   },
   {
    "path": "docs/walkerhill-guest-state-machine.md",
@@ -62,7 +62,7 @@
    "path": "handover/RECOVERY.md",
    "included": true,
    "bytes": 12904,
-   "sha256": "520f0f5c18216d643bc1f3f93f62bd7175ab2f2c95015dc7e7c51b1bee258315"
+   "sha256": "e53f875acf5d9f3382ff6654dee3be030eb4bd4442ec4fd2acd206e5074fefa3"
   },
   {
    "path": "handover/data/bundle.json",
@@ -5233,8 +5233,8 @@
   {
    "path": "timeline/experiments/persona_live/operator_choice/operator_world_v1/engine.py",
    "included": true,
-   "bytes": 41420,
-   "sha256": "5584ea08e870928cf953b1d6722b796fb44b7995adcaea7f824b91f9693764d5"
+   "bytes": 41657,
+   "sha256": "98e8ea5732cb97f8a15d253d55db5b8905561c9ee465a585a85f89cc6e3db02d"
   },
   {
    "path": "timeline/experiments/persona_live/operator_choice/operator_world_v1/gists.py",
@@ -9047,6 +9047,12 @@
    "sha256": "c511af13711fa6806765797e063fe83c8aec128f89aebd5c0280d73b666788fb"
   },
   {
+   "path": "timeline/viewer/tests/test_rule_explanation_determinism_1107.py",
+   "included": true,
+   "bytes": 2251,
+   "sha256": "2eda57a2e2652cb28a5ad153967f9233790dffd6f1db3d2b12c4df41f6dca5ef"
+  },
+  {
    "path": "timeline/viewer/tests/test_runtime_cold_start.py",
    "included": true,
    "bytes": 1320,
@@ -9357,6 +9363,12 @@
    "included": true,
    "bytes": 1841,
    "sha256": "4fe67bf25f4feb84eadf42ff4769cabdd2bc44ca8bba41c2fadc4ed91993adc9"
+  },
+  {
+   "path": "tools/ci/check_determinism.py",
+   "included": true,
+   "bytes": 2984,
+   "sha256": "509574a8e0d04f5770d8e0e989a353dbe4f3199889f3f4f9dac8bfbad276d2da"
   },
   {
    "path": "tools/ci/check_docs.py",

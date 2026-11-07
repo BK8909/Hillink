@@ -1,7 +1,7 @@
 {
  "product": "HILLINK",
  "version": "V19LS product release 2026-11-07",
- "source_head": "0f3f12e11ddb66dd23a86bead3d6174a6b8746c4",
+ "source_head": "8faae4dbd88738bff1886196883177e1f9445da7",
  "data_scope": "RESEARCH_INPUTS_INCLUDED_IN_THIS_PUBLIC_REPOSITORY_REUSE_TERMS_NOT_DETERMINED_HERE",
  "files": [
   {
@@ -43,8 +43,8 @@
   {
    "path": "docs/research/RESEARCH_AND_ARCHITECTURE_HANDOFF.md",
    "included": true,
-   "bytes": 83429,
-   "sha256": "7069243f04fcfe48c8e59013353ec2412820db10caba44776df66e3c723462fc"
+   "bytes": 83460,
+   "sha256": "a75113032fe8745e1a3cd7609c38370161a31c0227987377c2a176cd848c9501"
   },
   {
    "path": "docs/walkerhill-guest-state-machine.md",
@@ -62,7 +62,7 @@
    "path": "handover/RECOVERY.md",
    "included": true,
    "bytes": 12904,
-   "sha256": "c08bcf086a6305c2232b8e09c73f34b2e96d7552b00410d0f1f70001508b28f1"
+   "sha256": "520f0f5c18216d643bc1f3f93f62bd7175ab2f2c95015dc7e7c51b1bee258315"
   },
   {
    "path": "handover/data/bundle.json",
@@ -6337,8 +6337,8 @@
   {
    "path": "timeline/viewer/static/agent_decision_view.js",
    "included": true,
-   "bytes": 21470,
-   "sha256": "a4f887c00dc13aa696507349da9dfc1818774edc4fd58a1595101463cd4c27f8"
+   "bytes": 22365,
+   "sha256": "326206e983836ba0c2ee6e6d1f8dca38580ee9546d084352a81aa6b2aee68781"
   },
   {
    "path": "timeline/viewer/static/anomaly_evidence.json",
@@ -8077,8 +8077,8 @@
   {
    "path": "timeline/viewer/static/situation.js",
    "included": true,
-   "bytes": 42863,
-   "sha256": "7ce1348109815adb3d8839edcce77c9db4534bbef1a02c46f38c76c25757edc1"
+   "bytes": 44170,
+   "sha256": "518e3e64a1ca2e8b9b5c12e255b530fd2609d673c2aac63454a4971b9d1a80e7"
   },
   {
    "path": "timeline/viewer/static/situation_options.json",
@@ -8257,8 +8257,8 @@
   {
    "path": "timeline/viewer/tests/agent_decision_view.test.cjs",
    "included": true,
-   "bytes": 9289,
-   "sha256": "6112fc441c766f747f3d0b16797cc4bbf7c62bac3e305ad1528518e1b3ac9407"
+   "bytes": 10813,
+   "sha256": "2711b651e6113b343d555fd2325a6bdd1cc39236b6d0fe9b08845ee5de98c9e3"
   },
   {
    "path": "timeline/viewer/tests/compare.test.cjs",
@@ -8449,8 +8449,8 @@
   {
    "path": "timeline/viewer/tests/situation_ui.test.cjs",
    "included": true,
-   "bytes": 5988,
-   "sha256": "734a098f6228cb5711df6cc82f3e9cf113b9b688fe743391643ae33cc8a4b84b"
+   "bytes": 7139,
+   "sha256": "da52409010cfb2a721c1a171588bdd9eed24fc03d9828868af063b858792342f"
   },
   {
    "path": "timeline/viewer/tests/stay_match.test.cjs",

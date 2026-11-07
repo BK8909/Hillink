@@ -73,7 +73,7 @@ bash tools/start_product.sh --live
 ## 최신 제품 검증 현황 (2026-11-07)
 
 - **V16 Replay:** 저장 응답 **38/38** 입력·선택 일치(무과금).
-- **제품 회귀:** Python **824 PASS / 기존 10 FAIL(신규 회귀 0, 11/06 기준 기존 12건 중 2건 해결)** · Node **253/253 PASS** · V16 Replay **38/38** · 오프라인 GitHub Actions CI.
+- **제품 회귀:** Python **824 PASS / 기존 10 FAIL(신규 회귀 0, 11/06 기준 기존 12건 중 2건 해결)** · Node **255/255 PASS** · V16 Replay **38/38** · 오프라인 GitHub Actions CI.
 - **오프라인 CI(`.github/workflows/offline-ci.yml`):** 패키지·데이터 SHA와 비밀정보 검사, 문서 링크·현재 LIVE 정책 일치, 새 AI 공동 작성자 표기 유입 검사, 새 캐시 복원·시작 명령, Node·Python 전체 회귀(분류된 기존 실패만 허용, 수집 오류·중단·신규 실패는 실패), V16 Replay 38/38, HTTP E2E(라이브러리→저장 판단 재현→행동근거→원장→운영 전략, LIVE 거절 확인), Chromium 브라우저 E2E(1440·1024·390px). API 키 없이 실행되며 LIVE 호출은 하지 않습니다.
 - **커밋 메타데이터:** 자동 AI 공동 작성자·세션 표기를 막으려면 복제본마다 `git config core.hooksPath hillink/tools/git-hooks`를 한 번 실행합니다(사람 작성자·커미터 정보는 바꾸지 않음). CI도 새 커밋에 해당 표기가 있으면 실패합니다.
 - **패키지 무결성:** 현재 `package_manifest.json`의 포함 파일 **1,584개** SHA 검증 기준, 원본 데이터 번들 **125개 파일**. 비밀값 탐지 **0건**.

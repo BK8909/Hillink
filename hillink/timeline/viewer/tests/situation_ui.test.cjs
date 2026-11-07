@@ -62,3 +62,14 @@ test('catalog rooms preserve current event and source dates for every occupied n
  const r=ctx.situationRequest('A01',form,{events:[event]});assert.equal(r.catalog_options.room_products.A01,'HC-ROOM');assert.equal(r.scenario.event_card_id,event.event_card_id);assert.equal('package_id' in r,false);
  }finally{vm.runInContext('delete SIT.roomOptions',ctx);}
 });
+test('detailed order use is reported per run from its own scenes; unused orders are not shown as applied',()=>{
+ const input={orders:[{date:'2026-10-24',venue_id:'THE_PAVILION',service_period:'snack',items:[{source_line:204,quantity:2}]},{date:'2026-10-25',venue_id:'THE_PAVILION',service_period:'snack',items:[{source_line:204,quantity:1}]}]};
+ const plan={scenes:[{loc:'THE_PAVILION',visit_date:'2026-10-24',act:'cafe'},{loc:'PIZZA_HILL',visit_date:'2026-10-25',act:'dinner'}]};
+ const use=JSON.parse(JSON.stringify(ctx.situationOrderUse(input,plan)));
+ assert.deepEqual(use.map(u=>u.used),[true,false]);
+ if(!ctx.esc)vm.runInContext("var esc=s=>String(s??'').replace(/[&<>\"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',\"'\":'&#39;'})[c]);",ctx);
+ const html=ctx.situationOrderUseHTML(use);
+ assert.match(html,/2026-10-24 파빌리온 주문 · 이 실행에서 적용/);
+ assert.match(html,/2026-10-25 파빌리온 주문 · 미적용 · 이 실행의 고객 흐름이 그날 이 업장을 이용하지 않음/);
+ assert.equal(ctx.situationOrderUseHTML([]),'');assert.equal(JSON.stringify(ctx.situationOrderUse(null,plan)),'[]');
+});

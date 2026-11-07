@@ -81,3 +81,17 @@ test('V19LS decision panel: trade-off note, non-blocking diagnostics and failure
  const v17=V.panel({basis:{autonomous_decision:{policy:'LLM_AUTONOMOUS_CUSTOMER_V17',execution_state:'EXECUTED',selected_plan:{decision_summary:'x'}}}});
  assert.doesNotMatch(v17,/선택 진단|상충 근거/,'V17 records show nothing new');
 });
+test('V19LS breakfast: room-contract coverage and extra cost are shown per line and in one summary; V16 lines unchanged', () => {
+ const V=require('../static/agent_decision_view.js');
+ const line=(q,b)=>({sku_id:'S',label:'조식 성인',quantity:q,semantics:'PERSON_ACCESS_ENTITLEMENT',...(b?{price_basis:b}:{})});
+ const dec=lines=>({policy:'LLM_AUTONOMOUS_CUSTOMER_V19LS',execution_state:'EXECUTED',date:'2026-10-25',minute:450,
+  input_context:{visit:{date:'2026-10-25',party_size:3,breakfast:{covered_adults:2,whole_party_covered:false}},state:{time:'07:30'},actions:[{action_id:'BF',label:'조식',order_total_krw:59000,item_contracts:lines}]},
+  selected_plan:{action_id:'BF',decision_summary:'조식',order_total_krw:59000,items:[]}});
+ const partial=V.panel({basis:{autonomous_decision:dec([line(2,'객실 조식 포함(추가 비용 없음)'),line(1,'추가 결제')])}});
+ assert.match(partial,/객실 조식 포함 2명 · 추가 비용 없음 · 추가 결제 1명 · 추가 비용 59,000원/);
+ assert.match(partial,/조식 성인 × 1 · 인원별 이용·과금 권리 · 개별 음식 주문이나 아동 전용 음식이 아님 · 추가 결제/);
+ const all=V.panel({basis:{autonomous_decision:dec([line(3,'객실 조식 포함(추가 비용 없음)')])}});
+ assert.match(all,/객실 조식 포함 3명 · 추가 비용 없음 · 동행 전원 포함/);
+ const old=V.panel({basis:{autonomous_decision:dec([line(3)])}});
+ assert.doesNotMatch(old,/data-agent-breakfast-inclusion|객실 조식 포함/);
+});

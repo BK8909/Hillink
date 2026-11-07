@@ -70,7 +70,7 @@ def plan():
 # day has more); 24 calls / US$0.50 for the whole plan, per-job USD caps summing to <= 0.50.
 FINAL = dict(max_calls=24, max_usd=0.50, pools=dict(F=24))
 FINAL_CASES = [('A07', 'rich', 2), ('N03', 'low', 1), ('A19', 'low', 1), ('WH-00532', 'medium-mixed', 2), ('A02', 'medium-prior-meal', 2)]
-FINAL_POL = dict(V17='LLM_AUTONOMOUS_CUSTOMER_V17', LS='LLM_AUTONOMOUS_CUSTOMER_V18LS', V19LS='LLM_AUTONOMOUS_CUSTOMER_V19LS')
+FINAL_POL = dict(V17='LLM_AUTONOMOUS_CUSTOMER_V17', LS='LLM_AUTONOMOUS_CUSTOMER_V18LS', V19LS='LLM_AUTONOMOUS_CUSTOMER_V19LS', P2='LLM_AUTONOMOUS_CUSTOMER_V19LS_P2')
 
 
 def plan_final():
@@ -187,6 +187,38 @@ def plan_v19e():
     return jobs
 
 
+# 2026-11-07 evening, V19LS-P2 research (approval: at most 16 new calls, US$0.05; earlier remainders not reused):
+# A05 breakfast with a partly covered party (2 of 3) x3, A05 first dinner (past shortfall record) x2, and the first
+# decision of A02 / A07 (couple scenario, 16:30) / N03 / WH-00532 x1 as the regression check, all with the research
+# policy only and the same customers, checkpoints and conditions as the stored V19LS P5 / v19e answers. The breakfast
+# runs reuse an OFFLINE synthetic evening of the same code (plan v19f-seed, no provider, identity-checked).
+# Per-job caps are runaway stops; the batch guard enforces 16 calls / US$0.05 on the charged amount (1 worker).
+V19F = dict(max_calls=16, max_usd=0.05, pools=dict(G=16))
+
+
+def plan_v19f_seed():
+    return [dict(id='S_A05_P2', exp='G', pid='A05', policy='P2', rep=0, max_calls=40,
+                 args=['--case', 'pid:A05', '--e2e-policy', FINAL_POL['P2'], '--e2e-max-decisions', '20'])]
+
+
+def plan_v19f():
+    jobs = []
+    for rep in (1, 2, 3):
+        jobs.append(dict(id='G_A05_breakfast_r%d' % rep, exp='G', pid='A05', policy='P2', rep=rep, max_calls=2, max_usd=0.04,
+                         seed=dict(job='S_A05_P2', before='2026-11-08_0800'),
+                         args=['--case', 'pid:A05', '--e2e-policy', FINAL_POL['P2'], '--e2e-max-decisions', 'SEEDS+1']))
+    for rep in (1, 2):
+        jobs.append(dict(id='G_A05_dinner_r%d' % rep, exp='G', pid='A05', policy='P2', rep=rep, max_calls=2, max_usd=0.04,
+                         args=['--case', 'pid:A05', '--e2e-policy', FINAL_POL['P2'], '--e2e-max-decisions', '1']))
+    for pid, tier, k, sc in V19_B:
+        if pid not in ('A02', 'A07', 'N03', 'WH-00532'): continue
+        extra = ['--arrival', '16:30', '--visit-conditions', json.dumps(SCENARIOS[sc])] if sc else []
+        jobs.append(dict(id='G_%s_first' % pid, exp='G', pid=pid, policy='P2', rep=1, scenario=sc, max_calls=1, max_usd=0.03,
+                         args=['--case', 'pid:%s' % pid, '--e2e-policy', FINAL_POL['P2'], '--e2e-max-decisions', '1'] + extra))
+    assert sum(j['max_calls'] for j in jobs) <= V19F['max_calls'] - 2   # two calls kept in reserve
+    return jobs
+
+
 KEY_TIME = re.compile(r'_(\d{4}-\d{2}-\d{2})_(\d{4})_')
 
 
@@ -266,17 +298,17 @@ def main():
     ap.add_argument('--batch-dir'); ap.add_argument('--shadow', choices=['offline', 'live'], default='offline')
     ap.add_argument('--workers', type=int, default=2); ap.add_argument('--only', default='A,B,C')
     ap.add_argument('--limit', type=int, default=None, help='first N jobs only (tests)')
-    ap.add_argument('--plan', choices=['cross', 'final', 'v19', 'v19d', 'v19d-cont', 'v19e-seed', 'v19e'], default='cross')
+    ap.add_argument('--plan', choices=['cross', 'final', 'v19', 'v19d', 'v19d-cont', 'v19e-seed', 'v19e', 'v19f-seed', 'v19f'], default='cross')
     ap.add_argument('--seed-batch', default=None, help='v19d: the P5 batch folder whose checkpoints are reused before the cutoff')
     args = ap.parse_args()
     global SEED_BATCH
     SEED_BATCH = os.path.abspath(os.path.expanduser(args.seed_batch)) if args.seed_batch else None
-    if args.plan in ('v19d-cont', 'v19e-seed') and args.shadow != 'offline': sys.exit(args.plan + ' is offline only')
-    if args.plan == 'v19e' and args.cmd == 'run' and not SEED_BATCH: sys.exit('v19e needs --seed-batch (the v19e-seed folder)')
-    if args.plan == 'v19e' and args.cmd == 'run' and args.workers != 1: sys.exit('v19e runs with --workers 1')
+    if args.plan in ('v19d-cont', 'v19e-seed', 'v19f-seed') and args.shadow != 'offline': sys.exit(args.plan + ' is offline only')
+    if args.plan in ('v19e', 'v19f') and args.cmd == 'run' and not SEED_BATCH: sys.exit(args.plan + ' needs --seed-batch (its -seed folder)')
+    if args.plan in ('v19e', 'v19f') and args.cmd == 'run' and args.workers != 1: sys.exit(args.plan + ' runs with --workers 1')
     if args.plan in ('v19d', 'v19d-cont') and args.cmd == 'run' and not SEED_BATCH: sys.exit('v19d needs --seed-batch (the P5 batch folder)')
     if args.plan == 'v19d' and args.cmd == 'run' and args.workers != 1: sys.exit('v19d runs with --workers 1 (one reservation at a time)')
-    jobs = plan_v19e() if args.plan == 'v19e' else plan_v19e_seed() if args.plan == 'v19e-seed' else plan_v19d() if args.plan == 'v19d' else plan_v19d_cont() if args.plan == 'v19d-cont' else plan_final() if args.plan == 'final' else plan_v19() if args.plan == 'v19' else [j for j in plan() if j['exp'] in args.only.split(',')]
+    jobs = plan_v19f() if args.plan == 'v19f' else plan_v19f_seed() if args.plan == 'v19f-seed' else plan_v19e() if args.plan == 'v19e' else plan_v19e_seed() if args.plan == 'v19e-seed' else plan_v19d() if args.plan == 'v19d' else plan_v19d_cont() if args.plan == 'v19d-cont' else plan_final() if args.plan == 'final' else plan_v19() if args.plan == 'v19' else [j for j in plan() if j['exp'] in args.only.split(',')]
     jobs = jobs[:args.limit]
     if args.cmd == 'plan':
         for j in jobs: print(j['id'], j['exp'], j['max_calls'], j['max_usd'], ' '.join(j['args']))
@@ -284,8 +316,8 @@ def main():
     if not 1 <= args.workers <= 3: sys.exit('workers must be 1..3')
     batch_dir = os.path.abspath(os.path.expanduser(args.batch_dir)); os.umask(0o077)
     G.secure_dir(batch_dir); G.secure_dir(os.path.join(batch_dir, 'runs'))
-    max_calls, max_usd = (V19E['max_calls'], V19E['max_usd']) if args.plan == 'v19e' else (160, 999.0) if args.plan in ('v19d-cont', 'v19e-seed') else (V19D['max_calls'], V19D['max_usd']) if args.plan == 'v19d' else (FINAL['max_calls'], FINAL['max_usd']) if args.plan == 'final' else (V19['max_calls'], V19['max_usd']) if args.plan == 'v19' else (BATCH_MAX_CALLS, BATCH_MAX_USD)
-    pools = V19E['pools'] if args.plan == 'v19e' else dict(E=160) if args.plan == 'v19e-seed' else dict(D=160) if args.plan == 'v19d-cont' else V19D['pools'] if args.plan == 'v19d' else FINAL['pools'] if args.plan == 'final' else V19['pools'] if args.plan == 'v19' else POOLS
+    max_calls, max_usd = (V19F['max_calls'], V19F['max_usd']) if args.plan == 'v19f' else (V19E['max_calls'], V19E['max_usd']) if args.plan == 'v19e' else (160, 999.0) if args.plan in ('v19d-cont', 'v19e-seed', 'v19f-seed') else (V19D['max_calls'], V19D['max_usd']) if args.plan == 'v19d' else (FINAL['max_calls'], FINAL['max_usd']) if args.plan == 'final' else (V19['max_calls'], V19['max_usd']) if args.plan == 'v19' else (BATCH_MAX_CALLS, BATCH_MAX_USD)
+    pools = V19F['pools'] if args.plan == 'v19f' else dict(G=160) if args.plan == 'v19f-seed' else V19E['pools'] if args.plan == 'v19e' else dict(E=160) if args.plan == 'v19e-seed' else dict(D=160) if args.plan == 'v19d-cont' else V19D['pools'] if args.plan == 'v19d' else FINAL['pools'] if args.plan == 'final' else V19['pools'] if args.plan == 'v19' else POOLS
     room = ledger_room() if args.shadow == 'live' else None
     if room:
         if room['unresolved']: sys.exit('shared ledger has unresolved calls: %s' % room)

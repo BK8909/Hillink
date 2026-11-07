@@ -124,6 +124,7 @@ POLICY_V18S2 = 'LLM_AUTONOMOUS_CUSTOMER_V18S2'  # S2: S's cue removal + a price/
 POLICY_V18P = 'LLM_AUTONOMOUS_CUSTOMER_V18P'    # P: C with personal-signal-first meal venue selection (shortlist only; presentation as C)
 POLICY_V18L2 = 'LLM_AUTONOMOUS_CUSTOMER_V18L2'  # L2: L with decision-topic evidence (food signals of shown venues, occasion meals, dining price observations)
 POLICY_V18M = 'LLM_AUTONOMOUS_CUSTOMER_V18M'    # M: C with the meal output trimmed to what the model decides (no quantity_reason: the engine owns quantity)
+POLICY_V19LS_P2 = 'LLM_AUTONOMOUS_CUSTOMER_V19LS_P2'  # research on V19LS: party-subset breakfast choices + one-time meal quantity review (not the default)
 POLICY_V19LS = 'LLM_AUTONOMOUS_CUSTOMER_V19LS'  # stabilised LS: stance/flags/candidate links, repeat signal, tradeoff note, diagnostics, recoverable-error retry (product LIVE default since 2026-11-07)
 LIVE_POLICY = POLICY_V19LS                      # product LIVE default since 2026-11-07; V17 stays selectable by name
 V18_FOLLOWUPS = (POLICY_V18N, POLICY_V18L, POLICY_V18S, POLICY_V18P, POLICY_V18L2, POLICY_V18M, POLICY_V18S2, POLICY_V18LS)
@@ -327,6 +328,7 @@ POLICIES = {
     POLICY_V18L2: dict(system=None, system_for=lean_system, schema=SELECTION_V18, day_end_review=DAY_END_POLICY, context='AUTONOMOUS_CONTEXT_V18_LEAN', stable_prefix=True, select=True, effort='medium', prefix_message='personal', topic=True),
     POLICY_V18LS: dict(system=None, system_for=lean_neutral_system, schema=SELECTION_V18, day_end_review=DAY_END_POLICY, context='AUTONOMOUS_CONTEXT_V18_LEAN', stable_prefix=True, select=True, effort='medium', prefix_message='personal', topic=True, neutral='NAME'),
     POLICY_V19LS: dict(system=None, system_for=lambda rows: LSS.system(lean_neutral_system(rows)), schema=LSS.schema(SELECTION_V18), day_end_review=DAY_END_POLICY, context='AUTONOMOUS_CONTEXT_V18_LEAN', stable_prefix=True, select=True, effort='medium', prefix_message='personal', topic=True, neutral='NAME', stance=True, stability=True),
+    POLICY_V19LS_P2: dict(system=None, system_for=lambda rows: LSS.system(lean_neutral_system(rows),LSS.P2_LINES), schema=LSS.schema(SELECTION_V18), day_end_review=DAY_END_POLICY, context='AUTONOMOUS_CONTEXT_V18_LEAN', stable_prefix=True, select=True, effort='medium', prefix_message='personal', topic=True, neutral='NAME', stance=True, stability=True, party_breakfast=True, meal_review=True),
     POLICY_V18M: dict(system=SYSTEM_V18M, schema=SELECTION_V18M, day_end_review=DAY_END_POLICY, context='AUTONOMOUS_CONTEXT_V18_COMPACT', stable_prefix=True, select=True, effort='medium', prefix_message='personal'),
     POLICY_V18BD: dict(system=SYSTEM_V18D, schema=SELECTION_V18D, day_end_review=DAY_END_POLICY, context='AUTONOMOUS_CONTEXT_V18_COMPACT', stable_prefix=True, select=True, effort=None, prefix_message='personal', minimal_output=True),
 }
@@ -1010,8 +1012,8 @@ def breakfast_item_contracts(contract):
 def breakfast_choice(a, world, t, offers, fallback):
     """Choose before TC scoring, preserving its existing included/child contracts."""
     personal=persona(a);valid=[];excluded=[];contracts={}
-    if spec_of(a).get('stability'):
-        # V19LS: a partly covered party breakfast also offers the choices in which only some people eat
+    if spec_of(a).get('party_breakfast'):
+        # V19LS-P2: a partly covered party breakfast also offers the choices in which only some people eat
         # (the executor finds the chosen variant in the same offer list).
         for o in list(offers['offers']):
             offers['offers'].extend(LSS.party_breakfast_variants(o,a.N,lambda parts,m:dict(H.compose(parts,a,'breakfast'),participant_count=m)))
@@ -1399,7 +1401,7 @@ def select_step(a,world,t,record,actions,menus,w,personal,memory,context):
             record['attempts'][-1]['answer']=dict(plans=[plan]+([alternative] if alternative else []),selected_index=0)
             record['input_context']=X.decision_context(dict(full,personal=personal,actions=rows,menus=menus),[plan])
             action=validate_selection(a,plan,actions,menus,cite,full.get('previous_rejection'),spec,[r['action_id'] for r in rows],t)
-            if spec.get('stability'):LSS.meal_quantity_review(answer,full,(full.get('visit') or {}).get('party_size'),full.get('previous_rejection'))
+            if spec.get('meal_review'):LSS.meal_quantity_review(answer,full,(full.get('visit') or {}).get('party_size'),full.get('previous_rejection'))
         except P.ProviderUnavailable as exc:
             klass=provider_failure_class(str(exc))
             if getattr(exc,'trace',None):record['attempts'].append(dict(provider=exc.trace,error=str(exc),failure_class=klass))

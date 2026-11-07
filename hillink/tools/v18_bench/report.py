@@ -23,6 +23,7 @@ NAMES = {'LLM_AUTONOMOUS_CUSTOMER_V18': ('A', '기준: 전체 개인 근거 · �
          'LLM_AUTONOMOUS_CUSTOMER_V18P': ('P', 'C + 개인 신호 우선 식당 선별(제시는 C와 같음) · medium'),
          'LLM_AUTONOMOUS_CUSTOMER_V18M': ('M', 'C + 식사 출력 간소화(수량 이유는 엔진 책임) · medium'),
          'LLM_AUTONOMOUS_CUSTOMER_V18LS': ('LS', 'L2 결정 주제별 근거 + S2 중립 제시(순위·가격 표시 제거 · 종류/이름순) · medium'),
+         'LLM_AUTONOMOUS_CUSTOMER_V19LS_P2': ('V19LS-P2', 'V19LS + 일부 인원 조식 후보 · 식사량 1회 재검토 (연구)'),
          'LLM_AUTONOMOUS_CUSTOMER_V19LS': ('V19LS', 'LS + 근거 성격·재방문 거부·남김 표시 · 후보 연결 · 반복 신호 · tradeoff_note · 선택 진단 · medium'),
          'LLM_AUTONOMOUS_CUSTOMER_V18S2': ('S2', 'C + 중립 제시 2(M4 순위·가격 표시 제거 · 후보·구성·옵션 종류/이름순 · 점수/가격 사유 중립) · medium'),
          'LLM_AUTONOMOUS_CUSTOMER_V18L2': ('L2', 'L + 결정 주제별 근거(음식 신호·기념 식사·식사 가격 관측) · medium')}

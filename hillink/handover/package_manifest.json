@@ -1,7 +1,7 @@
 {
  "product": "HILLINK",
  "version": "V19LS product release 2026-11-07",
- "source_head": "a4236033343eb4b63a1f71ecfe556421617a073b",
+ "source_head": "28251f24625efaa9e4f770106262b4da198d4571",
  "data_scope": "RESEARCH_INPUTS_INCLUDED_IN_THIS_PUBLIC_REPOSITORY_REUSE_TERMS_NOT_DETERMINED_HERE",
  "files": [
   {
@@ -4849,8 +4849,8 @@
   {
    "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/autonomous_agent.py",
    "included": true,
-   "bytes": 125326,
-   "sha256": "40814d76716769841befc3d1d6766e61286188a7a90dc47722d5b981bbd41708"
+   "bytes": 125887,
+   "sha256": "cab334eecfaf604ca1821509a5f1b2a574b4d51bd5abfeead34b39cdba2f9e8a"
   },
   {
    "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/breakfast_policy.py",
@@ -4975,8 +4975,8 @@
   {
    "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/ls_stability.py",
    "included": true,
-   "bytes": 29842,
-   "sha256": "b90da87146057c6b7f73fbac47c38d8ec052b9d66239f3988458050b0b346968"
+   "bytes": 31815,
+   "sha256": "d28cfee44b42f958db18a997171187fb157995da149058a5396cdd4b8f174afe"
   },
   {
    "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/lunch_products.py",
@@ -9199,14 +9199,14 @@
   {
    "path": "timeline/viewer/tests/test_v19ls_meal_quantity_review_1107.py",
    "included": true,
-   "bytes": 3462,
-   "sha256": "61ee0891ec3db7e546c32bb07e2224822cd831ad08b383923bbbdc9ad8f54d71"
+   "bytes": 4846,
+   "sha256": "a773342de518eafcf4c5452de6d8874900f57de455dff568ec50648e0b72a3f3"
   },
   {
    "path": "timeline/viewer/tests/test_v19ls_party_breakfast_1107.py",
    "included": true,
-   "bytes": 6909,
-   "sha256": "f1d6316e0707ea91e8a96dd79d3dfc90c80e690af01ce40be6031e4c27c3f596"
+   "bytes": 8519,
+   "sha256": "b988237b46e055f10cc447c8c73a3be786a0300d372c1130241c83adc8dc6b46"
   },
   {
    "path": "timeline/viewer/tests/test_visit_douglas_gate.py",
@@ -9505,8 +9505,8 @@
   {
    "path": "tools/v18_batch/batch.py",
    "included": true,
-   "bytes": 21875,
-   "sha256": "02b5d8343b1c63c9ab9799f5826e860e7de9eae15ee032063467eae007e842d4"
+   "bytes": 24415,
+   "sha256": "1c5e408484c3973806a0b15e1d1c5452acb87dbd5c70e3853ad1b18bfd17d5f9"
   },
   {
    "path": "tools/v18_bench/driver.py",
@@ -9535,8 +9535,8 @@
   {
    "path": "tools/v18_bench/report.py",
    "included": true,
-   "bytes": 21456,
-   "sha256": "7a1e7b3e9a2089f8b07c70db2f4fc0b58be573689ddc29fadbe9a6a887541112"
+   "bytes": 21591,
+   "sha256": "d4ea5f70e4970a67db0f5cf58273214d3b10ab21792ea05b27dff863dbd9e332"
   },
   {
    "path": "tools/v18_bench/request_diff.py",

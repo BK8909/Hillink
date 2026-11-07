@@ -9427,8 +9427,8 @@
   {
    "path": "tools/ci/http_e2e.py",
    "included": true,
-   "bytes": 9967,
-   "sha256": "798995b875681dcb1d68544ee55aeefedfd5854e03bd85551e103b9b0d84f448"
+   "bytes": 10335,
+   "sha256": "c252b104868cb211ef29a8406a257d94348058536a4096a11fb9be7ec0a2b7db"
   },
   {
    "path": "tools/ci/known_failures.tsv",

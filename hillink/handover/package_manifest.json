@@ -1,7 +1,7 @@
 {
  "product": "HILLINK",
  "version": "V19LS product release 2026-11-07",
- "source_head": "9fe9b744032d7b1b048f5856cdc3831421b5aa7d",
+ "source_head": "e6299b1f8dda779933064eb7f97e3a3aadc37d99",
  "data_scope": "RESEARCH_INPUTS_INCLUDED_IN_THIS_PUBLIC_REPOSITORY_REUSE_TERMS_NOT_DETERMINED_HERE",
  "files": [
   {
@@ -8017,8 +8017,8 @@
   {
    "path": "timeline/viewer/static/revenue.js",
    "included": true,
-   "bytes": 95561,
-   "sha256": "27e2bc4e76b34dc1a48b4894faff198d4918614ede34c2523a16edc89c5a7d7c"
+   "bytes": 95935,
+   "sha256": "d4f968278834dc2fb2ef0b0623fbe31cb2acbe1984d3375e09c286611a7db173"
   },
   {
    "path": "timeline/viewer/static/revenue_analysis.css",
@@ -9427,8 +9427,8 @@
   {
    "path": "tools/ci/http_e2e.py",
    "included": true,
-   "bytes": 8850,
-   "sha256": "423190552ae21f60660f708dcc511ea33af25bb5c345be59e2e7c7cb4941544f"
+   "bytes": 9967,
+   "sha256": "798995b875681dcb1d68544ee55aeefedfd5854e03bd85551e103b9b0d84f448"
   },
   {
    "path": "tools/ci/known_failures.tsv",

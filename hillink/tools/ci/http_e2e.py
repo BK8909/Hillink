@@ -116,4 +116,14 @@ for name, change in (('another customer', dict(personas=['A07'])), ('another sta
     states = {d.get('execution_state') for p in ((held or {}).get('plans') or {}).values() for d in p.get('autonomous_decisions') or []} if isinstance(held, dict) else None
     check('10 stored judgment refused for ' + name + ' (hold, no ledger, no rule substitute)', st in (400, 409) and held.get('code') and 'ledger' not in held
           and states <= {'EXECUTION_HOLD'}, (st, held.get('code') if isinstance(held, dict) else held, states))
+# 11. research layer (general hotel simulator): references are labelled, the prior is refused with a model policy,
+#     and the group experiment API is local-review only
+st, rules = call('/api/visit', dict(saved['request'], judgment_mode='rules', include_ledger=True, reference_profile='synthetic_delivery_high_v1'))
+summ = (rules or {}).get('operating_summary') or {}
+files = [f.get('source_set') for f in (summ.get('reference') or {}).get('files') or []]
+check('11 operator summary names the reference files (synthetic test set labelled)', st == 200 and 'SYNTHETIC_DELIVERY_HIGH_HOTEL_V1' in files and 'population' in summ, files)
+st, refused = call('/api/visit', dict(saved['request'], judgment_mode='replay', behaviour_prior='HOTEL_PRIOR_V1', reference_profile='synthetic_delivery_high_v1'))
+check('11 behaviour prior refused with a model policy (rules engine only)', st in (400, 409) and 'ledger' not in (refused or {}), (st, (refused or {}).get('code')))
+st, _ = call('/api/population/experiment', dict(personas=['A05'], duration='stay_1'))
+check('11 group experiment API is local review only', st == 403, st)
 print('\nHTTP E2E: %d/%d checks passed' % (sum(ok for _, ok in results), len(results)))

@@ -156,6 +156,7 @@ function revRoomSummary(roomRows,inRoomRows){
 // and never change an agent's choice; weighted values are estimates for the stated guest mix, not ledger totals.
 const REV_REFERENCE=[['external','외부 연구 (공개 자료)'],['synthetic_delivery_high_v1','합성 A · 배달 많은 가상 호텔'],['synthetic_hotel_format_b_v1','합성 B · 호텔 실측 형식 시험'],['hotel','호텔 실측 파일 (서버 설정)']];
 const REV_OPS_STATUS={WITHIN_REFERENCE:'기준 범위 안',BELOW_REFERENCE:'기준보다 낮음 · 보정 검토',ABOVE_REFERENCE:'기준보다 높음 · 보정 검토',SAMPLE_TOO_SMALL:'표본이 작아 비교하지 않음',NO_REFERENCE:'기준값 없음(실측 입력 대기)',NOT_COMPARABLE:'지표 단위가 달라 비교하지 않음',CONTEXT_ONLY:'참고 정보',NOT_IN_RUN:'이 실행에 해당 없음'};
+const REV_VENUE_KO={PIZZA_HILL:'피자힐',GEUMRYONG:'금룡',MOEGI:'모에기',MYONGWOLGWAN:'명월관',ONDAL:'온달',THE_PAVILION:'더 파빌리온',THE_BUFFET:'더뷔페',ROOM_MEAL:'룸서비스',IRD:'룸서비스',DELVINO:'델비노',LE_PASSAGE:'르 파사쥬'};
 const REV_DINNER={EXTERNAL_DELIVERY:'외부 배달',HOTEL_RESTAURANT:'호텔 레스토랑',ROOM_SERVICE:'룸서비스',OUTSIDE_OR_OTHER:'기타',NO_DINNER_RECORDED:'저녁 기록 없음'};
 const REV_PRIOR_STATUS={APPLICABLE:'적용 가능',NO_COMPARABLE_STATISTIC:'비교 가능한 통계 없음 · 적용 안 함',RANGE_WITHOUT_POINT_VALUE_NOT_APPLIED:'범위값만 있어 적용 안 함'};
 function revOpsVal(c,v){return v==null?'—':c.value_kind==='krw'?rcMoney(v):c.value_kind==='rate'?String(v):Math.round(v*100)+'%';}
@@ -171,7 +172,7 @@ function revPopulationHTML(o){
 function revGroupABHTML(){
   const g=REV.groupAB,run=REV.latest&&REV.latest.request;
   const can=run&&['stay_1','stay_2'].includes(run.duration);
-  const form=`<div class="rev-group-form"><label>피자힐 매장 메인 할인<select class="cf-input" id="revGroupPct">${[10,20,30].map(v=>`<option value="${v}"${REV.groupPct===v?' selected':''}>${v}%</option>`).join('')}</select></label><button type="button" class="cf-btn" data-rev-group-ab${!can||REV.groupBusy?' disabled':''}>${REV.groupBusy?'집단 A/B 실행 중...':'같은 집단으로 A/B 실행'}</button><small>${can?`A: 현재 실행 조건(${esc(run.reference_profile||'external')} · 사전정보 ${esc(run.behaviour_prior||'OFF')}) · B: A + 피자힐 할인 · 같은 고객·일정·시드`:'숙박(1박·2박) 실행 뒤에 사용할 수 있습니다'}</small></div>`;
+  const form=`<div class="rev-group-form"><label>피자힐 매장 메인 할인<select class="cf-input" id="revGroupPct">${[10,20,30].map(v=>`<option value="${v}"${REV.groupPct===v?' selected':''}>${v}%</option>`).join('')}</select></label><button type="button" class="cf-btn" data-rev-group-ab${!can||REV.groupBusy?' disabled':''}>${REV.groupBusy?'집단 A/B 실행 중...':'같은 집단으로 A/B 실행'}</button><small>${can?`A: 현재 실행 조건(${esc((REV_REFERENCE.find(r=>r[0]===(run.reference_profile||'external'))||[0,run.reference_profile])[1])} · 행동 사전정보 ${run.behaviour_prior&&run.behaviour_prior!=='OFF'?'켜짐(연구)':'꺼짐'}) · B: A + 피자힐 할인 · 같은 고객·일정·시드`:'숙박(1박·2박) 실행 뒤에 사용할 수 있습니다'}</small></div>`;
   if(REV.groupErr)return form+`<p role="alert">${esc(REV.groupErr)}</p>`;
   if(!g)return form;
   if(g.status!=='DONE'||g.ab.status!=='COMPARABLE_SIMULATION_PAIR')return form+`<p role="alert">비교할 수 없는 실행입니다 · ${esc((g.ab&&g.ab.reasons||[]).join(', ')||g.status)}</p>`;
@@ -180,7 +181,7 @@ function revGroupABHTML(){
   const mv=ab.delivery_to_hotel.map(r=>`<li data-group-mover="${esc(r.customer_id)}"><b>${esc(name(r.customer_id))}</b> ${esc(r.date)} · 외부 배달 → ${esc(r.after_label||r.after_venue)} ${rcMoney(r.after_paid_krw)} <small>선택 점수 ${r.after_choice_score??'—'} &gt; 배달 ${r.delivery_score_after??'—'} · 사전정보 ${r.prior_applied?'적용':'미적용'}</small></li>`).join('')||'<li>이동한 고객 없음</li>';
   const st=ab.stayed_with_delivery.map(r=>`<li><b>${esc(name(r.customer_id))}</b> ${esc(r.date)} · 배달 유지 <small>남은 점수 차 ${r.remaining_gap??'—'} · 가장 높은 호텔 저녁 ${esc(r.best_hotel_option||'—')}</small></li>`).join('');
   const other=ab.other_moves.map(r=>`<li><b>${esc(name(r.customer_id))}</b> ${esc(r.change)} · ${esc(r.before_label||'')} → ${esc(r.after_label||'')}</li>`).join('');
-  const ven=ab.venue_dinner_revenue.filter(v=>v.A||v.B).map(v=>`<tr><td>${esc(typeof VN==='function'?VN(v.venue):v.venue)}</td><td>${rcMoney(v.A)}</td><td>${rcMoney(v.B)}</td><td>${v.delta>0?'+':''}${rcMoney(v.delta)}</td></tr>`).join('');
+  const ven=ab.venue_dinner_revenue.filter(v=>v.A||v.B).map(v=>`<tr><td>${esc(REV_VENUE_KO[v.venue]||v.venue)}</td><td>${rcMoney(v.A)}</td><td>${rcMoney(v.B)}</td><td>${v.delta>0?'+':''}${rcMoney(v.delta)}</td></tr>`).join('');
   return form+`<div data-rev-group-result><p>${g.spec.personas.length}팀 · ${esc(g.spec.duration)} · 피자힐 메인 ${g.lever.percent}% 할인 (${g.lever.sku_count}개 상품)</p>
   <table class="rev-ops-table rev-ops-cmp"><thead><tr><th>저녁 해결 방식(팀·저녁)</th><th>A</th><th>B</th></tr></thead><tbody>${kinds}</tbody></table>
   <h4>외부 배달 → 호텔 업장 이동 ${ab.delivery_to_hotel.length}건</h4><ul class="rev-group-list">${mv}</ul>
@@ -202,7 +203,7 @@ async function revGroupAB(){
   REV.groupBusy=true;REV.groupErr=null;REV.groupAB=null;revRender();
   try{
     const job=await api('/api/population/experiment',{personas:Object.keys(REV.latest.flow.plans),duration:run.duration,reference_profile:run.reference_profile||'external',behaviour_prior:run.behaviour_prior||'OFF',pizza_hill_discount_percent:REV.groupPct,seed:Number.isInteger(run.seed)?run.seed:0,start_date:run.start_date||'2026-10-24'});
-    let row=job;for(let i=0;i<240&&!['DONE','ERROR','CANCELLED'].includes(row.status);i++){await new Promise(r=>setTimeout(r,2500));row=await api('/api/agent/jobs?id='+encodeURIComponent(job.id));}
+    let row=job;for(let i=0;i<240&&!['DONE','ERROR','CANCELLED'].includes(row.status);i++){await new Promise(r=>setTimeout(r,2500));row=await api('/api/agent/jobs?id='+encodeURIComponent(job.job_id));}
     if(row.status!=='DONE')throw new Error('집단 A/B를 완료하지 못했습니다 ('+row.status+')');
     REV.groupAB=row.result;
   }catch(e){REV.groupErr=e.message||String(e);}

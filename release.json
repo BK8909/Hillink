@@ -4,7 +4,7 @@
   "product_directory": "hillink",
   "entrypoint": "hillink/tools/start_product.sh",
   "source_repository": "BK8909/walkerhill",
-  "source_commit": "9fe9b744032d7b1b048f5856cdc3831421b5aa7d",
+  "source_commit": "e6299b1f8dda779933064eb7f97e3a3aadc37d99",
   "data_scope": "RESEARCH_INPUTS_INCLUDED_IN_THIS_PUBLIC_REPOSITORY_REUSE_TERMS_NOT_DETERMINED_HERE",
   "data_manifest": "hillink/handover/data/bundle.json",
   "source_branch": "research/hillink-general-hotel-simulator-20261107",

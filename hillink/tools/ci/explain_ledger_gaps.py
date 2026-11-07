@@ -11,6 +11,19 @@ from pathlib import Path
 VIEWER = Path(__file__).resolve().parents[2] / 'timeline/viewer'
 os.chdir(VIEWER); sys.path.insert(0, str(VIEWER))
 import ledger_l5 as L
+def basis_kind(text):
+    if '호텔 상품 시뮬레이션 주문' in text or '정량 엔진 상품 가격' in text and '세트' in text: return 'REGISTERED_SKU_ORDER'
+    if '원 × ' in text and '인' in text: return 'PER_PERSON_LEGACY_PRICE'
+    return 'OTHER'
+
+
+def contract_change(ba, bb):
+    ka = {basis_kind(t) for t in ba}; kb = {basis_kind(t) for t in bb}
+    if ka == {'PER_PERSON_LEGACY_PRICE'} and kb == {'REGISTERED_SKU_ORDER'}: return 'PER_PERSON_PRICE_TO_REGISTERED_SKU_ORDER'
+    if ka == kb: return 'SAME_CONTRACT_KIND_DIFFERENT_PRICE_OR_QUANTITY'
+    return 'CONTRACT_KIND_CHANGED ' + '/'.join(sorted(ka)) + ' -> ' + '/'.join(sorted(kb))
+
+
 meta = {"types": L.load_types(), "no": L.display_no()}
 out = []
 for pid, ev, e in L.fixture_entries():
@@ -33,14 +46,19 @@ for pid, ev, e in L.fixture_entries():
     price = []
     for key in same:
         pa = sorted(x[2] for x in a if (x[0], x[1]) == key); pb = sorted(x[2] for x in b if (x[0], x[1]) == key)
-        if pa != pb: price.append((key, pa, pb))
+        if pa != pb:
+            ba = sorted({x[3] for x in a if (x[0], x[1]) == key}); bb = sorted({x[3] for x in b if (x[0], x[1]) == key})
+            price.append((key, pa, pb, contract_change(ba, bb), ba[:1], bb[:1]))
     only_a = list((acts_a - acts_b).elements()); only_b = list((acts_b - acts_a).elements())
     cause = []
     if only_a or only_b: cause.append('BEHAVIOUR (different paid scenes)')
     if price: cause.append('PRICE (same scene, different amount)')
     out.append(dict(case=f"{meta['no'].get(pid)} 행사{ev} {ph}", stored=sa, live=sb, cause=cause,
                     stored_only=[f"{x[0]}@{x[1]}" for x in only_a], live_only=[f"{x[0]}@{x[1]}" for x in only_b],
-                    price=[(f"{k[0]}@{k[1]}", pa, pb) for k, pa, pb in price]))
+                    price=[dict(scene=f"{k[0]}@{k[1]}", stored=pa, live=pb, change=ch, stored_basis=ba, live_basis=bb) for k, pa, pb, ch, ba, bb in price]))
 if len(sys.argv) > 1: json.dump(out, open(sys.argv[1], 'w'), ensure_ascii=False, indent=1)
-for o in out: print(o['case'], o['stored'], '->', o['live'], o['cause'], 'stored_only', o['stored_only'][:4], 'live_only', o['live_only'][:4], 'price', o['price'][:2])
+for o in out: print(o['case'], o['stored'], '->', o['live'], o['cause'], 'stored_only', o['stored_only'][:4], 'live_only', o['live_only'][:4], 'price', [(x['scene'], x['stored'], x['live'], x['change']) for x in o['price'][:2]])
 print(len(out), 'cases with a gap'); print(collections.Counter(tuple(o['cause']) for o in out))
+print('price differences by contract change:', dict(collections.Counter(x['change'] for o in out for x in o['price'])))
+print('scenes only in the live engine:', dict(collections.Counter(x.split('@')[0] for o in out for x in o['live_only'])))
+print('scenes only in the stored day:', dict(collections.Counter(x.split('@')[0] for o in out for x in o['stored_only'])))

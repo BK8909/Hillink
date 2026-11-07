@@ -61,8 +61,8 @@
   {
    "path": "handover/RECOVERY.md",
    "included": true,
-   "bytes": 14354,
-   "sha256": "49f9a7fa30fb1b7248885dfe8bf8772b50550c31363e7678065c79b71317ac93"
+   "bytes": 14711,
+   "sha256": "126d676c8b10aec6336a7d3fd0d864d1933151bc75e1b466f1083aed2df9649d"
   },
   {
    "path": "handover/data/bundle.json",
@@ -9409,8 +9409,8 @@
   {
    "path": "tools/ci/explain_ledger_gaps.py",
    "included": true,
-   "bytes": 2785,
-   "sha256": "7625a84e63fd983f2c7aa6ea7f9df220215aa1c0a784a8ce9d45a72d5fcbfddd"
+   "bytes": 4122,
+   "sha256": "047c2b7097c946be6c893fc609cb0550da5d72ccb18239952cf56e765d8f2240"
   },
   {
    "path": "tools/ci/http_e2e.py",

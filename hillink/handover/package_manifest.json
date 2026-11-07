@@ -43,8 +43,8 @@
   {
    "path": "docs/research/RESEARCH_AND_ARCHITECTURE_HANDOFF.md",
    "included": true,
-   "bytes": 84691,
-   "sha256": "5a1f5cab0fe44fd76760fbd5d42e89ae92cc5d49e64ad00c005aba057c61e92d"
+   "bytes": 83439,
+   "sha256": "17f25f70f789d2b8fe3706e331506cd76c1ddf5a1e9ae4895f4c81693359f6fb"
   },
   {
    "path": "docs/walkerhill-guest-state-machine.md",

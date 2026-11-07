@@ -79,7 +79,7 @@ jobs:
           NODE_PATH="$RUNNER_TEMP/e2e/node_modules" node "$GITHUB_WORKSPACE/hillink/tools/ci/browser_e2e.cjs" "http://127.0.0.1:$HILLINK_PORT" "$RUNNER_TEMP/screens"
       - name: Upload logs and screenshots
         if: always()
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: offline-ci-${{ github.sha }}
           path: |

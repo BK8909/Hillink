@@ -117,7 +117,11 @@ def completed_visit(body,include_ledger=True,*,prepare_response=False):
         res['ledger']=receipts.register_visit(res,body)
         try:
             import operating_reference as _OR   # operator aggregate; references never change agent choices
-            res['operating_summary']=_OR.aggregate(res)
+            profile=body.get('reference_profile','external')
+            res['operating_summary']=_OR.aggregate(res,profile=profile)
+            import population as _POP   # composition weights: estimates for the stated guest mix, never ledger totals
+            w=_POP.weights(res,_OR.load(profile=profile)[0],'party_size')
+            res['operating_summary']['population']=dict(weights=w,estimates=_POP.estimates(res,w if w.get('status','').startswith('OK') else None))
         except Exception as exc:   # never fail a visit because of the operator aggregate
             res['operating_summary']=dict(error=type(exc).__name__)
         res.pop('profile_sha',None)
@@ -208,6 +212,25 @@ LAB_BLOG = re.compile(r"^blog\d{2}$")
 
 def reviewer_ok(handler) -> bool:
     return REVIEWER_LOCAL and DEPLOY != "public" and handler.client_address[0] in ("127.0.0.1", "::1")
+
+
+def population_experiment_spec(cfg, allowed):
+    """Validated group A/B request: same customers, dates, seed, engine, reference profile and prior on both sides;
+    B differs only by a percentage discount on Pizza Hill dine-in mains."""
+    import operating_reference as OR
+    if not isinstance(cfg, dict) or set(cfg) - {'personas', 'duration', 'reference_profile', 'behaviour_prior', 'pizza_hill_discount_percent', 'seed', 'start_date'}:
+        raise ValueError('UNSUPPORTED_FIELDS')
+    ids = cfg.get('personas')
+    if not isinstance(ids, list) or not 1 <= len(ids) <= 28 or len(set(ids)) != len(ids) or set(ids) - allowed: raise ValueError('CUSTOMER_SCOPE_INVALID')
+    if cfg.get('duration', 'stay_1') not in ('stay_1', 'stay_2'): raise ValueError('STAY_DURATION_REQUIRED')
+    if cfg.get('reference_profile', 'external') not in OR.PROFILES: raise ValueError('UNKNOWN_REFERENCE_PROFILE')
+    if cfg.get('behaviour_prior', 'OFF') not in ('OFF', 'HOTEL_PRIOR_V1'): raise ValueError('UNKNOWN_BEHAVIOUR_PRIOR')
+    pct = cfg.get('pizza_hill_discount_percent', 20)
+    if type(pct) is not int or not 5 <= pct <= 50: raise ValueError('DISCOUNT_PERCENT_5_TO_50')
+    seed = cfg.get('seed', 0)
+    if type(seed) is not int or not 0 <= seed <= 9999: raise ValueError('SEED_INVALID')
+    return dict(personas=sorted(ids), duration=cfg.get('duration', 'stay_1'), reference_profile=cfg.get('reference_profile', 'external'),
+                behaviour_prior=cfg.get('behaviour_prior', 'OFF'), pizza_hill_discount_percent=pct, seed=seed, start_date=cfg.get('start_date', '2026-11-13'))
 
 
 def local_trial_ids(handler):
@@ -806,7 +829,7 @@ class H(BaseHTTPRequestHandler):
                     return self.send(403, {"error": "게시 승인 고객만 실행합니다", "n": len(extra)})
                 if "include_ledger" in cfg and not isinstance(cfg["include_ledger"], bool):
                     return self.send(400, {"error": "영수증 요청 형식을 확인해 주세요"})
-                body = {k: cfg[k] for k in ("personas", "duration", "event_mode", "seed", "start_date", "package_id", "visit_conditions", "behavior_engine", "simulation_mode", "scenario", "catalog_policy", "catalog_options", "hybrid_policy", "judgment_mode", "environment", "virtual_room_rates", "breakfast_policy") if k in cfg}
+                body = {k: cfg[k] for k in ("personas", "duration", "event_mode", "seed", "start_date", "package_id", "visit_conditions", "behavior_engine", "simulation_mode", "scenario", "catalog_policy", "catalog_options", "hybrid_policy", "judgment_mode", "environment", "virtual_room_rates", "breakfast_policy", "behaviour_prior", "reference_profile", "behaviour_prior_coefficient") if k in cfg}
                 if u.path.endswith('/jobs'):
                     if not reviewer_ok(self):return self.send(403,{'error':'로컬 검수 환경 전용입니다.'})
                     from operator_choice.autonomy_v1.agent_provider import digest
@@ -817,6 +840,17 @@ class H(BaseHTTPRequestHandler):
                 except receipts.ReceiptError:
                     return self.send(409, {"error": "날짜별 장면 지출과 방문 영수증을 대조하지 못했습니다", "code": "E_RECEIPT_BALANCE"})
                 return self.send(status,res)
+            if u.path == "/api/population/experiment":   # research: group A/B on the rules engine (no model call), local review only
+                if not reviewer_ok(self):return self.send(403,{'error':'로컬 검수 환경 전용 연구 기능입니다.'})
+                try:
+                    import population_lab as PL
+                    spec=population_experiment_spec(cfg,set(publish_set()[0])|local_trial_ids(self))
+                    from operator_choice.autonomy_v1.agent_provider import digest
+                    job=agent_jobs.JOBS.submit(digest(dict(type='POPULATION_AB',request=spec)),spec['personas'],lambda:PL.experiment(spec))
+                    return self.send(202,job)
+                except ValueError as exc:
+                    if str(exc)=='JOB_QUEUE_FULL':return self.send(429,{'code':'JOB_QUEUE_FULL'})
+                    return self.send(400,{'error':'집단 실험 조건을 확인해 주세요.','reason':str(exc)})
             if u.path == "/api/autonomy":
                 ok, miss = opx_allowed()
                 if not ok:

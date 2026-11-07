@@ -284,3 +284,25 @@ test('operator aggregate panel labels references by source class and keeps inclu
   assert.doesNotMatch(html,/조식 포함 객실 비율/);   // no simulated value and no reference: not listed
   assert.doesNotMatch(html,/구분 미확인/);
 });
+test('operator panel explains missing rates, shows dinner kinds, composition weights and a traced group A/B', () => {
+  const {ctx}=setup();
+  const base={teams:1,persons:3,team_mornings:0,breakfast:{entitled:0,entitlement_unknown_mornings:0,diners:0,included_used:0,paid_diners:0,unused_entitlement:0,paid_revenue_krw:0,skipped_team_mornings:0,skip_reasons:{}},
+    dinner:{evenings:0,by_kind:{},in_hotel_dinner_revenue_krw:0},comparison:[],sample_notes:['TEAMS_BELOW_20: 비율은 표시하지만 기준값과 판정하지 않음','NO_STAY_MORNING: 숙박 아침이 없어 조식 비율을 계산하지 않음(0명 미이용이 아님)'],reference:{files:[{source_set:'EXTERNAL_RESEARCH_2026-11-07'}]}};
+  const small=ctx.revOperatingHTML(base);
+  assert.match(small,/data-rev-sample-notes/);assert.match(small,/0명 미이용이 아님/);assert.match(small,/숙박 저녁 없음/);
+  const pop=ctx.revOperatingHTML({...base,dinner:{evenings:28,by_kind:{EXTERNAL_DELIVERY:7,HOTEL_RESTAURANT:21},in_hotel_dinner_revenue_krw:1800000},
+    population:{weights:{status:'OK',source_ko:['합성 테스트값(실측·연구 아님)'],effective_sample_size:14.2,teams_weighted:28,max_weight:2.9,capped:false,unsupported_segments:[]},
+      estimates:{metrics:{'delivery.evening_share':{raw:0.25,weighted:0.31},'fnb.dinner_revenue_per_stay_team':{raw:64000,weighted:61000}}}}});
+  assert.match(pop,/외부 배달 7 · 호텔 레스토랑 21/);assert.match(pop,/금액 미상 · 호텔 매출 아님/);
+  assert.match(pop,/data-rev-population/);assert.match(pop,/유효표본 14.2 \/ 28팀/);assert.match(pop,/25%<\/td><td>31%/);assert.match(pop,/원장 합계 아님/);
+  vm.runInContext("REV.latest={request:{duration:'stay_1',personas:['A01'],reference_profile:'synthetic_delivery_high_v1',behaviour_prior:'HOTEL_PRIOR_V1'},flow:{plans:{A01:{}}}};REV.groupAB="+JSON.stringify({status:'DONE',spec:{personas:['A01','A04'],duration:'stay_1'},lever:{percent:20,sku_count:28},limits:['규칙 엔진 실행 결과이며 실제 프로모션 반응 예측이 아님'],
+    ab:{status:'COMPARABLE_SIMULATION_PAIR',dinner_kinds:{A:{EXTERNAL_DELIVERY:2,HOTEL_RESTAURANT:0},B:{EXTERNAL_DELIVERY:1,HOTEL_RESTAURANT:1}},
+      delivery_to_hotel:[{customer_id:'A01',date:'2026-11-13',after_label:'마르게리타 피자 L',after_paid_krw:63200,after_choice_score:6.99,delivery_score_after:6.89,prior_applied:true}],
+      stayed_with_delivery:[{customer_id:'A04',date:'2026-11-13',remaining_gap:0.12,best_hotel_option:'해산물 토마토 파스타'}],other_moves:[],
+      venue_dinner_revenue:[{venue:'PIZZA_HILL',A:0,B:63200,delta:63200}],hotel_total_krw:{A:1000,B:64200,delta:63200},external_delivery:{A:2,B:1},revenue_decomposition:{new_spend_from_delivery_movers:63200,same_venue_same_order_price_effect:0,same_venue_order_changed:0,venue_switch:0,lost_to_delivery:0,other_rows_after_dinner_change:0,hotel_total:63200}}}),ctx);
+  const g=ctx.revOperatingHTML(base);
+  assert.match(g,/data-rev-group-result/);assert.match(g,/외부 배달 → 호텔 업장 이동 1건/);assert.match(g,/data-group-mover="A01"/);
+  assert.match(g,/선택 점수 6.99 &gt; 배달 6.89 · 사전정보 적용/);assert.match(g,/배달 유지 <small>남은 점수 차 0.12/);assert.match(g,/\+63200원/);assert.match(g,/실제 프로모션 반응 예측이 아님/);assert.match(g,/data-rev-group-decomposition/);assert.match(g,/배달에서 옮겨 온 고객의 새 주문<\/th><td>63200원/);
+  vm.runInContext("REV.groupAB={status:'DONE',ab:{status:'NOT_COMPARABLE',reasons:['CUSTOMER_SCOPE_MISMATCH']}}",ctx);
+  assert.match(ctx.revOperatingHTML(base),/비교할 수 없는 실행입니다 · CUSTOMER_SCOPE_MISMATCH/);
+});

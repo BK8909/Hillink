@@ -1,7 +1,7 @@
 {
  "product": "HILLINK",
  "version": "V19LS product release 2026-11-07",
- "source_head": "0801ef7a115b1b9c174b4461b006c0ef975ced9a",
+ "source_head": "9fe9b744032d7b1b048f5856cdc3831421b5aa7d",
  "data_scope": "RESEARCH_INPUTS_INCLUDED_IN_THIS_PUBLIC_REPOSITORY_REUSE_TERMS_NOT_DETERMINED_HERE",
  "files": [
   {
@@ -44,7 +44,7 @@
    "path": "docs/research/RESEARCH_AND_ARCHITECTURE_HANDOFF.md",
    "included": true,
    "bytes": 83566,
-   "sha256": "9ed37740bd55f50447f99f6644ae3404b5acbfe5e23953bcc177898405c43980"
+   "sha256": "5da5ca75b67f3e8a961a5f9d3d98551092f3e6ea7f85b48cb2f2d0c374b4d441"
   },
   {
    "path": "docs/walkerhill-guest-state-machine.md",
@@ -62,7 +62,7 @@
    "path": "handover/RECOVERY.md",
    "included": true,
    "bytes": 14768,
-   "sha256": "b64564bee395ca27aeb40254a6adf31533bdde7da5d14119515cb5f36701e171"
+   "sha256": "744aaf2b7cb58719d877a24f2a7d90a0c2faf13205172086292206aa79afda75"
   },
   {
    "path": "handover/data/bundle.json",
@@ -4987,8 +4987,8 @@
   {
    "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/m4_context.py",
    "included": true,
-   "bytes": 22751,
-   "sha256": "2cfc23856e7c6f28fe28e64c8cea4853f142fa2a8caf843d671899f7eb10eec4"
+   "bytes": 23373,
+   "sha256": "96c828cb1f83a34d01fe026fb8f59c9567cc95f7ecfd4c936b7f71a9b1ee5b5a"
   },
   {
    "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/m4_event.py",
@@ -5857,8 +5857,8 @@
   {
    "path": "timeline/viewer/app.py",
    "included": true,
-   "bytes": 64019,
-   "sha256": "fa9cc821a41f1e79427c8dfc42a7f9314a40a30b90320e38dde89206a737427d"
+   "bytes": 67045,
+   "sha256": "7eb19869109c447aeb1f4259fa06f143b7579fa893bb9febfd5ca3c67eb14ffe"
   },
   {
    "path": "timeline/viewer/autonomy_run.py",
@@ -5947,8 +5947,8 @@
   {
    "path": "timeline/viewer/flow_run.py",
    "included": true,
-   "bytes": 31177,
-   "sha256": "c0e2fea3a4b352e9a96c2aa9e0a0917b37399ae0230f53bab5d69fb5b65ffe20"
+   "bytes": 31390,
+   "sha256": "4582101a86bbd248226d4bcf1693f2a77beadec994ccecd14d7dc47ef7171a1e"
   },
   {
    "path": "timeline/viewer/hanho_check_20261015.py",
@@ -8011,14 +8011,14 @@
   {
    "path": "timeline/viewer/static/revenue.css",
    "included": true,
-   "bytes": 76083,
-   "sha256": "4669d29241ed62aa29eac9fb01413ff9dd6a792f0e40bc6996a67ff1df8fbd7e"
+   "bytes": 76503,
+   "sha256": "4fb841b92772ec340f36d252badeba3589332b20ab5f1fe33a89f31b4726ab15"
   },
   {
    "path": "timeline/viewer/static/revenue.js",
    "included": true,
-   "bytes": 84642,
-   "sha256": "f291d01417d7a009f74cf71fa5f382d4dbab2754f10f6b0bf1e468a5a9e2d91c"
+   "bytes": 95561,
+   "sha256": "27e2bc4e76b34dc1a48b4894faff198d4918614ede34c2523a16edc89c5a7d7c"
   },
   {
    "path": "timeline/viewer/static/revenue_analysis.css",
@@ -8425,8 +8425,8 @@
   {
    "path": "timeline/viewer/tests/revenue_ui.test.cjs",
    "included": true,
-   "bytes": 23395,
-   "sha256": "244d7784f1a71186036816203b778e8841912b7b1bdecd746ef6c2a36767e5ab"
+   "bytes": 27087,
+   "sha256": "e61ae113d9486314324a27c99a3bc672ce51a2b66dd8d585d46eb706ade6e545"
   },
   {
    "path": "timeline/viewer/tests/review_library.test.cjs",
@@ -9349,8 +9349,8 @@
   {
    "path": "timeline/viewer/visit_run.py",
    "included": true,
-   "bytes": 38676,
-   "sha256": "7bd191a977e5dcdf25fe87ab8989c649ee1e2ae7d01886084f295824dfa185d3"
+   "bytes": 41617,
+   "sha256": "b4524882758c29bbec77589c41eef37b10e7cbce95dc0fee9ff9ea06a3e969a4"
   },
   {
    "path": "timeline/viewer/wait_inv.py",
@@ -9559,38 +9559,74 @@
   {
    "path": "timeline/viewer/operating_reference.py",
    "included": true,
-   "bytes": 12752,
-   "sha256": "8d5e47db722faa980b1cbd37846fb8090b4a9dfa9536a9ab0c3c98f7f5a7c71c"
+   "bytes": 20139,
+   "sha256": "5ba4fffa4c4736b4cc780b25e1052b26a4b85f4d74b0df51c3bc58dd8a1619bd"
   },
   {
    "path": "timeline/viewer/operating_reference/external_research_v1.json",
    "included": true,
-   "bytes": 2566,
-   "sha256": "49ad2d36c53a2c9caff4f247506e5cf4dc1206f806280ab949d29abbd7eaeac9"
+   "bytes": 3969,
+   "sha256": "2b61e656cf409e7465348441132e4365916247e25925f52d103ebb2c2c445d63"
   },
   {
    "path": "timeline/viewer/operating_reference/hotel_measured_template.json",
    "included": true,
-   "bytes": 1099,
-   "sha256": "cbf3430e4b517b7a298042edbef88888414c6791348105d1e9dbec88455b9810"
+   "bytes": 2201,
+   "sha256": "1186dcdaf6f920867c1fe3642c4ed771eb262e6388ee3443a156fff48d8498c4"
   },
   {
    "path": "timeline/viewer/operating_reference/metrics.json",
    "included": true,
-   "bytes": 2635,
-   "sha256": "eebcd8ff4aa2aee382761b774e2d81de5bbbe12f0a243a819d11e250eed592eb"
+   "bytes": 7143,
+   "sha256": "8edc5d22bd915ae9d495a9d23792e648455d147ec1c4bd48a8f59d10f30101ef"
   },
   {
    "path": "timeline/viewer/tests/test_operating_reference_1107.py",
    "included": true,
-   "bytes": 7618,
-   "sha256": "5735b330d01a0f4ef80557311fb33185a644a5f928cdba6b871069df82162e22"
+   "bytes": 8405,
+   "sha256": "d84df4adc9354a865049a960dd5b89fec8112ade53166ed957314c4ba38a0883"
   },
   {
    "path": "timeline/viewer/tests/test_v19ls_breakfast_default_1107.py",
    "included": true,
    "bytes": 9257,
    "sha256": "2f0167db793350db8444e22bd9268f07ebddcb6b26412475e50b44198ae1e474"
+  },
+  {
+   "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/hotel_prior.py",
+   "included": true,
+   "bytes": 3405,
+   "sha256": "385d41137f4c5daf69df04d71ee48bf081e7a2dd90136c1cf6f8121a27b7349f"
+  },
+  {
+   "path": "timeline/viewer/operating_reference/synthetic_delivery_high_v1.json",
+   "included": true,
+   "bytes": 2038,
+   "sha256": "79a040e8ce48fafaafe54d6e999df7a5b40e8fcad7b55e7054eec42de6a34b08"
+  },
+  {
+   "path": "timeline/viewer/operating_reference/synthetic_hotel_format_b_v1.json",
+   "included": true,
+   "bytes": 1994,
+   "sha256": "98f9a16146220b9ba23df6abecb8f0ce769fa171f5162d6121255508af16fa16"
+  },
+  {
+   "path": "timeline/viewer/population.py",
+   "included": true,
+   "bytes": 6592,
+   "sha256": "bf09e9090c8a19260d6265e7d9001737c68d8f3fe8f700deca543d77a2f8aef9"
+  },
+  {
+   "path": "timeline/viewer/population_lab.py",
+   "included": true,
+   "bytes": 25753,
+   "sha256": "dbf2f7463755db37edf63ac2c02ca1ea292737a636d83efdd206cfd7588b686d"
+  },
+  {
+   "path": "timeline/viewer/tests/test_population_calibration_1107.py",
+   "included": true,
+   "bytes": 16056,
+   "sha256": "210725efd9ca6957c8ee1f18fbb3fb9d97fde121b2ebaf2878ec45ed07d22660"
   }
  ],
  "excluded_self_manifests": [

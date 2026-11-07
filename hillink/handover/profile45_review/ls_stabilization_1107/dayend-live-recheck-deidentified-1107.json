@@ -1,0 +1,1173 @@
+{
+ "note": "De-identified: ids, codes and metrics only; no review text, prompts or model reason text.",
+ "approval": "user directive 2026-11-07: at most 16 new calls / US$0.05",
+ "ledger_start": {
+  "calls": 2340,
+  "used_usd": 12.361254,
+  "unresolved": 0,
+  "room_calls": 160,
+  "room_usd": 7.638746
+ },
+ "ledger_end": {
+  "calls": 2355,
+  "used_usd": 12.372665,
+  "unresolved": 0,
+  "room_calls": 145,
+  "room_usd": 7.627335
+ },
+ "runs": {
+  "D_A05_V19LS_r1": {
+   "live": {
+    "new_calls": 4,
+    "reused_p5_calls": 3,
+    "usd": 0.002874,
+    "decisions": [
+     {
+      "date": "2026-11-07",
+      "time": "21:32",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "end_day_in_room",
+      "attempts": 2,
+      "rejections": [
+       "EARLY_DAY_END_WITH_REMAINING_OPTIONS_REVIEW"
+      ],
+      "day_end_match": {
+       "first_rejection": "EARLY_DAY_END_WITH_REMAINING_OPTIONS_REVIEW",
+       "accepted_by": "STRUCTURED_ALTERNATIVE"
+      },
+      "day_end_review": {
+       "first_choice_rejected": true,
+       "accepted_on": "REPLAN_AFTER_REVIEW"
+      },
+      "hold_code": null,
+      "diagnostics": []
+     },
+     {
+      "date": "2026-11-08",
+      "time": "08:10",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_FIXED_OPTIONS",
+      "action": "SKIP_BREAKFAST",
+      "attempts": 1,
+      "rejections": [],
+      "day_end_match": null,
+      "day_end_review": null,
+      "hold_code": null,
+      "diagnostics": []
+     },
+     {
+      "date": "2026-11-08",
+      "time": "09:10",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "activity:footbath:HC-ORDER-0f2029d74b4d1d1c5314",
+      "attempts": 1,
+      "rejections": [],
+      "day_end_match": null,
+      "day_end_review": null,
+      "hold_code": null,
+      "diagnostics": []
+     },
+     {
+      "date": "2026-11-08",
+      "time": "09:58",
+      "state": "EXECUTED",
+      "owner": "M4_RULE",
+      "action": "wait_reconsider",
+      "attempts": 0,
+      "rejections": [],
+      "day_end_match": null,
+      "day_end_review": null,
+      "hold_code": null,
+      "diagnostics": []
+     },
+     {
+      "date": "2026-11-08",
+      "time": "10:57",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "attempts": 1,
+      "rejections": [],
+      "day_end_match": null,
+      "day_end_review": null,
+      "hold_code": "BENCH_STOPPED_AFTER_6_DECISIONS",
+      "diagnostics": []
+     }
+    ],
+    "ledger_matches_orders": true
+   },
+   "offline_continuation": {
+    "completed": true,
+    "last_action": "leave_visit",
+    "ledger_matches_orders": true,
+    "note": "decisions after the LIVE cap are schema-valid synthetic answers (no provider)"
+   },
+   "calls": [
+    {
+     "key": "-07_1751_V19LS_CUSTOMER_ACT_a1",
+     "seconds": 12.122,
+     "input_tokens": 6589,
+     "output_tokens": 1150,
+     "cost_upper_usd": 0.001199905,
+     "reused": true
+    },
+    {
+     "key": "-07_1935_V19LS_CUSTOMER_ACT_a1",
+     "seconds": 10.032,
+     "input_tokens": 3362,
+     "output_tokens": 1088,
+     "cost_upper_usd": 0.00078853,
+     "reused": true
+    },
+    {
+     "key": "-07_2029_V19LS_CUSTOMER_ACT_a1",
+     "seconds": 8.18,
+     "input_tokens": 3594,
+     "output_tokens": 869,
+     "cost_upper_usd": 0.00070803,
+     "reused": true
+    },
+    {
+     "key": "-07_2132_V19LS_CUSTOMER_ACT_a1",
+     "seconds": 8.623,
+     "input_tokens": 4921,
+     "output_tokens": 595,
+     "cost_upper_usd": 0.0007139049999999999,
+     "reused": false
+    },
+    {
+     "key": "-07_2132_V19LS_CUSTOMER_ACT_a2",
+     "seconds": 9.387,
+     "input_tokens": 5347,
+     "output_tokens": 617,
+     "cost_upper_usd": 0.000778155,
+     "reused": false
+    },
+    {
+     "key": "-08_0810_V19LS_BREAKFAST_SE_a1",
+     "seconds": 18.343,
+     "input_tokens": 3160,
+     "output_tokens": 1433,
+     "cost_upper_usd": 0.00091278,
+     "reused": false
+    },
+    {
+     "key": "-08_0910_V19LS_CUSTOMER_ACT_a1",
+     "seconds": 6.812,
+     "input_tokens": 3305,
+     "output_tokens": 463,
+     "cost_upper_usd": 0.000468905,
+     "reused": false
+    }
+   ]
+  },
+  "D_A05_V19LS_r2": {
+   "live": {
+    "new_calls": 3,
+    "reused_p5_calls": 4,
+    "usd": 0.002239,
+    "decisions": [
+     {
+      "date": "2026-11-07",
+      "time": "21:29",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "room_rest",
+      "attempts": 1,
+      "rejections": [],
+      "day_end_match": null,
+      "day_end_review": null,
+      "hold_code": null,
+      "diagnostics": []
+     },
+     {
+      "date": "2026-11-08",
+      "time": "08:10",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_FIXED_OPTIONS",
+      "action": "BREAKFAST_BUFFET",
+      "attempts": 1,
+      "rejections": [],
+      "day_end_match": null,
+      "day_end_review": null,
+      "hold_code": null,
+      "diagnostics": []
+     },
+     {
+      "date": "2026-11-08",
+      "time": "09:30",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "wait_reconsider",
+      "attempts": 1,
+      "rejections": [],
+      "day_end_match": null,
+      "day_end_review": null,
+      "hold_code": null,
+      "diagnostics": []
+     },
+     {
+      "date": "2026-11-08",
+      "time": "09:43",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "attempts": 1,
+      "rejections": [],
+      "day_end_match": null,
+      "day_end_review": null,
+      "hold_code": "BENCH_STOPPED_AFTER_7_DECISIONS",
+      "diagnostics": []
+     }
+    ],
+    "ledger_matches_orders": true
+   },
+   "offline_continuation": {
+    "completed": true,
+    "last_action": "leave_visit",
+    "ledger_matches_orders": true,
+    "note": "decisions after the LIVE cap are schema-valid synthetic answers (no provider)"
+   },
+   "calls": [
+    {
+     "key": "-07_1751_V19LS_CUSTOMER_ACT_a1",
+     "seconds": 14.544,
+     "input_tokens": 6589,
+     "output_tokens": 1432,
+     "cost_upper_usd": 0.000782235,
+     "reused": true
+    },
+    {
+     "key": "-07_1851_V19LS_CUSTOMER_ACT_a1",
+     "seconds": 10.457,
+     "input_tokens": 3365,
+     "output_tokens": 1105,
+     "cost_upper_usd": 0.0007974049999999999,
+     "reused": true
+    },
+    {
+     "key": "-07_1939_V19LS_CUSTOMER_ACT_a1",
+     "seconds": 7.603,
+     "input_tokens": 3486,
+     "output_tokens": 705,
+     "cost_upper_usd": 0.00061253,
+     "reused": true
+    },
+    {
+     "key": "-07_2042_V19LS_CUSTOMER_ACT_a1",
+     "seconds": 9.85,
+     "input_tokens": 3483,
+     "output_tokens": 909,
+     "cost_upper_usd": 0.000714155,
+     "reused": true
+    },
+    {
+     "key": "-07_2129_V19LS_CUSTOMER_ACT_a1",
+     "seconds": 7.725,
+     "input_tokens": 3076,
+     "output_tokens": 627,
+     "cost_upper_usd": 0.00052228,
+     "reused": false
+    },
+    {
+     "key": "-08_0810_V19LS_BREAKFAST_SE_a1",
+     "seconds": 30.656,
+     "input_tokens": 3158,
+     "output_tokens": 2234,
+     "cost_upper_usd": 0.00131303,
+     "reused": false
+    },
+    {
+     "key": "-08_0930_V19LS_CUSTOMER_ACT_a1",
+     "seconds": 5.791,
+     "input_tokens": 2776,
+     "output_tokens": 466,
+     "cost_upper_usd": 0.00040427999999999997,
+     "reused": false
+    }
+   ]
+  },
+  "D_A07_V19LS_r1": {
+   "live": {
+    "new_calls": 4,
+    "reused_p5_calls": 3,
+    "usd": 0.003379,
+    "decisions": [
+     {
+      "date": "2026-11-05",
+      "time": "21:28",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "end_day_in_room",
+      "attempts": 2,
+      "rejections": [
+       "EARLY_DAY_END_WITH_REMAINING_OPTIONS_REVIEW"
+      ],
+      "day_end_match": {
+       "first_rejection": "EARLY_DAY_END_WITH_REMAINING_OPTIONS_REVIEW",
+       "accepted_by": "STRUCTURED_ALTERNATIVE"
+      },
+      "day_end_review": {
+       "first_choice_rejected": true,
+       "accepted_on": "REPLAN_AFTER_REVIEW"
+      },
+      "hold_code": null,
+      "diagnostics": []
+     },
+     {
+      "date": "2026-11-06",
+      "time": "08:10",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_FIXED_OPTIONS",
+      "action": "BREAKFAST_BUFFET",
+      "attempts": 1,
+      "rejections": [],
+      "day_end_match": null,
+      "day_end_review": null,
+      "hold_code": null,
+      "diagnostics": []
+     },
+     {
+      "date": "2026-11-06",
+      "time": "09:13",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "activity:footbath:HC-ORDER-bfce624bf485f29a9483",
+      "attempts": 1,
+      "rejections": [],
+      "day_end_match": null,
+      "day_end_review": null,
+      "hold_code": null,
+      "diagnostics": []
+     },
+     {
+      "date": "2026-11-06",
+      "time": "10:47",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "attempts": 1,
+      "rejections": [],
+      "day_end_match": null,
+      "day_end_review": null,
+      "hold_code": "BENCH_STOPPED_AFTER_6_DECISIONS",
+      "diagnostics": []
+     }
+    ],
+    "ledger_matches_orders": true
+   },
+   "offline_continuation": {
+    "completed": true,
+    "last_action": "leave_visit",
+    "ledger_matches_orders": true,
+    "note": "decisions after the LIVE cap are schema-valid synthetic answers (no provider)"
+   },
+   "calls": [
+    {
+     "key": "-05_1751_V19LS_CUSTOMER_ACT_a1",
+     "seconds": 12.361,
+     "input_tokens": 10624,
+     "output_tokens": 1192,
+     "cost_upper_usd": 0.00172528,
+     "reused": true
+    },
+    {
+     "key": "-05_1933_V19LS_CUSTOMER_ACT_a1",
+     "seconds": 7.197,
+     "input_tokens": 4085,
+     "output_tokens": 687,
+     "cost_upper_usd": 0.000678405,
+     "reused": true
+    },
+    {
+     "key": "-05_2025_V19LS_CUSTOMER_ACT_a1",
+     "seconds": 9.717,
+     "input_tokens": 3608,
+     "output_tokens": 980,
+     "cost_upper_usd": 0.00076528,
+     "reused": true
+    },
+    {
+     "key": "-05_2128_V19LS_CUSTOMER_ACT_a1",
+     "seconds": 6.699,
+     "input_tokens": 6824,
+     "output_tokens": 419,
+     "cost_upper_usd": 0.0010625,
+     "reused": false
+    },
+    {
+     "key": "-05_2128_V19LS_CUSTOMER_ACT_a2",
+     "seconds": 9.935,
+     "input_tokens": 7248,
+     "output_tokens": 699,
+     "cost_upper_usd": 0.00105678,
+     "reused": false
+    },
+    {
+     "key": "-06_0810_V19LS_BREAKFAST_SE_a1",
+     "seconds": 10.518,
+     "input_tokens": 3365,
+     "output_tokens": 696,
+     "cost_upper_usd": 0.000569905,
+     "reused": false
+    },
+    {
+     "key": "-06_0913_V19LS_CUSTOMER_ACT_a1",
+     "seconds": 6.951,
+     "input_tokens": 3435,
+     "output_tokens": 520,
+     "cost_upper_usd": 0.000689375,
+     "reused": false
+    }
+   ]
+  },
+  "D_A07_V19LS_r2": {
+   "live": {
+    "new_calls": 4,
+    "reused_p5_calls": 3,
+    "usd": 0.002918,
+    "decisions": [
+     {
+      "date": "2026-11-05",
+      "time": "21:28",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "end_day_in_room",
+      "attempts": 2,
+      "rejections": [
+       "EARLY_DAY_END_WITH_REMAINING_OPTIONS_REVIEW"
+      ],
+      "day_end_match": {
+       "first_rejection": "EARLY_DAY_END_WITH_REMAINING_OPTIONS_REVIEW",
+       "accepted_by": "STRUCTURED_ALTERNATIVE"
+      },
+      "day_end_review": {
+       "first_choice_rejected": true,
+       "accepted_on": "REPLAN_AFTER_REVIEW"
+      },
+      "hold_code": null,
+      "diagnostics": []
+     },
+     {
+      "date": "2026-11-06",
+      "time": "08:10",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_FIXED_OPTIONS",
+      "action": "BREAKFAST_BUFFET",
+      "attempts": 1,
+      "rejections": [],
+      "day_end_match": null,
+      "day_end_review": null,
+      "hold_code": null,
+      "diagnostics": []
+     },
+     {
+      "date": "2026-11-06",
+      "time": "09:13",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "activity:footbath:HC-ORDER-bfce624bf485f29a9483",
+      "attempts": 1,
+      "rejections": [],
+      "day_end_match": null,
+      "day_end_review": null,
+      "hold_code": null,
+      "diagnostics": []
+     },
+     {
+      "date": "2026-11-06",
+      "time": "10:47",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "attempts": 1,
+      "rejections": [],
+      "day_end_match": null,
+      "day_end_review": null,
+      "hold_code": "BENCH_STOPPED_AFTER_6_DECISIONS",
+      "diagnostics": []
+     }
+    ],
+    "ledger_matches_orders": true
+   },
+   "offline_continuation": {
+    "completed": true,
+    "last_action": "leave_visit",
+    "ledger_matches_orders": true,
+    "note": "decisions after the LIVE cap are schema-valid synthetic answers (no provider)"
+   },
+   "calls": [
+    {
+     "key": "-05_1751_V19LS_CUSTOMER_ACT_a1",
+     "seconds": 17.269,
+     "input_tokens": 10624,
+     "output_tokens": 1666,
+     "cost_upper_usd": 0.000939585,
+     "reused": true
+    },
+    {
+     "key": "-05_1933_V19LS_CUSTOMER_ACT_a1",
+     "seconds": 8.576,
+     "input_tokens": 4067,
+     "output_tokens": 864,
+     "cost_upper_usd": 0.0007646549999999999,
+     "reused": true
+    },
+    {
+     "key": "-05_2025_V19LS_CUSTOMER_ACT_a1",
+     "seconds": 6.46,
+     "input_tokens": 3592,
+     "output_tokens": 616,
+     "cost_upper_usd": 0.00058128,
+     "reused": true
+    },
+    {
+     "key": "-05_2128_V19LS_CUSTOMER_ACT_a1",
+     "seconds": 7.137,
+     "input_tokens": 6796,
+     "output_tokens": 501,
+     "cost_upper_usd": 0.00090128,
+     "reused": false
+    },
+    {
+     "key": "-05_2128_V19LS_CUSTOMER_ACT_a2",
+     "seconds": 8.247,
+     "input_tokens": 7211,
+     "output_tokens": 580,
+     "cost_upper_usd": 0.000992655,
+     "reused": false
+    },
+    {
+     "key": "-06_0810_V19LS_BREAKFAST_SE_a1",
+     "seconds": 13.142,
+     "input_tokens": 3365,
+     "output_tokens": 995,
+     "cost_upper_usd": 0.000531495,
+     "reused": false
+    },
+    {
+     "key": "-06_0913_V19LS_CUSTOMER_ACT_a1",
+     "seconds": 5.857,
+     "input_tokens": 3439,
+     "output_tokens": 478,
+     "cost_upper_usd": 0.000493155,
+     "reused": false
+    }
+   ]
+  }
+ },
+ "completion_p5": {
+  "A_A02_LS": {
+   "exp": "A",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 1
+  },
+  "A_A02_V17H": {
+   "exp": "A",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 1
+  },
+  "A_A02_V17M": {
+   "exp": "A",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 1
+  },
+  "A_A02_V19LS": {
+   "exp": "A",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 1
+  },
+  "A_A07_LS": {
+   "exp": "A",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 1
+  },
+  "A_A07_V17H": {
+   "exp": "A",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 1
+  },
+  "A_A07_V17M": {
+   "exp": "A",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 1
+  },
+  "A_A07_V19LS": {
+   "exp": "A",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 1
+  },
+  "A_WH-00532_LS": {
+   "exp": "A",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 1
+  },
+  "A_WH-00532_V17H": {
+   "exp": "A",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 1
+  },
+  "A_WH-00532_V17M": {
+   "exp": "A",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 1
+  },
+  "A_WH-00532_V19LS": {
+   "exp": "A",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 1
+  },
+  "B_A02_V17_r1": {
+   "exp": "B",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 4
+  },
+  "B_A02_V17_r2": {
+   "exp": "B",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 4
+  },
+  "B_A02_V19LS_r1": {
+   "exp": "B",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 4
+  },
+  "B_A02_V19LS_r2": {
+   "exp": "B",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 4
+  },
+  "B_A05_V17_r1": {
+   "exp": "B",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 1,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 4
+  },
+  "B_A05_V17_r2": {
+   "exp": "B",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 4
+  },
+  "B_A05_V19LS_r1": {
+   "exp": "B",
+   "category": "EXECUTION_HOLD",
+   "validation_holds": [
+    [
+     "2026-11-07",
+     "21:32"
+    ]
+   ],
+   "cap_stops": 1,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 3
+  },
+  "B_A05_V19LS_r2": {
+   "exp": "B",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 4
+  },
+  "B_A07_V17_r1": {
+   "exp": "B",
+   "category": "EXECUTION_HOLD",
+   "validation_holds": [
+    [
+     "2026-11-05",
+     "21:28"
+    ]
+   ],
+   "cap_stops": 1,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 3
+  },
+  "B_A07_V17_r2": {
+   "exp": "B",
+   "category": "EXECUTION_HOLD",
+   "validation_holds": [
+    [
+     "2026-11-05",
+     "21:32"
+    ]
+   ],
+   "cap_stops": 1,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 3
+  },
+  "B_A07_V19LS_r1": {
+   "exp": "B",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 1,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 4
+  },
+  "B_A07_V19LS_r2": {
+   "exp": "B",
+   "category": "EXECUTION_HOLD",
+   "validation_holds": [
+    [
+     "2026-11-05",
+     "21:28"
+    ]
+   ],
+   "cap_stops": 1,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 3
+  },
+  "B_A19_V17_r1": {
+   "exp": "B",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 3
+  },
+  "B_A19_V17_r2": {
+   "exp": "B",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 3
+  },
+  "B_A19_V19LS_r1": {
+   "exp": "B",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 3
+  },
+  "B_A19_V19LS_r2": {
+   "exp": "B",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 3
+  },
+  "B_N03_V17_r1": {
+   "exp": "B",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 4
+  },
+  "B_N03_V17_r2": {
+   "exp": "B",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 4
+  },
+  "B_N03_V19LS_r1": {
+   "exp": "B",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 4
+  },
+  "B_N03_V19LS_r2": {
+   "exp": "B",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 4
+  },
+  "B_WH-00532_V17_r1": {
+   "exp": "B",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 4
+  },
+  "B_WH-00532_V17_r2": {
+   "exp": "B",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 4
+  },
+  "B_WH-00532_V19LS_r1": {
+   "exp": "B",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 4
+  },
+  "B_WH-00532_V19LS_r2": {
+   "exp": "B",
+   "category": "STOPPED_BY_DECISION_CAP",
+   "validation_holds": [],
+   "cap_stops": 2,
+   "job_done": true,
+   "ledger": true,
+   "llm_decisions": 4
+  }
+ },
+ "blind_review_equal_scope": {
+  "major": {
+   "V19LS": 1,
+   "V17": 4
+  },
+  "minor": {
+   "V19LS": 10,
+   "V17": 16
+  },
+  "preferred": {
+   "tie": 5,
+   "V19LS": 7
+  },
+  "quality_mean": {
+   "V19LS": 3.83,
+   "V17": 2.92
+  },
+  "checks": {
+   "V17:Q1": {
+    "yes": 9,
+    "no": 3
+   },
+   "V17:Q2": {
+    "yes": 12
+   },
+   "V17:Q3": {
+    "yes": 12
+   },
+   "V17:Q4": {
+    "yes": 12
+   },
+   "V17:Q7": {
+    "na": 10,
+    "no": 2
+   },
+   "V17:Q8": {
+    "yes": 11,
+    "no": 1
+   },
+   "V19LS:Q1": {
+    "yes": 11,
+    "no": 1
+   },
+   "V19LS:Q2": {
+    "yes": 12
+   },
+   "V19LS:Q3": {
+    "yes": 12
+   },
+   "V19LS:Q4": {
+    "yes": 12
+   },
+   "V19LS:Q7": {
+    "na": 10,
+    "yes": 2
+   },
+   "V19LS:Q8": {
+    "yes": 11,
+    "no": 1
+   }
+  },
+  "rows": [
+   {
+    "case": "N03-r1",
+    "by_policy": {
+     "V19LS": {
+      "quality": 4,
+      "major": [],
+      "minor": 1
+     },
+     "V17": {
+      "quality": 4,
+      "major": [],
+      "minor": 0
+     }
+    },
+    "preferred": "tie"
+   },
+   {
+    "case": "N03-r2",
+    "by_policy": {
+     "V17": {
+      "quality": 3,
+      "major": [],
+      "minor": 1
+     },
+     "V19LS": {
+      "quality": 4,
+      "major": [],
+      "minor": 1
+     }
+    },
+    "preferred": "V19LS"
+   },
+   {
+    "case": "WH-00532-r1",
+    "by_policy": {
+     "V17": {
+      "quality": 3,
+      "major": [],
+      "minor": 1
+     },
+     "V19LS": {
+      "quality": 4,
+      "major": [],
+      "minor": 0
+     }
+    },
+    "preferred": "V19LS"
+   },
+   {
+    "case": "WH-00532-r2",
+    "by_policy": {
+     "V19LS": {
+      "quality": 4,
+      "major": [],
+      "minor": 1
+     },
+     "V17": {
+      "quality": 4,
+      "major": [],
+      "minor": 1
+     }
+    },
+    "preferred": "tie"
+   },
+   {
+    "case": "A02-r1",
+    "by_policy": {
+     "V17": {
+      "quality": 2,
+      "major": [
+       "M1@14:45"
+      ],
+      "minor": 2
+     },
+     "V19LS": {
+      "quality": 3,
+      "major": [],
+      "minor": 2
+     }
+    },
+    "preferred": "V19LS"
+   },
+   {
+    "case": "A02-r2",
+    "by_policy": {
+     "V19LS": {
+      "quality": 4,
+      "major": [],
+      "minor": 1
+     },
+     "V17": {
+      "quality": 3,
+      "major": [],
+      "minor": 2
+     }
+    },
+    "preferred": "V19LS"
+   },
+   {
+    "case": "A07-r1",
+    "by_policy": {
+     "V19LS": {
+      "quality": 5,
+      "major": [],
+      "minor": 1
+     },
+     "V17": {
+      "quality": 3,
+      "major": [
+       "M4@17:51"
+      ],
+      "minor": 1
+     }
+    },
+    "preferred": "V19LS"
+   },
+   {
+    "case": "A07-r2",
+    "by_policy": {
+     "V17": {
+      "quality": 2,
+      "major": [
+       "M4@17:51"
+      ],
+      "minor": 1
+     },
+     "V19LS": {
+      "quality": 5,
+      "major": [],
+      "minor": 0
+     }
+    },
+    "preferred": "V19LS"
+   },
+   {
+    "case": "A19-r1",
+    "by_policy": {
+     "V17": {
+      "quality": 3,
+      "major": [],
+      "minor": 2
+     },
+     "V19LS": {
+      "quality": 4,
+      "major": [],
+      "minor": 0
+     }
+    },
+    "preferred": "tie"
+   },
+   {
+    "case": "A19-r2",
+    "by_policy": {
+     "V17": {
+      "quality": 3,
+      "major": [],
+      "minor": 1
+     },
+     "V19LS": {
+      "quality": 3,
+      "major": [],
+      "minor": 1
+     }
+    },
+    "preferred": "tie"
+   },
+   {
+    "case": "A05-r1",
+    "by_policy": {
+     "V19LS": {
+      "quality": 2,
+      "major": [
+       "M7@17:51"
+      ],
+      "minor": 1
+     },
+     "V17": {
+      "quality": 2,
+      "major": [
+       "M7@17:51"
+      ],
+      "minor": 2
+     }
+    },
+    "preferred": "tie"
+   },
+   {
+    "case": "A05-r2",
+    "by_policy": {
+     "V17": {
+      "quality": 3,
+      "major": [],
+      "minor": 2
+     },
+     "V19LS": {
+      "quality": 4,
+      "major": [],
+      "minor": 1
+     }
+    },
+    "preferred": "V19LS"
+   }
+  ]
+ }
+}

@@ -478,7 +478,7 @@ function currentSource(){
  const selected=CURRENT.selectedRun&&window.HLNav?.state.runs.get(CURRENT.selectedRun);
  if(CURRENT.selectedRun&&!selected)return null;
  const flow=selected?HLStrategy.restoreRun(selected):typeof REV!=='undefined'?REV.flow:null;
- const request=flow?.request||(REV.latest?.flow.ledger.run_id===flow?.ledger?.run_id?REV.latest.request:null);
+ const request=flow?.request||(flow?.ledger&&typeof REV!=='undefined'&&REV.latest?.flow?.ledger?.run_id===flow.ledger.run_id?REV.latest.request:null);   // no run yet: empty state, not a TypeError
  return flow?.ledger?{flow:{...flow,request},request}:null;
 }
 function currentStale(source){

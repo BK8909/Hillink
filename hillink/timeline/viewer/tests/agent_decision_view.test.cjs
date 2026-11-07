@@ -64,3 +64,20 @@ test('V16 access rights, meal intent, clocks and original independent findings r
  for(const text of ['현재 실호출 0회','개인 근거 연결 누락','인원별 이용·과금 권리','아동 전용 음식이 아님','LIGHT_MEAL','출발 08:10','도착 08:16','대기 14분','사람 승인 미완료','일대일 대응은 별도 검수'])assert.ok(html.includes(text),text);
  assert.equal(JSON.stringify(scene),before);
 });
+
+test('V19LS decision panel: trade-off note, non-blocking diagnostics and failure class are shown in plain words', () => {
+ const V=require('../static/agent_decision_view.js');
+ const d={policy:'LLM_AUTONOMOUS_CUSTOMER_V19LS',execution_state:'EXECUTED',stability_policy:'LS_STABILITY_V1',
+  selected_plan:{decision_summary:'피자힐에서 늦은 점심',tradeoff_note:'다른 식당은 135분 대기라 지금 가능한 곳을 고름'},
+  selection_diagnostics:[{code:'MIXED_RECORD_ONE_SIDED',detail:['F17']}]};
+ const html=V.panel({basis:{autonomous_decision:d}});
+ assert.match(html,/상충 근거 대비 판단/);assert.match(html,/135분 대기/);assert.match(html,/혼합 평가\(좋은 점·아쉬운 점\)를 한쪽만/);assert.match(html,/실행을 막지 않음/);
+ assert.match(html,/현재 판단 기준\(V19-LS\)/);
+ const de=V.panel({basis:{autonomous_decision:{...d,day_end_match:{first_rejection:'EARLY_DAY_END_WITH_REMAINING_OPTIONS_REVIEW',accepted_by:'STRUCTURED_ALTERNATIVE'},selection_diagnostics:[{code:'QUANTITY_AT_OR_BELOW_PARTY_DESPITE_SHORTFALL_RECORD',detail:{}}]}}});
+ assert.match(de,/하루 종료 재검토.*대안 항목에 명시/);assert.match(de,/과거 양 부족 기록/);
+ const clean=V.panel({basis:{autonomous_decision:{...d,selection_diagnostics:[]}}});assert.match(clean,/기록된 충돌 없음/);
+ const held=V.panel({basis:{autonomous_decision:{policy:'LLM_AUTONOMOUS_CUSTOMER_V19LS',execution_state:'EXECUTION_HOLD',failure_class:'DELIVERY_UNCERTAIN',selected_plan:{}}}});
+ assert.match(held,/전송 여부 불확실/);assert.match(held,/규칙 결과로 대체하지 않았습니다/);
+ const v17=V.panel({basis:{autonomous_decision:{policy:'LLM_AUTONOMOUS_CUSTOMER_V17',execution_state:'EXECUTED',selected_plan:{decision_summary:'x'}}}});
+ assert.doesNotMatch(v17,/선택 진단|상충 근거/,'V17 records show nothing new');
+});

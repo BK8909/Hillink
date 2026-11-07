@@ -149,8 +149,36 @@ def serialize_context(context, stable_prefix=False):
     return json.dumps(ordered, ensure_ascii=False, separators=(',', ':'), allow_nan=False)
 
 
-def request(*, policy, system, context, schema, purpose, model=None, effort=None, max_output=6000, stable_prefix=False):
-    """One attempt. The caller may replan, but each attempt reserves independently."""
+def build_payload(*, system, context, schema, model, effort, max_output, stable_prefix=False, prefix_message=None):
+    """The exact Responses API body (no credentials). request() sends this; the bench rebuilds it offline."""
+    if prefix_message and prefix_message in context:
+        messages = [{'role':'user', 'content':serialize_context({prefix_message: context[prefix_message]}, stable_prefix)},
+                    {'role':'user', 'content':serialize_context({k: v for k, v in context.items() if k != prefix_message}, stable_prefix)}]
+    else:
+        messages = [{'role':'user', 'content':serialize_context(context, stable_prefix)}]
+    return dict(model=model, store=False, reasoning={'effort': effort}, max_output_tokens=max_output,
+        input=[{'role':'system', 'content':system}] + messages,
+        text={'format':{'type':'json_schema', 'name':'hillink_agent', 'strict':True, 'schema':schema}})
+
+
+def request_identity(policy, purpose, payload):
+    return digest({'request_policy':REQUEST_POLICY, 'policy':policy, 'purpose':purpose, 'request':payload})
+
+
+def request(*, policy, system, context, schema, purpose, model=None, effort=None, max_output=6000, stable_prefix=False, prefix_message=None, capture=None, expected_identity=None):
+    """One attempt. The caller may replan, but each attempt reserves independently.
+
+    prefix_message (V18 experiment): the named context block (the customer's evidence) is sent as its
+    own user message ahead of the rest, byte-identical from call to call, so the provider can cache it
+    as a prefix. The identity digest covers the whole payload either way.
+
+    capture (bench only): called as capture('request', {...}) just before the network call with the exact
+    request body (credentials are only in the HTTP header and never captured) and its identity digest, and
+    capture('response', {...}) / capture('error', {...}) right after, with the raw response body. It is not
+    part of the payload or the identity, so a call with or without it is the same request.
+
+    expected_identity (bench only): the identity the caller computed and checkpointed for this call. If
+    the body built here differs, nothing is reserved or sent."""
     from openai_credentials import load_openai_api_key
     import jsonschema
     model = model or os.environ.get('HILLINK_AGENT_MODEL', 'gpt-6-luna')
@@ -159,10 +187,11 @@ def request(*, policy, system, context, schema, purpose, model=None, effort=None
         raise ProviderUnavailable('MODEL_PRICE_NOT_VERIFIED')
     if effort not in ('low', 'medium', 'high') or not 256 <= max_output <= 16000:
         raise ValueError('INVALID_INFERENCE_SETTINGS')
-    payload = dict(model=model, store=False, reasoning={'effort': effort}, max_output_tokens=max_output,
-        input=[{'role':'system', 'content':system}, {'role':'user', 'content':serialize_context(context, stable_prefix)}],
-        text={'format':{'type':'json_schema', 'name':'hillink_agent', 'strict':True, 'schema':schema}})
-    identity = digest({'request_policy':REQUEST_POLICY, 'policy':policy, 'purpose':purpose, 'request':payload})
+    payload = build_payload(system=system, context=context, schema=schema, model=model, effort=effort, max_output=max_output,
+                            stable_prefix=stable_prefix, prefix_message=prefix_message)
+    identity = request_identity(policy, purpose, payload)
+    if expected_identity is not None and identity != expected_identity:
+        raise ProviderUnavailable('REQUEST_IDENTITY_MISMATCH')
     mode = os.environ.get('HILLINK_AGENT_MODE', 'off')
     root = os.environ.get('HILLINK_AGENT_CACHE')
     cache = Path(root) / (identity + '.json') if root else None
@@ -187,7 +216,10 @@ def request(*, policy, system, context, schema, purpose, model=None, effort=None
     # UTF-8 bytes bound text token count; reserve all input at cache-write rate.
     ceiling = ((len(wire) + 4096) * max(rates['input'], rates['write']) + max_output*rates['output']) / 1e6
     rid = budget.reserve(ceiling, {'purpose':purpose, 'model':model, 'input_sha256':identity})
-    begin = time.monotonic(); cost = None; usage = {}; response_id = None
+    begin = time.monotonic(); cost = None; usage = {}; response_id = None; data = None
+    if capture:
+        capture('request', dict(request_body=payload, input_sha256=identity, request_policy=REQUEST_POLICY, purpose=purpose, policy=policy,
+                                ceiling_usd=ceiling, ledger_reservation=rid))
     try:
         req = urllib.request.Request('https://api.openai.com/v1/responses', data=wire, method='POST',
             headers={'Content-Type':'application/json', 'Authorization':'Bearer ' + key})
@@ -215,6 +247,8 @@ def request(*, policy, system, context, schema, purpose, model=None, effort=None
         code = str(exc) if isinstance(exc, ProviderUnavailable) else 'HTTP_'+str(exc.code) if isinstance(exc, urllib.error.HTTPError) else type(exc).__name__
         trace = budget.settle(rid, cost=cost, status='ERROR', code=code, usage=usage,
                               response_id=response_id, seconds=round(time.monotonic()-begin,3))
+        if capture:
+            capture('error', dict(code=code, response_body=data, trace=dict(trace, execution='LIVE_ERROR', policy=policy)))
         error = ProviderUnavailable(code)
         error.trace = dict(trace, execution='LIVE_ERROR', policy=policy)
         raise error from None
@@ -224,10 +258,12 @@ def request(*, policy, system, context, schema, purpose, model=None, effort=None
                  current_call_cost_upper_usd=trace['charged_upper_usd'],
                  model_returned=data.get('model'), price_source=PRICE_SOURCE, price_checked=PRICE_CHECKED,
                  cost_basis='TOKEN_BASED_UPPER_ESTIMATE_NOT_INVOICE')
+    if capture:
+        capture('response', dict(response_body=data, answer=answer, trace=trace))
     if cache:
         saved = dict(origin='LIVE_RESPONSES', input_sha256=identity, answer=answer, trace=trace,
             audit_input=dict(policy=policy,purpose=purpose,system=system,context=context,schema=schema,
-                inference_settings=dict(model=model,effort=effort,max_output=max_output,request_policy=REQUEST_POLICY)))
+                inference_settings=dict(model=model,effort=effort,max_output=max_output,request_policy=REQUEST_POLICY,prefix_message=prefix_message)))
         _publish_first(cache.parent / 'live_history' / (identity + '.' + rid + '.json'), saved)
         _publish_first(cache, saved)
     return answer, trace

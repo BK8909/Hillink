@@ -1,0 +1,2293 @@
+{
+ "note": "De-identified: no review text, no prompts, no model reason text. Fact ids and SKU ids only.",
+ "batch": {
+  "started_at": "2026-11-07 11:43:00",
+  "shadow": "live",
+  "jobs": 36,
+  "approval": {
+   "max_calls": 200,
+   "max_usd": 5.0
+  }
+ },
+ "metrics": {
+  "A_V17": {
+   "calls": 6,
+   "mean_s": 35.4,
+   "p90_s": 40.8,
+   "max_s": 42.4,
+   "in_tok": 48410,
+   "cached": 25138,
+   "out_tok": 4164,
+   "reason_tok": 2448,
+   "usd_per_call": 0.00524,
+   "usd_total": 0.0315,
+   "retries": 0
+  },
+  "A_V18LS": {
+   "calls": 3,
+   "mean_s": 12.1,
+   "p90_s": 15.7,
+   "max_s": 15.7,
+   "in_tok": 8674,
+   "cached": 849,
+   "out_tok": 1279,
+   "reason_tok": 972,
+   "usd_per_call": 0.00163,
+   "usd_total": 0.0049,
+   "retries": 0
+  },
+  "A_V19LS": {
+   "calls": 3,
+   "mean_s": 12.3,
+   "p90_s": 17.1,
+   "max_s": 17.1,
+   "in_tok": 8073,
+   "cached": 8070,
+   "out_tok": 1183,
+   "reason_tok": 851,
+   "usd_per_call": 0.00067,
+   "usd_total": 0.002,
+   "retries": 0
+  },
+  "B_V17": {
+   "calls": 50,
+   "mean_s": 32.2,
+   "p90_s": 51.2,
+   "max_s": 60.7,
+   "in_tok": 32491,
+   "cached": 7932,
+   "out_tok": 3753,
+   "reason_tok": 2476,
+   "usd_per_call": 0.00503,
+   "usd_total": 0.2513,
+   "retries": 4
+  },
+  "B_V19LS": {
+   "calls": 49,
+   "mean_s": 10.0,
+   "p90_s": 14.1,
+   "max_s": 22.7,
+   "in_tok": 5051,
+   "cached": 2180,
+   "out_tok": 960,
+   "reason_tok": 706,
+   "usd_per_call": 0.00086,
+   "usd_total": 0.0422,
+   "retries": 3
+  }
+ },
+ "cases": {
+  "A02": {
+   "V17_r1": {
+    "spent_krw": 186000,
+    "ledger_matches_orders": true,
+    "calls": 4,
+    "usd": 0.029299,
+    "seconds": 197.1,
+    "decisions": [
+     {
+      "date": "2026-11-05",
+      "time": "14:45",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "meal:THE_PAVILION",
+      "skus": [
+       "HC-PDF-THE_PAVILION-WHITE-GARLIC-PIZZAx1",
+       "HC-PDF-THE_PAVILION-CLUB-SANDWICHx1"
+      ],
+      "total_krw": 86000,
+      "attempts": 1,
+      "cited": [
+       "A02-F18a",
+       "A02-F18d"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "16:46",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "garden_walk",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "17:29",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "meal:ROOM_MEAL",
+      "skus": [
+       "HC-IRD-RS_CLUB_SANDWICHx1",
+       "HC-IRD-RS_CHEESE_BURGERx1",
+       "HC-IRD-RS_SEAFOOD_SPAGHETTIx1"
+      ],
+      "total_krw": 100000,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "18:32",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "library",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "19:20",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 0,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-06",
+      "time": "08:10",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 0,
+      "cited": [],
+      "tradeoff_note_present": false
+     }
+    ]
+   },
+   "V17_r2": {
+    "spent_krw": 235000,
+    "ledger_matches_orders": true,
+    "calls": 4,
+    "usd": 0.02154,
+    "seconds": 167.4,
+    "decisions": [
+     {
+      "date": "2026-11-05",
+      "time": "14:45",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "meal:THE_PAVILION",
+      "skus": [
+       "HC-PDF-THE_PAVILION-CLUB-SANDWICHx1",
+       "HC-PDF-THE_PAVILION-BURGERx1"
+      ],
+      "total_krw": 85000,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "16:46",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "meal:ONDAL",
+      "skus": [
+       "HC-PDF-ONDAL-BEEF-SEAWEED-SOUPx3"
+      ],
+      "total_krw": 150000,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "19:00",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "night_walk",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [
+       "A02-F09"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "19:43",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "room_rest",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "20:46",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 0,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-06",
+      "time": "08:10",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 0,
+      "cited": [],
+      "tradeoff_note_present": false
+     }
+    ]
+   },
+   "V19LS_r1": {
+    "spent_krw": 222000,
+    "ledger_matches_orders": true,
+    "calls": 4,
+    "usd": 0.004736,
+    "seconds": 54.8,
+    "decisions": [
+     {
+      "date": "2026-11-05",
+      "time": "14:45",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "meal:THE_PAVILION",
+      "skus": [
+       "HC-PDF-THE_PAVILION-CLUB-SANDWICHx3"
+      ],
+      "total_krw": 123000,
+      "attempts": 1,
+      "cited": [
+       "A02-F18a"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "16:46",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "room_rest",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [
+       "A02-F05"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "17:46",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "room_rest",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "18:46",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "meal:ROOM_MEAL",
+      "skus": [
+       "HC-IRD-RS_CHEESE_BURGERx3"
+      ],
+      "total_krw": 99000,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "19:46",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-06",
+      "time": "08:10",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     }
+    ]
+   },
+   "V19LS_r2": {
+    "spent_krw": 96000,
+    "ledger_matches_orders": true,
+    "calls": 4,
+    "usd": 0.004121,
+    "seconds": 62.1,
+    "decisions": [
+     {
+      "date": "2026-11-05",
+      "time": "14:45",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "garden_walk",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "16:42",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "meal:ROOM_MEAL",
+      "skus": [
+       "HC-MENU-082x3"
+      ],
+      "total_krw": 96000,
+      "attempts": 1,
+      "cited": [
+       "A02-F18a"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "17:42",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "library",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [
+       "A02-F05"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "18:30",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "night_walk",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "19:08",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-06",
+      "time": "08:10",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     }
+    ]
+   }
+  },
+  "A05": {
+   "V17_r1": {
+    "spent_krw": 83000,
+    "ledger_matches_orders": true,
+    "calls": 5,
+    "usd": 0.027334,
+    "seconds": 150.9,
+    "decisions": [
+     {
+      "date": "2026-11-07",
+      "time": "17:51",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "meal:PIZZA_HILL",
+      "skus": [
+       "HC-MENU-092x1"
+      ],
+      "total_krw": 83000,
+      "attempts": 1,
+      "cited": [
+       "A05-F03",
+       "A05-F04"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "19:35",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "activity:night_footbath:HC-ORDER-0f2029d74b4d1d1c5314",
+      "skus": [
+       "HC-MENU-242x1"
+      ],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [
+       "A05-F04",
+       "A05-F05"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "20:29",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "room_rest",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [
+       "A05-F04",
+       "A05-F05"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "21:32",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "room_rest",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 2,
+      "cited": [
+       "A05-F04"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-08",
+      "time": "08:10",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 0,
+      "cited": [],
+      "tradeoff_note_present": false
+     }
+    ]
+   },
+   "V17_r2": {
+    "spent_krw": 84000,
+    "ledger_matches_orders": true,
+    "calls": 5,
+    "usd": 0.02184,
+    "seconds": 147.7,
+    "decisions": [
+     {
+      "date": "2026-11-07",
+      "time": "17:51",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "meal:THE_PAVILION",
+      "skus": [
+       "HC-PDF-THE_PAVILION-PEPPERONI-PIZZAx1",
+       "HC-PDF-THE_PAVILION-BURGERx1"
+      ],
+      "total_krw": 84000,
+      "attempts": 1,
+      "cited": [
+       "A05-F03"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "18:42",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "activity:footbath:HC-ORDER-0f2029d74b4d1d1c5314",
+      "skus": [
+       "HC-MENU-242x1"
+      ],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [
+       "A05-F04",
+       "A05-F05"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "19:33",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "garden_walk",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [
+       "A05-F05"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "20:25",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "room_rest",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 2,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "21:37",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 0,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-08",
+      "time": "08:10",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 0,
+      "cited": [],
+      "tradeoff_note_present": false
+     }
+    ]
+   },
+   "V19LS_r1": {
+    "spent_krw": 79000,
+    "ledger_matches_orders": true,
+    "calls": 5,
+    "usd": 0.004221,
+    "seconds": 50.5,
+    "decisions": [
+     {
+      "date": "2026-11-07",
+      "time": "17:51",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "meal:PIZZA_HILL",
+      "skus": [
+       "HC-PDF-PIZZA_HILL-MARGHERITA-Lx1"
+      ],
+      "total_krw": 79000,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "19:35",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "activity:night_footbath:HC-ORDER-0f2029d74b4d1d1c5314",
+      "skus": [
+       "HC-MENU-242x1"
+      ],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [
+       "A05-F05"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "20:29",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "room_rest",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "21:32",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 2,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-08",
+      "time": "08:10",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     }
+    ]
+   },
+   "V19LS_r2": {
+    "spent_krw": 75000,
+    "ledger_matches_orders": true,
+    "calls": 4,
+    "usd": 0.002906,
+    "seconds": 47.5,
+    "decisions": [
+     {
+      "date": "2026-11-07",
+      "time": "17:51",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "meal:ROOM_MEAL",
+      "skus": [
+       "HC-IRD-RS_CHICKEN_FAMILY_SETx1"
+      ],
+      "total_krw": 75000,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "18:51",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "activity:footbath:HC-ORDER-0f2029d74b4d1d1c5314",
+      "skus": [
+       "HC-MENU-242x1"
+      ],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "19:39",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "room_rest",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "20:42",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "night_walk",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "21:29",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-08",
+      "time": "08:10",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     }
+    ]
+   }
+  },
+  "A07": {
+   "V17_r1": {
+    "spent_krw": 164000,
+    "ledger_matches_orders": true,
+    "calls": 5,
+    "usd": 0.031636,
+    "seconds": 158.6,
+    "decisions": [
+     {
+      "date": "2026-11-05",
+      "time": "17:51",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "meal:MYONGWOLGWAN",
+      "skus": [
+       "HC-MENU-159x1",
+       "HC-MENU-161x1"
+      ],
+      "total_krw": 164000,
+      "attempts": 1,
+      "cited": [
+       "A07-F10c"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "19:33",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "activity:night_footbath:HC-ORDER-bfce624bf485f29a9483",
+      "skus": [
+       "HC-MENU-242x1"
+      ],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [
+       "A07-F07"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "20:25",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "room_rest",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [
+       "A07-F07"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "21:28",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 2,
+      "cited": [
+       "A07-F83"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-06",
+      "time": "08:10",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 0,
+      "cited": [],
+      "tradeoff_note_present": false
+     }
+    ]
+   },
+   "V17_r2": {
+    "spent_krw": 184000,
+    "ledger_matches_orders": true,
+    "calls": 5,
+    "usd": 0.025965,
+    "seconds": 172.2,
+    "decisions": [
+     {
+      "date": "2026-11-05",
+      "time": "17:51",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "meal:PIZZA_HILL",
+      "skus": [
+       "HC-MENU-084x1"
+      ],
+      "total_krw": 184000,
+      "attempts": 1,
+      "cited": [
+       "A07-F03",
+       "A07-F08a",
+       "A07-F08b"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "19:35",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "activity:night_footbath:HC-ORDER-bfce624bf485f29a9483",
+      "skus": [
+       "HC-MENU-242x1"
+      ],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [
+       "A07-F07"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "20:29",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "room_rest",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [
+       "A07-F07"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "21:32",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 2,
+      "cited": [
+       "A07-F83"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-06",
+      "time": "08:10",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 0,
+      "cited": [],
+      "tradeoff_note_present": false
+     }
+    ]
+   },
+   "V19LS_r1": {
+    "spent_krw": 161000,
+    "ledger_matches_orders": true,
+    "calls": 5,
+    "usd": 0.005212,
+    "seconds": 50.3,
+    "decisions": [
+     {
+      "date": "2026-11-05",
+      "time": "17:51",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "meal:MYONGWOLGWAN",
+      "skus": [
+       "HC-MENU-161x1",
+       "HC-SRC-MYONG-BRISKETx1"
+      ],
+      "total_krw": 161000,
+      "attempts": 1,
+      "cited": [
+       "A07-F10a",
+       "A07-F10b",
+       "A07-F10c"
+      ],
+      "tradeoff_note_present": true
+     },
+     {
+      "date": "2026-11-05",
+      "time": "19:33",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "activity:night_footbath:HC-ORDER-bfce624bf485f29a9483",
+      "skus": [
+       "HC-MENU-242x1"
+      ],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [
+       "A07-F07"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "20:25",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "room_rest",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [
+       "A07-F07"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "21:28",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "end_day_in_room",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 2,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-06",
+      "time": "08:10",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     }
+    ]
+   },
+   "V19LS_r2": {
+    "spent_krw": 153000,
+    "ledger_matches_orders": true,
+    "calls": 5,
+    "usd": 0.004291,
+    "seconds": 52.6,
+    "decisions": [
+     {
+      "date": "2026-11-05",
+      "time": "17:51",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "meal:MYONGWOLGWAN",
+      "skus": [
+       "HC-MENU-159x1",
+       "HC-SRC-MYONG-BRISKETx1"
+      ],
+      "total_krw": 153000,
+      "attempts": 1,
+      "cited": [
+       "A07-F10a",
+       "A07-F10b",
+       "A07-F10c"
+      ],
+      "tradeoff_note_present": true
+     },
+     {
+      "date": "2026-11-05",
+      "time": "19:33",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "activity:night_footbath:HC-ORDER-bfce624bf485f29a9483",
+      "skus": [
+       "HC-MENU-242x1"
+      ],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [
+       "A07-F07"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "20:25",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "room_rest",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-05",
+      "time": "21:28",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 2,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-06",
+      "time": "08:10",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     }
+    ]
+   }
+  },
+  "A19": {
+   "V17_r1": {
+    "spent_krw": 64000,
+    "ledger_matches_orders": true,
+    "calls": 3,
+    "usd": 0.013267,
+    "seconds": 92.0,
+    "decisions": [
+     {
+      "date": "2026-11-08",
+      "time": "17:53",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "meal:ROOM_MEAL",
+      "skus": [
+       "HC-IRD-RS_CLUB_SANDWICHx2"
+      ],
+      "total_krw": 64000,
+      "attempts": 1,
+      "cited": [
+       "A19-F007",
+       "A19-F010"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-08",
+      "time": "18:53",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "garden_walk",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-08",
+      "time": "19:41",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "room_rest",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-08",
+      "time": "20:49",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 0,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-09",
+      "time": "08:10",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 0,
+      "cited": [],
+      "tradeoff_note_present": false
+     }
+    ]
+   },
+   "V17_r2": {
+    "spent_krw": 64000,
+    "ledger_matches_orders": true,
+    "calls": 3,
+    "usd": 0.009205,
+    "seconds": 99.6,
+    "decisions": [
+     {
+      "date": "2026-11-08",
+      "time": "17:53",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "meal:ROOM_MEAL",
+      "skus": [
+       "HC-IRD-RS_CLUB_SANDWICHx2"
+      ],
+      "total_krw": 64000,
+      "attempts": 1,
+      "cited": [
+       "A19-F010"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-08",
+      "time": "18:53",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "garden_walk",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-08",
+      "time": "19:41",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "room_rest",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-08",
+      "time": "20:49",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 0,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-09",
+      "time": "08:10",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 0,
+      "cited": [],
+      "tradeoff_note_present": false
+     }
+    ]
+   },
+   "V19LS_r1": {
+    "spent_krw": 64000,
+    "ledger_matches_orders": true,
+    "calls": 3,
+    "usd": 0.002101,
+    "seconds": 29.8,
+    "decisions": [
+     {
+      "date": "2026-11-08",
+      "time": "17:53",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "meal:ROOM_MEAL",
+      "skus": [
+       "HC-MENU-082x2"
+      ],
+      "total_krw": 64000,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-08",
+      "time": "18:53",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "library",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-08",
+      "time": "19:41",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "activity:pool:HC-ORDER-5ea7a564e45ac45b19d8",
+      "skus": [
+       "HC-MENU-233x1"
+      ],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [
+       "A19-F003"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-08",
+      "time": "20:59",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-09",
+      "time": "08:10",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     }
+    ]
+   },
+   "V19LS_r2": {
+    "spent_krw": 64000,
+    "ledger_matches_orders": true,
+    "calls": 3,
+    "usd": 0.001734,
+    "seconds": 30.2,
+    "decisions": [
+     {
+      "date": "2026-11-08",
+      "time": "17:53",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "meal:ROOM_MEAL",
+      "skus": [
+       "HC-MENU-082x2"
+      ],
+      "total_krw": 64000,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-08",
+      "time": "18:53",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "library",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-08",
+      "time": "19:41",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "night_walk",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-08",
+      "time": "20:24",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-09",
+      "time": "08:10",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     }
+    ]
+   }
+  },
+  "N03": {
+   "V17_r1": {
+    "spent_krw": 64000,
+    "ledger_matches_orders": true,
+    "calls": 4,
+    "usd": 0.016227,
+    "seconds": 111.6,
+    "decisions": [
+     {
+      "date": "2026-11-06",
+      "time": "17:51",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "meal:ROOM_MEAL",
+      "skus": [
+       "HC-IRD-RS_CLUB_SANDWICHx2"
+      ],
+      "total_krw": 64000,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-06",
+      "time": "18:51",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "garden_walk",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-06",
+      "time": "19:43",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "room_rest",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-06",
+      "time": "20:55",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "library",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-06",
+      "time": "21:46",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 0,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "08:10",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 0,
+      "cited": [],
+      "tradeoff_note_present": false
+     }
+    ]
+   },
+   "V17_r2": {
+    "spent_krw": 64000,
+    "ledger_matches_orders": true,
+    "calls": 4,
+    "usd": 0.011609,
+    "seconds": 114.0,
+    "decisions": [
+     {
+      "date": "2026-11-06",
+      "time": "17:51",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "meal:ROOM_MEAL",
+      "skus": [
+       "HC-IRD-RS_CLUB_SANDWICHx2"
+      ],
+      "total_krw": 64000,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-06",
+      "time": "18:51",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "garden_walk",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-06",
+      "time": "19:43",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "room_rest",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-06",
+      "time": "20:55",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "activity:night_footbath:HC-ORDER-0f2029d74b4d1d1c5314",
+      "skus": [
+       "HC-MENU-242x1"
+      ],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-06",
+      "time": "21:38",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 0,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "08:10",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 0,
+      "cited": [],
+      "tradeoff_note_present": false
+     }
+    ]
+   },
+   "V19LS_r1": {
+    "spent_krw": 64000,
+    "ledger_matches_orders": true,
+    "calls": 4,
+    "usd": 0.003052,
+    "seconds": 39.6,
+    "decisions": [
+     {
+      "date": "2026-11-06",
+      "time": "17:51",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "meal:ROOM_MEAL",
+      "skus": [
+       "HC-MENU-082x2"
+      ],
+      "total_krw": 64000,
+      "attempts": 1,
+      "cited": [
+       "N03-F014"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-06",
+      "time": "18:51",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "library",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-06",
+      "time": "19:42",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "activity:night_footbath:HC-ORDER-0f2029d74b4d1d1c5314",
+      "skus": [
+       "HC-MENU-242x1"
+      ],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-06",
+      "time": "20:28",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "night_walk",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-06",
+      "time": "21:15",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "08:10",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     }
+    ]
+   },
+   "V19LS_r2": {
+    "spent_krw": 64000,
+    "ledger_matches_orders": true,
+    "calls": 4,
+    "usd": 0.002071,
+    "seconds": 33.8,
+    "decisions": [
+     {
+      "date": "2026-11-06",
+      "time": "17:51",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "meal:ROOM_MEAL",
+      "skus": [
+       "HC-MENU-082x2"
+      ],
+      "total_krw": 64000,
+      "attempts": 1,
+      "cited": [
+       "N03-F014"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-06",
+      "time": "18:51",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "library",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-06",
+      "time": "19:42",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "garden_walk",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-06",
+      "time": "20:30",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "activity:night_footbath:HC-ORDER-0f2029d74b4d1d1c5314",
+      "skus": [
+       "HC-MENU-242x1"
+      ],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-06",
+      "time": "21:22",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "08:10",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     }
+    ]
+   }
+  },
+  "WH-00532": {
+   "V17_r1": {
+    "spent_krw": 67000,
+    "ledger_matches_orders": true,
+    "calls": 4,
+    "usd": 0.024562,
+    "seconds": 135.2,
+    "decisions": [
+     {
+      "date": "2026-11-07",
+      "time": "16:59",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "meal:ROOM_MEAL",
+      "skus": [
+       "HC-IRD-RS_CLUB_SANDWICHx1",
+       "HC-IRD-RS_SEAFOOD_SPAGHETTIx1"
+      ],
+      "total_krw": 67000,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "17:59",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "garden_walk",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [
+       "WH-00532-F053"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "18:42",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "room_rest",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [
+       "WH-00532-F015",
+       "WH-00532-F027",
+       "WH-00532-F053"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "19:45",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "library",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "20:33",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 0,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-08",
+      "time": "08:10",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 0,
+      "cited": [],
+      "tradeoff_note_present": false
+     }
+    ]
+   },
+   "V17_r2": {
+    "spent_krw": 64000,
+    "ledger_matches_orders": true,
+    "calls": 4,
+    "usd": 0.018803,
+    "seconds": 127.8,
+    "decisions": [
+     {
+      "date": "2026-11-07",
+      "time": "16:59",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "meal:ROOM_MEAL",
+      "skus": [
+       "HC-IRD-RS_CLUB_SANDWICHx2"
+      ],
+      "total_krw": 64000,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "17:59",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "garden_walk",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [
+       "WH-00532-F053"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "18:42",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "room_rest",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "19:45",
+      "state": "EXECUTED",
+      "owner": "LLM",
+      "action": "library",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [
+       "WH-00532-F029",
+       "WH-00532-F062"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "20:33",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 0,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-08",
+      "time": "08:10",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 0,
+      "cited": [],
+      "tradeoff_note_present": false
+     }
+    ]
+   },
+   "V19LS_r1": {
+    "spent_krw": 64000,
+    "ledger_matches_orders": true,
+    "calls": 4,
+    "usd": 0.004395,
+    "seconds": 57.5,
+    "decisions": [
+     {
+      "date": "2026-11-07",
+      "time": "16:59",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "activity:forest_walk:HC-ORDER-b2c2fbab930ba3e6e34a",
+      "skus": [
+       "HC-MENU-236x1"
+      ],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "17:57",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "meal:ROOM_MEAL",
+      "skus": [
+       "HC-MENU-082x2"
+      ],
+      "total_krw": 64000,
+      "attempts": 1,
+      "cited": [
+       "WH-00532-F018"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "19:05",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "room_rest",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "20:05",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "library",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "20:53",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-08",
+      "time": "08:10",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     }
+    ]
+   },
+   "V19LS_r2": {
+    "spent_krw": 64000,
+    "ledger_matches_orders": true,
+    "calls": 4,
+    "usd": 0.003344,
+    "seconds": 45.4,
+    "decisions": [
+     {
+      "date": "2026-11-07",
+      "time": "16:59",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "activity:forest_walk:HC-ORDER-b2c2fbab930ba3e6e34a",
+      "skus": [
+       "HC-MENU-236x1"
+      ],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "17:57",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "meal:ROOM_MEAL",
+      "skus": [
+       "HC-MENU-082x2"
+      ],
+      "total_krw": 64000,
+      "attempts": 1,
+      "cited": [
+       "WH-00532-F015"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "19:05",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "room_rest",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "20:05",
+      "state": "EXECUTED",
+      "owner": "LLM_SELECTION_FROM_M4_SHORTLIST",
+      "action": "garden_walk",
+      "skus": [],
+      "total_krw": 0,
+      "attempts": 1,
+      "cited": [
+       "WH-00532-F029"
+      ],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-07",
+      "time": "20:48",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     },
+     {
+      "date": "2026-11-08",
+      "time": "08:10",
+      "state": "EXECUTION_HOLD",
+      "owner": null,
+      "action": null,
+      "skus": [],
+      "total_krw": null,
+      "attempts": 1,
+      "cited": [],
+      "tradeoff_note_present": false
+     }
+    ]
+   }
+  }
+ },
+ "blind_review": {
+  "method": "AI reviewer agent (not human), policy labels hidden, X/Y randomized per item; key held separately",
+  "major": {
+   "V19LS": 0,
+   "V17": 1
+  },
+  "minor": {
+   "V19LS": 12,
+   "V17": 18
+  },
+  "preferred": {
+   "V17": 1,
+   "V19LS": 10,
+   "tie": 1
+  },
+  "quality_mean": {
+   "V17": 3.17,
+   "V19LS": 3.83
+  },
+  "rows": [
+   {
+    "case": "N03-r1",
+    "by_policy": {
+     "V19LS": [
+      3,
+      []
+     ],
+     "V17": [
+      4,
+      []
+     ]
+    },
+    "preferred": "V17"
+   },
+   {
+    "case": "N03-r2",
+    "by_policy": {
+     "V17": [
+      3,
+      []
+     ],
+     "V19LS": [
+      4,
+      []
+     ]
+    },
+    "preferred": "V19LS"
+   },
+   {
+    "case": "WH-00532-r1",
+    "by_policy": {
+     "V17": [
+      3,
+      []
+     ],
+     "V19LS": [
+      4,
+      []
+     ]
+    },
+    "preferred": "V19LS"
+   },
+   {
+    "case": "WH-00532-r2",
+    "by_policy": {
+     "V19LS": [
+      4,
+      []
+     ],
+     "V17": [
+      3,
+      []
+     ]
+    },
+    "preferred": "V19LS"
+   },
+   {
+    "case": "A02-r1",
+    "by_policy": {
+     "V17": [
+      2,
+      [
+       "M5@14:45"
+      ]
+     ],
+     "V19LS": [
+      3,
+      []
+     ]
+    },
+    "preferred": "V19LS"
+   },
+   {
+    "case": "A02-r2",
+    "by_policy": {
+     "V19LS": [
+      4,
+      []
+     ],
+     "V17": [
+      3,
+      []
+     ]
+    },
+    "preferred": "V19LS"
+   },
+   {
+    "case": "A07-r1",
+    "by_policy": {
+     "V19LS": [
+      4,
+      []
+     ],
+     "V17": [
+      4,
+      []
+     ]
+    },
+    "preferred": "V19LS"
+   },
+   {
+    "case": "A07-r2",
+    "by_policy": {
+     "V17": [
+      3,
+      []
+     ],
+     "V19LS": [
+      5,
+      []
+     ]
+    },
+    "preferred": "V19LS"
+   },
+   {
+    "case": "A19-r1",
+    "by_policy": {
+     "V17": [
+      3,
+      []
+     ],
+     "V19LS": [
+      4,
+      []
+     ]
+    },
+    "preferred": "V19LS"
+   },
+   {
+    "case": "A19-r2",
+    "by_policy": {
+     "V17": [
+      4,
+      []
+     ],
+     "V19LS": [
+      4,
+      []
+     ]
+    },
+    "preferred": "tie"
+   },
+   {
+    "case": "A05-r1",
+    "by_policy": {
+     "V19LS": [
+      3,
+      []
+     ],
+     "V17": [
+      3,
+      []
+     ]
+    },
+    "preferred": "V19LS"
+   },
+   {
+    "case": "A05-r2",
+    "by_policy": {
+     "V17": [
+      3,
+      []
+     ],
+     "V19LS": [
+      4,
+      []
+     ]
+    },
+    "preferred": "V19LS"
+   }
+  ]
+ }
+}

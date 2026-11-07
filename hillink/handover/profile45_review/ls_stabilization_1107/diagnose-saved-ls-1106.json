@@ -1,0 +1,338 @@
+[
+ {
+  "call": "A02_2026-11-05_1445_V18LS_CUSTOMER_ACT_a1",
+  "selected": "meal:PIZZA_HILL",
+  "basket": "meal:PIZZA_HILL#14",
+  "cited": {
+   "sup": [
+    "A02-F15"
+   ],
+   "counter": [
+    "A02-F14",
+    "A02-F18c"
+   ]
+  },
+  "diagnostics": [
+   {
+    "code": "NEGATIVE_RECORD_ON_SELECTED_UNEXPLAINED",
+    "detail": {
+     "facts": [
+      "A02-F18a",
+      "A02-F18b",
+      "A02-F18c",
+      "A02-F18d"
+     ],
+     "clean_same_type_alternatives": [
+      "meal:THE_PAVILION"
+     ]
+    }
+   },
+   {
+    "code": "QUANTITY_ABOVE_PARTY_DESPITE_LEFTOVER",
+    "detail": {
+     "equivalents": 4,
+     "party": 3,
+     "facts": [
+      "A02-F14"
+     ],
+     "leftover_mentioned": true,
+     "intent_stated": false
+    }
+   }
+  ],
+  "marked_records": [
+   {
+    "ids": [
+     "A02-F05"
+    ],
+    "stance": "부정",
+    "flags": [],
+    "about": []
+   },
+   {
+    "ids": [
+     "A02-F14"
+    ],
+    "stance": "서술",
+    "flags": [
+     "남김"
+    ],
+    "about": [
+     "meal:PIZZA_HILL"
+    ]
+   },
+   {
+    "ids": [
+     "A02-F15"
+    ],
+    "stance": "혼합",
+    "flags": [],
+    "about": [
+     "meal:PIZZA_HILL"
+    ]
+   },
+   {
+    "ids": [
+     "A02-F16"
+    ],
+    "stance": "서술",
+    "flags": [],
+    "about": [
+     "meal:PIZZA_HILL"
+    ]
+   },
+   {
+    "ids": [
+     "A02-F18a",
+     "A02-F18b",
+     "A02-F18c",
+     "A02-F18d"
+    ],
+    "stance": "혼합",
+    "flags": [
+     "재방문 거부"
+    ],
+    "about": [
+     "meal:PIZZA_HILL"
+    ]
+   },
+   {
+    "ids": [
+     "A02-F37"
+    ],
+    "stance": "혼합",
+    "flags": [
+     "재방문 거부"
+    ],
+    "about": []
+   },
+   {
+    "ids": [
+     "A02-F41"
+    ],
+    "stance": "긍정",
+    "flags": [
+     "조건부"
+    ],
+    "about": []
+   }
+  ]
+ },
+ {
+  "call": "A07_2026-11-05_1751_V18LS_CUSTOMER_ACT_a1",
+  "selected": "meal:MYONGWOLGWAN",
+  "basket": "meal:MYONGWOLGWAN#10",
+  "cited": {
+   "sup": [
+    "A07-F10a"
+   ],
+   "counter": [
+    "A07-F09"
+   ]
+  },
+  "diagnostics": [],
+  "marked_records": [
+   {
+    "ids": [
+     "A07-F03"
+    ],
+    "stance": "서술",
+    "flags": [],
+    "about": [
+     "meal:PIZZA_HILL"
+    ]
+   },
+   {
+    "ids": [
+     "A07-F05"
+    ],
+    "stance": "긍정",
+    "flags": [],
+    "about": [
+     "meal:MOEGI"
+    ]
+   },
+   {
+    "ids": [
+     "A07-F08a",
+     "A07-F08b"
+    ],
+    "stance": "서술",
+    "flags": [],
+    "about": [
+     "meal:PIZZA_HILL"
+    ]
+   },
+   {
+    "ids": [
+     "A07-F09"
+    ],
+    "stance": "부정",
+    "flags": [],
+    "about": [
+     "meal:MOEGI"
+    ]
+   },
+   {
+    "ids": [
+     "A07-F10a",
+     "A07-F10b",
+     "A07-F10c"
+    ],
+    "stance": "혼합",
+    "flags": [],
+    "about": [
+     "meal:MYONGWOLGWAN"
+    ]
+   },
+   {
+    "ids": [
+     "A07-F24"
+    ],
+    "stance": "혼합",
+    "flags": [],
+    "about": []
+   },
+   {
+    "ids": [
+     "A07-F27"
+    ],
+    "stance": "서술",
+    "flags": [],
+    "about": [
+     "meal:MOEGI"
+    ]
+   },
+   {
+    "ids": [
+     "A07-F39"
+    ],
+    "stance": "부정",
+    "flags": [],
+    "about": []
+   },
+   {
+    "ids": [
+     "A07-F44"
+    ],
+    "stance": "부정",
+    "flags": [],
+    "about": []
+   },
+   {
+    "ids": [
+     "A07-F48"
+    ],
+    "stance": "혼합",
+    "flags": [],
+    "about": [
+     "meal:MOEGI"
+    ]
+   },
+   {
+    "ids": [
+     "A07-F54"
+    ],
+    "stance": "혼합",
+    "flags": [],
+    "about": []
+   }
+  ]
+ },
+ {
+  "call": "WH-00532_2026-11-07_1759_V18LS_CUSTOMER_ACT_a1",
+  "selected": "meal:ROOM_MEAL",
+  "basket": "meal:ROOM_MEAL#1",
+  "cited": {
+   "sup": [],
+   "counter": [
+    "WH-00532-F017"
+   ]
+  },
+  "diagnostics": [
+   {
+    "code": "MIXED_RECORD_ONE_SIDED",
+    "detail": [
+     "WH-00532-F017"
+    ]
+   }
+  ],
+  "marked_records": [
+   {
+    "ids": [
+     "WH-00532-F028"
+    ],
+    "stance": "혼합",
+    "flags": [],
+    "about": []
+   },
+   {
+    "ids": [
+     "WH-00532-F036"
+    ],
+    "stance": "부정",
+    "flags": [],
+    "about": []
+   },
+   {
+    "ids": [
+     "WH-00532-F039"
+    ],
+    "stance": "부정",
+    "flags": [],
+    "about": []
+   },
+   {
+    "ids": [
+     "WH-00532-F045"
+    ],
+    "stance": "부정",
+    "flags": [
+     "조건부"
+    ],
+    "about": []
+   },
+   {
+    "ids": [
+     "WH-00532-F056"
+    ],
+    "stance": "혼합",
+    "flags": [],
+    "about": []
+   },
+   {
+    "ids": [
+     "WH-00532-F016"
+    ],
+    "stance": "서술",
+    "flags": [],
+    "about": [
+     "meal:PIZZA_HILL"
+    ]
+   },
+   {
+    "ids": [
+     "WH-00532-F017"
+    ],
+    "stance": "혼합",
+    "flags": [],
+    "about": [
+     "meal:PIZZA_HILL"
+    ]
+   },
+   {
+    "ids": [
+     "WH-00532-F018"
+    ],
+    "stance": "부정",
+    "flags": [
+     "재방문 거부",
+     "조건부"
+    ],
+    "about": [
+     "meal:PIZZA_HILL"
+    ]
+   }
+  ]
+ }
+]

@@ -237,7 +237,7 @@ function situationRender() {
   root.querySelector('#sitDuration').onchange=e=>{form.duration=e.target.value;situationQueueRender();};
   HLVisitExecution.bindAvailability(root.querySelector('#sitJudgment'),root.querySelector('#sitLiveStatus'));
   // Stored-run state belongs to Replay only. Leaving Replay drops the tag and the stored policy
-  // (so a LIVE request is V17 and a rules request carries no LLM policy) but keeps every
+  // (so a LIVE request uses the current LIVE policy and a rules request carries no LLM policy) but keeps every
   // visible condition value the reviewer may have loaded.
   root.querySelector('#sitJudgment').onchange=e=>{form.judgment_mode=e.target.value;if(form.judgment_mode!=='replay'){form.savedTag=null;form.saved_policy=null;}situationQueueRender();};
   const savedSel=root.querySelector('#sitSavedRun'); if(savedSel) savedSel.onchange=async e=>{const tag=e.target.value; form.savedTag=tag||null; if(!tag){situationQueueRender();return;}

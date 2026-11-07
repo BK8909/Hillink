@@ -1,8 +1,8 @@
 # HILLINK 공개 제출판 — 설치·복원 및 핵심 기술 계약
 
-[저장소 루트 README](../../README.md)가 제품 시작 안내이며, [연구·기술 인계서](../docs/research/RESEARCH_AND_ARCHITECTURE_HANDOFF.md)가 정책·실험·평가의 상세 근거입니다. **2026-11-06 1차 제출 제품은 V17 신규 LIVE + V16 저장 Replay + 규칙 실행**을 지원합니다. V18 C/L2/S2/LS 연구 정책은 별도 실험 브랜치에 있으며, 제출 제품에 승격되지 않았습니다.
+[저장소 루트 README](../../README.md)가 제품 시작 안내이며, [연구·기술 인계서](../docs/research/RESEARCH_AND_ARCHITECTURE_HANDOFF.md)가 정책·실험·평가의 상세 근거입니다. **현재 제품은 V19LS 실시간 AI 판단(기본 LIVE) + V17 이전 LIVE(이름으로만 선택) + V16 저장 판단 재현 + 규칙 계산**을 지원합니다(2026-11-07 승격, 2026-11-06 1차 제출판은 V17 기본). V18 C/L2/S2 연구 정책은 실험 기준으로만 선택할 수 있습니다.
 
-공개 저장소 **[BK8909/Hillink_Challenge365](https://github.com/BK8909/Hillink_Challenge365)**에서 제품을 내려받아 사용합니다. 현재 제품은 `hillink/` 하나에 있습니다. 루트에 보존된 기존 팀 파일을 복사하거나 조합하지 않습니다. 아래 명령은 별도 안내가 없으면 `hillink/`에서 실행합니다.
+공개 저장소 **[BK8909/Hillink](https://github.com/BK8909/Hillink)**에서 제품을 내려받아 사용합니다. 현재 제품은 `hillink/` 하나에 있습니다. 루트에 보존된 기존 팀 파일을 복사하거나 조합하지 않습니다. 아래 명령은 별도 안내가 없으면 `hillink/`에서 실행합니다.
 
 
 ## 실행과 데이터
@@ -10,8 +10,8 @@
 Python 3.11 가상환경에 `requirements-dev.txt`를 설치한 뒤 `bash tools/start_product.sh`로 시작합니다.
 
 ```bash
-git clone https://github.com/BK8909/Hillink_Challenge365.git
-cd Hillink_Challenge365/hillink
+git clone https://github.com/BK8909/Hillink.git
+cd Hillink/hillink
 python3.11 -m venv .venv
 .venv/bin/python -m pip install -r requirements-dev.txt
 bash tools/start_product.sh
@@ -33,7 +33,7 @@ bash tools/start_product.sh
 | `timeline/viewer/app.py` | 로컬 HTTP 서버와 방문·원장·전략 API |
 | `timeline/viewer/static/` | 기존 고객 라이브러리·조건·지도·행동근거·매출·운영 전략 화면 |
 | `timeline/viewer/visit_execution.py`, `visit_run.py` | 규칙/Replay/LIVE 구분과 연속 방문 실행 |
-| `timeline/experiments/persona_live/operator_choice/autonomy_v1/` | 현재 행동 엔진, V16 저장 Replay와 V17 신규 LIVE 판단·운영 규칙·상품 계약 |
+| `timeline/experiments/persona_live/operator_choice/autonomy_v1/` | 현재 행동 엔진, V16 저장 판단 재현, V19LS 실시간 판단(V17 보존)·운영 규칙·상품 계약 |
 | `timeline/viewer/ledger_service.py`, `ledger_l5.py` | 동일 run의 SKU·수량·결제 및 L5~L1 집계 |
 | `timeline/viewer/strategy_agent_service.py` | 해당 run의 실제 선택을 사용하는 개인·집단 전략과 A/B 계약 |
 | `handover/data/` | 고객 입력·원문·공식 자료·원 응답 Replay와 단일 데이터 manifest |
@@ -48,7 +48,7 @@ bash tools/start_product.sh
 |---|---|---|
 | 규칙 | 기존 M4 규칙 실행 | 신규 API 호출 없이 실행, 모델의 새 판단으로 표시하지 않음 |
 | **저장 판단 Replay** | `LLM_AUTONOMOUS_CUSTOMER_V16` | 저장된 실제 모델 응답을 **동일 입력·모델·설정·입력 SHA**가 일치할 때만 재현, 신규 호출 0회 |
-| **새 LLM 판단 LIVE** | `LLM_AUTONOMOUS_CUSTOMER_V17` | `autonomous_agent.py`의 `LIVE_POLICY`; 명시적 키·공유 원장·승인·사용자 선택 필요 |
+| **새 LLM 판단 LIVE** | `LLM_AUTONOMOUS_CUSTOMER_V19LS` (이전: `…_V17`, `?policy=`로만 선택) | `autonomous_agent.py`의 `LIVE_POLICY`(V17은 `LIVE_POLICY_PREVIOUS`); 명시적 키·공유 원장·승인·사용자 선택 필요 |
 | **연구 정책** | V18 C/L2/S2/LS | 연구 저장소의 별도 실험이며 현재 공개 제출 제품 기본 판단 정책이 아님 |
 
 모델이 선택한 뒤 영업시간·이동·예약·자격·SKU·가격·수량을 검증하고 실제 채택된 행동만 주문·원장에 연결합니다. 행동근거 ④와 매출·운영 전략은 같은 run을 사용합니다. **검증 실패 시 재계획은 최대 1회, 실패를 규칙 점수 선택으로 몰래 대체하지 않습니다.**
@@ -77,7 +77,7 @@ bash tools/start_product.sh --live
 - **데이터 패키지:** **1,547개 파일** 검증, 비밀값 탐지 **0건**.
 - **라이브러리:** 45명 화면 표시 · 28명 기술 실행 가능 · 17명 열람 전용(전체 의미·썸네일 사람 승인과 구분).
 - **HTTP·브라우저:** 새 clone·가상환경·캐시에서 복원 및 서버 기동, Replay·규칙/행사 조건·매출 원장 L4~L1, 고객 흐름·행동근거·매출 화면 확인. 라이브 API 호출은 키 없는 공개 검수 환경에서 실행하지 않음.
-- **연구 분리:** V18 실호출 224회·전체 방문 9건 중 7건 완주, LS/V17 실호출 16회 비교에서 LS는 미승격. **제품 설치 성공이나 Replay 일치를 행동 예측 정확도·LS 품질 증명으로 해석하지 않습니다.**
+- **연구 분리:** V18 실호출 224회·전체 방문 9건 중 7건 완주, LS/V17 실호출 16회 비교에서 LS는 미승격(11/06) → 안정화한 V19LS를 실호출 126회 비교·재확인 후 기본 LIVE로 승격(11/07). **제품 설치 성공이나 Replay 일치를 행동 예측 정확도·LS 품질 증명으로 해석하지 않습니다.**
 
 실제 공개 배포 기록은 저장소 [release.json](../../release.json)과 [연구·기술 인계서](../docs/research/RESEARCH_AND_ARCHITECTURE_HANDOFF.md)를 함께 봅니다.
 

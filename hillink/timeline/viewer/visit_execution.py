@@ -8,8 +8,18 @@ from pathlib import Path
 import saved_visits
 
 POLICY = 'LLM_AUTONOMOUS_CUSTOMER_V16'
-LIVE_POLICY = 'LLM_AUTONOMOUS_CUSTOMER_V17'
-POLICIES = (POLICY, LIVE_POLICY)   # stored V16 runs replay under V16; a request names the policy it wants and gets exactly that
+LIVE_POLICY = 'LLM_AUTONOMOUS_CUSTOMER_V19LS'          # product LIVE default since 2026-11-07 (P5 + day-end LIVE re-check)
+PREVIOUS_LIVE_POLICY = 'LLM_AUTONOMOUS_CUSTOMER_V17'   # kept: selectable only when a request names it (?policy=V17)
+EXPERIMENT_POLICIES = ('LLM_AUTONOMOUS_CUSTOMER_V18', 'LLM_AUTONOMOUS_CUSTOMER_V18B', 'LLM_AUTONOMOUS_CUSTOMER_V18BM', 'LLM_AUTONOMOUS_CUSTOMER_V18BD')   # M4 shortlist experiments; never the default
+SELECTABLE_LIVE_POLICIES = (PREVIOUS_LIVE_POLICY,) + EXPERIMENT_POLICIES
+POLICIES = (POLICY, LIVE_POLICY, PREVIOUS_LIVE_POLICY) + EXPERIMENT_POLICIES   # stored V16 runs replay under V16; a request names the policy it wants and gets exactly that
+POLICY_NOTES = {POLICY: '과거 판단 기준(V16) · 조기 종료 검증 이전의 저장 응답',
+                LIVE_POLICY: '현재 실시간 AI 판단 기준(V19-LS) · 근거 성격 표시 · 하루 종료 재검토 · 선택 진단 기록',
+                PREVIOUS_LIVE_POLICY: '이전 실시간 판단 기준(V17) · 명시적으로 선택한 경우에만',
+                'LLM_AUTONOMOUS_CUSTOMER_V18': '실험 기준(V18) · 규칙 선별 후 LLM 선택 · 조기 종료 검증 적용',
+                'LLM_AUTONOMOUS_CUSTOMER_V18B': '실험 기준(V18-B) · 규칙 선별 후 LLM 선택 · 후보 관련 근거만 전달',
+                'LLM_AUTONOMOUS_CUSTOMER_V18BM': '실험 기준(V18-C) · V18-B와 같은 입력 · reasoning medium',
+                'LLM_AUTONOMOUS_CUSTOMER_V18BD': '실험 기준(V18-D) · V18-B 입력 · 최소 출력'}
 MODES = ('rules', 'replay', 'live')
 
 
@@ -96,16 +106,17 @@ def describe(flow,mode,policy=None):
         records=plan.get('autonomous_decisions') or []
         origins=[a['provider'].get('execution') for d in records for a in d.get('attempts',[]) if a.get('provider')]
         holds=[d.get('fallback_reason') or d.get('hold_reason') or d.get('execution_state') for d in records if d.get('execution_state') not in ('VALIDATED','EXECUTED')]
-        customers[pid]=dict(decisions=len(records),origins=origins,holds=holds)
+        rule_only=[d for d in records if d.get('selection_owner')=='M4_RULE' and not d.get('attempts')]
+        customers[pid]=dict(decisions=len(records),origins=origins,holds=holds,rule_decisions=len(rule_only))
         required='CACHE_REPLAY' if mode=='replay' else 'LIVE_RESPONSES'
-        if mode!='rules' and (not records or holds or not origins or any(o!=required for o in origins)):
+        if mode!='rules' and (not records or holds or (not origins and not rule_only) or any(o!=required for o in origins)):
             blocked.append(pid)
     flow['judgment']=dict(requested=mode,actual='rules' if mode=='rules' else ('BLOCKED' if blocked or not plans else mode),
         policy=policy if mode!='rules' else 'RULE_ONLY',customers=customers,
-        policy_note=None if mode=='rules' else ('과거 판단 기준(V16) · 조기 종료 검증 이전의 저장 응답' if policy==POLICY else '현재 판단 기준(V17) · 조기 종료 검증 적용'),
+        policy_note=None if mode=='rules' else POLICY_NOTES[policy],
         current_paid_calls=0 if mode in ('rules','replay') else None,human_approval=False)
     if mode!='rules' and (blocked or not plans):
-        flow.update(error='V16 판단을 완료하지 못했습니다. 현재 조건과 일치하는 승인 응답·호출 권한·예산을 확인해 주세요. 규칙으로 대체하지 않았습니다.',
+        flow.update(error=('저장된 판단을 재현하지 못했습니다. 현재 조건과 일치하는 저장 응답이 없습니다.' if mode=='replay' else 'AI 판단을 완료하지 못했습니다. 호출 권한·예산·응답 상태를 확인해 주세요.')+' 규칙 계산으로 대체하지 않았습니다.',
                     code='V16_EXECUTION_HOLD')
     return flow
 

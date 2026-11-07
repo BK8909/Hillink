@@ -1,0 +1,27 @@
+{
+ "basis": "offline bench 2026-11-07 (no paid call), same decision points, UTF-8 bytes of the model input messages",
+ "V18LS": {
+  "requests": 26,
+  "mean_bytes": 16601,
+  "median_bytes": 11750,
+  "by_case": {
+   "pid_A19": 11291,
+   "pid_A02": 17115,
+   "pid_A05": 13703,
+   "a07": 26844,
+   "n03": 12001
+  }
+ },
+ "V19LS": {
+  "requests": 26,
+  "mean_bytes": 17756,
+  "median_bytes": 13908,
+  "by_case": {
+   "pid_A19": 13127,
+   "pid_A02": 18119,
+   "pid_A05": 15418,
+   "a07": 26508,
+   "n03": 13857
+  }
+ }
+}

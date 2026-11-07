@@ -79,7 +79,7 @@ def test_replan_before_dinner_may_end_the_day_only_with_an_explicit_full_assessm
 
 def test_day_end_record_marks_a_model_day_end_not_an_observed_sleep():
     cfg=A.configuration()
-    assert cfg['live_policy']==A.POLICY_V17 and cfg['policy_versions'][A.POLICY_V17]['day_end_review']=='EVENING_MEAL_REVIEW_BEFORE_DAY_END_V1' and cfg['policy_versions'][A.POLICY]['day_end_review'] is None
+    assert cfg['live_policy']==A.POLICY_V19LS==A.LIVE_POLICY and A.LIVE_POLICY_PREVIOUS==A.POLICY_V17 and cfg['policy_versions'][A.POLICY_V17]['day_end_review']=='EVENING_MEAL_REVIEW_BEFORE_DAY_END_V1' and cfg['policy_versions'][A.POLICY]['day_end_review'] is None
     src=Path(A.__file__).read_text(encoding='utf-8')
     assert "'day_end':'MODEL_DAY_END_IN_ROOM_NOT_OBSERVED_SLEEP'" in src
 
@@ -88,7 +88,7 @@ def test_stored_v16_policy_replays_without_the_day_end_review_and_v17_applies_it
     a=agent();acts=actions()
     assert A.validate_plan(a,plan(),acts,{},[],None,day_end_review=None)['execution']=='END_DAY'
     assert A.POLICIES[A.POLICY]['day_end_review'] is None and A.POLICIES[A.POLICY]['stable_prefix'] is False
-    assert A.POLICIES[A.POLICY_V17]['day_end_review']==A.DAY_END_POLICY and A.LIVE_POLICY==A.POLICY_V17
+    assert A.POLICIES[A.POLICY_V17]['day_end_review']==A.DAY_END_POLICY and A.LIVE_POLICY_PREVIOUS==A.POLICY_V17 and A.LIVE_POLICY==A.POLICY_V19LS
     with pytest.raises(ValueError,match='EARLY_DAY_END'):A.validate_plan(a,plan(),acts,{},[],None,day_end_review=A.POLICIES[A.POLICY_V17]['day_end_review'])
     a16=agent(sc={'hybrid_policy':A.POLICY,'date':'2026-12-18','catalog_policy':A.H.POLICY});a17=agent(sc={'hybrid_policy':A.POLICY_V17,'date':'2026-12-18','catalog_policy':A.H.POLICY})
     assert A.policy_of(a16)==A.POLICY and A.policy_of(a17)==A.POLICY_V17

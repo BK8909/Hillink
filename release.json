@@ -1,11 +1,26 @@
 {
   "product": "HILLINK",
-  "version": "2026-11-06",
+  "version": "2026-11-07-v19ls-integration",
   "product_directory": "hillink",
   "entrypoint": "hillink/tools/start_product.sh",
   "source_repository": "BK8909/walkerhill",
-  "source_commit": "3ee820881c58b87495a3a5c6e4562444705dd57e",
+  "source_commit": "f908e32f748f019ce792fbd453f418a9968a9d2a",
   "data_scope": "AUTHORIZED_PRIVATE_REPOSITORY_DATA_NOT_PUBLIC_RELEASE",
   "data_manifest": "hillink/handover/data/bundle.json",
-  "source_branch": "release/hillink-final-submission-20261106"
+  "source_branch": "integration/v19ls-product-20261107",
+  "live_policy": "LLM_AUTONOMOUS_CUSTOMER_V19LS",
+  "previous_live_policy": "LLM_AUTONOMOUS_CUSTOMER_V17",
+  "replay_policy": "LLM_AUTONOMOUS_CUSTOMER_V16",
+  "previous_release": {
+    "version": "2026-11-06",
+    "source_commit": "3ee820881c58b87495a3a5c6e4562444705dd57e",
+    "source_branch": "release/hillink-final-submission-20261106"
+  },
+  "public_repository_additions": [
+    "README.md",
+    "hillink/handover/RECOVERY.md",
+    "hillink/handover/package_manifest.json",
+    ".github/workflows/offline-ci.yml",
+    "hillink/tools/ci/"
+  ]
 }

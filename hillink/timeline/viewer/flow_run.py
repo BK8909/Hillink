@@ -324,6 +324,46 @@ def plan_of(pid, r, T, new_keys):
     return result
 
 
+def hidden_fact_ids(pid, P, libs):
+    """Facts marked hidden (library) or listed hidden (profile) for this customer."""
+    facts = ((libs.get(pid) or {}).get('engine') or {}).get('facts') or {}
+    return set((P.get(pid) or {}).get('hidden') or []) | {k for k, v in facts.items() if isinstance(v, dict) and v.get('hidden')}
+
+
+def scrub_hidden_fact_ids(out, hidden):
+    """API boundary for the menu-decision basis (score attribution and food observation): it lists every facet
+    evidence id, so a hidden fact that no reason cites would leave through it. Hidden facts keep shaping the
+    engine state (unchanged) and stay visible, masked, where a reason cites them; here their ids are dropped
+    and the count is recorded (withheld_hidden_fact_n)."""
+    allh = set().union(*hidden.values()) if hidden else set()
+    if not allh: return out
+    def find(o):
+        if isinstance(o, dict):
+            for k, v in o.items():
+                if k == 'menu_decision': walk(v)
+                else: find(v)
+        elif isinstance(o, list):
+            for x in o: find(x)
+    def walk(o):
+        if isinstance(o, dict):
+            for k, v in list(o.items()):
+                if isinstance(v, list) and v and all(isinstance(x, str) for x in v) and (k.endswith('fact_ids') or k in INDIRECT_KEYS):
+                    kept = [x for x in v if x not in allh]
+                    if len(kept) != len(v): o[k] = kept; o.setdefault('withheld_hidden_fact_n', 0); o['withheld_hidden_fact_n'] += len(v) - len(kept)
+                elif isinstance(v, list) and v and all(isinstance(x, dict) for x in v) and any(x.get('fact_id') in allh for x in v):
+                    kept = [x for x in v if x.get('fact_id') not in allh]
+                    o[k] = kept; o.setdefault('withheld_hidden_fact_n', 0); o['withheld_hidden_fact_n'] += len(v) - len(kept)
+                    for x in kept: walk(x)
+                else: walk(v)
+        elif isinstance(o, list):
+            for x in o: walk(x)
+    find(out)
+    return out
+
+
+INDIRECT_KEYS = {'food', 'space', 'value_check', 'benefit', 'novelty', 'premium', 'practical_alt', 'rest_need', 'routine', 'post_appraisal', 'breakfast_priority'}
+
+
 def main():
     q = json.loads(sys.stdin.read() or "{}")
     from operator_choice.operator_world_v1_1 import isolated_registry as IR
@@ -420,6 +460,7 @@ def main():
     lineage = IR.lineage(ids)
     if lineage:
         out["isolated_input_lineage"] = lineage
+    scrub_hidden_fact_ids(out, {pid: hidden_fact_ids(pid, P, inp[2]) for pid in after})
     s = json.dumps(out, ensure_ascii=False, default=list)
     if FORBIDDEN.search(s):
         print(json.dumps({"error": "결과에 비공개 문자열이 있어 내보내지 않음", "code": "E_FLOW_PRIVATE"}, ensure_ascii=False)); return

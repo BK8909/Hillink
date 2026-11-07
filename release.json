@@ -1,11 +1,11 @@
 {
   "product": "HILLINK",
-  "version": "2026-11-07-v19ls-integration",
+  "version": "2026-11-07-v19ls",
   "product_directory": "hillink",
   "entrypoint": "hillink/tools/start_product.sh",
   "source_repository": "BK8909/walkerhill",
-  "source_commit": "f908e32f748f019ce792fbd453f418a9968a9d2a",
-  "data_scope": "AUTHORIZED_PRIVATE_REPOSITORY_DATA_NOT_PUBLIC_RELEASE",
+  "source_commit": "9b5e93761eaba26ec48ce56ba4debb66c545bcf7",
+  "data_scope": "RESEARCH_INPUTS_INCLUDED_IN_THIS_PUBLIC_REPOSITORY_REUSE_TERMS_NOT_DETERMINED_HERE",
   "data_manifest": "hillink/handover/data/bundle.json",
   "source_branch": "integration/v19ls-product-20261107",
   "live_policy": "LLM_AUTONOMOUS_CUSTOMER_V19LS",
@@ -22,5 +22,7 @@
     "hillink/handover/package_manifest.json",
     ".github/workflows/offline-ci.yml",
     "hillink/tools/ci/"
-  ]
+  ],
+  "data_scope_note": "hillink/handover/data (bundle.json, product-inputs.tar.gz) is published in this repository and SHA-checked on restore. No API key, private review text or private cost ledger is included. Reuse terms of individual sources are not determined here; see the research handoff section 10.",
+  "previous_data_scope": "AUTHORIZED_PRIVATE_REPOSITORY_DATA_NOT_PUBLIC_RELEASE (2026-11-06 label, did not match the published package)"
 }

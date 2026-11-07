@@ -1009,8 +1009,9 @@ def breakfast_item_contracts(contract):
 
 def breakfast_choice(a, world, t, offers, fallback):
     """Choose before TC scoring, preserving its existing included/child contracts."""
-    personal=persona(a);valid=[];excluded=[]
+    personal=persona(a);valid=[];excluded=[];contracts={}
     for o in offers['offers']:
+        contracts[o['id']]=o.get('sku_contract')
         why=AD.EN.feasible(o,t,dict(used=set(a.used),hunger=1),dict(a.visit_e,checkin=AD.mh(t)))
         if why:
             excluded.append(dict(action_id=o['id'],reasons=why));continue
@@ -1058,6 +1059,11 @@ def breakfast_choice(a, world, t, offers, fallback):
         rows=[dict(action_id=v['action_id'],type='BREAKFAST' if v['action_id']!='SKIP_BREAKFAST' else 'SKIP_MEAL',label=v['label'],location=v['location'],
                    conditions=dict(v['schedule'],price_krw=v['order_total_krw'],included=v['included'],wait=v.get('wait')),items=v['items'],item_contracts=v.get('item_contracts'),
                    m4=dict(rank_in_type=None,of=len(valid),basis='BREAKFAST_FIXED_CONTRACTS_NOT_RANKED',trait_terms=[],evidence_fact_ids=[])) for v in valid]
+        if spec_of(a).get('stability'):
+            # V19LS: a partly included breakfast (room contract covers some diners) is shown as such, per line and in
+            # the conditions; price_krw stays the extra cost of the diners not covered (unchanged engine total).
+            for r in rows:
+                LSS.breakfast_inclusion(r,contracts.get(r['action_id']))
         context=dict(context);context['candidates']=rows;context['state']=dict(context['state'],fatigue_scale=fatigue_scale(a))
         # one contract text for every V18 variant; what to write for the meal is an output instruction (system prompt)
         context['contract']='조식은 고정 인원 과금·포함 혜택 계약이며 후보마다 items와 가격이 확정돼 있습니다. selected_basket_id는 항상 null입니다.'

@@ -1,8 +1,8 @@
 {
  "product": "HILLINK",
- "version": "V19LS product promotion — integration branch, awaiting user approval for main",
+ "version": "V19LS product promotion 2026-11-07 (public main candidate)",
  "source_head": "532f514821adc78ad8663c0413f8a7add07bc48b",
- "data_scope": "AUTHORIZED_PRIVATE_REPOSITORY_DATA_NOT_PUBLIC_RELEASE",
+ "data_scope": "RESEARCH_INPUTS_INCLUDED_IN_THIS_PUBLIC_REPOSITORY_REUSE_TERMS_NOT_DETERMINED_HERE",
  "files": [
   {
    "path": ".gitignore",
@@ -41,6 +41,12 @@
    "sha256": "eca4c8b41856eedf1451300acb6ced44a2b099c4ab298aa5556215a029358c48"
   },
   {
+   "path": "docs/research/RESEARCH_AND_ARCHITECTURE_HANDOFF.md",
+   "included": true,
+   "bytes": 84691,
+   "sha256": "5a1f5cab0fe44fd76760fbd5d42e89ae92cc5d49e64ad00c005aba057c61e92d"
+  },
+  {
    "path": "docs/walkerhill-guest-state-machine.md",
    "included": true,
    "bytes": 102591,
@@ -55,8 +61,8 @@
   {
    "path": "handover/RECOVERY.md",
    "included": true,
-   "bytes": 11292,
-   "sha256": "087c147f1b8dc69d8de73b1a5d7c795b533d508e5fc2b8ee8765f14aecc50e6a"
+   "bytes": 11744,
+   "sha256": "a710e40f45db1ad453dce7d9dfa6261a1461bba91d728eb404c8d2553152b038"
   },
   {
    "path": "handover/data/bundle.json",
@@ -4235,6 +4241,12 @@
    "sha256": "24f8550df29b0cec4a703338671c16a3366f8a5bebe141dd363a31e15dbe775c"
   },
   {
+   "path": "handover/profile45_review/ls_stabilization_1107/a05-live-followup-deidentified-1107.json",
+   "included": true,
+   "bytes": 4225,
+   "sha256": "27864d485244c90539d6a49d916e9b6c11bd14d82fdffac267a258f607c304d0"
+  },
+  {
    "path": "handover/profile45_review/ls_stabilization_1107/dayend-live-recheck-deidentified-1107.json",
    "included": true,
    "bytes": 24853,
@@ -4257,6 +4269,12 @@
    "included": true,
    "bytes": 48085,
    "sha256": "4d002bce26864e99c43f6fe10b1aafd80b184aaca9c2de5e2551e7b6d41a5198"
+  },
+  {
+   "path": "handover/profile45_review/ls_stabilization_1107/결과보고-최종-V19LS-제품승격-1107.md",
+   "included": true,
+   "bytes": 13224,
+   "sha256": "9b81b7b48cbb8db196ba29d982aa695620a4ca09fedfe69c95d75d46373d4fa0"
   },
   {
    "path": "handover/profile45_review/previous-llm/coverage-and-budget.json",
@@ -4831,8 +4849,8 @@
   {
    "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/autonomous_agent.py",
    "included": true,
-   "bytes": 123806,
-   "sha256": "fed0a842a1ab1aac29de66f607242d34d074cfa6ca889823fc7f1ea8d5cf0fbe"
+   "bytes": 124239,
+   "sha256": "a236dc7e2bf4c50adfd0054a583b413001152874bd5480e3e138db0efdee8f75"
   },
   {
    "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/breakfast_policy.py",
@@ -4957,8 +4975,8 @@
   {
    "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/ls_stability.py",
    "included": true,
-   "bytes": 24135,
-   "sha256": "9b205e80a244b53fce4c36efb1cc5f23da1431b2cc7fee3e6746dc457df46636"
+   "bytes": 25610,
+   "sha256": "064e562215dc1fe0ba1c1108e6a54503bf347cbd99f51ae32002e1e52fadc08d"
   },
   {
    "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/lunch_products.py",
@@ -9151,8 +9169,8 @@
   {
    "path": "timeline/viewer/tests/test_v19_ls_stability_1107.py",
    "included": true,
-   "bytes": 23290,
-   "sha256": "c883c3df66852c853d2bdb00823f53372f34ac226fb26d02d09d9d8e33c8e8c4"
+   "bytes": 26136,
+   "sha256": "8b8dfae7c41a27bfe453d9b7688683219890d5ad0fe8f93c23adde72b04d4f51"
   },
   {
    "path": "timeline/viewer/tests/test_v19ls_exception_matrix_1107.py",
@@ -9409,8 +9427,8 @@
   {
    "path": "tools/v18_batch/batch.py",
    "included": true,
-   "bytes": 19374,
-   "sha256": "d882e47d7567ddfd4d77221e67a1f0ec070f2d6860f30aee80130c6232c1a170"
+   "bytes": 21875,
+   "sha256": "02b5d8343b1c63c9ab9799f5826e860e7de9eae15ee032063467eae007e842d4"
   },
   {
    "path": "tools/v18_bench/driver.py",

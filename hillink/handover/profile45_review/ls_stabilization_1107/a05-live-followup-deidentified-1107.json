@@ -1,0 +1,177 @@
+{
+ "note": "De-identified: ids, codes and metrics only. Breakfast runs reuse an OFFLINE synthetic evening (plan v19e-seed); only the breakfast decision is LIVE.",
+ "approval": "user directive 2026-11-07: at most 4 new calls / US$0.02",
+ "ledger_start": {
+  "calls": 2355,
+  "used_usd": 12.372665,
+  "unresolved": 0,
+  "room_calls": 145,
+  "room_usd": 7.627335
+ },
+ "ledger_end": {
+  "calls": 2359,
+  "used_usd": 12.376156,
+  "unresolved": 0,
+  "room_calls": 141,
+  "room_usd": 7.623844
+ },
+ "runs": {
+  "E_A05_breakfast_r1": {
+   "new_calls": 1,
+   "reused_offline_synthetic_calls": 5,
+   "usd": 0.000719,
+   "calls": [
+    {
+     "time": "0810",
+     "seconds": 12.029,
+     "input_tokens": 3407,
+     "output_tokens": 1028,
+     "cost_upper_usd": 0.0007191900000000001,
+     "selected": "SKIP_BREAKFAST",
+     "basket": null,
+     "rejected_alternative": "BREAKFAST_BUFFET",
+     "cited": [
+      "A05-F07"
+     ],
+     "tradeoff_note_present": false
+    }
+   ],
+   "executed": [
+    {
+     "time": "17:51",
+     "state": "EXECUTED",
+     "action": "meal:THE_PAVILION",
+     "skus": [
+      "HC-PDF-THE_PAVILION-BURGERx3"
+     ],
+     "total_krw": 132000,
+     "diagnostics": []
+    },
+    {
+     "time": "08:10",
+     "state": "EXECUTED",
+     "action": "SKIP_BREAKFAST",
+     "skus": [],
+     "total_krw": 0,
+     "diagnostics": []
+    }
+   ],
+   "ledger_matches_orders": true
+  },
+  "E_A05_breakfast_r2": {
+   "new_calls": 1,
+   "reused_offline_synthetic_calls": 5,
+   "usd": 0.000442,
+   "calls": [
+    {
+     "time": "0810",
+     "seconds": 10.262,
+     "input_tokens": 3407,
+     "output_tokens": 816,
+     "cost_upper_usd": 0.00044241500000000004,
+     "selected": "SKIP_BREAKFAST",
+     "basket": null,
+     "rejected_alternative": "BREAKFAST_BUFFET",
+     "cited": [
+      "A05-F07"
+     ],
+     "tradeoff_note_present": false
+    }
+   ],
+   "executed": [
+    {
+     "time": "17:51",
+     "state": "EXECUTED",
+     "action": "meal:THE_PAVILION",
+     "skus": [
+      "HC-PDF-THE_PAVILION-BURGERx3"
+     ],
+     "total_krw": 132000,
+     "diagnostics": []
+    },
+    {
+     "time": "08:10",
+     "state": "EXECUTED",
+     "action": "SKIP_BREAKFAST",
+     "skus": [],
+     "total_krw": 0,
+     "diagnostics": []
+    }
+   ],
+   "ledger_matches_orders": true
+  },
+  "E_A05_dinner_r1": {
+   "new_calls": 1,
+   "reused_offline_synthetic_calls": 0,
+   "usd": 0.001626,
+   "calls": [
+    {
+     "time": "1751",
+     "seconds": 18.082,
+     "input_tokens": 7081,
+     "output_tokens": 1481,
+     "cost_upper_usd": 0.001625625,
+     "selected": "meal:PIZZA_HILL",
+     "basket": "meal:PIZZA_HILL#1",
+     "rejected_alternative": "meal:THE_PAVILION",
+     "cited": [],
+     "tradeoff_note_present": false
+    }
+   ],
+   "executed": [
+    {
+     "time": "17:51",
+     "state": "EXECUTED",
+     "action": "meal:PIZZA_HILL",
+     "skus": [
+      "HC-PDF-PIZZA_HILL-MARGHERITA-Lx1"
+     ],
+     "total_krw": 79000,
+     "diagnostics": [
+      "QUANTITY_AT_OR_BELOW_PARTY_DESPITE_SHORTFALL_RECORD"
+     ]
+    }
+   ],
+   "ledger_matches_orders": true
+  },
+  "E_A05_dinner_r2": {
+   "new_calls": 1,
+   "reused_offline_synthetic_calls": 0,
+   "usd": 0.000704,
+   "calls": [
+    {
+     "time": "1751",
+     "seconds": 15.132,
+     "input_tokens": 7081,
+     "output_tokens": 1265,
+     "cost_upper_usd": 0.000703655,
+     "selected": "meal:PIZZA_HILL",
+     "basket": "meal:PIZZA_HILL#14",
+     "rejected_alternative": "meal:ROOM_MEAL",
+     "cited": [
+      "A05-F25"
+     ],
+     "tradeoff_note_present": true
+    }
+   ],
+   "executed": [
+    {
+     "time": "17:51",
+     "state": "EXECUTED",
+     "action": "meal:PIZZA_HILL",
+     "skus": [
+      "HC-PDF-PIZZA_HILL-MARGHERITA-Lx1",
+      "HC-PDF-PIZZA_HILL-TOMATOx1"
+     ],
+     "total_krw": 127000,
+     "diagnostics": []
+    }
+   ],
+   "ledger_matches_orders": true
+  }
+ },
+ "reading": {
+  "breakfast": "2/2 read the partial inclusion correctly (2 covered, 1 diner +85,000) and skipped citing A05-F07 (past: skipped a same-price breakfast, room coffee instead); no cost misreading",
+  "dinner": "r1 pizza L for 3 (equivalents = party, diagnostic QUANTITY_AT_OR_BELOW_PARTY_DESPITE_SHORTFALL_RECORD); r2 pizza L + pasta (equivalents 4) citing A05-F25 with a trade-off note"
+ }
+}

@@ -294,6 +294,7 @@ SYSTEM_LINES = [
     'about에 후보 action_id가 있는 기록은 이 호텔에서 그 후보를 언급한 경험입니다. 부정이거나 재방문 거부인 기록이 있는 후보를 고를 때는, 이번에 그 단점보다 강한 현재 조건(대기·시간·일정·동행·방문 목적·다른 후보의 제약)을 tradeoff_note에 구체적으로 적고 그 기록 id를 counterevidence_fact_ids에 넣으세요. 그런 조건이 없다면 다른 후보와 다시 비교해 고르세요.',
     '혼합 기록을 이유로 쓸 때는 좋았던 점과 아쉬웠던 점을 함께 적으세요. 조건부 기록(예: 특별한 날이 아니면)은 그 조건이 이번 방문에 해당하는지 visit.purpose로 판단하세요. visit.purpose가 미확인이면 해당하지 않는 것으로 봅니다.',
     '남김 표시가 있는 기록이 있으면 과거에 양이 많았다는 참고입니다. options의 meal_equivalents나 수량이 인원보다 많은 구성을 고를 때는 나눠 먹기·추가 메뉴 등 이유를 meal_assessment.quantity_reason에 적으세요. 과거 주문량이 이번 식사량의 절대 제한은 아닙니다.',
+    '조식 후보의 conditions.included가 객체이면 객실 계약으로 일부 인원의 조식이 포함된 경우입니다: included_persons는 추가 비용 없이 이용할 수 있는 인원, paid_persons와 price_krw는 포함되지 않은 인원의 추가 비용입니다. 조식을 건너뛰면 포함된 인원의 조식도 이용하지 않게 됩니다.',
     '식사 options의 party_fit은 meal_equivalents(일반 1인분 환산 가정, 섭취 관측 아님)를 visit.party_size와 비교한 표시입니다. 인원과 같음은 여유가 없다는 뜻이고 인원보다 적음이면 부족할 수 있습니다. 양 부족 표시가 있는 기록이 있으면 그 경험과 동행 인원을 함께 고려하세요. 양을 늘리라는 지시가 아니며, 고른 양의 이유를 meal_assessment.quantity_reason에 적으세요.',
     'repeat_signal이 있으면 직전 두 번 같은 대기·휴식을 같은 이유로 골랐다는 뜻입니다. 그 사이 바뀐 정보가 있는지 확인하고 식사·활동·휴식·하루 종료를 다시 비교하세요. 다시 기다리는 것도 정상이며 강제되지 않습니다.',
     '기록이 없거나 근거가 약하면 일반적인 상황 판단으로 고르고, 그 사실을 reason에 짧게 밝히세요.',
@@ -358,3 +359,20 @@ def names_compared(text, actions, keys):
 
 DAY_END_REVIEW_HINT = (' 비교한 남은 후보 하나를 rejected_alternative.action_id에 그 후보의 action_id로 적고, '
                        'reason에 그 후보를 고르지 않는 현재 이유를 쓰세요(휴식 후보가 아니라 남은 식사·활동 후보).')
+
+
+def breakfast_inclusion(row, contract):
+    """V19LS breakfast candidate: mark room-contract coverage per line and in the conditions (information only).
+    The engine's items, quantities and total are not changed."""
+    parts = (contract or {}).get('components') or []
+    inc = sum(p.get('billing_quantity') or 0 for p in parts if p.get('included_benefit'))
+    if not inc: return row
+    paid = sum(p.get('billing_quantity') or 0 for p in parts if not p.get('included_benefit') and p.get('role') == 'MAIN')
+    cond = row.setdefault('conditions', {})
+    cond['included'] = dict(status='PARTIAL' if paid else 'ALL', included_persons=inc, paid_persons=paid,
+                            extra_cost_krw=cond.get('price_krw'), basis='ROOM_BREAKFAST_CONTRACT')
+    lines = row.get('item_contracts') or []
+    for line, part in zip(lines, parts):
+        if line.get('sku_id') == part.get('sku_id') and line.get('quantity') == part.get('billing_quantity'):
+            line['price_basis'] = '객실 조식 포함(추가 비용 없음)' if part.get('included_benefit') else '추가 결제'
+    return row

@@ -291,3 +291,38 @@ def test_mixed_record_cited_only_to_exclude_an_unnamed_candidate_is_not_a_one_si
     assert got == ['COUNTEREVIDENCE_FOR_UNNAMED_ALTERNATIVE']
     named = dict(answer(sel='meal:THE_PAVILION', basket='meal:THE_PAVILION#4', reason='피자힐은 다시 가지 않겠다고 해 제외하고 샌드위치를 고릅니다.', counter=['F18']))
     assert 'COUNTEREVIDENCE_FOR_UNNAMED_ALTERNATIVE' not in [d['code'] for d in LSS.diagnose(named, m, 3)]
+
+
+def test_partly_included_breakfast_is_shown_per_line_and_in_conditions_without_changing_the_order():
+    """P5 re-check A05 r1: 2 of 3 diners were covered by the room contract, but the candidate said included=false
+    with price 85,000 (the third diner's cost); the model read 85,000 as the breakfast price and skipped it."""
+    contract = dict(components=[dict(sku_id='HC-MENU-098', role='MAIN', billing_quantity=2, unit_price_krw=0, included_benefit='ROOM_BREAKFAST_INCLUDED_CONTRACT'),
+                                dict(sku_id='HC-MENU-098', role='MAIN', billing_quantity=1, unit_price_krw=85000)])
+    row = dict(action_id='BREAKFAST_BUFFET', conditions=dict(price_krw=85000, included=False),
+               items=[dict(sku_id='HC-MENU-098', quantity=2), dict(sku_id='HC-MENU-098', quantity=1)],
+               item_contracts=[dict(sku_id='HC-MENU-098', quantity=2), dict(sku_id='HC-MENU-098', quantity=1)])
+    before_items = copy.deepcopy(row['items'])
+    LSS.breakfast_inclusion(row, contract)
+    assert row['conditions']['included'] == dict(status='PARTIAL', included_persons=2, paid_persons=1, extra_cost_krw=85000, basis='ROOM_BREAKFAST_CONTRACT')
+    assert row['conditions']['price_krw'] == 85000 and row['items'] == before_items, 'engine order and total unchanged'
+    assert [x['price_basis'] for x in row['item_contracts']] == ['객실 조식 포함(추가 비용 없음)', '추가 결제']
+    skip = dict(action_id='SKIP_BREAKFAST', conditions=dict(price_krw=0, included=False))
+    assert LSS.breakfast_inclusion(skip, None)['conditions']['included'] is False
+    full = dict(conditions=dict(price_krw=0, included=True), item_contracts=[dict(sku_id='X', quantity=2)])
+    LSS.breakfast_inclusion(full, dict(components=[dict(sku_id='X', role='MAIN', billing_quantity=2, included_benefit='Y')]))
+    assert full['conditions']['included']['status'] == 'ALL'
+    assert 'paid_persons와 price_krw는 포함되지 않은 인원의 추가 비용' in ' '.join(LSS.SYSTEM_LINES)
+    import inspect
+    from operator_choice.autonomy_v1 import autonomous_agent as AG
+    src = inspect.getsource(AG.breakfast_choice)
+    assert "if spec_of(a).get('stability'):" in src and 'LSS.breakfast_inclusion' in src, 'V19LS only; V16/V17 breakfast requests unchanged'
+
+
+def test_a05_followup_plan_is_four_calls_and_breakfast_reuses_only_offline_evening():
+    sys.path.insert(0, str(Path(__file__).resolve().parents[3] / 'tools/v18_batch'))
+    import batch as B
+    jobs = B.plan_v19e()
+    assert B.V19E == dict(max_calls=4, max_usd=0.02, pools=dict(E=4)) and sum(j['max_calls'] for j in jobs) == 4
+    assert [j['seed']['job'] for j in jobs if j.get('seed')] == ['S_A05_V19LS', 'S_A05_V19LS']
+    assert all(j['seed']['before'] == '2026-11-08_0800' for j in jobs if j.get('seed'))
+    assert B.plan_v19e_seed()[0]['id'] == 'S_A05_V19LS'

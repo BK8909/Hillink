@@ -43,8 +43,8 @@
   {
    "path": "docs/research/RESEARCH_AND_ARCHITECTURE_HANDOFF.md",
    "included": true,
-   "bytes": 83460,
-   "sha256": "a75113032fe8745e1a3cd7609c38370161a31c0227987377c2a176cd848c9501"
+   "bytes": 83492,
+   "sha256": "62fc16be85cb80f6272e61670aea16d9ba7c333715bc7dc8a1629c68d1d1d6e5"
   },
   {
    "path": "docs/walkerhill-guest-state-machine.md",
@@ -9355,8 +9355,8 @@
   {
    "path": "tools/ci/check_commit_metadata.py",
    "included": true,
-   "bytes": 1306,
-   "sha256": "9d100fa6b4f9072c19e6fc6c126faffee649179b8aa685cede8a211143be0b0a"
+   "bytes": 1841,
+   "sha256": "4fe67bf25f4feb84eadf42ff4769cabdd2bc44ca8bba41c2fadc4ed91993adc9"
   },
   {
    "path": "tools/ci/check_docs.py",

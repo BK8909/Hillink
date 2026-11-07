@@ -156,7 +156,7 @@ def day_rows(pid, event, e, scope, day_idx, meta):
                                    "장면": act, "상태": status, "단가": unit if unit is not None else "", "과금 단위": unit_kind,
                                    "확정 결제액": paid, "가정 결제액": paid, "가격 등급": ch.get("grade") or "",
                                    "가격 근거": basis[:160], "엔진 결정": "정량 엔진 턴" if sc.get("turn") else "계획기",
-                                   "상품 ID": (ch.get("sku_contract") or {}).get("sku_id") or (tchoice or {}).get("product_id", ""), "이용 인원": party if sc.get("meal") else "",
+                                   "상품 ID": (ch.get("sku_contract") or {}).get("sku_id") or (tchoice or {}).get("product_id", ""), "이용 인원": ((ch.get("sku_contract") or {}).get("participant_count") or party) if sc.get("meal") else "",   # a party-subset order (e.g. 2 of 3 at breakfast) records its diners
                                    "판매 수량": int(m.group(2)) if m else "", "판매 단위": m.group(3) if m else "",
                                    "수량 역할": "명시된 판매 단위" if m else "이용 인원(판매 수량 아님)" if sc.get("meal") else "판매 단위 미확인",
                                    "확인 메모": " | ".join(memo)}))

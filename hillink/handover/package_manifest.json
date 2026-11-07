@@ -1,7 +1,7 @@
 {
  "product": "HILLINK",
  "version": "V19LS product release 2026-11-07",
- "source_head": "8334424bf301729928c2b80c25f2cd2d3515f3e4",
+ "source_head": "a4236033343eb4b63a1f71ecfe556421617a073b",
  "data_scope": "RESEARCH_INPUTS_INCLUDED_IN_THIS_PUBLIC_REPOSITORY_REUSE_TERMS_NOT_DETERMINED_HERE",
  "files": [
   {
@@ -62,7 +62,7 @@
    "path": "handover/RECOVERY.md",
    "included": true,
    "bytes": 14354,
-   "sha256": "49f9a7fa30fb1b7248885dfe8bf8772b50550c31363e7678065c79b71317ac93"
+   "sha256": "57d44a3dff2a72b75003fe567dd5b180fbdd782dfac15b1ab54f8c550a89759b"
   },
   {
    "path": "handover/data/bundle.json",
@@ -4849,8 +4849,8 @@
   {
    "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/autonomous_agent.py",
    "included": true,
-   "bytes": 124239,
-   "sha256": "a236dc7e2bf4c50adfd0054a583b413001152874bd5480e3e138db0efdee8f75"
+   "bytes": 125326,
+   "sha256": "40814d76716769841befc3d1d6766e61286188a7a90dc47722d5b981bbd41708"
   },
   {
    "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/breakfast_policy.py",
@@ -4975,8 +4975,8 @@
   {
    "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/ls_stability.py",
    "included": true,
-   "bytes": 25610,
-   "sha256": "064e562215dc1fe0ba1c1108e6a54503bf347cbd99f51ae32002e1e52fadc08d"
+   "bytes": 29842,
+   "sha256": "b90da87146057c6b7f73fbac47c38d8ec052b9d66239f3988458050b0b346968"
   },
   {
    "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/lunch_products.py",
@@ -5983,8 +5983,8 @@
   {
    "path": "timeline/viewer/ledger_l5.py",
    "included": true,
-   "bytes": 23408,
-   "sha256": "140906547e75a7222b2b23090cd34fcd2cb03396ef72737b93551b397eef2444"
+   "bytes": 23540,
+   "sha256": "b2753350b0e33fb8f576eb722ea1ebbfcee04fa01f82d33804a78abecc6929e9"
   },
   {
    "path": "timeline/viewer/ledger_service.py",
@@ -6337,8 +6337,8 @@
   {
    "path": "timeline/viewer/static/agent_decision_view.js",
    "included": true,
-   "bytes": 22365,
-   "sha256": "326206e983836ba0c2ee6e6d1f8dca38580ee9546d084352a81aa6b2aee68781"
+   "bytes": 23019,
+   "sha256": "90a525890e77c910cbeddb8a16daa70479bc080bcc19b9047a58ccfb50bbbaf7"
   },
   {
    "path": "timeline/viewer/static/anomaly_evidence.json",
@@ -8257,8 +8257,8 @@
   {
    "path": "timeline/viewer/tests/agent_decision_view.test.cjs",
    "included": true,
-   "bytes": 10813,
-   "sha256": "2711b651e6113b343d555fd2325a6bdd1cc39236b6d0fe9b08845ee5de98c9e3"
+   "bytes": 12656,
+   "sha256": "39f77ad67d47b9d8dc852d14547c4363b410cb53a1bca64bc47b98bae7a6bea6"
   },
   {
    "path": "timeline/viewer/tests/compare.test.cjs",
@@ -9195,6 +9195,18 @@
    "included": true,
    "bytes": 6008,
    "sha256": "b5e6784b5470abf4b059bf09fdb9ff9ea37f32fb641bbfbf612e3c9d9b431ccb"
+  },
+  {
+   "path": "timeline/viewer/tests/test_v19ls_meal_quantity_review_1107.py",
+   "included": true,
+   "bytes": 3462,
+   "sha256": "61ee0891ec3db7e546c32bb07e2224822cd831ad08b383923bbbdc9ad8f54d71"
+  },
+  {
+   "path": "timeline/viewer/tests/test_v19ls_party_breakfast_1107.py",
+   "included": true,
+   "bytes": 6909,
+   "sha256": "f1d6316e0707ea91e8a96dd79d3dfc90c80e690af01ce40be6031e4c27c3f596"
   },
   {
    "path": "timeline/viewer/tests/test_visit_douglas_gate.py",

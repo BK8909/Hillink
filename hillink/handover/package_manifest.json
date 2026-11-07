@@ -44,7 +44,7 @@
    "path": "docs/research/RESEARCH_AND_ARCHITECTURE_HANDOFF.md",
    "included": true,
    "bytes": 83566,
-   "sha256": "ef5e1b18e2f2570b6f573678b296a9e80f9c4e0f07aa3e83be16eeaa211021af"
+   "sha256": "0a7b2e37756ab4ad3c4a05eea6db2db5b621added3a663ad606f82c5ac87bfdc"
   },
   {
    "path": "docs/walkerhill-guest-state-machine.md",
@@ -62,7 +62,7 @@
    "path": "handover/RECOVERY.md",
    "included": true,
    "bytes": 14768,
-   "sha256": "e677f74a12ad5da06c35944c316a5e7a3fdd7095e785b0dfe8595d4c1c390223"
+   "sha256": "b64564bee395ca27aeb40254a6adf31533bdde7da5d14119515cb5f36701e171"
   },
   {
    "path": "handover/data/bundle.json",
@@ -8833,8 +8833,8 @@
   {
    "path": "timeline/viewer/tests/test_http_audit_boundary.py",
    "included": true,
-   "bytes": 11558,
-   "sha256": "d43543f42df795c23bbe94b3c145bc6c6d581f4569b663bdbca1439f4cb956df"
+   "bytes": 11775,
+   "sha256": "8f70ddccd94656ba074d852a8f6d3f4254cd013f4108164df5196af72dd1223a"
   },
   {
    "path": "timeline/viewer/tests/test_ledger_amount_invariants_1107.py",

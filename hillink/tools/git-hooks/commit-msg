@@ -1,0 +1,9 @@
+#!/bin/sh
+# Remove automatic AI co-author and session trailers from a commit message (human author/committer untouched).
+# Enable once per clone:  git config core.hooksPath hillink/tools/git-hooks
+f="$1"
+tmp="$f.tmp.$$"
+grep -v -i -E '^(Co-Authored-By:[[:space:]]*Claude\b|Claude-Session:)' "$f" > "$tmp" || true
+# drop trailing blank lines left behind
+awk 'NF{for(i=0;i<n;i++)print "";n=0;print;next}{n++}' "$tmp" > "$f"
+rm -f "$tmp"

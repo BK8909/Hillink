@@ -61,8 +61,8 @@
   {
    "path": "handover/RECOVERY.md",
    "included": true,
-   "bytes": 11991,
-   "sha256": "7b4878e96f41f175eb78bd5f2a5243c66c35fda7b767ba9a805b51b95b0419d9"
+   "bytes": 12904,
+   "sha256": "c08bcf086a6305c2232b8e09c73f34b2e96d7552b00410d0f1f70001508b28f1"
   },
   {
    "path": "handover/data/bundle.json",
@@ -9347,10 +9347,28 @@
    "sha256": "9c6b48e69748cb9b208693c9908266c9681c680b8eee4dc9d2fa7993df05270d"
   },
   {
+   "path": "tools/ci/browser_e2e.cjs",
+   "included": true,
+   "bytes": 6219,
+   "sha256": "6e1005ed06bc14b6f8a2f9886c632449a2021d40a95b5db769c570c6709cd697"
+  },
+  {
+   "path": "tools/ci/check_commit_metadata.py",
+   "included": true,
+   "bytes": 1306,
+   "sha256": "9d100fa6b4f9072c19e6fc6c126faffee649179b8aa685cede8a211143be0b0a"
+  },
+  {
+   "path": "tools/ci/check_docs.py",
+   "included": true,
+   "bytes": 2936,
+   "sha256": "5784617aeee1d8920347aed2c3ddd1e6e5d07a2f5ea9a65c1aefa8fb9c65e9e2"
+  },
+  {
    "path": "tools/ci/check_failures.py",
    "included": true,
-   "bytes": 950,
-   "sha256": "a58378b6733d20413f108f05f92c5d997c18d41f9391ce992bf35abc139a79ac"
+   "bytes": 3298,
+   "sha256": "774cd7ea525a0d99e4f58fcea2f54d00573b08d8e849be284ebde7a7c32a4074"
   },
   {
    "path": "tools/ci/check_replay.py",
@@ -9359,10 +9377,16 @@
    "sha256": "7628574b150e5c387da99635f77438d593cf8751e8d909c59ec93a7beb658f26"
   },
   {
-   "path": "tools/ci/known_failures.txt",
+   "path": "tools/ci/http_e2e.py",
    "included": true,
-   "bytes": 722,
-   "sha256": "089be3603273f1b8e4327744e4422a0a00701362bd1ae5ee9e04083b02efc138"
+   "bytes": 5274,
+   "sha256": "a2c39f55d76f510828000ae8c99bc08059b975e4a58aa1e087c61dd3221d3d31"
+  },
+  {
+   "path": "tools/ci/known_failures.tsv",
+   "included": true,
+   "bytes": 1277,
+   "sha256": "ce85b9eca27ae65e491b9e9ab5dfb71ba6b22ee738127cbd75be4734075f7b74"
   },
   {
    "path": "tools/ci/replay_check.py",
@@ -9381,6 +9405,12 @@
    "included": true,
    "bytes": 2148,
    "sha256": "f7b73d8004fc89f930978ebd4d6a03c43b791d862108295712e9c5e307e1cc7a"
+  },
+  {
+   "path": "tools/git-hooks/commit-msg",
+   "included": true,
+   "bytes": 435,
+   "sha256": "23552df5e272b25fbba6267f05c7735e73676cdfd587b85541a76c8c1eb9459f"
   },
   {
    "path": "tools/ls_stab/diagnose_saved.py",

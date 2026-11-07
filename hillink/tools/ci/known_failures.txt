@@ -1,7 +1,0 @@
-# Standing failures classified in handover/profile45_review/ls_stabilization_1107/결과보고-최종-V19LS-제품승격-1107.md §5.
-# Expected values, ledger amounts and sealed SHAs are NOT edited to make these pass. CI fails on any test id not listed here.
-timeline/viewer/tests/test_ledger_l5.py::LedgerTest::test_all_sums
-timeline/viewer/tests/test_m4_live_visit.py::M4LiveVisitTests::test_complete_action_sequence_and_l5_transactions_match_research
-timeline/viewer/tests/test_opx_adapter.py::OpxAdapter::test_arbitrary_value_recomputed
-timeline/viewer/tests/test_opx_adapter.py::OpxAdapter::test_four_baselines
-timeline/viewer/tests/test_visit_smoke_v1.py::VisitSmokeBaselineV1::test_six_frozen_current_engine_cases

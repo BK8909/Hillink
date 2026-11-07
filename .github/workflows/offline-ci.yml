@@ -1,18 +1,19 @@
 name: offline-ci
 # Offline verification only. No API key is provided and external model calls are blocked:
-# HILLINK_LLM_ENABLED=0, HILLINK_LLM_EXTERNAL_OPT_IN=0 and the offline network guard (tools/offline_test_guard).
-# LIVE judgments are never run here; LIVE results in the reports come from approved local runs.
+# HILLINK_LLM_ENABLED=0, HILLINK_LLM_EXTERNAL_OPT_IN=0, no OPENAI_API_KEY and the offline network guard
+# (tools/offline_test_guard) for tests. LIVE judgments are never run here; LIVE results in the reports
+# come from approved local runs.
 on:
   push:
-    branches: [main, 'integration/**']
+    branches: [main, 'integration/**', 'ci/**']
   pull_request:
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
   offline:
-    runs-on: ubuntu-latest
-    timeout-minutes: 45
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
     defaults:
       run:
         working-directory: hillink
@@ -21,33 +22,69 @@ jobs:
       HILLINK_LLM_EXTERNAL_OPT_IN: '0'
       HILLINK_AGENT_MODE: replay
       OPENAI_API_KEY: ''
+      HILLINK_PORT: '8994'
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.11'
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
-          node-version: '20'
+          node-version: '22'
+      - name: No model credentials in this job
+        run: test -z "${OPENAI_API_KEY}" && test "${HILLINK_LLM_EXTERNAL_OPT_IN}" = 0
       - name: Install
         run: python -m pip install -r requirements-dev.txt
-      - name: Package manifest and secret scan
+      - name: Package manifest, data SHA and secret scan
         run: |
           python tools/verify_package.py
           python tools/scan_secrets.py
+      - name: Public docs, links and current LIVE policy identity
+        run: python tools/ci/check_docs.py
+      - name: No new AI co-author or session trailers since the baseline
+        run: python tools/ci/check_commit_metadata.py
       - name: Restore data package into a fresh cache (SHA checked)
         run: |
           export HILLINK_DATA_HOME="$RUNNER_TEMP/hillink-data"
           echo "HILLINK_DATA_HOME=$HILLINK_DATA_HOME" >> "$GITHUB_ENV"
-          python -B tools/bootstrap_data.py --json
-      - name: Start-up check (no server, no external call)
+          python -B tools/bootstrap_data.py --json > /dev/null
+      - name: Start-up check (fresh-environment command, no external call)
         run: HILLINK_PYTHON="$(command -v python)" bash tools/start_product.sh --check
       - name: Node tests
         run: cd timeline/viewer && node --test tests/*.cjs
-      - name: Python tests (fails only on failures not in tools/ci/known_failures.txt)
+      - name: Python tests (strict; only the classified standing failures are allowed)
         run: |
-          PYTHONPATH="$PWD/tools/offline_test_guard" python -m pytest -q -rA -p no:cacheprovider timeline/viewer/tests > "$RUNNER_TEMP/pytest.log" 2>&1 || true
+          set +e
+          PYTHONPATH="$PWD/tools/offline_test_guard" timeout 2400 python -m pytest -q -rA -p no:cacheprovider timeline/viewer/tests > "$RUNNER_TEMP/pytest.log" 2>&1
+          echo "pytest exit code $?"
+          set -e
           tail -3 "$RUNNER_TEMP/pytest.log"
-          python tools/ci/check_failures.py "$RUNNER_TEMP/pytest.log" tools/ci/known_failures.txt
+          python tools/ci/check_failures.py "$RUNNER_TEMP/pytest.log" tools/ci/known_failures.tsv
       - name: V16 stored replay 38/38
         run: python tools/ci/check_replay.py
+      - name: Start the product server (replay and rules only)
+        run: |
+          HILLINK_PYTHON="$(command -v python)" nohup bash tools/start_product.sh > "$RUNNER_TEMP/server.log" 2>&1 &
+          for i in $(seq 1 120); do curl -fs "http://127.0.0.1:$HILLINK_PORT/api/build" > /dev/null && exit 0; sleep 1; done
+          cat "$RUNNER_TEMP/server.log"; exit 1
+      - name: HTTP end-to-end
+        run: python tools/ci/http_e2e.py "http://127.0.0.1:$HILLINK_PORT"
+      - name: Browser end-to-end (Chromium)
+        run: |
+          mkdir -p "$RUNNER_TEMP/e2e" && cd "$RUNNER_TEMP/e2e"
+          npm init -y > /dev/null && npm install --no-save --no-audit --no-fund playwright@1.62.1
+          npx playwright install --with-deps chromium
+          NODE_PATH="$RUNNER_TEMP/e2e/node_modules" node "$GITHUB_WORKSPACE/hillink/tools/ci/browser_e2e.cjs" "http://127.0.0.1:$HILLINK_PORT" "$RUNNER_TEMP/screens"
+      - name: Upload logs and screenshots
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: offline-ci-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/pytest.log
+            ${{ runner.temp }}/server.log
+            ${{ runner.temp }}/screens
+          if-no-files-found: ignore
+          retention-days: 14

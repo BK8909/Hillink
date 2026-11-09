@@ -56,14 +56,22 @@ jobs:
         run: python tools/ci/check_determinism.py
       - name: Node tests
         run: cd timeline/viewer && node --test tests/*.cjs
-      - name: Python tests (strict; only the classified standing failures are allowed)
+      - name: Python tests, current product (strict; 0 failures allowed)
         run: |
           set +e
-          PYTHONPATH="$PWD/tools/offline_test_guard" timeout 2400 python -m pytest -q -rA -p no:cacheprovider timeline/viewer/tests > "$RUNNER_TEMP/pytest.log" 2>&1
+          PYTHONPATH="$PWD/tools/offline_test_guard" timeout 2400 python -m pytest -q -rA -p no:cacheprovider -m "not historical_reference" timeline/viewer/tests > "$RUNNER_TEMP/pytest.log" 2>&1
           echo "pytest exit code $?"
           set -e
           tail -3 "$RUNNER_TEMP/pytest.log"
-          python tools/ci/check_failures.py "$RUNNER_TEMP/pytest.log" tools/ci/known_failures.tsv
+          python tools/ci/check_failures.py "$RUNNER_TEMP/pytest.log" /dev/null
+      - name: Historical reference comparisons (frozen fixtures, sealed experiments, stored ledgers vs current engine; not counted as current-product passes)
+        run: |
+          set +e
+          PYTHONPATH="$PWD/tools/offline_test_guard" timeout 1200 python -m pytest -q -rA -p no:cacheprovider -m historical_reference timeline/viewer/tests > "$RUNNER_TEMP/pytest_historical.log" 2>&1
+          echo "pytest exit code $?"
+          set -e
+          tail -3 "$RUNNER_TEMP/pytest_historical.log"
+          python tools/ci/check_failures.py "$RUNNER_TEMP/pytest_historical.log" tools/ci/historical_reference.tsv --min-passed 0
       - name: Historical contract reproduction (CD-15 sealed engine files from Git history; not a current-engine result)
         run: python tools/ci/check_historical_contracts.py
       - name: Explain the standing stored-ledger gaps (informational)
@@ -90,6 +98,7 @@ jobs:
           name: offline-ci-${{ github.sha }}
           path: |
             ${{ runner.temp }}/pytest.log
+            ${{ runner.temp }}/pytest_historical.log
             ${{ runner.temp }}/server.log
             ${{ runner.temp }}/screens
           if-no-files-found: ignore

@@ -1,4 +1,4 @@
-"""Strict check of a `pytest -rA` log against the classified standing failures (known_failures.tsv).
+"""Strict check of a `pytest -rA` log against a classified list (historical_reference.tsv, or /dev/null for "no failure allowed").
 
 Fails when: the final summary is missing (crash, timeout, interruption), any collection/setup ERROR occurs,
 fewer tests passed than the floor, a failing test id is not in the list, a listed id fails a different number
@@ -37,11 +37,11 @@ print('pytest summary:', (summary or '(missing)').strip('= '))
 print('passed %d (floor %d) · failed %d · skipped %d' % (passed, a.min_passed, counts.get('failed', 0), counts.get('skipped', 0)))
 if passed < a.min_passed: problems.append('passed %d is below the floor %d (tests not collected?)' % (passed, a.min_passed))
 if summary and counts.get('failed', 0) != sum(failed.values()): problems.append('summary failed=%d but %d FAILED lines' % (counts.get('failed', 0), sum(failed.values())))
-print('\nstanding failures by cause:')
+print('\nlisted differences by cause:')
 for t, n in known.items():
     print('  %-34s %d/%d  %s' % (cause[t].split(' ')[0], failed.get(t, 0), n, t.split('::', 1)[-1]))
 if wrong: problems += ['count changed for %s: expected %d, got %d' % (t, e, g) for t, (e, g) in wrong.items()]
-if fixed: problems += ['standing failure now passes, update known_failures.tsv deliberately: ' + t for t in fixed]
+if fixed: problems += ['standing failure now passes, update the list deliberately: ' + t for t in fixed]
 print('\nnew failures: %d' % len(new))
 for t, n in new.items(): print('  NEW', n, t)
 if new or problems:

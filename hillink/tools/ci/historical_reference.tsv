@@ -1,0 +1,11 @@
+# Historical reference comparisons: frozen fixtures, sealed experiments and stored ledgers compared with the current engine.
+# They are NOT current-product tests and are not reported as passing. conftest.py marks exactly these ids `historical_reference`;
+# the current-product suite runs `-m "not historical_reference"` and must have 0 failures. A separate CI step runs
+# `-m historical_reference` and requires exactly these differences (no new difference, no silent disappearance).
+# Expected values, ledger amounts and sealed SHAs are NOT edited. CD-15 is additionally reproduced with its sealed engine files.
+# count	test id	cause
+6	timeline/viewer/tests/test_visit_smoke_v1.py::VisitSmokeBaselineV1::test_six_frozen_current_engine_cases	LEGACY_FIXTURE_VS_CURRENT (CL42 fixture recorded on the legacy selector at visit-state-v2.2; the current legacy selector reports +external-delivery-v1 and its paid amounts differ; legacy is a developer comparison engine, not the product path)
+1	timeline/viewer/tests/test_m4_live_visit.py::M4LiveVisitTests::test_complete_action_sequence_and_l5_transactions_match_research	RESEARCH_REFERENCE_VS_CURRENT_CATALOG (A08 action sequence still matches; transaction rows differ after the official menu/price catalog split products, e.g. Sky Yard price-tier label)
+1	timeline/viewer/tests/test_opx_adapter.py::OpxAdapter::test_arbitrary_value_recomputed	SEALED_ENGINE_EXPERIMENT (CD-15 refuses to compute on the current engine by design; reproduced with the sealed engine files by check_historical_contracts.py)
+1	timeline/viewer/tests/test_opx_adapter.py::OpxAdapter::test_four_baselines	SEALED_ENGINE_EXPERIMENT (same CD-15 seal; reproduced by check_historical_contracts.py)
+1	timeline/viewer/tests/test_ledger_l5.py::LedgerTest::test_all_sums	STORED_LEGACY_LEDGER_VS_CURRENT (stored 11-person legacy day vs same-condition recomputation; explained by explain_ledger_gaps.py)

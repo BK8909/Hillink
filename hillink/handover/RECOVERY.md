@@ -92,9 +92,11 @@ A/B는 실행 출처에 따라 규칙 기반 비교, 새 LLM 판단을 포함한
 ### 자동화 검증
 
 ```bash
-PYTHONPATH=tools/offline_test_guard .venv/bin/python -m pytest -q timeline/viewer/tests
+PYTHONPATH=tools/offline_test_guard .venv/bin/python -m pytest -q -m "not historical_reference" timeline/viewer/tests
 node --test timeline/viewer/tests/*.test.cjs
 ```
+
+현재 제품 테스트는 실패 0건이어야 합니다. 과거 고정 기준(이전 엔진에서 기록한 fixture, 봉인된 CD-15 실험, 저장된 11인 원장)과 현재 엔진의 비교 10건은 `tools/ci/historical_reference.tsv`에 사유와 함께 분류되어 있으며, `-m historical_reference`로 따로 실행합니다. 이 10건은 통과로 세지 않으며, CI는 목록과 정확히 같은 차이만 허용합니다. CD-15는 봉인된 엔진 파일로 별도 재현합니다(`tools/ci/check_historical_contracts.py`).
 
 전체 테스트의 합격 여부는 실행한 코드와 데이터의 실제 결과를 기준으로 판단합니다. 과거의 예상값·고정 해시를 성공 수치에 맞추기 위해 수정해서는 안 됩니다. 회귀의 알려진 제약은 `tools/ci/`와 해당 테스트의 근거를 참고합니다. 실제 브라우저 E2E에서는 렌더링·콘솔·네트워크·원장·정책 표시를 함께 확인해야 합니다.
 

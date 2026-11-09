@@ -101,6 +101,16 @@ const shot = async (p, name) => { if (OUT) await p.screenshot({ path: `${OUT}/${
     const unknown = (await q.textContent('body')).replace(/\s+/g, ' ');
     ok('unknown run id is refused, not filled with another run', /실행 기록을 확인할 수 없습니다/.test(unknown) && !(await q.evaluate(() => typeof REV !== 'undefined' && REV.flow && REV.flow.ledger && REV.flow.ledger.run_id)));
     await q.close();
+    // 전체분석 탭 — 핵심 결론이 맨 위, 우선 추천 3개, 운영 개선안 7개, 다른 탭과 왕복
+    await p.click('button.tab[data-mode="analysis"]'); await p.waitForSelector('#analysisView .oa-conclusion', { timeout: 15000 });
+    const oa = await p.evaluate(() => ({ cls: document.querySelector('main').className, first: document.querySelector('#analysisView .oa > section').className, picks: document.querySelectorAll('#analysisView .oa-pick').length, props: [...document.querySelectorAll('#analysisView table')].pop().querySelectorAll('tbody tr').length, text: document.querySelector('#analysisView .oa-conclusion p').textContent }));
+    ok('overall analysis opens with the key conclusion first', oa.cls === 'analysis' && oa.first === 'oa-conclusion' && /공간 경험/.test(oa.text), JSON.stringify(oa).slice(0, 160));
+    ok('overall analysis shows 3 priority picks and 7 proposals', oa.picks === 3 && oa.props === 7, `${oa.picks}/${oa.props}`);
+    await shot(p, '09-analysis');
+    await p.click('button.tab[data-mode="opx"]'); await p.waitForTimeout(1500);
+    ok('leaving overall analysis hides it', await p.evaluate(() => getComputedStyle(document.getElementById('analysisView')).display === 'none' && document.querySelector('main').classList.contains('opx')));
+    await p.click('button.tab[data-mode="analysis"]'); await p.waitForTimeout(500);
+    ok('overall analysis reopens', await p.evaluate(() => getComputedStyle(document.getElementById('analysisView')).display === 'block'));
 
 
     for (const [w, h] of [[1024, 800], [390, 844]]) {
@@ -110,6 +120,8 @@ const shot = async (p, name) => { if (OUT) await p.screenshot({ path: `${OUT}/${
         const sw = await p.evaluate(() => document.documentElement.scrollWidth);
         ok(`no horizontal overflow ${hash} @${w}px`, sw <= w, sw);
       }
+      await p.click('button.tab[data-mode="analysis"]'); await p.waitForTimeout(600);
+      { const sw = await p.evaluate(() => document.documentElement.scrollWidth); ok(`no horizontal overflow overall analysis @${w}px`, sw <= w, sw); }
       await shot(p, `10-${w}`);
     }
   } catch (e) { ok('flow completed without exception', false, e.message); }

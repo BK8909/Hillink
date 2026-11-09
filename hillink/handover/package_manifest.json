@@ -6349,8 +6349,8 @@
     {
       "path": "timeline/viewer/static/app.js",
       "included": true,
-      "bytes": 345781,
-      "sha256": "352c81676373e7aa11ae680230a93fa9a2ab0ee781eb8d00fb5f810ece1ae26e"
+      "bytes": 346374,
+      "sha256": "080f013eeb112783bba14506071e34cd0aca6864bd66333495928b9200378fd9"
     },
     {
       "path": "timeline/viewer/static/assist.js",
@@ -7033,8 +7033,8 @@
     {
       "path": "timeline/viewer/static/index.html",
       "included": true,
-      "bytes": 31882,
-      "sha256": "181b7299fa2ed083e9874f3fe17282fd5b6dacc3086d1695e5cee9accb6760fb"
+      "bytes": 32346,
+      "sha256": "9bb5a00f384a7dfbc61fdd94edc851359927ed3d0eb82a67937f797a377d7e98"
     },
     {
       "path": "timeline/viewer/static/lab.js",
@@ -7137,6 +7137,30 @@
       "included": true,
       "bytes": 42590,
       "sha256": "b6db42d11c54ae630738141425586cad2d66689699a44a3bb4151ea0865909e8"
+    },
+    {
+      "path": "timeline/viewer/tests/overall_analysis_view_1109.test.cjs",
+      "included": true,
+      "bytes": 3638,
+      "sha256": "f98e73ff3ffb6b8ee3ada8aa2cf92cfa672affd89d0df9e5ed010d8965b7e1fd"
+    },
+    {
+      "path": "timeline/viewer/static/overall_analysis.json",
+      "included": true,
+      "bytes": 12436,
+      "sha256": "ebb780bcb87b212c5ec707e687c082606aecf57fa68cb36a6ebdee3cf3c870dd"
+    },
+    {
+      "path": "timeline/viewer/static/analysis.css",
+      "included": true,
+      "bytes": 6046,
+      "sha256": "a0e1987d59dc94f182c3a19554e04e0df05278f4ebb9f7e1c8d1e56806755741"
+    },
+    {
+      "path": "timeline/viewer/static/analysis.js",
+      "included": true,
+      "bytes": 6791,
+      "sha256": "813421a2dadd37a3edf7256ecd95ad35c67894d243cdf95c8e56da158880bc22"
     },
     {
       "path": "timeline/viewer/static/persona_catalog.json",
@@ -9379,8 +9403,8 @@
     {
       "path": "tools/ci/browser_e2e.cjs",
       "included": true,
-      "bytes": 12011,
-      "sha256": "3978166179e8fd0be73eca59ae86aefa06155383914cb3e2789a57cc7b1fe38e"
+      "bytes": 13767,
+      "sha256": "92e74e7ad8f4eb6d522a530f338c2698412a9bb2a626e8e301e4539d3667cb73"
     },
     {
       "path": "tools/ci/check_commit_metadata.py",

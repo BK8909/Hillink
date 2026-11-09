@@ -300,6 +300,15 @@ function setMode(m) {
   if(window.HLNav){const routed=HLNav.routeMode(m);if(routed)return routed.handled;}
   // 10/23 지도 페이지는 '에이전트 한 명 / 여러 명' 두 모드만 — 예전 하루 전체 · 손님 한 팀 · 호텔 전체 화면으로 가는 길은 에이전트 모드로 돌린다(소스는 보존)
   if (m === "day" || m === "guest" || m === "report" || m === "ask" || m === "settings") m = MODE === "agents" ? "agents" : "agent";
+  if (m === "analysis") {   // 11/09 전체분석 — 화면 전체(static/analysis.js) · 프로파일 근거 분석, 실행 · 원장 상태는 건드리지 않음
+    if (m !== MODE && typeof closeDrawer === "function") closeDrawer();
+    MODE = m; setPlay(false);
+    $$("nav .tab").forEach(b => b.classList.toggle("on", b.dataset.mode === "analysis"));
+    ["report", "evidence", "settings", "ask", "guest", "library", "opx", "auto"].forEach(k => $("main").classList.remove(k));
+    $("main").classList.add("analysis");
+    return oaEnter();
+  }
+  $("main").classList.remove("analysis");
   if (m === "auto") {   // CL-1024-18 자율 하루 — 화면 전체(static/autonomy.js) · 기존 고객흐름 상태는 건드리지 않음
     if (m !== MODE && typeof closeDrawer === "function") closeDrawer();
     MODE = m; setPlay(false);

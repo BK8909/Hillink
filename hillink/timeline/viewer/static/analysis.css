@@ -1,0 +1,69 @@
+/* 2026-11-09 전체분석 탭 — 화면 전체(static/analysis.js) · library / opx 와 같은 전체 화면 규칙 */
+main.analysis { display: block; overflow: hidden; }
+main.analysis > aside, main.analysis > #center { display: none; }
+#analysisView { display: none; }
+main.analysis > #analysisView { display: block; height: 100%; overflow-y: auto; background: #f5f0e9; }
+.oa { max-width: 1240px; margin: 0 auto; padding: 24px 28px 64px; color: #252a32; box-sizing: border-box; }
+.oa-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-bottom: 18px; }
+.oa-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .08em; color: #ba3432; }
+.oa-head h2 { margin: 4px 0 6px; font-size: 24px; letter-spacing: -.5px; }
+.oa-head p { margin: 0; color: #6a6460; font-size: 13px; }
+.oa-badges { display: flex; flex-wrap: wrap; gap: 6px; }
+.oa-badges span { background: #fff; border: 1px solid #ece4da; border-radius: 9px; padding: 5px 9px; font-size: 11px; color: #5a5450; }
+.oa-sec { background: rgba(255,255,255,.92); border: 1px solid #fff; border-radius: 18px; box-shadow: 0 5px 15px #58402a0b; padding: 20px 22px; margin-top: 16px; }
+.oa-sec h3 { margin: 0 0 10px; font-size: 18px; }
+.oa-sec h4 { margin: 18px 0 8px; font-size: 14px; }
+.oa-lead { font-size: 15px; font-weight: 600; margin: 0 0 8px; line-height: 1.55; }
+.oa-sec p { line-height: 1.6; font-size: 13px; }
+.oa-note { color: #6a6460; font-size: 12px !important; margin: 4px 0 8px; }
+.oa-kpis { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; margin: 4px 0 14px; }
+.oa-kpis article { background: #fbf8f4; border: 1px solid #eee6dd; border-radius: 14px; padding: 14px 16px; }
+.oa-kpis strong { display: block; font-size: 26px; letter-spacing: -.6px; font-variant-numeric: tabular-nums; }
+.oa-kpis small { font-size: 12px; color: #5a5450; }
+.oa-tablewrap { overflow-x: auto; }
+.oa-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.oa-table th, .oa-table td { text-align: left; vertical-align: top; padding: 9px 10px; border-bottom: 1px solid #eee6dd; line-height: 1.5; }
+.oa-table thead th { font-size: 11px; color: #6a6460; font-weight: 650; background: #fbf8f4; }
+.oa-num { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.oa-ids { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.oa-side .oa-ids { display: inline-flex; }
+.oa-id { font-size: 10.5px; background: #f3eee8; border-radius: 6px; padding: 1px 6px; color: #4a4440; font-variant-numeric: tabular-nums; }
+.oa-none { font-size: 11px; color: #9a948b; }
+.oa-two { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.oa-bars { list-style: none; margin: 0; padding: 0; }
+.oa-bars li { padding: 10px 0; border-bottom: 1px solid #eee6dd; }
+.oa-bar-head { display: flex; justify-content: space-between; gap: 10px; font-size: 13px; }
+.oa-bar-head span { color: #6a6460; font-size: 12px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.oa-track { height: 8px; background: #f1ebe4; border-radius: 6px; margin: 6px 0; overflow: hidden; }
+.oa-track i { display: block; height: 100%; border-radius: 6px; }
+.oa-good .oa-track i { background: #3b947e; }
+.oa-bad .oa-track i { background: #cc4544; }
+.oa-bars p { margin: 0; font-size: 12px; color: #4a4440; }
+.oa-side, .oa-limits { margin: 0; padding-left: 18px; font-size: 13px; line-height: 1.7; }
+.oa-steps { margin: 6px 0 12px; padding-left: 20px; font-size: 13px; line-height: 1.6; }
+.oa-steps li b { display: inline-block; min-width: 140px; }
+@media (max-width: 900px) { .oa-two { grid-template-columns: 1fr; } }
+@media (max-width: 650px) { .oa { padding: 14px 12px 48px; } .oa-kpis { grid-template-columns: 1fr 1fr 1fr; gap: 6px; } .oa-kpis strong { font-size: 20px; } .oa-sec { padding: 14px; border-radius: 14px; } .oa-badges { align-items: flex-start; } }
+/* V2 — 핵심 결론 · 우선 추천 3 · A/B 참고 · 연령 기준 접기 */
+.oa-conclusion { background: #2a2f37; color: #fff; border-radius: 20px; padding: 22px 24px; margin-top: 4px; box-shadow: 0 10px 30px #2a2f3726; }
+.oa-conclusion .oa-eyebrow { color: #ffb4a8; }
+.oa-conclusion p { font-size: 17px; line-height: 1.65; font-weight: 600; margin: 8px 0 14px; letter-spacing: -.2px; }
+.oa-mini { display: flex; flex-wrap: wrap; gap: 8px; }
+.oa-mini span { background: #ffffff14; border: 1px solid #ffffff26; border-radius: 10px; padding: 6px 10px; font-size: 12px; color: #e9e6e2; }
+.oa-mini b { color: #fff; font-size: 14px; margin-right: 2px; }
+.oa-picks { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; margin-top: 14px; }
+.oa-pick { background: #fff; border: 1px solid #fff; border-top: 4px solid var(--pick, #cc4544); border-radius: 16px; padding: 16px 18px; box-shadow: 0 5px 15px #58402a0f; display: flex; flex-direction: column; gap: 6px; }
+.oa-pick-experience { --pick: #3b947e; } .oa-pick-spend { --pick: #de8627; } .oa-pick-ease { --pick: #517fc5; }
+.oa-pick-label { font-size: 11px; font-weight: 700; color: var(--pick); letter-spacing: .02em; }
+.oa-pick b { font-size: 16px; line-height: 1.45; }
+.oa-pick p { margin: 0; font-size: 12.5px; color: #4a4440; line-height: 1.5; }
+.oa-pick small { font-size: 11px; color: #7a746e; line-height: 1.5; }
+.oa-top-row th, .oa-top-row td { background: #fffaf3; }
+.oa-flag { display: inline-block; margin-left: 6px; font-size: 10px; font-weight: 700; color: #ba3432; border: 1px solid #e7b3ad; border-radius: 6px; padding: 0 5px; vertical-align: 1px; }
+.oa-ab { margin-top: 14px; background: #f6f3ff; border: 1px solid #e3ddf5; border-radius: 14px; padding: 14px 16px; }
+.oa-ab .oa-eyebrow { color: #5b4bb0; }
+.oa-ab p { margin: 6px 0 0; }
+.oa-age { margin-top: 16px; border-top: 1px solid #eee6dd; padding-top: 10px; }
+.oa-age summary { cursor: pointer; font-size: 12px; color: #6a6460; }
+@media (max-width: 900px) { .oa-picks { grid-template-columns: 1fr; } }
+@media (max-width: 650px) { .oa-conclusion { padding: 16px; border-radius: 14px; } .oa-conclusion p { font-size: 15px; } }

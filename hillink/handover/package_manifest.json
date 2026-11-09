@@ -9427,8 +9427,8 @@
     {
       "path": "tools/ci/check_docs.py",
       "included": true,
-      "bytes": 3123,
-      "sha256": "fd7ac75bee4ccfe6e8d4a14c2b139a9cdbc1642b6d14f82bec5171d12934a80b"
+      "bytes": 5204,
+      "sha256": "89bd24cfa01ba53669745e96d88e9e75ca220979de4dc13dec94f7acca6a3531"
     },
     {
       "path": "tools/ci/check_failures.py",

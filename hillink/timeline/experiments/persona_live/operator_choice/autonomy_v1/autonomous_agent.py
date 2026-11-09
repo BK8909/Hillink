@@ -17,6 +17,8 @@ from . import agent_day as AD, hotel_catalog as H, hotel_runtime as HR
 from . import meal_basket as MB, profile_context as PC, agent_provider as P
 from . import agent_experience as X
 from . import m4_shortlist as MS
+from . import hotel_reference_llm as HRL
+from . import visit_memory_llm as VM
 from . import compact_question as CQ
 from . import ls_stability as LSS
 
@@ -124,7 +126,11 @@ POLICY_V18S2 = 'LLM_AUTONOMOUS_CUSTOMER_V18S2'  # S2: S's cue removal + a price/
 POLICY_V18P = 'LLM_AUTONOMOUS_CUSTOMER_V18P'    # P: C with personal-signal-first meal venue selection (shortlist only; presentation as C)
 POLICY_V18L2 = 'LLM_AUTONOMOUS_CUSTOMER_V18L2'  # L2: L with decision-topic evidence (food signals of shown venues, occasion meals, dining price observations)
 POLICY_V18M = 'LLM_AUTONOMOUS_CUSTOMER_V18M'    # M: C with the meal output trimmed to what the model decides (no quantity_reason: the engine owns quantity)
+POLICY_V19LS_HP1 = 'LLM_AUTONOMOUS_CUSTOMER_V19LS_HP1'  # research on V19LS: external delivery as a dinner alternative + hotel delivery statistic as low-priority reference (not the default)
 POLICY_V19LS_P2 = 'LLM_AUTONOMOUS_CUSTOMER_V19LS_P2'  # research on V19LS: party-subset breakfast choices + one-time meal quantity review (not the default)
+POLICY_V19LS_HP1B = 'LLM_AUTONOMOUS_CUSTOMER_V19LS_HP1B'  # research: HP1 with controlled inputs (V19LS system/schema in B0 and B; reference block is the only difference)
+POLICY_V19LS_MEM1 = 'LLM_AUTONOMOUS_CUSTOMER_V19LS_MEM1'  # research: V19LS + multi-day visit memory (executed earlier-day records)
+POLICY_V19LS_INT4 = 'LLM_AUTONOMOUS_CUSTOMER_V19LS_INT4'  # improved selectable policy (2026-11-08): V19LS_MEM1 + INT4_SWITCHES; V19LS stays the default
 POLICY_V19LS = 'LLM_AUTONOMOUS_CUSTOMER_V19LS'  # stabilised LS: stance/flags/candidate links, repeat signal, tradeoff note, diagnostics, recoverable-error retry (product LIVE default since 2026-11-07)
 LIVE_POLICY = POLICY_V19LS                      # product LIVE default since 2026-11-07; V17 stays selectable by name
 V18_FOLLOWUPS = (POLICY_V18N, POLICY_V18L, POLICY_V18S, POLICY_V18P, POLICY_V18L2, POLICY_V18M, POLICY_V18S2, POLICY_V18LS)
@@ -245,7 +251,7 @@ assert RANK_SENTENCE in SYSTEM_V18
 SYSTEM_V18S = SYSTEM_V18.replace(RANK_SENTENCE,'규칙 엔진이 실행 가능성·일정·가격 계약을 확인한 후보를 몇 개로 줄였습니다(candidates). 후보와 옵션의 순서는 선호 순위가 아닙니다.')
 SYSTEM_V18S2 = SYSTEM_V18.replace(RANK_SENTENCE,'규칙 엔진이 실행 가능성·일정·가격 계약을 확인한 후보를 몇 개로 줄였습니다(candidates). 후보·구성·옵션은 종류와 이름순으로 나열했으며 선호·가격·점수 순위가 아닙니다.')
 PRICE_MARKS=('최저가(인원 충족)','상품 점수 1위','직접 경험 메뉴')
-TYPE_ORDER={'MEAL':0,'BREAKFAST':0,'ACTIVITY':1,'REST':2,'SKIP_MEAL':2,'DAY_END':3,'LEAVE':3,'CHECKOUT':3}
+TYPE_ORDER={'MEAL':0,'BREAKFAST':0,'ACTIVITY':1,'REST':2,'SKIP_MEAL':2,'DAY_END':3,'LEAVE':3,'CHECKOUT':3,'DEFER_MEAL':2}
 # S2: selection reasons that carry the M4 score or the price ranking are shown as one neutral value; reasons
 # that carry personal evidence, party size or a mandatory role stay as they are
 SCORE_REASON_RX=re.compile(r'^(M4_|TOP_PRODUCT_SCORE|NEXT_PRODUCT_SCORE|PRICE_CHECK_CHEAPEST)')
@@ -301,7 +307,7 @@ ENGINE_QUANTITY_NOTE = 'ENGINE_OWNED_QUANTITY: 선택한 옵션의 판매 단위
 def lean_system(rows):
     """Instructions for the decision types among the shown candidates (L)."""
     kinds={r.get('type') for r in rows}
-    meal=bool(kinds & {'MEAL','BREAKFAST'});rest=bool(kinds & {'REST','DAY_END','CHECKOUT','SKIP_MEAL'})
+    meal=bool(kinds & {'MEAL','BREAKFAST'});rest=bool(kinds & {'REST','DAY_END','CHECKOUT','SKIP_MEAL','DEFER_MEAL'})
     lines=LEAN_BASE+([LEAN_BLOCKS['MEAL'][0]] if meal else ['이번 후보에는 식사가 없으므로 selected_basket_id는 null입니다.'])+[LEAN_PERSONAL]+LEAN_BLOCKS['INTAKE']+[LEAN_CONSTANTS]
     if meal:lines+=LEAN_BLOCKS['MEAL'][1:]
     if rest:lines+=LEAN_BLOCKS['REST']
@@ -328,10 +334,40 @@ POLICIES = {
     POLICY_V18L2: dict(system=None, system_for=lean_system, schema=SELECTION_V18, day_end_review=DAY_END_POLICY, context='AUTONOMOUS_CONTEXT_V18_LEAN', stable_prefix=True, select=True, effort='medium', prefix_message='personal', topic=True),
     POLICY_V18LS: dict(system=None, system_for=lean_neutral_system, schema=SELECTION_V18, day_end_review=DAY_END_POLICY, context='AUTONOMOUS_CONTEXT_V18_LEAN', stable_prefix=True, select=True, effort='medium', prefix_message='personal', topic=True, neutral='NAME'),
     POLICY_V19LS: dict(system=None, system_for=lambda rows: LSS.system(lean_neutral_system(rows)), schema=LSS.schema(SELECTION_V18), day_end_review=DAY_END_POLICY, context='AUTONOMOUS_CONTEXT_V18_LEAN', stable_prefix=True, select=True, effort='medium', prefix_message='personal', topic=True, neutral='NAME', stance=True, stability=True),
+    POLICY_V19LS_HP1: dict(system=None, system_for=lambda rows: LSS.system(lean_neutral_system(rows),HRL.LINES), schema=HRL.schema(LSS.schema(SELECTION_V18)), day_end_review=DAY_END_POLICY, context='AUTONOMOUS_CONTEXT_V18_LEAN', stable_prefix=True, select=True, effort='medium', prefix_message='personal', topic=True, neutral='NAME', stance=True, stability=True, external_delivery=True, hotel_reference=True, earlier_days=True),
+    POLICY_V19LS_HP1B: dict(system=None, system_for=lambda rows: LSS.system(lean_neutral_system(rows)), schema=LSS.schema(SELECTION_V18), day_end_review=DAY_END_POLICY, context='AUTONOMOUS_CONTEXT_V18_LEAN', stable_prefix=True, select=True, effort='medium', prefix_message='personal', topic=True, neutral='NAME', stance=True, stability=True, external_delivery='B', hotel_reference='B'),
+    POLICY_V19LS_MEM1: dict(system=None, system_for=lambda rows: LSS.system(lean_neutral_system(rows)), system_with_memory=lambda rows: LSS.system(lean_neutral_system(rows),VM.LINES), schema=LSS.schema(SELECTION_V18), day_end_review=DAY_END_POLICY, context='AUTONOMOUS_CONTEXT_V18_LEAN', stable_prefix=True, select=True, effort='medium', prefix_message='personal', topic=True, neutral='NAME', stance=True, stability=True, visit_memory=True),
     POLICY_V19LS_P2: dict(system=None, system_for=lambda rows: LSS.system(lean_neutral_system(rows),LSS.P2_LINES), schema=LSS.schema(SELECTION_V18), day_end_review=DAY_END_POLICY, context='AUTONOMOUS_CONTEXT_V18_LEAN', stable_prefix=True, select=True, effort='medium', prefix_message='personal', topic=True, neutral='NAME', stance=True, stability=True, party_breakfast=True, meal_review=True, breakfast_default=True),
     POLICY_V18M: dict(system=SYSTEM_V18M, schema=SELECTION_V18M, day_end_review=DAY_END_POLICY, context='AUTONOMOUS_CONTEXT_V18_COMPACT', stable_prefix=True, select=True, effort='medium', prefix_message='personal'),
     POLICY_V18BD: dict(system=SYSTEM_V18D, schema=SELECTION_V18D, day_end_review=DAY_END_POLICY, context='AUTONOMOUS_CONTEXT_V18_COMPACT', stable_prefix=True, select=True, effort=None, prefix_message='personal', minimal_output=True),
 }
+POLICIES[POLICY_V19LS_INT4] = POLICIES[POLICY_V19LS_MEM1]   # same question contract; the INT4 settings are the difference
+
+
+# INT4 = the settings verified in the v21 28-person LIVE (INT3) plus DAY_FLOW v2 and LEAN2 (v22 LIVE K 4/4, F 4/4).
+# The policy is these engine settings, not a label: flow_run applies them to its own process (one request) and
+# spec_of refuses to run INT4 when they are not all in force (no display-only selection).
+INT4_SWITCHES = ('HILLINK_RESEARCH_MEAL_PERIOD_BY_START', 'HILLINK_RESEARCH_MEM1_SELECTIVE', 'HILLINK_RESEARCH_SHORTFALL_LINK',
+                 'HILLINK_RESEARCH_LEAN_NEED_ESTIMATE', 'HILLINK_RESEARCH_DAY_AWARE_INTAKE', 'HILLINK_RESEARCH_PORTION_BASIS',
+                 'HILLINK_RESEARCH_TRAIT_LINK_LABEL', 'HILLINK_RESEARCH_ACTIVITY_CONTEXT', 'HILLINK_RESEARCH_REST_CONTEXT',
+                 'HILLINK_RESEARCH_MORNING_CONTEXT', 'HILLINK_RESEARCH_MEAL_DEFER', 'HILLINK_RESEARCH_CHECKOUT_PREP',
+                 'HILLINK_RESEARCH_FAIR_MEAL_EXPOSURE', 'HILLINK_RESEARCH_FACILITY_ACCESS_NOTE', 'HILLINK_RESEARCH_PARTY_BREAKFAST',
+                 'HILLINK_RESEARCH_EXTERNAL_DELIVERY', 'HILLINK_RESEARCH_REST_BLOCKS', 'HILLINK_RESEARCH_MEAL_TIMING_REF',
+                 'HILLINK_RESEARCH_LEAN_COMPACT', 'HILLINK_RESEARCH_DAY_END_EVENING', 'HILLINK_RESEARCH_DAY_FLOW', 'HILLINK_RESEARCH_LEAN2')
+
+
+def policy_environment(policy, env):
+    """The research environment a policy runs with: INT4 gets exactly INT4_SWITCHES (every other research switch,
+    REST_CONTINUE included, removed); any other policy keeps the environment it was given."""
+    if policy != POLICY_V19LS_INT4: return env
+    out = {k: v for k, v in env.items() if not k.startswith('HILLINK_RESEARCH_')}
+    out.update({k: '1' for k in INT4_SWITCHES})
+    return out
+
+
+def int4_in_force():
+    on = {k for k, v in os.environ.items() if k.startswith('HILLINK_RESEARCH_') and v == '1'}
+    return on == set(INT4_SWITCHES)
 
 
 def policy_of(a):
@@ -339,7 +375,32 @@ def policy_of(a):
 
 
 def spec_of(a):
-    return POLICIES[policy_of(a)]
+    spec=POLICIES[policy_of(a)]
+    if policy_of(a)==POLICY_V19LS_INT4 and not int4_in_force():
+        raise RuntimeError('INT4_SETTINGS_NOT_IN_FORCE')
+    if policy_of(a) in (POLICY_V19LS_MEM1, POLICY_V19LS_INT4) and (PARTY_BREAKFAST() or EXTERNAL_DELIVERY()):
+        # research integration switches (default OFF; only the multi-day research policy): existing, separately verified
+        # parts of other research policies, no new rule
+        spec=dict(spec)
+        if PARTY_BREAKFAST():spec.update(party_breakfast=True,breakfast_default=True)   # P2 without its one-time meal review call
+        if EXTERNAL_DELIVERY():spec.update(external_delivery='B',hotel_reference='B')   # reference shown only when an applicable reference is configured
+    return spec
+
+
+def PARTY_BREAKFAST():
+    """Research integration switch (default OFF): HILLINK_RESEARCH_PARTY_BREAKFAST=1 on V19LS_MEM1. The V19LS-P2 breakfast
+    parts: a partly covered party also gets the options in which only some people eat (A05: 2 of 3 covered had only
+    'whole party, 85,000' or 'skip'), and the clear included-breakfast case (whole party covered, one option, no
+    exception sign in what the model would see) is settled without a call and recorded as a rule decision."""
+    return os.environ.get('HILLINK_RESEARCH_PARTY_BREAKFAST')=='1'
+
+
+def EXTERNAL_DELIVERY():
+    """Research integration switch (default OFF): HILLINK_RESEARCH_EXTERNAL_DELIVERY=1 on V19LS_MEM1. External delivery is the
+    in-room alternative that competes with hotel dinner (price unknown, not hotel revenue); V19LS drops it as a
+    non-catalog purchase. Uses the HP1b row; the hotel reference block (statistics) is sent only when an applicable,
+    configured reference exists - with none configured it is off and recorded as such."""
+    return os.environ.get('HILLINK_RESEARCH_EXTERNAL_DELIVERY')=='1'
 
 
 def active(a):
@@ -413,7 +474,7 @@ def schedule_reasons(a, action):
     elif a.stay and not a.checked_out and a.room and action.get('execution')!='END_DAY':
         if end+AD.SP.travel_min(action['location'],a.room)+15>a.end:
             reasons.append('RETURN_TO_ROOM_AND_DAY_END_OVERLAP')
-    if getattr(a,'phase',None)=='checkout' and not a.checked_out:
+    if getattr(a,'phase',None)=='checkout' and not a.checked_out and action.get('execution')!='CHECKOUT':
         required=AD.SP.travel_min(action['location'],a.room)+20+AD.SP.travel_min(a.room,AD.SP.lobby(a.B))+20
         if end+required>AD.hm(AD.CHECKOUT_BY):reasons.append('CHECKOUT_PREPARATION_AND_TRAVEL_OVERLAP')
     booked=booked_event(a)
@@ -452,6 +513,29 @@ def waiting_place(a):
     return a.room if a.stay and a.checked_in and not a.checked_out and a.loc==a.room else AD.SP.lobby(a.B)
 
 
+def REST_BLOCKS():
+    """Research switch (default OFF): HILLINK_RESEARCH_REST_BLOCKS=1. v21 G LIVE (2026-11-08): every arm (V19LS too)
+    alternated 'activity 45 min -> room rest 60 min' all day (3-5 room rests a day at fatigue '여유', one decision per
+    hour). The only room rest was 60 minutes, so a person who wanted a quiet afternoon in the room had to choose it
+    again and again. With the switch the existing room rest also exists as one longer block (until the next meal
+    opening among today's candidates, otherwise up to 2.5 h, at least 90 min). Nothing is removed or ranked."""
+    return os.environ.get('HILLINK_RESEARCH_REST_BLOCKS')=='1'
+
+
+def long_rest_action(a,world,t,actions,excluded):
+    if not (a.stay and a.checked_in and not a.checked_out and a.room) or a.phase=='checkout' or 'room_rest' not in actions:return
+    start=t+AD.SP.travel_min(a.loc,a.room)
+    evening=DAY_FLOW() and start>=17*60+30
+    meal_starts=sorted(x['start'] for x in actions.values() if x.get('execution')=='MEAL' and x['start']>=start+90)
+    end=min([start+(120 if evening else 150)]+([] if evening else meal_starts[:1])+[a.end-15])
+    if end-start<(60 if evening else 90):return
+    why=place_reasons(a,world,a.room,start,end-start)
+    if why:excluded.append(dict(action_id='room_rest_long',reasons=why));return
+    actions['room_rest_long']=dict(action_id='room_rest_long',label=('외부 활동은 마치고 객실에서 조용히 저녁 보내기 · %s까지(취침 아님 · 룸서비스·추가 휴식 가능)' if evening else '객실에서 길게 쉬기 · %s까지')%AD.mh(end),kind='ACTIVITY',
+        location=a.room,start=start,duration=end-start,execution='REST',items=[],order_total_krw=0,
+        consequences='ONE_CONTINUOUS_ROOM_REST_BLOCK; KEEPS_TODAY_OPEN')
+
+
 def control_actions(a,world,t,excluded):
     actions={};location=waiting_place(a)
     for key,duration,label in [('public_rest',30,'공용 로비에서 잠시 쉬며 대기 · 좌석 미확인'),
@@ -465,6 +549,14 @@ def control_actions(a,world,t,excluded):
             duration=duration,execution='REST' if key=='public_rest' else 'WAIT',items=[],order_total_krw=0,
             access_contract='EXISTING_WORLD_ROOM_OR_PUBLIC_LOBBY_NOT_CLUB_ENTITLEMENT',
             assumptions=['대기 장소는 기존 월드 위치; 좌석·서비스 제공·예약을 확정하지 않음'])
+    if CHECKOUT_PREP() and a.phase=='checkout' and a.stay and a.checked_in and not a.checked_out and a.room:
+        # research (default OFF): the executor's own checkout steps as one candidate (agent_day.checkout_now)
+        start=t+AD.SP.travel_min(a.loc,a.room)
+        duration=20+AD.SP.travel_min(a.room,AD.SP.lobby(a.B))+20
+        actions['checkout_now']=dict(action_id='checkout_now',label='객실에서 짐 정리 후 로비에서 체크아웃(퇴실 시각 %s)'%AD.CHECKOUT_BY,
+            kind='ACTIVITY',location=a.room,start=start,duration=duration,execution='CHECKOUT',items=[],order_total_krw=0,
+            consequences='ROOM_ACCESS_ENDS; AFTER_CHECKOUT_HOTEL_ACTIVITIES_OR_LEAVE_UNTIL_VISIT_END',
+            steps=['짐 정리 20분(객실)','체크아웃 20분(로비)'])
     if a.checked_out or a.phase=='visit':
         start=t+AD.SP.travel_min(a.loc,'HOTEL_GATE');why=place_reasons(a,world,'HOTEL_GATE',start,15)
         if why:excluded.append(dict(action_id='leave_visit',reasons=why))
@@ -473,7 +565,7 @@ def control_actions(a,world,t,excluded):
     elif a.stay and a.checked_in and a.room and a.phase!='checkout':
         start=t+AD.SP.travel_min(a.loc,a.room)
         if start<a.end:
-            actions['end_day_in_room']=dict(action_id='end_day_in_room',label='객실로 돌아가 오늘 일정을 마치고 쉬기',
+            actions['end_day_in_room']=dict(action_id='end_day_in_room',label='취침 · 오늘을 마치고 잠들기(내일 아침까지 활동·식사 없음)' if DAY_FLOW() else '객실로 돌아가 오늘 일정을 마치고 쉬기',
                 kind='ACTIVITY',location=a.room,start=start,duration=a.end-start,execution='END_DAY',
                 items=[],order_total_krw=0,
                 consequences='NO_MORE_ACTIVITIES_OR_MEALS_TODAY; NEXT_DAY_OBLIGATIONS_PRESERVED',
@@ -514,7 +606,9 @@ def model_booking(a):
 
 
 def fixed_quote(contract):
-    return dict(items=[dict(sku_id=p['sku_id'],quantity=p['billing_quantity']) for p in contract['components']],
+    # Event admissions (e.g. the wine fair's guest free entry) carry a single flat contract without components.
+    parts=contract.get('components') or [contract]
+    return dict(items=[dict(sku_id=p['sku_id'],quantity=p.get('billing_quantity',1)) for p in parts],
         order_total_krw=(None if contract.get('price_unknown') else 0 if contract.get('hc_included') else contract['unit_price_krw']),
         price_status=contract.get('price_status'),included=bool(contract.get('hc_included')))
 
@@ -591,6 +685,13 @@ def action_space(a, world, t):
             why=place_reasons(a,world,target,start,10)
             if why:excluded.append(dict(action_id=code,reasons=why));continue
             actions[code]=dict(action_id=code,label='점심을 건너뛰고 잠시 대기',kind='ACTIVITY',location=target,start=start,duration=10,execution='SKIP_MEAL',items=[],order_total_krw=0)
+            if MEAL_DEFER():
+                # research (default OFF): 'not now' and 'not today' are different states
+                actions[code]['label']='오늘 점심은 먹지 않기로 함 · 잠시 대기(점심 판단 종료)'
+                if start+30<840 and not place_reasons(a,world,target,start,30):
+                    actions['lunch_defer']=dict(action_id='lunch_defer',label='점심을 미루고 30분 쉬며 대기 · 이후 점심 다시 판단',
+                        kind='ACTIVITY',location=target,start=start,duration=30,execution='DEFER_MEAL',items=[],order_total_krw=0,
+                        consequences='LUNCH_STAYS_OPEN_AND_IS_REVIEWED_AGAIN')
             continue
         why=room_facility_reasons(code)
         if why:excluded.append(dict(action_id=code,reasons=why));continue
@@ -609,7 +710,7 @@ def action_space(a, world, t):
             for c in quotes:
                 key='activity:'+code+':'+c['sku_id']
                 why=price_contract_reasons(c)
-                if why:excluded.append(dict(action_id=key,reasons=why));continue
+                if why:excluded.append(dict(action_id=key,reasons=why,**({'parts':[{k:x.get(k) for k in ('sku_id','label','price_status','price_tier','billing_quantity','unit_price_krw')} for x in (c.get('components') or [c])]} if os.environ.get('HL_DEBUG_EXCLUSIONS_FILE') else {})));continue
                 actions[key]=dict(action_id=key,label=c['label'],kind='ACTIVITY',location=target,
                     start=c.get('candidate_available_at',start),duration=duration,execution='CONTRACT_ACTIVITY',
                     native_code=code,contract=c,**fixed_quote(c))
@@ -634,6 +735,10 @@ def action_space(a, world, t):
         if contract and price_contract_reasons(contract):
             excluded.append(dict(action_id=o['id'],reasons=price_contract_reasons(contract)));continue
         if contract and any(x.get('contract',{}).get('sku_id')==contract['sku_id'] for x in actions.values()):continue
+        if o['id']==HRL.DELIVERY and spec_of(a).get('external_delivery'):
+            # HP1 research: delivery is the guest's own outside purchase (price unknown, hotel revenue 0), not a hotel sale
+            actions[o['id']]=dict(action_id=o['id'],label=HRL.DELIVERY_LABEL_B if spec_of(a).get('external_delivery')=='B' else HRL.DELIVERY_LABEL,kind='ACTIVITY',location=target,start=start,duration=o['duration_min'],
+                execution='ENGINE',offer=o,items=[],order_total_krw=0,external_purchase='PRICE_UNKNOWN_NOT_HOTEL_REVENUE');continue
         if not contract and o.get('price_pp_krw') and not o.get('in_package'):
             excluded.append(dict(action_id=o['id'],reasons=['NONCATALOG_PURCHASE_QUOTE_NOT_CONNECTED']));continue
         actions[o['id']]=dict(action_id=o['id'],label=o['label'],kind='ACTIVITY',location=target,
@@ -641,11 +746,12 @@ def action_space(a, world, t):
             **(fixed_quote(contract) if contract else dict(items=[],order_total_krw=0)))
     # An upcoming lunch is available for planning before 11:00. Actual service
     # is still gated by the dated source windows and each SKU's sale contract.
-    period = 'breakfast' if 360<=t<600 else 'lunch' if 600<=t<900 else 'dinner' if 900<=t<1320 else 'snack'
+    period = service_period(t)
     menus = {}
     if period in ('breakfast','lunch','dinner'):
         for venue in sorted(HR.FOOD):
-            duration=60 if period=='breakfast' else HR.dinner_duration(venue); target=HR.loc(a,venue)
+            vperiod=period   # 2026-11-08: a meal that waits for a later opening belongs to the period of its actual start
+            duration=60 if vperiod=='breakfast' else HR.dinner_duration(venue); target=HR.loc(a,venue)
             key='meal:'+venue
             if not target:
                 excluded.append(dict(action_id=key,reasons=['CURRENT_CHECKED_IN_ROOM_REQUIRED']));continue
@@ -669,7 +775,12 @@ def action_space(a, world, t):
                     wait=dict(location=wait_loc,start=wait_start,end=depart,
                         basis='EXISTING_WORLD_WAIT_LOCATION_NOT_RESTAURANT_SEAT_OR_RESERVATION')
                     departure=future-AD.SP.travel_min(a.loc,target)
-            quoted, blocked = HR.quote(a,venue,departure,duration,period,C)
+                    if MEAL_PERIOD_BY_START() and service_period(future) in ('breakfast','lunch','dinner') and service_period(future)!=period:
+                        # research fix (off by default: the sealed V16 replays and the product keep the old classification):
+                        # the service actually used starts at `future` (e.g. decided 14:48, dinner opens 17:30); classify by it,
+                        # so the meal state (dinner done), the sale contract and the visit memory record the same period
+                        vperiod=service_period(future);duration=60 if vperiod=='breakfast' else HR.dinner_duration(venue)
+            quoted, blocked = HR.quote(a,venue,departure,duration,vperiod,C)
             excluded.extend(dict(action_id='meal:'+venue,**b) for b in blocked)
             for c in quoted:
                 if price_contract_reasons(c):excluded.append(dict(action_id=key,sku_id=c['sku_id'],reasons=price_contract_reasons(c)))
@@ -682,7 +793,7 @@ def action_space(a, world, t):
             for p in H.DATA['products']:
                 if p['venue_id']!=venue or not p.get('automatic_choice',True):continue
                 if p['role'] not in ('MAIN','BREAKFAST','SHARED_DISH','SIDE','DRINK','COURSE','SET','ADDON','CHILD_COMPONENT'):continue
-                why=H.eligible(p,a,start,duration,period,allow_components=True)+price_contract_reasons(p)
+                why=H.eligible(p,a,start,duration,vperiod,allow_components=True)+price_contract_reasons(p)
                 if why:
                     excluded.append(dict(action_id=key,sku_id=p['sku_id'],reasons=why));continue
                 priced=H.price(p,H.options(a))
@@ -696,21 +807,25 @@ def action_space(a, world, t):
             if products:
                 menus[key]=products
                 actions[key]=dict(action_id=key,label=AD.VENUE_KO.get(venue,venue),kind='MEAL',location=target,
-                    start=start,duration=duration,period=period,venue=venue,execution='MEAL',wait=wait,
+                    start=start,duration=duration,period=vperiod,venue=venue,execution='MEAL',wait=wait,
                     planning_viability='WAIT_THEN_SERVICE' if wait else 'AVAILABLE_NOW',
                     existing_orders=[dict(items=[dict(sku_id=p['sku_id'],quantity=p['billing_quantity']) for p in c['components']],
                                           total_krw=c['unit_price_krw']) for c in quoted],
                     _quotes=quoted)   # engine-only: the quoted contracts behind existing_orders (V18 shortlist baskets); never sent to the model
     actions.update(control_actions(a,world,t,excluded))
+    if REST_BLOCKS():long_rest_action(a,world,t,actions,excluded)
     for key,action in list(actions.items()):
         why=schedule_reasons(a,action)+place_reasons(a,world,action['location'],action['start'],action['duration'])
         if why:
             excluded.append(dict(action_id=key,reasons=why));actions.pop(key);menus.pop(key,None)
+    if os.environ.get('HL_DEBUG_EXCLUSIONS_FILE'):   # offline diagnosis only: why an option is not a candidate
+        with open(os.environ['HL_DEBUG_EXCLUSIONS_FILE'],'a',encoding='utf-8') as fh:
+            import json as _json; fh.write(_json.dumps(dict(customer=a.pid,date=a.sc.get('date'),minute=t,offered=sorted(actions),excluded=excluded),ensure_ascii=False,default=str)+'\n')
     return actions,menus,excluded,w
 
 
 TIRED_RATIO=0.8   # the executor's own state label: fatigue/rest_limit >= 0.8 is '피곤' (llm_layer._state_block)
-REST_KEYS=('room_rest','ROOM_REST','public_rest','wait_reconsider','room_bath','room_nap')
+REST_KEYS=('room_rest','ROOM_REST','public_rest','wait_reconsider','room_bath','room_nap','room_rest_long')
 
 
 def early_day_end_reasons(a, plan, actions, prior=None):
@@ -784,6 +899,111 @@ def full_skip_basis(a,plan,t):
     return None
 
 
+DAY_END_EVENING_FROM=20*60
+DAY_END_EVENING_LINE='저녁을 마친 뒤 20:00 이후에는 피곤하지 않아도 객실로 돌아가 하루를 마치는 것이 흔한 선택입니다. 남은 후보가 있어도 오늘을 마칠 수 있고, 쉬는 것과 하루를 마치는 것 중 지금 상황에 맞는 쪽을 고르세요.'
+
+
+def DAY_END_EVENING():
+    """Research switch (default OFF): HILLINK_RESEARCH_DAY_END_EVENING=1. v21 round 2 LIVE: 11 re-asks in three core
+    visits (V19LS 6) were the early-day-end review rejecting a day end after dinner in the evening (20:02-21:39); the
+    replan then chose a room rest ('I will not end the day') - e.g. A01 20:23 wrote 'rather than adding activities I will
+    go back to the room and end the day', was rejected, and rested. The review exists to stop a day closing at 18:00 with
+    dinner open; with the switch it no longer applies once dinner is resolved and it is 20:00 or later (an ordinary
+    evening end). Before 20:00, or with dinner open, the review is unchanged."""
+    return os.environ.get('HILLINK_RESEARCH_DAY_END_EVENING')=='1'
+
+
+def DAY_FLOW():
+    """Research switch (default OFF): HILLINK_RESEARCH_DAY_FLOW=1. v2 (18:07 directive, after the 28-person LIVE: 52 of
+    56 INT3 day ends fell at 19:08-20:59, 43 within the hour after the 20:00 acceptance rule). Ending outside activities,
+    a quiet evening in the room and actual sleep are told apart:
+      - end_day_in_room reads as actual sleep (no activity or meal until tomorrow morning);
+      - from 17:30 the long room block is 'outside activities done, a quiet evening in the room until HH:MM' (up to 2 h,
+        room service and more rest stay possible);
+      - a general sleep reference (22:00-24:00) is sent as information only, never as an accept/reject boundary, and
+        the 20:00 evening line of DAY_END_EVENING is not sent;
+      - only an actual sleep before 20:00 needs a verifiable basis. Strong: a cited personal record about sleep/fatigue/
+        early start, a booked early event tomorrow. Weak: fatigue '조금 피곤', children in the party (a child sleeping is
+        not the whole party ending the day). Before 19:00 a strong basis or two weak ones; 19:00-20:00 one is enough.
+        With a basis there is no review (recorded); without one there is one review offering room stays, and if the
+        replan still has no basis the harness keeps the customer in the room (never an outing) and asks again later.
+    Sleep at an ordinary evening time is never delayed; a customer who wants to stay in the room is never sent out."""
+    return os.environ.get('HILLINK_RESEARCH_DAY_FLOW')=='1'
+
+
+EARLY_SLEEP_BEFORE=20*60   # only a clearly early actual sleep asks for a verifiable basis. Projected on the 56 recorded INT3 day ends:
+                           # 21:00 would review 50 (a near-uniform delay); 20:00 reviews the 9 at 19:xx and leaves the evening to the
+                           # labels, the quiet-evening option and the reference (information, not a gate)
+SLEEP_REFERENCE=dict(general_sleep='22:00-24:00',
+    basis='일반 행동 참고(이 고객의 습관 아님 · 허용·거절 기준 아님). 피로·개인 기록·전날 취침·동행·내일 일정이 다르면 그쪽이 우선입니다.')
+DAY_FLOW_LINE=('저녁에는 세 가지가 다릅니다: 외부 활동을 마치고 객실에 머무는 것(휴식·조용한 저녁 · 룸서비스나 추가 휴식 가능), '
+               '그리고 end_day_in_room = 취침(내일 아침까지 활동·식사 없음). 객실에 머물고 싶으면 다른 시설로 나갈 필요가 없습니다. '
+               'state.today_remaining.evening_reference는 일반 참고일 뿐이며, 지금 피로·개인 기록·전날 행동·동행·내일 일정에 맞게 고르세요.')
+
+
+SLEEP_RECORD_RX=r'수면|잠|일찍|피곤|피로|컨디션|쉬|휴식|아침 일찍|새벽'
+
+
+VERY_EARLY_SLEEP_BEFORE=19*60   # 18시대: a weak basis alone is not enough
+
+
+def early_sleep_bases(a, plan, personal):
+    """Verifiable bases for an early actual sleep, each with its strength. Strong: a cited personal record about sleep,
+    fatigue or an early start; a booked event early tomorrow. Weak: the executor's fatigue at '조금 피곤' (at '피곤' there is
+    no review at all); children in the party (a child going to sleep is not the whole party ending the day - the adults
+    can spend a quiet evening in the room)."""
+    out=[]
+    recs={f:r for r in ((personal or {}).get('evidence_records') or []) for f in r.get('fact_ids') or []}
+    cited=[f for f in plan.get('supporting_fact_ids') or [] if f in recs and re.search(SLEEP_RECORD_RX,str(recs[f].get('summary') or ''))]
+    if cited:out.append(('PERSONAL_RECORD:'+','.join(cited),'STRONG'))
+    if next_day_early_booking(a):out.append(('BOOKED_EARLY_EVENT_TOMORROW','STRONG'))
+    if a.fatigue>=0.4*a.rest_limit:out.append(('EXECUTOR_STATE:FATIGUE_'+_fatigue_level(a),'WEAK'))
+    try:children=list(((H.PO.party(a) or {}).get('children')) or [])
+    except Exception:children=[]
+    if children:out.append(('PARTY_WITH_CHILDREN','WEAK'))
+    return out
+
+
+def early_sleep_basis(a, plan, personal, t=None):
+    """The basis that makes an early actual sleep acceptable, or None: a strong basis at any time; before 19:00 two weak
+    bases together; from 19:00 one weak basis."""
+    bases=early_sleep_bases(a,plan,personal)
+    strong=[b for b,k in bases if k=='STRONG'];weak=[b for b,k in bases if k=='WEAK']
+    if strong:return '+'.join(strong+weak)
+    if t is not None and t<VERY_EARLY_SLEEP_BEFORE:return '+'.join(weak) if len(weak)>=2 else None
+    return '+'.join(weak) or None
+
+
+def next_day_early_booking(a):
+    import datetime as _dt
+    snapshot=a.sc.get('scenario_snapshot') or {}
+    booked=(snapshot.get('assumptions',{}).get('booked_sessions') or {}).get(a.pid) or {}
+    try:tomorrow=(_dt.date.fromisoformat(str(a.sc['date']))+_dt.timedelta(days=1)).isoformat()
+    except (ValueError,KeyError):return False
+    start=booked.get('start')
+    return booked.get('date')==tomorrow and isinstance(start,str) and ':' in start and AD.hm(start)<10*60
+
+
+def day_flow_reasons(a, plan, actions, prior, t):
+    """(None = use the existing dinner-open rule) or a list of review reasons for an early sleep."""
+    if (actions.get(plan['action_id']) or {}).get('execution')!='END_DAY':return []
+    if a.fatigue>=TIRED_RATIO*a.rest_limit:return []
+    state=meal_state(a)
+    dinner=state['meals']['dinner'] or state['meal_decision_resolved']['dinner']
+    meals=[k for k,x in actions.items() if x.get('execution')=='MEAL']
+    if not dinner and meals:return None
+    if t>=EARLY_SLEEP_BEFORE:return []
+    if early_sleep_basis(a,plan,getattr(a,'_day_flow_personal',None),t):return []   # a verifiable basis: no review (recorded by select_step)
+    if prior and str(prior.get('reason','')).startswith('EARLY_SLEEP_REVIEW'):
+        return []   # the replan is checked for a basis in select_step; without one the harness keeps the customer in the room
+    stay=[k for k in ('room_rest_long','room_rest','ROOM_REST','public_rest') if k in actions]
+    if not stay:return []
+    return ['EARLY_SLEEP_REVIEW: 지금 %s에 취침하면 내일 아침까지 활동·식사가 없습니다. 피로는 %s 단계이고 이 시각의 취침을 뒷받침하는 확인된 근거(수면·피로·이른 시작에 관한 개인 기록, 내일 이른 일정)가 부족합니다. '
+            '객실에 머물며 쉬기(%s)도 가능하고 다른 시설로 나갈 필요는 없습니다. 아이가 먼저 잠드는 경우에도 보호자는 객실에서 조용히 저녁을 보낼 수 있습니다. '
+            '그래도 모두 지금 자야 한다면 근거가 되는 개인 기록 id를 supporting_fact_ids에 넣고 end_day_in_room을 다시 고르세요.'
+            % (AD.mh(t),_fatigue_level(a),', '.join(stay))]
+
+
 def v18_day_end_reasons(a, plan, actions, prior, shown, t, loose=False):
     """early_day_end_reasons for the V18 shortlist question (V16/V17 keep the shared function).
 
@@ -791,10 +1011,14 @@ def v18_day_end_reasons(a, plan, actions, prior, shown, t, loose=False):
     - the rejection names only candidates the model was shown; the world's other valid candidates
       still exist (validation and contracts use the full world) and are counted, not named;
     - with dinner unresolved, FULL closes the day only with a basis (full_skip_basis)."""
+    if DAY_FLOW():
+        why=day_flow_reasons(a,plan,actions,prior,t)
+        if why is not None:return why
     if (actions.get(plan['action_id']) or {}).get('execution')!='END_DAY':return []
     if a.fatigue>=TIRED_RATIO*a.rest_limit:return []
     state=meal_state(a)
     dinner=state['meals']['dinner'] or state['meal_decision_resolved']['dinner']
+    if DAY_END_EVENING() and dinner and t>=DAY_END_EVENING_FROM:return []
     meals=[k for k,x in actions.items() if x.get('execution')=='MEAL']
     others=[k for k,x in actions.items() if x.get('execution')!='END_DAY' and k not in REST_KEYS]
     if not others:return []
@@ -866,8 +1090,26 @@ def validate_plan(a, plan, actions, menus, citable, prior=None, day_end_review=D
     if recent:raise ValueError(';'.join(recent))
     if len({i['sku_id'] for i in items})!=len(items):raise ValueError('DUPLICATE_SKU_USE_QUANTITY')
     available={p['sku_id'] for p in menus[key]}
-    if any(i['sku_id'] not in available for i in items):raise ValueError('SKU_NOT_IN_ELIGIBLE_INPUT')
+    composed=None
+    if any(i['sku_id'] not in available for i in items):
+        # 2026-11-08: an engine-composed party quote (e.g. the free infant admission '…-INFANT' the buffet composer adds
+        # for a child under 36 months) is shown as a basket but is not a catalog SKU, so the explicit-order path cannot
+        # rebuild it and every selection of that basket was rejected (offline: A12 family, buffet). Accept exactly that
+        # quote, unchanged; anything else outside the eligible input is still rejected.
+        want=sorted((i['sku_id'],i['quantity']) for i in items)
+        composed=next((q for q in action.get('_quotes') or [] if sorted((c['sku_id'],c['billing_quantity']) for c in q['components'])==want),None)
+        if composed is None or any(i['sku_id'] not in available and i['sku_id'] in H.BY for i in items):raise ValueError('SKU_NOT_IN_ELIGIBLE_INPUT')
     if any(type(i['quantity']) is not int or not 1<=i['quantity']<=32 for i in items):raise ValueError('INVALID_QUANTITY')
+    if composed is not None:
+        contract=copy.deepcopy(composed)
+        if contract['unit_price_krw']!=plan['order_total_krw']:raise ValueError('ORDER_TOTAL_MISMATCH')
+        contract=H.entitlement(a,contract)
+        if price_contract_reasons(contract):raise ValueError(';'.join(price_contract_reasons(contract)))
+        contract=MB.metadata(contract,a,'LLM_PRECHOICE_ORDER')
+        contract['input_provenance']='LLM_PLAN_VALIDATED_BEFORE_EXECUTION_NOT_REVIEW_FACT; ENGINE_COMPOSED_PARTY_QUOTE'
+        contract['agent_policy']=policy_of(a)
+        action['contract']=contract
+        return action
     clone=copy.copy(a);clone.sc=copy.deepcopy(a.sc)
     opts=clone.sc.setdefault('catalog_options',{})
     existing=opts.setdefault('purchase_orders',{}).get(a.pid,[])
@@ -898,6 +1140,326 @@ def advance_needs(a, minute):
     anchor=getattr(a,'_autonomous_need_anchor',None)
     if anchor:
         a._autonomous_reference_age=max(0,minute-anchor['minute'])
+
+
+def LEAN_NEED_ESTIMATE():
+    """Research switch (default OFF; not part of the v20b/v20c memory comparison): HILLINK_RESEARCH_LEAN_NEED_ESTIMATE=1
+    adds the engine's existing elapsed-time satiety estimate and the end of the last simulated meal (any day) to the
+    lean request state. v20b: a 15:54 meal classified as dinner left only `dinner: true` in the request, and the model
+    rejected an evening snack 4h later on that flag alone; the engine estimate (PECKISH_LIKELY then) was not sent."""
+    return os.environ.get('HILLINK_RESEARCH_LEAN_NEED_ESTIMATE')=='1'
+
+
+def lean_need_state(c, date, clock_text, cands=None):
+    """Before the decision, in one place: the last executed meal (any day: end, size, kind), the gap to now, the
+    engine's satiety estimate with its source and uncertainty, and when the next meal can start among today's
+    candidates. Nothing here is observed intake or a choice rule."""
+    try:
+        minute=int(str(clock_text)[:2])*60+int(str(clock_text)[3:5])
+    except (TypeError,ValueError):
+        return None
+    meals=[m for m in c.get('meal_experiences') or [] if str(m.get('status','')).startswith('EXECUTED') and m.get('date') and m.get('end_time')]
+    est=engine_need_estimate(meals,date,minute)
+    last=max(meals,key=lambda m:(m['date'],m['end_time'])) if meals else None
+    gap=None
+    if last:
+        try:
+            from datetime import date as _d
+            days=(_d.fromisoformat(date)-_d.fromisoformat(last['date'])).days
+            gap=days*1440+minute-(int(last['end_time'][:2])*60+int(last['end_time'][3:5]))
+        except (TypeError,ValueError):
+            gap=None
+    pm=(last or {}).get('portion_model') or {}
+    nxt=[]
+    for x in cands or []:
+        if x.get('type')!='MEAL':continue
+        cond=x.get('conditions') or {}
+        if cond.get('start_time'):nxt.append((cond['start_time'],x['action_id'],cond.get('wait_minutes')))
+    nxt.sort()
+    return dict(last_simulated_meal=last and dict(date=last['date'],period=last.get('period'),end=last['end_time'],
+                                                  meal_equivalents=pm.get('meal_equivalents'),party_size=pm.get('party_size') or last.get('party_size'),
+                                                  kind=((last.get('assessment') or {}).get('kind')),
+                                                  kind_basis='MODEL_ASSUMPTION_AT_ORDER_NOT_OBSERVED_INTAKE'),
+                minutes_since_last_meal=gap,
+                engine_estimate=dict(modeled_satiety=est.get('modeled_satiety'),per_diner_meal_equivalents=est.get('per_diner_meal_equivalents'),
+                                     source='ENGINE_RULE: 오늘 마지막 실행 식사의 1인 환산량과 경과 시간 구간(전날 식사는 반영하지 않음)',
+                                     confidence=est.get('confidence'),basis=est.get('basis')),
+                next_meal_options=dict(count=len(nxt),earliest_start=nxt[0][0] if nxt else None,earliest_action_id=nxt[0][1] if nxt else None),
+                meaning='엔진 규칙 추정이며 실제 섭취·허기는 관측되지 않았습니다. 고객이 느끼는 허기라고 단정하지 말고, 지금 가능한 식사 후보·남은 일정과 비교하는 참고값입니다. 식사를 강제하지 않습니다.')
+
+
+def SHORTFALL_LINK():
+    """Research switch (default OFF): HILLINK_RESEARCH_SHORTFALL_LINK=1 marks every meal candidate with the general
+    'not enough food' records (another place's experience, no hotel candidate named) so that the quantity decision
+    sees them next to the options. v20b/v20c: F25 was in personal.records but 5/7 answers wrote 'no related record'."""
+    return os.environ.get('HILLINK_RESEARCH_SHORTFALL_LINK')=='1'
+
+
+def MEAL_PERIOD_BY_START():
+    """Research switch for both compared policies alike (V19LS and MEM1 in v20b): HILLINK_RESEARCH_MEAL_PERIOD_BY_START=1."""
+    return os.environ.get('HILLINK_RESEARCH_MEAL_PERIOD_BY_START')=='1'
+
+
+def DAY_AWARE_INTAKE():
+    """Research switch (default OFF): HILLINK_RESEARCH_DAY_AWARE_INTAKE=1. v20e: the first-day line '도착 전 식사와 실제
+    섭취는 미확인' and visit.pre_arrival_intake were sent on every day; 5/12 day-2 breakfast answers repeated '도착 전
+    식사는 확인되지 않았다' and none used the previous dinner. With the switch the system line is stage-neutral (the
+    same text every day, so the cached prefix stays stable) and only the arrival day carries pre_arrival_intake; later
+    days carry the last recorded meal instead. Nothing observed is added."""
+    return os.environ.get('HILLINK_RESEARCH_DAY_AWARE_INTAKE')=='1'
+
+
+INTAKE_LINE_STAGED=('방문 첫날 도착 전 식사, 그리고 기록된 식사 밖의 실제 섭취(간식 등)는 미확인입니다. 기록된 끼니가 없다는 것을 굶었다는 사실로 해석하지 마세요. '
+                    '허기·피로·식사량은 계산 모델의 상태이며 고객이 보고한 값이 아닙니다.')
+
+
+def intake_stage(c, date):
+    """Arrival day (no executed record on an earlier date) or a later day with the last recorded meal."""
+    earlier=[x for k in ('meal_experiences','activity_experiences') for x in c.get(k) or [] if x.get('date') and date and x['date']<date]
+    if not earlier:
+        return dict(stage='ARRIVAL_DAY',pre_arrival_intake='UNKNOWN_NOT_ZERO_MEALS')
+    meals=[m for m in c.get('meal_experiences') or [] if m.get('date') and m.get('end_time') and str(m.get('status','EXECUTED')).startswith('EXECUTED')]
+    last=max(meals,key=lambda m:(m['date'],m['end_time'])) if meals else None
+    out=dict(stage='LATER_DAY',note='전날까지의 식사는 시뮬레이션 기록에 있습니다. 기록 밖의 실제 섭취는 미확인입니다.')
+    if last:
+        out['last_recorded_meal']=dict(date=last['date'],period=last.get('period'),venue=last.get('venue'),end=last['end_time'])
+    return out
+
+
+def PORTION_BASIS():
+    """Research switch (default OFF): HILLINK_RESEARCH_PORTION_BASIS=1. v20b/v20e: Pizza Hill options carried
+    meal_equivalents from the engine's pizza-size rule while room service and the Pavilion showed '미확인' for the same
+    kind of portion items (meal_basket.VENUES does not list those venues), and two first dinners chose Pizza Hill because
+    its quantity was 'stated'. With the switch every shown meal option gets the same generic estimate from the catalog
+    sale unit where one exists (presentation only: the shortlist and its ranking are untouched) and a portion_basis
+    saying which rule produced the number; options without a rule stay null with basis NO_GENERIC_RULE."""
+    return os.environ.get('HILLINK_RESEARCH_PORTION_BASIS')=='1'
+
+
+def _portion_rule(p):
+    unit=p.get('billing_unit')
+    if p.get('role') not in ('MAIN','BREAKFAST','CHILD_COMPONENT'):return None
+    if unit in ('person','portion'):return 'PER_PERSON_OR_PORTION_UNIT'
+    if unit=='pizza':return 'PIZZA_SIZE_RULE'
+    if unit=='set' and MB.servings(p):return 'SET_LABEL_PERSONS'
+    return None
+
+
+def portion_presentation(action_id, groups):
+    """Fill meal_equivalents/portion_basis on shown options from catalog items of the candidate's venue (by label)."""
+    venue=str(action_id).split(':',1)[1] if str(action_id).startswith('meal:') else None
+    if not venue:return groups
+    by_label={}
+    for p in H.DATA['products']:
+        if p.get('venue_id')==venue:by_label.setdefault(p.get('label'),p)
+    for g in groups:
+        if g.get('role','MEAL')!='MEAL':continue
+        for o in g.get('options') or []:
+            prods=[(by_label.get(i.get('label')),i.get('quantity') or 1) for i in o.get('items') or []]
+            food=[(p,q) for p,q in prods if p and p.get('role') in ('MAIN','BREAKFAST','CHILD_COMPONENT')]
+            rules=[_portion_rule(p) for p,_ in food]
+            if not food or any(r is None for r in rules) or any(p is None for p,_ in prods if p is None):
+                o['portion_basis']='NO_GENERIC_RULE' if o.get('meal_equivalents') is None else 'ENGINE_BASKET_MODEL'
+                continue
+            eq=sum(MB.servings(p)*q for p,q in food)
+            if o.get('meal_equivalents') is None:o['meal_equivalents']=eq
+            o['portion_basis']='+'.join(sorted(set(rules)))
+    return groups
+
+
+def TRAIT_LINK_LABEL():
+    """Research switch (default OFF): HILLINK_RESEARCH_TRAIT_LINK_LABEL=1. m4.evidence_fact_ids are the facts behind
+    the engine's trait coefficients (e.g. a trekking record behind a view coefficient), not experiences of that place;
+    v20b/v20e: 19 such links on chosen candidates, none cited. The switch renames them trait_link_fact_ids so that a
+    coefficient link is not read as a record about the candidate."""
+    return os.environ.get('HILLINK_RESEARCH_TRAIT_LINK_LABEL')=='1'
+
+
+TRAIT_LINK_LINE='후보의 m4.trait_link_fact_ids는 규칙 엔진이 성향 계수를 정할 때 쓴 기록이며 그 장소·메뉴를 경험한 기록이 아닙니다.'
+
+
+def ACTIVITY_CONTEXT():
+    """Independent research switch (default OFF, not part of v20f): HILLINK_RESEARCH_ACTIVITY_CONTEXT=1.
+    v20f A05 day 2: the Sky Yard footbath three times (10:21, 14:28, 19:58 night), each citing one record of a
+    night-view footbath after swimming; the candidate's earlier_use listed only earlier days, so the same-day uses were
+    visible only as lines in today.actions, and the night-view record was attached to the daytime option as well.
+    With the switch an activity candidate carries (1) today_use: earlier uses today of the same action or facility, and
+    (2) evidence_scope: when a directly linked record describes a night/view scene and the option is in daytime (or the
+    reverse), a note that that part of the record is a different time of day. Nothing is forbidden or scored."""
+    return os.environ.get('HILLINK_RESEARCH_ACTIVITY_CONTEXT')=='1'
+
+
+def REST_CONTEXT():
+    """Independent research switch (default OFF, not part of v20f): HILLINK_RESEARCH_REST_CONTEXT=1.
+    v20f A05: 7 of 24 decisions were rest-like, day 2 had five 60-minute room rests (300 min) at fatigue '여유', mostly
+    'rest and decide again' while waiting for a meal. With the switch the room-rest candidate carries rest_today (blocks,
+    minutes, the rest that just ended) so consecutive rests read as one continuing rest. No activity is added or forced."""
+    return os.environ.get('HILLINK_RESEARCH_REST_CONTEXT')=='1'
+
+
+def CHECKOUT_PREP():
+    """Independent research switch (default OFF): HILLINK_RESEARCH_CHECKOUT_PREP=1.
+    v20f N13 day 3: after breakfast every activity was blocked by the 11:00 pack-and-checkout rule and the only
+    candidates were 'wait' and 'lobby rest'; the model waited twice ('no candidates') until the engine forced checkout.
+    With the switch, on the checkout day before checkout, the existing executor steps (room → pack 20 min → lobby
+    checkout 20 min, agent_day.checkout_now) are shown as one candidate. Nothing is forced; the forced checkout at
+    the deadline stays as it is."""
+    return os.environ.get('HILLINK_RESEARCH_CHECKOUT_PREP')=='1'
+
+
+def MEAL_DEFER():
+    """Independent research switch (default OFF): HILLINK_RESEARCH_MEAL_DEFER=1.
+    v20f A05 11:12: the model wrote 'lunch a little later' and chose lunch_skip, the only non-meal lunch option; the
+    executor recorded lunch as resolved and the next decision had no meal candidate. With the switch the lunch
+    window shows two separate options: defer (30 min wait, lunch stays open and is reviewed again) and skip (lunch
+    resolved for today). Neither is preferred or forced."""
+    return os.environ.get('HILLINK_RESEARCH_MEAL_DEFER')=='1'
+
+
+def MORNING_CONTEXT():
+    """Independent research switch (default OFF): HILLINK_RESEARCH_MORNING_CONTEXT=1.
+    Day 2/3 start: the executor wakes everyone at 07:30 (08:30 only with a recorded late-morning sign) and the first
+    decision is at 08:10; the previous day's end and the fact that the wake time is an engine assumption were not
+    in the request. With the switch, morning decisions (before 11:00 on a later day) carry those facts and, on the
+    checkout day, the checkout time. No sleep habit is invented and no wake time is changed."""
+    return os.environ.get('HILLINK_RESEARCH_MORNING_CONTEXT')=='1'
+
+
+def FACILITY_ACCESS_NOTE():
+    """Independent research switch (default OFF): HILLINK_RESEARCH_FACILITY_ACCESS_NOTE=1.
+    A05 (party 3, Vista): the guest pool order was excluded because the third person's Vista extra fee is an
+    unverified simulation assumption; the sauna because its price is a reference model; riverpark/tennis because no
+    operating hours are recorded. The model never saw why, while A05's own record mentions swimming. With the switch
+    the request lists facilities excluded for unconfirmed data (not for hours, distance or 'already used') as
+    'not selectable in this simulation, not a statement that the facility is closed'. Nothing becomes selectable."""
+    return os.environ.get('HILLINK_RESEARCH_FACILITY_ACCESS_NOTE')=='1'
+
+
+# Provenance classes for exclusions (P0-A): what kind of source makes a facility not executable here.
+ACCESS_PROVENANCE=(
+    ('VENUE_ACCESS_OR_SALE_CONTRACT_UNCONFIRMED','RESEARCH_ASSUMPTION','이용 조건·요금이 시뮬레이션 가정(공식 확인 없음)'),
+    ('ESTIMATED_PRODUCT_PRICE_OR_UNIT_NOT_EXECUTABLE','RESEARCH_ASSUMPTION','가격·판매 단위가 참고 모델(날짜별 확인 없음)'),
+    ('PRICE_UNCONFIRMED','UNCONFIRMED','가격 미확인'),
+    ('CURRENT_ROOM_BATH_FACILITY_UNCONFIRMED','UNCONFIRMED','이번 객실의 욕조 시설 미확인'),
+    ('운영시간 자료 없음','UNCONFIRMED','운영시간 자료 없음'),
+    ('SAUNA_CROSS_BUILDING_NOT_AUTHORIZED','OPERATOR_RULE','다른 건물 시설 이용 미승인(운영 규칙)'),
+    ('POOL_BUILDING','OPERATOR_RULE','다른 건물 투숙객용 수영장'),
+    ('GRAND_POOL_REFERENCE_NOT_VISTA','OPERATOR_RULE','다른 건물 요금 기준'),
+    ('OPERATOR_CLOSURE_OVERLAP','OPERATOR_RULE','운영사 휴무·폐쇄'),
+    ('영업시간 밖','SOURCE_HOURS','영업시간 밖'),
+    ('운영하지 않음','SOURCE_HOURS','운영일 아님'),
+)
+NOTE_CLASSES=('RESEARCH_ASSUMPTION','UNCONFIRMED')
+FACILITY_NAME={'sauna':'사우나'}   # the native label '사우나 · 피트니스' would also name the (offered) fitness room
+
+
+def access_provenance(reason):
+    """(class, Korean reason) of one exclusion reason; None for schedule/state reasons (time, distance, already used)."""
+    r=str(reason or '')
+    return next(((c,ko) for k,c,ko in ACCESS_PROVENANCE if k in r),None)
+
+
+def facility_access_note(excluded, offered_ids=()):
+    """Facilities excluded only for data/rule reasons right now (never for hours, time, distance or 'already used'),
+    with at least one unconfirmed/assumption reason; one row per native activity not offered in any form."""
+    offered={str(x).split(':')[1] if str(x).startswith('activity:') else str(x) for x in offered_ids}
+    by={}
+    for e in excluded or []:
+        aid=str(e.get('action_id') or '')
+        code=aid.split(':')[1] if aid.startswith('activity:') else aid
+        if code in AD.SP.ACT and code not in offered:by.setdefault(code,[]).extend(e.get('reasons') or [])
+    out=[]
+    for code,reasons in by.items():
+        hits=[access_provenance(r) for r in reasons]
+        if any(h is None or h[0]=='SOURCE_HOURS' for h in hits):continue   # closed now / schedule: not a data question
+        note=[h for h in hits if h[0] in NOTE_CLASSES]
+        if note:out.append(dict(facility=FACILITY_NAME.get(code,AD.SP.ACT[code][0]),provenance=note[0][0],why=note[0][1],
+                                status='이번 시뮬레이션에서 선택할 수 없음 · 시설이 없거나 닫혔다는 뜻이 아님',_code=code))
+    return out[:6]
+
+
+FACILITY_CUES={'pool':('수영','풀장','인피니티','pool'),'sauna':('사우나','찜질'),'riverpark':('리버파크',),'tennez':('테니스',),
+               'hc_tennis':('테니스',),'room_bath':('욕조','반신욕','스파'),'hc_kidsclub':('키즈',),'hc_golf':('골프',)}
+
+
+def relevant_facility_note(rows, records):
+    """Only the facilities a sent personal record mentions (selective input: an unrelated 'not selectable' list is noise in
+    every request - offline it was 1.2 KB of each request). Rows carry no internal key."""
+    text=' '.join(str(r.get('summary') or '') for r in records or [])
+    out=[]
+    for r in rows:
+        r=dict(r);code=r.pop('_code',None)
+        if any(k in text for k in FACILITY_CUES.get(code,())):out.append(r)
+    return out
+
+
+def morning_context(lean, c):
+    """Morning decisions of a later day: the previous day's last recorded action and the wake-time basis."""
+    date=(c.get('visit') or {}).get('date');now=_clock((c.get('state') or {}).get('time'))
+    prev=[x for x in c.get('activity_experiences',[]) if x.get('date') and date and x['date']<date]
+    if not prev or now is None or now>=11*60:return lean
+    last=prev[-1]
+    # its start: the moment of the last choice (a day-end block runs to the engine's day boundary, not a bedtime)
+    m=dict(previous_day_last_action=dict(label=last.get('label'),start=last.get('start_time')),
+           wake_time_basis='기상 시각은 엔진 기본 가정(07:30)이며 실제 기상·수면은 관측되지 않았습니다. 개인 기록에 늦잠·수면 성향이 없으면 지어내지 않습니다.')
+    if (c.get('state') or {}).get('phase')=='checkout' or any(str(x.get('action_id'))=='checkout_now' for x in lean.get('candidates') or []):
+        m['checkout_by']=AD.CHECKOUT_BY
+    lean['morning']=m
+    return lean
+
+
+NIGHT_CUES=('야경','밤','야간','저녁 시간','노을','별')
+DAY_CUES=('낮','오전','햇살','한낮','아침')
+DAYLIGHT_END=17*60+30   # November, Seoul: after sunset the view is a night view (general calendar fact)
+
+
+def _clock(x):
+    try:return int(str(x)[:2])*60+int(str(x)[3:5])
+    except (TypeError,ValueError):return None
+
+
+def activity_context(lean, acts_today):
+    """acts_today: [{label, start_time, end_time, location?, selected_action_id?}] executed earlier today."""
+    recs={f:r for r in ((lean.get('personal') or {}).get('records') or []) for f in r.get('fact_ids') or []}
+    for x in lean.get('candidates') or []:
+        if x.get('type')=='ACTIVITY':
+            uses=[]
+            for y in acts_today:
+                if str(y.get('label') or '').startswith(('이동','아침 시작','식사 영업 시작')):continue   # v21 G: travel/wait rows are not a use (counted 'library x2' after one use)
+                same=(y.get('selected_action_id') and y.get('selected_action_id')==x.get('action_id')) or (y.get('label') and y.get('label')==x.get('label'))
+                place=bool(x.get('location')) and y.get('location')==x.get('location') and not str(x.get('location')).endswith(VM.GENERIC_PLACE_SUFFIXES)
+                if same or place:
+                    uses.append(dict(start=y.get('start_time'),end=y.get('end_time'),label=y.get('label'),**({} if same else {'same_place_other_option':True})))
+            if uses:x['today_use']=dict(times=len(uses),last=uses[-3:])
+            start=_clock((x.get('conditions') or {}).get('start_time'))
+            notes=[]
+            for f in (x.get('m4') or {}).get('direct_evidence_fact_ids') or []:
+                text=str((recs.get(f) or {}).get('summary') or '')
+                if start is None or not text:continue
+                if any(k in text for k in NIGHT_CUES) and start<DAYLIGHT_END:
+                    notes.append(dict(fact_id=f,record_time='NIGHT_OR_NIGHT_VIEW',option_time='DAYTIME',note='기록의 밤·야경 장면은 이 낮 시간 이용에 그대로 해당하지 않습니다. 시설 경험으로는 참고할 수 있습니다.'))
+                elif any(k in text for k in DAY_CUES) and start>=DAYLIGHT_END:
+                    notes.append(dict(fact_id=f,record_time='DAYTIME',option_time='NIGHT',note='기록의 낮 장면은 이 밤 시간 이용에 그대로 해당하지 않습니다. 시설 경험으로는 참고할 수 있습니다.'))
+            if notes:x['evidence_scope']=notes
+    return lean
+
+
+def rest_context(lean, acts_today):
+    rests=[y for y in acts_today if str(y.get('label') or '').startswith(('객실 휴식','객실에서 길게 쉬기')) or y.get('selected_action_id') in ('room_rest','ROOM_REST','room_rest_long')]
+    for x in lean.get('candidates') or []:
+        if x.get('action_id') in ('room_rest','ROOM_REST','room_rest_long') and rests:
+            mins=sum((_clock(y.get('end_time')) or 0)-(_clock(y.get('start_time')) or 0) for y in rests)
+            last=rests[-1]
+            real=[y for y in acts_today if not str(y.get('label') or '').startswith('이동')]
+            just=bool(real) and real[-1] is last
+            x['rest_today']=dict(blocks=len(rests),minutes=mins,last=dict(start=last.get('start_time'),end=last.get('end_time')),
+                                 continuing=just,note='방금 객실에서 쉬었다면 이 선택은 같은 휴식을 이어 가는 것입니다.' if just else None)
+    return lean
+
+
+def service_period(t):
+    """Meal service class of a clock minute (the existing thresholds of the candidate builder)."""
+    return 'breakfast' if 360<=t<600 else 'lunch' if 600<=t<900 else 'dinner' if 900<=t<1320 else 'snack'
 
 
 def settle_meal(a, start, period, fraction, hunger_before):
@@ -957,6 +1519,13 @@ def _execute(a, world, t, action, plan, record, w):
                 'llm_plan_autonomous',plan['decision_summary'],[],dict(meal_nonuse='VOLUNTARY_NONUSE_NOT_INTAKE'))
             a.meals['lunch']=True
             a.meal_log.append(dict(slot='lunch',size='skip',consumed=False,choice='SKIPPED_BY_AGENT',t=action['start'],end=a.t))
+        elif action['execution']=='DEFER_MEAL':
+            # research MEAL_DEFER: lunch stays unresolved; no meal_log row (nothing eaten, nothing settled)
+            a.add('activity','wait',action['label'],action['location'],t,action['duration'],'대기',
+                'llm_plan_autonomous',plan['decision_summary'],[],dict(meal_nonuse='DEFERRED_NOT_SKIPPED',meal_slot='lunch'))
+        elif action['execution']=='CHECKOUT':
+            # research CHECKOUT_PREP: the executor's own pack + checkout steps (same as the forced deadline path)
+            AD.checkout_now(a,t)
         elif action['execution'] in ('REST','WAIT','LEAVE','END_DAY'):
             # END_DAY keeps the executor code 'sleep' (every stored day-2 replay input
             # carries that code), but it is the model closing today's choices in the
@@ -982,6 +1551,12 @@ def _execute(a, world, t, action, plan, record, w):
                 rec=next(x for x in reversed(a.log) if x.get('domain')=='식사')
                 X.remember_meal(a,rec,plan,action['period'])
                 rec['meal_intent']=plan['meal_assessment']['kind']
+            elif action['action_id']==HRL.DELIVERY:
+                # HP1: the delivery dinner enters the customer's meal memory (no order, price unknown, not hotel revenue)
+                a.__dict__.setdefault('_autonomous_memory',{}).setdefault('meal_experiences',[]).append(dict(
+                    date=a.sc['date'],start=action['start'],end=action['start']+action['duration'],venue=HRL.DELIVERY,period='dinner',
+                    order=[],order_total_krw=None,party_size=a.N,assessment=None,actual_intake='NOT_OBSERVED',
+                    status='EXECUTED_EXTERNAL_DELIVERY_ORDER_AND_PRICE_UNKNOWN_NOT_HOTEL_REVENUE'))
             if action.get('native_code') and action['native_code'] not in a.done:a.done.append(action['native_code'])
     record['execution_state']='EXECUTED'
     a.trace.append(dict(t=AD.mh(t),backend='llm',option=action['action_id'],accepted=True,
@@ -1112,7 +1687,7 @@ def breakfast_choice(a, world, t, offers, fallback):
     for attempt in range(2):
         try:
             if select:
-                answer,trace=P.request(policy=policy_of(a),system=resolved_spec(spec_of(a),rows)['system'],context=context,schema=spec_of(a)['schema'],purpose='BREAKFAST_SELECTION',max_output=16000,stable_prefix=True,effort=spec_of(a)['effort'],prefix_message=spec_of(a)['prefix_message'])
+                answer,trace=P.request(policy=policy_of(a),system=resolved_spec(spec_of(a),rows,a)['system'],context=context,schema=spec_of(a)['schema'],purpose='BREAKFAST_SELECTION',max_output=16000,stable_prefix=True,effort=spec_of(a)['effort'],prefix_message=spec_of(a)['prefix_message'])
                 record['attempts'].append(dict(provider=trace,selection=answer))
                 chosen=next((x for x in valid if x['action_id']==answer['selected_action_id']),None)
                 if chosen is None:raise ValueError('BREAKFAST_NOT_ELIGIBLE')
@@ -1174,13 +1749,14 @@ def fatigue_scale(a):
 def today_remaining(a,t,actions):
     state=meal_state(a)
     meals=[k for k,x in actions.items() if x.get('execution')=='MEAL']
-    activities=[k for k,x in actions.items() if x.get('execution') not in ('MEAL','END_DAY','LEAVE') and k not in REST_KEYS]
+    activities=[k for k,x in actions.items() if x.get('execution') not in ('MEAL','END_DAY','LEAVE','CHECKOUT','DEFER_MEAL') and k not in REST_KEYS]   # the last two: research switches only
     return dict(day_end=AD.mh(a.end),minutes_left=max(0,a.end-t),
         dinner_resolved=bool(state['meals']['dinner'] or state['meal_decision_resolved']['dinner']),
         open_meal_options=len(meals),open_activity_options=len(activities),
         rest_options=[k for k in REST_KEYS if k in actions],
         day_end_option='end_day_in_room' if 'end_day_in_room' in actions else None,
-        basis='COUNTS_OF_CURRENT_VALIDATED_CANDIDATES_NOT_RECOMMENDATIONS')
+        basis='COUNTS_OF_CURRENT_VALIDATED_CANDIDATES_NOT_RECOMMENDATIONS',
+        **({'evening_reference':SLEEP_REFERENCE} if DAY_FLOW() and t>=17*60+30 and 'end_day_in_room' in actions else {}))
 
 
 def context_v17(a,t,context,actions):
@@ -1256,6 +1832,44 @@ def expand_selection(selection,rows,actions,menus,trace=None):
     return plan,alternative
 
 
+def REST_CONTINUE():
+    """Research switch (default OFF): HILLINK_RESEARCH_REST_CONTINUE=1 (16:02 directive: do not ask the model every 60
+    minutes to repeat the same rest when nothing important changed). When the model's previous decision today was a room
+    rest and, at this decision, the shown options are the same set, the meal state and the fatigue level are unchanged and
+    it is not the checkout day or before a booked event, the rest continues for one more block without a call. Recorded as
+    a rule continuation (owner M4_RULE, reason lists the unchanged conditions); at most one continuation per model rest,
+    so the model is asked again after it."""
+    return os.environ.get('HILLINK_RESEARCH_REST_CONTINUE')=='1'
+
+
+def _fatigue_level(a):
+    r=a.fatigue/max(a.rest_limit,0.01)
+    return '피곤' if r>=TIRED_RATIO else '조금 피곤' if r>=0.4 else '여유'
+
+
+def rest_continuation(a,t,actions,rows,record):
+    done=[d for d in getattr(a,'_autonomous_decisions',[]) if d is not record and d.get('date')==a.sc['date'] and d.get('execution_state')=='EXECUTED']
+    if not done or a.phase=='checkout' or booked_event(a):return None,None
+    prev=done[-1];key=(prev.get('selected_plan') or {}).get('action_id')
+    if key not in ('room_rest','ROOM_REST') or key not in actions or str(prev.get('selection_owner','')).startswith('M4_RULE'):return None,None
+    same_options=sorted(prev.get('shortlist_ids') or [])==sorted(r['action_id'] for r in rows)
+    st_prev=prev.get('state_before') or {};now=meal_state(a)
+    same_meals=st_prev.get('meals')==now['meals'] and st_prev.get('meal_decision_resolved')==now['meal_decision_resolved']
+    same_fatigue=prev.get('fatigue_level_at_decision',None) in (None,_fatigue_level(a))
+    block=(actions.get(key) or {}).get('duration') or 60
+    meal_soon=any(x.get('execution')=='MEAL' and x.get('start',10**6)<=t+block+15 for x in actions.values())
+    hunger_moved=abs((getattr(a,'hunger_e',0) or 0)-(st_prev.get('hunger') or 0))>0.15
+    boundary=any(t<b<=t+block for b in (17*60+30,EARLY_SLEEP_BEFORE))   # dinner opening, the evening boundary
+    checks=dict(same_options=same_options,same_meal_state=same_meals,same_fatigue_level=same_fatigue,no_meal_within_block=not meal_soon,
+                hunger_estimate_stable=not hunger_moved,no_time_boundary=not boundary,no_booking=True,not_checkout_day=True,
+                day_end_not_open=not (any(x.get('execution')=='END_DAY' for x in actions.values()) and now['meal_decision_resolved'].get('dinner')))
+    # seeded INT3 check (1108): the two continuations both replaced a different model choice (day end at 20:42, a walk at 14:12),
+    # so a day end that is open after dinner is never pre-empted by a rule rest
+    record['rest_continuation_check']=checks
+    if not all(checks.values()):return None,None
+    return key,'REST_CONTINUES_NO_CHANGE: 직전 객실 휴식 이후 선택지·식사 상태·허기 추정·피로 단계(%s)가 그대로이고 다음 %d분 안에 식사 시작·시간 경계·예약이 없어 같은 휴식을 이어 갑니다(다음 판단은 모델이 함)'%(_fatigue_level(a),block)
+
+
 def rule_plan(key,reason,actions):
     action=actions[key]
     return dict(action_id=key,items=copy.deepcopy(action.get('items',[])),order_total_krw=action.get('order_total_krw',0),
@@ -1265,9 +1879,33 @@ def rule_plan(key,reason,actions):
         selection_policy='V18_RULE_SUFFICIENT_NO_LLM_CALL')
 
 
-def resolved_spec(spec, rows):
-    """The spec with its system prompt fixed for these candidates (L builds it per decision type)."""
-    return dict(spec,system=spec['system_for'](rows)) if spec.get('system_for') else spec
+def resolved_spec(spec, rows, a=None):
+    """The spec with its system prompt fixed for these candidates (L builds it per decision type). MEM1: the memory
+    lines are added only from the first day that has an earlier day, so day 1 is identical to V19LS."""
+    if spec.get('visit_memory') and a is not None and VM.has_earlier_days(a):
+        out=dict(spec,system=spec['system_with_memory'](rows))
+    else:
+        out=dict(spec,system=spec['system_for'](rows)) if spec.get('system_for') else spec
+    if DAY_AWARE_INTAKE() and INTAKE_LINE in out['system']:
+        out=dict(out,system=out['system'].replace(INTAKE_LINE,INTAKE_LINE_STAGED))
+    if TRAIT_LINK_LABEL() and TRAIT_LINK_LINE not in out['system']:
+        out=dict(out,system=out['system']+'\n'+TRAIT_LINK_LINE)
+    if LEAN2() and LEAN2_LINE not in out['system']:
+        out=dict(out,system=out['system']+'\n'+LEAN2_LINE)   # appended: the cached prefix is unchanged
+    if DAY_FLOW() and any(r.get('type')=='DAY_END' for r in rows) and DAY_FLOW_LINE not in out['system']:
+        head,sep,tail=out['system'].partition('\n응답 작성:')
+        out=dict(out,system=(head+'\n'+DAY_FLOW_LINE+sep+tail) if sep else out['system']+'\n'+DAY_FLOW_LINE)
+    if DAY_END_EVENING() and not DAY_FLOW() and any(r.get('type')=='DAY_END' for r in rows) and DAY_END_EVENING_LINE not in out['system']:
+        # the stability lines say 'fatigue below 피곤 is no reason to end the day' and frame rest as keeping today open;
+        # without a counterweight an ordinary evening end after dinner turned into hourly room rests (round 2)
+        head,sep,tail=out['system'].partition('\n응답 작성:')
+        out=dict(out,system=(head+'\n'+DAY_END_EVENING_LINE+sep+tail) if sep else out['system']+'\n'+DAY_END_EVENING_LINE)
+    if spec.get('party_breakfast') and not spec.get('meal_review') and any(r.get('type')=='BREAKFAST' for r in rows):
+        # PARTY_BREAKFAST on MEM1: the P2 breakfast lines, only in breakfast requests, where LSS.system puts research lines
+        head,sep,tail=out['system'].partition('\n응답 작성:')
+        add=''.join('\n'+l for l in LSS.P2_LINES if l not in out['system'])
+        out=dict(out,system=(head+add+sep+tail) if sep else out['system']+add)
+    return out
 
 
 def fact_kinds(a):
@@ -1302,15 +1940,168 @@ def variant_request(a,t,context,actions,rows,trace,personal,spec,decision='ACTIO
         full=stable_order(full)
         if spec.get('need_split'):full=dict(full,need_model=need_model(full,t))
         if spec.get('neutral'):full=neutral_presentation(full,'NAME' if spec['neutral']=='NAME' else 'PRICE')
-        if spec['context']=='AUTONOMOUS_CONTEXT_V18_LEAN':full=lean_context(full)
+        if spec['context']=='AUTONOMOUS_CONTEXT_V18_LEAN':
+            pre=full;full=lean_context(full)
+            if FACILITY_ACCESS_NOTE() and decision=='ACTION':
+                cur=(a.__dict__.get('_autonomous_decisions') or [{}])[-1]
+                note=facility_access_note(cur.get('excluded'),cur.get('candidate_ids') or [])   # offered anywhere (shown or not) is never listed
+                note=relevant_facility_note(note,(full.get('personal') or {}).get('records'))
+                if note:full['facility_access']=note
+            if spec.get('earlier_days'):full['today']=dict(full['today'],earlier_days=HRL.earlier_days(pre,AD.VENUE_KO))
+            if spec.get('visit_memory') and VM.has_earlier_days(a):   # day 1: nothing to remember, request identical to V19LS
+                VM.sync(a)
+                full['earlier_days']=VM.earlier_days(pre,a,AD.VENUE_KO)
+                VM.mark_candidates(full.get('candidates'),pre,a)
+                if os.environ.get('HILLINK_RESEARCH_MEM1_SELECTIVE')=='1':   # research (default OFF): MEM1S, reasons kept only where related
+                    full['earlier_days']=VM.selective_earlier_days(full['earlier_days'],full.get('candidates'),str(decision).upper())
         if spec.get('stance'):
             raw=((a.lib or {}).get('engine') or {}).get('facts') or {}
             links=LSS.feature_links(raw,full.get('candidates'))
             for c in full.get('candidates') or []:
                 if c.get('type')=='MEAL':links.setdefault(c['action_id'],set()).update(MS.venue_evidence(a,c.get('location'),set(cite)))
             full=LSS.trim(LSS.annotate(full,fact_kinds(a),links))
+            if SHORTFALL_LINK():
+                short=LSS.general_shortfall_records((full.get('personal') or {}).get('records') or [],full.get('candidates'))
+                for x in full.get('candidates') or [] if short else []:
+                    if x.get('type')=='MEAL' and x.get('basket_groups'):
+                        x['portion_experience']=dict(fact_ids=[f for r in short for f in r['fact_ids']],
+                            note='다른 곳에서 양이 부족했던 개인 기록입니다. 이 후보의 양을 정할 때 지금 인원·직전 식사·포만과 비교하세요. 양을 늘리라는 지시가 아닙니다.')
+        if LEAN_COMPACT() and spec['context']=='AUTONOMOUS_CONTEXT_V18_LEAN':full=compact_request(full)
+        if LEAN2() and spec['context']=='AUTONOMOUS_CONTEXT_V18_LEAN':full=lean2_request(full)
         return full,cite,coverage
     return stable_order(dict(base,personal=CQ.with_full_scope(base['personal']))),list(personal['citable_fact_ids']),None
+
+
+def LEAN_COMPACT():
+    """Research switch (default OFF): HILLINK_RESEARCH_LEAN_COMPACT=1. v21 G LIVE: INT requests averaged 7,408 input
+    tokens vs 5,702 for V19LS (+30%, cost per call +22%) with the same latency; most of the increase was presentation,
+    not evidence: earlier-day decision reasons and 'compared, not chosen' sentences (~1.5 KB), a constant selection
+    note, per-option portion-basis codes, long constant explanations in the need estimate. With the switch those are
+    shortened; every Fact id, decision, meal, visit record and number stays."""
+    return os.environ.get('HILLINK_RESEARCH_LEAN_COMPACT')=='1'
+
+
+def LEAN2():
+    """Research switch (default OFF): HILLINK_RESEARCH_LEAN2=1 (18:07 directive, G3). v21 28-person LIVE: INT3 sent
+    7,188 input tokens per call vs 5,164 for V19LS (+39%, cost per visit +7.2%); the cached system prefix was about the
+    same, the difference was the per-call content. With the switch the same facts are sent once:
+      - today's travel rows ('이동 → ...') are dropped (the activity rows and their times stay);
+      - the last meal is not repeated in state.modeled_need and visit.intake_stage when today.meals already has it;
+      - state.meal_decision_resolved is sent only where it differs from state.meals (a skipped meal);
+      - today_remaining.rest_options (a list of action ids that the candidates already show) is dropped;
+      - memory drops the breakfast exclusion list after the morning and last_executed (the last today row);
+      - visit drops the constant breakfast provenance codes and the intake note the system prompt already states;
+      - earlier_days drops 'visited' rows that repeat that day's decisions (the free-entry flag moves to the decision);
+      - candidate defaults are left out: reservation UNKNOWN_NOT_BOOKED, included null, shown_because
+        ENGINE_SHORTLIST_FEASIBLE, and the per-option portion-basis code (one system line states the defaults).
+    Every Fact id and summary, counterexample, time, place, hunger/satiety estimate, fatigue, earlier action, pending
+    intention, price, entitlement, contract field and alternative stays."""
+    return os.environ.get('HILLINK_RESEARCH_LEAN2')=='1'
+
+
+LEAN2_LINE='후보 conditions에 reservation이 없으면 예약이 확정되지 않은 것이고, included가 없으면 포함 혜택 정보가 없는 것입니다. m4.shown_because가 없으면 엔진이 실행 가능하다고 확인한 일반 후보입니다.'
+
+
+def _meal_key(m):
+    return (m.get('date'),m.get('end'))
+
+
+def lean2_request(full):
+    out=copy.deepcopy(full)
+    st=out.get('state') or {};t=str(st.get('time') or '')
+    today=out.get('today') or {}
+    if isinstance(today.get('actions'),list):
+        today['actions']=[r for r in today['actions'] if not str(r.get('label','')).startswith('이동 ')]
+    date=(out.get('visit') or {}).get('date')
+    last_today=(today.get('meals') or [None])[-1]
+    last_key=(date,last_today.get('end')) if last_today else None
+    need=st.get('modeled_need')
+    if isinstance(need,dict) and last_key and _meal_key(need.get('last_simulated_meal') or {})==last_key:need.pop('last_simulated_meal',None)
+    intake=(out.get('visit') or {}).get('intake_stage')
+    if isinstance(intake,dict):
+        if last_key and _meal_key(intake.get('last_recorded_meal') or {})==last_key:intake.pop('last_recorded_meal',None)
+        intake.pop('note',None)   # the system prompt states it (meals outside the record are unconfirmed)
+    bf=(out.get('visit') or {}).get('breakfast')
+    if isinstance(bf,dict):
+        for k in ('policy','source'):bf.pop(k,None)   # constant provenance codes; plan, covered adults and coverage stay
+        if bf.get('event_override') is None:bf.pop('event_override',None)
+    if isinstance(st.get('meals'),dict) and isinstance(st.get('meal_decision_resolved'),dict):
+        diff=[k for k,v in st['meal_decision_resolved'].items() if v and not st['meals'].get(k)]
+        st.pop('meal_decision_resolved')
+        if diff:st['resolved_without_meal']=diff
+    if isinstance(st.get('today_remaining'),dict):st['today_remaining'].pop('rest_options',None)
+    mem=out.get('memory')
+    if isinstance(mem,dict):
+        mem.pop('last_executed',None)
+        if t>='10:30':mem.pop('breakfast_decisions',None)
+    ed=out.get('earlier_days')
+    if isinstance(ed,dict):
+        for d in ed.get('days') or []:
+            acts={x.get('action_id'):x for x in d.get('decisions') or []}
+            keep=[]
+            for v in d.get('visited') or []:
+                if v.get('action_id') in acts:
+                    if v.get('included'):acts[v['action_id']]['included']=v['included']
+                else:keep.append(v)
+            if 'visited' in d:
+                if keep:d['visited']=keep
+                else:d.pop('visited')
+    for c in out.get('candidates') or []:
+        cond=c.get('conditions') or {}
+        if cond.get('reservation')=='UNKNOWN_NOT_BOOKED':cond.pop('reservation')
+        if 'included' in cond and cond['included'] is None:cond.pop('included')
+        m4=c.get('m4') or {}
+        if m4.get('shown_because')=='ENGINE_SHORTLIST_FEASIBLE':m4.pop('shown_because')
+        for g in c.get('basket_groups') or []:
+            for o in g.get('options') or []:o.pop('portion_basis',None)
+    out.pop('portion_basis_legend',None)
+    return out
+
+
+PORTION_SHORT={'PER_PERSON_OR_PORTION_UNIT':'unit','PIZZA_SIZE_RULE':'pizza','SET_LABEL_PERSONS':'set','ENGINE_BASKET_MODEL':'basket','NO_GENERIC_RULE':'none'}
+
+
+def _cap(text, n=80):
+    t=str(text or '')
+    if len(t)<=n:return t
+    cut=max(t.rfind('.',0,n),t.rfind(',',0,n),t.rfind('고 ',0,n))
+    return t[:cut+1 if cut>30 else n].rstrip()+'…'
+
+
+def compact_request(full):
+    out=copy.deepcopy(full)
+    ed=out.get('earlier_days')
+    if isinstance(ed,dict):
+        if ed.get('selection'):ed['selection']=dict(mode=ed['selection'].get('mode'),note='관련 없는 결정은 이유를 줄였습니다(결정·시각·인용 Fact는 그대로).')
+        for d in ed.get('days') or []:
+            for x in d.get('decisions') or []:
+                if x.get('compared_not_chosen'):x['compared_not_chosen']=str(x['compared_not_chosen']).split(': ',1)[0]
+                if x.get('reason'):x['reason']=_cap(x['reason'])
+            for m in d.get('meals') or []:
+                m.pop('model_assumption_at_the_time',None)
+    need=(out.get('state') or {}).get('modeled_need')
+    if isinstance(need,dict):
+        need['meaning']='엔진 규칙 추정이며 실제 섭취·허기는 관측되지 않았습니다. 식사를 강제하지 않습니다.'
+        est=need.get('engine_estimate') or {}
+        if est.get('source'):est['source']='ENGINE_RULE(오늘 마지막 식사 1인 환산량·경과 시간)'
+        est.pop('basis',None)
+    used=False
+    for c in out.get('candidates') or []:
+        for g in c.get('basket_groups') or []:
+            for o in g.get('options') or []:
+                if o.get('portion_basis'):
+                    o['portion_basis']='+'.join(PORTION_SHORT.get(k,k) for k in str(o['portion_basis']).split('+'));used=True
+    if used:out['portion_basis_legend']='unit=1인분 판매 단위, pizza=피자 크기 규칙, set=세트 표기 인원, basket=엔진 구성 모델, none=일반 기준 없음(값 없음)'
+    return out
+
+
+def MEAL_TIMING_REF():
+    """Research switch (default OFF): HILLINK_RESEARCH_MEAL_TIMING_REF=1. v21 G LIVE: 9 of 12 visits had a 'dinner' between
+    15:40 and 16:46 (V19LS 3/3) and then nothing until the day ended 5-6 h later; the request carried the engine's
+    hunger estimate but no ordinary meal-time reference. With the switch the need block carries a general reference
+    (lunch 11:30-13:30, dinner from the hotel dinner opening 17:30 to 20:00), labelled as a general behaviour
+    reference, not this person's habit; a personal record or the current state takes precedence. No meal is forced."""
+    return os.environ.get('HILLINK_RESEARCH_MEAL_TIMING_REF')=='1'
 
 
 LEAN_VISIT=('date','nights','party_size','party_status','relationship_status','purpose','building','breakfast','pre_arrival_intake','checked_in','checked_out')
@@ -1345,8 +2136,19 @@ def lean_context(c):
                          for o in g['options']]) for g in x['basket_groups']]
         return out
     cands=[cand(x) for x in c.get('candidates',[])]
+    if PORTION_BASIS():
+        for x in cands:
+            if x.get('basket_groups'):portion_presentation(x['action_id'],x['basket_groups'])
+    if TRAIT_LINK_LABEL():
+        for x in cands:
+            if (x.get('m4') or {}).get('evidence_fact_ids'):x['m4']['trait_link_fact_ids']=x['m4'].pop('evidence_fact_ids')
+    lean_visit={k:v for k,v in visit.items() if k in LEAN_VISIT}
+    if DAY_AWARE_INTAKE():
+        stage=intake_stage(c,date)
+        lean_visit.pop('pre_arrival_intake',None)
+        lean_visit['intake_stage']=stage
     out=dict(personal=personal,
-        visit={k:v for k,v in visit.items() if k in LEAN_VISIT},
+        visit=lean_visit,
         today=dict(actions=[dict(label=x.get('label'),start=x.get('start_time'),end=x.get('end_time')) for x in c.get('activity_experiences',[]) if x.get('date')==date],
                    meals=[dict(period=m.get('period'),venue=m.get('venue'),start=m.get('start_time'),end=m.get('end_time'),minutes_since_end=m.get('minutes_since_end'),
                                order=[dict(label=i.get('label'),quantity=i.get('quantity')) for i in m.get('order',[])],party_size=m.get('party_size'),
@@ -1360,9 +2162,21 @@ def lean_context(c):
                    today_remaining={k:v for k,v in (st.get('today_remaining') or {}).items() if k!='basis'}),
         candidates=cands,
         shortlist={k:(c.get('shortlist') or {}).get(k) for k in ('candidate_count','shown')})
+    if LEAN_NEED_ESTIMATE():
+        need=lean_need_state(c,date,st.get('time'),cands)
+        if need:out['state']['modeled_need']=need
+        if need and MEAL_TIMING_REF():
+            need['general_meal_times']=dict(lunch='11:30-13:30',dinner='17:30-20:00',
+                basis='일반 행동 참고(이 고객의 습관 아님 · 저녁 시작은 호텔 석식 영업 17:30). 개인 기록이나 지금 상태가 다르면 그쪽이 우선입니다.')
+
     if c.get('pending_schedule'):out['pending_schedule']=c['pending_schedule']
     for k in ('contract','previous_rejection'):
         if c.get(k) is not None:out[k]=c[k]
+    if ACTIVITY_CONTEXT() or REST_CONTEXT():
+        today_acts=[x for x in c.get('activity_experiences',[]) if x.get('date')==date]
+        if ACTIVITY_CONTEXT():activity_context(out,today_acts)
+        if REST_CONTEXT():rest_context(out,today_acts)
+    if MORNING_CONTEXT():morning_context(out,c)
     return out
 
 
@@ -1394,27 +2208,41 @@ def expand_answer(answer,rows,actions,menus,trace,a,spec):
 
 
 def select_step(a,world,t,record,actions,menus,w,personal,memory,context):
+    if DAY_FLOW():a.__dict__['_day_flow_personal']=personal   # the early-sleep basis reads the sent records
     """V18: shortlist by the rule engine, one selection by the model (or none when the moment is rule-sufficient)."""
     rows,trace=MS.build(a,world,t,actions,menus,w,personal['citable_fact_ids'],records=personal.get('evidence_records'),selection=spec_of(a).get('shortlist','M4_FIT'))
+    if spec_of(a).get('external_delivery') and HRL.DELIVERY in actions and trace['state'].get('meal_period')=='dinner' and trace['state'].get('meal_open') \
+            and not any(r['action_id']==HRL.DELIVERY for r in rows):
+        hp1b=spec_of(a).get('external_delivery')=='B'
+        rows=rows+[(HRL.delivery_row_b if hp1b else HRL.delivery_row)(a,t,actions,personal['citable_fact_ids'],MS)];trace['shortlisted']=trace['shortlisted']+[HRL.DELIVERY]
+        trace.setdefault('shown_because',{})[HRL.DELIVERY]='HP1B_EXTERNAL_DELIVERY_DINNER_ALTERNATIVE' if hp1b else 'HP1_EXTERNAL_DELIVERY_DINNER_ALTERNATIVE'
     record['shortlist']=trace
     record['shortlist_ids']=[r['action_id'] for r in rows]
-    spec=resolved_spec(spec_of(a),rows)
+    spec=resolved_spec(spec_of(a),rows,a)
     full,cite,coverage=variant_request(a,t,context,actions,rows,trace,personal,spec)
+    if spec_of(a).get('hotel_reference'):
+        block,ref_trace=(HRL.reference_block_b if spec_of(a).get('hotel_reference')=='B' else HRL.reference_block)(rows,personal.get('evidence_records'))
+        record['hotel_reference']=ref_trace
+        if block:full=dict(full,hotel_reference=block)
+    if spec_of(a).get('visit_memory'):record['repeat_check']=VM.repeat_check(full)   # MEM1: what the model saw about repeats, before the call
     if coverage:record['evidence_coverage']=coverage
     record['input_sha256']=P.digest(full)
     record['implementation_sha256']=P.digest(configuration()['source_sha256'])
     record['profile_evidence_sha256']=P.digest(personal)
     record['input_context']=X.decision_context(dict(full,personal=personal,actions=rows,menus=menus),[])
     rule_key,rule_reason=MS.rule_sufficient(rows,a,t,actions)
+    if not rule_key and REST_CONTINUE():
+        rule_key,rule_reason=rest_continuation(a,t,actions,rows,record)
     if rule_key:
         plan=rule_plan(rule_key,rule_reason,actions)
+        if rule_reason.startswith('REST_CONTINUES'):plan['selection_policy']='RULE_CONTINUE_REST_NO_CHANGE_NO_LLM_CALL'
         try:
             action=validate_selection(a,plan,actions,menus,personal['citable_fact_ids'],None,spec_of(a),[r['action_id'] for r in rows],t)
         except ValueError as exc:
             # The rule may not override a review: fall through to the model with the rejection in hand.
             record['rule_rejection']=str(exc)
         else:
-            record.update(selected_plan=copy.deepcopy(plan),execution_state='VALIDATED',selection_owner='M4_RULE',rule_basis=rule_reason,
+            record.update(selected_plan=copy.deepcopy(plan),execution_state='VALIDATED',selection_owner='M4_RULE_REST_CONTINUATION' if rule_reason.startswith('REST_CONTINUES') else 'M4_RULE',rule_basis=rule_reason,
                           price_score_rerank=False,llm_calls=0,contract_sha256=P.digest(action.get('contract')))
             record['input_context']=X.decision_context(dict(full,personal=personal,actions=rows,menus=menus),[plan])
             return action,plan
@@ -1440,6 +2268,8 @@ def select_step(a,world,t,record,actions,menus,w,personal,memory,context):
             reason=str(exc);record['attempts'][-1]['validation_rejection']=reason
             full['previous_rejection']=dict(plan=answer,reason=reason)
             continue
+        if spec.get('hotel_reference') is True and answer.get('hotel_reference_use') is not None:
+            plan['hotel_reference_use']=copy.deepcopy(answer['hotel_reference_use'])   # HP1: the model's own statement, kept with the trace
         if spec.get('stance'):
             if answer.get('tradeoff_note'):plan['tradeoff_note']=answer['tradeoff_note']
             record['selection_diagnostics']=LSS.diagnose(answer,full,(full.get('visit') or {}).get('party_size'))
@@ -1452,8 +2282,30 @@ def select_step(a,world,t,record,actions,menus,w,personal,memory,context):
                 others=[k for k,x in actions.items() if x.get('execution')!='END_DAY' and k not in REST_KEYS]
                 text=str(plan.get('why_not_other_plans') or '')+' '+str(plan.get('decision_summary') or '')
                 record['day_end_match']=dict(first_rejection=str(prior['reason']).split(':',1)[0],accepted_by=LSS.compared_by(text,actions,others) or 'OTHER_RULE')
+            if str(prior.get('reason','')).startswith('EARLY_SLEEP_REVIEW') and (actions.get(plan['action_id']) or {}).get('execution')=='END_DAY':
+                # DAY_FLOW (16:26): a stated reason alone is not a basis. Accepted bases: a cited personal record about sleep,
+                # fatigue or an early start; the executor's own state (fatigue at least '조금 피곤'); a booked event early
+                # tomorrow. Without one, the harness keeps the customer in the room (quiet evening / rest, never an outing)
+                # and asks again later; recorded as such.
+                basis=early_sleep_basis(a,plan,personal,t)
+                record['early_sleep_exception']=dict(time=AD.mh(t),fatigue_level=_fatigue_level(a),basis=basis,bases=early_sleep_bases(a,plan,personal),
+                                                     reason=str(plan.get('decision_summary') or '')[:300],fact_ids=list(plan.get('supporting_fact_ids') or []))
+                shown={r['action_id'] for r in rows}
+                stay=next((k for k in ('room_rest_long','room_rest','ROOM_REST') if k in actions and k in shown),None)
+                if not basis and not stay:record['early_sleep_exception']['harness']='NO_STAY_OPTION_SHOWN_END_DAY_KEPT'
+                if not basis and stay:
+                    plan=dict(rule_plan(stay,'EARLY_SLEEP_WITHOUT_BASIS: 근거가 확인되지 않은 %s 취침 대신 객실에 머뭅니다(외출 아님). 이후 다시 판단합니다.'%AD.mh(t),actions),
+                              selection_policy='HARNESS_EARLY_SLEEP_DEFERRED_TO_ROOM_STAY')
+                    action=copy.deepcopy(actions[stay])
+                    record['early_sleep_exception']['harness']='DEFERRED_TO_ROOM_STAY:'+stay
+            elif DAY_FLOW() and (actions.get(plan['action_id']) or {}).get('execution')=='END_DAY' and t<EARLY_SLEEP_BEFORE and a.fatigue<TIRED_RATIO*a.rest_limit:
+                basis=early_sleep_basis(a,plan,personal,t)
+                if basis:record['early_sleep_exception']=dict(time=AD.mh(t),fatigue_level=_fatigue_level(a),basis=basis,harness='ACCEPTED_WITH_BASIS',
+                                                              reason=str(plan.get('decision_summary') or '')[:300],fact_ids=list(plan.get('supporting_fact_ids') or []))
         chosen=next(r for r in rows if r['action_id']==plan['action_id'])
-        record.update(selected_plan=copy.deepcopy(plan),execution_state='VALIDATED',selection_owner='LLM_SELECTION_FROM_M4_SHORTLIST',
+        deferred=plan.get('selection_policy')=='HARNESS_EARLY_SLEEP_DEFERRED_TO_ROOM_STAY'
+        record.update(selected_plan=copy.deepcopy(plan),execution_state='VALIDATED',
+                      selection_owner='HARNESS_EARLY_SLEEP_DEFERRED' if deferred else 'LLM_SELECTION_FROM_M4_SHORTLIST',
                       price_score_rerank=False,llm_calls=len(record['attempts']),contract_sha256=P.digest(action.get('contract')),
                       m4_agreement=dict(selected_type=chosen['type'],m4_rank_in_type=chosen['m4']['rank_in_type'],of=chosen['m4']['of'],
                           m4_top_of_type=m4_top.get(chosen['type']),agrees_with_m4_top=(chosen['m4']['rank_in_type']==1),
@@ -1473,6 +2325,7 @@ def step(a,world,t):
     record=dict(policy=policy_of(a),world_policy=WORLD_POLICY,customer_id=a.pid,date=a.sc['date'],minute=t,execution_state='PREPARING',attempts=[])
     record['state_before']=dict(location=a.loc,time=t,hunger=a.hunger_e,fatigue=a.fatigue,
         checked_out=a.checked_out,**meal_state(a))
+    if REST_CONTINUE():record['fatigue_level_at_decision']=_fatigue_level(a)
     records.append(record)
     actions,menus,excluded,w=action_space(a,world,t)
     record.update(candidate_count=len(actions),candidate_ids=list(actions),excluded=copy.deepcopy(excluded),
@@ -1531,10 +2384,14 @@ def step(a,world,t):
         record['day_end_review']=dict(policy=spec_of(a)['day_end_review'],first_choice_rejected=bool(rejected),
             accepted_on='REPLAN_AFTER_REVIEW' if rejected else 'FIRST_ATTEMPT',fatigue=fatigue_scale(a),remaining=today_remaining(a,t,actions))
     record['current_need_assessment']=copy.deepcopy(plan.get('current_need_assessment'))
+    if spec_of(a).get('visit_memory'):record['mem1_fatigue_before']=fatigue_scale(a)
     _execute(a,world,t,action,plan,record,w)
     advance_needs(a,a.t)
     record['state_after']=dict(location=a.loc,time=a.t,hunger=a.hunger_e,fatigue=a.fatigue,
         checked_out=a.checked_out,visit_ended=a.ended,**meal_state(a))
     memory.update(pending_intentions=plan['pending_intentions'],last_executed=dict(date=a.sc['date'],
         time=AD.mh(t),action=action['action_id']),status='INTENTIONS_ARE_NOT_OBSERVED_EXPERIENCES')
+    if spec_of(a).get('visit_memory'):
+        record['repeat_choice']=VM.repeat_choice(record.get('repeat_check'),plan)
+        VM.note_execution(a,t,actions,record.get('mem1_fatigue_before'),fatigue_scale(a))
     return True

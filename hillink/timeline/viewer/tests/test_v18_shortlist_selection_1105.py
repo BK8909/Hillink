@@ -383,3 +383,16 @@ def test_one_candidate_per_sold_contract_keeps_both_names_evidence(shortlist):
     night=next(r for r in rows if r['action_id']=='activity:night_footbath:SKU1')
     assert 'T-F07' in night['m4']['direct_evidence_fact_ids'], 'the day variant evidence (same facility) is carried over'
     assert any(d['reason']=='SAME_CONTRACT_AS:activity:night_footbath:SKU1' for d in trace['dropped'])
+
+
+def test_an_operator_applied_event_is_always_shown_never_chosen_for_the_model(shortlist):
+    """2026-11-09: the wine fair was a valid candidate in 17 LIVE decisions but the score-ranked budget showed it once.
+    An event the operator applied is now always offered while it can be joined; the model still decides."""
+    acts=actions()
+    acts['WINE_FAIR']=dict(action_id='WINE_FAIR',label='와인페어(포레스트 파크)',execution='ENGINE',kind='ACTIVITY',location='FOREST_PARK',start=1080,duration=90,items=[],order_total_krw=0,offer={'id':'WINE_FAIR'})
+    acts['CARD_SAVORING_SUMMER_NIGHT_2026']=dict(action_id='CARD_SAVORING_SUMMER_NIGHT_2026',label='Savoring Summer Night',execution='ENGINE',kind='ACTIVITY',location='RIVERPARK',start=1080,duration=120,items=[],order_total_krw=0,offer={'id':'CARD_SAVORING_SUMMER_NIGHT_2026'})
+    rows,trace=shortlist(acts=acts)
+    ids=[r['action_id'] for r in rows]
+    assert 'WINE_FAIR' in ids and 'CARD_SAVORING_SUMMER_NIGHT_2026' in ids and 'end_day_in_room' in ids
+    rows2,_=shortlist()
+    assert not any(r['action_id']=='WINE_FAIR' or r['action_id'].startswith('CARD_') for r in rows2)   # no event, nothing added

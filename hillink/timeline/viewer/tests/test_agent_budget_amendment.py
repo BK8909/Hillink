@@ -5,6 +5,13 @@ from pathlib import Path
 import pytest
 from test_autonomous_agent import P
 
+@pytest.fixture(autouse=True)
+def _credential_present(monkeypatch):
+    # budget-journal tests: the server-side API credential is present (its value is never read here)
+    import openai_credentials
+    monkeypatch.setattr(openai_credentials, 'load_openai_api_key', lambda: 'present')
+
+
 spec = importlib.util.spec_from_file_location('amend', Path(__file__).resolve().parents[2] / 'tools/amend_agent_call_limit.py')
 M = importlib.util.module_from_spec(spec); spec.loader.exec_module(M)
 
@@ -22,7 +29,7 @@ def test_extension_preserves_failed_calls_spend_and_requires_approval(tmp_path):
     assert json.loads(p.read_bytes())['requests'] == requests
     summary = P.Budget(p, 20, 1000).summary()
     assert summary == dict(max_usd=20, max_calls=1000, calls=1, cost_upper_usd=.01, unresolved=0)
-    with pytest.raises(ValueError): P.Budget(p, 20, 2501)
+    with pytest.raises(ValueError): P.Budget(p, 20, 5001)
     with pytest.raises(ValueError): P.Budget(p, 21, 1000)
 
 
@@ -168,13 +175,102 @@ def test_parallel_processes_reserve_last_allowance_once_and_keep_settlement(tmp_
 def test_2500_requires_existing_approval_and_rejects_higher_caps(tmp_path):
     with pytest.raises(ValueError, match='APPROVAL_REQUIRED'):
         P.Budget(tmp_path/'absent', 20, 2500).summary()
-    for usd, calls in ((20.001, 2500), (20, 2501)):
+    for usd, calls in ((20.001, 2500), (20, 5001)):
         with pytest.raises(ValueError):
             P.Budget(tmp_path/'unapproved', usd, calls)
     p = tmp_path/'journal'
     P.Budget(p, 20, 400).summary()
     original = p.read_bytes()
-    for calls, approval in ((2501, 'TEST'), (2500, '')):
+    for calls, approval in ((5001, 'TEST'), (2500, '')):
         with pytest.raises(ValueError, match='APPROVED_CALL_LIMIT_REQUIRED'):
             M.amend(p, tmp_path/'backup', hashlib.sha256(original).hexdigest(), calls, approval)
     assert p.read_bytes() == original
+
+
+def test_2600_ceiling_needs_its_own_recorded_amendment(tmp_path):
+    """2026-11-08 03:20: the approvable ceiling is 2,600 calls (USD20 unchanged); a journal approved for 2,500 stays
+    at 2,500 until an amendment for 2,600 is recorded, and nothing above 2,600 can be approved."""
+    p = tmp_path/'journal'
+    P.Budget(p, 20, 400).summary()
+    M.amend(p, tmp_path/'b1', hashlib.sha256(p.read_bytes()).hexdigest(), 2500, 'USER_APPROVAL_2026_11_05')
+    with pytest.raises(ValueError, match='APPROVAL_REQUIRED'):
+        P.Budget(p, 20, 2600).summary()
+    assert P.Budget(p, 20, 2500).summary()['max_calls'] == 2500
+    M.amend(p, tmp_path/'b2', hashlib.sha256(p.read_bytes()).hexdigest(), 2600, 'USER_APPROVAL_2026_11_08_0320')
+    s = P.Budget(p, 20, 2600).summary()
+    assert s['max_calls'] == 2600 and s['max_usd'] == 20
+    with pytest.raises(ValueError, match='APPROVED_CALL_LIMIT_REQUIRED'):
+        M.amend(p, tmp_path/'b3', hashlib.sha256(p.read_bytes()).hexdigest(), 5001, 'TEST')
+
+
+def test_live_preflight_accepts_an_amended_2600_journal_only(tmp_path, monkeypatch):
+    import sys as _s
+    _s.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    import visit_execution as VE
+    assert VE.MAX_APPROVABLE_CALLS == P.MAX_APPROVABLE_CALLS
+    p = tmp_path/'journal'
+    P.Budget(p, 20, 400).summary()
+    M.amend(p, tmp_path/'b1', hashlib.sha256(p.read_bytes()).hexdigest(), 2500, 'USER_APPROVAL_2026_11_05')
+    monkeypatch.setenv('HILLINK_LIVE_APPROVAL_REFERENCE', 'TEST'); monkeypatch.setenv('HILLINK_LLM_EXTERNAL_OPT_IN', '1')
+    monkeypatch.setenv('HILLINK_AGENT_BUDGET_FILE', str(p)); monkeypatch.setenv('HILLINK_AGENT_MAX_USD', '20')
+    monkeypatch.setenv('HILLINK_AGENT_MAX_CALLS', '2600')
+    assert VE.live_status() == (False, 'EXISTING_JOURNAL_CALL_EXTENSION_APPROVAL_REQUIRED')
+    M.amend(p, tmp_path/'b2', hashlib.sha256(p.read_bytes()).hexdigest(), 2600, 'USER_APPROVAL_2026_11_08_0320')
+    assert VE.live_status() == (True, None)
+    monkeypatch.setenv('HILLINK_AGENT_MAX_CALLS', '5001')
+    assert VE.live_status() == (False, 'APPROVED_LIMIT_REQUIRED')
+
+
+def test_2620_ceiling_needs_its_own_recorded_amendment(tmp_path, monkeypatch):
+    """2026-11-08 12:11: ceiling 2,620 (USD20 unchanged). A journal amended to 2,600 stays at 2,600 until a 2,620
+    amendment is recorded; LIVE preflight follows the journal; nothing above 2,620 can be approved."""
+    import sys as _s
+    _s.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    import visit_execution as VE
+    assert P.MAX_APPROVABLE_CALLS == VE.MAX_APPROVABLE_CALLS == M.MAX_APPROVABLE_CALLS == 5000
+    p = tmp_path/'journal'
+    P.Budget(p, 20, 400).summary()
+    M.amend(p, tmp_path/'b1', hashlib.sha256(p.read_bytes()).hexdigest(), 2600, 'USER_APPROVAL_2026_11_08_0320')
+    with pytest.raises(ValueError, match='APPROVAL_REQUIRED'):
+        P.Budget(p, 20, 2620).summary()
+    monkeypatch.setenv('HILLINK_LIVE_APPROVAL_REFERENCE', 'TEST'); monkeypatch.setenv('HILLINK_LLM_EXTERNAL_OPT_IN', '1')
+    monkeypatch.setenv('HILLINK_AGENT_BUDGET_FILE', str(p)); monkeypatch.setenv('HILLINK_AGENT_MAX_USD', '20')
+    monkeypatch.setenv('HILLINK_AGENT_MAX_CALLS', '2620')
+    assert VE.live_status() == (False, 'EXISTING_JOURNAL_CALL_EXTENSION_APPROVAL_REQUIRED')
+    M.amend(p, tmp_path/'b2', hashlib.sha256(p.read_bytes()).hexdigest(), 2620, 'USER_APPROVAL_2026_11_08_1211')
+    assert P.Budget(p, 20, 2620).summary()['max_calls'] == 2620 and VE.live_status() == (True, None)
+    with pytest.raises(ValueError, match='APPROVED_CALL_LIMIT_REQUIRED'):
+        M.amend(p, tmp_path/'b3', hashlib.sha256(p.read_bytes()).hexdigest(), 5001, 'TEST')
+
+
+def test_4500_ceiling_needs_its_own_recorded_amendment(tmp_path, monkeypatch):
+    """2026-11-08 13:19: ceiling 4,500 (USD20 unchanged). A journal at 2,620 stays there until a 4,500 amendment is
+    recorded; nothing above 4,500 can be approved; the dollar ceiling never moves."""
+    import sys as _s
+    _s.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    import visit_execution as VE
+    p = tmp_path/'journal'
+    P.Budget(p, 20, 400).summary()
+    M.amend(p, tmp_path/'b1', hashlib.sha256(p.read_bytes()).hexdigest(), 2620, 'USER_APPROVAL_2026_11_08_1211')
+    with pytest.raises(ValueError, match='APPROVAL_REQUIRED'):
+        P.Budget(p, 20, 4500).summary()
+    M.amend(p, tmp_path/'b2', hashlib.sha256(p.read_bytes()).hexdigest(), 4500, 'USER_APPROVAL_2026_11_08_1319')
+    assert P.Budget(p, 20, 4500).summary()['max_calls'] == 4500
+    with pytest.raises(ValueError):
+        P.Budget(p, 20.01, 4500)
+    with pytest.raises(ValueError, match='APPROVED_CALL_LIMIT_REQUIRED'):
+        M.amend(p, tmp_path/'b3', hashlib.sha256(p.read_bytes()).hexdigest(), 5001, 'TEST')
+
+
+def test_5000_ceiling_needs_its_own_recorded_amendment(tmp_path):
+    """2026-11-08 23:44 user approval: ceiling 5,000 (USD20 unchanged). A journal at 4,500 stays there until a 5,000
+    amendment is recorded; nothing above 5,000 can be approved."""
+    p = tmp_path/'journal'
+    P.Budget(p, 20, 400).summary()
+    M.amend(p, tmp_path/'b1', hashlib.sha256(p.read_bytes()).hexdigest(), 4500, 'USER_APPROVAL_2026_11_08_1319')
+    with pytest.raises(ValueError, match='APPROVAL_REQUIRED'):
+        P.Budget(p, 20, 5000).summary()
+    M.amend(p, tmp_path/'b2', hashlib.sha256(p.read_bytes()).hexdigest(), 5000, 'USER_APPROVAL_2026_11_08_2344')
+    assert P.Budget(p, 20, 5000).summary()['max_calls'] == 5000
+    with pytest.raises(ValueError, match='APPROVED_CALL_LIMIT_REQUIRED'):
+        M.amend(p, tmp_path/'b3', hashlib.sha256(p.read_bytes()).hexdigest(), 5001, 'TEST')

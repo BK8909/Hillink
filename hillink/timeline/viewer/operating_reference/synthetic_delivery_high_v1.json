@@ -1,0 +1,72 @@
+{
+ "schema": "HILLINK_OPERATING_REFERENCE_V1",
+ "source_set": "SYNTHETIC_DELIVERY_HIGH_HOTEL_V1",
+ "caution": "개발 검증용 합성 호텔 값입니다. 워커힐 실측도 외부 연구 관측도 아닙니다. \"외부 배달 이용이 많은 가상 호텔\"을 가정해 구조가 작동하는지만 확인합니다.",
+ "entries": [
+  {
+   "metric_id": "delivery.evening_share_per_stay",
+   "source_class": "SYNTHETIC_TEST",
+   "value": 0.35,
+   "period": "합성(기간 없음)",
+   "segment": "all",
+   "sample_size": null,
+   "synthetic_label": "배달 이용이 많은 가상 호텔 A",
+   "source": {
+    "kind": "합성 테스트값",
+    "title": null
+   }
+  },
+  {
+   "metric_id": "dinner.hotel_restaurant_share",
+   "source_class": "SYNTHETIC_TEST",
+   "value": 0.45,
+   "period": "합성(기간 없음)",
+   "segment": "all",
+   "sample_size": null,
+   "synthetic_label": "배달 이용이 많은 가상 호텔 A",
+   "source": {
+    "kind": "합성 테스트값",
+    "title": null
+   }
+  },
+  {
+   "metric_id": "composition.party_size_share",
+   "source_class": "SYNTHETIC_TEST",
+   "value": 0.15,
+   "period": "합성(기간 없음)",
+   "segment": "party_size:1",
+   "sample_size": null,
+   "synthetic_label": "배달 이용이 많은 가상 호텔 A",
+   "source": {
+    "kind": "합성 테스트값",
+    "title": null
+   }
+  },
+  {
+   "metric_id": "composition.party_size_share",
+   "source_class": "SYNTHETIC_TEST",
+   "value": 0.55,
+   "period": "합성(기간 없음)",
+   "segment": "party_size:2",
+   "sample_size": null,
+   "synthetic_label": "배달 이용이 많은 가상 호텔 A",
+   "source": {
+    "kind": "합성 테스트값",
+    "title": null
+   }
+  },
+  {
+   "metric_id": "composition.party_size_share",
+   "source_class": "SYNTHETIC_TEST",
+   "value": 0.3,
+   "period": "합성(기간 없음)",
+   "segment": "party_size:3+",
+   "sample_size": null,
+   "synthetic_label": "배달 이용이 많은 가상 호텔 A",
+   "source": {
+    "kind": "합성 테스트값",
+    "title": null
+   }
+  }
+ ]
+}

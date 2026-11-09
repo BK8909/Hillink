@@ -530,7 +530,7 @@ function agentLabContext(){
  return {enabled:ST.cap?.llm_strategy,ids:labCustomers().map(p=>p.id),target:LAB.target,intent:LAB.intent,
   basis:LAB.basis==='OPERATOR_ASSUMPTION'?'OPERATOR_ASSUMPTION':source?'ACTUAL_RUN':'PROFILE_HYPOTHESIS',
   assumption:LAB.basis==='OPERATOR_ASSUMPTION'?LAB.origin:null,run:source?.flow,evidence:ST.evidence,
-  context:HLStrategyEventLab.summary(LAB,source,ST.events),name:pid=>ST.customers.find(p=>p.id===pid)?.label||pid,
+  targetLabel:VN(LAB.target),context:HLStrategyEventLab.summary(LAB,source,ST.events),name:pid=>ST.customers.find(p=>p.id===pid)?.label||pid,
   call,draw,openLedger:async flow=>{const saved={...CURRENT,returnView:'lab',returnRun:source?.flow.ledger.run_id};ST.open=false;draw();await HLNav.openRunLedger({result:flow,ledger:flow.ledger,request:flow.request,engine:flow.engine});strategyReturnButton(saved);}};
 }
 function autonomousSource(source){return Object.values(source?.flow?.plans||{}).some(p=>p.autonomous_decisions?.length);}
@@ -538,7 +538,7 @@ function currentAgentContext(){
  const source=currentSource();
  return {enabled:ST.cap?.llm_strategy,ids:source?.request?.personas||[],target:CURRENT.target,
   intent:CURRENT.agentIntent||'switch',basis:'ACTUAL_RUN',run:source?.flow,evidence:ST.evidence,
-  context:`${HLStrategy.eventLabel(ST.events,source?.flow?.visit,source?.request)} · 보존된 현재 실행`,
+  targetLabel:VN(CURRENT.target),context:`${HLStrategy.eventLabel(ST.events,source?.flow?.visit,source?.request)} · 보존된 현재 실행`,
   name:pid=>source?.flow?.ledger?.receipts?.[pid]?.display_id||pid,call,draw,
   openLedger:async flow=>{const saved={...CURRENT,returnView:'live',returnRun:source?.flow.ledger.run_id};ST.open=false;draw();await HLNav.openRunLedger({result:flow,ledger:flow.ledger,request:flow.request,engine:flow.engine});strategyReturnButton(saved);}};
 }

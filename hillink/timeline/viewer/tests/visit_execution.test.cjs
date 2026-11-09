@@ -58,3 +58,21 @@ test('V19LS is the product LIVE default; V17 stays selectable only by name; Repl
   assert.match(api.version(V19), /현재 판단 기준\(V19-LS\)/);
   assert.match(api.version(V17), /이전 판단 기준\(V17\)/);
 });
+
+test('improved policy is one more entry of the same list and sets the engine policy, not a label', () => {
+  const V = require('../static/visit_execution.js');
+  const opts = V.options('live_improved');
+  assert.equal((opts.match(/<option /g) || []).length, 4, 'one list, one more entry');
+  assert.match(opts, /value="live_improved" selected/);
+  assert.doesNotMatch(opts, /INT4|DAY_FLOW|LEAN2|HILLINK_RESEARCH/, 'no internal ids or switch names on screen');
+  const r = V.request({ personas: ['A05'] }, 'live_improved');
+  assert.equal(r.judgment_mode, 'live');
+  assert.equal(r.hybrid_policy, V.IMPROVED_POLICY);
+  assert.equal(V.request({ personas: ['A05'] }, 'live').hybrid_policy, V.LIVE_POLICY, 'the default LIVE policy is unchanged');
+  assert.equal(V.modeOf(r), 'live_improved', 'a rerun keeps the improved policy');
+  assert.equal(V.modeOf(V.request({}, 'live')), 'live');
+  assert.equal(V.request({}, 'replay', V.IMPROVED_POLICY).hybrid_policy, V.IMPROVED_POLICY, 'a recorded improved run replays under its own policy');
+  assert.equal(V.label({ judgment: { actual: 'replay', policy: V.IMPROVED_POLICY } }), '저장된 판단 재현 · 새 호출 0회 · 개선형 기준');
+  assert.equal(V.label({ judgment: { actual: 'live', policy: V.IMPROVED_POLICY } }), '실시간 AI 판단 · 개선형 기준');
+  assert.ok(V.isLive('live_improved') && V.isLive('live') && !V.isLive('replay'));
+});

@@ -1,0 +1,72 @@
+{
+ "schema": "HILLINK_OPERATING_REFERENCE_V1",
+ "source_set": "SYNTHETIC_HOTEL_MEASURED_TEST_V1",
+ "caution": "호텔 실측 교체 경로 시험용 합성 값입니다(실제 운영 집계 아님). 실제 실측 파일은 source_class HOTEL_MEASURED와 기간·표본 수를 갖춰 같은 계약으로 넣습니다.",
+ "entries": [
+  {
+   "metric_id": "delivery.evening_share_per_stay",
+   "source_class": "SYNTHETIC_TEST",
+   "value": 0.2,
+   "period": "합성 2026-09~10",
+   "segment": "all",
+   "sample_size": 1200,
+   "synthetic_label": "합성 호텔 실측 형식 B",
+   "source": {
+    "kind": "합성 POS·배달 반입 기록 형식",
+    "title": null
+   }
+  },
+  {
+   "metric_id": "delivery.team_share_per_stay",
+   "source_class": "SYNTHETIC_TEST",
+   "value": 0.3,
+   "period": "합성 2026-09~10",
+   "segment": "all",
+   "sample_size": 800,
+   "synthetic_label": "합성 호텔 실측 형식 B",
+   "source": {
+    "kind": "합성 PMS 집계 형식",
+    "title": null
+   }
+  },
+  {
+   "metric_id": "composition.party_size_share",
+   "source_class": "SYNTHETIC_TEST",
+   "value": 0.1,
+   "period": "합성 2026-09~10",
+   "segment": "party_size:1",
+   "sample_size": 800,
+   "synthetic_label": "합성 호텔 실측 형식 B",
+   "source": {
+    "kind": "합성 PMS 집계 형식",
+    "title": null
+   }
+  },
+  {
+   "metric_id": "composition.party_size_share",
+   "source_class": "SYNTHETIC_TEST",
+   "value": 0.7,
+   "period": "합성 2026-09~10",
+   "segment": "party_size:2",
+   "sample_size": 800,
+   "synthetic_label": "합성 호텔 실측 형식 B",
+   "source": {
+    "kind": "합성 PMS 집계 형식",
+    "title": null
+   }
+  },
+  {
+   "metric_id": "composition.party_size_share",
+   "source_class": "SYNTHETIC_TEST",
+   "value": 0.2,
+   "period": "합성 2026-09~10",
+   "segment": "party_size:3+",
+   "sample_size": 800,
+   "synthetic_label": "합성 호텔 실측 형식 B",
+   "source": {
+    "kind": "합성 PMS 집계 형식",
+    "title": null
+   }
+  }
+ ]
+}

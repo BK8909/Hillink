@@ -263,6 +263,34 @@ def _advance_state(state, flow, pid, day, next_resolution=None):
     return state
 
 
+PRIOR_COEFFICIENT_GRID = (0.4, 0.8, 1.2)   # research sensitivity only: fixed before any run, never fitted to a target share
+
+
+def resolve_behaviour_prior(prior_request, reference_profile, coefficient=0.8):
+    """Research prior (rules engine only, default OFF). Returns None when OFF; otherwise the resolved configuration
+    passed to the daily engine, including whether the reference can be applied and why not."""
+    import operating_reference as OR
+    if prior_request in (None, 'OFF'):
+        if reference_profile not in OR.PROFILES: raise ValueError('UNKNOWN_REFERENCE_PROFILE')
+        return None
+    if prior_request != 'HOTEL_PRIOR_V1': raise ValueError('UNKNOWN_BEHAVIOUR_PRIOR')
+    if coefficient not in PRIOR_COEFFICIENT_GRID: raise ValueError('COEFFICIENT_NOT_IN_FIXED_SENSITIVITY_GRID')
+    entries, rejected = OR.load(profile=reference_profile)
+    prov = OR.provenance(reference_profile)
+    ref = OR.resolve('delivery.evening_share_per_stay', entries=entries)
+    other = [e['metric_id'] for e in entries if e['metric_id'].startswith('delivery.') and e['metric_id'] != 'delivery.evening_share_per_stay' and e['source_class'] != 'UNKNOWN']
+    if ref is None or ref['source_class'] == 'UNKNOWN':
+        status = 'DENOMINATOR_MISMATCH_ONLY_' + other[0].upper().replace('.', '_') if other else 'NO_COMPARABLE_STATISTIC'
+    elif ref.get('value') is None:
+        status = 'RANGE_WITHOUT_POINT_VALUE_NOT_APPLIED'
+    else:
+        status = 'APPLICABLE'
+    keep = ('metric_id', 'value', 'source_class', 'source_set', 'period', 'segment', 'sample_size', 'synthetic_label', 'file')
+    return dict(policy='HOTEL_PRIOR_V1', reference_profile=reference_profile, status=status, coefficient=coefficient,
+                coefficient_note='0.8 = existing engine practical-alternative coefficient (default); 0.4 / 1.2 = sensitivity grid',
+                reference={k: ref.get(k) for k in keep} if ref else None, provenance=prov, rejected_entries=len(rejected))
+
+
 def run_visit(request):
     personas = request.get("personas") or []
     if not personas or len(personas) != len(set(personas)) or any(p not in IR.allowed_personas(AD.DEMO) for p in personas):
@@ -289,7 +317,17 @@ def run_visit(request):
         from operator_choice.autonomy_v1 import breakfast_policy as BP
         if breakfast_policy not in BP.POLICIES:
             return {"error": "지원하는 조식 계약 정책을 선택해 주세요", "code": "E_VISIT_BREAKFAST_POLICY"}
+    prior_request = request.get('behaviour_prior', 'OFF')
+    reference_profile = request.get('reference_profile', 'external')
+    try:
+        behaviour_prior = resolve_behaviour_prior(prior_request, reference_profile, request.get('behaviour_prior_coefficient', 0.8))
+    except ValueError as exc:
+        return {"error": "행동 사전정보 또는 기준 데이터 설정을 확인해 주세요", "code": "E_VISIT_BEHAVIOUR_PRIOR", "reason": str(exc)}
     hybrid_policy = request.get('hybrid_policy')
+    if behaviour_prior and hybrid_policy and hybrid_policy not in ('LLM_AUTONOMOUS_CUSTOMER_V19LS_HP1', 'LLM_AUTONOMOUS_CUSTOMER_V19LS_HP1B'):
+        return {"error": "행동 사전정보 연구는 규칙 엔진 또는 HP1·HP1b 연구 정책에서만 실행합니다", "code": "E_VISIT_BEHAVIOUR_PRIOR_RULES_ONLY"}
+    if behaviour_prior and hybrid_policy:
+        behaviour_prior = dict(behaviour_prior, mode='LLM_CONTEXT_REFERENCE')   # the LLM receives the reference; no score term
     if hybrid_policy is not None:
         from operator_choice.autonomy_v1 import native_hybrid as NH
         from operator_choice.autonomy_v1 import autonomous_agent as AA
@@ -386,6 +424,7 @@ def run_visit(request):
         if environment: body["environment"]=copy.deepcopy(environment)
         if hybrid_policy: body['hybrid_policy']=hybrid_policy
         if breakfast_policy: body['breakfast_policy']=breakfast_policy
+        if behaviour_prior: body['behaviour_prior']=copy.deepcopy(behaviour_prior)
         flow = _daily_flow(body)
         if flow.get("error"):
             return flow
@@ -459,7 +498,8 @@ def run_visit(request):
     if scenario_snapshot:run_request["scenario_snapshot"]=scenario_snapshot
     if virtual_room_rates: run_request["virtual_room_rates"] = dict(sorted(virtual_room_rates.items()))
     from operator_choice.autonomy_v1 import breakfast_policy as _BP
-    run_request["breakfast_policy"] = _BP.policy({"breakfast_policy": breakfast_policy})   # part of run identity (11/03 policy change)
+    run_request["breakfast_policy"] = _BP.policy({"breakfast_policy": breakfast_policy})
+    if behaviour_prior: run_request["behaviour_prior"] = copy.deepcopy(behaviour_prior)   # research prior and reference file SHA are part of run identity   # part of run identity (11/03 policy change)
     if simulation_mode == "shared_world":
         run_request["simulation_mode"] = simulation_mode
     if conditions:
@@ -496,6 +536,7 @@ def run_visit(request):
         visit_meta["environment_implementation_sha256"]=run_request["environment_implementation_sha256"]
         visit_meta["date_basis"]="OPERATOR_VIRTUAL_CALENDAR_DATE"
     visit_meta["breakfast_policy"] = run_request["breakfast_policy"]
+    if behaviour_prior: visit_meta["behaviour_prior"] = copy.deepcopy(behaviour_prior)
     if hybrid_policy:
         visit_meta.update(hybrid_policy=hybrid_policy,hybrid_mode=run_request['hybrid_configuration'].get('mode',os.environ.get("HILLINK_HYBRID","off")),hybrid_configuration=run_request["hybrid_configuration"],hybrid_execution_sha256=run_request["hybrid_execution_sha256"])
     if scenario_snapshot:visit_meta["scenario_snapshot"]=copy.deepcopy(scenario_snapshot)

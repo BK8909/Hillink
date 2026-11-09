@@ -41,6 +41,8 @@ root.bhEvidenceHTML=function(m,c){
   }
  }
  const navHTML=nav.outerHTML;nav.remove();
+ // Product screen: no raw JSON/trace dumps (the run record keeps them; review tools read the record, not this page).
+ tmp.querySelectorAll('pre,.ux-evidence-raw').forEach(el=>el.remove());
  const x=root.HLStory.input(m.flow.result,c.customer_id,c.scene_index),kind=classify(x),ctx=x.decision?.packet?.context_factors||{},reason=root.HLChoiceReason?.compose(x),raw=m.raw;
  const label={CHOICE:'선택 판단',CONDITIONAL:'조건부 행동',SCHEDULE:'자동 일정',MISSING:'판단 연결 확인 필요'}[kind];
  const head=`<div class="dc-head"><small>${e(dno(c.customer_id))} · ${e(raw.visit_date)} ${e(agHM(raw.t0))} · ${e(label)}</small><h3>${e(raw.label)}</h3><p>${e(reason?.sentences?.join(' ')||'기록된 실행을 확인합니다.')}</p></div>`;

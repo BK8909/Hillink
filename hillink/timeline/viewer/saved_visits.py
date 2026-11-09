@@ -8,9 +8,26 @@ MAX_BYTES=192*1024*1024
 def manifest():
     return json.loads((DATA/'bundle.json').read_text())
 
+def private_runs():
+    """Recorded improved-policy visits kept outside Git (HILLINK_PRIVATE_REPLAY_DIR/index.json, written by
+    tools/build_private_replay.py): conditions only. Executing one replays its recorded LIVE answers through the engine."""
+    import os
+    root=os.environ.get('HILLINK_PRIVATE_REPLAY_DIR')
+    if not root or not (Path(root)/'index.json').is_file():return []
+    runs=json.loads((Path(root)/'index.json').read_text()).get('runs') or []
+    return [r for r in runs if isinstance(r,dict) and r.get('tag') and r.get('customer') and isinstance(r.get('request'),dict)
+            and r['request'].get('personas')==[r['customer']]]
+
+def private_run(tag):
+    row=next((r for r in private_runs() if r['tag']==tag),None)
+    if row is None:raise ValueError('UNKNOWN_SAVED_VISIT')
+    return dict(request=row['request'],provenance=dict(tag=tag,display_mode='RECORDED_LIVE_ANSWERS_REPLAY',recorded=row.get('recorded'),current_paid_calls=0))
+
 def index():
-    return dict(runs=[{k:v for k,v in r.items() if k not in ('files','replay_entries')} for r in manifest()['v16_runs']],
-        display_mode='RECORDED_VISIT_PLAYBACK',current_paid_calls=0,human_approval=False)
+    # 2026-11-09 user decision: the product lists improved-policy saved visits only. The V16 records stay in the
+    # bundle for research regression (load/payload/cohort below) but are no longer offered or replayed in the product.
+    return dict(runs=[dict(tag=r['tag'],customer=r['customer'],duration=r.get('duration'),recorded=r.get('recorded'),private=True) for r in private_runs()],
+        retired_v16=len(manifest()['v16_runs']),display_mode='RECORDED_VISIT_PLAYBACK',current_paid_calls=0,human_approval=False)
 
 def _read(relative,spec):
     row=next((r for r in spec['supplemental_files'] if r['path']==relative),None)

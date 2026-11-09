@@ -41,6 +41,19 @@ fi
 REPLAY_PARENT="$(mktemp -d "${TMPDIR:-/tmp}/hillink-product-replay.XXXXXX")"
 export HILLINK_AGENT_CACHE="$REPLAY_PARENT/responses"
 "$PY" -B timeline/viewer/visit_execution.py "$HILLINK_AGENT_CACHE"
+if [ -n "${HILLINK_PRIVATE_REPLAY_DIR:-}" ]; then
+ # private recorded LIVE answers (never in Git): only receipts whose name is their input hash and whose origin is LIVE
+ "$PY" -B - "$HILLINK_PRIVATE_REPLAY_DIR" "$HILLINK_AGENT_CACHE" <<'PYEOF'
+import json, os, shutil, sys
+src, dst = sys.argv[1:]; n = 0
+for name in sorted(os.listdir(src)):
+    if not name.endswith('.json'): continue
+    r = json.load(open(os.path.join(src, name)))
+    if r.get('origin') != 'LIVE_RESPONSES' or r.get('input_sha256') + '.json' != name or os.path.exists(os.path.join(dst, name)): continue
+    shutil.copyfile(os.path.join(src, name), os.path.join(dst, name)); os.chmod(os.path.join(dst, name), 0o600); n += 1
+print('private recorded receipts added:', n)
+PYEOF
+fi
 printf '%s / %s / http://127.0.0.1:%s/ / provider=%s; rules and exact Replay selectable\n' "$HILLINK_BUILD_BRANCH" "$HILLINK_BUILD_SHA" "$PORT" "$HILLINK_AGENT_MODE"
 [ "${1:-}" != --check ] || exit 0
 exec "$PY" -B timeline/viewer/app.py --port "$PORT" --no-browser

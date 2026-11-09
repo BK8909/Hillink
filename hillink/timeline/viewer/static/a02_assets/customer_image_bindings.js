@@ -18,15 +18,26 @@
  const oldComp=agComp;
  agComp=function(pid,n){
   const cp=oldComp(pid,n),row=rows.get(pid),pool=AG.avm||{};
-  if(!row||!cp.n)return cp;
+  if(!row||!cp.n)return representative(pid,cp,pool);
   const native=row.native_avatar_key,portrait=row.portrait_key;
   const fits=key=>pool[key]&&pool[key].n_members===cp.n&&(!pool[key].visit_relations||pool[key].visit_relations.includes(cp.rel));
   const preferred=[native,native&&native+'_group2',portrait];
   let key=preferred.find(k=>k&&fits(k));
   if(!key&&cp.av)return cp;
   if(!key)key=[cp.rel==='friends'?'friends_neutral_3':null,`neutral_group_${cp.n}`].find(k=>k&&fits(k));
-  return key?{...cp,av:key,asset_status:'VALID',asset_slot:null}:cp;
+  if(key)return {...cp,av:key,asset_status:'VALID',asset_slot:null};
+  return representative(pid,cp,pool);
  };
+ // 10/26 user rule, restored 11/9: a party size without its own picture still shows a picture (mood only — the
+ // number of people is the card's '이번 인원', not the drawing). Family types with 4 → the 4-person family sprite,
+ // 5 or more → the 5-person family sprite; friends → the friends group; any other group → the neutral group.
+ function representative(pid,cp,pool){
+  if(cp.av||!cp.n||cp.n<2)return cp;
+  const ty=(typeof libP==='function'&&typeof LIBV!=='undefined'&&LIBV.data&&libP(pid)&&(libP(pid).type_group||libP(pid).type))||'';
+  const family=/가족|family/.test(ty+' '+cp.rel),friends=/친구|friend/.test(ty+' '+cp.rel);
+  const key=[family&&cp.n===4?'family_kid2':null,family&&cp.n>=5?'family_3gen':null,friends?'friends_neutral_3':null,'neutral_group_3','neutral_group_2'].find(k=>k&&pool[k]);
+  return key?{...cp,av:key,asset_status:'REPRESENTATIVE_PICTURE',asset_slot:null}:cp;
+ }
  const oldChip=libAvChip;
  libAvChip=function(id){
   // Catalogue scene aliases are looked up explicitly; no array-position join.

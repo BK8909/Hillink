@@ -1,10 +1,79 @@
 {
  "schema": "HILLINK_OPERATING_REFERENCE_V1",
  "source_set": "WALKERHILL_MEASURED_TEMPLATE",
- "how_to_use": "값을 채운 사본을 HILLINK_OPERATING_REFERENCE 환경변수로 지정하면 같은 지표의 외부 자료보다 우선합니다. value(또는 low/high), period, sample_size, segment, source.kind는 필수입니다. 객실 비율과 인원 비율은 서로 다른 지표입니다.",
+ "how_to_use": "값을 채운 사본을 HILLINK_OPERATING_REFERENCE 환경변수로 지정하면 같은 지표의 외부 자료보다 우선합니다. value(또는 low/high), period, sample_size, segment, source.kind는 필수입니다. 객실 비율과 인원 비율은 서로 다른 지표입니다. 외부 배달 비율은 반드시 분모(숙박 팀·저녁 / 숙박 팀 / 객실·박)를 구분해 해당 지표에 넣으세요. 분모가 다른 값은 거부됩니다.",
  "entries": [
-  {"metric_id": "breakfast.included_room_share", "source_class": "HOTEL_MEASURED", "value": null, "period": null, "segment": "all", "sample_size": null, "source": {"kind": "예약 시스템 집계", "title": null}},
-  {"metric_id": "breakfast.use_share_when_included", "source_class": "HOTEL_MEASURED", "value": null, "period": null, "segment": "all", "sample_size": null, "source": {"kind": "조식 식수·권리 사용 집계", "title": null}},
-  {"metric_id": "breakfast.use_share_when_not_included", "source_class": "HOTEL_MEASURED", "value": null, "period": null, "segment": "all", "sample_size": null, "source": {"kind": "유료 조식 추가 이용 집계", "title": null}}
+  {
+   "metric_id": "breakfast.included_room_share",
+   "source_class": "HOTEL_MEASURED",
+   "value": null,
+   "period": null,
+   "segment": "all",
+   "sample_size": null,
+   "source": {
+    "kind": "예약 시스템 집계",
+    "title": null
+   }
+  },
+  {
+   "metric_id": "breakfast.use_share_when_included",
+   "source_class": "HOTEL_MEASURED",
+   "value": null,
+   "period": null,
+   "segment": "all",
+   "sample_size": null,
+   "source": {
+    "kind": "조식 식수·권리 사용 집계",
+    "title": null
+   }
+  },
+  {
+   "metric_id": "breakfast.use_share_when_not_included",
+   "source_class": "HOTEL_MEASURED",
+   "value": null,
+   "period": null,
+   "segment": "all",
+   "sample_size": null,
+   "source": {
+    "kind": "유료 조식 추가 이용 집계",
+    "title": null
+   }
+  },
+  {
+   "metric_id": "delivery.evening_share_per_stay",
+   "source_class": "HOTEL_MEASURED",
+   "value": null,
+   "period": null,
+   "segment": "all",
+   "sample_size": null,
+   "source": {
+    "kind": "배달 반입·객실 배달 기록 집계",
+    "title": null
+   }
+  },
+  {
+   "metric_id": "dinner.hotel_restaurant_share",
+   "source_class": "HOTEL_MEASURED",
+   "value": null,
+   "period": null,
+   "segment": "all",
+   "sample_size": null,
+   "source": {
+    "kind": "업장 POS 저녁 커버 ÷ 숙박 팀·저녁",
+    "title": null
+   }
+  },
+  {
+   "metric_id": "composition.party_size_share",
+   "source_class": "HOTEL_MEASURED",
+   "value": null,
+   "period": null,
+   "segment": "party_size:2",
+   "sample_size": null,
+   "source": {
+    "kind": "PMS 예약 인원 집계",
+    "title": null
+   }
+  }
  ]
 }

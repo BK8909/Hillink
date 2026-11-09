@@ -6,8 +6,12 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import saved_visits as S
 import strategy_agent_service as J
 
+def test_product_index_lists_improved_records_only():
+    idx=S.index();assert idx['retired_v16']==38 and not any('-v16-' in r['tag'] for r in idx['runs'])
+
+
 def test_submitted_v16_coverage_and_immutable_decisions():
-    rows=S.index()['runs'];assert len(rows)==38
+    rows=[{k:v for k,v in r.items() if k not in ('files','replay_entries')} for r in S.manifest()['v16_runs']];assert len(rows)==38
     completed=[r for r in rows if r['contract_status']!='EXECUTION_INCOMPLETE_HOLD']
     assert len(completed)==36 and len({r['customer'] for r in completed})==28
     decisions=0

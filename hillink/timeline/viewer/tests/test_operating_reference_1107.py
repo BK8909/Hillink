@@ -26,8 +26,10 @@ def entry(**kw):
 def test_shipped_external_entries_are_valid_and_labelled():
     used, rejected = OR.load()
     assert used and not rejected
-    assert {e['source_class'] for e in used} == {'EXTERNAL_RESEARCH'}
-    assert all(e['source'].get('url') and e.get('period') and e.get('comparability') for e in used)
+    # 2026-11-07 correction: delivery has no public observation (UNKNOWN, no value); external breakfast figures are context only
+    assert {e['source_class'] for e in used} == {'EXTERNAL_RESEARCH', 'UNKNOWN'}
+    assert all(e['source'].get('url') and e.get('period') and e.get('comparability') for e in used if e['source_class'] == 'EXTERNAL_RESEARCH')
+    assert all(e.get('value') is None for e in used if e['source_class'] == 'UNKNOWN')
 
 
 @pytest.mark.parametrize('bad,err', [
@@ -51,20 +53,24 @@ def test_unfilled_template_is_rejected_never_used():
 def test_hotel_measured_overrides_external_for_the_same_metric(tmp_path, monkeypatch):
     f = tmp_path / 'walkerhill.json'
     f.write_text(json.dumps(dict(schema=OR.SCHEMA, entries=[entry()])), encoding='utf-8')
-    before = OR.resolve('breakfast.use_share_when_included')
-    assert before['source_class'] == 'EXTERNAL_RESEARCH'
+    # 2026-11-07 correction: no external value is mapped to the entitled-guest denominator any more (hotel-measured only)
+    assert OR.resolve('breakfast.use_share_when_included') is None
     monkeypatch.setenv('HILLINK_OPERATING_REFERENCE', str(f))
     after = OR.resolve('breakfast.use_share_when_included')
     assert after['source_class'] == 'HOTEL_MEASURED' and after['value'] == 0.81
-    # a metric the hotel did not supply keeps the external proxy
-    assert OR.resolve('breakfast.use_share_when_not_included')['source_class'] == 'EXTERNAL_RESEARCH'
+    # a metric the hotel did not supply keeps the external context source
+    assert {e['source_class'] for e in OR.load()[0] if e['metric_id'] == 'breakfast.hotel_share_by_sales_mode'} == {'EXTERNAL_RESEARCH'}
     rows = {r['metric_id']: r for r in OR.compare({'breakfast.included_use_rate': 0.9}, teams=40)}
     r = rows['breakfast.use_share_when_included']
     assert r['reference']['source_ko'] == '호텔 실측' and r['status'] == 'ABOVE_REFERENCE'
     assert OR.compare({'breakfast.included_use_rate': 0.83}, teams=40)[0]['status'] == 'WITHIN_REFERENCE'
 
 
-def test_small_runs_and_context_metrics_are_not_judged():
+def test_small_runs_and_context_metrics_are_not_judged(tmp_path, monkeypatch):
+    rows = {r['metric_id']: r for r in OR.compare({'breakfast.included_use_rate': 0.2}, teams=3)}
+    assert rows['breakfast.use_share_when_included']['status'] == 'NO_REFERENCE'   # hotel-measured only
+    f = tmp_path / 'h.json'; f.write_text(json.dumps(dict(schema=OR.SCHEMA, entries=[entry()])), encoding='utf-8')
+    monkeypatch.setenv('HILLINK_OPERATING_REFERENCE', str(f))
     rows = {r['metric_id']: r for r in OR.compare({'breakfast.included_use_rate': 0.2}, teams=3)}
     assert rows['breakfast.use_share_when_included']['status'] == 'SAMPLE_TOO_SMALL'
     assert rows['breakfast.habit_always_share']['status'] in ('CONTEXT_ONLY', 'NOT_COMPARABLE')

@@ -37,7 +37,6 @@ function agM4DecisionPanel(pid, decision) {
     <p>${esc(selectionLabel)}</p><p><b>${esc(id)}</b> · 자체 ${number(row.final_score)} · 후속 행동 포함 ${number(row.final_with_lookahead)}</p>
     <p>${esc(eventText)}</p><p>${meal ? `이전 식사 ${esc(meal.date)} ${esc(meal.end)} · ${esc(meal.action_id)}` : "이전 식사 실행 기록 없음"}. 식사량·포만감은 기록에서 계산한 추정이며 실제 고객의 허기 관측이 아닙니다.</p>
     <details><summary>선택하지 않은 대안 · 실제 점수 · 제약</summary><div style="overflow-x:auto"><table class="ag-rt"><tr><th>후보</th><th>기본</th><th>맥락</th><th>자체</th><th>후속 포함</th><th>조건</th></tr>${rows}</table></div></details>
-    <details><summary>실제 성향·상황 기여와 Fact ID</summary><ul class="ag-plain">${terms}</ul><pre style="white-space:pre-wrap">${esc(JSON.stringify(row.context_factors, null, 2))}</pre></details>
-    <details><summary>계산 trace 원본</summary><pre style="white-space:pre-wrap;overflow-wrap:anywhere">${esc(JSON.stringify(decision, null, 2))}</pre></details>
+    <details><summary>실제 성향·상황 기여와 Fact ID</summary><ul class="ag-plain">${terms}</ul></details>
     <p class="hint">실시간 M4 규칙 계산 · 스냅샷 재생 아님 · LLM 호출 0. Fact 연결은 관측 경험을 새 상황에 적용한 추론과 구분합니다. 후속 포함 점수는 선택 확률이 아닙니다.</p></section>`;
 }

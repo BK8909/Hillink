@@ -199,7 +199,7 @@ def activity_history(a, minute):
 def intention_context(memory):
     # Experiences are supplied once in the dated top-level history fields.
     return {k:copy.deepcopy(v) for k,v in memory.items()
-            if k not in ('activity_experiences', 'meal_experiences')}
+            if k not in ('activity_experiences', 'meal_experiences', 'mem1_log')}   # mem1_log: MEM1 research only, sent as earlier_days
 
 
 def reassessment_context(a, minute):

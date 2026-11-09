@@ -17,13 +17,14 @@ Rules of the shortlist:
 - a basket is an already quoted contract (HR.quote), so one basket id fixes the
   order; the model never composes SKUs under this policy.
 """
+import os
 import copy
 
 from . import agent_day as AD
 from . import hotel_runtime as HR
 
 SHORTLIST_POLICY = 'M4_TRAIT_SHORTLIST_V4'   # V4: next slots prefer an unseen activity kind / meal mode; one candidate per sold contract; V3: basket groups by criteria (experience, score, price check, party set); experience links carry no polarity; rule scope narrowed
-REST_KEYS = ('room_rest', 'ROOM_REST', 'public_rest', 'wait_reconsider', 'room_bath', 'room_nap')
+REST_KEYS = ('room_rest', 'ROOM_REST', 'public_rest', 'wait_reconsider', 'room_bath', 'room_nap', 'room_rest_long')
 ALIAS = {'ROOM_REST': 'room_rest', 'FOREST_WALK': 'forest_walk', 'GARDEN_WALK': 'garden_walk', 'RIVERPARK': 'riverpark',
          'SKYARD': 'footbath', 'POOL': 'pool', 'SAUNA': 'sauna', 'FITNESS': 'fitness', 'LIBRARY': 'library', 'THEATRE': 'theatre'}
 MAX_OPTIONS = 7          # measured (bench a07/n03): 5 hid 2/4 of N03's recorded choices; +2 candidates cost ~0.3KB each in the compact request. One more only when a further evidence-linked candidate would be hidden
@@ -38,6 +39,8 @@ def kind_of(key, action):
     if ex == 'END_DAY': return 'DAY_END'
     if ex == 'LEAVE': return 'LEAVE'
     if ex == 'SKIP_MEAL': return 'SKIP_MEAL'
+    if ex == 'CHECKOUT': return 'CHECKOUT'     # research CHECKOUT_PREP only
+    if ex == 'DEFER_MEAL': return 'DEFER_MEAL'  # research MEAL_DEFER only
     if key in REST_KEYS or ex in ('REST', 'WAIT'): return 'REST'
     return 'ACTIVITY'
 
@@ -408,9 +411,43 @@ def execution_conditions(a, t, action):
                 basis='WORLD_VALIDATED_SCHEDULE_NOT_CONFIRMED_RESERVATION')
 
 
+FAIR_BAND = 0.5   # one unverified rule term (the night-view base alone is 0.45): fit gaps below this do not decide exposure
+
+
+def fair_meal_order(a, t, group, signals):
+    """Research switch HILLINK_RESEARCH_FAIR_MEAL_EXPOSURE=1 (default OFF). Offline 28-customer audit (2026-11-08): when a
+    meal was open Pizza Hill was shown 107/112 times it was feasible and was the rule-fit top 69/119, while Ondal was shown
+    7/92 (only with a personal link); the margin over the next venue was mostly one unverified term (night-view base 0.45,
+    trait 'food experience' coefficient). The model can only choose among what it is shown.
+    Order for the meal slots (the slot rules themselves are unchanged):
+      1. personal signal (settled positive tier, then a direct record link) - unchanged priority
+      2. fit band: venues within FAIR_BAND of the best remaining fit are treated as equal; a clearly lower fit stays lower
+      3. inside a band, a venue already eaten at during this visit without a personal link or a stated intention comes after
+         one not yet tried (it is still shown when there is room, with its visit memory)
+      4. then a reproducible per customer/day/period order (no score), so equal venues share exposure across customers
+    Nothing is removed and nothing is chosen here."""
+    import hashlib
+    eaten = {str(m.get('venue')) for m in (getattr(a, '_autonomous_memory', {}) or {}).get('meal_experiences', []) or []}
+    intents = ' '.join(str(x) for x in ((getattr(a, '_autonomous_memory', {}) or {}).get('pending_intentions') or []))
+    best = max((r['fit'].get('fit') for r in group if r['fit'].get('fit') is not None), default=0)
+    def key(r):
+        venue = str(r['action_id']).split(':', 1)[-1]
+        sig = signals.get(r['action_id'], {}) if signals else {}
+        linked = bool(r['fit'].get('direct_evidence_fact_ids'))
+        fit = r['fit'].get('fit')
+        band = int(max(0.0, best - fit) // FAIR_BAND) if fit is not None else 99
+        repeat = venue in eaten and not linked and venue not in intents and AD.VENUE_KO.get(venue, '~') not in intents
+        rot = hashlib.sha256(('%s|%s|%s|%s' % (a.pid, a.sc.get('date'), 'lunch' if t < 900 else 'dinner', venue)).encode()).hexdigest()
+        return (-(sig.get('tier') or 0), not linked, band, repeat, rot)
+    group.sort(key=key)
+    for i, r in enumerate(group): r['fair_order'] = i + 1
+
+
 def build(a, world, t, actions, menus, w, citable, max_options=MAX_OPTIONS, records=None, selection='M4_FIT'):
     """Return (shortlist rows in model order, trace). Rows carry fit, conditions and baskets."""
     ratio = a.fatigue / max(a.rest_limit, 0.01)
+    # research CHECKOUT_PREP / MEAL_DEFER candidates never take a slot from the existing shortlist (no displacement)
+    max_options += sum(1 for k, v in actions.items() if kind_of(k, v) in ('CHECKOUT', 'DEFER_MEAL') or k == 'room_rest_long')
     from .autonomous_agent import meal_state
     ms = meal_state(a)
     dinner_resolved = bool(ms['meals']['dinner'] or ms['meal_decision_resolved']['dinner'])
@@ -485,6 +522,8 @@ def build(a, world, t, actions, menus, w, citable, max_options=MAX_OPTIONS, reco
         for v in signals.values():
             v['tier'] = 2 if set(v['confirmed_positive']) & set(v['fact_ids']['venue']) else 1 if v['confirmed_positive'] else 0
         by_type['MEAL'].sort(key=lambda r: (-signals[r['action_id']]['tier'], -(r['fit'].get('fit') if r['fit'].get('fit') is not None else -1e9)))
+    if os.environ.get('HILLINK_RESEARCH_FAIR_MEAL_EXPOSURE') == '1' and by_type.get('MEAL'):
+        fair_meal_order(a, t, by_type['MEAL'], signals)
     chosen = []; reasons = {}
     def facet(r):
         """Activity kind (wellness/outdoor/culture/rest/snack/bar) or meal mode (in-room/casual/buffet/restaurant)."""
@@ -510,9 +549,17 @@ def build(a, world, t, actions, menus, w, citable, max_options=MAX_OPTIONS, reco
         best = max(linked, key=lambda r: (len(r['fit']['direct_evidence_fact_ids']), r['fit'].get('fit') or -1e9))
         chosen.append(best); reasons[best['action_id']] = 'DIRECT_PERSONAL_EVIDENCE_LINK'; return True
     # mandatory and exception candidates first
-    take('DAY_END'); take('LEAVE'); take('SKIP_MEAL')
+    take('DAY_END'); take('LEAVE'); take('SKIP_MEAL'); take('CHECKOUT'); take('DEFER_MEAL')   # the last two exist only under research switches
+    # an event the operator applied to this visit (wine fair, an event card) is always shown while it can be joined:
+    # the model decides whether to go; a score-ranked budget must not hide the scenario under test (2026-11-09)
+    for key, row in rows.items():
+        if row not in chosen and (key == 'WINE_FAIR' or key.startswith('CARD_')):
+            chosen.append(row); reasons[key] = 'OPERATOR_SCENARIO_EVENT'
     if by_type.get('MEAL') and (meal_open or not dinner_resolved): take('MEAL')
     take('ACTIVITY'); take('REST')
+    # research REST_BLOCKS: the long block is shown next to the room rest it extends (its own slot, see max_options)
+    if 'room_rest_long' in rows and rows['room_rest_long'] not in chosen:
+        chosen.append(rows['room_rest_long']); reasons['room_rest_long'] = 'RESEARCH_LONG_REST_BLOCK'
     if by_type.get('MEAL') and 'MEAL' not in {r['type'] for r in chosen} and len(chosen) < max_options: take('MEAL')
     # fill the remaining budget: a second meal venue when the meal is open or the guest reads hungry,
     # otherwise a second activity, then a second rest when tired
@@ -528,7 +575,7 @@ def build(a, world, t, actions, menus, w, citable, max_options=MAX_OPTIONS, reco
         if kind in ('MEAL', 'ACTIVITY') and any(r['type'] == kind for r in chosen) and not (kind == 'MEAL' and linked_meals >= 1) and take_evidence(kind): continue
         take(kind, why='M4_NEXT_OF_TYPE')
     # top up with whatever is left (type order) so a small world is shown whole and no slot stays empty
-    for kind in ('MEAL', 'ACTIVITY', 'REST', 'SKIP_MEAL', 'DAY_END', 'LEAVE'):
+    for kind in ('MEAL', 'ACTIVITY', 'REST', 'SKIP_MEAL', 'DAY_END', 'LEAVE', 'CHECKOUT', 'DEFER_MEAL'):
         while len(chosen) < max_options and any(r not in chosen for r in by_type.get(kind, [])):
             if kind == 'MEAL' and sum(r['type'] == 'MEAL' for r in chosen) >= MAX_MEAL_VENUES: break
             take(kind, why='FILL_REMAINING_SLOT')
@@ -548,7 +595,7 @@ def build(a, world, t, actions, menus, w, citable, max_options=MAX_OPTIONS, reco
                                 reason=('EVIDENCE_LINKED_BUT_OPTION_BUDGET_FULL' if linked else 'TYPE_BUDGET_FULL' if row['type'] in {r['type'] for r in chosen} else 'OPTION_BUDGET_FULL')))
     # the model reads the list in a neutral type order (meal, activity, rest, day end, leave), not in
     # shortlist-priority order, so the mandatory day-end candidate does not lead the list
-    display = {'MEAL': 0, 'SKIP_MEAL': 1, 'ACTIVITY': 2, 'REST': 3, 'DAY_END': 4, 'LEAVE': 5}
+    display = {'MEAL': 0, 'SKIP_MEAL': 1, 'DEFER_MEAL': 1, 'ACTIVITY': 2, 'REST': 3, 'DAY_END': 4, 'LEAVE': 5, 'CHECKOUT': 5}
     chosen.sort(key=lambda r: (display.get(r['type'], 9), r.get('m4_rank_in_type') or 0))
     model_rows = []
     for r in chosen:
@@ -572,6 +619,9 @@ def build(a, world, t, actions, menus, w, citable, max_options=MAX_OPTIONS, reco
                                   % (a.N, fit.get('basket_count', 0), len(fit['groups'])))
         if r['type'] == 'DAY_END': out['scope'] = 'CLOSES_TODAY'
         if r['type'] == 'REST': out['scope'] = 'KEEPS_TODAY_OPEN'
+        if r['type'] == 'CHECKOUT': out['scope'] = 'ENDS_ROOM_USE; HOTEL_ACTIVITIES_OR_LEAVE_AFTER'
+        if r['type'] == 'DEFER_MEAL': out['scope'] = 'LUNCH_STAYS_OPEN_REVIEWED_AGAIN'
+        if r['type'] == 'SKIP_MEAL' and r['execution'] == 'SKIP_MEAL' and 'lunch_defer' in rows: out['scope'] = 'LUNCH_CLOSED_FOR_TODAY'
         model_rows.append(out)
     trace = dict(policy=SHORTLIST_POLICY, selection=selection, option_budget=max_options, candidate_count=len(actions), shortlisted=[r['action_id'] for r in chosen],
                  personal_signal=signals or None,
@@ -587,6 +637,14 @@ def build(a, world, t, actions, menus, w, citable, max_options=MAX_OPTIONS, reco
                                                                               items=[dict(sku_id=i['sku_id'], quantity=i['quantity']) for i in b['items']]) for b in r['fit'].get('baskets') or []}) for r in rows.values()},
                  dropped=dropped, state=dict(fatigue_ratio=round(ratio, 3), hunger=round(a.hunger_e, 3), dinner_resolved=dinner_resolved, meal_period=meal_period, meal_open=meal_open),
                  meaning='FIT_IS_RULE_COEFFICIENT_OUTPUT_NOT_VERIFIED_PREFERENCE; MANDATORY_CANDIDATES_NEVER_DROPPED_BY_SCORE')
+    if os.environ.get('HL_DEBUG_SHORTLIST_FILE'):   # offline diagnosis only (harness exposure audit)
+        import json as _json
+        with open(os.environ['HL_DEBUG_SHORTLIST_FILE'], 'a', encoding='utf-8') as fh:
+            fh.write(_json.dumps(dict(customer=a.pid, date=a.sc.get('date'), minute=t, state=trace['state'], shortlisted=trace['shortlisted'],
+                                      shown_because=trace['shown_because'], meal_order=trace['m4_fit_meal_order'],
+                                      meal_fit={k: v['fit'] for k, v in trace['fit'].items() if v['type'] == 'MEAL'},
+                                      evidence={r['action_id']: r['fit'].get('direct_evidence_fact_ids') for r in rows.values() if r['type'] == 'MEAL'},
+                                      top_factors={r['action_id']: ((r['fit'].get('baskets') or [{}])[0].get('factors')) for r in rows.values() if r['type'] == 'MEAL'}), ensure_ascii=False, default=str) + '\n')
     return model_rows, trace
 
 

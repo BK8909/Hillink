@@ -59,14 +59,30 @@
     return pages.map((item,i)=>({...item,title:i===0?'지금의 선택':i===1?'경험과 이유':'선택의 맥락'}));
   }
   const clip=(t,n)=>{t=String(t||'').trim();return t.length>n?t.slice(0,n-1)+'…':t;};
+  // Reader wording only (the recorded answer is unchanged): system-centred phrases become plain Korean.
+  const reader=t=>String(t||'').replace(/엔진(?:은|이)\s*/g,'').replace(/(?:엔진|모델)\s*(?:추정|규칙)?상\s*/g,'추정상 ').replace(/엔진의\s*/g,'').replace(/추정상 추정상 /g,'추정상 ').replace(/\s{2,}/g,' ').trim();
+  const norm=t=>String(t||'').replace(/[\s·,.'"“”‘’()]/g,'');
   function modelPages(model) {
     const d=model.decision||{},last=(d.attempts||[]).at(-1),answer=last?.answer||{},plans=answer.plans||[];
-    const actions=(d.input_context||{}).actions||[],label=id=>actions.find(a=>a.action_id===id)?.label||null;
-    const sents=splitSentences(String(model.summary||'').trim()).filter(s=>!technical.test(s));
+    const actions=(d.input_context||{}).actions||[];
+    // a candidate named only by a code (e.g. a venue id) is shown by its place name, never as the code itself
+    const label=id=>{let l=actions.find(a=>a.action_id===id)?.label||null;if(l&&/^[A-Z0-9_:]+$/.test(l)){const n=typeof root.agPlaceName==='function'?root.agPlaceName(l):'';l=n&&!/^[A-Z0-9_]+$/.test(n)?n:null;}return l&&l.replace(/\s*\([^)]*\)/g,'').split(' · ')[0].trim();};
+    const sents=splitSentences(reader(model.summary)).filter(s=>!technical.test(s));
     const choice=sents[0]||(d.execution_state==='EXECUTION_HOLD'?'이 장면에서는 유효한 선택을 확정하지 못했어요.':'이 선택의 요약은 행동근거에서 볼 수 있어요.');
+    const said=[...sents];
     const reason=clip(sents.slice(1,3).join(' '),170);
+    // the main alternative, in the model's own comparison when it wrote one; each sentence is said once
     const alt=plans.map((p,i)=>i===answer.selected_index?null:p).find(p=>p&&label(p.action_id));
-    const altLine=alt?`대신 둔 선택은 ${label(alt.action_id)}${clip(splitSentences(String(alt.decision_summary||''))[0]||'',80)?` — ${clip(splitSentences(String(alt.decision_summary||''))[0],80)}`:''}`:'';
+    let altLine='';
+    if(alt){
+      const name=label(alt.action_id),why=reader(d.selected_plan?.why_not_other_plans||'').replace(/^\s*[A-Za-z0-9_:#.\-]+?\s*[:：]\s*(?=[^A-Za-z0-9_])/,'');
+      const pool=splitSentences(why||reader(alt.decision_summary||'')).filter(x=>!technical.test(x)&&!said.some(y=>norm(y).includes(norm(x))||norm(x).includes(norm(y))));
+      const first=pool[0]||'';
+      const topic=w=>{const c=String(w).replace(/[^가-힣A-Za-z0-9]+$/,'').slice(-1).charCodeAt(0);return w+(c>=0xac00&&c<=0xd7a3&&(c-0xac00)%28?'은':'는');};
+      const body=first.replace(new RegExp('^'+name.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?:은|는|도)?\\s*'),'');
+      // a sentence that already weighs both sides ("…가능하지만, …") is not wrapped in a second "고려했지만"
+      altLine=!body?`${name}도 함께 비교했어요.`:/^.{0,45}지만,/.test(body)?`${topic(name)} ${clip(body,120)}`:`${name}도 고려했지만, ${clip(body,110)}`;
+    }
     const second=[reason,altLine].filter(Boolean).join(' ')||(d.day_end_review?'남은 일정과 휴식을 검토한 뒤 정한 선택이에요.':'이 선택과 비교한 대안은 행동근거에서 볼 수 있어요.');
     return [{text:choice,voice:'record',title:'지금의 선택',count:1},{text:second,voice:'record',title:'이유와 대안',count:1}];
   }

@@ -2862,3 +2862,5 @@ body:not(.devmode) .dev-tab { display: none !important; }
 img[src*="/VISTA_LOBBY.jpg"]{object-fit:contain!important;aspect-ratio:16/9!important}
 .itin img.ithumb[src*="/VISTA_LOBBY.jpg"]{height:auto!important}
 .rp-img img[src*="/VISTA_LOBBY.jpg"],.ag-dimg img[src*="/VISTA_LOBBY.jpg"]{height:auto!important}
+/* judgment-mode guard: a blocking reason is shown as a notice next to the mode, before any request */
+#sitLiveStatus:not([hidden]),#agLiveStatus:not([hidden]){display:block;margin:6px 0 2px;padding:6px 10px;border-radius:6px;background:#fbefe9;color:#8a3b25;font-size:12.5px;line-height:1.45}

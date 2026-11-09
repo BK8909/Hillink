@@ -3,7 +3,7 @@ const SIT = { pid: null, options: null, forms: new Map(), busy: false, error: nu
 // Native change/blur must finish before replacing the focused input subtree.
 let situationRenderFrame = null;
 function situationQueueRender() {
-  SIT.draftPid=SIT.pid;
+  SIT.draftPid=SIT.pid;SIT.error=null;
   if(situationRenderFrame!==null)return;
   situationRenderFrame=requestAnimationFrame(()=>{
     situationRenderFrame=null;
@@ -11,7 +11,7 @@ function situationQueueRender() {
   });
 }
 function situationForm(pid) {
-  if (!SIT.forms.has(pid)) SIT.forms.set(pid, { event: "none", duration: "day_visit", seed: 0, package_id: "", catalogEnabled: true, judgment_mode: 'replay' });
+  if (!SIT.forms.has(pid)) SIT.forms.set(pid, { event: "none", duration: "day_visit", seed: 0, package_id: "", catalogEnabled: true, judgment_mode: 'rules' });
   return SIT.forms.get(pid);
 }
 // Optional, per-visit draft only. No persona facts, default ages or persistent profile writes.
@@ -48,7 +48,7 @@ function situationOrderUseHTML(use) {
 }
 function situationDetailsHTML(pid,form) {
   const d=situationDetailDraft(form,pid),other=d.originalOrders.filter(o=>!(o.venue_id==='THE_PAVILION'&&o.service_period==='snack'&&o.items.length===1&&o.items[0].source_line===204)).length;
-  return `<details class="st-visit-details"${form.detailsOpen?' open':''}><summary>인원·주문 상세 설정 <small>선택 사항 · 이번 방문의 가상 설정</small></summary><label class="st-detail-check"><input type="checkbox" id="sitC01"${form.c01Enabled?' checked':''}>이번 방문의 상세 인원·주문 입력 사용</label><p class="st-detail-note">기본 방문에는 상세 입력을 강제하지 않습니다. 미지정 구성·연령·주문량은 UNKNOWN입니다.</p>${form.c01Enabled?`<div class="st-detail-grid"><label>방문 인원 (직접 설정)<input class="cf-input" id="sitPartySize" type="number" min="1" max="8" step="1" placeholder="기존 방문 조건 사용" value="${esc(d.partyText)}"></label><label class="st-detail-check"><input type="checkbox" id="sitComposition"${d.composition?' checked':''}>성인·아동 구성을 명시</label></div>${d.composition?`<div class="st-detail-grid"><label>성인 수<input class="cf-input" id="sitAdultCount" type="number" min="0" max="8" placeholder="UNKNOWN" value="${esc(d.adultText)}"></label><button type="button" class="cf-btn cf-sm" id="sitAddChild">아동 추가</button></div><div class="st-child-list">${d.children.map((ch,i)=>`<div class="st-child-row"><b>아동 ${i+1}</b><label>연령 (개월)<input class="cf-input" data-sit-age="${i}" type="number" min="0" max="215" placeholder="UNKNOWN" value="${ch.age_months==null?'':ch.age_months}"></label><label>취학 상태<select class="cf-input" data-sit-school="${i}">${[['','UNKNOWN'],['preschool','미취학'],['elementary','초등'],['secondary','중·고등']].map(([v,t])=>`<option value="${v}"${(ch.school_stage||'')===v?' selected':''}>${t}</option>`).join('')}</select></label><button type="button" class="cf-link" data-sit-remove-child="${i}">삭제</button></div>`).join('')}</div>`:''}<h3>카페 주문 수량 <small>선택 사항</small></h3><p class="st-detail-note">파빌리온 아메리카노 HOT · 기존 메뉴 자료를 사용한 가상 주문 · 고객 흐름이 그날 파빌리온을 이용할 때의 수량이며, 고객을 이 업장으로 보내지 않습니다.</p><div class="st-detail-grid"><label>이용 날짜<select class="cf-input" id="sitCafeDate"><option value="">UNKNOWN</option>${situationDates(form).map(date=>`<option value="${date}"${d.cafeDate===date?' selected':''}>${date}</option>`).join('')}</select></label><label>아메리카노 HOT (잔)<input class="cf-input" id="sitCafeQuantity" type="number" min="1" max="32" step="1" placeholder="UNKNOWN" value="${esc(d.cafeText)}"></label></div>${other?`<p class="st-detail-note">기존 다른 업장 주문 ${other}건은 그대로 보존합니다.</p>`:''}`:''}<button type="button" class="cf-link" id="sitClearDetails">상세 입력 초기화</button>${form.resolvedSnapshot?`${situationOrderUseHTML(form.resolvedSnapshot.order_use)}<details class="st-resolved"><summary>직전 실행의 실제 적용값</summary><p class="st-detail-note">아래는 직전 run의 값이며, 수정한 설정은 다음 실행에 적용됩니다.</p><pre>${esc(JSON.stringify(form.resolvedSnapshot,null,2))}</pre></details>`:''}</details>`;
+  return `<details class="st-visit-details"${form.detailsOpen?' open':''}><summary>인원·주문 상세 설정 <small>선택 사항 · 이번 방문의 가상 설정</small></summary><label class="st-detail-check"><input type="checkbox" id="sitC01"${form.c01Enabled?' checked':''}>이번 방문의 상세 인원·주문 입력 사용</label><p class="st-detail-note">기본 방문에는 상세 입력을 강제하지 않습니다. 미지정 구성·연령·주문량은 UNKNOWN입니다.</p>${form.c01Enabled?`<div class="st-detail-grid"><label>방문 인원 (직접 설정)<input class="cf-input" id="sitPartySize" type="number" min="1" max="8" step="1" placeholder="기존 방문 조건 사용" value="${esc(d.partyText)}"></label><label class="st-detail-check"><input type="checkbox" id="sitComposition"${d.composition?' checked':''}>성인·아동 구성을 명시</label></div>${d.composition?`<div class="st-detail-grid"><label>성인 수<input class="cf-input" id="sitAdultCount" type="number" min="0" max="8" placeholder="UNKNOWN" value="${esc(d.adultText)}"></label><button type="button" class="cf-btn cf-sm" id="sitAddChild">아동 추가</button></div><div class="st-child-list">${d.children.map((ch,i)=>`<div class="st-child-row"><b>아동 ${i+1}</b><label>연령 (개월)<input class="cf-input" data-sit-age="${i}" type="number" min="0" max="215" placeholder="UNKNOWN" value="${ch.age_months==null?'':ch.age_months}"></label><label>취학 상태<select class="cf-input" data-sit-school="${i}">${[['','UNKNOWN'],['preschool','미취학'],['elementary','초등'],['secondary','중·고등']].map(([v,t])=>`<option value="${v}"${(ch.school_stage||'')===v?' selected':''}>${t}</option>`).join('')}</select></label><button type="button" class="cf-link" data-sit-remove-child="${i}">삭제</button></div>`).join('')}</div>`:''}<h3>카페 주문 수량 <small>선택 사항</small></h3><p class="st-detail-note">파빌리온 아메리카노 HOT · 기존 메뉴 자료를 사용한 가상 주문 · 고객 흐름이 그날 파빌리온을 이용할 때의 수량이며, 고객을 이 업장으로 보내지 않습니다.</p><div class="st-detail-grid"><label>이용 날짜<select class="cf-input" id="sitCafeDate"><option value="">UNKNOWN</option>${situationDates(form).map(date=>`<option value="${date}"${d.cafeDate===date?' selected':''}>${date}</option>`).join('')}</select></label><label>아메리카노 HOT (잔)<input class="cf-input" id="sitCafeQuantity" type="number" min="1" max="32" step="1" placeholder="UNKNOWN" value="${esc(d.cafeText)}"></label></div>${other?`<p class="st-detail-note">기존 다른 업장 주문 ${other}건은 그대로 보존합니다.</p>`:''}`:''}<button type="button" class="cf-link" id="sitClearDetails">상세 입력 초기화</button>${form.resolvedSnapshot?`${situationOrderUseHTML(form.resolvedSnapshot.order_use)}<details class="st-resolved"><summary>직전 실행의 실제 적용값</summary><p class="st-detail-note">아래는 직전 run의 값이며, 수정한 설정은 다음 실행에 적용됩니다.</p></details>`:''}</details>`;
 }
 function situationDetailsWire(root,pid,form) {
   const d=situationDetailDraft(form,pid),render=()=>{form.detailsOpen=true;situationQueueRender();},find=id=>root.querySelector('#'+id);
@@ -110,7 +110,20 @@ function situationRequest(pid, form, options) {
       as.santa_before_checkin=form.santa_before_checkin===false?'not_allowed':'operator_virtual_allowed';
     }
   }
-  return typeof HLVisitExecution==='undefined'?request:HLVisitExecution.request(request,form.judgment_mode||'replay',form.saved_policy||null);
+  return typeof HLVisitExecution==='undefined'?request:HLVisitExecution.request(request,form.judgment_mode||'rules',form.saved_policy||null);
+}
+// Product saved runs are improved-policy records only (2026-11-09: the V16 records are retired from the product).
+function situationSavedOptions(runs,pid,selected){
+  const dur=d=>({day_visit:"당일",stay_1:"1박",stay_2:"2박",stay_3:"3박"})[d]||d,opt=r=>`<option value="${esc(r.tag)}"${selected===r.tag?" selected":""}>${esc(dur(r.duration))} · ${esc(r.tag.replace(pid+"-",""))}</option>`;
+  const improved=runs.filter(r=>!/-v16-/.test(r.tag));
+  return improved.length?`<optgroup label="개선형 판단 기록 (저녁 객실 체류·취침 구분)">${improved.map(opt).join("")}</optgroup>`:"";
+}
+// Replay is a reproduction: it needs a loaded saved run and exactly its conditions. Returns the blocking message or null.
+function situationReplayBlock(form,built){
+  if((form.judgment_mode||'rules')!=='replay'||!built)return null;
+  if(!form.savedRequest)return HLVisitExecution.REPLAY_NEEDS_SAVED;
+  const diff=HLVisitExecution.runDiff(built,{...form.savedRequest,hybrid_policy:form.savedRequest.hybrid_policy||built.hybrid_policy});
+  return diff.length?HLVisitExecution.replayChanged(diff):null;
 }
 async function situationOpen(pid, fromFlow = false, updateHash = true) {
   if (SIT.busy) return;
@@ -133,7 +146,8 @@ async function situationOpen(pid, fromFlow = false, updateHash = true) {
     form.start_date=last.request.start_date;form.weather=last.request.environment?.weather;form.arrival_time=last.request.environment?.arrival_time;
     form.visit_conditions = last.request.visit_conditions ? structuredClone(last.request.visit_conditions) : null;
     form.catalogEnabled=!!last.request.catalog_policy;
-    form.judgment_mode=last.request.judgment_mode||(last.request.hybrid_policy==='LLM_AUTONOMOUS_CUSTOMER_V16'?'replay':'rules');
+    form.judgment_mode=(typeof HLVisitExecution!=='undefined'&&HLVisitExecution.modeOf(last.request))||(last.request.hybrid_policy==='LLM_AUTONOMOUS_CUSTOMER_V16'?'replay':'rules');
+    form.savedRequest=form.judgment_mode==='replay'?structuredClone(last.request):null;form.saved_policy=form.judgment_mode==='replay'?last.request.hybrid_policy||null:null;
     form.detailDraft=null;form.c01Enabled=last.request.behavior_engine==='m4_c01';form.simulation_mode=last.request.simulation_mode;form.resolvedSnapshot={run_id:last.flow.ledger.run_id,requested:last.request.visit_conditions&&last.request.visit_conditions[pid]||null,resolved_conditions:last.flow.visit&&last.flow.visit.resolved_conditions&&last.flow.visit.resolved_conditions[pid]||null,order_use:situationOrderUse(last.request.visit_conditions&&last.request.visit_conditions[pid],last.flow.plans&&last.flow.plans[pid])};
   }
   LIBV.situation = pid; LIBV.open = pid;
@@ -176,7 +190,8 @@ function situationRender() {
   const roomValue=form.package_id || (((form.visit_conditions||{})[p.id]||{}).breakfast_plan==='room_only'?'room_only':'breakfast_included');
   const roomHelp=selectedRoomPackage?selectedRoomPackage.summary:form.duration==='day_visit'?'당일 방문 · 객실 미사용':roomValue==='room_only'?(roomBuilding==='DOUGLAS'?'라이트 조식 포함 · 더뷔페 별도 이용':'조식 별도 · 유료 이용 가능'):roomBuilding==='DOUGLAS'?'더글라스 라운지 · 라이트 조식 포함':'조식 포함 · 기본 2인';
   const roomDetails=selectedRoomPackage?selectedRoomPackage.details+(selectedRoomPackage.room_price_krw?' · 등록 참고가 '+Number(selectedRoomPackage.room_price_krw).toLocaleString('ko-KR')+'원 · 적용 기간 '+(selectedRoomPackage.effective_from||'미기재')+' ~ '+(selectedRoomPackage.effective_to||'미기재'):''):'가상 객실 모델 단가 · 그랜드 313,000원 / 비스타 373,000원 · 더글라스 259,000원(라운지 혜택 포함). 포함 권리와 실제 이용은 별개이며 추가 인원·상품 조건을 확인합니다. 더뷔페 변경 차액은 미확인입니다.';
-  let ready=true,detailError=null;try{situationRequest(p.id,form,opts);}catch(e){ready=false;detailError=e.message;}
+  let ready=true,detailError=null,built=null;try{built=situationRequest(p.id,form,opts);}catch(e){ready=false;detailError=e.message;}
+  const replayBlock=situationReplayBlock(form,built);if(replayBlock)ready=false;
   // Display only: mirrors the engine's event date gate (event_scenarios.active); the engine remains the authority.
   const eventActiveOn = (item, day) => !item.source_date_range || (item.source_date_range[0] <= day && day <= item.source_date_range[1] && (item.weekdays || [0,1,2,3,4,5,6]).includes((new Date(day + "T00:00:00Z").getUTCDay() + 6) % 7));
   const eventLabel = item => item.id==='SAVORING_SUMMER_NIGHT_2026' ? '<span class="st-event-title"><span>2026 리버파크</span><span class="st-event-english">Savoring Summer Night</span></span>' : `<span>${esc(item.label)}</span>`;
@@ -209,7 +224,7 @@ function situationRender() {
         <div class="st-zone-head"><span>01</span><h2 id="stBasicTitle">방문 기본 조건</h2><small>체류와 객실</small></div>
         <div class="st-fields">
           <div class="st-field"><label for="sitDuration">방문 기간</label><select class="cf-input" id="sitDuration"><option value="day_visit"${form.duration === "day_visit" ? " selected" : ""}>당일 방문 · 0박</option><option value="stay_1"${form.duration === "stay_1" ? " selected" : ""}>1박 2일</option><option value="stay_2"${form.duration === "stay_2" ? " selected" : ""}>2박 3일</option><option value="stay_3"${form.duration === "stay_3" ? " selected" : ""}>3박 4일</option></select><small>날짜별 체크인·연박·체크아웃 자동 구성</small></div>
-          <div class="st-field st-judgment"><label for="sitJudgment">행동 판단</label><select class="cf-input" id="sitJudgment">${HLVisitExecution.options(form.judgment_mode||'replay')}</select><small id="sitLiveStatus" role="status" hidden></small><small>${({live:'새로운 LLM 호출 · 유료 · 판단마다 30~70초',rules:'LLM 없이 규칙 점수로만 계산 · 무료',replay:'저장된 조건과 똑같을 때만 무료로 재생 · 새 조건은 새로운 LLM 판단을 고르세요'})[form.judgment_mode||'replay']}</small>${(form.judgment_mode||'replay')==='replay'&&(SIT.savedRuns||[]).some(r=>r.customer===p.id)?`<details class="st-saved"${form.savedTag?' open':''}><summary>저장된 실행 조건 불러오기</summary><select class="cf-input" id="sitSavedRun" aria-label="저장된 실행 조건"><option value="">조건 선택</option>${SIT.savedRuns.filter(r=>r.customer===p.id).map(r=>`<option value="${esc(r.tag)}"${form.savedTag===r.tag?" selected":""}>${esc({day_visit:"당일",stay_1:"1박",stay_2:"2박",stay_3:"3박"}[r.duration]||r.duration)} · ${esc(r.tag.replace(p.id+"-","").replace(/^v16-/,""))}</option>`).join("")}</select><small>불러오면 방문 기간 · 방문일 · 시드 · 도착 시각 · 행사 · 객실 조건이 저장 당시 값으로 바뀌고 행동 판단은 ‘저장된 LLM 판단’이 됩니다.</small></details>`:""}</div>
+          <div class="st-field st-judgment"><label for="sitJudgment">행동 판단</label><select class="cf-input" id="sitJudgment">${HLVisitExecution.options(form.judgment_mode||'rules')}</select><small id="sitLiveStatus" role="status" hidden></small><small>${({live:'새로운 LLM 호출 · 유료 · 판단마다 대개 10~20초(11월 측정)',live_improved:'개선형 판단 기준으로 새로운 LLM 호출 · 유료 · 저녁의 객실 체류와 취침을 구분',rules:'LLM 없이 규칙 점수로만 계산 · 무료',replay:'저장된 실행 조건을 불러와 그대로 실행할 때만 무료 재생'})[form.judgment_mode||'rules']}</small>${(form.judgment_mode||'rules')==='replay'&&(SIT.savedRuns||[]).some(r=>r.customer===p.id)?`<details class="st-saved"${form.savedTag?' open':''}><summary>저장된 실행 조건 불러오기</summary><select class="cf-input" id="sitSavedRun" aria-label="저장된 실행 조건"><option value="">조건 선택</option>${situationSavedOptions(SIT.savedRuns.filter(r=>r.customer===p.id),p.id,form.savedTag)}</select><small>불러오면 방문 기간 · 방문일 · 시드 · 도착 시각 · 행사 · 객실 조건이 저장 당시 값으로 바뀝니다. 조건을 바꾸면 재생할 수 없습니다.</small></details>`:(form.judgment_mode||'rules')==='replay'?`<p class="st-saved-empty" data-saved-pending>개선형 저장 방문 준비 중 · 이 고객은 아직 저장된 개선형 판단 기록이 없습니다. 규칙 계산이나 실시간 AI 판단을 선택해 주세요.</p>`:""}</div>
           <div class="st-field"><label for="sitBuilding">이번 방문 숙박 건물</label><select class="cf-input" id="sitBuilding"${form.duration==='day_visit'?' disabled':''}>${[['','고객별 기존 조건'],['GRAND','그랜드'],['VISTA','비스타'],['DOUGLAS','더글라스']].map(([value,label])=>`<option value="${value}"${((form.visit_conditions||{})[p.id]||{}).building===value?' selected':''}>${label}</option>`).join('')}</select><small>선택한 건물은 이번 가상 방문에만 적용</small></div>
           <div class="st-field st-room-condition"><label for="sitRoomCondition">객실 조건</label><select class="cf-input" id="sitRoomCondition" aria-describedby="sitRoomHelp"${form.duration==='day_visit'?' disabled':''}>${[['breakfast_included','조식 포함 객실 — 기본'],['room_only','조식 별도 객실'],...roomPackages.map(x=>[x.id,x.label])].map(([value,label])=>`<option value="${esc(value)}"${roomValue===value?' selected':''}>${esc(label)}</option>`).join('')}</select><small id="sitRoomHelp" title="${esc(roomHelp)}">${esc(roomHelp)}</small><details><summary>객실 상품 상세</summary><small>${esc(roomDetails)}</small>${(SIT.roomOptions?.packages||[]).some(x=>!x.runnable)?`<p>상품 혜택의 계산 연결을 확인한 항목만 선택할 수 있습니다.</p><details><summary>아직 선택할 수 없는 등록 상품</summary>${SIT.roomOptions.packages.filter(x=>!x.runnable).map(x=>`<p>${esc(x.label)} · ${esc(x.not_runnable_reason||x.details)}</p>`).join('')}</details>`:''}</details></div>${santaCard && selectedRoomPackage?.adapter === "event_entitlement" ? `
           <div class="st-field"><label for="sitSantaBooking">산타 입장 회차(가상 예약)</label><select class="cf-input" id="sitSantaBooking" aria-describedby="sitSantaBookingHelp">${(santa2026?[["","예약 없음 · 입장 혜택만 보유"],["15:20","3부 15:20–16:30 · 예약 가정"],["16:40","4부 16:40–17:50 · 예약 가정"]]:[["auto","자동 권장 · 도착·체크인·이동 기준(기본)"],["15:20","3부 15:20 · 운영자 지정"],["16:30","4부 16:30 · 운영자 지정"],["","예약 없음 · 입장 혜택만 보유"]]).map(([v,l])=>`<option value="${v}"${(form.santa_booking===undefined?(santa2026?'':'auto'):form.santa_booking)===v?' selected':''}>${l}</option>`).join('')}</select><small id="sitSantaBookingHelp">${santa2026?'2026 공식 패키지 회차 · 예약은 운영자 가정입니다. 실제 참가는 도착·이동·자격 조건에서 결정됩니다.':'패키지 고객 입장 3·4부(2025 보도자료) · 자동 권장: 도착 후 3부가 가능하면 3부, 아니면 체크인(15:00·20분)·짐 정리(35분) 뒤 4부, 둘 다 어려우면 미이용 사유 기록 · 운영자가 회차를 지정하면 그 예약을 우선 · 참석 여부는 엔진이 시간·이동 제약 안에서 실행'}</small><label class="st-check"><input type="checkbox" id="sitSantaBeforeCheckin"${form.santa_before_checkin===false?'':' checked'}> 체크인 전 행사장 입장 허용(운영자 가상 조건 · 실제 호텔 규칙 미확인)</label></div>` : ""}
@@ -246,12 +261,12 @@ function situationRender() {
   };
   root.querySelector('#sitBuilding').onchange=e=>{form.visit_conditions=form.visit_conditions||{};form.visit_conditions[p.id]=form.visit_conditions[p.id]||{};if(e.target.value)form.visit_conditions[p.id].building=e.target.value;else delete form.visit_conditions[p.id].building;situationQueueRender();};
   root.querySelector('#sitDuration').onchange=e=>{form.duration=e.target.value;situationQueueRender();};
-  HLVisitExecution.bindAvailability(root.querySelector('#sitJudgment'),root.querySelector('#sitLiveStatus'));
+  HLVisitExecution.bindAvailability(root.querySelector('#sitJudgment'),root.querySelector('#sitLiveStatus'),root.querySelector('#sitRun'),mode=>mode===(form.judgment_mode||'rules')?replayBlock:null);
   // Stored-run state belongs to Replay only. Leaving Replay drops the tag and the stored policy
   // (so a LIVE request uses the current LIVE policy and a rules request carries no LLM policy) but keeps every
   // visible condition value the reviewer may have loaded.
-  root.querySelector('#sitJudgment').onchange=e=>{form.judgment_mode=e.target.value;if(form.judgment_mode!=='replay'){form.savedTag=null;form.saved_policy=null;}situationQueueRender();};
-  const savedSel=root.querySelector('#sitSavedRun'); if(savedSel) savedSel.onchange=async e=>{const tag=e.target.value; form.savedTag=tag||null; if(!tag){situationQueueRender();return;}
+  root.querySelector('#sitJudgment').onchange=e=>{form.judgment_mode=e.target.value;if(form.judgment_mode!=='replay'){form.savedTag=null;form.saved_policy=null;form.savedRequest=null;}SIT.notice=null;situationQueueRender();};
+  const savedSel=root.querySelector('#sitSavedRun'); if(savedSel) savedSel.onchange=async e=>{const tag=e.target.value; form.savedTag=tag||null; if(!tag){form.savedRequest=null;form.saved_policy=null;situationQueueRender();return;}
     try{const r=await fetch('/api/saved-visits/run?tag='+encodeURIComponent(tag),{cache:'no-cache'}); if(!r.ok) throw new Error('saved'); const q=(await r.json()).request||{};
       const before={duration:form.duration,seed:form.seed||0,start_date:form.start_date||null,event:form.event,weather:form.weather||null,arrival_time:form.arrival_time||null,building:((form.visit_conditions||{})[p.id]||{}).building||null,package_id:form.package_id||'',judgment_mode:form.judgment_mode||'replay'};
       form.duration=q.duration||form.duration; form.seed=Number.isInteger(q.seed)?q.seed:0; form.start_date=q.start_date||null;
@@ -259,7 +274,7 @@ function situationRender() {
       form.weather=q.environment?.weather; form.arrival_time=q.environment?.arrival_time;
       form.visit_conditions=q.visit_conditions?structuredClone(q.visit_conditions):null; form.detailDraft=null;
       form.catalogEnabled=!!q.catalog_policy; form.c01Enabled=q.behavior_engine==='m4_c01'; form.package_id=q.package_id||'';
-      form.judgment_mode='replay'; form.saved_policy=q.hybrid_policy||null;
+      form.judgment_mode='replay'; form.saved_policy=q.hybrid_policy||null; form.savedRequest=structuredClone(q);
       const after={duration:form.duration,seed:form.seed||0,start_date:form.start_date||null,event:form.event,weather:form.weather||null,arrival_time:form.arrival_time||null,building:((form.visit_conditions||{})[p.id]||{}).building||null,package_id:form.package_id||'',judgment_mode:'replay'};
       const label={duration:'방문 기간',seed:'시드',start_date:'방문일',event:'행사',weather:'날씨',arrival_time:'도착 시각',building:'숙박 건물',package_id:'객실 상품',judgment_mode:'행동 판단'};
       const changed=Object.keys(after).filter(k=>String(before[k]??'')!==String(after[k]??'')).map(k=>`${label[k]} ${before[k]||'기본'} → ${after[k]||'기본'}`);
@@ -286,7 +301,10 @@ function situationRender() {
 }
 async function situationRun() {
   if (SIT.busy || !SIT.pid) return;
-  const pid = SIT.pid, request = situationRequest(pid, situationForm(pid), SIT.options);
+  const pid = SIT.pid, form = situationForm(pid);SIT.error=null;
+  let request;try{request = situationRequest(pid, form, SIT.options);}catch(e){SIT.error=e.message;situationRender();return;}
+  const block=situationReplayBlock(form,request);if(block){SIT.error=block;situationRender();return;}
+  const modeName=({rules:'규칙 계산',replay:'저장된 판단 재현',live:'실시간 AI 판단',live_improved:'실시간 AI 판단 · 개선형'})[(typeof HLVisitExecution!=='undefined'&&HLVisitExecution.modeOf(request))||request.judgment_mode]||'방문 생성';
   const previous = Object.fromEntries(['flow','plans','visits','runs','res','visitData','visitDay','duration','one','sel','cond','keep','si','f','nowMin','ti','mode'].map(k=>[k,AG[k]]));
   previous.keep={...AG.keep};
   SIT.busy = true; situationRender();
@@ -294,7 +312,7 @@ async function situationRun() {
     if (typeof DS !== "undefined") DS.step = null;
     LIBV.situation = null; AG.engine = "autonomy"; AG.one = pid; AG.mode = "agent"; AG.oneOverride = !!request.visit_override; AG.oneAuto = null; AG.flow = null; AG.plans = null; AG.visits = null; AG.runs = [];
     AG.visitRequest = request; AG.visitData = null; AG.visitDay = 1; AG.duration = request.duration;
-    AG.judgmentMode=request.judgment_mode;
+    AG.judgmentMode=(typeof HLVisitExecution!=='undefined'&&HLVisitExecution.modeOf(request))||request.judgment_mode;
     AG.seed = request.seed; AG.iv = "none"; AG.scen = "day"; AG.exp = null; AG.keep.agent = null; AG.res = null; AG.autorun = true;
     AG.cond = { ...AG.cond, turn: "day", event: request.event_mode === "wine", pricing: "historical", product_levers: {} };
     history.pushState(null,"",`#flow/${encodeURIComponent(pid)}/${request.event_mode === "wine" ? 1 : 0}/live`);
@@ -304,11 +322,11 @@ async function situationRun() {
     await agRun();
     if(AG.lastGenerationError){
       const failure=AG.lastGenerationError;
-      if(previous.flow){Object.assign(AG,previous);AG.visitRequest=null;agLeft();agShow(false);agSetScene(previous.si,previous.f);agPause();document.querySelector('#panel').insertAdjacentHTML('afterbegin',`<div class="callout" role="alert">계산 실패 — ${esc(failure)} · 이전 방문을 유지합니다.</div>`);}
+      if(previous.flow){Object.assign(AG,previous);AG.visitRequest=null;agLeft();agShow(false);agSetScene(previous.si,previous.f);agPause();document.querySelector('#panel').insertAdjacentHTML('afterbegin',`<div class="callout ag-run-failure" role="alert">${esc(modeName)} 실행 실패 — ${esc(failure)} · 이전 방문을 유지합니다.</div>`);}
       throw new Error(failure);
     }
     if(AG.flow){SIT.lastGeneratedForm={pid,form:JSON.stringify(situationForm(pid))};SIT.lastRequest=structuredClone(request);SIT.draftPid=null;}
-  } catch(e) { SIT.error = e.message; LIBV.situation = pid; setMode("library"); }
+  } catch(e) { SIT.error = `${modeName} 실행 실패 — ${e.message}${(AG.flow?' 이전 방문 결과는 고객 흐름에 그대로 있습니다.':'')}`; LIBV.situation = pid; setMode("library"); }
   finally { SIT.busy = false; if (LIBV.situation) situationRender(); }
 }
 window.addEventListener("hashchange", () => { const match = location.hash.match(/^#situation\/([^/]+)$/); if (match) situationOpen(decodeURIComponent(match[1]),false,false).catch(console.error); });

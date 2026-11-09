@@ -6,7 +6,7 @@
 const AG = {
   meta: null, mode: "agent", one: null, many: new Set(["A02", "A04", "A05", "A07", "A10"]),
   cond: { turn: "day", event: false, stay: true, building: "VISTA", party_size: 2, pricing: "historical", product_levers: {} },
-  duration: "stay_1", judgmentMode: 'replay',
+  duration: "stay_1", judgmentMode: 'rules',
   res: null, runs: [], ti: 0, sel: null, busy: false, keep: {},
   at: "turn", f: 1, raf: 0, open: new Set(),
   visits: null, fix: false,
@@ -208,7 +208,7 @@ function agLeft() {   // CL-1024-13 — 왼쪽: ① 고객(선택 컴포넌트) 
     </section>
   </div>
   ${typeof document !== "undefined" && document.body.classList.contains("devmode") ? `<div class="dev ag-engdev">행동 엔진(개발 · 비교용) <select id="agEngine"><option value="autonomy"${NEW ? " selected" : ""}>새 엔진 autonomy_v1</option><option value="legacy"${NEW ? "" : " selected"}>기존 엔진(turn_view + 계획기)</option></select></div>` : ""}
-  <div class="g-runbar cf-run"><label>행동 판단 <select class="cf-input" id="agJudgment">${HLVisitExecution.options(AG.judgmentMode||'replay')}</select><small id="agLiveStatus" role="status" hidden></small></label><div class="cf-run-b"><button id="agRun" class="cf-btn cf-primary">${AG.flow?"가상 방문 다시 생성":"가상 방문 생성"}</button><button id="agReset" class="cf-btn">조건 초기화</button></div>
+  <div class="g-runbar cf-run"><label>행동 판단 <select class="cf-input" id="agJudgment"${AG.busy?' disabled':''}>${HLVisitExecution.options(AG.judgmentMode||'rules')}</select><small id="agLiveStatus" role="status" hidden></small></label><div class="cf-run-b"><button id="agRun" class="cf-btn cf-primary">${AG.flow?"가상 방문 다시 생성":"가상 방문 생성"}</button><button id="agReset" class="cf-btn">조건 초기화</button></div>
     <div class="cf-run-h"><span class="gh-sub">${nChanged || c.pricing !== "historical" ? "바꾼 조건은 기본 조건과 나란히 비교" : "같은 엔진으로 1회 계산"}</span><span class="ra-sub" id="agHint"></span></div></div>`;
   agLvChips();
   // These legacy turn editors are not part of the full-visit request contract.
@@ -260,8 +260,8 @@ function agLeft() {   // CL-1024-13 — 왼쪽: ① 고객(선택 컴포넌트) 
     if(hint)hint.textContent='조건 변경 중 · 아래 지도·소비는 이전 방문 결과입니다. 가상 방문을 다시 생성하면 반영됩니다.';
   }
   $("#agRun").onclick = agRun;
-  HLVisitExecution.bindAvailability($("#agJudgment"),$("#agLiveStatus"));
-  $("#agJudgment").onchange=e=>{AG.judgmentMode=e.target.value;AG.pendingConditions=true;};
+  HLVisitExecution.bindAvailability($("#agJudgment"),$("#agLiveStatus"),$("#agRun"),agReplayBlock);
+  $("#agJudgment").onchange=e=>{AG.judgmentMode=e.target.value;AG.pendingConditions=true;agClearRunFailure();};
   $("#agReset").onclick = () => { AG.oneAuto = null; AG.oneOverride = false; AG.iv = "none"; AG.cond = { turn: c.turn, event: false, stay: true, building: "VISTA", party_size: 2, pricing: "historical", product_levers: {} }; AG.open.clear(); AG.grpOpen = null; agLeft(); };
 }
 // 상품 한 줄 — 이름(줄바꿈 허용 · 잘라내지 않음) | 가격(오른쪽 정렬 · 같은 자리폭) | 조정 버튼(같은 크기) · 펼치면 옵션 행(라벨 | 컨트롤)
@@ -473,6 +473,13 @@ function agScenarioOption() {
   if(!selected || selected.scenario.event_card_id==='WINE_FAIR_2026_AUTUMN')return '';
   return `<option value="scenario" selected>${esc(selected.label)}</option>`;
 }
+// Replay from this page reproduces the last replayed visit only; anything else needs saved conditions (situation page).
+function agReplayBlock(mode){
+  if(mode!=='replay'||AG.visitRequest)return null;
+  const last=AG.flow&&AG.flow.request;
+  return last&&last.judgment_mode==='replay'?null:HLVisitExecution.REPLAY_NEEDS_SAVED;
+}
+function agClearRunFailure(){document.querySelectorAll('.ag-run-failure').forEach(x=>x.remove());}
 async function agRunFlow(ids, cond, auto) {
   if (!(typeof DS !== "undefined" && DS.on && DS.step)) {
     const selection=agSelectedScenario(ids);
@@ -492,8 +499,14 @@ async function agRunFlow(ids, cond, auto) {
     // 2025 dates exist only inside an explicit event-card scenario (server date policy); a plain visit moves to the 2026 default date, visibly.
     AG.dateNotice=null;
     if(!request.scenario && String(request.start_date)<'2026-01-01'){AG.dateNotice=`행사 카드 없이 계산하는 방문이라 ${request.start_date} 대신 2026-10-24로 계산했습니다 (2025년은 행사 시나리오에서만 지원).`;request.start_date='2026-10-24';}
-    Object.assign(request,HLVisitExecution.request(request,AG.visitRequest?.judgment_mode||AG.judgmentMode||'replay',AG.visitRequest?.hybrid_policy||null));
+    Object.assign(request,HLVisitExecution.request(request,HLVisitExecution.modeOf(AG.visitRequest)||AG.judgmentMode||'rules',AG.visitRequest?.hybrid_policy||null));
     if(request.judgment_mode==='rules')delete request.hybrid_policy;
+    if(request.judgment_mode==='replay'&&!AG.visitRequest){   // checked before any request: never send a replay that cannot match
+      const last=AG.flow&&AG.flow.request;
+      if(!last||last.judgment_mode!=='replay')throw new Error(HLVisitExecution.REPLAY_NEEDS_SAVED);
+      const diff=HLVisitExecution.runDiff(request,last);if(diff.length)throw new Error(HLVisitExecution.replayChanged(diff));
+    }
+    AG.runningRequest=structuredClone(request);
     const r = await api("/api/visit", request);
     if (r.error) throw new Error(r.error);
     if(request.scenario && (!r.visit || !r.visit.scenario_snapshot || r.visit.scenario_snapshot.event_card_id!==request.scenario.event_card_id))throw new Error('선택한 행사 조건이 실제 계산에 전달되지 않았습니다.');
@@ -590,16 +603,18 @@ function agVisitDaySelect(dayNumber) {
   AG.focusLoc = null; AG._sc = null; AG.si = 0; AG.keep[AG.mode] = { runs: AG.runs, sel: AG.sel, plans: AG.plans, visits: AG.visits, flow: AG.flow };
   agPlanHint(); agShow(false); document.dispatchEvent(new Event("hl:agrun"));
 }
-// LIVE runs call the model once per decision (30~70초씩 · 1박 8~12회) and the server reports
-// nothing until the whole visit is done, so the only honest progress signal is elapsed time
-// against the recorded range. No decision count is invented from the clock.
-const AG_RUN_EXPECT = { day_visit: [2, 3, '약 2~3분'], stay_1: [8, 12, '약 5~12분'], stay_2: [14, 20, '약 10~20분'], stay_3: [20, 31, '약 15~30분'] };
+// LIVE runs call the model once per decision and the server reports nothing until the whole visit is done, so the
+// only honest progress signal is elapsed time against a measured range. No decision count is invented from the clock.
+// 2026-11-08 measurement (v21/v22 LIVE, 2 nights, 69 visits): 18~30 decisions, about 10 s per decision on average
+// (p90 about 15~17 s), whole visit about 3~6 min. Other durations were not re-measured: no time is promised for them.
+const AG_RUN_LATENCY = '판단마다 대개 10~20초(11월 측정)';
+const AG_RUN_EXPECT = { day_visit: [2, 3, '시간은 판단 수에 따라 달라짐'], stay_1: [8, 12, '시간은 판단 수에 따라 달라짐'], stay_2: [18, 30, '측정 참고 약 3~6분 · 조건에 따라 달라짐'], stay_3: [20, 31, '시간은 판단 수에 따라 달라짐'] };
 function agRunTicker(button, teams, mode, duration) {
   const bar = button.closest('.g-runbar'); let note = document.querySelector('#agGenerationStatus');
   if (!note && bar) { note = document.createElement('p'); note.id = 'agGenerationStatus'; note.setAttribute('role', 'status'); bar.appendChild(note); }
   const t0 = Date.now(), base = teams > 1 ? `${teams}팀 가상 방문 생성 중…` : '가상 방문 생성 중…';
   const expect = AG_RUN_EXPECT[duration] || AG_RUN_EXPECT.stay_1;
-  const label = mode === 'live' ? `새로운 LLM 판단 실행 중 · 판단마다 30~70초 · ${duration === 'day_visit' ? '당일' : duration.replace('stay_', '') + '박'} 방문은 보통 ${expect[0]}~${expect[1]}회(${expect[2]})${teams > 1 ? ' · 팀 수만큼 곱' : ''} · 이 화면을 떠나면 결과를 받을 수 없습니다`
+  const label = (typeof HLVisitExecution!=='undefined'?HLVisitExecution.isLive(mode):mode === 'live') ? `새로운 LLM 판단 실행 중 · ${AG_RUN_LATENCY} · ${duration === 'day_visit' ? '당일' : duration.replace('stay_', '') + '박'} 방문은 보통 ${expect[0]}~${expect[1]}회(${expect[2]})${teams > 1 ? ' · 팀 수만큼 곱' : ''} · 이 화면을 떠나면 결과를 받을 수 없습니다`
     : mode === 'rules' ? '규칙 계산 중 · LLM 호출 없음' : '저장된 LLM 판단 재생 중 · 유료 호출 없음';
   if (note) note.textContent = label;
   const tick = () => { const s = Math.round((Date.now() - t0) / 1000); button.textContent = `${base} ${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`; };
@@ -610,14 +625,18 @@ async function agRun() {
   if (AG.busy) return;
   if (AG.mode !== "agents" && !AG.one) { agReady(); return; }
   const ids = AG.mode === "agents" ? [...AG.many] : [AG.one];
-  let generated=false; AG.lastGenerationError = null; AG.busy = true; const b = $("#agRun"); b.disabled = true; b.textContent = "계산 중…";
+  let generated=false; AG.lastGenerationError = null; AG.busy = true; const b = $("#agRun"); b.disabled = true; b.dataset.busy='1'; b.textContent = "계산 중…";
+  agClearRunFailure();
+  // The request and mode are fixed for this run: lock the controls that would change them until it ends.
+  const locked=[...document.querySelectorAll('.mode-agent .cf-left select,.mode-agent .cf-left input,.mode-agent .cf-left button:not(#agRun)')].filter(x=>!x.disabled);locked.forEach(x=>x.disabled=true);
+  const modeName=({rules:'규칙 계산',replay:'저장된 판단 재현',live:'실시간 AI 판단',live_improved:'실시간 AI 판단 · 개선형'})[HLVisitExecution.modeOf(AG.visitRequest)||AG.judgmentMode||'rules']||'방문 생성';
   try {
     const cond = JSON.parse(JSON.stringify(AG.cond)), auto = AG.mode === "agents" && !AG.fix;
     const ph = cond.stay ? (cond.phase || "mid") : "visit";   // 체류 단계: checkin(오후 시작 · 조식 없음) · mid(연박 중간일) · checkout(조식 뒤 체크아웃) · visit(비투숙)
     let runs, visits = null;
     if (AG.duration) {   // 선택한 전체 기간을 /api/visit duration 계약으로 전달
       b.textContent = ids.length > 1 ? `${ids.length}팀 가상 방문 생성 중…` : "가상 방문 생성 중…";
-      const stopTicker = agRunTicker(b, ids.length, AG.visitRequest?.judgment_mode || AG.judgmentMode || 'replay', AG.duration);
+      const stopTicker = agRunTicker(b, ids.length, HLVisitExecution.modeOf(AG.visitRequest) || AG.judgmentMode || 'rules', AG.duration);
       let F; try { F = await agRunFlow(ids, cond, auto); } finally { stopTicker(); }
       runs = F.runs; visits = F.visits;
       if (!runs.length) throw new Error("이 고객은 실행 가능한 방문 행동이 없습니다. 조건을 확인해 다시 실행하세요.");
@@ -655,9 +674,9 @@ async function agRun() {
     AG.lastGenerationError = e.message;
     if (AG.res) agPanel();
     else $("#panel").innerHTML = '';
-    $("#panel").insertAdjacentHTML('afterbegin', `<div class="callout" role="alert">계산 실패 — ${esc(e.message)}${AG.flow ? '<br>이전 방문 결과를 유지합니다. 조건을 수정한 뒤 다시 생성해 주세요.' : ''}</div>`);
+    $("#panel").insertAdjacentHTML('afterbegin', `<div class="callout ag-run-failure" role="alert">${esc(modeName)} 실행 실패 — ${esc(e.message)}${AG.flow ? '<br>이전 방문 결과를 유지합니다. 조건이나 판단 방식을 바꾼 뒤 다시 생성해 주세요.' : ''}</div>`);
   }
-  finally { AG.busy = false; b.disabled = AG.mode !== "agents" && !AG.one; b.textContent = AG.flow ? "가상 방문 다시 생성" : "가상 방문 생성";
+  finally { AG.busy = false; AG.runningRequest=null; locked.forEach(x=>{if(x.isConnected)x.disabled=false;});/* the mode select may have been re-rendered during the run with the busy state */{const j=document.querySelector('#agJudgment');if(j)j.disabled=false;} b.dataset.busy=''; b.disabled = (AG.mode !== "agents" && !AG.one) || b.dataset.modeBlocked==='1'; b.textContent = AG.flow ? "가상 방문 다시 생성" : "가상 방문 생성";
     const current=document.querySelector('#agRun');if(current)current.textContent=b.textContent;
     let notice=document.querySelector('#agGenerationStatus');
     if(generated){if(!notice){notice=document.createElement('p');notice.id='agGenerationStatus';notice.setAttribute('role','status');current?.closest('.g-runbar')?.appendChild(notice);}notice.textContent='가상 방문이 생성되었습니다. ▶ 재생으로 방문 흐름을 확인하세요.';}
@@ -2398,7 +2417,7 @@ const AG_KIND_KO = { purchase: "구매 · 소비", participation: "이용 · 참
 function agResolvedConditionsHTML(pid) {
   const flow=AG.flow,visit=flow&&flow.result.visit,resolved=visit&&visit.resolved_conditions&&visit.resolved_conditions[pid];if(!resolved)return '';
   const declared=flow.request&&flow.request.visit_conditions&&flow.request.visit_conditions[pid],composition=resolved.party_composition;
-  return `<details class="rc-resolved"><summary>실제 적용된 방문 조건</summary><p>방문 설정 ${resolved.party_size}명 · ${composition?'성인 '+composition.adult_count+'명 / 아동 '+composition.children.length+'명':'연령 구성 UNKNOWN (미지정)'}</p><p class="frp-note">${declared?'명시값은 이번 방문의 가상 설정입니다.':'직접 입력하지 않은 상세 정보는 UNKNOWN으로 유지합니다.'}</p><pre>${esc(JSON.stringify({run_id:flow.ledger.run_id,visit_id:visit.visit_id,requested:declared||null,resolved_conditions:resolved},null,2))}</pre></details>`;
+  return `<details class="rc-resolved"><summary>실제 적용된 방문 조건</summary><p>방문 설정 ${resolved.party_size}명 · ${composition?'성인 '+composition.adult_count+'명 / 아동 '+composition.children.length+'명':'연령 구성 UNKNOWN (미지정)'}</p><p class="frp-note">${declared?'명시값은 이번 방문의 가상 설정입니다.':'직접 입력하지 않은 상세 정보는 UNKNOWN으로 유지합니다.'}</p></details>`;
 }
 function agCustDrawer(pid, tab = "ov") {
   const p = (AG.meta.personas || []).find(x => x.id === pid), lp = agLibP(pid) || {}, V = agVC(pid), cp = agComp(pid, V.party), pt = agPortrait(pid, V.party);
@@ -2477,7 +2496,7 @@ function agActDrawer(pid, si) {   // CL-1024-13 — 활동 상세: 사진(있을
 }
 function agPlanMetaText(pm) {
   if (!pm) return "행동 계획기 결과 없음";
-  if(pm.trace?.planner_backend?.startsWith('LLM_AUTONOMOUS_CUSTOMER_')){const t=pm.trace;return `${t.planner_backend} · 실제 API ${t.llm_calls||0}회 · 캐시 재생 ${t.llm_replays||0}회 · ${t.planner_backend_fallback_used?'규칙 폴백 포함':'규칙 폴백 없음'}`;}
+  if(pm.trace?.planner_backend?.startsWith('LLM_AUTONOMOUS_CUSTOMER_')){const t=pm.trace;return `${typeof HLVisitExecution!=='undefined'&&t.planner_backend===HLVisitExecution.IMPROVED_POLICY?'개선형 판단 기준':t.planner_backend} · 실제 API ${t.llm_calls||0}회 · 캐시 재생 ${t.llm_replays||0}회 · ${t.planner_backend_fallback_used?'규칙 폴백 포함':'규칙 폴백 없음'}`;}
   const used = pm.backend === "llm" ? "LLM 계획기" : "규칙 계획기", req = pm.requested === "auto" || pm.requested === "llm" ? "LLM 계획기" : "규칙 계획기";
   const st = pm.status && pm.status !== "ok" ? " · 실행 차단(월드 검증)" : "", t = pm.trace || {};
   const pf = t.profile_fallback_used ? " · 프로파일 미로드 — 일반 시연 계획" : t.daily_behavior_loaded ? " · 일상 행동 자료 사용" : "";

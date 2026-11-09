@@ -1,13 +1,13 @@
 {
   "product": "HILLINK",
-  "version": "2026-11-07-v19ls",
+  "version": "stable-public-product",
   "product_directory": "hillink",
   "entrypoint": "hillink/tools/start_product.sh",
   "source_repository": "BK8909/walkerhill",
-  "source_commit": "0801ef7a115b1b9c174b4461b006c0ef975ced9a",
+  "source_commit": "e18542f5c917755e5732f890edece0f53be7d733",
   "data_scope": "RESEARCH_INPUTS_INCLUDED_IN_THIS_PUBLIC_REPOSITORY_REUSE_TERMS_NOT_DETERMINED_HERE",
   "data_manifest": "hillink/handover/data/bundle.json",
-  "source_branch": "research/partial-breakfast-20261107",
+  "source_branch": "integration/int4-product-20261108",
   "live_policy": "LLM_AUTONOMOUS_CUSTOMER_V19LS",
   "previous_live_policy": "LLM_AUTONOMOUS_CUSTOMER_V17",
   "replay_policy": "LLM_AUTONOMOUS_CUSTOMER_V16",
@@ -23,6 +23,8 @@
     ".github/workflows/offline-ci.yml",
     "hillink/tools/ci/"
   ],
-  "data_scope_note": "hillink/handover/data (bundle.json, product-inputs.tar.gz) is published in this repository and SHA-checked on restore. No API key, private review text or private cost ledger is included. Reuse terms of individual sources are not determined here; see the research handoff section 10.",
-  "previous_data_scope": "AUTHORIZED_PRIVATE_REPOSITORY_DATA_NOT_PUBLIC_RELEASE (2026-11-06 label, did not match the published package)"
+  "data_scope_note": "The public data archive is SHA-checked. Improved 28-customer recorded LIVE responses are private and are not included in this repository. No API key or private cost journal is published.",
+  "previous_data_scope": "AUTHORIZED_PRIVATE_REPOSITORY_DATA_NOT_PUBLIC_RELEASE (2026-11-06 label, did not match the published package)",
+  "improved_live_policy": "LLM_AUTONOMOUS_CUSTOMER_V19LS_INT4",
+  "saved_replay_source": "Optional HILLINK_PRIVATE_REPLAY_DIR, original approved LIVE receipts; not bundled in public Git"
 }

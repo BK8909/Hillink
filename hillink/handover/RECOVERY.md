@@ -1,13 +1,10 @@
-# HILLINK 설치·복원 및 핵심 기술 계약
+# HILLINK | 설치·실행·복원 안내
 
-[저장소 루트 README](../../README.md)가 제품 시작 안내이며, [연구·기술 인계서](../docs/research/RESEARCH_AND_ARCHITECTURE_HANDOFF.md)가 정책·실험·평가의 상세 근거입니다. **현재 제품은 V19LS 실시간 AI 판단(기본 LIVE) + V17 이전 LIVE(이름으로만 선택) + V16 저장 판단 재현 + 규칙 계산**을 지원합니다(2026-11-07 기준). 일부 V18 기초 연구 정책은 명시적으로 선택할 수 있으나, C/L2/S2/LS 교차 실험 결과는 별도 연구 기록으로 관리합니다.
+HILLINK를 처음 실행하거나 다른 환경에서 이어서 개발할 때 필요한 설치 방법, 데이터 복원, AI 판단 모드와 검증 절차를 정리했습니다. 시스템의 목적과 기능은 [README](../../README.md), 설계·평가 방법은 [연구·기술 인계서](../docs/research/RESEARCH_AND_ARCHITECTURE_HANDOFF.md)를 참고하세요.
 
-공개 저장소 **[BK8909/Hillink](https://github.com/BK8909/Hillink)**에서 제품을 내려받아 사용합니다. 현재 제품은 `hillink/` 하나에 있습니다. 루트에 보존된 기존 팀 파일을 복사하거나 조합하지 않습니다. 아래 명령은 별도 안내가 없으면 `hillink/`에서 실행합니다.
+## 1. 설치와 기본 실행
 
-
-## 실행과 데이터
-
-Python 3.11 가상환경에 `requirements-dev.txt`를 설치한 뒤 `bash tools/start_product.sh`로 시작합니다.
+**필요 환경:** Python 3.11, macOS 또는 Linux, 웹 브라우저. JavaScript 테스트에는 Node.js가 필요합니다.
 
 ```bash
 git clone https://github.com/BK8909/Hillink.git
@@ -17,90 +14,106 @@ python3.11 -m venv .venv
 bash tools/start_product.sh
 ```
 
-기본 주소는 `http://127.0.0.1:8994/`이며 `HILLINK_PORT`로 변경합니다. **기본 실행은 규칙·동일 입력 Replay이며 외부 API 호출이 차단**됩니다. 새로운 LIVE 선택은 아래에서 별도 승인·설정을 거쳐 활성화합니다.
+기본 주소: **http://127.0.0.1:8994/**
 
-`tools/bootstrap_data.py --json`이 `handover/data/bundle.json`의 SHA를 확인하고 내장 자료를 사용자 캐시에 복원합니다. 빈 캐시 재검증은 Git 밖의 새 경로를 `HILLINK_DATA_HOME`에 지정합니다. 특정 개발자의 폴더를 전달받을 필요가 없습니다. 복원된 `.local.json`은 파생 파일이며 직접 수정하거나 커밋하지 않습니다. 캐시를 재구성하려면 새 캐시 경로를 사용합니다.
-
-기본 시작 명령은 내장 표시 검수 자료의 고객 ID·원문 SHA·방문 ID를 확인하고 승인된 범위의 목록 문구를 적용합니다. `handover/data/profile-display-review.json`의 수정은 표시 전용이며 엔진 Fact·성향·사람 의미 승인·썸네일 승인을 바꾸지 않습니다. 원문이 변조되거나 고객 연결이 맞지 않으면 복원을 중단합니다.
-
-현재 제품과 복원 패키지는 **공개 저장소에 함께 게시**되어 있습니다. 입력은 공개된 후기·호텔 정보에서 구축한 연구용 자료와 저장 실행 기록으로 구성했고, `handover/data/bundle.json` 및 `product-inputs.tar.gz`의 무결성을 확인해 복원합니다. **공개 기술 설명과 개별 원출처 자료의 이용 조건은 구분**하며, 데이터 출처·재현 범위·연구상 한계는 [연구·기술 인계서](../docs/research/RESEARCH_AND_ARCHITECTURE_HANDOFF.md)에 기록합니다. 개인 API 키·비공개 비용 원장은 포함하지 않습니다.
-
-## 디렉터리와 연결 구조
-
-| 위치 | 역할 |
-|---|---|
-| `tools/start_product.sh` | 유일한 표준 서버 시작 명령, 자료 복원·Replay 준비·실호출 사전 확인 |
-| `timeline/viewer/app.py` | 로컬 HTTP 서버와 방문·원장·전략 API |
-| `timeline/viewer/static/` | 기존 고객 라이브러리·조건·지도·행동근거·매출·운영 전략 화면 |
-| `timeline/viewer/visit_execution.py`, `visit_run.py` | 규칙/Replay/LIVE 구분과 연속 방문 실행 |
-| `timeline/experiments/persona_live/operator_choice/autonomy_v1/` | 현재 행동 엔진, V16 저장 판단 재현, V19LS 실시간 판단(V17 보존)·운영 규칙·상품 계약 |
-| `timeline/viewer/ledger_service.py`, `ledger_l5.py` | 동일 run의 SKU·수량·결제 및 L5~L1 집계 |
-| `timeline/viewer/strategy_agent_service.py` | 해당 run의 실제 선택을 사용하는 개인·집단 전략과 A/B 계약 |
-| `handover/data/` | 고객 입력·원문·공식 자료·원 응답 Replay와 단일 데이터 manifest |
-| `tools/persona_pipeline.py` | 신규 페르소나 준비·수입·사람 승인·격리 등록·검증 |
-| `timeline/viewer/tests/` | 유지한 회귀 코드와 fixture |
-
-## 실행 정책과 판단 출처
-
-방문은 `m4_c01` 엔진과 `C01_HOTEL_CATALOG_V1` 상품·운영 계약을 사용하며, 실행 모드에 따라 판단 출처를 구분합니다.
-
-| 실행 모드 | 판단 정책 | 외부 호출 및 제약 |
-|---|---|---|
-| 규칙 | 기존 M4 규칙 실행 | 신규 API 호출 없이 실행, 모델의 새 판단으로 표시하지 않음 |
-| **저장 판단 Replay** | `LLM_AUTONOMOUS_CUSTOMER_V16` | 저장된 실제 모델 응답을 **동일 입력·모델·설정·입력 SHA**가 일치할 때만 재현, 신규 호출 0회 |
-| **새 LLM 판단 LIVE** | `LLM_AUTONOMOUS_CUSTOMER_V19LS` (이전: `…_V17`, 명시적 정책 지정 시에만 선택) | `visit_execution.py`의 `LIVE_POLICY`(V17은 `PREVIOUS_LIVE_POLICY`); 명시적 키·공유 원장·승인·사용자 선택 필요 |
-| **연구 정책** | V18 일부 기초 후보 선별 정책 및 C/L2/S2/LS 비교 연구 | 일부 초기 V18 정책만 명시적 식별자로 선택 가능하며, C/L2/S2/LS 교차 실험은 연구 기록으로 구분. 현재 기본 판단 정책이 아님 |
-
-모델이 선택한 뒤 영업시간·이동·예약·자격·SKU·가격·수량을 검증하고 실제 채택된 행동만 주문·원장에 연결합니다. 행동근거 ④와 매출·운영 전략은 같은 run을 사용합니다. **검증 실패 시 재계획은 최대 1회, 실패를 규칙 점수 선택으로 몰래 대체하지 않습니다.**
-
-Replay는 모델·설정·전체 입력이 일치하는 원 응답만 이용합니다. `REPLAY_MISS`는 차단이며 규칙이나 실호출로 자동 전환하지 않습니다. `CACHE_REPLAY`와 `LIVE_RESPONSES`, 모델 판단과 사람 의미 승인을 구분합니다. V18 실험 결과가 필요하면 [연구 인계서 5-6~5-7절](../docs/research/RESEARCH_AND_ARCHITECTURE_HANDOFF.md)을 참고하세요.
-
-## API 키와 승인된 실호출
-
-키는 `OPENAI_API_KEY` 환경변수 또는 권한600의 `~/.config/hillink/openai.env`로 공급합니다. 키·인증정보·개인 비용 원장은 Git에 포함하지 않습니다. 모델과 추론 설정은 `HILLINK_AGENT_MODEL`, `HILLINK_AGENT_EFFORT`이며 가격 등록은 `agent_provider.py`를 따릅니다.
-
-승인된 사용자는 운영 책임자로부터 **기존 누적 비용 원장과 유효한 승인 범위**를 접근 통제된 경로로 받아 아래처럼 실행합니다. 새 빈 원장으로 누적 한도를 초기화하지 않습니다.
+다른 포트를 사용하려면 서버를 시작하기 전에 환경변수를 지정합니다.
 
 ```bash
-HILLINK_AGENT_BUDGET_FILE=/absolute/private/existing/usage.private.json \
-HILLINK_AGENT_MAX_CALLS=2500 HILLINK_AGENT_MAX_USD=20 \
-HILLINK_LIVE_APPROVAL_REFERENCE='실제로 승인된 실행 범위' \
+HILLINK_PORT=8997 bash tools/start_product.sh
+```
+
+기본 서버는 외부 AI API 호출을 하지 않으며, 규칙 계산과 정확한 저장 판단 재현을 사용할 수 있습니다. `tools/start_product.sh`는 자료 무결성 확인, 데이터 캐시 복원, 저장 응답 준비, 실행 코드 확인을 수행합니다. `bash tools/start_product.sh --check`로 서버를 열지 않고 사전 점검할 수도 있습니다.
+
+**주의:** 제품은 `hillink/` 디렉터리를 기준으로 실행합니다. 저장소 루트의 과거 팀 파일과 제품 폴더를 임의로 조합하지 않습니다.
+
+## 2. 데이터 복원
+
+제공된 자료는 `handover/data/`의 패키지와 매니페스트를 기준으로 확인합니다.
+
+```bash
+.venv/bin/python -B tools/bootstrap_data.py --json
+.venv/bin/python -B tools/verify_package.py
+```
+
+복원기는 포함 파일의 체크섬과 고객·출처 연결을 검사하고, 파생 데이터를 로컬 캐시에 복원합니다. 캐시가 손상됐거나 서로 다른 실험의 데이터가 섞인 것으로 의심되면 **원본 패키지를 수정하지 말고 새 캐시 디렉터리**를 지정해 복원합니다.
+
+```bash
+HILLINK_DATA_HOME=/absolute/path/to/new-cache bash tools/start_product.sh --check
+```
+
+원본 후기·프로필·상품·저장 AI 응답은 일반적인 화면용 JSON으로 직접 편집하지 않습니다. 수정·검증한 입력을 새 패키지로 구성할 때에는 원본 출처·연결 관계·해시를 함께 갱신해야 합니다.
+
+## 3. 방문 실행 방식
+
+| 화면에서 선택하는 방식 | 실제 동작 | 필요한 조건 |
+|---|---|---|
+| **규칙 계산** | 호텔 운영 계약과 규칙으로 방문을 계산 | API 키 없이 실행 가능 |
+| **저장된 AI 판단 재현** | 기존 LIVE에서 기록한 모델의 **원본 응답**을 같은 입력으로 재생 | 정책·모델·설정·입력 해시와 저장 응답의 정확한 일치 |
+| **실시간 AI 판단** | 개인 근거와 현재 방문 상태로 새 모델 판단 수행 | 승인된 키·비용 원장·호출 권한 |
+| **실시간 AI 판단 · 개선형** | 이전 방문 기억과 객실 저녁·취침 구분을 포함해 신규 판단 | 동일한 LIVE 승인 및 개선형 실행 정책 |
+
+실시간 판단의 정확한 실행 정책 식별자는 `timeline/viewer/visit_execution.py`의 `LIVE_POLICY`와 `IMPROVED_POLICY`에서 확인합니다. 정책 식별자는 재현 계약과 내부 기록용이며 제품 사용자가 외울 필요는 없습니다.
+
+Replay가 일치하지 않을 경우 `REPLAY_MISS` 또는 해당 차단 사유가 표시되며, AI 응답을 임의로 변형하거나 **규칙 계산을 AI 재생으로 위장하지 않습니다.** 개선형 원본 LIVE 응답을 저장본으로 제공할 때에도 정확한 영수증과 입력을 연결합니다. 다른 고객·기간·가격 조건의 응답을 사용하지 않습니다.
+
+비공개 원응답 묶음을 추가해야 할 때에는 권한을 확인한 다음 `HILLINK_PRIVATE_REPLAY_DIR`로 해당 디렉터리를 지정합니다. 파일은 원본 입력 해시 이름을 가진 영수증이어야 하며 실제 호출 출처가 검증된 응답만 사용됩니다. **API 키·원응답 전문·사용량 원장 등 비공개 자료는 Git에 올리지 않습니다.**
+
+## 4. 승인된 실시간 AI 실행
+
+새 AI 요청은 기본 실행에서 차단됩니다. 실시간 실행은 실제 승인 범위와 기존 누적 사용량 원장을 가진 환경에서만 활성화합니다. 설정 예시는 [environment.example](environment.example)를 참고하세요.
+
+```bash
+export HILLINK_AGENT_BUDGET_FILE=/absolute/private/existing/usage.private.json
+export HILLINK_AGENT_MAX_CALLS="$APPROVED_CALL_LIMIT"
+export HILLINK_AGENT_MAX_USD="$APPROVED_USD_LIMIT"
+export HILLINK_LIVE_APPROVAL_REFERENCE="$APPROVAL_REFERENCE"
 bash tools/start_product.sh --live
 ```
 
-실행기는 기존 원장의 승인 확장·잔여 호출·잔여 비용을 검사합니다. 서버 시작만으로 API를 호출하지 않습니다. 방문에서 ‘새로운 LLM 판단 (API 호출)’을 선택해야 호출하며, 비활성 서버는 사용 불가를 표시합니다. 규칙과 Replay에는 개인 키·원장이 필요 없습니다.
+위 명령을 사용하기 전에 `APPROVED_CALL_LIMIT`, `APPROVED_USD_LIMIT`, `APPROVAL_REFERENCE`를 실제 승인 내용으로 설정해야 합니다. API 인증정보는 서버 환경변수 또는 권한이 제한된 로컬 키 파일에서만 읽고, 브라우저나 Git 파일에 포함하지 않습니다.
 
-## 최신 제품 검증 현황 (2026-11-07)
+시작 스크립트와 API 서버는 승인 참조, 인증정보, 공유 원장, 잔여 호출·비용 한도를 확인합니다. **기존 비용 원장을 비우거나 새 원장으로 바꿔 누적 제한을 초기화하지 않습니다.** 서버를 시작했다고 자동으로 유료 호출하는 것은 아니며, 실시간 판단을 선택한 방문에서만 호출합니다.
 
-- **V16 Replay:** 저장 응답 **38/38** 입력·선택 일치(무과금).
-- **제품 회귀:** Python **830 PASS / 기존 10 FAIL(신규 회귀 0, 11/06 기준 기존 12건 중 2건 해결) / SKIP 1** · Node **255/255 PASS** · V16 Replay **38/38** · 오프라인 GitHub Actions CI.
-- **오프라인 CI(`.github/workflows/offline-ci.yml`):** 패키지·데이터 SHA와 비밀정보 검사, 문서 링크·현재 LIVE 정책 일치, 새 AI 공동 작성자 표기 유입 검사, 새 캐시 복원·시작 명령, Node·Python 전체 회귀(분류된 기존 실패만 허용, 수집 오류·중단·신규 실패는 실패), 규칙 모드 결정성(같은 요청을 해시 시드 2종으로 실행해 전체 결과 비교), V16 Replay 38/38, CD-15 과거 계약 재현(Git 이력의 봉인 엔진 파일로 원래 테스트 실행 · 현행 엔진 결과로 세지 않음), 기존 원장 차이 설명(정보용), HTTP E2E(같은 실행의 인용 Fact→판단→장면→원장 행 연결, 다른 입력에 저장 판단 재사용 거부, LIVE 거절), Chromium 브라우저 E2E(흐름·행동근거·매출·운영 전략의 실행 ID 일치, 거절된 실행 뒤 이전 실행 유지, 조건 변경 시 전 화면 교체, 없는 실행 ID 거부, 1440·1024·390px). API 키 없이 실행되며 LIVE 호출은 하지 않습니다.
-- **커밋 메타데이터:** 자동 AI 공동 작성자·세션 표기를 막으려면 복제본마다 `git config core.hooksPath hillink/tools/git-hooks`를 한 번 실행합니다(사람 작성자·커미터 정보는 바꾸지 않음). CI도 새 커밋에 해당 표기가 있으면 실패합니다.
-- **패키지 무결성:** 현재 `package_manifest.json`의 포함 파일 **1,598개** SHA 검증 기준, 원본 데이터 번들 **125개 파일**. 비밀값 탐지 **0건**.
-- **라이브러리:** 45명 화면 표시 · 28명 기술 실행 가능 · 17명 열람 전용(전체 의미·썸네일 사람 승인과 구분).
-- **HTTP·브라우저:** 새 clone·가상환경·캐시에서 복원 및 서버 기동, Replay·규칙/행사 조건·매출 원장 L4~L1, 고객 흐름·행동근거·매출 화면 확인. 라이브 API 호출은 키 없는 공개 검수 환경에서 실행하지 않음.
-- **연구 분리:** V18 실호출 224회·전체 방문 9건 중 7건 완주, LS/V17 실호출 16회 비교에서 LS는 미승격(11/06) → 안정화한 V19LS를 실호출 130회 비교·재확인 후 기본 LIVE로 승격(11/07). **제품 설치 성공이나 Replay 일치를 행동 예측 정확도·LS 품질 증명으로 해석하지 않습니다.**
+## 5. 제품 기능 확인
 
-실제 공개 배포 기록은 저장소 [release.json](../../release.json)과 [연구·기술 인계서](../docs/research/RESEARCH_AND_ARCHITECTURE_HANDOFF.md)를 함께 봅니다.
+다음 순서로 하나의 고객·하나의 실행 기록이 끝까지 이어지는지 점검합니다.
 
-## 최소 확인
+1. **고객 라이브러리:** 프로필 선택 → 원문·Fact·반례 및 실행 가능 여부 확인.
+2. **방문 생성:** 방문일·기간·동행·날씨·행사·객실 조건 설정 → 규칙 계산 또는 저장 판단 재현.
+3. **고객 흐름:** 지도·시간표를 수동 재생해 식사·활동·휴식·취침·퇴실 연결 확인.
+4. **행동근거:** 관측된 개인 Fact → 당시 상황 → 비교한 대안 → 실제 선택을 확인. 원시 코드·JSON·해시는 제품 본문에 표시하지 않음.
+5. **가상 소비:** 장면별 주문·금액과 고객(L5)부터 호텔(L1)까지의 집계가 같은 실행에 연결되는지 확인.
+6. **운영 전략:** 목표 업장 선택 → 원인 진단 → 전략 카드 → A/B 실행 조건 → 고객 이동·업장/호텔 순변화 → 운영 결론.
+7. **재접속:** 새로고침·고객 변경·화면 왕복 뒤에도 현재 실행 ID·방문 조건·판단 방식·거래가 달라지지 않는지 확인.
 
-1. 라이브러리에서 A03 / No.0003을 선택합니다. 당일 방문, 2026-11-09, 오후14:30, 날씨·행사 없음, 동일 입력 재현 시드62, ‘저장된 LLM 판단 (무과금)’으로 실행합니다.
-2. 지도·수동 재생·RPG 설명에서 행동근거 ④로 이동해 선택 전 판단·대안·Fact·운영 검증을 확인합니다. 원장의 SKU·수량·금액 및 run ID가 같아야 합니다.
-3. 운영 전략에서 같은 고객의 실제 선택이 입력으로 표시되는지 확인합니다. 전략 Replay 응답이 없으면 HOLD가 정상이며 효과를 생성하지 않습니다.
-4. 검증 명령은 다음과 같습니다. 전체 회귀에는 아래 알려진 실패가 남아 있습니다.
+A/B는 실행 출처에 따라 규칙 기반 비교, 새 LLM 판단을 포함한 비교, 기존 주문 수량을 고정한 가격 산술 계산을 구분합니다. 실제 실행할 수 없는 상품·예약·운영 조건에는 결과를 만들어 넣지 않습니다. 한 조건의 오류·보류·미유입 결과를 다른 실행의 성공처럼 표시하지 않습니다.
+
+### 자동화 검증
 
 ```bash
-PYTHONPATH=tools/offline_test_guard .venv/bin/python -m pytest -q timeline/viewer/tests/test_visit_execution.py timeline/viewer/tests/test_http_audit_boundary.py timeline/viewer/tests/test_strategy_agent_service.py
-node --test timeline/viewer/tests/visit_execution.test.cjs timeline/viewer/tests/situation_ui.test.cjs
+PYTHONPATH=tools/offline_test_guard .venv/bin/python -m pytest -q timeline/viewer/tests
+node --test timeline/viewer/tests/*.test.cjs
 ```
 
-전체 회귀 명령: `PYTHONPATH=tools/offline_test_guard .venv/bin/python -m pytest -q timeline/viewer/tests`, `node --test timeline/viewer/tests/*.test.cjs`. 입력 누락 SKIP은 PASS가 아닙니다. 원장 금액과 봉인 SHA를 단순히 현재 값으로 바꾸어 실패를 지우지 않습니다.
+전체 테스트의 합격 여부는 실행한 코드와 데이터의 실제 결과를 기준으로 판단합니다. 과거의 예상값·고정 해시를 성공 수치에 맞추기 위해 수정해서는 안 됩니다. 회귀의 알려진 제약은 `tools/ci/`와 해당 테스트의 근거를 참고합니다. 실제 브라우저 E2E에서는 렌더링·콘솔·네트워크·원장·정책 표시를 함께 확인해야 합니다.
 
-## 지원 범위와 남은 결함
+## 6. 주요 코드와 후속 개발
 
-- 개인·집단 전략은 방문의 실제 선택과 소비를 입력으로 받고, 유효한 상품·가격·시간 개입을 A/B 재실행할 수 있습니다. 제안, 가상 실행 차이, 실제 호텔의 인과효과는 별개입니다.
-- 저장된 A03 전략은 `RECOMMENDATION_HOLD`입니다. 일반 전략 API와 별도 평가용 입력 범위가 달라 저장 전략 Replay는 `REPLAY_MISS`가 남습니다. 같은 run의 전략 입력 연결은 지원하지만 이 사례의 새 A/B 성과는 검증되지 않았습니다.
-- 전체 Python 회귀에는 **기존 실패 10건**(5개 테스트 ID)이 남아 있고 신규 회귀 실패는 0건입니다(11/06 제출판의 12건 중 숨김 Fact ID 노출 방지·검증 도구 복원으로 2건 해결). 분류와 확인된 원인: ① 과거 기대값과 현행 계약 불일치 7건 — `test_visit_smoke_v1` 6건은 CL-42 엔진(visit-state-v2.2)에서 기록된 값이고 현행 엔진은 v2.3·외부 배달 기본 정책이 추가됨(배달 정책을 꺼도 금액이 다름), `test_m4_live_visit` 1건은 연구 기준(ae37786) 이후 상품 카탈로그 세분화·뷔페 조식 기본값·행동 변경. 두 기준 시점의 엔진은 이 저장소 이력에 없어 과거 재현은 불가하며, 같은 요청의 현행 엔진 불변식(일수·박수·단계·행사일, 영수증=L4~L1, 일별 합계, 정수 원화)은 `test_current_engine_invariants_1107.py`로 별도 검증. ② CD-15 봉인 SHA 불일치 2건(`test_opx_adapter`) — 이후 엔진 변경 3건(메뉴 다양성 근거·코스 수 미확인·외부 배달 동점 처리)과 프로필 확장. 현행 엔진은 계산을 거부(검증)하고, Git 이력의 봉인 파일로는 원래 테스트 5/5가 재현됨(CI 단계). ③ 과거 저장본 원장 차이 1건(`test_ledger_l5`) — 18개 하루의 차이를 장면 단위로 분해: 가격만 6, 행동만 2, 둘 다 10(`tools/ci/explain_ledger_gaps.py`). 가격 차이 39건은 모두 1인 기준 가격에서 등록 상품 주문 계약으로 바뀐 데서 생겼고, 행동 차이 중 현재 엔진에만 있는 유료 조식 6건은 조식 계약 정책(객실 계약이 포함하는 인원만 무료)에서, 저장본에만 있는 유료 야간 족욕 3건은 현재 엔진에서 포함 혜택(0원, PACKAGE_INCLUDED) 계약으로 처리되는 데서 생깁니다. 목록은 `tools/ci/known_failures.tsv`(테스트 ID·건수·원인), 근거는 `handover/profile45_review/ls_stabilization_1107/결과보고-최종-V19LS-제품승격-1107.md` 5절. 실패 원인은 **개별 테스트 결과를 재검토**하되, 과거 기대값·봉인 SHA·현재 원장 불변식을 임의 변경해 PASS로 처리하지 않습니다. 과거 입력 누락 SKIP은 PASS로 세지 않습니다.
-- 고객 Fact의 인과적 기여, 통계 prior의 효과, 사람 의미 승인, 실제 운영 효과, 메뉴의 최신 판매 조건은 미확정입니다. 28명 대규모 실행은 오래 걸릴 수 있으므로 고객을 나누어 실행합니다.
-- 신규 A14 예제는 사람 검수와 일부 Fact 단계 정리가 끝나지 않았으며 현재 실행 고객에 등록하지 않았습니다. [페르소나 절차](persona/README.md)를 따릅니다.
+| 위치 | 기능 |
+|---|---|
+| `tools/start_product.sh` · `tools/bootstrap_data.py` | 서버 시작·데이터 복원 |
+| `timeline/viewer/app.py` · `visit_execution.py` | 제품 API·실행 모드와 가용성 |
+| `timeline/experiments/persona_live/operator_choice/autonomy_v1/` | 행동 후보·LLM 판단·상태/기억·SKU/운영 검증 |
+| `timeline/viewer/static/` | 라이브러리·지도·행동근거·가상 매출·전략 UI |
+| `timeline/viewer/ledger_service.py` · `ledger_l5.py` | 주문·영수증·다층 가상 원장 |
+| `timeline/viewer/strategy_agent_service.py` | 개인·집단 전략 및 A/B 실행 계약 |
+| `tools/persona_pipeline.py` | 신규 작성자 프로필 준비·검증·등록 |
+| `timeline/viewer/tests/` | 회귀·계약 테스트 |
+
+신규 고객은 **원문 준비 → 추출 결과 생성 → 출처·사건·Fact 검증 → 사람 의미 검수 → 격리 등록 → 가상 방문 실행** 순서로 추가합니다. 세부 절차는 [페르소나 등록 안내](persona/README.md)를 따릅니다.
+
+문제가 발생하면 먼저 **실행한 Git 커밋, 선택한 모드, 입력 조건, 서버가 반환한 차단 사유, 원장 검증 결과**를 확인합니다. 디버그용 세부 기록은 로컬 검수 환경에서 보되 일반 제품 화면에 노출하지 않습니다.
+
+---
+
+이 문서는 제품을 실행·복원하기 위한 공개 기술 안내입니다. 실제 고객의 행동 정확도나 호텔 매출 효과를 인증하는 문서가 아닙니다.

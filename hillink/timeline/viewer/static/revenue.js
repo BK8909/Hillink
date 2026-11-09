@@ -67,7 +67,7 @@ function revRollDrillHTML(L) {
 }
 function revSetupControlsHTML() {
   const selected=REV.scope==='all'?new Set(REV.allIds):REV.selected;
-  return `<div class="rev-controls"><div class="rev-client-control"><label>고객 선택</label>${hlCustomerPickerHTML(REV.allIds,selected,'revenue',REV.pickerOpen)}</div><label>숙박 일정<select class="cf-input" id="revDuration">${[['day_visit','당일 방문 (0박)'],['stay_1','1박 2일'],['stay_2','2박 3일'],['stay_3','3박 4일']].map(([v,t])=>`<option value="${v}"${REV.duration===v?' selected':''}>${t}</option>`).join('')}</select></label><label>행사<select class="cf-input" id="revScenario"><option value="none"${REV.scenario==='none'?' selected':''}>행사 없음</option><option value="wine"${REV.scenario==='wine'?' selected':''}>와인페어 있음</option></select></label><button type="button" id="revRun" class="cf-btn cf-primary"${REV.busy||!revIds().length?' disabled':''}>${REV.busy?'예상 매출 계산 중...':'예상 매출 계산'}</button></div>`;
+  return `<div class="rev-controls"><div class="rev-client-control"><label>고객 선택</label>${hlCustomerPickerHTML(REV.allIds,selected,'revenue',REV.pickerOpen)}</div><label>숙박 일정<select class="cf-input" id="revDuration">${[['day_visit','당일 방문 (0박)'],['stay_1','1박 2일'],['stay_2','2박 3일'],['stay_3','3박 4일']].map(([v,t])=>`<option value="${v}"${REV.duration===v?' selected':''}>${t}</option>`).join('')}</select></label><label>기준 데이터<select class="cf-input" id="revReference">${REV_REFERENCE.map(([v,t])=>`<option value="${v}"${REV.referenceProfile===v?' selected':''}>${t}</option>`).join('')}</select></label><label>행동 사전정보<select class="cf-input" id="revPrior"><option value="OFF"${REV.prior==='OFF'?' selected':''}>끄기 (개인 근거만)</option><option value="HOTEL_PRIOR_V1"${REV.prior==='HOTEL_PRIOR_V1'?' selected':''}>켜기 · 연구 (규칙 엔진)</option></select></label><label>행사<select class="cf-input" id="revScenario"><option value="none"${REV.scenario==='none'?' selected':''}>행사 없음</option><option value="wine"${REV.scenario==='wine'?' selected':''}>와인페어 있음</option></select></label><button type="button" id="revRun" class="cf-btn cf-primary"${REV.busy||!revIds().length?' disabled':''}>${REV.busy?'예상 매출 계산 중...':'예상 매출 계산'}</button></div>`;
 }
 function revNewSetup() {
   const L=REV.ledger||REV.latest&&REV.latest.flow.ledger;if(L){REV.selected=new Set(Object.keys(L.receipts).filter(id=>REV.allIds.includes(id)));REV.duration=L.context.duration;REV.scenario=revScenarioOf(L.context);}
@@ -151,23 +151,152 @@ function revRoomSummary(roomRows,inRoomRows){
  if(inRoomRows.length)parts.push(part('룸서비스',inRoomRows));
  return parts.join(' · ')||'객실·룸서비스 거래 없음';
 }
-// Operator aggregate of the run (operating_reference.aggregate): breakfast covers and extra payment, with the best
-// available reference value. References are labelled by source class and never change an agent's choice.
+// Operator aggregate of the run (operating_reference.aggregate): breakfast covers, dinner where-eaten (external delivery,
+// room service, hotel restaurants), composition weights and the reference used. References are labelled by source class
+// and never change an agent's choice; weighted values are estimates for the stated guest mix, not ledger totals.
+const REV_REFERENCE=[['external','외부 연구 (공개 자료)'],['synthetic_delivery_high_v1','합성 A · 배달 많은 가상 호텔'],['synthetic_hotel_format_b_v1','합성 B · 호텔 실측 형식 시험'],['hotel','호텔 실측 파일 (서버 설정)']];
 const REV_OPS_STATUS={WITHIN_REFERENCE:'기준 범위 안',BELOW_REFERENCE:'기준보다 낮음 · 보정 검토',ABOVE_REFERENCE:'기준보다 높음 · 보정 검토',SAMPLE_TOO_SMALL:'표본이 작아 비교하지 않음',NO_REFERENCE:'기준값 없음(실측 입력 대기)',NOT_COMPARABLE:'지표 단위가 달라 비교하지 않음',CONTEXT_ONLY:'참고 정보',NOT_IN_RUN:'이 실행에 해당 없음'};
+const REV_VENUE_KO={PIZZA_HILL:'피자힐',GEUMRYONG:'금룡',MOEGI:'모에기',MYONGWOLGWAN:'명월관',ONDAL:'온달',THE_PAVILION:'더 파빌리온',THE_BUFFET:'더뷔페',ROOM_MEAL:'룸서비스',IRD:'룸서비스',DELVINO:'델비노',LE_PASSAGE:'르 파사쥬'};
+const REV_DINNER={EXTERNAL_DELIVERY:'외부 배달',HOTEL_RESTAURANT:'호텔 레스토랑',ROOM_SERVICE:'룸서비스',OUTSIDE_OR_OTHER:'기타',NO_DINNER_RECORDED:'저녁 기록 없음'};
+const REV_PRIOR_STATUS={APPLICABLE:'적용 가능',NO_COMPARABLE_STATISTIC:'비교 가능한 통계 없음 · 적용 안 함',RANGE_WITHOUT_POINT_VALUE_NOT_APPLIED:'범위값만 있어 적용 안 함'};
+function revOpsVal(c,v){return v==null?'—':c.value_kind==='krw'?rcMoney(v):c.value_kind==='rate'?String(v):Math.round(v*100)+'%';}
+function revPopulationHTML(o){
+  const p=o.population;if(!p)return '';const w=p.weights||{},e=p.estimates||{},m=e.metrics||{};
+  const pct=v=>v==null?'—':Math.round(v*100)+'%',row=(k,t,money)=>m[k]?`<tr><td>${t}</td><td>${money?rcMoney(Math.round(m[k].raw)):pct(m[k].raw)}</td><td>${m[k].weighted==null?'—':money?rcMoney(Math.round(m[k].weighted)):pct(m[k].weighted)}</td></tr>`:'';
+  const head=w.status&&w.status.startsWith('OK')?`구성 가중치 · ${esc((w.source_ko||[]).join(', '))} · 유효표본 ${w.effective_sample_size} / ${w.teams_weighted}팀 · 최대 가중치 ${w.max_weight}${w.capped?' (상한 적용)':''}${w.unsupported_segments&&w.unsupported_segments.length?` · 표본 없는 구간 ${esc(w.unsupported_segments.join(', '))}(${pct(w.target_share_not_represented)} 미반영)`:''}${w.status==='OK_LOW_EFFECTIVE_SAMPLE'?' · 유효표본이 작아 참고만':''}`:`구성 가중치 없음 · ${esc(w.reason||'')}`;
+  return `<details class="rev-ops-pop" data-rev-population><summary>집단 구성 보정 (가중 추정 · 원장 합계 아님)</summary><p class="rc-note">${head}</p>
+  <table class="rev-ops-table rev-ops-cmp"><thead><tr><th>지표</th><th>실행한 팀 그대로</th><th>기준 구성 가중</th></tr></thead><tbody>
+  ${row('delivery.evening_share','숙박 팀·저녁 중 외부 배달')}${row('dinner.restaurant_share','숙박 팀·저녁 중 호텔 레스토랑')}${row('dinner.room_service_share','숙박 팀·저녁 중 룸서비스')}${row('fnb.dinner_revenue_per_stay_team','숙박 팀당 내부 저녁 가상 매출',true)}</tbody></table>
+  <p class="rc-note">가중치는 고객 구성(일행 인원)만 맞춥니다. 배달 비율은 가중의 목표가 아니라 결과로 비교합니다. 개인 행동은 바뀌지 않습니다.</p></details>`;
+}
+// The run on screen: request, flow and ledger joined by the same run_id (never an older request).
+function revCurrentRunId(){
+  const L=REV.ledger;if(!L||!L.run_id||L.source!=='live_engine')return null;
+  // the flow from the customer screen (REV.latest) or the one computed on this screen (REV.flow), same run_id only
+  const same=f=>f&&f.ledger&&f.ledger.run_id===L.run_id;
+  return same(REV.latest&&REV.latest.flow)||same(REV.flow)?L.run_id:null;
+}
+async function revGroupReadiness(runId){
+  REV.groupReady={run_id:runId,loading:true};
+  try{const r=await fetch('/api/population/ab-readiness?run_id='+encodeURIComponent(runId),{cache:'no-cache'});const j=await r.json();
+    REV.groupReady=r.ok?{run_id:runId,...j}:{run_id:runId,available:false,message:j.error||'A/B 가능 여부를 확인하지 못했습니다.'};}
+  catch(e){REV.groupReady={run_id:runId,available:false,message:'A/B 가능 여부를 확인하지 못했습니다.'};}
+  if(revCurrentRunId()===runId)revRender();
+}
+function revGroupConditionsHTML(c){
+  if(!c)return '';
+  const dur=({day_visit:'당일 방문',stay_1:'1박 2일',stay_2:'2박 3일',stay_3:'3박 4일'})[c.duration]||c.duration,parts=[`${c.personas.length}팀`,dur,c.start_date||'방문일 미기록',`시드 ${c.seed}`,c.scenario||(c.event_mode==='wine'?'와인페어':'행사 없음')];
+  if(c.package_id)parts.push('객실 상품 '+c.package_id);if(c.visit_conditions&&c.visit_conditions.length)parts.push('고객별 방문 조건 유지');if(c.environment)parts.push('도착·날씨 조건 유지');
+  return `<p class="rev-ab-conditions" data-rev-ab-conditions>A·B 공통 · ${esc(parts.join(' · '))}</p>`;
+}
+// Operator A/B on the run on screen: any registered dining venue, its catalog-permitted mains (all or one), or an
+// earlier opening where the engine supports it. Rules runs re-run the rules engine; AI runs re-judge B live.
+const REV_AB_MODE={rules:'규칙 계산',replay:'저장된 AI 판단',live:'실시간 AI 판단'};
+const REV_AB_LIVE={LIVE_APPROVAL_REQUIRED:'실시간 호출 승인 없이 시작된 서버',EXTERNAL_CALL_NOT_AUTHORIZED:'외부 호출 꺼짐',CALL_LIMIT:'승인 호출 한도 도달',USD_LIMIT:'승인 비용 한도 도달',API_CREDENTIAL_MISSING:'API 인증 정보 없음',EXISTING_SHARED_BUDGET_REQUIRED:'비용 원장 미연결',APPROVED_LIMIT_REQUIRED:'호출 상한 미설정'};
+function revGroupLever(ready){
+  const lv=(ready&&ready.levers)||[],L=REV.groupLever=REV.groupLever||{venue:'PIZZA_HILL',kind:'discount',sku:'',open:''};
+  let v=lv.find(x=>x.venue_id===L.venue)||lv.find(x=>x.discountable.length);if(v)L.venue=v.venue_id;
+  if(L.kind==='opening'&&!(v&&v.opening))L.kind='discount';
+  if(v&&L.kind==='opening'&&!v.opening.options.includes(L.open))L.open=v.opening.options.at(-1)||'';
+  if(v&&L.sku&&!v.discountable.some(x=>x.sku_id===L.sku))L.sku='';
+  return {L,v,lv};
+}
+function revGroupUse(venue){   // what the customers on screen actually did at this venue (ledger rows of this run)
+  const rows=Object.values((REV.ledger&&REV.ledger.receipts)||{}).flatMap(c=>c.rows||[]).filter(r=>r.venue_id===venue);
+  return {teams:new Set(rows.map(r=>r.customer_id)).size,paid:rows.reduce((n,r)=>n+(r.paid_krw||0),0)};
+}
+function revGroupABHTML(){
+  const runId=revCurrentRunId(),ready=REV.groupReady&&REV.groupReady.run_id===runId?REV.groupReady:null;
+  if(runId&&!ready&&!REV.groupBusy)setTimeout(()=>revGroupReadiness(runId),0);
+  const g=REV.groupAB&&REV.groupAB.base_run_id===runId?REV.groupAB:null,err=REV.groupErr&&REV.groupErrRun===runId?REV.groupErr:null;
+  const c=ready&&ready.conditions,{L,v,lv}=revGroupLever(ready),VK=x=>REV_VENUE_KO[x]||x;
+  const leverOk=v&&(L.kind==='opening'?!!v.opening:v.discountable.length>0);
+  const can=!!(ready&&ready.available)&&!REV.groupBusy&&leverOk;
+  const live=c&&c.judgment!=='rules';
+  const state=!runId?{kind:'off',text:'현재 화면의 집계에 연결된 실행 조건이 없습니다. 고객 흐름에서 방문을 생성하면 이 실행으로 비교합니다.'}
+    :!ready||ready.loading?{kind:'wait',text:'이 실행으로 A/B를 계산할 수 있는지 확인 중…'}
+    :REV.groupBusy?{kind:'run',text:live?'B 조건으로 AI가 새로 판단하는 중… 실제 호출(승인 한도 안)':'B 조건을 같은 요청으로 계산하는 중… 규칙 계산 · 유료 호출 없음'}
+    :!ready.available?{kind:'off',text:ready.message+(c&&c.live_reason?` (${REV_AB_LIVE[c.live_reason]||c.live_reason})`:'')}
+    :!leverOk?{kind:'off',text:`${VK(L.venue)}: ${L.kind==='opening'?'영업 시작 시각 변경은 이 업장에 연결되지 않았습니다.':'할인 가능한 등록 메인 상품이 없습니다.'} 다른 업장이나 변수를 선택해 주세요.`}
+    :{kind:'ok',text:'A = 화면의 실행 그대로 · B = 같은 고객·기간·날짜·시드·방문 조건에 아래 운영 변수 하나만 바꿈'};
+  const use=v?revGroupUse(v.venue_id):null;
+  const lock=can||(ready&&ready.available&&!REV.groupBusy)?'':' disabled';
+  const venueSel=`<label class="rev-ab-field" for="revGroupVenue">대상 업장<select class="cf-input" id="revGroupVenue"${lock}>${lv.map(x=>`<option value="${esc(x.venue_id)}"${x.venue_id===L.venue?' selected':''}>${esc(VK(x.venue_id))} · ${x.discountable.length?`할인 가능 메인 ${x.discountable.length}개`:'할인 불가'}</option>`).join('')}</select></label>`;
+  const kindSel=`<label class="rev-ab-field" for="revGroupKind">운영 변수<select class="cf-input" id="revGroupKind"${lock}><option value="discount"${L.kind==='discount'?' selected':''}>메인 메뉴 할인</option>${v&&v.opening?`<option value="opening"${L.kind==='opening'?' selected':''}>저녁 영업 시작 앞당기기 (현재 ${esc(v.opening.official)})</option>`:''}</select></label>`;
+  const valueSel=L.kind==='opening'&&v&&v.opening?`<label class="rev-ab-field" for="revGroupOpen">시작 시각<select class="cf-input" id="revGroupOpen"${lock}>${v.opening.options.map(t=>`<option${t===L.open?' selected':''}>${t}</option>`).join('')}</select></label>`
+    :`<label class="rev-ab-field" for="revGroupPct">할인율<select class="cf-input" id="revGroupPct"${lock}>${[10,20,30].map(x=>`<option value="${x}"${REV.groupPct===x?' selected':''}>${x}%</option>`).join('')}</select></label><label class="rev-ab-field rev-ab-wide" for="revGroupSku">상품 범위<select class="cf-input" id="revGroupSku"${lock}><option value="">메인 전체${v?` ${v.discountable.length}개`:''}</option>${(v?v.discountable:[]).map(x=>`<option value="${esc(x.sku_id)}"${x.sku_id===L.sku?' selected':''}>${esc(x.label)} · ${rcMoney(x.unit_price_krw)}</option>`).join('')}</select></label>`;
+  const how=c?`<ul class="rev-ab-check" data-rev-ab-check><li><b>판단 방식</b>${esc(REV_AB_MODE[c.judgment]||c.judgment)} → B는 ${live?`바뀐 조건으로 같은 기준의 AI가 새로 판단 · 예상 호출 약 ${c.estimated_live_calls}회 (저장 응답은 재생하지 않음)`:'같은 규칙 엔진으로 계산 · 유료 호출 없음'}</li><li><b>현재 이용</b>${use?`${esc(VK(L.venue))} ${use.teams}팀 · ${rcMoney(use.paid)} (이 실행의 원장)`:'—'}</li><li><b>가격·계약</b>호텔 상품 목록의 등록 가격과 할인 허용 상품만 사용 · 예약·영업시간은 엔진의 기존 운영 계약 그대로</li></ul>`:'';
+  const result=err?`<p class="rev-ab-error" role="alert">${esc(err)}</p>`:!g?'':(g.status!=='DONE'||g.ab.status!=='COMPARABLE_SIMULATION_PAIR')?`<p class="rev-ab-error" role="alert">비교할 수 없는 실행입니다 · ${esc(g.B||(g.ab&&g.ab.reasons||[]).join(', ')||g.status)}</p>`:revGroupResultHTML(g);
+  return `<section class="rev-console-panel rev-ab-card" data-rev-ab-card><div class="rev-console-heading"><h3>운영 A/B · 업장·상품 조건 실험</h3><small>${live?'AI 새 판단':'규칙 엔진'} · 가상 실행 · 실측 아님</small></div>
+  <div class="rev-ab-controls">${venueSel}${kindSel}${valueSel}<button type="button" class="cf-btn cf-primary rev-ab-run" data-rev-group-ab${can?'':' disabled'}>${REV.groupBusy?'실행 중…':'이 실행으로 A/B 계산'}</button></div>
+  <p class="rev-ab-state" data-rev-ab-state="${state.kind}" role="status">${esc(state.text)}</p>${how}${c?revGroupConditionsHTML(c):''}${result}</section>`;
+}
+function revGroupResultHTML(g){
+  const ab=g.ab,t=g.target||{},name=id=>typeof dno==='function'?dno(id):id,VK=x=>REV_VENUE_KO[x]||x,sign=n=>(n>0?'+':'')+rcMoney(n);
+  const lever=g.lever.kind==='VENUE_OPENING_EARLIER'?`${VK(g.lever.venue_id)} 저녁 영업 ${g.lever.official} → ${g.lever.open}`:`${VK(g.lever.venue_id)} 메인 ${g.lever.percent}% 할인 (${g.lever.sku_count}개 상품)`;
+  const people=ids=>(ids||[]).map(name).join(' · ')||'없음';
+  const kpi=`<div class="rev-ab-kpis"><div><small>목표 업장 이용</small><b>${t.teams?t.teams.A:0} → ${t.teams?t.teams.B:0}팀</b></div><div><small>새로 이용</small><b>${(t.entering||[]).length}팀</b></div><div><small>이용 중단</small><b>${(t.leaving||[]).length}팀</b></div><div><small>메뉴만 변경</small><b>${(t.menu_changed||[]).length}팀</b></div><div><small>목표 업장 매출</small><b>${rcMoney(t.revenue?t.revenue.A:0)} → ${rcMoney(t.revenue?t.revenue.B:0)}</b></div><div><small>호텔 전체 순변화</small><b>${sign(ab.hotel_total_krw.delta)}</b></div></div>`;
+  const ven=(t.venues||[]).filter(x=>x.delta).map(x=>`<tr><td>${esc(VK(x.venue_id||x.venue)===(x.venue_id||x.venue)?x.venue:VK(x.venue_id))}</td><td>${rcMoney(x.A)}</td><td>${rcMoney(x.B)}</td><td>${sign(x.delta)}</td></tr>`).join('');
+  const meals=(t.meal_changes||[]).map(r=>`<li data-group-mover="${esc(r.customer_id)}"><b>${esc(name(r.customer_id))}</b> ${esc(r.date)} ${esc(({breakfast:'조식',lunch:'점심',dinner:'저녁'})[r.meal]||r.meal)} · ${esc(r.before)}${r.before_venue?` (${esc(VK(r.before_venue))})`:''} → ${esc(r.after)}${r.after_venue?` (${esc(VK(r.after_venue))})`:''} <small>${rcMoney(r.A)} → ${rcMoney(r.B)}</small></li>`).join('')||'<li>식사 선택이 바뀐 고객 없음</li>';
+  return `<div data-rev-group-result><p class="rev-ab-result-head">A = 화면의 실행 그대로 · B = 같은 요청 + ${esc(lever)} · ${g.spec.personas.length}팀 · ${g.mode==='rules'?'규칙 계산':`AI 새 판단 ${g.b_live_calls}회 호출`} · 원장 검산 A ${g.ledger_checks&&g.ledger_checks.A?'일치':'불일치'} · B ${g.ledger_checks&&g.ledger_checks.B?'일치':'불일치'}</p>
+  ${kpi}<p class="rc-note">새로 이용: ${esc(people(t.entering))} · 이용 중단: ${esc(people(t.leaving))} · 메뉴만 변경: ${esc(people(t.menu_changed))}${t.discount_krw?` · B의 할인 금액 ${rcMoney(t.discount_krw)}`:''}</p>
+  <h4>고객별 식사 선택 변화</h4><ul class="rev-group-list">${meals}</ul>
+  ${ven?`<table class="rev-ops-table rev-ops-cmp"><thead><tr><th>업장별 가상 매출 변화</th><th>A</th><th>B</th><th>차이</th></tr></thead><tbody>${ven}</tbody></table>`:'<p>업장별 매출 변화 없음</p>'}
+  ${revGroupDinnerHTML(ab)}
+  <p>호텔 전체 가상 매출(원장) ${rcMoney(ab.hotel_total_krw.A)} → ${rcMoney(ab.hotel_total_krw.B)} (${sign(ab.hotel_total_krw.delta)}) · 외부 배달 ${ab.external_delivery.A} → ${ab.external_delivery.B}건(금액 미상 · 호텔 매출 아님)</p>
+  <p class="rc-note">${esc(g.limits.join(' · '))}</p></div>`;
+}
+// Stay evenings: delivery ↔ hotel moves and where the hotel total change comes from (engine scores shown for rules runs only).
+function revGroupDinnerHTML(ab){
+  const name=id=>typeof dno==='function'?dno(id):id,d=ab.revenue_decomposition;
+  const mv=(ab.delivery_to_hotel||[]).map(r=>`<li data-group-mover="${esc(r.customer_id)}"><b>${esc(name(r.customer_id))}</b> ${esc(r.date)} · 외부 배달 → ${esc(r.after_label||r.after_venue)} ${rcMoney(r.after_paid_krw)}${r.after_choice_score!=null?` <small>선택 점수 ${r.after_choice_score} &gt; 배달 ${r.delivery_score_after??'—'} · 사전정보 ${r.prior_applied?'적용':'미적용'}</small>`:''}</li>`).join('');
+  const st=(ab.stayed_with_delivery||[]).map(r=>`<li><b>${esc(name(r.customer_id))}</b> ${esc(r.date)} · 배달 유지 <small>남은 점수 차 ${r.remaining_gap??'—'} · 가장 높은 호텔 저녁 ${esc(r.best_hotel_option||'—')}</small></li>`).join('');
+  if(!mv&&!st&&!d)return '';
+  return `<details class="rev-ab-dinner"${mv||st?' open':''}><summary>숙박 저녁의 외부 배달 ↔ 호텔 이동과 매출 분해</summary><h4>외부 배달 → 호텔 업장 이동 ${(ab.delivery_to_hotel||[]).length}건</h4><ul class="rev-group-list">${mv||'<li>이동한 고객 없음</li>'}</ul>${st?`<h4>배달을 유지한 고객</h4><ul class="rev-group-list">${st}</ul>`:''}
+  ${d?`<table class="rev-ops-table rev-ops-kv" data-rev-group-decomposition><tbody>
+  <tr><th>배달에서 옮겨 온 고객의 새 주문</th><td>${rcMoney(d.new_spend_from_delivery_movers)}</td></tr>
+  <tr><th>기존 고객의 같은 주문 할인 효과</th><td>${rcMoney(d.same_venue_same_order_price_effect)}</td></tr>
+  <tr><th>같은 업장 주문 변경</th><td>${rcMoney(d.same_venue_order_changed)}</td></tr>
+  <tr><th>다른 업장으로 이동</th><td>${rcMoney(d.venue_switch)}</td></tr>
+  <tr><th>호텔 → 배달 이탈</th><td>${rcMoney(d.lost_to_delivery)}</td></tr>
+  <tr><th>저녁 이후 다른 원장 행 변화</th><td>${rcMoney(d.other_rows_after_dinner_change)}</td></tr>
+  <tr><th>호텔 전체 순변화</th><td><b>${rcMoney(d.hotel_total)}</b></td></tr></tbody></table>`:''}</details>`;
+}
+async function revGroupAB(){
+  const runId=revCurrentRunId();if(!runId||REV.groupBusy)return;
+  const L=REV.groupLever||{venue:'PIZZA_HILL',kind:'discount'};
+  const lever=L.kind==='opening'?{kind:'opening',venue_id:L.venue,open:L.open}:{kind:'discount',venue_id:L.venue,percent:REV.groupPct,...(L.sku?{sku_ids:[L.sku]}:{})};
+  REV.groupBusy=true;REV.groupErr=null;REV.groupErrRun=null;REV.groupAB=null;revRender();
+  try{
+    const job=await api('/api/population/experiment',{base_run_id:runId,lever});
+    let row=job;for(let i=0;i<900&&!['DONE','ERROR','CANCELLED'].includes(row.status);i++){await new Promise(r=>setTimeout(r,2000));row=await api('/api/agent/jobs?id='+encodeURIComponent(job.job_id));}
+    if(row.status!=='DONE')throw new Error('A/B 계산을 완료하지 못했습니다 ('+row.status+')');
+    REV.groupAB=row.result;
+  }catch(e){REV.groupErr='A/B 실행 실패 — '+(e.message||String(e));REV.groupErrRun=runId;}
+  REV.groupBusy=false;revRender();
+}
 function revOperatingHTML(o){
   if(!o||!o.breakfast)return '';
-  const b=o.breakfast,pct=v=>v==null?'—':Math.round(v*100)+'%',ref=r=>!r?'—':`${r.low!=null?pct(r.low)+'~'+pct(r.high):pct(r.value)} · ${esc(r.source_ko)}`;
+  const b=o.breakfast,pct=v=>v==null?'—':Math.round(v*100)+'%',ref=r=>!r?'—':`${r.low!=null?pct(r.low)+'~'+pct(r.high):r.value==null?'수치 없음':pct(r.value)} · ${esc(r.source_ko)}${r.synthetic_label?' · '+esc(r.synthetic_label):''}`;
   const reasons=Object.entries(b.skip_reasons||{}).map(([k,n])=>`${esc(k)} ${n}`).join(' · ')||'없음';
   const rows=(o.comparison||[]).filter(c=>c.simulated!=null||c.reference);
+  const d=o.dinner||{by_kind:{}},kinds=Object.keys(REV_DINNER).filter(x=>d.by_kind[x]).map(x=>`${REV_DINNER[x]} ${d.by_kind[x]}`).join(' · ')||'숙박 저녁 없음';
+  const notes=(o.sample_notes||[]).map(n=>`<li>${esc(n.split(': ').slice(1).join(': ')||n)}</li>`).join('');
+  const refSets=((o.reference||{}).files||[]).map(f=>esc(f.source_set||f.name)).join(' + ')||'기준 데이터 없음';
   return `<section class="rev-console-panel rev-board-ops" data-rev-operating><div class="rev-console-heading"><h3>운영 집계 · 조식 식수와 시설 이용</h3><small>시뮬레이션 집계 · 실측 아님</small></div>
-  <p>참여 ${o.teams}팀 · ${o.persons}명 · 숙박 아침 ${o.team_mornings}팀·아침</p>
+  <p>참여 ${o.teams}팀 · ${o.persons}명 · 숙박 아침 ${o.team_mornings}팀·아침 · 숙박 저녁 ${d.evenings||0}팀·저녁 · 기준 데이터 ${refSets}</p>
+  ${notes?`<ul class="rev-ops-notes" data-rev-sample-notes>${notes}</ul>`:''}
   <table class="rev-ops-table rev-ops-kv"><tbody><tr><th>조식 포함 권리</th><td>${b.entitled}명·아침${b.entitlement_unknown_mornings?` (권리 미확인 ${b.entitlement_unknown_mornings}팀·아침)`:''}</td></tr>
   <tr><th>실제 조식 이용</th><td>${b.diners}명·아침 = 포함 혜택 ${b.included_used} + 추가 결제 ${b.paid_diners}${b.diners_split_unknown?` + 구분 미확인 ${b.diners_split_unknown}`:''}</td></tr>
   <tr><th>포함 혜택 미사용</th><td>${b.unused_entitlement}명·아침</td></tr>
   <tr><th>조식 추가 결제 매출</th><td>${rcMoney(b.paid_revenue_krw)} <small>포함 혜택은 객실 패키지에 포함 · 별도 매출로 더하지 않음</small></td></tr>
-  <tr><th>조식을 먹지 않은 아침</th><td>${b.skipped_team_mornings}팀·아침 · 사유 ${reasons}</td></tr></tbody></table>
-  <details><summary>기준값과 비교 (${rows.length}개 지표)</summary><table class="rev-ops-table rev-ops-cmp"><thead><tr><th>지표</th><th>이 실행</th><th>기준값</th><th>상태</th></tr></thead><tbody>${rows.map(c=>`<tr data-ops-metric="${esc(c.metric_id)}"><td>${esc(c.name_ko)}</td><td>${c.metric_id.endsWith('per_room_night')?(c.simulated??'—'):pct(c.simulated)}</td><td>${ref(c.reference)}${c.reference?.url?` <a href="${esc(c.reference.url)}" target="_blank" rel="noopener">출처</a>`:''}</td><td>${esc(REV_OPS_STATUS[c.status]||c.status)}</td></tr>`).join('')}</tbody></table>
-  <p class="rc-note">외부 연구 값은 다른 호텔·설문 자료로 워커힐 실측이 아닙니다. 호텔 실측값을 넣으면 같은 지표에서 자동으로 우선합니다. 기준값은 집계 비교와 보정 검토에만 쓰며 고객의 개별 선택을 바꾸지 않습니다.</p></details></section>`;
+  <tr><th>조식을 먹지 않은 아침</th><td>${b.skipped_team_mornings}팀·아침 · 사유 ${reasons}</td></tr>
+  <tr><th>저녁 해결 방식</th><td data-rev-dinner-kinds>${kinds} <small>외부 배달은 금액 미상 · 호텔 매출 아님</small></td></tr>
+  <tr><th>호텔 내부 저녁 가상 매출</th><td>${rcMoney(d.in_hotel_dinner_revenue_krw||0)}</td></tr></tbody></table>
+  ${revPopulationHTML(o)}
+  <details><summary>기준값과 비교 (${rows.length}개 지표)</summary><table class="rev-ops-table rev-ops-cmp"><thead><tr><th>지표</th><th>이 실행</th><th>기준값</th><th>상태</th></tr></thead><tbody>${rows.map(c=>`<tr data-ops-metric="${esc(c.metric_id)}"><td>${esc(c.name_ko)}</td><td>${revOpsVal(c,c.simulated)}</td><td>${ref(c.reference)}${c.reference?.url?` <a href="${esc(c.reference.url)}" target="_blank" rel="noopener">출처</a>`:''}</td><td>${esc(REV_OPS_STATUS[c.status]||c.status)}</td></tr>`).join('')}</tbody></table>
+  <p class="rc-note">외부 연구 값은 다른 호텔·설문 자료로 워커힐 실측이 아닙니다. 합성 값은 개발 검증용 가상 호텔입니다. 호텔 실측값을 넣으면 같은 지표에서 자동으로 우선합니다. 기준값은 집계 비교와 보정 검토에만 쓰며, 행동 사전정보를 켠 연구 실행에서만 개인 근거가 없는 고객의 배달 후보 점수에 기록과 함께 반영됩니다.</p></details>
+</section>`;
 }
 function revControlHTML(L) {
   const dates=L.visit?L.visit.days.map(d=>d.date):[L.context.start_date].filter(Boolean);
@@ -196,6 +325,7 @@ function revControlHTML(L) {
   <div class="rev-board-middle"><section class="rev-console-panel rev-board-flow"><div class="rev-console-heading"><h3>업장별 소비 비교</h3><button class="cf-link" data-rev-expand="venues">전체 보기 ↗</button></div>${revVenueAmountChart(L)}</section><section class="rev-console-panel rev-board-choices">${revOperatorSummaryHTML(L)}</section></div>
   <div class="rev-board-bottom"><section class="rev-console-panel rev-board-time"><div class="rev-console-heading"><div class="rev-roll-tabs" aria-label="분석 보기"><button class="cf-link" data-rev-analysis-view="flow" aria-pressed="${REV.analysisView!=='time'}">L5 → L1 집계 흐름</button><button class="cf-link" data-rev-analysis-view="time" aria-pressed="${REV.analysisView==='time'}">시간대별 활동·소비</button></div>${REV.analysisView!=='time'?'<button class="cf-link" data-rev-expand="flow">확장 보기 ↗</button>':''}</div>${REV.analysisView==='time'?`<div class="rev-console-heading"><select id="revOpsDate" aria-label="활동 일자">${dates.map(d=>`<option${d===date?' selected':''}>${d}</option>`).join('')}</select></div><div class="rev-time-legend"><span>● ROOM</span><span>● F&B</span><span>● 레저</span><small>막대 원 · 선 활동 건수</small></div>${revSpendChartHTML(bins,hour)}<div class="rev-hour-context">${hour}시 · 활동 ${selected.actions.length}건 · 유료 ${rcMoney(selected.paid)}${REV.hourFilter?' · 오른쪽 거래 필터 적용':''}</div>` : revRollupHTML(L)}</section><aside class="rev-console-panel rev-board-ledger">${revTransactionPanelHTML(L)}</aside></div>
   ${revOperatingHTML(typeof REV!=='undefined'&&REV.flow?(REV.flow.operating_summary||REV.flow.result?.operating_summary):null)}
+  ${revGroupABHTML()}
   <footer class="rev-board-footer"><span>고객 행동 시뮬레이션에 따른 가상 매출이며, 실제 매출 예측값은 아닙니다. ${L.totals.net_revenue_krw==null?'결제액 기준 · 순매출 미산정':''}</span><button class="cf-link" data-rev-all-transactions>상세 원장·가격 근거 ↗</button></footer>${revBoardOverlayHTML(L)}${REV.setupOpen?`<div class="rev-overlay" role="dialog" aria-modal="true" aria-label="새 계산 설정">${revSetupPanelHTML()}</div>`:''}</section>`;
 }
 function revBoardOverlayHTML(L) {
@@ -229,7 +359,8 @@ async function revUXOpenEvidence(rowId) {
 const REV = { ids: [], allIds: [], selected: new Set(), scope: "selected", latest: null, pendingDemo: null, enteredLatest: null, completedKey: null,
   duration: "day_visit", scenario: "none", search: "", pickerOpen: false, flow: null, baseline: null, ledger: null,
   comparison: null, abPair: null, busy: false, err: null, department: null, venue: null, product: null, customer: null,
-  amountBars: false, token: 0, filterToken: 0, completedScenario: null };
+  amountBars: false, token: 0, filterToken: 0, completedScenario: null,
+  referenceProfile: "external", prior: "OFF", groupAB: null, groupBusy: false, groupErr: null, groupErrRun: null, groupReady: null, groupPct: 20 };
 const REV_SCENARIOS = { none: "행사 없음", wine: "와인페어 있음", wine_fair_1300: "와인페어 13시 시작", pizzahill_full: "피자힐 이용 조건 변경", pool_check: "수영장 점검" };
 function revRunContextHTML(L) {
   if (!L) return "";
@@ -329,6 +460,8 @@ function revRequest(kind) {
     if(source.simulation_mode)request.simulation_mode=source.simulation_mode;
   }
   if (REV.scope === "recent" && source.package_id) request.package_id = source.package_id;
+  if (REV.referenceProfile !== "external") request.reference_profile = REV.referenceProfile;
+  if (REV.prior !== "OFF") { request.behaviour_prior = REV.prior; request.behavior_engine = "m4_c01"; request.catalog_policy = "C01_HOTEL_CATALOG_V1"; request.simulation_mode = "independent"; }
   return request;
 }
 async function revUseRecent() {
@@ -574,6 +707,15 @@ function revWire() {
   const run = root.querySelector("#revRun"); if (run) run.onclick = revRun;
   const duration = root.querySelector("#revDuration"); if (duration) duration.onchange = () => { REV.duration = duration.value; revRender(); };
   const scenario = root.querySelector("#revScenario"); if (scenario) scenario.onchange = () => { REV.scenario = scenario.value; revRender(); };
+  const refSel = root.querySelector("#revReference"); if (refSel) refSel.onchange = () => { REV.referenceProfile = refSel.value; revRender(); };
+  const priorSel = root.querySelector("#revPrior"); if (priorSel) priorSel.onchange = () => { REV.prior = priorSel.value; revRender(); };
+  const gpct = root.querySelector("#revGroupPct"); if (gpct) gpct.onchange = () => { REV.groupPct = Number(gpct.value); };
+  const gL = () => (REV.groupLever = REV.groupLever || { venue: 'PIZZA_HILL', kind: 'discount', sku: '', open: '' });
+  const gv = root.querySelector("#revGroupVenue"); if (gv) gv.onchange = () => { Object.assign(gL(), { venue: gv.value, sku: '' }); REV.groupAB = null; revRender(); };
+  const gk = root.querySelector("#revGroupKind"); if (gk) gk.onchange = () => { gL().kind = gk.value; REV.groupAB = null; revRender(); };
+  const gs = root.querySelector("#revGroupSku"); if (gs) gs.onchange = () => { gL().sku = gs.value; };
+  const go = root.querySelector("#revGroupOpen"); if (go) go.onchange = () => { gL().open = go.value; };
+  const grun = root.querySelector("[data-rev-group-ab]"); if (grun) grun.onclick = revGroupAB;
   root.querySelectorAll("[data-rev-dept]").forEach(b => b.onclick = () => { REV.department = b.dataset.revDept || null; REV.venue = REV.product = REV.customer = null; revRender(); });
   root.querySelectorAll("[data-rev-venue]").forEach(b => b.onclick = () => { REV.venue = b.dataset.revVenue; REV.product = REV.customer = null;REV.rollRow=null;REV.detailPanel='venue';revRender(); });
   root.querySelectorAll("[data-rev-product]").forEach(b => b.onclick = () => { REV.product = b.dataset.revProduct; REV.customer = null; revRender(); });
@@ -599,7 +741,7 @@ async function revShowCustomer(pid) {
   AG.runs.forEach(R => { R._mode = "agents"; R._auto = true; R.customers.forEach(c => { c.vc = agVcOf(r.visits[c.persona_id]); }); if (R._before) { R._before._mode = "agents"; } });
   AG.ti = Math.max(0, AG.runs.findIndex(R => R.customers.some(c => c.persona_id === pid))); AG.res = AG.runs[AG.ti];
   RC.comparison = REV.comparison;
-  AG.flow = { result: structuredClone(REV.flow), request: REV.latest&&REV.latest.flow.ledger.run_id===r.ledger.run_id?structuredClone(REV.latest.request):{ ...structuredClone(r.ledger.context), personas: Object.keys(r.plans), mode: Object.keys(r.plans).length > 1 ? "many" : "one" }, ledger: r.ledger, stories: r.stories || null, engine: r.engine, intervention: r.intervention, applied: r.levers_applied || [], skipped: r.levers_not_applied || [], notices: r.notices || [], sha: r.inputs_sha };
+  AG.flow = { result: structuredClone(REV.flow), request: REV.latest&&REV.latest.flow.ledger.run_id===r.ledger.run_id?structuredClone(REV.latest.request):REV.flow.request?structuredClone(REV.flow.request):{ ...structuredClone(r.ledger.context), personas: Object.keys(r.plans), mode: Object.keys(r.plans).length > 1 ? "many" : "one" }, ledger: r.ledger, stories: r.stories || null, engine: r.engine, intervention: r.intervention, applied: r.levers_applied || [], skipped: r.levers_not_applied || [], notices: r.notices || [], sha: r.inputs_sha };
   AG.keep.agents = { runs: AG.runs, sel: pid, plans: AG.plans, visits: AG.visits, flow: AG.flow };
   agLeft(); agPlanHint(); agShow(false);
 }

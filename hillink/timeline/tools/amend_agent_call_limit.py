@@ -12,11 +12,13 @@ import os
 from pathlib import Path
 import time
 
+MAX_APPROVABLE_CALLS = 5000   # 2026-11-08 23:44 user approval: 4,500 -> 5,000 (USD20 unchanged; study 2,400 / US$5) · before: same ceiling as agent_provider.MAX_APPROVABLE_CALLS (2026-11-08 13:19 directive: 2,620 -> 4,500; USD20 unchanged)
+
 
 def amend(path, backup, expected_sha256, max_calls, approval_reference):
     path, backup = Path(path), Path(backup)
     if (not approval_reference.strip() or type(max_calls) is not int
-            or not 400 < max_calls <= 2500):
+            or not 400 < max_calls <= MAX_APPROVABLE_CALLS):
         raise ValueError('APPROVED_CALL_LIMIT_REQUIRED')
     with path.open('r+', encoding='utf-8') as stream:
         fcntl.flock(stream, fcntl.LOCK_EX)

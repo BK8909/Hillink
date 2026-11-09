@@ -15,7 +15,7 @@
        "intervention":"none|wine_fair_1300|pizzahill_full|pool_check", "product_levers":{...}, "observe":"day|...", "seed":int}
 출력: {"engine", "mode", "visits", "runs", "plans", "stories"?, "intervention", "notices", "levers_applied", "levers_not_applied", "inputs_sha"}
 """
-import copy, hashlib, json, re, sys
+import copy, hashlib, json, os, re, sys
 from datetime import date as _date
 from pathlib import Path
 
@@ -366,6 +366,15 @@ INDIRECT_KEYS = {'food', 'space', 'value_check', 'benefit', 'novelty', 'premium'
 
 def main():
     q = json.loads(sys.stdin.read() or "{}")
+    if q.get("hybrid_policy"):
+        # an improved selectable policy is a set of engine settings: applied to this one-request process only
+        from operator_choice.autonomy_v1 import autonomous_agent as _AA
+        env = _AA.policy_environment(q["hybrid_policy"], dict(os.environ))
+        if env is not None and env != dict(os.environ):
+            for k in [k for k in os.environ if k.startswith("HILLINK_RESEARCH_")]: del os.environ[k]
+            os.environ.update({k: v for k, v in env.items() if k.startswith("HILLINK_RESEARCH_")})
+    if q.get("behaviour_prior"):   # research prior resolved and validated by visit_run; process-local
+        os.environ["HILLINK_BEHAVIOUR_PRIOR_JSON"] = json.dumps(q["behaviour_prior"], ensure_ascii=False)
     from operator_choice.operator_world_v1_1 import isolated_registry as IR
     allowed = IR.allowed_personas(AD.DEMO)
     ids = [p for p in (q.get("personas") or []) if p in allowed]

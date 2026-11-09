@@ -123,3 +123,15 @@ test('a breakfast record with partial state shows only the recorded fields (no b
  const full={...scene.basis.autonomous_decision,input_context:{visit:{party_size:3},state:{fatigue_scale:{value:0.4,rest_limit:2,ratio_percent:20,level:'여유'},today_remaining:{dinner_resolved:false,open_meal_options:8,open_activity_options:6,day_end:'23:00'}}}};
  assert.match(V.panel({basis:{autonomous_decision:full}}).replace(/<[^>]+>/g,' ').replace(/\s+/g,' '),/피로 0.4 · 휴식 한도 2의 20% \(여유\) · 저녁 미해결 · 남은 식사 후보 8개 · 활동 후보 6개 · 방문 종료 23:00/);
 });
+
+test('candidate ids in a recorded comparison are shown with the candidate label; the stored answer is unchanged',()=>{
+ const d={policy:'V7',execution_state:'EXECUTED',candidate_count:2,price_score_rerank:false,
+  input_context:{visit:{date:'2026-11-07'},state:{time:'19:33'},facts:[],products:[],actions:[{action_id:'room_rest',label:'객실 휴식'},{action_id:'room_rest_long',label:'객실에서 조용히 저녁 보내기'},{action_id:'end_day_in_room',label:'취침 · 오늘을 마치고 잠들기'}]},
+  selected_plan:{action_id:'room_rest_long',decision_summary:'쉬었다가 다시 판단',why_not_other_plans:'end_day_in_room: 지금 취침할 필요는 없습니다. room_rest보다 길게 쉽니다.'},
+  attempts:[{provider:{execution:'LIVE_RESPONSES'},answer:{selected_index:0,plans:[{action_id:'room_rest_long'},{action_id:'end_day_in_room',decision_summary:'취침'}]}}]};
+ const scene={basis:{autonomous_decision:d}},before=JSON.stringify(scene),html=V.panel(scene);
+ assert.match(html,/취침 · 오늘을 마치고 잠들기: 지금 취침할 필요는 없습니다/);
+ assert.doesNotMatch(html,/end_day_in_room|room_rest|_long/);assert.match(html,/객실 휴식보다 길게/);
+ const review=V.panel({...scene,recorded_review:null});assert.doesNotMatch(review,/객실 휴식_long/);
+ assert.equal(JSON.stringify(scene),before);
+});

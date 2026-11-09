@@ -10,6 +10,8 @@ from datetime import date
 from . import agent_day as AD
 from .food_evidence import observation,neutral_evidence,contribution
 from . import general_food as GF
+from . import hotel_prior as HP
+from . import diag_repeat as DR
 EN,SP=AD.EN,AD.SP
 VERSION='m4-live-context-v1'
 ASSUMPTIONS={'meal_gap_full_minutes':240,'minimum_gap_proxy':.3,'context_fit_unit_weight':1.0,'repeat_experience_discount':1.0}
@@ -194,11 +196,14 @@ class M4Context:
             return reasons
         def score(o,t,state,visit,traits,world):
             terms=original_score(o,t,state,visit,traits,world)
+            terms=DR.space_base_off(terms,EN.W)   # diagnostic switch, OFF unless HILLINK_DIAG_SPACE_BASE=off
             if o.get('price_reference'):   # external delivery: price compared at parity, not a payment amount
                 terms=[dict(x,factor='점수 계산 가격(경쟁 호텔 저녁 최저가 · 가상 비교 기준)') if x['factor']=='1인 지불액' else x for x in terms]
             if stage.active:
                 active=stage.active[-1];ctx=active['context']
                 delta,factors=repeat_adjustment(o,terms,ctx,stage.reviews) if stage.arm!='A' else (0,[])
+                diag_delta,diag_trace=DR.visit_memory(o,terms,ctx,traits,delta,ASSUMPTIONS['repeat_experience_discount'])   # OFF unless HILLINK_DIAG_VISIT_MEMORY=on
+                if diag_trace:delta+=diag_delta;factors=list(factors)+[diag_trace]
                 meal_terms=[]
                 event_terms=[]
                 if stage.event_context is not None and o['kind']=='event':
@@ -222,16 +227,23 @@ class M4Context:
                             'context_adjustment':round(delta,6),'fit_factors':extra_factors,
                             'score_after_context':round(sum(x['value'] for x in terms)+delta,6),
                             'status':'HYPOTHETICAL_LOOKAHEAD_NOT_EXECUTED_OR_CHARGED'})
+                hp,hpt=(0,None)
+                if not state.get('_depth',0):
+                    hp,hpt=HP.adjustment(o,terms,ctx,traits,EN.ev(traits,'practical_alt',{'room_meal':1.0,'alt_meal':0.5})[0] if o['id']==HP.TARGET_ACTION and HP.config() else 0)
                 if not state.get('_depth',0):
                     common=original_score(o,t,state,visit,neutral_evidence(traits),world)
                     gd,gt=GF.adjustment(o,terms,ctx,existing_repeat=any(f.get('factor')=='CONDITIONAL_REPEATED_MEAL_EXPERIENCE_SATURATION' for f in factors),common_terms=common) if GF.policy()!='A' else (0,None)
                     active['scores'][o['id']]={'score_contribution':contribution(terms,common),'base_score':round(sum(x['value'] for x in terms),6),
-                        'context_adjustment':delta,'context_factors':factors,'terms':copy.deepcopy(terms),**({'general_food_evidence':gt} if gt else {})}
+                        'context_adjustment':delta,'context_factors':factors,'terms':copy.deepcopy(terms),**({'general_food_evidence':gt} if gt else {}),**({'hotel_prior':hpt} if hpt else {})}
                 if delta:
                     repeat_delta=sum(x['delta'] for x in factors if x['factor']=='CONDITIONAL_REPEATED_MEAL_EXPERIENCE_SATURATION')
                     terms=list(terms)+([EN._term('체류 식사 경험의 조건부 중복 보상 조정',repeat_delta,kind='context',fact_ids=[f for x in factors for f in x.get('source_fact_ids',[])])] if repeat_delta else [])+meal_terms+event_terms
+                if diag_delta:
+                    terms=list(terms)+[EN._term('진단: 체류 중 같은 업장 재방문 발견가치 조정(개인 근거 없음)',diag_delta,kind='context')]
                 if not state.get('_depth',0) and gd:
                     terms=list(terms)+[EN._term('일반 식사 행동 보완 · 실험 가정',gd,kind='general_research_assumption')]
+                if hp:
+                    terms=list(terms)+[EN._term('호텔 투숙객 일반 행동 사전정보(외부 배달) · 연구 가정',hp,kind='general_research_assumption')]
             return terms
         def decide(t,state,visit,traits,world):
             caller=inspect.currentframe().f_back.f_locals
@@ -264,6 +276,7 @@ class M4Context:
                         o['duration_min']=max(0,min(o['duration_min'],deadline-arrival))
                     offers.append(o)
                 world=dict(world,offers=offers)
+            world=DR.sku_cap(world)   # diagnostic switch, OFF unless HILLINK_DIAG_SKU_CAP is set
             choice_state=dict(state,hunger=ctx['meal_state']['current_meal_target_proxy']) if stage.meal_state_enabled else state
             if stage.meal_state_enabled:ctx['meal_state']['native_counter_before']=state['hunger']
             try:d=original_decide(t,choice_state,visit,traits,world)
@@ -280,6 +293,7 @@ class M4Context:
                     'scoring_input_contract':copy.deepcopy(by[oid].get('scoring_input_contract')),
                     'score_contribution':copy.deepcopy(s.get('score_contribution')),
                     **({'general_food_evidence':copy.deepcopy(s['general_food_evidence'])} if s.get('general_food_evidence') else {}),
+                    **({'hotel_prior':copy.deepcopy(s['hotel_prior'])} if s.get('hotel_prior') else {}),
                     'meal_fraction':by[oid]['food']['meal_fraction'],'menu_tags':by[oid]['food'].get('menu_tags',[]),
                     'travel_min':SP.travel_min(agent.loc,agent.room if AD.ENGINE_LOC.get(oid)=='@room' else SP.pool(agent.B) if oid=='POOL' else AD.ENGINE_LOC.get(oid,agent.loc)),
                     'terms':[{k:x.get(k) for k in ('factor','value','facet','kind','fact_ids')} for x in s.get('terms',[])],

@@ -362,3 +362,24 @@ body:has(.rev-compact) .rev-product { padding:0 20px; margin:0; }body:has(.rev-c
 @media(max-width:600px){.rev-settings-panel{padding:16px}.rev-settings-panel .rev-controls{grid-template-columns:minmax(0,1fr);gap:16px}.rev-settings-panel #revRun{width:100%;justify-self:stretch}.rev-overlay{padding:16px}.rev-overlay .rev-settings-panel{margin-top:0}}
 
 .rev-board-ops{margin-top:12px}.rev-ops-table{width:100%;border-collapse:collapse;font-size:13px}.rev-ops-table th,.rev-ops-table td{padding:5px 6px;border-bottom:1px solid #eee7df;text-align:left;vertical-align:top;overflow-wrap:anywhere}.rev-ops-table th{font-weight:600}.rev-ops-kv th{width:34%}.rev-ops-cmp th:nth-child(1){width:34%}.rev-ops-cmp th:nth-child(2){width:12%}.rev-ops-cmp th:nth-child(4),.rev-ops-cmp td:nth-child(4){min-width:9em;width:22%}
+.rev-ops-notes{margin:6px 0 8px;padding-left:18px;font-size:12.5px;color:#7a5b2b}.rev-ops-pop,.rev-ops-group{margin-top:8px}.rev-group-form{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;margin:8px 0}.rev-group-form small{flex-basis:100%;color:#6b6259}.rev-group-list{margin:4px 0 10px;padding-left:18px;font-size:13px}.rev-group-list small{color:#6b6259}.rev-ops-group h4{margin:10px 0 2px;font-size:13.5px}
+/* 운영 A/B: the run controls are their own compact card; long result tables never move them */
+.rev-ab-card{margin-top:12px}
+.rev-ab-controls{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px;margin:4px 0 0}
+.rev-ab-field{display:flex;flex-direction:column;gap:4px;font-size:12.5px;color:#6b6259;margin:0}
+.rev-ab-controls .cf-input,.rev-ab-controls .cf-btn{height:38px;min-height:38px;box-sizing:border-box;margin:0;line-height:1.2}
+.rev-ab-controls .cf-input{min-width:128px;padding-top:0;padding-bottom:0}
+.rev-ab-controls .cf-btn{display:inline-flex;align-items:center;justify-content:center;padding:0 16px;white-space:nowrap}
+.rev-ab-controls .cf-btn[disabled],.rev-ab-controls .cf-input[disabled]{opacity:.55;cursor:not-allowed}
+.rev-ab-state{margin:12px 0 0;padding:8px 12px;border-radius:8px;font-size:13px;line-height:1.5;background:#f4efe8;color:#4f463d}
+.rev-ab-state[data-rev-ab-state="off"]{background:#fbefe9;color:#8a3b25}
+.rev-ab-state[data-rev-ab-state="run"],.rev-ab-state[data-rev-ab-state="wait"]{background:#eef3f7;color:#2f5675}
+.rev-ab-state[data-rev-ab-state="ok"]{background:#eef6ef;color:#2d6a3a}
+.rev-ab-conditions{margin:6px 0 0;font-size:12.5px;color:#6b6259}
+.rev-ab-error{margin:10px 0 0;padding:8px 12px;border-radius:8px;background:#fbefe9;color:#a3341f;font-size:13px}
+.rev-ab-card [data-rev-group-result]{margin-top:14px;padding-top:12px;border-top:1px solid #eadfd3}
+.rev-ab-card .rev-ab-result-head{font-weight:600;margin:0 0 8px}
+.rev-ab-card h4{margin:10px 0 2px;font-size:13.5px}
+.rev-ab-controls{flex-wrap:wrap}.rev-ab-wide select{min-width:260px}.rev-ab-check{list-style:none;padding:0;margin:8px 0;display:grid;gap:4px;font-size:12.5px;color:#4a4540}.rev-ab-check b{display:inline-block;min-width:76px;color:#6d5a46;font-weight:650;margin-right:6px}
+.rev-ab-kpis{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin:12px 0}.rev-ab-kpis>div{background:#fbf7f1;border:1px solid #efe6db;border-radius:10px;padding:10px 12px;display:grid;gap:4px}.rev-ab-kpis small{font-size:11px;color:#7a6e62}.rev-ab-kpis b{font-size:14px;color:#262b31}
+@media(max-width:1100px){.rev-ab-kpis{grid-template-columns:repeat(3,minmax(0,1fr))}}

@@ -20,6 +20,9 @@ import uuid
 
 POLICY = 'RESPONSES_AGENT_BUDGET_V1'
 REQUEST_POLICY = 'RESPONSES_CANONICAL_CONTEXT_V2'
+# Highest cumulative call ceiling a journal amendment may approve (USD ceiling stays 20). 2,500 -> 2,600 by the
+# 2026-11-08 03:20 directive; a journal still needs its own recorded amendment (timeline/tools/amend_agent_call_limit.py).
+MAX_APPROVABLE_CALLS = 5000   # 2026-11-08 23:44 user approval: 4,500 -> 5,000 (USD20 unchanged; study 2,400 / US$5) · before: 2026-11-08 13:19 directive: 2,620 -> 4,500 (USD20 unchanged; integrated study at most 1,800 new calls / US$5)
 PRICES = {'gpt-6-luna': {'input': .10, 'cached': .01, 'output': .50, 'write': .125}}
 PRICE_SOURCE = 'https://developers.openai.com/api/docs/models/gpt-6-luna'
 PRICE_CHECKED = '2026-11-04'
@@ -36,7 +39,7 @@ def digest(value):
 
 class Budget:
     def __init__(self, path, max_usd, max_calls):
-        if not math.isfinite(max_usd) or not 0 < max_usd <= 20 or type(max_calls) is not int or not 0 < max_calls <= 2500:
+        if not math.isfinite(max_usd) or not 0 < max_usd <= 20 or type(max_calls) is not int or not 0 < max_calls <= MAX_APPROVABLE_CALLS:
             raise ValueError('EXPLICIT_APPROVED_BUDGET_REQUIRED')
         self.path = Path(path)
         self.limit, self.calls = max_usd, max_calls
@@ -61,7 +64,7 @@ class Budget:
             # environment variable or a fresh journal's requested allowance.
             approved = state.get('approved_global_max_calls')
             if approved is not None:
-                if (type(approved) is not int or not 400 < approved <= 2500
+                if (type(approved) is not int or not 400 < approved <= MAX_APPROVABLE_CALLS
                         or not any(x.get('approved_max_calls') == approved
                                    and x.get('unchanged_max_usd') == 20
                                    and x.get('approval_reference')

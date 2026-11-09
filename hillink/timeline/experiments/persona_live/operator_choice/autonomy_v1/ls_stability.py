@@ -447,6 +447,50 @@ def relevant_shortfall(answer, lean):
     return out
 
 
+def general_shortfall_records(records, cands):
+    """'Not enough food' records that are not about, and do not name, any shown hotel candidate (another place's experience)."""
+    names = {c['action_id']: _candidate_names(c) for c in cands or []}
+    out = []
+    for r in records or []:
+        if '양 부족' not in (r.get('flags') or []): continue
+        text = r.get('summary') or ''
+        if r.get('about') or any(n and n in text for ns in names.values() for n in ns): continue
+        out.append(r)
+    return out
+
+
+CLAIMS_NO_RECORD = re.compile(r'(관련|직접 관련|해당)[^.。]{0,20}(개인|식사|후기|선호|취향)?[^.。]{0,6}기록[은이]?\s*(없|확인되지 않)')
+RECOGNISES_SHORTFALL = re.compile(r'부족|모자라|모자랐|넉넉|배고프|양이 (적|많|충분)|양에 여유|여유 ?있는 양|양을 (늘|더)|(이전|과거).{0,12}양')
+
+
+def shortfall_recognition(answer, lean):
+    """Research diagnostic (no effect on selection): how a meal answer handled a relevant 'not enough food' record.
+      NO_RELEVANT_RECORD                   no such record bears on this meal
+      CITED_OR_ACCOUNTED_MORE              recognised, chose more than the party size
+      RECOGNISED_KEPT_WITH_REASON          recognised (cited or quantity reasoning), kept party-size portions with a reason
+      CLAIMED_NO_RELEVANT_RECORD           wrote that there is no related record while the record was in the request (mismatch)
+      NOT_ADDRESSED                        neither recognised nor denied"""
+    short = relevant_shortfall(answer, lean)
+    if not short or not answer.get('selected_basket_id'):
+        return dict(code='NO_RELEVANT_RECORD')
+    facts = sorted({f for r in short for f in r['fact_ids']})
+    cited = set(answer.get('supporting_fact_ids') or []) | set(answer.get('counterevidence_fact_ids') or [])
+    ma = answer.get('meal_assessment') or {}
+    text = ' '.join(str(x or '') for x in (answer.get('reason'), ma.get('quantity_reason'), answer.get('tradeoff_note')))
+    party = (lean.get('visit') or {}).get('party_size')
+    eq = selected_equivalents(answer, lean, known_only=True)
+    more = eq is not None and party and eq > party
+    if cited & set(facts):
+        code = 'CITED_OR_ACCOUNTED_MORE' if more else 'RECOGNISED_KEPT_WITH_REASON'
+    elif CLAIMS_NO_RECORD.search(text):
+        code = 'CLAIMED_NO_RELEVANT_RECORD'      # denial wins over incidental quantity words: the record was in the request
+    elif RECOGNISES_SHORTFALL.search(text):
+        code = 'CITED_OR_ACCOUNTED_MORE' if more else 'RECOGNISED_KEPT_WITH_REASON'
+    else:
+        code = 'NOT_ADDRESSED'
+    return dict(code=code, facts=facts, cited=sorted(cited & set(facts)), equivalents=eq, party=party)
+
+
 def meal_quantity_review(answer, lean, party, prior):
     """V19LS-P2, at most once per decision: a past 'not enough food' record that bears on this meal (same place or a
     general record), and a choice whose usual-portion equivalents are at or below the party size with no account of

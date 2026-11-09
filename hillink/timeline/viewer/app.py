@@ -9,7 +9,7 @@
 """
 from __future__ import annotations
 
-import argparse, json, os, re, subprocess, sys, threading, unicodedata, webbrowser
+import argparse, copy, json, os, re, subprocess, sys, threading, unicodedata, webbrowser
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from pathlib import Path
 from urllib.parse import urlparse, parse_qs, unquote
@@ -107,6 +107,45 @@ def turn_run(payload):
         raise RuntimeError(r.stderr.strip().splitlines()[-1] if r.stderr.strip() else "turn 오류")
     return json.loads(r.stdout)   # 10/20 개별 페르소나 실험실 — 모델 지문에 들어가지 않는 별도 실행기
 RUNNING: dict[str, subprocess.Popen] = {}
+# First-screen speed (2026-11-08 G3): the situation page asks for ~17 private intake views and the turn meta at once;
+# each is ~0.1 s alone but they were recomputed on every page load and queued behind each other (~5 s to the first
+# screen). Both are fixed for the life of the server (SHA-validated registry, library signature), so they are computed
+# once (warmed in the background at start) and served from memory. Responses are unchanged.
+_FIRST_SCREEN_CACHE: dict = {}
+_FIRST_SCREEN_LOCK = threading.Lock()
+
+
+def intake_cached(pid):
+    key = ('intake', pid, os.environ.get('HILLINK_ISOLATED_REGISTRY_SHA256'))
+    with _FIRST_SCREEN_LOCK:
+        hit = _FIRST_SCREEN_CACHE.get(key)
+    if hit is None:
+        from private_intake_view import project
+        hit = project(pid)
+        with _FIRST_SCREEN_LOCK: _FIRST_SCREEN_CACHE[key] = hit
+    return copy.deepcopy(hit)
+
+
+def turn_meta_cached(turn):
+    key = ('meta', turn, tuple(_lib_sig()))
+    with _FIRST_SCREEN_LOCK:
+        hit = _FIRST_SCREEN_CACHE.get(key)
+    if hit is None:
+        hit = turn_run({"op": "meta", "turn": turn})
+        with _FIRST_SCREEN_LOCK: _FIRST_SCREEN_CACHE[key] = hit
+    return copy.deepcopy(hit)
+
+
+def warm_first_screen():
+    try:
+        turn_meta_cached('dinner')
+        if os.environ.get('HILLINK_ISOLATED_CUSTOMERS') == '1':
+            sys.path.insert(0, str(HERE.parent / 'experiments' / 'persona_live' / 'operator_choice' / 'operator_world_v1_1'))
+            from isolated_registry import registrations
+            for pid in sorted(registrations()):
+                intake_cached(pid)
+    except Exception as exc:   # warming is an optimisation only; requests compute on demand as before
+        sys.stderr.write('first-screen warm-up skipped: %s\n' % type(exc).__name__)
 def completed_visit(body,include_ledger=True,*,prepare_response=False):
     res=visit_run(body)
     if len(json.dumps(res,ensure_ascii=False).encode())>execution.MAX_RETAINED_RESULT_BYTES:
@@ -117,7 +156,11 @@ def completed_visit(body,include_ledger=True,*,prepare_response=False):
         res['ledger']=receipts.register_visit(res,body)
         try:
             import operating_reference as _OR   # operator aggregate; references never change agent choices
-            res['operating_summary']=_OR.aggregate(res)
+            profile=body.get('reference_profile','external')
+            res['operating_summary']=_OR.aggregate(res,profile=profile)
+            import population as _POP   # composition weights: estimates for the stated guest mix, never ledger totals
+            w=_POP.weights(res,_OR.load(profile=profile)[0],'party_size')
+            res['operating_summary']['population']=dict(weights=w,estimates=_POP.estimates(res,w if w.get('status','').startswith('OK') else None))
         except Exception as exc:   # never fail a visit because of the operator aggregate
             res['operating_summary']=dict(error=type(exc).__name__)
         res.pop('profile_sha',None)
@@ -164,7 +207,10 @@ def execute_agent_pair(pair):
 def execute_agent_analysis(cfg,bundles):
     entry=agent_jobs.source(cfg['run_id']) if cfg.get('run_id') else None
     source_mode=(entry or {}).get('flow',{}).get('judgment',{}).get('actual')
-    mode=source_mode if source_mode in ('replay','live') else os.environ.get('HILLINK_AGENT_MODE','replay')
+    # A strategy analysis is a new question about the run (no recorded answer exists for it), so on a server with
+    # approved live calls it is answered live even for a replayed visit; otherwise it follows the run/server mode.
+    live_ok=os.environ.get('HILLINK_AGENT_MODE')=='live' and visit_execution.live_status()[0]
+    mode='live' if live_ok else source_mode if source_mode in ('replay','live') else os.environ.get('HILLINK_AGENT_MODE','replay')
     env=dict(os.environ,HILLINK_AGENT_MODE=mode)
     if mode=='replay':env.update(HILLINK_LLM_ENABLED='0',HILLINK_LLM_EXTERNAL_OPT_IN='0')
     if mode=='live':
@@ -208,6 +254,188 @@ LAB_BLOG = re.compile(r"^blog\d{2}$")
 
 def reviewer_ok(handler) -> bool:
     return REVIEWER_LOCAL and DEPLOY != "public" and handler.client_address[0] in ("127.0.0.1", "::1")
+
+
+def population_experiment_spec(cfg, allowed):
+    """Validated group A/B request: same customers, dates, seed, engine, reference profile and prior on both sides;
+    B differs only by a percentage discount on Pizza Hill dine-in mains."""
+    import operating_reference as OR
+    if not isinstance(cfg, dict) or set(cfg) - {'personas', 'duration', 'reference_profile', 'behaviour_prior', 'pizza_hill_discount_percent', 'seed', 'start_date'}:
+        raise ValueError('UNSUPPORTED_FIELDS')
+    ids = cfg.get('personas')
+    if not isinstance(ids, list) or not 1 <= len(ids) <= 28 or len(set(ids)) != len(ids) or set(ids) - allowed: raise ValueError('CUSTOMER_SCOPE_INVALID')
+    if cfg.get('duration', 'stay_1') not in ('stay_1', 'stay_2'): raise ValueError('STAY_DURATION_REQUIRED')
+    if cfg.get('reference_profile', 'external') not in OR.PROFILES: raise ValueError('UNKNOWN_REFERENCE_PROFILE')
+    if cfg.get('behaviour_prior', 'OFF') not in ('OFF', 'HOTEL_PRIOR_V1'): raise ValueError('UNKNOWN_BEHAVIOUR_PRIOR')
+    pct = cfg.get('pizza_hill_discount_percent', 20)
+    if type(pct) is not int or not 5 <= pct <= 50: raise ValueError('DISCOUNT_PERCENT_5_TO_50')
+    seed = cfg.get('seed', 0)
+    if type(seed) is not int or not 0 <= seed <= 9999: raise ValueError('SEED_INVALID')
+    return dict(personas=sorted(ids), duration=cfg.get('duration', 'stay_1'), reference_profile=cfg.get('reference_profile', 'external'),
+                behaviour_prior=cfg.get('behaviour_prior', 'OFF'), pizza_hill_discount_percent=pct, seed=seed, start_date=cfg.get('start_date', '2026-11-13'))
+
+
+# ---- operator A/B on the run that is on screen ---------------------------------------------------------------
+# A is the displayed run itself (the server's own record of its request, flow and ledger, found by run_id); B is the
+# same request with only the Pizza Hill dine-in mains discount added. Nothing else is rebuilt or defaulted.
+AB_REASONS = {
+    'SERVER_RUN_EXPIRED_REEXECUTE_REQUIRED': '서버에 이 실행 기록이 남아 있지 않습니다. 같은 조건으로 방문을 다시 생성한 뒤 실행해 주세요.',
+    'CATALOG_PRICING_REQUIRED': "할인을 적용하려면 '상품별 선택·가격을 함께 계산'을 켠 실행이 필요합니다.",
+    'DISCOUNT_ALREADY_APPLIED': '현재 실행에 이미 같은 상품 할인이 들어 있어 같은 조건 비교를 만들 수 없습니다.',
+    'SHARED_WORLD_NOT_SUPPORTED': '공동 시간축 실행은 이 A/B에서 지원하지 않습니다.',
+    'BASE_LEDGER_NOT_BALANCED': '현재 실행의 원장 검산이 맞지 않아 비교하지 않습니다.',
+    'CUSTOMER_SCOPE_INVALID': '이 실행의 고객 범위로는 실험할 수 없습니다.',
+    'LIVE_REQUIRED_FOR_B': 'AI 판단 실행의 B는 바뀐 조건으로 새로 판단해야 합니다(저장 응답 재생 불가). 이 서버는 실시간 AI 호출이 꺼져 있거나 한도에 도달했습니다.',
+    'UNKNOWN_VENUE': '실험할 수 있는 등록 업장이 아닙니다.',
+    'NO_DISCOUNTABLE_PRODUCT': '이 업장에는 할인 가능한 등록 메인 상품이 없습니다.',
+    'OPENING_NOT_SUPPORTED': '이 업장의 영업 시작 시각 변경은 엔진에 연결되지 않았습니다.',
+}
+# Dining venues the operator can test. Products, prices and discount permissions come from the hotel catalog only.
+AB_VENUES = ('PIZZA_HILL', 'GEUMRYONG', 'MYONGWOLGWAN', 'ONDAL', 'MOEGI', 'THE_BUFFET', 'THE_PAVILION', 'ROOM_MEAL')
+
+
+def ab_products(venue):
+    import population_lab  # noqa: F401  (sets up the engine import path the catalog needs)
+    from operator_choice.autonomy_v1 import hotel_catalog as H
+    rows = [x for x in H.BY.values() if x.get('venue_id') == venue and x.get('role') == 'MAIN']
+    ok = [x for x in rows if H.discount_allowed(x) and not (x.get('price_confirmed') is False and x.get('charge_policy') == 'PRICE_UNKNOWN_UNLESS_INCLUDED_USE_KEPT')]
+    return rows, sorted(ok, key=lambda x: (x['unit_price_krw'], x['sku_id']))
+
+
+def ab_levers():
+    """Per venue: registered MAIN products that the catalog allows to discount, and whether an opening-time change is
+    connected to the engine. Nothing is invented: a venue without such products is listed with its reason."""
+    import population_lab  # noqa: F401
+    from operator_choice.autonomy_v1 import hotel_catalog as H
+    out = []
+    for v in AB_VENUES:
+        rows, ok = ab_products(v)
+        out.append(dict(venue_id=v, main_count=len(rows), discountable=[dict(sku_id=x['sku_id'], label=x.get('label'), unit_price_krw=x['unit_price_krw']) for x in ok],
+                        discount_reason=None if ok else 'NO_DISCOUNTABLE_PRODUCT',
+                        opening=dict(official=H.RESEARCH_OPEN_VENUES[v], options=[t for t in ('16:00', '16:30', '17:00', '17:30') if t < H.RESEARCH_OPEN_VENUES[v]]) if v in H.RESEARCH_OPEN_VENUES else None))
+    return out
+
+
+def _ab_mode(req):
+    m = req.get('judgment_mode')
+    return 'rules' if m in (None, 'rules') and not req.get('hybrid_policy') else (m or 'live')
+
+
+def ab_readiness(run_id, allowed):
+    try:
+        src = agent_jobs.source(run_id)
+    except ValueError as exc:
+        return dict(available=False, reason=str(exc), message=AB_REASONS.get(str(exc), str(exc)))
+    req, flow = src['request'], src['flow']
+    mode = _ab_mode(req)
+    decisions = sum(len(p.get('autonomous_decisions') or []) for p in (flow.get('plans') or {}).values())
+    live_ok, live_reason = visit_execution.live_status() if mode != 'rules' else (None, None)
+    reason = None
+    if req.get('catalog_policy') != 'C01_HOTEL_CATALOG_V1': reason = 'CATALOG_PRICING_REQUIRED'
+    elif req.get('simulation_mode') == 'shared_world': reason = 'SHARED_WORLD_NOT_SUPPORTED'
+    elif not (flow.get('ledger') or {}).get('checks', {}).get('receipts_equal_L4_L3_L2_L1'): reason = 'BASE_LEDGER_NOT_BALANCED'
+    elif set(req.get('personas') or []) - allowed or not req.get('personas'): reason = 'CUSTOMER_SCOPE_INVALID'
+    elif mode != 'rules' and not live_ok: reason = 'LIVE_REQUIRED_FOR_B'
+    vc = req.get('visit_conditions') or {}
+    conditions = dict(personas=sorted(req.get('personas') or []), duration=req.get('duration'), start_date=req.get('start_date'), seed=req.get('seed', 0),
+        event_mode=req.get('event_mode', 'none'), scenario=(req.get('scenario') or {}).get('event_card_id'), package_id=req.get('package_id'),
+        environment=req.get('environment'), visit_conditions=sorted(vc), catalog_policy=req.get('catalog_policy'),
+        judgment=mode, policy=req.get('hybrid_policy'), b_execution='RULES_SAME_ENGINE' if mode == 'rules' else 'NEW_LIVE_JUDGMENT',
+        estimated_live_calls=None if mode == 'rules' else max(decisions, 1), live_reason=live_reason,
+        applied_discounts=sorted(k for k, v in ((req.get('catalog_options') or {}).get('discount_percent') or {}).items() if v))
+    if reason: return dict(available=False, reason=reason, message=AB_REASONS[reason], conditions=conditions, levers=ab_levers())
+    return dict(available=True, run_id=run_id, conditions=conditions, levers=ab_levers())
+
+
+def ab_lever_options(req, lever):
+    """Validated B change for one lever: {'kind':'discount','venue_id','percent','sku_ids'?} or {'kind':'opening','venue_id','open'}."""
+    import copy as _copy, population_lab  # noqa: F401
+    from operator_choice.autonomy_v1 import hotel_catalog as H
+    if not isinstance(lever, dict) or lever.get('venue_id') not in AB_VENUES: raise ValueError('UNKNOWN_VENUE')
+    v = lever['venue_id']; co = _copy.deepcopy(req.get('catalog_options') or {})
+    if lever.get('kind', 'discount') == 'discount':
+        pct = lever.get('percent')
+        if type(pct) is not int or not 5 <= pct <= 50: raise ValueError('DISCOUNT_PERCENT_5_TO_50')
+        _, ok = ab_products(v); allowed = {x['sku_id'] for x in ok}
+        skus = lever.get('sku_ids') or sorted(allowed)
+        if not allowed: raise ValueError('NO_DISCOUNTABLE_PRODUCT')
+        if not isinstance(skus, list) or set(skus) - allowed: raise ValueError('NO_DISCOUNTABLE_PRODUCT')
+        if set(skus) & {k for k, x in (co.get('discount_percent') or {}).items() if x}: raise ValueError('DISCOUNT_ALREADY_APPLIED')
+        co['discount_percent'] = {**(co.get('discount_percent') or {}), **{k: pct for k in skus}}
+        return co, dict(kind='VENUE_MAIN_DISCOUNT', venue_id=v, percent=pct, sku_count=len(skus), sku_ids=sorted(skus))
+    if lever.get('kind') == 'opening':
+        if v not in H.RESEARCH_OPEN_VENUES: raise ValueError('OPENING_NOT_SUPPORTED')
+        t = lever.get('open')
+        if not isinstance(t, str) or t not in ('16:00', '16:30', '17:00', '17:30') or t >= H.RESEARCH_OPEN_VENUES[v]: raise ValueError('OPENING_NOT_SUPPORTED')
+        co['service_open_overrides'] = {**(co.get('service_open_overrides') or {}), v: t}
+        return co, dict(kind='VENUE_OPENING_EARLIER', venue_id=v, open=t, official=H.RESEARCH_OPEN_VENUES[v])
+    raise ValueError('UNSUPPORTED_LEVER')
+
+
+def venue_ab(la, lb, venue):
+    """Target venue view from the two ledgers only: entering/leaving teams, menu changes, discount, every venue's change."""
+    rows = lambda L: [r for c in L['receipts'].values() for r in c['rows']]
+    ra, rb = rows(la), rows(lb)
+    def at(rs): 
+        d = {}
+        for r in rs:
+            if r.get('venue_id') == venue: d.setdefault(r['customer_id'], []).append(r)
+        return d
+    A, B = at(ra), at(rb)
+    names = lambda rs: sorted({r['product'] for r in rs})
+    entering = sorted(set(B) - set(A)); leaving = sorted(set(A) - set(B))
+    menu = sorted(p for p in set(A) & set(B) if names(A[p]) != names(B[p]))
+    by = {}
+    for side, rs in (('A', ra), ('B', rb)):
+        for r in rs:
+            k = r.get('venue') or r.get('venue_id') or '기타'; by.setdefault(k, dict(venue=k, venue_id=r.get('venue_id'), A=0, B=0))[side] += r['paid_krw']
+    meals = {}
+    for side, rs in (('A', ra), ('B', rb)):
+        for r in rs:
+            if r.get('meal'): meals.setdefault((r['customer_id'], r['visit_date'], r['meal']), {}).setdefault(side, []).append(r)
+    changes = []
+    for (pid, date, meal), x in sorted(meals.items()):
+        a, b = x.get('A', []), x.get('B', [])
+        va, vb = sorted({r.get('venue') for r in a}), sorted({r.get('venue') for r in b})
+        if names(a) != names(b) or va != vb:
+            changes.append(dict(customer_id=pid, date=date, meal=meal, before=' + '.join(names(a)) or '선택 없음', after=' + '.join(names(b)) or '선택 없음',
+                                before_venue=' · '.join(va), after_venue=' · '.join(vb), A=sum(r['paid_krw'] for r in a), B=sum(r['paid_krw'] for r in b)))
+    return dict(venue_id=venue, teams=dict(A=len(A), B=len(B)), entering=entering, leaving=leaving, menu_changed=menu,
+                revenue=dict(A=sum(r['paid_krw'] for p in A.values() for r in p), B=sum(r['paid_krw'] for p in B.values() for r in p)),
+                discount_krw=sum(r.get('discount_krw') or 0 for p in B.values() for r in p),
+                venues=sorted(({**v, 'delta': v['B'] - v['A']} for v in by.values() if v['A'] or v['B']), key=lambda v: -abs(v['delta'])),
+                meal_changes=changes)
+
+
+def current_run_ab(run_id, lever):
+    """A = the displayed run (unchanged), B = its exact request + one operator lever. Rules runs re-run the rules engine;
+    AI runs re-judge B live with the same policy (a stored answer is never replayed for a changed input)."""
+    import copy as _copy, population_lab as PL
+    src = agent_jobs.source(run_id); req, flow = src['request'], src['flow']
+    co, spec_lever = ab_lever_options(req, lever)
+    mode = _ab_mode(req)
+    breq = _copy.deepcopy(req); breq['catalog_options'] = co
+    allowed = ('catalog_options',)
+    if mode != 'rules':
+        breq['judgment_mode'] = 'live'; allowed = ('catalog_options', 'judgment_mode')
+    bres = completed_visit({k: _copy.deepcopy(v) for k, v in breq.items() if k != 'include_ledger'})   # same body shape /api/visit sends
+    if 'error' in bres: return dict(status='RUN_ERROR', base_run_id=run_id, B=bres.get('error'), code=bres.get('code'))
+    if mode != 'rules' and (bres.get('judgment') or {}).get('actual') != 'live':
+        return dict(status='RUN_ERROR', base_run_id=run_id, B='B의 실시간 AI 판단을 완료하지 못했습니다. 규칙 계산으로 대체하지 않았습니다.')
+    a = dict(request=req, flow=flow, ledger=flow['ledger'], summary=flow['operating_summary'])
+    b = dict(request=breq, flow=bres, ledger=bres['ledger'], summary=bres['operating_summary'])
+    if a['ledger']['run_id'] != run_id: return dict(status='BASE_MISMATCH', base_run_id=run_id)
+    ab = PL.ab(a, b, allowed)
+    calls = sum(1 for p in (bres.get('plans') or {}).values() for d in p.get('autonomous_decisions') or [] for x in d.get('attempts') or []
+                if (x.get('provider') or {}).get('execution') == 'LIVE_RESPONSES')
+    vlabel = {'VENUE_MAIN_DISCOUNT': '%s 메인 %d%% 할인 (%d개 상품)' % (spec_lever['venue_id'], spec_lever.get('percent', 0), spec_lever.get('sku_count', 0))}.get(spec_lever['kind'], '%s 영업 시작 %s' % (spec_lever['venue_id'], spec_lever.get('open')))
+    return dict(status='DONE', base_run_id=run_id, mode=mode, b_run_id=bres['ledger']['run_id'],
+                spec=dict(personas=sorted(req['personas']), duration=req.get('duration'), seed=req.get('seed', 0), start_date=req.get('start_date')),
+                lever=spec_lever, ab=ab, target=venue_ab(a['ledger'], b['ledger'], spec_lever['venue_id']), b_live_calls=calls if mode != 'rules' else 0,
+                ledger_checks=dict(A=a['ledger']['checks'].get('receipts_equal_L4_L3_L2_L1'), B=b['ledger']['checks'].get('receipts_equal_L4_L3_L2_L1')),
+                limits=(['규칙 엔진 실행 결과이며 실제 프로모션 반응 예측이 아님'] if mode == 'rules' else
+                        ['B는 바뀐 조건으로 같은 정책의 AI가 새로 판단한 결과 · AI 응답의 변동이 섞여 있어 단일 실행을 할인만의 효과로 단정하지 않음'])
+                       + ['A는 화면에 표시된 실행 그대로 · B는 같은 요청에 운영 변수 하나만 바꿈', '외부 배달 금액은 미상 · 호텔 매출에 포함하지 않음', '고객 간 좌석·대기 상호작용 없음(독립 실행)'])
 
 
 def local_trial_ids(handler):
@@ -472,8 +700,14 @@ class H(BaseHTTPRequestHandler):
                 import saved_visits
                 try:
                     if u.path=='/api/saved-visits':return self.send(200,saved_visits.index())
+                    if u.path.endswith('/cohort') or not any(r['tag']==q.get('tag','') for r in saved_visits.private_runs()):
+                        if u.path.endswith('/cohort') or any(r['tag']==q.get('tag','') for r in saved_visits.manifest()['v16_runs']):
+                            return self.send(410,{'code':'RETIRED_V16_SAVED_VISIT','error':'과거 V16 저장 방문은 제품에서 제외되었습니다. 개선형 저장 방문을 선택해 주세요.'})
                     with execution.slot():
-                        if u.path.endswith('/cohort'):return self.send(200,saved_visits.cohort())
+                        if any(r['tag']==q.get('tag','') for r in saved_visits.private_runs()):
+                            saved=saved_visits.private_run(q.get('tag',''))
+                            if set(saved['request']['personas'])-(set(publish_set()[0])|local_trial_ids(self)):return self.send(403,{'code':'CUSTOMER_NOT_AUTHORIZED'})
+                            return self.send(200,saved)
                         saved=saved_visits.load(q.get('tag',''))
                         allowed=set(publish_set()[0])|local_trial_ids(self)
                         if set(saved['result']['plans'])-allowed:return self.send(403,{'code':'CUSTOMER_NOT_AUTHORIZED'})
@@ -504,6 +738,9 @@ class H(BaseHTTPRequestHandler):
             if u.path == '/api/room/options':
                 from room_options import room_options
                 return self.send(200, room_options())
+            if u.path == '/api/population/ab-readiness':
+                if not reviewer_ok(self):return self.send(403,{'error':'로컬 검수 환경 전용 연구 기능입니다.'})
+                return self.send(200,ab_readiness(q.get('run_id',''),set(publish_set()[0])|local_trial_ids(self)))
             if u.path == '/api/runtime/capabilities':
                 from operator_choice.autonomy_v1.autonomous_agent import POLICY as autonomous_policy, LIVE_POLICY as live_policy, POLICIES as autonomous_policies
                 local = DEPLOY != 'public' and self.client_address[0] in ('127.0.0.1','::1')
@@ -513,6 +750,7 @@ class H(BaseHTTPRequestHandler):
                     agent_mode=os.environ.get('HILLINK_AGENT_MODE','off') if local else 'off',
                     llm_strategy=local and reviewer_ok(self) and os.environ.get('HILLINK_AGENT_MODE') in ('live','replay') and (os.environ.get('HILLINK_AGENT_MODE')=='replay' or os.environ.get('HILLINK_LLM_EXTERNAL_OPT_IN')=='1'),
                     judgment_modes=dict(rules=True,replay=local and os.environ.get('HILLINK_AUTONOMOUS_AGENT')=='1',live=local and visit_execution.live_status()[0]),
+                    live_reason=(visit_execution.live_status()[1] if local else 'LOCAL_REVIEW_ONLY'),
                     native_hybrid=local and os.environ.get('HILLINK_NATIVE_HYBRID')=='1',hybrid_mode=os.environ.get('HILLINK_HYBRID','off') if local else 'off',
                     catalog_policy='C01_HOTEL_CATALOG_V1',hybrid_policy='SELECTIVE_V12Z_NATIVE_V1',isolated_customers=sorted(local_trial_ids(self)) if local else [],
                     supported=['customer','0_to_3_nights','date','five_event_cards','weather_with_explicit_source_rules','arrival_time','explicit_order_quantities','catalog_price_overrides','catalog_discount_percent','catalog_service_open_overrides'],
@@ -522,10 +760,9 @@ class H(BaseHTTPRequestHandler):
                 pid = q.get('customer', '')
                 if pid not in local_trial_ids(self):
                     return self.send(403, {'error':'비공개 격리 검수에서 등록된 고객만 열 수 있습니다','code':'E_PRIVATE_INTAKE_ACCESS'})
-                from private_intake_view import project
-                return self.send(200, project(pid))
+                return self.send(200, intake_cached(pid))
             if u.path == "/api/turn/meta":
-                meta = turn_run({"op": "meta", "turn": q.get("turn", "dinner")})
+                meta = turn_meta_cached(q.get("turn", "dinner"))
                 if not reviewer_ok(self) and isinstance(meta, dict) and isinstance(meta.get("personas"), list):   # CL-1024-20 — 게시 승인 고객만
                     appr = set(publish_set()[0]) | local_trial_ids(self)
                     meta = dict(meta, personas=[p for p in meta["personas"] if p.get("id") in appr])
@@ -806,7 +1043,7 @@ class H(BaseHTTPRequestHandler):
                     return self.send(403, {"error": "게시 승인 고객만 실행합니다", "n": len(extra)})
                 if "include_ledger" in cfg and not isinstance(cfg["include_ledger"], bool):
                     return self.send(400, {"error": "영수증 요청 형식을 확인해 주세요"})
-                body = {k: cfg[k] for k in ("personas", "duration", "event_mode", "seed", "start_date", "package_id", "visit_conditions", "behavior_engine", "simulation_mode", "scenario", "catalog_policy", "catalog_options", "hybrid_policy", "judgment_mode", "environment", "virtual_room_rates", "breakfast_policy") if k in cfg}
+                body = {k: cfg[k] for k in ("personas", "duration", "event_mode", "seed", "start_date", "package_id", "visit_conditions", "behavior_engine", "simulation_mode", "scenario", "catalog_policy", "catalog_options", "hybrid_policy", "judgment_mode", "environment", "virtual_room_rates", "breakfast_policy", "behaviour_prior", "reference_profile", "behaviour_prior_coefficient") if k in cfg}
                 if u.path.endswith('/jobs'):
                     if not reviewer_ok(self):return self.send(403,{'error':'로컬 검수 환경 전용입니다.'})
                     from operator_choice.autonomy_v1.agent_provider import digest
@@ -817,6 +1054,27 @@ class H(BaseHTTPRequestHandler):
                 except receipts.ReceiptError:
                     return self.send(409, {"error": "날짜별 장면 지출과 방문 영수증을 대조하지 못했습니다", "code": "E_RECEIPT_BALANCE"})
                 return self.send(status,res)
+            if u.path == "/api/population/experiment":   # research: group A/B on the rules engine (no model call), local review only
+                if not reviewer_ok(self):return self.send(403,{'error':'로컬 검수 환경 전용 연구 기능입니다.'})
+                try:
+                    import population_lab as PL
+                    if isinstance(cfg,dict) and 'base_run_id' in cfg:   # operator screen: A/B on the displayed run
+                        if set(cfg)-{'base_run_id','pizza_hill_discount_percent','lever'}:raise ValueError('UNSUPPORTED_FIELDS')
+                        lever=cfg.get('lever') or dict(kind='discount',venue_id='PIZZA_HILL',percent=cfg.get('pizza_hill_discount_percent',20))
+                        ready=ab_readiness(cfg['base_run_id'],set(publish_set()[0])|local_trial_ids(self))
+                        if not ready['available']:return self.send(409,dict(error=ready['message'],reason=ready['reason']))
+                        try:ab_lever_options(agent_jobs.source(cfg['base_run_id'])['request'],lever)
+                        except ValueError as exc:return self.send(409,dict(error=AB_REASONS.get(str(exc),'운영 변수를 확인해 주세요.'),reason=str(exc)))
+                        from operator_choice.autonomy_v1.agent_provider import digest
+                        job=agent_jobs.JOBS.submit(digest(dict(type='CURRENT_RUN_AB',run=cfg['base_run_id'],lever=lever)),ready['conditions']['personas'],lambda:current_run_ab(cfg['base_run_id'],lever))
+                        return self.send(202,job)
+                    spec=population_experiment_spec(cfg,set(publish_set()[0])|local_trial_ids(self))
+                    from operator_choice.autonomy_v1.agent_provider import digest
+                    job=agent_jobs.JOBS.submit(digest(dict(type='POPULATION_AB',request=spec)),spec['personas'],lambda:PL.experiment(spec))
+                    return self.send(202,job)
+                except ValueError as exc:
+                    if str(exc)=='JOB_QUEUE_FULL':return self.send(429,{'code':'JOB_QUEUE_FULL'})
+                    return self.send(400,{'error':'집단 실험 조건을 확인해 주세요.','reason':str(exc)})
             if u.path == "/api/autonomy":
                 ok, miss = opx_allowed()
                 if not ok:
@@ -925,6 +1183,7 @@ def main():
     if miss:
         print("⚠ 로컬 보관 입력 없음: " + ", ".join(miss) + " — 해당 자료가 필요한 고객의 프로필 · 원문 링크 · 실행이 빠질 수 있습니다(실행 입력이 없으면 '입력 미연결' 안내)")
     srv = boundary.LocalHTTPServer(("127.0.0.1", a.port), H)
+    threading.Thread(target=warm_first_screen, daemon=True).start()
     url = f"http://localhost:{a.port}"
     print(f"힐링크 지도 화면 → {url}   (끄려면 Ctrl+C)")
     if not a.no_browser:

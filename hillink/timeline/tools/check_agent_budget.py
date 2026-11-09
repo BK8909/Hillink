@@ -14,7 +14,7 @@ def check():
     usd=float(os.environ['HILLINK_AGENT_MAX_USD'])
     if calls!=state['max_calls'] or usd!=state['max_usd']:
         raise ValueError('LIMITS_MUST_MATCH_SHARED_JOURNAL; DO_NOT_RESET_OR_SILENTLY_LOWER')
-    if not 0<calls<=2500 or not 0<usd<=20 or not isinstance(state.get('requests'),list):
+    if not 0<calls<=4500 or not 0<usd<=20 or not isinstance(state.get('requests'),list):
         raise ValueError('APPROVED_CUMULATIVE_LIMITS_REQUIRED')
     if calls>400 and not any(a.get('approved_max_calls',0)>=calls and a.get('unchanged_max_usd')==20
                             and a.get('approval_reference') for a in state.get('limit_amendments',[])):

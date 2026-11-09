@@ -25,6 +25,7 @@
   ],
   "data_scope_note": "The public data archive is SHA-checked. Improved 28-customer recorded LIVE responses are private and are not included in this repository. No API key or private cost journal is published.",
   "previous_data_scope": "AUTHORIZED_PRIVATE_REPOSITORY_DATA_NOT_PUBLIC_RELEASE (2026-11-06 label, did not match the published package)",
-  "improved_live_policy": "LLM_AUTONOMOUS_CUSTOMER_V19LS_INT4",
-  "saved_replay_source": "Optional HILLINK_PRIVATE_REPLAY_DIR, original approved LIVE receipts; not bundled in public Git"
+  "improved_live_policy": "LLM_AUTONOMOUS_CUSTOMER_V19LS_INT5M",
+  "saved_replay_source": "Optional HILLINK_PRIVATE_REPLAY_DIR, original approved LIVE receipts; not bundled in public Git",
+  "previous_improved_live_policy": "LLM_AUTONOMOUS_CUSTOMER_V19LS_INT4"
 }

@@ -41,7 +41,7 @@ jobs:
         run: |
           python tools/verify_package.py
           python tools/scan_secrets.py
-      - name: Public docs, links and current LIVE policy identity
+      - name: Public docs, links and all LIVE/improved/replay policy identities
         run: python tools/ci/check_docs.py
       - name: No new AI co-author or session trailers since the baseline
         run: python tools/ci/check_commit_metadata.py

@@ -34,9 +34,17 @@ if len(set(facts.values())) != 1: problems.append('LIVE policy disagrees: %s' % 
 if prev != release.get('previous_live_policy'): problems.append('previous LIVE policy disagrees: code %s, release.json %s' % (prev, release.get('previous_live_policy')))
 n_files = sum(1 for r in manifest['files'] if r['included'])
 rec = (P / 'handover/RECOVERY.md').read_text(encoding='utf-8')
-if '{:,}개'.format(n_files) not in rec: problems.append('RECOVERY package count does not state the manifest count %d' % n_files)
-for d, needle in (('README.md', 'V19LS'), ('hillink/handover/RECOVERY.md', live), ('hillink/handover/RECOVERY.md', 'BK8909/Hillink')):
-    if needle not in (REPO / d).read_text(encoding='utf-8'): problems.append('%s does not mention %s' % (d, needle))
+# Public-facing docs explain the product; exact policy IDs and file counts belong in
+# release.json, the execution code and the manifest, not in prose headers.
+# Their consistency is checked above, and SHA-256 contents are checked by verify_package.py.
+if n_files < 1000: problems.append('manifest file list unexpectedly short: %d' % n_files)
+for d, needle in (
+    ('README.md', 'HILLINK'),
+    ('hillink/handover/RECOVERY.md', 'BK8909/Hillink'),
+    ('hillink/handover/RECOVERY.md', 'bash tools/start_product.sh'),
+    ('hillink/docs/research/RESEARCH_AND_ARCHITECTURE_HANDOFF.md', 'Fact'),
+):
+    if needle not in (REPO / d).read_text(encoding='utf-8'): problems.append('%s is missing %s' % (d, needle))
 print('relative links checked: %d · LIVE policy %s · previous %s · manifest files %d' % (n_links, live, prev, n_files))
 for p in problems: print('PROBLEM:', p)
 sys.exit(1 if problems else 0)

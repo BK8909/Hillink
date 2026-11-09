@@ -7,7 +7,7 @@
 import json, re, sys
 from pathlib import Path
 REPO = Path(__file__).resolve().parents[3]; P = REPO / 'hillink'
-DOCS = ['README.md', 'hillink/handover/RECOVERY.md', 'hillink/docs/research/RESEARCH_AND_ARCHITECTURE_HANDOFF.md', 'hillink/handover/persona/README.md']
+DOCS = ['README.md', 'hillink/handover/RECOVERY.md', 'hillink/handover/persona/README.md']
 problems = []
 link = re.compile(r'\[[^\]]*\]\(([^)\s]+)\)')
 n_links = 0
@@ -42,7 +42,6 @@ for d, needle in (
     ('README.md', 'HILLINK'),
     ('hillink/handover/RECOVERY.md', 'BK8909/Hillink'),
     ('hillink/handover/RECOVERY.md', 'bash tools/start_product.sh'),
-    ('hillink/docs/research/RESEARCH_AND_ARCHITECTURE_HANDOFF.md', 'Fact'),
 ):
     if needle not in (REPO / d).read_text(encoding='utf-8'): problems.append('%s is missing %s' % (d, needle))
 print('relative links checked: %d · LIVE policy %s · previous %s · manifest files %d' % (n_links, live, prev, n_files))

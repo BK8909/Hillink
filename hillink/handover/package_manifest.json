@@ -9379,8 +9379,8 @@
     {
       "path": "tools/ci/browser_e2e.cjs",
       "included": true,
-      "bytes": 12212,
-      "sha256": "f2ae14b347154e72dea3621b9f7b336c4d42114cb0018a031b679f237ce642c4"
+      "bytes": 12011,
+      "sha256": "3978166179e8fd0be73eca59ae86aefa06155383914cb3e2789a57cc7b1fe38e"
     },
     {
       "path": "tools/ci/check_commit_metadata.py",
@@ -9427,8 +9427,8 @@
     {
       "path": "tools/ci/http_e2e.py",
       "included": true,
-      "bytes": 8850,
-      "sha256": "423190552ae21f60660f708dcc511ea33af25bb5c345be59e2e7c7cb4941544f"
+      "bytes": 6213,
+      "sha256": "cf74ac9f5a3a340ac5a085a3237b0874f561ce1288e460d430399663dff998ff"
     },
     {
       "path": "tools/ci/known_failures.tsv",

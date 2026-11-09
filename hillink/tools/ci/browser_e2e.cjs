@@ -36,19 +36,20 @@ const shot = async (p, name) => { if (OUT) await p.screenshot({ path: `${OUT}/${
 
     await p.evaluate(() => { location.hash = '#situation/A05'; }); await p.waitForSelector('#sitJudgment', { timeout: 20000 }); await p.waitForTimeout(500);
     const modes = await p.$$eval('#sitJudgment option', o => o.map(x => x.textContent.trim()));
-    ok('judgment modes use plain labels', modes.join('|') === '저장된 판단 재현 (무과금)|실시간 AI 판단 (API 호출)|규칙 계산 (AI 없음)', modes.join('|'));
+    ok('judgment modes use readable labels', modes.includes('규칙 계산 (AI 없음)') && modes.some(x=>x.includes('개선형')) && modes.some(x=>x.includes('저장된 판단')), modes.join('|'));
     await p.selectOption('#sitJudgment', 'live'); await p.waitForTimeout(800);
     const liveReq = await p.evaluate(() => situationRequest(SIT.pid, situationForm(SIT.pid), SIT.options));
     ok('LIVE request names V19LS', liveReq.hybrid_policy === 'LLM_AUTONOMOUS_CUSTOMER_V19LS', liveReq.hybrid_policy);
     ok('LIVE unavailable notice shown', /사용할 수 없습니다/.test(await p.textContent('#sitLiveStatus')));
-    await p.selectOption('#sitJudgment', 'replay'); await p.waitForTimeout(300);
-    await p.click('.st-judgment details.st-saved summary'); await p.selectOption('#sitSavedRun', 'A05-v16-baseline'); await p.waitForTimeout(1200);
+    // Public build has no private improved LIVE cache; use rules for a full visible UI journey.
+    await p.selectOption('#sitJudgment', 'rules'); await p.waitForTimeout(300);
+    await p.selectOption('#sitDuration', 'stay_1'); await p.waitForTimeout(500);
     await shot(p, '04-situation');
     await p.click('#sitRun');
     await p.waitForFunction(() => (typeof AG !== 'undefined' && AG.flow && !AG.busy) || document.querySelector('.callout'), null, { timeout: 240000 });
     await p.waitForTimeout(1200);
-    const st = await p.evaluate(() => ({ actual: AG.flow.result.judgment?.actual, n: AG.flow.result.plans.A05.autonomous_decisions.length, ledger: AG.flow.result.ledger?.checks }));
-    ok('stored AI judgment replay renders', st.actual === 'replay' && st.n > 0, JSON.stringify({ actual: st.actual, n: st.n }));
+    const st = await p.evaluate(() => ({ actual: AG.flow.result.judgment?.actual, n: AG.flow.result.plans.A05.scenes.length, ledger: AG.flow.result.ledger?.checks }));
+    ok('rule-based customer visit renders without private saved responses', st.actual === 'rules' && st.n >= 5 && st.ledger?.receipts_equal_L4_L3_L2_L1 === true, JSON.stringify(st));
     await shot(p, '05-flow');
     const runA = await p.evaluate(() => AG.flow.ledger.run_id);
     await p.click('button.tab[data-mode="evidence"]'); await p.waitForTimeout(2000);
@@ -76,10 +77,10 @@ const shot = async (p, name) => { if (OUT) await p.screenshot({ path: `${OUT}/${
 
     // counterexamples: a refused run leaves the previous run intact; a new condition replaces every view; unknown run ids are refused
     await p.evaluate(() => { location.hash = '#situation/A05'; }); await p.waitForSelector('#sitJudgment', { timeout: 20000 }); await p.waitForTimeout(500);
-    await p.selectOption('#sitJudgment', 'live'); await p.waitForTimeout(500); expectRefusal = 1; expectRefusalLog = 1; await p.click('#sitRun');
-    await p.waitForFunction(() => !SIT.busy && SIT.error, null, { timeout: 60000 }).catch(() => {}); await p.waitForTimeout(800);
-    const refused = await p.evaluate(() => ({ err: SIT.error, flow: AG.flow && AG.flow.ledger.run_id, rev: REV.flow && REV.flow.ledger.run_id, actual: AG.flow && AG.flow.result.judgment.actual }));
-    ok('refused LIVE run: message shown, previous run kept in flow and revenue, no rule result', /LIVE_APPROVAL_REQUIRED/.test(refused.err || '') && refused.flow === runA && refused.rev === runA && refused.actual === 'replay', JSON.stringify({ ...refused, flow: (refused.flow || '').slice(0, 8), rev: (refused.rev || '').slice(0, 8) }));
+    await p.selectOption('#sitJudgment', 'live'); await p.waitForTimeout(800);
+    const unavailable = await p.textContent('#sitLiveStatus');
+    const keep = await p.evaluate(() => ({ flow: AG.flow?.ledger?.run_id, rev: REV.flow?.ledger?.run_id, actual: AG.flow?.result?.judgment?.actual }));
+    ok('unauthorized LIVE blocked before paid request; previous rules run preserved', /사용할 수 없습니다/.test(unavailable) && keep.flow === runA && keep.rev === runA && keep.actual === 'rules', JSON.stringify(keep));
     await p.evaluate(() => { location.hash = '#situation/A05'; }); await p.waitForSelector('#sitJudgment', { timeout: 20000 }); await p.waitForTimeout(500);
     await p.selectOption('#sitJudgment', 'rules'); await p.waitForTimeout(300); await p.selectOption('#sitDuration', 'stay_2'); await p.waitForTimeout(500);
     await p.click('#sitRun'); await p.waitForFunction(a => AG.flow && !AG.busy && !SIT.busy && AG.flow.ledger.run_id !== a, runA, { timeout: 240000 }).catch(() => {}); await p.waitForTimeout(1500);

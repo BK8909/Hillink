@@ -396,3 +396,62 @@ def test_an_operator_applied_event_is_always_shown_never_chosen_for_the_model(sh
     assert 'WINE_FAIR' in ids and 'CARD_SAVORING_SUMMER_NIGHT_2026' in ids and 'end_day_in_room' in ids
     rows2,_=shortlist()
     assert not any(r['action_id']=='WINE_FAIR' or r['action_id'].startswith('CARD_') for r in rows2)   # no event, nothing added
+
+
+def test_meal_context_v2_is_research_only_room_service_time_unconfirmed_and_one_more_restaurant(shortlist,monkeypatch):
+    """2026-11-09 (INT5M): room service had wait 0 with no recorded delivery time, and only one restaurant was ever compared.
+    The switch is OFF for INT4 (saved records) and ON only under INT5M; it never chooses or removes a candidate."""
+    acts=actions()
+    rq=[dict(q,venue_id='ROOM_MEAL') for q in acts['meal:PIZZA_HILL']['_quotes'][:2]]
+    acts['meal:ROOM_MEAL']=dict(acts['meal:PIZZA_HILL'],action_id='meal:ROOM_MEAL',label='객실 룸서비스',location='VISTA_ROOM',venue='ROOM_MEAL',start=1071,duration=60,_quotes=rq)
+    monkeypatch.delenv('HILLINK_RESEARCH_MEAL_CONTEXT_V2',raising=False)
+    rows,_=shortlist(acts=acts)
+    room=next(r for r in rows if r['action_id']=='meal:ROOM_MEAL')
+    assert room['conditions']['wait_minutes']==0 and 'delivery_time' not in room['conditions']
+    off=[r['action_id'] for r in rows if r['type']=='MEAL']
+    monkeypatch.setenv('HILLINK_RESEARCH_MEAL_CONTEXT_V2','1')
+    rows,trace=shortlist(acts=acts)
+    room=next(r for r in rows if r['action_id']=='meal:ROOM_MEAL')
+    assert room['conditions']['wait_minutes'] is None and '미확인' in room['conditions']['delivery_time']
+    on=[r['action_id'] for r in rows if r['type']=='MEAL']
+    assert {'meal:PIZZA_HILL','meal:ONDAL'}<=set(on) and set(off)<=set(on) and 'end_day_in_room' in [r['action_id'] for r in rows]
+
+
+def test_int5m_policy_runs_exactly_int4_plus_meal_context():
+    env=A.policy_environment(A.POLICY_V19LS_INT5M,{'HILLINK_RESEARCH_REST_CONTINUE':'1','PATH':'x'})
+    on={k for k,v in env.items() if k.startswith('HILLINK_RESEARCH_')}
+    both={'HILLINK_RESEARCH_MEAL_ROOM_DELIVERY_UNCONFIRMED','HILLINK_RESEARCH_MEAL_SECOND_RESTAURANT'}
+    assert on==set(A.INT4_SWITCHES)|both and env['PATH']=='x'   # default part set A3 = MEAL_CONTEXT_V2
+    for v,parts in (('A1',{'HILLINK_RESEARCH_MEAL_ROOM_DELIVERY_UNCONFIRMED'}),('A2',{'HILLINK_RESEARCH_MEAL_SECOND_RESTAURANT'}),('A3',both)):
+        env=A.policy_environment(A.POLICY_V19LS_INT5M,{'HILLINK_INT5M_VARIANT':v})
+        assert {k for k in env if k.startswith('HILLINK_RESEARCH_')}==set(A.INT4_SWITCHES)|parts
+    import pytest
+    with pytest.raises(ValueError): A.policy_environment(A.POLICY_V19LS_INT5M,{'HILLINK_INT5M_VARIANT':'A9'})
+    assert {k for k,v in A.policy_environment(A.POLICY_V19LS_INT4,{}).items()}==set(A.INT4_SWITCHES)
+
+
+def test_int5m_parts_are_independent(shortlist,monkeypatch):
+    """A1 changes only the room-service timing note; A2 only adds a restaurant slot (separation study 2026-11-09)."""
+    acts=actions()
+    rq=[dict(q,venue_id='ROOM_MEAL') for q in acts['meal:PIZZA_HILL']['_quotes'][:2]]
+    acts['meal:ROOM_MEAL']=dict(acts['meal:PIZZA_HILL'],action_id='meal:ROOM_MEAL',label='객실 룸서비스',location='VISTA_ROOM',venue='ROOM_MEAL',start=1071,duration=60,_quotes=rq)
+    for k in ('HILLINK_RESEARCH_MEAL_CONTEXT_V2','HILLINK_RESEARCH_MEAL_SECOND_RESTAURANT','HILLINK_RESEARCH_MEAL_ROOM_DELIVERY_UNCONFIRMED'): monkeypatch.delenv(k,raising=False)
+    rows0=shortlist(acts=acts)[0]; a0=[r['action_id'] for r in rows0 if r['type']=='MEAL']
+    room0=next(r for r in rows0 if r['action_id']=='meal:ROOM_MEAL')
+    monkeypatch.setenv('HILLINK_RESEARCH_MEAL_ROOM_DELIVERY_UNCONFIRMED','1')
+    rows,_=shortlist(acts=acts); room=next(r for r in rows if r['action_id']=='meal:ROOM_MEAL')
+    a1=[r['action_id'] for r in rows if r['type']=='MEAL']
+    assert room['conditions']['wait_minutes'] is None and '미확인' in room['conditions']['delivery_time']
+    assert {k:v for k,v in room['conditions'].items() if k not in ('wait_minutes','delivery_time','basis')}=={k:v for k,v in room0['conditions'].items() if k not in ('wait_minutes','basis')}
+    # only the invented 0-minute wait is replaced; a guest outside the room keeps the way back (offline A0/A1 check: 2 of 28 visits)
+    away=agent(loc='VISTA_LOBBY')
+    monkeypatch.delenv('HILLINK_RESEARCH_MEAL_ROOM_DELIVERY_UNCONFIRMED')
+    t0=next(r for r in shortlist(a=away,acts=acts)[0] if r['action_id']=='meal:ROOM_MEAL')['conditions']['travel_minutes']
+    monkeypatch.setenv('HILLINK_RESEARCH_MEAL_ROOM_DELIVERY_UNCONFIRMED','1')
+    t1=next(r for r in shortlist(a=away,acts=acts)[0] if r['action_id']=='meal:ROOM_MEAL')['conditions']['travel_minutes']
+    assert t0>0 and t1==t0
+    monkeypatch.delenv('HILLINK_RESEARCH_MEAL_ROOM_DELIVERY_UNCONFIRMED'); monkeypatch.setenv('HILLINK_RESEARCH_MEAL_SECOND_RESTAURANT','1')
+    rows,_=shortlist(acts=acts); room=next(r for r in rows if r['action_id']=='meal:ROOM_MEAL')
+    a2=[r['action_id'] for r in rows if r['type']=='MEAL']
+    assert room['conditions']['wait_minutes']==0 and 'delivery_time' not in room['conditions']
+    assert a1==a0 and set(a0)<=set(a2)   # A1 never changes exposure; A2 only adds

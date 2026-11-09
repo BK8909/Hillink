@@ -2496,7 +2496,7 @@ function agActDrawer(pid, si) {   // CL-1024-13 — 활동 상세: 사진(있을
 }
 function agPlanMetaText(pm) {
   if (!pm) return "행동 계획기 결과 없음";
-  if(pm.trace?.planner_backend?.startsWith('LLM_AUTONOMOUS_CUSTOMER_')){const t=pm.trace;return `${typeof HLVisitExecution!=='undefined'&&t.planner_backend===HLVisitExecution.IMPROVED_POLICY?'개선형 판단 기준':t.planner_backend} · 실제 API ${t.llm_calls||0}회 · 캐시 재생 ${t.llm_replays||0}회 · ${t.planner_backend_fallback_used?'규칙 폴백 포함':'규칙 폴백 없음'}`;}
+  if(pm.trace?.planner_backend?.startsWith('LLM_AUTONOMOUS_CUSTOMER_')){const t=pm.trace;return `${typeof HLVisitExecution!=='undefined'&&HLVisitExecution.isImproved(t.planner_backend)?'개선형 판단 기준':t.planner_backend} · 실제 API ${t.llm_calls||0}회 · 캐시 재생 ${t.llm_replays||0}회 · ${t.planner_backend_fallback_used?'규칙 폴백 포함':'규칙 폴백 없음'}`;}
   const used = pm.backend === "llm" ? "LLM 계획기" : "규칙 계획기", req = pm.requested === "auto" || pm.requested === "llm" ? "LLM 계획기" : "규칙 계획기";
   const st = pm.status && pm.status !== "ok" ? " · 실행 차단(월드 검증)" : "", t = pm.trace || {};
   const pf = t.profile_fallback_used ? " · 프로파일 미로드 — 일반 시연 계획" : t.daily_behavior_loaded ? " · 일상 행동 자료 사용" : "";

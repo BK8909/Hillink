@@ -9,20 +9,23 @@ import saved_visits
 
 # Same ceiling as agent_provider.MAX_APPROVABLE_CALLS (2026-11-08 03:20 directive: 2,500 -> 2,600, USD20 unchanged);
 # a journal still needs its own recorded amendment, checked below.
-MAX_APPROVABLE_CALLS = 5000   # 2026-11-08 23:44 user approval: 4,500 -> 5,000 (USD20 unchanged; study 2,400 / US$5) · before: 2026-11-08 13:19 directive: 2,620 -> 4,500 (USD20 unchanged; integrated study at most 1,800 new calls / US$5)
+MAX_APPROVABLE_CALLS = 6300   # 2026-11-09 17:18 KST user approval: 5,000 -> 6,300 for the final A/B LIVE study (USD20 unchanged; staged, at most 1,554 new calls) · before: 2026-11-08 23:44 user approval: 4,500 -> 5,000 (USD20 unchanged; study 2,400 / US$5) · before: 2026-11-08 13:19 directive: 2,620 -> 4,500 (USD20 unchanged; integrated study at most 1,800 new calls / US$5)
 
 POLICY = 'LLM_AUTONOMOUS_CUSTOMER_V16'
 LIVE_POLICY = 'LLM_AUTONOMOUS_CUSTOMER_V19LS'          # product LIVE default since 2026-11-07 (P5 + day-end LIVE re-check)
 PREVIOUS_LIVE_POLICY = 'LLM_AUTONOMOUS_CUSTOMER_V17'   # kept: selectable only when a request names it (?policy=V17)
 EXPERIMENT_POLICIES = ('LLM_AUTONOMOUS_CUSTOMER_V18', 'LLM_AUTONOMOUS_CUSTOMER_V18B', 'LLM_AUTONOMOUS_CUSTOMER_V18BM', 'LLM_AUTONOMOUS_CUSTOMER_V18BD')   # M4 shortlist experiments; never the default
 RESEARCH_POLICIES = ('LLM_AUTONOMOUS_CUSTOMER_V19LS_P2', 'LLM_AUTONOMOUS_CUSTOMER_V19LS_HP1', 'LLM_AUTONOMOUS_CUSTOMER_V19LS_HP1B', 'LLM_AUTONOMOUS_CUSTOMER_V19LS_MEM1')   # research on V19LS: only when a request names it
-IMPROVED_POLICY = 'LLM_AUTONOMOUS_CUSTOMER_V19LS_INT4'   # 2026-11-08: improved selectable policy (verified settings); V19LS stays the default
-SELECTABLE_LIVE_POLICIES = (PREVIOUS_LIVE_POLICY, IMPROVED_POLICY) + EXPERIMENT_POLICIES + RESEARCH_POLICIES
-POLICIES = (POLICY, LIVE_POLICY, PREVIOUS_LIVE_POLICY, IMPROVED_POLICY) + EXPERIMENT_POLICIES + RESEARCH_POLICIES   # stored V16 runs replay under V16; a request names the policy it wants and gets exactly that
+IMPROVED_POLICY = 'LLM_AUTONOMOUS_CUSTOMER_V19LS_INT5M'   # 2026-11-09 final A/B (staged LIVE, 28 customers): INT4 + meal context A3; V19LS stays the default
+PREVIOUS_IMPROVED_POLICY = 'LLM_AUTONOMOUS_CUSTOMER_V19LS_INT4'   # 2026-11-08 improved policy: its 28 saved visits replay under it; selectable when a request names it
+IMPROVED_POLICIES = (IMPROVED_POLICY, PREVIOUS_IMPROVED_POLICY)
+SELECTABLE_LIVE_POLICIES = (PREVIOUS_LIVE_POLICY, IMPROVED_POLICY, PREVIOUS_IMPROVED_POLICY) + EXPERIMENT_POLICIES + RESEARCH_POLICIES
+POLICIES = (POLICY, LIVE_POLICY, PREVIOUS_LIVE_POLICY, IMPROVED_POLICY, PREVIOUS_IMPROVED_POLICY) + EXPERIMENT_POLICIES + RESEARCH_POLICIES   # stored V16 runs replay under V16; a request names the policy it wants and gets exactly that
 POLICY_NOTES = {POLICY: '과거 판단 기준(V16) · 조기 종료 검증 이전의 저장 응답',
                 LIVE_POLICY: '현재 실시간 AI 판단 기준(V19-LS) · 근거 성격 표시 · 하루 종료 재검토 · 선택 진단 기록',
                 PREVIOUS_LIVE_POLICY: '이전 실시간 판단 기준(V17) · 명시적으로 선택한 경우에만',
-                IMPROVED_POLICY: '개선형 판단 기준 · 앞선 날 기억 · 저녁 객실 체류와 취침 구분 · 공정한 후보 구성 · 경량 입력 · 선택한 경우에만',
+                IMPROVED_POLICY: '개선형 판단 기준 · 앞선 날 기억 · 저녁 객실 체류와 취침 구분 · 공정한 후보 구성 · 룸서비스 전달 시간 미확인 표시 · 식당 1곳 추가 비교 · 경량 입력 · 선택한 경우에만',
+                PREVIOUS_IMPROVED_POLICY: '이전 개선형 판단 기준(11/08) · 저장된 개선형 방문 28건의 기준 · 이름으로 지정할 때만',
                 'LLM_AUTONOMOUS_CUSTOMER_V18': '실험 기준(V18) · 규칙 선별 후 LLM 선택 · 조기 종료 검증 적용',
                 'LLM_AUTONOMOUS_CUSTOMER_V18B': '실험 기준(V18-B) · 규칙 선별 후 LLM 선택 · 후보 관련 근거만 전달',
                 'LLM_AUTONOMOUS_CUSTOMER_V18BM': '실험 기준(V18-C) · V18-B와 같은 입력 · reasoning medium',
@@ -30,7 +33,8 @@ POLICY_NOTES = {POLICY: '과거 판단 기준(V16) · 조기 종료 검증 이�
                 'LLM_AUTONOMOUS_CUSTOMER_V19LS_HP1': '연구 기준(V19-LS HP1) · V19-LS + 외부 배달 저녁 대안 · 호텔 배달 통계 일반 참고(개인 근거 우선) · 이름으로 지정할 때만',
                 'LLM_AUTONOMOUS_CUSTOMER_V19LS_HP1B': '연구 기준(V19-LS HP1b) · 외부 배달 저녁 대안 · 통계 블록 유무만 다른 통제 비교 · 합성값은 가상 호텔 운영 조건 · 이름으로 지정할 때만',
                 'LLM_AUTONOMOUS_CUSTOMER_V19LS_MEM1': '연구 기준(V19-LS MEM1) · V19-LS + 앞선 날 실제 식사·시설·결정 이유·상태 기억 · 이름으로 지정할 때만',
-                'LLM_AUTONOMOUS_CUSTOMER_V19LS_P2': '연구 기준(V19-LS P2) · V19-LS + 일부 인원 조식 후보 · 식사량 1회 재검토 · 이름으로 선택한 경우에만'}
+                'LLM_AUTONOMOUS_CUSTOMER_V19LS_P2': '연구 기준(V19-LS P2) · V19-LS + 일부 인원 조식 후보 · 식사량 1회 재검토 · 이름으로 선택한 경우에만',
+}
 MODES = ('rules', 'replay', 'live')
 
 

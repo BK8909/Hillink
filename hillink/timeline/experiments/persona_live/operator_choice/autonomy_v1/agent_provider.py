@@ -22,7 +22,7 @@ POLICY = 'RESPONSES_AGENT_BUDGET_V1'
 REQUEST_POLICY = 'RESPONSES_CANONICAL_CONTEXT_V2'
 # Highest cumulative call ceiling a journal amendment may approve (USD ceiling stays 20). 2,500 -> 2,600 by the
 # 2026-11-08 03:20 directive; a journal still needs its own recorded amendment (timeline/tools/amend_agent_call_limit.py).
-MAX_APPROVABLE_CALLS = 5000   # 2026-11-08 23:44 user approval: 4,500 -> 5,000 (USD20 unchanged; study 2,400 / US$5) · before: 2026-11-08 13:19 directive: 2,620 -> 4,500 (USD20 unchanged; integrated study at most 1,800 new calls / US$5)
+MAX_APPROVABLE_CALLS = 6300   # 2026-11-09 17:18 KST user approval: 5,000 -> 6,300 for the final A/B LIVE study (USD20 unchanged; staged, at most 1,554 new calls) · before: 2026-11-08 23:44 user approval: 4,500 -> 5,000 (USD20 unchanged; study 2,400 / US$5) · before: 2026-11-08 13:19 directive: 2,620 -> 4,500 (USD20 unchanged; integrated study at most 1,800 new calls / US$5)
 PRICES = {'gpt-6-luna': {'input': .10, 'cached': .01, 'output': .50, 'write': .125}}
 PRICE_SOURCE = 'https://developers.openai.com/api/docs/models/gpt-6-luna'
 PRICE_CHECKED = '2026-11-04'

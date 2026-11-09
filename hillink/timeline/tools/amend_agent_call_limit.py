@@ -12,7 +12,7 @@ import os
 from pathlib import Path
 import time
 
-MAX_APPROVABLE_CALLS = 5000   # 2026-11-08 23:44 user approval: 4,500 -> 5,000 (USD20 unchanged; study 2,400 / US$5) · before: same ceiling as agent_provider.MAX_APPROVABLE_CALLS (2026-11-08 13:19 directive: 2,620 -> 4,500; USD20 unchanged)
+MAX_APPROVABLE_CALLS = 6300   # 2026-11-09 17:18 KST user approval: 5,000 -> 6,300 for the final A/B LIVE study (USD20 unchanged; staged, at most 1,554 new calls) · before: 2026-11-08 23:44 user approval: 4,500 -> 5,000 (USD20 unchanged; study 2,400 / US$5) · before: same ceiling as agent_provider.MAX_APPROVABLE_CALLS (2026-11-08 13:19 directive: 2,620 -> 4,500; USD20 unchanged)
 
 
 def amend(path, backup, expected_sha256, max_calls, approval_reference):

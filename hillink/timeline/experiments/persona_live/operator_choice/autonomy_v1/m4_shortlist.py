@@ -401,8 +401,38 @@ def state_fit(a, t, key, action):
     return dict(fit=None, basis='UNRANKED')
 
 
+def MEAL_CONTEXT_V2():
+    """Research switch HILLINK_RESEARCH_MEAL_CONTEXT_V2=1 (default OFF; only policy INT5M turns it on).
+    28-person INT4 audit (2026-11-09): 22 of 32 dinners were room service, 15 of the 25 room-service meals had no personal
+    basis, and the dominant stated reason was 'no travel' (27 of 42 lunch/dinner explanations). Two inputs favoured it
+    without evidence: (1) room service was shown with wait 0 / start now although no order-to-delivery time is recorded
+    anywhere in the catalog (service window 06:00-24:00 only), and (2) the meal slots took one venue per way of eating
+    (room / casual / restaurant), so only one restaurant was ever compared (mostly Pizza Hill) while 5.1 restaurants were
+    open on average at dinner. This switch (a) shows the room-service delivery time as unconfirmed instead of 0, and
+    (b) lets a second restaurant take a meal slot when at least two are open. Nothing is chosen or removed here."""
+    return os.environ.get('HILLINK_RESEARCH_MEAL_CONTEXT_V2') == '1'
+
+
+def ROOM_DELIVERY_UNCONFIRMED():
+    """A1 part of MEAL_CONTEXT_V2 (2026-11-09 separation study): room service carries no invented 0-minute wait."""
+    return MEAL_CONTEXT_V2() or os.environ.get('HILLINK_RESEARCH_MEAL_ROOM_DELIVERY_UNCONFIRMED') == '1'
+
+
+def SECOND_RESTAURANT():
+    """A2 part of MEAL_CONTEXT_V2: a second open restaurant may take its own meal slot."""
+    return MEAL_CONTEXT_V2() or os.environ.get('HILLINK_RESEARCH_MEAL_SECOND_RESTAURANT') == '1'
+
+
 def execution_conditions(a, t, action):
     wait = action.get('wait')
+    if ROOM_DELIVERY_UNCONFIRMED() and action.get('venue') == 'ROOM_MEAL' and action.get('execution') == 'MEAL':
+        # no recorded order-to-delivery time: say so instead of showing 0 (the scene still starts at the decision time;
+        # no number is invented in either direction). The guest's own way back to the room is real and stays as computed.
+        return dict(start_time=AD.mh(action['start']), end_time=AD.mh(action['start'] + action['duration']), duration_minutes=action['duration'],
+                    travel_minutes=AD.SP.travel_min(a.loc, action['location']), wait_minutes=None, delivery_time='주문 후 전달 시간 미확인(호텔 자료 없음)',
+                    price_krw=action.get('order_total_krw'), price_status=action.get('price_status'), included=action.get('included'),
+                    planning_viability=action.get('planning_viability', 'AVAILABLE_NOW'), reservation='UNKNOWN_NOT_BOOKED',
+                    basis='WORLD_VALIDATED_SCHEDULE_NOT_CONFIRMED_RESERVATION; ROOM_SERVICE_DELIVERY_TIME_UNCONFIRMED')
     return dict(start_time=AD.mh(action['start']), end_time=AD.mh(action['start'] + action['duration']), duration_minutes=action['duration'],
                 travel_minutes=AD.SP.travel_min(a.loc, wait['location']) + AD.SP.travel_min(wait['location'], action['location']) if wait else AD.SP.travel_min(a.loc, action['location']),
                 wait_minutes=max(0, action['start'] - t - (AD.SP.travel_min(a.loc, action['location']))) if not wait else wait['end'] - wait['start'],
@@ -548,6 +578,16 @@ def build(a, world, t, actions, menus, w, citable, max_options=MAX_OPTIONS, reco
         if not linked: return False
         best = max(linked, key=lambda r: (len(r['fit']['direct_evidence_fact_ids']), r['fit'].get('fit') or -1e9))
         chosen.append(best); reasons[best['action_id']] = 'DIRECT_PERSONAL_EVIDENCE_LINK'; return True
+    restaurants = [r for r in by_type.get('MEAL', []) if facet(r) == 'restaurant']
+    second_restaurant = SECOND_RESTAURANT() and (meal_open or not dinner_resolved) and len(restaurants) >= 2
+    def take_second_restaurant():
+        """MEAL_CONTEXT_V2: one more restaurant than the one-per-way-of-eating rule, in the same order the slots already
+        use (personal signal, fair band, rotation). Its own slot: it never displaces an activity, rest or day-end option."""
+        shown = [r for r in chosen if r['type'] == 'MEAL' and facet(r) == 'restaurant']
+        if len(shown) != 1: return False
+        rest = [r for r in by_type.get('MEAL', []) if facet(r) == 'restaurant' and r not in chosen]
+        if not rest: return False
+        chosen.append(rest[0]); reasons[rest[0]['action_id']] = 'MEAL_CONTEXT_V2_SECOND_RESTAURANT'; return True
     # mandatory and exception candidates first
     take('DAY_END'); take('LEAVE'); take('SKIP_MEAL'); take('CHECKOUT'); take('DEFER_MEAL')   # the last two exist only under research switches
     # an event the operator applied to this visit (wine fair, an event card) is always shown while it can be joined:
@@ -574,6 +614,7 @@ def build(a, world, t, actions, menus, w, citable, max_options=MAX_OPTIONS, reco
         linked_meals = sum(1 for r in chosen if r['type'] == 'MEAL' and reasons.get(r['action_id']) == 'DIRECT_PERSONAL_EVIDENCE_LINK')
         if kind in ('MEAL', 'ACTIVITY') and any(r['type'] == kind for r in chosen) and not (kind == 'MEAL' and linked_meals >= 1) and take_evidence(kind): continue
         take(kind, why='M4_NEXT_OF_TYPE')
+    if second_restaurant and take_second_restaurant(): max_options += 1   # its own slot (MEAL_CONTEXT_V2)
     # top up with whatever is left (type order) so a small world is shown whole and no slot stays empty
     for kind in ('MEAL', 'ACTIVITY', 'REST', 'SKIP_MEAL', 'DAY_END', 'LEAVE', 'CHECKOUT', 'DEFER_MEAL'):
         while len(chosen) < max_options and any(r not in chosen for r in by_type.get(kind, [])):

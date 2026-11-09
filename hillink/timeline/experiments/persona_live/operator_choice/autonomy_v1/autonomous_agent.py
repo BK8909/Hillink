@@ -131,6 +131,7 @@ POLICY_V19LS_P2 = 'LLM_AUTONOMOUS_CUSTOMER_V19LS_P2'  # research on V19LS: party
 POLICY_V19LS_HP1B = 'LLM_AUTONOMOUS_CUSTOMER_V19LS_HP1B'  # research: HP1 with controlled inputs (V19LS system/schema in B0 and B; reference block is the only difference)
 POLICY_V19LS_MEM1 = 'LLM_AUTONOMOUS_CUSTOMER_V19LS_MEM1'  # research: V19LS + multi-day visit memory (executed earlier-day records)
 POLICY_V19LS_INT4 = 'LLM_AUTONOMOUS_CUSTOMER_V19LS_INT4'  # improved selectable policy (2026-11-08): V19LS_MEM1 + INT4_SWITCHES; V19LS stays the default
+POLICY_V19LS_INT5M = 'LLM_AUTONOMOUS_CUSTOMER_V19LS_INT5M'  # research (2026-11-09): INT4 + MEAL_CONTEXT_V2; never relabels INT4 records
 POLICY_V19LS = 'LLM_AUTONOMOUS_CUSTOMER_V19LS'  # stabilised LS: stance/flags/candidate links, repeat signal, tradeoff note, diagnostics, recoverable-error retry (product LIVE default since 2026-11-07)
 LIVE_POLICY = POLICY_V19LS                      # product LIVE default since 2026-11-07; V17 stays selectable by name
 V18_FOLLOWUPS = (POLICY_V18N, POLICY_V18L, POLICY_V18S, POLICY_V18P, POLICY_V18L2, POLICY_V18M, POLICY_V18S2, POLICY_V18LS)
@@ -342,6 +343,7 @@ POLICIES = {
     POLICY_V18BD: dict(system=SYSTEM_V18D, schema=SELECTION_V18D, day_end_review=DAY_END_POLICY, context='AUTONOMOUS_CONTEXT_V18_COMPACT', stable_prefix=True, select=True, effort=None, prefix_message='personal', minimal_output=True),
 }
 POLICIES[POLICY_V19LS_INT4] = POLICIES[POLICY_V19LS_MEM1]   # same question contract; the INT4 settings are the difference
+POLICIES[POLICY_V19LS_INT5M] = POLICIES[POLICY_V19LS_MEM1]  # same question contract; INT5M_SWITCHES are the difference
 
 
 # INT4 = the settings verified in the v21 28-person LIVE (INT3) plus DAY_FLOW v2 and LEAN2 (v22 LIVE K 4/4, F 4/4).
@@ -356,18 +358,48 @@ INT4_SWITCHES = ('HILLINK_RESEARCH_MEAL_PERIOD_BY_START', 'HILLINK_RESEARCH_MEM1
                  'HILLINK_RESEARCH_LEAN_COMPACT', 'HILLINK_RESEARCH_DAY_END_EVENING', 'HILLINK_RESEARCH_DAY_FLOW', 'HILLINK_RESEARCH_LEAN2')
 
 
+# INT5M (research, 2026-11-09 meal-choice audit of the 28 INT4 saved visits): INT4 plus one switch, so an INT4 record is never
+# re-run or relabeled under different settings. MEAL_CONTEXT_V2: room service shows no invented delivery time and a second
+# restaurant may be shown beside room/casual (see m4_shortlist.MEAL_CONTEXT_V2).
+# 2026-11-09 separation study: MEAL_CONTEXT_V2 is split into its two parts so their effects can be measured apart
+#   A1 room service: delivery time unconfirmed (no invented 0-minute wait)   A2 a second open restaurant gets its own slot
+#   A3 both (= MEAL_CONTEXT_V2). HILLINK_INT5M_VARIANT picks the part set for a study run; the default is A3.
+INT5M_PARTS = dict(A1=('HILLINK_RESEARCH_MEAL_ROOM_DELIVERY_UNCONFIRMED',), A2=('HILLINK_RESEARCH_MEAL_SECOND_RESTAURANT',),
+                   A3=('HILLINK_RESEARCH_MEAL_ROOM_DELIVERY_UNCONFIRMED', 'HILLINK_RESEARCH_MEAL_SECOND_RESTAURANT'))
+
+
+def int5m_variant(env=None):
+    v = (env if env is not None else os.environ).get('HILLINK_INT5M_VARIANT') or 'A3'
+    if v not in INT5M_PARTS: raise ValueError('E_INT5M_VARIANT')
+    return v
+
+
+def policy_switches(policy, env=None):
+    if policy == POLICY_V19LS_INT4: return INT4_SWITCHES
+    if policy == POLICY_V19LS_INT5M: return INT4_SWITCHES + INT5M_PARTS[int5m_variant(env)]
+    return None
+
+
+INT5M_SWITCHES = INT4_SWITCHES + INT5M_PARTS['A3']
+POLICY_SWITCHES = {POLICY_V19LS_INT4: INT4_SWITCHES, POLICY_V19LS_INT5M: INT5M_SWITCHES}   # default part sets (A3)
+
+
 def policy_environment(policy, env):
-    """The research environment a policy runs with: INT4 gets exactly INT4_SWITCHES (every other research switch,
-    REST_CONTINUE included, removed); any other policy keeps the environment it was given."""
-    if policy != POLICY_V19LS_INT4: return env
+    """The research environment a policy runs with: INT4 gets exactly INT4_SWITCHES (INT5M exactly INT5M_SWITCHES; every
+    other research switch, REST_CONTINUE included, removed); any other policy keeps the environment it was given."""
+    if policy not in POLICY_SWITCHES: return env
     out = {k: v for k, v in env.items() if not k.startswith('HILLINK_RESEARCH_')}
-    out.update({k: '1' for k in INT4_SWITCHES})
+    out.update({k: '1' for k in policy_switches(policy, env)})
     return out
 
 
-def int4_in_force():
+def switches_in_force(policy):
     on = {k for k, v in os.environ.items() if k.startswith('HILLINK_RESEARCH_') and v == '1'}
-    return on == set(INT4_SWITCHES)
+    return on == set(policy_switches(policy))
+
+
+def int4_in_force():
+    return switches_in_force(POLICY_V19LS_INT4)
 
 
 def policy_of(a):
@@ -378,7 +410,9 @@ def spec_of(a):
     spec=POLICIES[policy_of(a)]
     if policy_of(a)==POLICY_V19LS_INT4 and not int4_in_force():
         raise RuntimeError('INT4_SETTINGS_NOT_IN_FORCE')
-    if policy_of(a) in (POLICY_V19LS_MEM1, POLICY_V19LS_INT4) and (PARTY_BREAKFAST() or EXTERNAL_DELIVERY()):
+    if policy_of(a)==POLICY_V19LS_INT5M and not switches_in_force(POLICY_V19LS_INT5M):
+        raise RuntimeError('INT5M_SETTINGS_NOT_IN_FORCE')
+    if policy_of(a) in (POLICY_V19LS_MEM1, POLICY_V19LS_INT4, POLICY_V19LS_INT5M) and (PARTY_BREAKFAST() or EXTERNAL_DELIVERY()):
         # research integration switches (default OFF; only the multi-day research policy): existing, separately verified
         # parts of other research policies, no new rule
         spec=dict(spec)
@@ -2105,7 +2139,7 @@ def MEAL_TIMING_REF():
 
 
 LEAN_VISIT=('date','nights','party_size','party_status','relationship_status','purpose','building','breakfast','pre_arrival_intake','checked_in','checked_out')
-LEAN_COND=('start_time','end_time','duration_minutes','travel_minutes','wait_minutes','price_krw','included','reservation')
+LEAN_COND=('start_time','end_time','duration_minutes','travel_minutes','wait_minutes','price_krw','included','reservation','delivery_time')   # delivery_time exists only under MEAL_CONTEXT_V2 (INT5M)
 
 
 def lean_context(c):

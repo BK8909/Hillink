@@ -4,19 +4,22 @@
 const POLICY='LLM_AUTONOMOUS_CUSTOMER_V16';        // stored runs: exact replay under the policy they were recorded with
 const LIVE_POLICY='LLM_AUTONOMOUS_CUSTOMER_V19LS'; // product LIVE default (2026-11-07): evidence stance, day-end review, selection diagnostics
 const PREVIOUS_LIVE_POLICY='LLM_AUTONOMOUS_CUSTOMER_V17';   // kept: only when the page names it (?policy=LLM_AUTONOMOUS_CUSTOMER_V17)
-const IMPROVED_POLICY='LLM_AUTONOMOUS_CUSTOMER_V19LS_INT4';  // improved selectable policy (2026-11-08): chosen in the same 행동 판단 list; V19LS stays the default
+const IMPROVED_POLICY='LLM_AUTONOMOUS_CUSTOMER_V19LS_INT5M';  // improved selectable policy (2026-11-09 final A/B: INT4 + meal context); V19LS stays the default
+const PREVIOUS_IMPROVED_POLICY='LLM_AUTONOMOUS_CUSTOMER_V19LS_INT4';  // 2026-11-08 improved policy: its saved visits replay under it
+const IMPROVED_POLICIES=[IMPROVED_POLICY,PREVIOUS_IMPROVED_POLICY];
 const EXPERIMENT_POLICIES=['LLM_AUTONOMOUS_CUSTOMER_V18','LLM_AUTONOMOUS_CUSTOMER_V18B','LLM_AUTONOMOUS_CUSTOMER_V18BM','LLM_AUTONOMOUS_CUSTOMER_V18BD'];   // M4 shortlist experiments: only when a request names it (?policy=…)
 const RESEARCH_POLICIES=['LLM_AUTONOMOUS_CUSTOMER_V19LS_P2','LLM_AUTONOMOUS_CUSTOMER_V19LS_HP1','LLM_AUTONOMOUS_CUSTOMER_V19LS_HP1B','LLM_AUTONOMOUS_CUSTOMER_V19LS_MEM1'];   // research on V19LS: only when a request names it
-const SELECTABLE=[PREVIOUS_LIVE_POLICY,IMPROVED_POLICY,...EXPERIMENT_POLICIES,...RESEARCH_POLICIES];
+const SELECTABLE=[PREVIOUS_LIVE_POLICY,IMPROVED_POLICY,PREVIOUS_IMPROVED_POLICY,...EXPERIMENT_POLICIES,...RESEARCH_POLICIES];
 const POLICIES=[POLICY,LIVE_POLICY,...SELECTABLE];
 const VERSION_NOTE={[POLICY]:'과거 판단 기준(V16) · 조기 종료 검증 이전',[LIVE_POLICY]:'현재 판단 기준(V19-LS) · 근거 성격 표시 · 하루 종료 재검토',[PREVIOUS_LIVE_POLICY]:'이전 판단 기준(V17)',
- [IMPROVED_POLICY]:'개선형 판단 기준 · 앞선 날 기억 · 저녁 객실 체류와 취침 구분 · 경량 입력',
+ [IMPROVED_POLICY]:'개선형 판단 기준 · 앞선 날 기억 · 저녁 객실 체류와 취침 구분 · 식사 후보 개선 · 경량 입력',[PREVIOUS_IMPROVED_POLICY]:'이전 개선형 판단 기준(11/08) · 저장된 개선형 방문의 기준',
  LLM_AUTONOMOUS_CUSTOMER_V18:'실험 기준(V18) · 규칙 선별 후 LLM 선택',LLM_AUTONOMOUS_CUSTOMER_V18B:'실험 기준(V18-B) · 후보 관련 근거만',LLM_AUTONOMOUS_CUSTOMER_V18BM:'실험 기준(V18-C) · B 입력 · reasoning medium',LLM_AUTONOMOUS_CUSTOMER_V18BD:'실험 기준(V18-D) · B 입력 · 최소 출력',LLM_AUTONOMOUS_CUSTOMER_V19LS_P2:'연구 기준(V19-LS P2) · 일부 인원 조식 후보 · 식사량 1회 재검토'};
-const SHORT={[IMPROVED_POLICY]:'개선형',LLM_AUTONOMOUS_CUSTOMER_V19LS_HP1:'V19-LS HP1 연구',LLM_AUTONOMOUS_CUSTOMER_V19LS_HP1B:'V19-LS HP1b 연구',LLM_AUTONOMOUS_CUSTOMER_V19LS_MEM1:'V19-LS MEM1 연구',[POLICY]:'V16',[LIVE_POLICY]:'V19-LS',[PREVIOUS_LIVE_POLICY]:'V17',LLM_AUTONOMOUS_CUSTOMER_V18:'V18 실험',LLM_AUTONOMOUS_CUSTOMER_V18B:'V18-B 실험',LLM_AUTONOMOUS_CUSTOMER_V18BM:'V18-C 실험',LLM_AUTONOMOUS_CUSTOMER_V18BD:'V18-D 실험',LLM_AUTONOMOUS_CUSTOMER_V19LS_P2:'V19-LS P2 연구'};
+const SHORT={[IMPROVED_POLICY]:'개선형',[PREVIOUS_IMPROVED_POLICY]:'개선형',LLM_AUTONOMOUS_CUSTOMER_V19LS_HP1:'V19-LS HP1 연구',LLM_AUTONOMOUS_CUSTOMER_V19LS_HP1B:'V19-LS HP1b 연구',LLM_AUTONOMOUS_CUSTOMER_V19LS_MEM1:'V19-LS MEM1 연구',[POLICY]:'V16',[LIVE_POLICY]:'V19-LS',[PREVIOUS_LIVE_POLICY]:'V17',LLM_AUTONOMOUS_CUSTOMER_V18:'V18 실험',LLM_AUTONOMOUS_CUSTOMER_V18B:'V18-B 실험',LLM_AUTONOMOUS_CUSTOMER_V18BM:'V18-C 실험',LLM_AUTONOMOUS_CUSTOMER_V18BD:'V18-D 실험',LLM_AUTONOMOUS_CUSTOMER_V19LS_P2:'V19-LS P2 연구'};
 function experimentPolicy(){try{const p=new URLSearchParams(root.location?.search||'').get('policy');return SELECTABLE.includes(p)?p:null;}catch(e){return null;}}
 // '개선형' is one more entry of the same 행동 판단 list: a new LIVE judgment with the improved policy's engine settings.
 function isLive(mode){return mode==='live'||mode==='live_improved';}
-function modeOf(request){return request?.judgment_mode==='live'&&request?.hybrid_policy===IMPROVED_POLICY?'live_improved':(request?.judgment_mode||null);}
+function isImproved(policy){return IMPROVED_POLICIES.includes(policy);}
+function modeOf(request){return request?.judgment_mode==='live'&&isImproved(request?.hybrid_policy)?'live_improved':(request?.judgment_mode||null);}
 function request(value,mode='replay',policy){
  if(!['rules','replay','live','live_improved'].includes(mode))throw Error('판단 모드를 선택해 주세요.');
  const out={...value,judgment_mode:mode==='live_improved'?'live':mode};
@@ -70,5 +73,5 @@ function bindAvailability(select,notice,button,check){
  select.addEventListener('change',refresh);refresh();
  return refresh;
 }
-const api={request,options,label,version,bindAvailability,isLive,modeOf,runDiff,runFields,capabilities,REPLAY_NEEDS_SAVED,replayChanged,POLICY,LIVE_POLICY,PREVIOUS_LIVE_POLICY,IMPROVED_POLICY,POLICIES,EXPERIMENT_POLICIES,RESEARCH_POLICIES,SELECTABLE};root.HLVisitExecution=api;if(typeof module!=='undefined')module.exports=api;
+const api={request,options,label,version,bindAvailability,isLive,modeOf,runDiff,runFields,capabilities,REPLAY_NEEDS_SAVED,replayChanged,POLICY,LIVE_POLICY,PREVIOUS_LIVE_POLICY,IMPROVED_POLICY,PREVIOUS_IMPROVED_POLICY,IMPROVED_POLICIES,isImproved,POLICIES,EXPERIMENT_POLICIES,RESEARCH_POLICIES,SELECTABLE};root.HLVisitExecution=api;if(typeof module!=='undefined')module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);

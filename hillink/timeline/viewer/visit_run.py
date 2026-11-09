@@ -494,6 +494,7 @@ def run_visit(request):
             reviews=[scene.get('basis',{}).get('review') for plan in d['flow']['plans'].values() for scene in plan['scenes'] if scene.get('basis',{}).get('review')],
             autonomous=[plan.get('autonomous_decisions') for plan in d['flow']['plans'].values() if plan.get('autonomous_decisions')]) for d in day_flows])
         run_request["hybrid_policy"]=hybrid_policy
+        if hybrid_policy==AA.POLICY_V19LS_INT5M: run_request["int5m_variant"]=AA.int5m_variant()   # meal-context part set in force (A1/A2/A3)
     if catalog_policy: run_request.update(catalog_policy=catalog_policy,catalog_options=copy.deepcopy(catalog_options),hotel_catalog_sha256=HC.SHA)
     if scenario_snapshot:run_request["scenario_snapshot"]=scenario_snapshot
     if virtual_room_rates: run_request["virtual_room_rates"] = dict(sorted(virtual_room_rates.items()))

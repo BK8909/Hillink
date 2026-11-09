@@ -76,3 +76,13 @@ test('improved policy is one more entry of the same list and sets the engine pol
   assert.equal(V.label({ judgment: { actual: 'live', policy: V.IMPROVED_POLICY } }), '실시간 AI 판단 · 개선형 기준');
   assert.ok(V.isLive('live_improved') && V.isLive('live') && !V.isLive('replay'));
 });
+
+test('2026-11-09 final A/B: the improved mode runs INT5M; INT4 saved visits still replay and read as 개선형', () => {
+  assert.equal(V.IMPROVED_POLICY, 'LLM_AUTONOMOUS_CUSTOMER_V19LS_INT5M');
+  assert.equal(V.request({}, 'live_improved').hybrid_policy, V.IMPROVED_POLICY);
+  assert.ok(V.POLICIES.includes(V.PREVIOUS_IMPROVED_POLICY) && !V.RESEARCH_POLICIES.includes(V.IMPROVED_POLICY));
+  assert.equal(V.request({}, 'replay', V.PREVIOUS_IMPROVED_POLICY).hybrid_policy, V.PREVIOUS_IMPROVED_POLICY, 'a saved INT4 visit replays under INT4');
+  assert.equal(V.modeOf({ judgment_mode: 'live', hybrid_policy: V.PREVIOUS_IMPROVED_POLICY }), 'live_improved');
+  assert.ok(V.isImproved(V.PREVIOUS_IMPROVED_POLICY) && V.isImproved(V.IMPROVED_POLICY) && !V.isImproved(V.LIVE_POLICY));
+  assert.equal(V.label({ judgment: { actual: 'replay', policy: V.PREVIOUS_IMPROVED_POLICY } }), '저장된 판단 재현 · 새 호출 0회 · 개선형 기준');
+});

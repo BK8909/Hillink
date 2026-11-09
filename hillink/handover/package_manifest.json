@@ -55,8 +55,8 @@
     {
       "path": "handover/RECOVERY.md",
       "included": true,
-      "bytes": 9189,
-      "sha256": "38040748d1ff95dd2b712caf6c7b2cdf06dc5bbb0c5b9a6d31ed0ef883b40f71"
+      "bytes": 9369,
+      "sha256": "f509efc754472da30694fa2130d44af4c82ba303bd0a5c8c4d16af0394588654"
     },
     {
       "path": "handover/data/bundle.json",
@@ -4837,14 +4837,14 @@
     {
       "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/agent_provider.py",
       "included": true,
-      "bytes": 15788,
-      "sha256": "f3c30fce2cae37d2db6b2298ef14c7e12bfea42c4c20048e5fe3714a25f28e35"
+      "bytes": 15930,
+      "sha256": "1962cd6d69489cf619385278c8b1c0990d8fe216bfdd3fb5c282e40ab38bbe94"
     },
     {
       "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/autonomous_agent.py",
       "included": true,
-      "bytes": 192946,
-      "sha256": "4788bf420941af1b2e804a6fb99a8eca3992d1f8561dd2804a8c5e12d991211f"
+      "bytes": 195075,
+      "sha256": "f90375d42d781daa05e1edd9d730e401c272d8099dacebe2c32fe8239f7f1f9a"
     },
     {
       "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/breakfast_policy.py",
@@ -5005,8 +5005,8 @@
     {
       "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/m4_shortlist.py",
       "included": true,
-      "bytes": 50688,
-      "sha256": "4cc370181fa7032e701be8c0e05e33a658b0c9170307ef9f3839cff68ca929b2"
+      "bytes": 54201,
+      "sha256": "72842f482a7145d0c22f5aba1cfb0adb55bcd6d6c7b4155d086b9588c95b432d"
     },
     {
       "path": "timeline/experiments/persona_live/operator_choice/autonomy_v1/meal_basket.py",
@@ -5803,8 +5803,8 @@
     {
       "path": "timeline/tools/amend_agent_call_limit.py",
       "included": true,
-      "bytes": 3404,
-      "sha256": "cf23b9860adf24345f223c1d853203881ba5fd2329bab8c9b2e85ab718b270dd"
+      "bytes": 3546,
+      "sha256": "0136ce01ff7fc10523af9300c3490d898a8d5d0592ae92f724a27bf654f15695"
     },
     {
       "path": "timeline/tools/check_agent_budget.py",
@@ -6325,14 +6325,14 @@
     {
       "path": "timeline/viewer/static/agent.js",
       "included": true,
-      "bytes": 325419,
-      "sha256": "d5e3d57222803c0427fff88046161729fb5a7ce26753b0a8767e34351732fc4b"
+      "bytes": 325413,
+      "sha256": "7cd8eedef9d7e42103515bb121e8a13cc03502137c3105272734eed8ba9401cf"
     },
     {
       "path": "timeline/viewer/static/agent_decision_view.js",
       "included": true,
-      "bytes": 35374,
-      "sha256": "3fce32085366f32c20593973c28bf9de0f13b2b2b3d17b7702e88c1e495475b1"
+      "bytes": 35368,
+      "sha256": "4b27011417a28dedb0830c820023968e85e596f669e7a12e3557f9ce0f3337df"
     },
     {
       "path": "timeline/viewer/static/anomaly_evidence.json",
@@ -7131,6 +7131,18 @@
       "included": true,
       "bytes": 42590,
       "sha256": "b6db42d11c54ae630738141425586cad2d66689699a44a3bb4151ea0865909e8"
+    },
+    {
+      "path": "timeline/viewer/tests/test_restore_agent_usd_ceiling.py",
+      "included": true,
+      "bytes": 2000,
+      "sha256": "ac21b7dab5bf4963b7249354b4a743a899cfcdcedc1b169162331826aff9142b"
+    },
+    {
+      "path": "timeline/tools/restore_agent_usd_ceiling.py",
+      "included": true,
+      "bytes": 3236,
+      "sha256": "05f8604420a44caeee362aeec629401786487b0ce749b43ac0057dd81c4495c4"
     },
     {
       "path": "timeline/viewer/tests/overall_analysis_view_1109.test.cjs",
@@ -8095,8 +8107,8 @@
     {
       "path": "timeline/viewer/static/situation.js",
       "included": true,
-      "bytes": 46626,
-      "sha256": "25ecde556ff2b4ec28775e476d96c2c9a02f45416e2e4dc2124eba1c405d75ed"
+      "bytes": 46721,
+      "sha256": "561a3c7da96b00a3440ed54b1975b5909cc0b14aa235b4ecde7f93e423740418"
     },
     {
       "path": "timeline/viewer/static/situation_options.json",
@@ -8203,8 +8215,8 @@
     {
       "path": "timeline/viewer/static/visit_execution.js",
       "included": true,
-      "bytes": 9894,
-      "sha256": "fd795124e6d81c6084b9d45477cf0239210fdb54d5934912f331d688d82d468b"
+      "bytes": 10404,
+      "sha256": "381f09e3dad9764ad88e21f0fe84ebbacd7c034fb1db068fc4464f5df89dc296"
     },
     {
       "path": "timeline/viewer/static/wait_inv.json",
@@ -8539,8 +8551,8 @@
     {
       "path": "timeline/viewer/tests/test_agent_budget_amendment.py",
       "included": true,
-      "bytes": 14769,
-      "sha256": "b512548cd758c75f543bdf944d9ee9932127817334d07eccf19e573ca0babce1"
+      "bytes": 15767,
+      "sha256": "80f068a0989c773accea199ff965b3ef812e23fe20d7cc92428a6e05b39250c8"
     },
     {
       "path": "timeline/viewer/tests/test_agent_cohort_evaluation.py",
@@ -9199,8 +9211,8 @@
     {
       "path": "timeline/viewer/tests/test_v18_shortlist_selection_1105.py",
       "included": true,
-      "bytes": 32332,
-      "sha256": "6308c9859592433e7e218186c4a708858bf2e8fd1788dce7a551f18896470ba8"
+      "bytes": 37184,
+      "sha256": "96d6ee6e0460619a52faf471468ca07a0ae649d77a05ef10d210c57ab4ee6174"
     },
     {
       "path": "timeline/viewer/tests/test_v19_ls_stability_1107.py",
@@ -9265,8 +9277,8 @@
     {
       "path": "timeline/viewer/tests/visit_execution.test.cjs",
       "included": true,
-      "bytes": 6123,
-      "sha256": "2b19c6ab22dd5adb7a34438007b037849407fff9549818f2c55b439c34f2b5d5"
+      "bytes": 7068,
+      "sha256": "b1099a787d6efa496f7e5990cfaa498967aca76e576b38f32fb89beaf1f5dec2"
     },
     {
       "path": "timeline/viewer/tests/visit_request_transition.test.cjs",
@@ -9355,8 +9367,8 @@
     {
       "path": "timeline/viewer/visit_execution.py",
       "included": true,
-      "bytes": 10364,
-      "sha256": "d0decdb017049a4666fc6e27ea8d4cd60d04ef67234b6fa3d1f3aeb308d8375a"
+      "bytes": 11045,
+      "sha256": "ccbde802d4c34d884731ea0f1446fe88eff41304feb415cabbc95902dd955a33"
     },
     {
       "path": "timeline/viewer/visit_operations.py",
@@ -9367,8 +9379,8 @@
     {
       "path": "timeline/viewer/visit_run.py",
       "included": true,
-      "bytes": 41919,
-      "sha256": "517c71eaab1521e91fd841135a004bac7df918ed8c31d72b90cfbb943980bc72"
+      "bytes": 42062,
+      "sha256": "3224fe2c3ecf1245b3ced35a35827a96c97d1b2fdc6f0fcbc35241fe2f1a2568"
     },
     {
       "path": "timeline/viewer/wait_inv.py",

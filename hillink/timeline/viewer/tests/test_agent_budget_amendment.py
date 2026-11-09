@@ -29,7 +29,7 @@ def test_extension_preserves_failed_calls_spend_and_requires_approval(tmp_path):
     assert json.loads(p.read_bytes())['requests'] == requests
     summary = P.Budget(p, 20, 1000).summary()
     assert summary == dict(max_usd=20, max_calls=1000, calls=1, cost_upper_usd=.01, unresolved=0)
-    with pytest.raises(ValueError): P.Budget(p, 20, 5001)
+    with pytest.raises(ValueError): P.Budget(p, 20, 6301)
     with pytest.raises(ValueError): P.Budget(p, 21, 1000)
 
 
@@ -175,13 +175,13 @@ def test_parallel_processes_reserve_last_allowance_once_and_keep_settlement(tmp_
 def test_2500_requires_existing_approval_and_rejects_higher_caps(tmp_path):
     with pytest.raises(ValueError, match='APPROVAL_REQUIRED'):
         P.Budget(tmp_path/'absent', 20, 2500).summary()
-    for usd, calls in ((20.001, 2500), (20, 5001)):
+    for usd, calls in ((20.001, 2500), (20, 6301)):
         with pytest.raises(ValueError):
             P.Budget(tmp_path/'unapproved', usd, calls)
     p = tmp_path/'journal'
     P.Budget(p, 20, 400).summary()
     original = p.read_bytes()
-    for calls, approval in ((5001, 'TEST'), (2500, '')):
+    for calls, approval in ((6301, 'TEST'), (2500, '')):
         with pytest.raises(ValueError, match='APPROVED_CALL_LIMIT_REQUIRED'):
             M.amend(p, tmp_path/'backup', hashlib.sha256(original).hexdigest(), calls, approval)
     assert p.read_bytes() == original
@@ -200,7 +200,7 @@ def test_2600_ceiling_needs_its_own_recorded_amendment(tmp_path):
     s = P.Budget(p, 20, 2600).summary()
     assert s['max_calls'] == 2600 and s['max_usd'] == 20
     with pytest.raises(ValueError, match='APPROVED_CALL_LIMIT_REQUIRED'):
-        M.amend(p, tmp_path/'b3', hashlib.sha256(p.read_bytes()).hexdigest(), 5001, 'TEST')
+        M.amend(p, tmp_path/'b3', hashlib.sha256(p.read_bytes()).hexdigest(), 6301, 'TEST')
 
 
 def test_live_preflight_accepts_an_amended_2600_journal_only(tmp_path, monkeypatch):
@@ -217,7 +217,7 @@ def test_live_preflight_accepts_an_amended_2600_journal_only(tmp_path, monkeypat
     assert VE.live_status() == (False, 'EXISTING_JOURNAL_CALL_EXTENSION_APPROVAL_REQUIRED')
     M.amend(p, tmp_path/'b2', hashlib.sha256(p.read_bytes()).hexdigest(), 2600, 'USER_APPROVAL_2026_11_08_0320')
     assert VE.live_status() == (True, None)
-    monkeypatch.setenv('HILLINK_AGENT_MAX_CALLS', '5001')
+    monkeypatch.setenv('HILLINK_AGENT_MAX_CALLS', '6301')
     assert VE.live_status() == (False, 'APPROVED_LIMIT_REQUIRED')
 
 
@@ -227,7 +227,7 @@ def test_2620_ceiling_needs_its_own_recorded_amendment(tmp_path, monkeypatch):
     import sys as _s
     _s.path.insert(0, str(Path(__file__).resolve().parents[1]))
     import visit_execution as VE
-    assert P.MAX_APPROVABLE_CALLS == VE.MAX_APPROVABLE_CALLS == M.MAX_APPROVABLE_CALLS == 5000
+    assert P.MAX_APPROVABLE_CALLS == VE.MAX_APPROVABLE_CALLS == M.MAX_APPROVABLE_CALLS == 6300
     p = tmp_path/'journal'
     P.Budget(p, 20, 400).summary()
     M.amend(p, tmp_path/'b1', hashlib.sha256(p.read_bytes()).hexdigest(), 2600, 'USER_APPROVAL_2026_11_08_0320')
@@ -240,7 +240,7 @@ def test_2620_ceiling_needs_its_own_recorded_amendment(tmp_path, monkeypatch):
     M.amend(p, tmp_path/'b2', hashlib.sha256(p.read_bytes()).hexdigest(), 2620, 'USER_APPROVAL_2026_11_08_1211')
     assert P.Budget(p, 20, 2620).summary()['max_calls'] == 2620 and VE.live_status() == (True, None)
     with pytest.raises(ValueError, match='APPROVED_CALL_LIMIT_REQUIRED'):
-        M.amend(p, tmp_path/'b3', hashlib.sha256(p.read_bytes()).hexdigest(), 5001, 'TEST')
+        M.amend(p, tmp_path/'b3', hashlib.sha256(p.read_bytes()).hexdigest(), 6301, 'TEST')
 
 
 def test_4500_ceiling_needs_its_own_recorded_amendment(tmp_path, monkeypatch):
@@ -259,7 +259,7 @@ def test_4500_ceiling_needs_its_own_recorded_amendment(tmp_path, monkeypatch):
     with pytest.raises(ValueError):
         P.Budget(p, 20.01, 4500)
     with pytest.raises(ValueError, match='APPROVED_CALL_LIMIT_REQUIRED'):
-        M.amend(p, tmp_path/'b3', hashlib.sha256(p.read_bytes()).hexdigest(), 5001, 'TEST')
+        M.amend(p, tmp_path/'b3', hashlib.sha256(p.read_bytes()).hexdigest(), 6301, 'TEST')
 
 
 def test_5000_ceiling_needs_its_own_recorded_amendment(tmp_path):
@@ -273,4 +273,20 @@ def test_5000_ceiling_needs_its_own_recorded_amendment(tmp_path):
     M.amend(p, tmp_path/'b2', hashlib.sha256(p.read_bytes()).hexdigest(), 5000, 'USER_APPROVAL_2026_11_08_2344')
     assert P.Budget(p, 20, 5000).summary()['max_calls'] == 5000
     with pytest.raises(ValueError, match='APPROVED_CALL_LIMIT_REQUIRED'):
-        M.amend(p, tmp_path/'b3', hashlib.sha256(p.read_bytes()).hexdigest(), 5001, 'TEST')
+        M.amend(p, tmp_path/'b3', hashlib.sha256(p.read_bytes()).hexdigest(), 6301, 'TEST')
+
+
+def test_6300_ceiling_needs_its_own_recorded_amendment(tmp_path):
+    """2026-11-09 17:18 user approval: ceiling 6,300 for the final A/B LIVE study (USD20 unchanged). A journal at 5,000
+    stays there until a 6,300 amendment is recorded; nothing above 6,300 can be approved and USD20 cannot be raised."""
+    p = tmp_path/'journal'
+    P.Budget(p, 20, 400).summary()
+    M.amend(p, tmp_path/'b1', hashlib.sha256(p.read_bytes()).hexdigest(), 5000, 'USER_APPROVAL_2026_11_08_2344')
+    with pytest.raises(ValueError, match='APPROVAL_REQUIRED'):
+        P.Budget(p, 20, 6300).summary()
+    M.amend(p, tmp_path/'b2', hashlib.sha256(p.read_bytes()).hexdigest(), 6300, 'USER_APPROVAL_2026_11_09_1718')
+    assert P.Budget(p, 20, 6300).summary()['max_calls'] == 6300
+    with pytest.raises(ValueError):
+        P.Budget(p, 20.01, 6300)
+    with pytest.raises(ValueError, match='APPROVED_CALL_LIMIT_REQUIRED'):
+        M.amend(p, tmp_path/'b3', hashlib.sha256(p.read_bytes()).hexdigest(), 6301, 'TEST')
